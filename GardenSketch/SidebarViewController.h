@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SidebarViewController.h
 //  GardenSketch
 //
 //  Created by Arian Khosravi on 2014-06-12.
@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "M13InfiniteTabBarController.h"
 
-@interface ViewController : UIViewController
+@interface SidebarViewController : M13InfiniteTabBarController
 
 @end
