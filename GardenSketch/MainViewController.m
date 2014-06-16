@@ -10,6 +10,7 @@
 #import "SidebarViewController.h"
 #import "SidebarContentViewController.h"
 #import "PropertyViewController.h"
+#import "StructureViewController.h"
 
 @interface MainViewController ()
 
@@ -51,7 +52,7 @@
     //Load the view controllers from the storyboard and add them to the array.
     
     PropertyViewController *vc1 = [[PropertyViewController alloc] initWithNibName:@"PropertyViewController" bundle:nil];
-	SidebarContentViewController *vc2 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
+	StructureViewController *vc2 = [[StructureViewController alloc] initWithNibName:@"StructureViewController" bundle:nil];
 	SidebarContentViewController *vc3 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
 	SidebarContentViewController *vc4 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
 	SidebarContentViewController *vc5 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
@@ -63,26 +64,26 @@
     
     //You probably want to set this on the UIViewController initalization, from within the UIViewController subclass. I'm just doing it here since each tab inherits from the same subclass.
     [vc1 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Property"
-														   selectedIconMask:[UIImage imageNamed:@"tab1Solid.png"]
-														 unselectedIconMask:[UIImage imageNamed:@"tab1Line.png"]]];
+														   selectedIconMask:[UIImage imageNamed:@"property"]
+														 unselectedIconMask:[UIImage imageNamed:@"property"]]];
     [vc2 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Structures"
-														   selectedIconMask:[UIImage imageNamed:@"tab2Solid.png"]
-														 unselectedIconMask:[UIImage imageNamed:@"tab2Line.png"]]];
+														   selectedIconMask:[UIImage imageNamed:@"structure"]
+														 unselectedIconMask:[UIImage imageNamed:@"structure"]]];
     [vc3 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"North"
-														   selectedIconMask:[UIImage imageNamed:@"tab3Solid.png"]
-														 unselectedIconMask:[UIImage imageNamed:@"tab3Line.png"]]];
+														   selectedIconMask:[UIImage imageNamed:@"north.png"]
+														 unselectedIconMask:[UIImage imageNamed:@"north.png"]]];
     [vc4 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Plans"
-														   selectedIconMask:[UIImage imageNamed:@"tab4Solid.png"]
-														 unselectedIconMask:[UIImage imageNamed:@"tab4Line.png"]]];
+														   selectedIconMask:[UIImage imageNamed:@"plans.png"]
+														 unselectedIconMask:[UIImage imageNamed:@"plans.png"]]];
     [vc5 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Design"
-														   selectedIconMask:[UIImage imageNamed:@"tab5Solid.png"]
-														 unselectedIconMask:[UIImage imageNamed:@"tab5Line.png"]]];
+														   selectedIconMask:[UIImage imageNamed:@"design.png"]
+														 unselectedIconMask:[UIImage imageNamed:@"design.png"]]];
     [vc6 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Notes"
-														   selectedIconMask:[UIImage imageNamed:@"tab6Solid.png"]
-														 unselectedIconMask:[UIImage imageNamed:@"tab6Line.png"]]];
+														   selectedIconMask:[UIImage imageNamed:@"notes.png"]
+														 unselectedIconMask:[UIImage imageNamed:@"notes.png"]]];
     [vc7 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"More"
-														   selectedIconMask:[UIImage imageNamed:@"tab7Solid.png"]
-														 unselectedIconMask:[UIImage imageNamed:@"tab7Line.png"]]];
+														   selectedIconMask:[UIImage imageNamed:@"more.png"]
+														 unselectedIconMask:[UIImage imageNamed:@"more.png"]]];
     
     return @[vc1, vc2, vc3, vc4, vc5, vc6, vc7];
 }

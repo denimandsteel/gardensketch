@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SidebarContentViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StructureViewController">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -14,22 +14,22 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="708"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9c-sp-Jr8">
-                    <rect key="frame" x="20" y="284" width="280" height="140"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STRUCTURE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osy-UL-vJA">
+                    <rect key="frame" x="20" y="299" width="280" height="109"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="140" id="C7T-o3-l1Y"/>
-                        <constraint firstAttribute="width" constant="280" id="XFw-HY-1ui"/>
+                        <constraint firstAttribute="width" constant="280" id="3YN-3T-3Km"/>
+                        <constraint firstAttribute="height" constant="109" id="Qbv-M6-Wyj"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.52417517944049208" blue="0.48923806322171526" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.36311706660373411" green="0.5447465746220348" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="s9c-sp-Jr8" secondAttribute="centerX" id="EJA-1t-r2s"/>
-                <constraint firstAttribute="centerY" secondItem="s9c-sp-Jr8" secondAttribute="centerY" id="GF2-TF-YnD"/>
+                <constraint firstAttribute="centerY" secondItem="Osy-UL-vJA" secondAttribute="centerY" id="Zw5-Qp-COf"/>
+                <constraint firstAttribute="centerX" secondItem="Osy-UL-vJA" secondAttribute="centerX" id="fIw-Zf-XbK"/>
             </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
