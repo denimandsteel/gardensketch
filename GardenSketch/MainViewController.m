@@ -11,6 +11,7 @@
 #import "SidebarContentViewController.h"
 #import "PropertyViewController.h"
 #import "StructureViewController.h"
+#import "PlansViewController.h"
 
 @interface MainViewController ()
 
@@ -54,7 +55,7 @@
     PropertyViewController *vc1 = [[PropertyViewController alloc] initWithNibName:@"PropertyViewController" bundle:nil];
 	StructureViewController *vc2 = [[StructureViewController alloc] initWithNibName:@"StructureViewController" bundle:nil];
 	SidebarContentViewController *vc3 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
-	SidebarContentViewController *vc4 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
+	PlansViewController *vc4 = [[PlansViewController alloc] initWithNibName:@"PlansViewController" bundle:nil];
 	SidebarContentViewController *vc5 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
 	SidebarContentViewController *vc6 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
 	SidebarContentViewController *vc7 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
@@ -73,8 +74,8 @@
 														   selectedIconMask:[UIImage imageNamed:@"north.png"]
 														 unselectedIconMask:[UIImage imageNamed:@"north.png"]]];
     [vc4 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Plans"
-														   selectedIconMask:[UIImage imageNamed:@"plans.png"]
-														 unselectedIconMask:[UIImage imageNamed:@"plans.png"]]];
+														   selectedIconMask:[UIImage imageNamed:@"plans"]
+														 unselectedIconMask:[UIImage imageNamed:@"plans"]]];
     [vc5 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Design"
 														   selectedIconMask:[UIImage imageNamed:@"design.png"]
 														 unselectedIconMask:[UIImage imageNamed:@"design.png"]]];

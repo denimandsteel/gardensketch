@@ -240,6 +240,18 @@
 		4D05DDE6194F80BF001F19A7 /* OCAThumbnailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DDE0194F80BF001F19A7 /* OCAThumbnailCell.m */; };
 		4D05DDE7194F80BF001F19A7 /* OCAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DDE2194F80BF001F19A7 /* OCAViewController.m */; };
 		4D05DDE9194F89F7001F19A7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D05DDE8194F89F7001F19A7 /* libz.dylib */; };
+		4D05DDED194F9F85001F19A7 /* plans@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DDEB194F9F85001F19A7 /* plans@2x.png */; };
+		4D05DDF1194F9FB2001F19A7 /* PlansViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DDEF194F9FB2001F19A7 /* PlansViewController.m */; };
+		4D05DDF2194F9FB2001F19A7 /* PlansViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DDF0194F9FB2001F19A7 /* PlansViewController.xib */; };
+		4D05DDF4194FB39A001F19A7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D05DDF3194FB39A001F19A7 /* Security.framework */; };
+		4D05DDF6194FB3A4001F19A7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D05DDF5194FB3A4001F19A7 /* QuartzCore.framework */; };
+		4D05DDFE194FB56C001F19A7 /* Boring.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DDF8194FB56C001F19A7 /* Boring.inkpad */; };
+		4D05DDFF194FB56C001F19A7 /* Devilish.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DDF9194FB56C001F19A7 /* Devilish.inkpad */; };
+		4D05DE00194FB56C001F19A7 /* Marker.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DDFA194FB56C001F19A7 /* Marker.inkpad */; };
+		4D05DE01194FB56C001F19A7 /* Mushroom Breakdown.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DDFB194FB56C001F19A7 /* Mushroom Breakdown.inkpad */; };
+		4D05DE02194FB56C001F19A7 /* Space.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DDFC194FB56C001F19A7 /* Space.inkpad */; };
+		4D05DE03194FB56C001F19A7 /* Toucan in the Shade.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DDFD194FB56C001F19A7 /* Toucan in the Shade.inkpad */; };
+		4D05DE06194FC4CA001F19A7 /* WDThumbnailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE05194FC4CA001F19A7 /* WDThumbnailView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -653,6 +665,19 @@
 		4D05DDE1194F80BF001F19A7 /* OCAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCAViewController.h; sourceTree = "<group>"; };
 		4D05DDE2194F80BF001F19A7 /* OCAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCAViewController.m; sourceTree = "<group>"; };
 		4D05DDE8194F89F7001F19A7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		4D05DDEB194F9F85001F19A7 /* plans@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plans@2x.png"; sourceTree = "<group>"; };
+		4D05DDEE194F9FB2001F19A7 /* PlansViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlansViewController.h; sourceTree = "<group>"; };
+		4D05DDEF194F9FB2001F19A7 /* PlansViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlansViewController.m; sourceTree = "<group>"; };
+		4D05DDF0194F9FB2001F19A7 /* PlansViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlansViewController.xib; sourceTree = "<group>"; };
+		4D05DDF3194FB39A001F19A7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4D05DDF5194FB3A4001F19A7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4D05DDF8194FB56C001F19A7 /* Boring.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Boring.inkpad; sourceTree = "<group>"; };
+		4D05DDF9194FB56C001F19A7 /* Devilish.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Devilish.inkpad; sourceTree = "<group>"; };
+		4D05DDFA194FB56C001F19A7 /* Marker.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Marker.inkpad; sourceTree = "<group>"; };
+		4D05DDFB194FB56C001F19A7 /* Mushroom Breakdown.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "Mushroom Breakdown.inkpad"; sourceTree = "<group>"; };
+		4D05DDFC194FB56C001F19A7 /* Space.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Space.inkpad; sourceTree = "<group>"; };
+		4D05DDFD194FB56C001F19A7 /* Toucan in the Shade.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "Toucan in the Shade.inkpad"; sourceTree = "<group>"; };
+		4D05DE05194FC4CA001F19A7 /* WDThumbnailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDThumbnailView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -660,11 +685,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D05DDE9194F89F7001F19A7 /* libz.dylib in Frameworks */,
+				4D05DDF6194FB3A4001F19A7 /* QuartzCore.framework in Frameworks */,
+				4D05DDF4194FB39A001F19A7 /* Security.framework in Frameworks */,
 				4D05DDD7194F8094001F19A7 /* DropboxSDK.framework in Frameworks */,
 				4D05DAEE194A70C7001F19A7 /* CoreGraphics.framework in Frameworks */,
 				4D05DAF0194A70C7001F19A7 /* UIKit.framework in Frameworks */,
 				4D05DAEC194A70C7001F19A7 /* Foundation.framework in Frameworks */,
+				4D05DDE9194F89F7001F19A7 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,6 +731,8 @@
 		4D05DAEA194A70C7001F19A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D05DDF5194FB3A4001F19A7 /* QuartzCore.framework */,
+				4D05DDF3194FB39A001F19A7 /* Security.framework */,
 				4D05DDE8194F89F7001F19A7 /* libz.dylib */,
 				4D05DDD6194F8094001F19A7 /* DropboxSDK.framework */,
 				4D05DAEB194A70C7001F19A7 /* Foundation.framework */,
@@ -717,6 +746,7 @@
 		4D05DAF1194A70C7001F19A7 /* GardenSketch */ = {
 			isa = PBXGroup;
 			children = (
+				4D05DE04194FC4B5001F19A7 /* xibs */,
 				4D05DBC7194F658F001F19A7 /* ViewControllers */,
 				4D05DB45194B820A001F19A7 /* Images */,
 				4D05DAFA194A70C7001F19A7 /* AppDelegate.h */,
@@ -808,6 +838,7 @@
 		4D05DB9F194F5C80001F19A7 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				4D05DDEB194F9F85001F19A7 /* plans@2x.png */,
 				4D05DBC8194F6664001F19A7 /* structure@2x.png */,
 				4D05DBC0194F5FD2001F19A7 /* property.png */,
 				4D05DBBD194F5FBF001F19A7 /* property@2x.png */,
@@ -844,6 +875,9 @@
 				4D05DBC2194F6347001F19A7 /* StructureViewController.h */,
 				4D05DBC3194F6347001F19A7 /* StructureViewController.m */,
 				4D05DBC4194F6347001F19A7 /* StructureViewController.xib */,
+				4D05DDEE194F9FB2001F19A7 /* PlansViewController.h */,
+				4D05DDEF194F9FB2001F19A7 /* PlansViewController.m */,
+				4D05DDF0194F9FB2001F19A7 /* PlansViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -851,6 +885,7 @@
 		4D05DBCA194F7FB4001F19A7 /* Inkpad */ = {
 			isa = PBXGroup;
 			children = (
+				4D05DDF7194FB56C001F19A7 /* Samples */,
 				4D05DD03194F8042001F19A7 /* Inkpad-Classes */,
 				4D05DBCB194F7FF1001F19A7 /* Inkpad-Core */,
 			);
@@ -1304,6 +1339,27 @@
 			path = Openclipart;
 			sourceTree = "<group>";
 		};
+		4D05DDF7194FB56C001F19A7 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				4D05DDF8194FB56C001F19A7 /* Boring.inkpad */,
+				4D05DDF9194FB56C001F19A7 /* Devilish.inkpad */,
+				4D05DDFA194FB56C001F19A7 /* Marker.inkpad */,
+				4D05DDFB194FB56C001F19A7 /* Mushroom Breakdown.inkpad */,
+				4D05DDFC194FB56C001F19A7 /* Space.inkpad */,
+				4D05DDFD194FB56C001F19A7 /* Toucan in the Shade.inkpad */,
+			);
+			path = Samples;
+			sourceTree = "<group>";
+		};
+		4D05DE04194FC4B5001F19A7 /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				4D05DE05194FC4CA001F19A7 /* WDThumbnailView.xib */,
+			);
+			name = xibs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1380,7 +1436,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D05DE02194FB56C001F19A7 /* Space.inkpad in Resources */,
 				4D05DCB6194F7FF2001F19A7 /* scale.png in Resources */,
+				4D05DDED194F9F85001F19A7 /* plans@2x.png in Resources */,
 				4D05DBB2194F5C81001F19A7 /* more.png in Resources */,
 				4D05DCBF194F7FF2001F19A7 /* star@2x.png in Resources */,
 				4D05DCB8194F7FF2001F19A7 /* scissor.png in Resources */,
@@ -1388,6 +1446,7 @@
 				4D05DB04194A70C7001F19A7 /* Images.xcassets in Resources */,
 				4D05DCA8194F7FF2001F19A7 /* groupSelect.png in Resources */,
 				4D05DCA5194F7FF2001F19A7 /* eyedropper@2x.png in Resources */,
+				4D05DE03194FB56C001F19A7 /* Toucan in the Shade.inkpad in Resources */,
 				4D05DBB9194F5C81001F19A7 /* undo.png in Resources */,
 				4D05DAF6194A70C7001F19A7 /* InfoPlist.strings in Resources */,
 				4D05DCBD194F7FF2001F19A7 /* spiral@2x.png in Resources */,
@@ -1418,11 +1477,13 @@
 				4D05DCBE194F7FF2001F19A7 /* star.png in Resources */,
 				4D05DCBB194F7FF2001F19A7 /* select@2x.png in Resources */,
 				4D05DBAE194F5C81001F19A7 /* delete.png in Resources */,
+				4D05DE01194FB56C001F19A7 /* Mushroom Breakdown.inkpad in Resources */,
 				4D05DBB0194F5C81001F19A7 /* enclosed.png in Resources */,
 				4D05DCB9194F7FF2001F19A7 /* scissor@2x.png in Resources */,
 				4D05DBC6194F6347001F19A7 /* StructureViewController.xib in Resources */,
 				4D05DCBC194F7FF2001F19A7 /* spiral.png in Resources */,
 				4D05DB24194A74FE001F19A7 /* SidebarViewController.xib in Resources */,
+				4D05DDFF194FB56C001F19A7 /* Devilish.inkpad in Resources */,
 				4D05DCAC194F7FF2001F19A7 /* line@2x.png in Resources */,
 				4D05DCA3194F7FF2001F19A7 /* eraser@2x.png in Resources */,
 				4D05DCB0194F7FF2001F19A7 /* pen@2x.png in Resources */,
@@ -1437,9 +1498,13 @@
 				4D05DBB4194F5C81001F19A7 /* notes.png in Resources */,
 				4D05DBB7194F5C81001F19A7 /* structure.png in Resources */,
 				4D05DBAD194F5C81001F19A7 /* clone.png in Resources */,
+				4D05DE06194FC4CA001F19A7 /* WDThumbnailView.xib in Resources */,
+				4D05DDFE194FB56C001F19A7 /* Boring.inkpad in Resources */,
 				4D05DCB3194F7FF2001F19A7 /* rect.png in Resources */,
 				4D05DCAE194F7FF2001F19A7 /* oval@2x.png in Resources */,
+				4D05DE00194FB56C001F19A7 /* Marker.inkpad in Resources */,
 				4D05DCA7194F7FF2001F19A7 /* freehand_shape@2x.png in Resources */,
+				4D05DDF2194F9FB2001F19A7 /* PlansViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1571,6 +1636,7 @@
 				4D05DCC9194F7FF2001F19A7 /* ShapeSweep.cpp in Sources */,
 				4D05DDAE194F8042001F19A7 /* WDEyedropper.m in Sources */,
 				4D05DDE6194F80BF001F19A7 /* OCAThumbnailCell.m in Sources */,
+				4D05DDF1194F9FB2001F19A7 /* PlansViewController.m in Sources */,
 				4D05DB3B194A7C94001F19A7 /* M13InfiniteTabBarItem.m in Sources */,
 				4D05DDE5194F80BF001F19A7 /* OCAThumbnailCache.m in Sources */,
 				4D05DC96194F7FF2001F19A7 /* UIColor+Additions.m in Sources */,

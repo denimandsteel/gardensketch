@@ -499,7 +499,7 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 - (void) createNecessaryDirectories_
 {
     NSFileManager   *fm = [NSFileManager defaultManager];
-    BOOL createSamples = NO;
+    BOOL createSamples = YES;
     
     if (![fm fileExistsAtPath:[WDDrawingManager drawingPath]]) {
         // assume this is the first time we've been run... copy over the sample drawings
@@ -509,7 +509,8 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
     [fm createDirectoryAtPath:[WDDrawingManager drawingPath] withIntermediateDirectories:YES attributes:nil error:NULL];
     
     if (createSamples) {
-        NSArray *samplePaths = [[NSBundle mainBundle] pathsForResourcesOfType:WDDrawingFileExtension inDirectory:@"Samples"];
+        NSArray *samplePaths = [[NSBundle mainBundle] pathsForResourcesOfType:WDDrawingFileExtension inDirectory:@"./"];
+		
         for (NSString *path in samplePaths) {
             [fm copyItemAtPath:path toPath:[[WDDrawingManager drawingPath] stringByAppendingPathComponent:[path lastPathComponent]] error:NULL];
         }
