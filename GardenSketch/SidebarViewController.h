@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "M13InfiniteTabBarController.h"
+#import "WDCanvasController.h"
 
 @interface SidebarViewController : M13InfiniteTabBarController
+
+@property (nonatomic, weak) WDCanvasController *canvasController;
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SidebarContentViewController.h"
 
-@interface StructureViewController : UIViewController
+@interface StructureViewController : SidebarContentViewController
 
 @end

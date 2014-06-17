@@ -66,5 +66,14 @@
     return thumbnail;
 }
 
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"did select!");
+	WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:indexPath.row withCompletionHandler:nil];
+	
+	[self.sidebar.canvasController setDocument:document];
+
+}
+
 
 @end

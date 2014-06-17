@@ -7,11 +7,32 @@
 //
 
 #import "AppDelegate.h"
+#import "WDFontManager.h"
+#import "WDInspectableProperties.h"
+#import "WDColor.h"
+#import "WDGradient.h"
 
 @implementation AppDelegate
 
+- (void)applicationDidFinishLaunching:(UIApplication *)application
+{
+	// Load the fonts at startup. Dispatch this call at the end of the main queue;
+	// It will then dispatch the real work on another queue after the app launches.
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[WDFontManager sharedInstance];
+	});
+	
+	[self clearTempDirectory];
+	
+	[self setupDefaults];
+}
+
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	[self applicationDidFinishLaunching:application];
+	
     // Override point for customization after application launch.
     return YES;
 }
@@ -42,5 +63,57 @@
 {
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+// Inkpad setup:
+
+- (void) clearTempDirectory
+{
+    NSFileManager   *fm = [NSFileManager defaultManager];
+    NSURL           *tmpURL = [NSURL fileURLWithPath:NSTemporaryDirectory()];
+    NSArray         *files = [fm contentsOfDirectoryAtURL:tmpURL includingPropertiesForKeys:[NSArray array] options:0 error:NULL];
+    
+    for (NSURL *url in files) {
+        [fm removeItemAtURL:url error:nil];
+    }
+}
+
+- (void) setupDefaults
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *defaultPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Defaults.plist"];
+    [defaults registerDefaults:[NSDictionary dictionaryWithContentsOfFile:defaultPath]];
+    
+    // Install valid defaults for various colors/gradients if necessary. These can't be encoded in the Defaults.plist.
+    if (![defaults objectForKey:WDStrokeColorProperty]) {
+        NSData *value = [NSKeyedArchiver archivedDataWithRootObject:[WDColor blackColor]];
+        [defaults setObject:value forKey:WDStrokeColorProperty];
+    }
+    
+    if (![defaults objectForKey:WDFillProperty]) {
+        NSData *value = [NSKeyedArchiver archivedDataWithRootObject:[WDColor whiteColor]];
+        [defaults setObject:value forKey:WDFillProperty];
+    }
+    
+    if (![defaults objectForKey:WDFillColorProperty]) {
+        NSData *value = [NSKeyedArchiver archivedDataWithRootObject:[WDColor whiteColor]];
+        [defaults setObject:value forKey:WDFillColorProperty];
+    }
+    
+    if (![defaults objectForKey:WDFillGradientProperty]) {
+        NSData *value = [NSKeyedArchiver archivedDataWithRootObject:[WDGradient defaultGradient]];
+        [defaults setObject:value forKey:WDFillGradientProperty];
+    }
+    
+    if (![defaults objectForKey:WDStrokeDashPatternProperty]) {
+        NSArray *dashes = @[];
+        [defaults setObject:dashes forKey:WDStrokeDashPatternProperty];
+    }
+    
+    if (![defaults objectForKey:WDShadowColorProperty]) {
+        NSData *value = [NSKeyedArchiver archivedDataWithRootObject:[WDColor colorWithRed:0 green:0 blue:0 alpha:0.333f]];
+        [defaults setObject:value forKey:WDShadowColorProperty];
+    }
+}
+
 
 @end

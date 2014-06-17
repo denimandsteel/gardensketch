@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SidebarContentViewController.h"
 
-@interface PlansViewController : UIViewController
+@interface PlansViewController : SidebarContentViewController
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 

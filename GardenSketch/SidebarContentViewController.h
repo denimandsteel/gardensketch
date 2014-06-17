@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SidebarViewController.h"
 
 @interface SidebarContentViewController : UIViewController
+
+@property (nonatomic, weak) SidebarViewController *sidebar;
 
 @end

@@ -12,6 +12,7 @@
 #import "PropertyViewController.h"
 #import "StructureViewController.h"
 #import "PlansViewController.h"
+#import "WDCanvasController.h"
 
 @interface MainViewController ()
 
@@ -29,11 +30,23 @@
 
 - (void)addChildViewControllers
 {
+	// Canvas
+	WDCanvasController *canvas = [[WDCanvasController alloc] init];
+	
+	[self addChildViewController:canvas];
+	[self.view addSubview:canvas.view];
+	[canvas didMoveToParentViewController:self];
+	
+	
+	// Sidebar
 	SidebarViewController *sidebar = [[SidebarViewController alloc] initWithNibName:@"SidebarViewController" bundle:nil];
+	
+	self.sidebar = sidebar;
+	
+	sidebar.canvasController = canvas;
 	
 	sidebar.delegate = self;
 	sidebar.enableInfiniteScrolling = NO;
-
 	
 	[self addChildViewController:sidebar];
 	sidebar.view.frame = [self frameForSidebar];
@@ -59,6 +72,10 @@
 	SidebarContentViewController *vc5 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
 	SidebarContentViewController *vc6 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
 	SidebarContentViewController *vc7 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
+	
+	for (SidebarContentViewController *contentView in @[vc1, vc2, vc3, vc4, vc5, vc6, vc7]) {
+		contentView.sidebar = self.sidebar;
+	}
     
     
     //------- end test ----------------------

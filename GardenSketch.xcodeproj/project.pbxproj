@@ -252,6 +252,27 @@
 		4D05DE02194FB56C001F19A7 /* Space.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DDFC194FB56C001F19A7 /* Space.inkpad */; };
 		4D05DE03194FB56C001F19A7 /* Toucan in the Shade.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DDFD194FB56C001F19A7 /* Toucan in the Shade.inkpad */; };
 		4D05DE06194FC4CA001F19A7 /* WDThumbnailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE05194FC4CA001F19A7 /* WDThumbnailView.xib */; };
+		4D05DE081950A8AA001F19A7 /* CanvasController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE071950A8AA001F19A7 /* CanvasController.xib */; };
+		4D05DE191950AC3F001F19A7 /* Activity.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE0A1950AC3F001F19A7 /* Activity.xib */; };
+		4D05DE1A1950AC3F001F19A7 /* Color.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE0B1950AC3F001F19A7 /* Color.xib */; };
+		4D05DE1B1950AC3F001F19A7 /* ColorBalance.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE0C1950AC3F001F19A7 /* ColorBalance.xib */; };
+		4D05DE1C1950AC3F001F19A7 /* Fill.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE0D1950AC3F001F19A7 /* Fill.xib */; };
+		4D05DE1D1950AC3F001F19A7 /* Font.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE0E1950AC3F001F19A7 /* Font.xib */; };
+		4D05DE1E1950AC3F001F19A7 /* Gradient.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE0F1950AC3F001F19A7 /* Gradient.xib */; };
+		4D05DE1F1950AC3F001F19A7 /* HueSaturation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE101950AC3F001F19A7 /* HueSaturation.xib */; };
+		4D05DE201950AC3F001F19A7 /* Import.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE111950AC3F001F19A7 /* Import.xib */; };
+		4D05DE211950AC3F001F19A7 /* LayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE121950AC3F001F19A7 /* LayerCell.xib */; };
+		4D05DE221950AC3F001F19A7 /* OpenClipArt.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE131950AC3F001F19A7 /* OpenClipArt.xib */; };
+		4D05DE231950AC3F001F19A7 /* Samples.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE141950AC3F001F19A7 /* Samples.xib */; };
+		4D05DE241950AC3F001F19A7 /* Shadow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE151950AC3F001F19A7 /* Shadow.xib */; };
+		4D05DE251950AC3F001F19A7 /* ShapeOptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE161950AC3F001F19A7 /* ShapeOptions.xib */; };
+		4D05DE261950AC3F001F19A7 /* Stroke.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE171950AC3F001F19A7 /* Stroke.xib */; };
+		4D05DE271950AC3F001F19A7 /* Text.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE181950AC3F001F19A7 /* Text.xib */; };
+		4D05DE2F1950B8CB001F19A7 /* BlendModes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE2A1950B8CB001F19A7 /* BlendModes.plist */; };
+		4D05DE301950B8CB001F19A7 /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE2B1950B8CB001F19A7 /* Defaults.plist */; };
+		4D05DE311950B8CB001F19A7 /* ImportFormats.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE2C1950B8CB001F19A7 /* ImportFormats.plist */; };
+		4D05DE321950B8CB001F19A7 /* PageSizes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE2D1950B8CB001F19A7 /* PageSizes.plist */; };
+		4D05DE331950B8CB001F19A7 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE2E1950B8CB001F19A7 /* Settings.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -678,6 +699,27 @@
 		4D05DDFC194FB56C001F19A7 /* Space.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Space.inkpad; sourceTree = "<group>"; };
 		4D05DDFD194FB56C001F19A7 /* Toucan in the Shade.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "Toucan in the Shade.inkpad"; sourceTree = "<group>"; };
 		4D05DE05194FC4CA001F19A7 /* WDThumbnailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDThumbnailView.xib; sourceTree = "<group>"; };
+		4D05DE071950A8AA001F19A7 /* CanvasController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanvasController.xib; sourceTree = "<group>"; };
+		4D05DE0A1950AC3F001F19A7 /* Activity.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Activity.xib; sourceTree = "<group>"; };
+		4D05DE0B1950AC3F001F19A7 /* Color.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Color.xib; sourceTree = "<group>"; };
+		4D05DE0C1950AC3F001F19A7 /* ColorBalance.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorBalance.xib; sourceTree = "<group>"; };
+		4D05DE0D1950AC3F001F19A7 /* Fill.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Fill.xib; sourceTree = "<group>"; };
+		4D05DE0E1950AC3F001F19A7 /* Font.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Font.xib; sourceTree = "<group>"; };
+		4D05DE0F1950AC3F001F19A7 /* Gradient.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Gradient.xib; sourceTree = "<group>"; };
+		4D05DE101950AC3F001F19A7 /* HueSaturation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HueSaturation.xib; sourceTree = "<group>"; };
+		4D05DE111950AC3F001F19A7 /* Import.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Import.xib; sourceTree = "<group>"; };
+		4D05DE121950AC3F001F19A7 /* LayerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LayerCell.xib; sourceTree = "<group>"; };
+		4D05DE131950AC3F001F19A7 /* OpenClipArt.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenClipArt.xib; sourceTree = "<group>"; };
+		4D05DE141950AC3F001F19A7 /* Samples.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Samples.xib; sourceTree = "<group>"; };
+		4D05DE151950AC3F001F19A7 /* Shadow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Shadow.xib; sourceTree = "<group>"; };
+		4D05DE161950AC3F001F19A7 /* ShapeOptions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShapeOptions.xib; sourceTree = "<group>"; };
+		4D05DE171950AC3F001F19A7 /* Stroke.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Stroke.xib; sourceTree = "<group>"; };
+		4D05DE181950AC3F001F19A7 /* Text.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Text.xib; sourceTree = "<group>"; };
+		4D05DE2A1950B8CB001F19A7 /* BlendModes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BlendModes.plist; sourceTree = "<group>"; };
+		4D05DE2B1950B8CB001F19A7 /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
+		4D05DE2C1950B8CB001F19A7 /* ImportFormats.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ImportFormats.plist; sourceTree = "<group>"; };
+		4D05DE2D1950B8CB001F19A7 /* PageSizes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PageSizes.plist; sourceTree = "<group>"; };
+		4D05DE2E1950B8CB001F19A7 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -878,6 +920,7 @@
 				4D05DDEE194F9FB2001F19A7 /* PlansViewController.h */,
 				4D05DDEF194F9FB2001F19A7 /* PlansViewController.m */,
 				4D05DDF0194F9FB2001F19A7 /* PlansViewController.xib */,
+				4D05DE071950A8AA001F19A7 /* CanvasController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -885,6 +928,8 @@
 		4D05DBCA194F7FB4001F19A7 /* Inkpad */ = {
 			isa = PBXGroup;
 			children = (
+				4D05DE291950B8CB001F19A7 /* PLists */,
+				4D05DE091950AC25001F19A7 /* XIB */,
 				4D05DDF7194FB56C001F19A7 /* Samples */,
 				4D05DD03194F8042001F19A7 /* Inkpad-Classes */,
 				4D05DBCB194F7FF1001F19A7 /* Inkpad-Core */,
@@ -1360,6 +1405,40 @@
 			name = xibs;
 			sourceTree = "<group>";
 		};
+		4D05DE091950AC25001F19A7 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				4D05DE0A1950AC3F001F19A7 /* Activity.xib */,
+				4D05DE0B1950AC3F001F19A7 /* Color.xib */,
+				4D05DE0C1950AC3F001F19A7 /* ColorBalance.xib */,
+				4D05DE0D1950AC3F001F19A7 /* Fill.xib */,
+				4D05DE0E1950AC3F001F19A7 /* Font.xib */,
+				4D05DE0F1950AC3F001F19A7 /* Gradient.xib */,
+				4D05DE101950AC3F001F19A7 /* HueSaturation.xib */,
+				4D05DE111950AC3F001F19A7 /* Import.xib */,
+				4D05DE121950AC3F001F19A7 /* LayerCell.xib */,
+				4D05DE131950AC3F001F19A7 /* OpenClipArt.xib */,
+				4D05DE141950AC3F001F19A7 /* Samples.xib */,
+				4D05DE151950AC3F001F19A7 /* Shadow.xib */,
+				4D05DE161950AC3F001F19A7 /* ShapeOptions.xib */,
+				4D05DE171950AC3F001F19A7 /* Stroke.xib */,
+				4D05DE181950AC3F001F19A7 /* Text.xib */,
+			);
+			name = XIB;
+			sourceTree = "<group>";
+		};
+		4D05DE291950B8CB001F19A7 /* PLists */ = {
+			isa = PBXGroup;
+			children = (
+				4D05DE2A1950B8CB001F19A7 /* BlendModes.plist */,
+				4D05DE2B1950B8CB001F19A7 /* Defaults.plist */,
+				4D05DE2C1950B8CB001F19A7 /* ImportFormats.plist */,
+				4D05DE2D1950B8CB001F19A7 /* PageSizes.plist */,
+				4D05DE2E1950B8CB001F19A7 /* Settings.plist */,
+			);
+			path = PLists;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1437,29 +1516,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D05DE02194FB56C001F19A7 /* Space.inkpad in Resources */,
+				4D05DE241950AC3F001F19A7 /* Shadow.xib in Resources */,
 				4D05DCB6194F7FF2001F19A7 /* scale.png in Resources */,
+				4D05DE251950AC3F001F19A7 /* ShapeOptions.xib in Resources */,
 				4D05DDED194F9F85001F19A7 /* plans@2x.png in Resources */,
 				4D05DBB2194F5C81001F19A7 /* more.png in Resources */,
 				4D05DCBF194F7FF2001F19A7 /* star@2x.png in Resources */,
+				4D05DE2F1950B8CB001F19A7 /* BlendModes.plist in Resources */,
 				4D05DCB8194F7FF2001F19A7 /* scissor.png in Resources */,
 				4D05DC9F194F7FF2001F19A7 /* add_anchor@2x.png in Resources */,
 				4D05DB04194A70C7001F19A7 /* Images.xcassets in Resources */,
 				4D05DCA8194F7FF2001F19A7 /* groupSelect.png in Resources */,
+				4D05DE191950AC3F001F19A7 /* Activity.xib in Resources */,
+				4D05DE201950AC3F001F19A7 /* Import.xib in Resources */,
 				4D05DCA5194F7FF2001F19A7 /* eyedropper@2x.png in Resources */,
 				4D05DE03194FB56C001F19A7 /* Toucan in the Shade.inkpad in Resources */,
 				4D05DBB9194F5C81001F19A7 /* undo.png in Resources */,
+				4D05DE231950AC3F001F19A7 /* Samples.xib in Resources */,
 				4D05DAF6194A70C7001F19A7 /* InfoPlist.strings in Resources */,
 				4D05DCBD194F7FF2001F19A7 /* spiral@2x.png in Resources */,
 				4D05DCC1194F7FF2001F19A7 /* text@2x.png in Resources */,
 				4D05DCA6194F7FF2001F19A7 /* freehand_shape.png in Resources */,
 				4D05DCB2194F7FF2001F19A7 /* polygon@2x.png in Resources */,
 				4D05DCB1194F7FF2001F19A7 /* polygon.png in Resources */,
+				4D05DE1E1950AC3F001F19A7 /* Gradient.xib in Resources */,
 				4D05DBC1194F5FD2001F19A7 /* property.png in Resources */,
+				4D05DE301950B8CB001F19A7 /* Defaults.plist in Resources */,
 				4D05DAFF194A70C7001F19A7 /* Main.storyboard in Resources */,
 				4D05DB44194B7ED8001F19A7 /* SidebarContentViewController.xib in Resources */,
+				4D05DE331950B8CB001F19A7 /* Settings.plist in Resources */,
 				4D05DCAB194F7FF2001F19A7 /* line.png in Resources */,
 				4D05DCAA194F7FF2001F19A7 /* hand.png in Resources */,
 				4D05DB9E194BB109001F19A7 /* PropertyViewController.xib in Resources */,
+				4D05DE1A1950AC3F001F19A7 /* Color.xib in Resources */,
 				4D05DCB7194F7FF2001F19A7 /* scale@2x.png in Resources */,
 				4D05DCA9194F7FF2001F19A7 /* groupSelect@2x.png in Resources */,
 				4D05DBB1194F5C81001F19A7 /* freehand.png in Resources */,
@@ -1469,9 +1558,12 @@
 				4D05DCE7194F7FF2001F19A7 /* SVGColors.plist in Resources */,
 				4D05DC9E194F7FF2001F19A7 /* add_anchor.png in Resources */,
 				4D05DCBA194F7FF2001F19A7 /* select.png in Resources */,
+				4D05DE1B1950AC3F001F19A7 /* ColorBalance.xib in Resources */,
 				4D05DBAF194F5C81001F19A7 /* design.png in Resources */,
 				4D05DBB8194F5C81001F19A7 /* switcher.png in Resources */,
+				4D05DE261950AC3F001F19A7 /* Stroke.xib in Resources */,
 				4D05DCAF194F7FF2001F19A7 /* pen.png in Resources */,
+				4D05DE321950B8CB001F19A7 /* PageSizes.plist in Resources */,
 				4D05DBC9194F6664001F19A7 /* structure@2x.png in Resources */,
 				4D05DBB5194F5C81001F19A7 /* plans.png in Resources */,
 				4D05DCBE194F7FF2001F19A7 /* star.png in Resources */,
@@ -1479,13 +1571,17 @@
 				4D05DBAE194F5C81001F19A7 /* delete.png in Resources */,
 				4D05DE01194FB56C001F19A7 /* Mushroom Breakdown.inkpad in Resources */,
 				4D05DBB0194F5C81001F19A7 /* enclosed.png in Resources */,
+				4D05DE1D1950AC3F001F19A7 /* Font.xib in Resources */,
 				4D05DCB9194F7FF2001F19A7 /* scissor@2x.png in Resources */,
 				4D05DBC6194F6347001F19A7 /* StructureViewController.xib in Resources */,
+				4D05DE1C1950AC3F001F19A7 /* Fill.xib in Resources */,
 				4D05DCBC194F7FF2001F19A7 /* spiral.png in Resources */,
 				4D05DB24194A74FE001F19A7 /* SidebarViewController.xib in Resources */,
+				4D05DE311950B8CB001F19A7 /* ImportFormats.plist in Resources */,
 				4D05DDFF194FB56C001F19A7 /* Devilish.inkpad in Resources */,
 				4D05DCAC194F7FF2001F19A7 /* line@2x.png in Resources */,
 				4D05DCA3194F7FF2001F19A7 /* eraser@2x.png in Resources */,
+				4D05DE211950AC3F001F19A7 /* LayerCell.xib in Resources */,
 				4D05DCB0194F7FF2001F19A7 /* pen@2x.png in Resources */,
 				4D05DCA0194F7FF2001F19A7 /* brush.png in Resources */,
 				4D05DCA1194F7FF2001F19A7 /* brush@2x.png in Resources */,
@@ -1493,6 +1589,7 @@
 				4D05DCAD194F7FF2001F19A7 /* oval.png in Resources */,
 				4D05DCB5194F7FF2001F19A7 /* rotate@2x.png in Resources */,
 				4D05DCA2194F7FF2001F19A7 /* eraser.png in Resources */,
+				4D05DE221950AC3F001F19A7 /* OpenClipArt.xib in Resources */,
 				4D05DBBF194F5FBF001F19A7 /* property@2x.png in Resources */,
 				4D05DCC0194F7FF2001F19A7 /* text.png in Resources */,
 				4D05DBB4194F5C81001F19A7 /* notes.png in Resources */,
@@ -1503,6 +1600,9 @@
 				4D05DCB3194F7FF2001F19A7 /* rect.png in Resources */,
 				4D05DCAE194F7FF2001F19A7 /* oval@2x.png in Resources */,
 				4D05DE00194FB56C001F19A7 /* Marker.inkpad in Resources */,
+				4D05DE081950A8AA001F19A7 /* CanvasController.xib in Resources */,
+				4D05DE271950AC3F001F19A7 /* Text.xib in Resources */,
+				4D05DE1F1950AC3F001F19A7 /* HueSaturation.xib in Resources */,
 				4D05DCA7194F7FF2001F19A7 /* freehand_shape@2x.png in Resources */,
 				4D05DDF2194F9FB2001F19A7 /* PlansViewController.xib in Resources */,
 			);

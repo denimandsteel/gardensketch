@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SidebarContentViewController.h"
 
-@interface PropertyViewController : UIViewController
+@interface PropertyViewController : SidebarContentViewController
 
 @end
