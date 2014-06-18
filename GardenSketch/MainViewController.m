@@ -13,6 +13,7 @@
 #import "StructureViewController.h"
 #import "PlansViewController.h"
 #import "WDCanvasController.h"
+#import "DesignViewController.h"
 
 @interface MainViewController ()
 
@@ -36,7 +37,6 @@
 	[self addChildViewController:canvas];
 	[self.view addSubview:canvas.view];
 	[canvas didMoveToParentViewController:self];
-	
 	
 	// Sidebar
 	SidebarViewController *sidebar = [[SidebarViewController alloc] initWithNibName:@"SidebarViewController" bundle:nil];
@@ -69,7 +69,7 @@
 	StructureViewController *vc2 = [[StructureViewController alloc] initWithNibName:@"StructureViewController" bundle:nil];
 	SidebarContentViewController *vc3 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
 	PlansViewController *vc4 = [[PlansViewController alloc] initWithNibName:@"PlansViewController" bundle:nil];
-	SidebarContentViewController *vc5 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
+	DesignViewController *vc5 = [[DesignViewController alloc] initWithNibName:@"DesignViewController" bundle:nil];
 	SidebarContentViewController *vc6 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
 	SidebarContentViewController *vc7 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
 	

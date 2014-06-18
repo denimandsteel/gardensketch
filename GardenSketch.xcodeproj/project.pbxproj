@@ -273,6 +273,8 @@
 		4D05DE311950B8CB001F19A7 /* ImportFormats.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE2C1950B8CB001F19A7 /* ImportFormats.plist */; };
 		4D05DE321950B8CB001F19A7 /* PageSizes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE2D1950B8CB001F19A7 /* PageSizes.plist */; };
 		4D05DE331950B8CB001F19A7 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE2E1950B8CB001F19A7 /* Settings.plist */; };
+		4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D862ECA1952043A0066A848 /* DesignViewController.m */; };
+		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -720,6 +722,9 @@
 		4D05DE2C1950B8CB001F19A7 /* ImportFormats.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ImportFormats.plist; sourceTree = "<group>"; };
 		4D05DE2D1950B8CB001F19A7 /* PageSizes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PageSizes.plist; sourceTree = "<group>"; };
 		4D05DE2E1950B8CB001F19A7 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
+		4D862EC91952043A0066A848 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
+		4D862ECA1952043A0066A848 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
+		4D862ECB1952043A0066A848 /* DesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -788,6 +793,7 @@
 		4D05DAF1194A70C7001F19A7 /* GardenSketch */ = {
 			isa = PBXGroup;
 			children = (
+				4D05DBCA194F7FB4001F19A7 /* Inkpad */,
 				4D05DE04194FC4B5001F19A7 /* xibs */,
 				4D05DBC7194F658F001F19A7 /* ViewControllers */,
 				4D05DB45194B820A001F19A7 /* Images */,
@@ -833,7 +839,6 @@
 			isa = PBXGroup;
 			children = (
 				4D05DDD8194F80BF001F19A7 /* Openclipart */,
-				4D05DBCA194F7FB4001F19A7 /* Inkpad */,
 				4D05DB29194A7C94001F19A7 /* M13InfiniteTabBar */,
 			);
 			name = ext;
@@ -921,6 +926,9 @@
 				4D05DDEF194F9FB2001F19A7 /* PlansViewController.m */,
 				4D05DDF0194F9FB2001F19A7 /* PlansViewController.xib */,
 				4D05DE071950A8AA001F19A7 /* CanvasController.xib */,
+				4D862EC91952043A0066A848 /* DesignViewController.h */,
+				4D862ECA1952043A0066A848 /* DesignViewController.m */,
+				4D862ECB1952043A0066A848 /* DesignViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -935,6 +943,7 @@
 				4D05DBCB194F7FF1001F19A7 /* Inkpad-Core */,
 			);
 			name = Inkpad;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		4D05DBCB194F7FF1001F19A7 /* Inkpad-Core */ = {
@@ -1526,6 +1535,7 @@
 				4D05DCB8194F7FF2001F19A7 /* scissor.png in Resources */,
 				4D05DC9F194F7FF2001F19A7 /* add_anchor@2x.png in Resources */,
 				4D05DB04194A70C7001F19A7 /* Images.xcassets in Resources */,
+				4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */,
 				4D05DCA8194F7FF2001F19A7 /* groupSelect.png in Resources */,
 				4D05DE191950AC3F001F19A7 /* Activity.xib in Resources */,
 				4D05DE201950AC3F001F19A7 /* Import.xib in Resources */,
@@ -1750,6 +1760,7 @@
 				4D05DB39194A7C94001F19A7 /* M13InfiniteTabBar.m in Sources */,
 				4D05DCDD194F7FF2001F19A7 /* WDPath.m in Sources */,
 				4D05DDAC194F8042001F19A7 /* WDEventForwardingView.m in Sources */,
+				4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */,
 				4D05DCFC194F7FF2001F19A7 /* WDShapeTool.m in Sources */,
 				4D05DDA6194F8042001F19A7 /* WDCoreTextLabel.m in Sources */,
 				4D05DDC5194F8042001F19A7 /* WDRulerView.m in Sources */,
@@ -2001,6 +2012,7 @@
 				4D05DB1C194A70C7001F19A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D05DB1D194A70C7001F19A7 /* Build configuration list for PBXNativeTarget "GardenSketchTests" */ = {
 			isa = XCConfigurationList;
@@ -2009,6 +2021,7 @@
 				4D05DB1F194A70C7001F19A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
