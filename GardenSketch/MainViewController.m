@@ -77,7 +77,6 @@
 		contentView.sidebar = self.sidebar;
 	}
     
-    
     //------- end test ----------------------
     
     //You probably want to set this on the UIViewController initalization, from within the UIViewController subclass. I'm just doing it here since each tab inherits from the same subclass.
@@ -88,14 +87,14 @@
 														   selectedIconMask:[UIImage imageNamed:@"structure"]
 														 unselectedIconMask:[UIImage imageNamed:@"structure"]]];
     [vc3 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"North"
-														   selectedIconMask:[UIImage imageNamed:@"north.png"]
-														 unselectedIconMask:[UIImage imageNamed:@"north.png"]]];
+														   selectedIconMask:[UIImage imageNamed:@"north"]
+														 unselectedIconMask:[UIImage imageNamed:@"north"]]];
     [vc4 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Plans"
 														   selectedIconMask:[UIImage imageNamed:@"plans"]
 														 unselectedIconMask:[UIImage imageNamed:@"plans"]]];
     [vc5 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Design"
-														   selectedIconMask:[UIImage imageNamed:@"design.png"]
-														 unselectedIconMask:[UIImage imageNamed:@"design.png"]]];
+														   selectedIconMask:[UIImage imageNamed:@"design"]
+														 unselectedIconMask:[UIImage imageNamed:@"design"]]];
     [vc6 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Notes"
 														   selectedIconMask:[UIImage imageNamed:@"notes.png"]
 														 unselectedIconMask:[UIImage imageNamed:@"notes.png"]]];

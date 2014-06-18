@@ -1177,7 +1177,12 @@
 
 - (void)loadView
 {
-    canvas_ = [[WDCanvas alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    CGRect bounds = [[UIScreen mainScreen] bounds]; // portrait bounds
+	if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
+		bounds.size = CGSizeMake(bounds.size.height, bounds.size.width);
+	}
+    canvas_ = [[WDCanvas alloc] initWithFrame:bounds];
+	
     canvas_.controller = self;
     self.view = canvas_;
     

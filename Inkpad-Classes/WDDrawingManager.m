@@ -266,7 +266,7 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 - (BOOL) createNewDrawingWithImage:(UIImage *)image imageName:(NSString *)imageName drawingName:(NSString *)drawingName
 {
     if (!image) {
-        return nil;
+        return NO;
     }
     
     image = [image downsampleWithMaxArea:4096*4096];

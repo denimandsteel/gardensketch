@@ -81,7 +81,7 @@ NSString *WDCanvasBeganTrackingTouches = @"WDCanvasBeganTrackingTouches";
     selectionView_.canvas = self;
     
     self.multipleTouchEnabled = YES;
-    self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.contentMode = UIViewContentModeCenter;
     self.exclusiveTouch = YES;
     self.clearsContextBeforeDrawing = YES;
@@ -1035,7 +1035,8 @@ NSString *WDCanvasBeganTrackingTouches = @"WDCanvasBeganTrackingTouches";
         [[NSBundle mainBundle] loadNibNamed:@"Activity" owner:self options:nil];
     }
     
-    activityView_.sharpCenter = WDCenterOfRect(self.bounds);
+	CGPoint center = WDCenterOfRect(self.bounds);
+    activityView_.sharpCenter = center;
     [self addSubview:activityView_];
     
     CALayer *layer = activityView_.layer;
