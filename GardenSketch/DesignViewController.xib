@@ -60,7 +60,7 @@
                     <state key="normal" image="enclosed.png"/>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.95587543270305908" blue="0.69363249370549318" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.96677564538043481" green="0.96677564538043481" blue="0.96677564538043481" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>

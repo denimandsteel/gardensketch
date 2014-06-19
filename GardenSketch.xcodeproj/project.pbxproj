@@ -273,6 +273,7 @@
 		4D081BD2195351AC00F8871C /* Devilish.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BCE195351AC00F8871C /* Devilish.inkpad */; };
 		4D081BD3195351AC00F8871C /* Space.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BCF195351AC00F8871C /* Space.inkpad */; };
 		4D081BD4195351AC00F8871C /* Toucan in the Shade.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BD0195351AC00F8871C /* Toucan in the Shade.inkpad */; };
+		4D081BD619538D7400F8871C /* NewPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BD519538D7400F8871C /* NewPlanCell.xib */; };
 		4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D862ECA1952043A0066A848 /* DesignViewController.m */; };
 		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
 /* End PBXBuildFile section */
@@ -722,6 +723,7 @@
 		4D081BCE195351AC00F8871C /* Devilish.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Devilish.inkpad; sourceTree = "<group>"; };
 		4D081BCF195351AC00F8871C /* Space.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Space.inkpad; sourceTree = "<group>"; };
 		4D081BD0195351AC00F8871C /* Toucan in the Shade.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "Toucan in the Shade.inkpad"; sourceTree = "<group>"; };
+		4D081BD519538D7400F8871C /* NewPlanCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewPlanCell.xib; sourceTree = "<group>"; };
 		4D862EC91952043A0066A848 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		4D862ECA1952043A0066A848 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		4D862ECB1952043A0066A848 /* DesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignViewController.xib; sourceTree = "<group>"; };
@@ -1410,6 +1412,7 @@
 			isa = PBXGroup;
 			children = (
 				4D05DE05194FC4CA001F19A7 /* WDThumbnailView.xib */,
+				4D081BD519538D7400F8871C /* NewPlanCell.xib */,
 			);
 			name = xibs;
 			sourceTree = "<group>";
@@ -1601,6 +1604,7 @@
 				4D081BD2195351AC00F8871C /* Devilish.inkpad in Resources */,
 				4D05DE221950AC3F001F19A7 /* OpenClipArt.xib in Resources */,
 				4D081BD4195351AC00F8871C /* Toucan in the Shade.inkpad in Resources */,
+				4D081BD619538D7400F8871C /* NewPlanCell.xib in Resources */,
 				4D05DBBF194F5FBF001F19A7 /* property@2x.png in Resources */,
 				4D05DCC0194F7FF2001F19A7 /* text.png in Resources */,
 				4D05DBB4194F5C81001F19A7 /* notes.png in Resources */,
