@@ -41,6 +41,11 @@
                                                  name:WDDrawingAdded
                                                object:nil];
 	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(drawingsDeleted:)
+                                                 name:WDDrawingsDeleted
+                                               object:nil];
+	
 	[self.collectionView registerNib:[UINib nibWithNibName:@"WDThumbnailView" bundle:nil] forCellWithReuseIdentifier:@"cellID"];
 	[self.collectionView registerNib:[UINib nibWithNibName:@"NewPlanCell" bundle:nil] forCellWithReuseIdentifier:@"newCellID"];
 }
@@ -126,6 +131,12 @@
     NSUInteger count = [[WDDrawingManager sharedInstance] numberOfDrawings] - 1;
     NSArray *indexPaths = @[[NSIndexPath indexPathForItem:count inSection:0]];
     [self.collectionView insertItemsAtIndexPaths:indexPaths];
+}
+
+- (void) drawingsDeleted:(NSNotification *)aNotification
+{
+    NSArray *indexPaths = aNotification.object;
+    [self.collectionView deleteItemsAtIndexPaths:indexPaths];
 }
 
 #pragma mark -

@@ -25,6 +25,19 @@
 @property (nonatomic, readonly) WDImageView *imageView;
 @property (nonatomic, assign) BOOL shouldShowSelectionIndicator;
 
+@property (weak, nonatomic) IBOutlet UIView *actionView;
+@property (weak, nonatomic) IBOutlet UIButton *duplicatePlanButton;
+@property (weak, nonatomic) IBOutlet UIButton *sharePlanButton;
+@property (weak, nonatomic) IBOutlet UIButton *deletePlanButton;
+
+// actions:
+- (void)showActions;
+- (void)hideActions;
+- (IBAction)copyTapped:(id)sender;
+- (IBAction)shareTapped:(id)sender;
+- (IBAction)deleteTapped:(id)sender;
+
+
 // image management
 - (void) reload;
 

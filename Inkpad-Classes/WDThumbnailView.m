@@ -68,6 +68,12 @@
 - (void) setSelected:(BOOL)flag
 {
     [super setSelected:flag];
+	
+	if (flag) {
+		[self showActions];
+	} else {
+		[self hideActions];
+	}
     
     if (!shouldShowSelectionIndicator) {
         [selectedIndicator_ removeFromSuperview];
@@ -76,7 +82,8 @@
     }
     
     if (flag) {
-        if (!selectedIndicator_) {
+		
+		if (!selectedIndicator_) {
             UIImage *checkmark = [UIImage imageNamed:@"checkmark.png"];
             selectedIndicator_ = [[UIImageView alloc] initWithImage:checkmark];
             [self addSubview:selectedIndicator_];
@@ -84,8 +91,8 @@
         
         CGPoint center = CGPointMake(CGRectGetMaxX(imageView_.frame) - 5, CGRectGetMaxY(imageView_.frame) - 5);
         selectedIndicator_.sharpCenter = center;
-    } else if (!flag && selectedIndicator_){
-        [UIView animateWithDuration:0.1f
+    } else if (!flag && selectedIndicator_) {
+		[UIView animateWithDuration:0.1f
                          animations:^{ selectedIndicator_.alpha = 0; }
                          completion:^(BOOL finished){
                              [selectedIndicator_ removeFromSuperview];
@@ -251,11 +258,11 @@
 - (void) setHighlighted:(BOOL)highlighted
 {
     if (highlighted) {
-        UIView *view = [[UIView alloc] initWithFrame:imageView_.bounds];
+		UIView *view = [[UIView alloc] initWithFrame:imageView_.bounds];
         view.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.25f];
         [imageView_ addSubview:view];
     } else {
-        [[[imageView_ subviews] lastObject] removeFromSuperview];
+		[[[imageView_ subviews] lastObject] removeFromSuperview];
     }
 }
 
@@ -307,6 +314,35 @@
         activityView_ = nil;
     }
 }
+
+#pragma mark - plan actions
+
+- (void)showActions
+{
+	[self.actionView setHidden:NO];
+}
+
+- (void)hideActions
+{
+	[self.actionView setHidden:YES];
+}
+
+- (IBAction)copyTapped:(id)sender {
+}
+
+- (IBAction)shareTapped:(id)sender {
+}
+
+- (IBAction)deleteTapped:(id)sender {
+	[self deletePlan];
+}
+
+- (void) deletePlan
+{
+	NSMutableSet *toDelete = [NSMutableSet setWithObject:filename_];
+	[[WDDrawingManager sharedInstance] deleteDrawings:toDelete];
+}
+
 
 @end
 
