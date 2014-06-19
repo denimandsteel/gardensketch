@@ -44,42 +44,45 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 - (NSArray *) tools
 {
     if (!tools_) {
-        WDSelectionTool *groupSelect = (WDSelectionTool *) [WDSelectionTool tool];
-        groupSelect.groupSelect = YES;
+//        WDSelectionTool *groupSelect = (WDSelectionTool *) [WDSelectionTool tool];
+//        groupSelect.groupSelect = YES;
         
         WDFreehandTool *closedFreehand = (WDFreehandTool *) [WDFreehandTool tool];
         closedFreehand.closeShape = YES;
         
-        WDShapeTool *oval = (WDShapeTool *) [WDShapeTool tool];
-        oval.shapeMode = WDShapeOval;
+//        WDShapeTool *oval = (WDShapeTool *) [WDShapeTool tool];
+//        oval.shapeMode = WDShapeOval;
+//        
+//        WDShapeTool *rect = (WDShapeTool *) [WDShapeTool tool];
+//        rect.shapeMode = WDShapeRectangle;
+//        
+//        WDShapeTool *star = (WDShapeTool *) [WDShapeTool tool];
+//        star.shapeMode = WDShapeStar;
+//        
+//        WDShapeTool *poly = (WDShapeTool *) [WDShapeTool tool];
+//        poly.shapeMode = WDShapePolygon;
+//        
+//        WDShapeTool *line = (WDShapeTool *) [WDShapeTool tool];
+//        line.shapeMode = WDShapeLine;
+//        
+//        WDShapeTool *spiral = (WDShapeTool *) [WDShapeTool tool];
+//        spiral.shapeMode = WDShapeSpiral;
         
-        WDShapeTool *rect = (WDShapeTool *) [WDShapeTool tool];
-        rect.shapeMode = WDShapeRectangle;
-        
-        WDShapeTool *star = (WDShapeTool *) [WDShapeTool tool];
-        star.shapeMode = WDShapeStar;
-        
-        WDShapeTool *poly = (WDShapeTool *) [WDShapeTool tool];
-        poly.shapeMode = WDShapePolygon;
-        
-        WDShapeTool *line = (WDShapeTool *) [WDShapeTool tool];
-        line.shapeMode = WDShapeLine;
-        
-        WDShapeTool *spiral = (WDShapeTool *) [WDShapeTool tool];
-        spiral.shapeMode = WDShapeSpiral;
-        
-        tools_ = @[[WDSelectionTool tool],
-                   groupSelect,
-                   [WDPenTool tool],
-                   [WDAddAnchorTool tool],
-                   [WDScissorTool tool],
-                   @[[WDFreehandTool tool], closedFreehand],
-                   [WDEraserTool tool],
-                   @[rect, oval, star, poly, spiral, line],
-                   [WDTextTool tool],
-                   [WDEyedropperTool tool],
-                   [WDScaleTool tool],
-                   [WDRotateTool tool]];
+//        tools_ = @[[WDSelectionTool tool],
+//                   groupSelect,
+//                   [WDPenTool tool],
+//                   [WDAddAnchorTool tool],
+//                   [WDScissorTool tool],
+//                   @[[WDFreehandTool tool], closedFreehand],
+//                   [WDEraserTool tool],
+//                   @[rect, oval, star, poly, spiral, line],
+//                   [WDTextTool tool],
+//                   [WDEyedropperTool tool],
+//                   [WDScaleTool tool],
+//                   [WDRotateTool tool]];
+		tools_ = @[[WDSelectionTool tool],
+                   [WDFreehandTool tool],
+				   closedFreehand];
     }
     
     return tools_;

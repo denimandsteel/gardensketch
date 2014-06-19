@@ -9,6 +9,8 @@
 #import "DesignViewController.h"
 #import "WDDocument.h"
 #import "WDDrawingManager.h"
+#import "WDToolManager.h"
+#import "WDFreehandTool.h"
 
 @interface DesignViewController ()
 
@@ -39,7 +41,8 @@
                                              selector:@selector(drawingChanged:)
                                                  name:UIDocumentStateChangedNotification
                                                object:nil];
-
+	
+	[self initTools];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,43 +51,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (void) chooseTool:(id)sender
-//{
-//    if (self.owner) {
-//        [self.owner didChooseTool:self];
-//    }
-//    
-//    [WDToolManager sharedInstance].activeTool = ((WDToolButton *)sender).tool;
-//}
-//
-//- (void) setTools:(NSArray *)tools
-//{
-//    tools_ = tools;
-//	
-//    // build tool buttons
-//    CGRect buttonRect = CGRectMake(0, 0, [WDToolButton dimension], [WDToolButton dimension]);
-//    
-//    for (id tool in tools_) {
-//        WDToolButton *button = [WDToolButton buttonWithType:UIButtonTypeCustom];
-//        
-//        if ([tool isKindOfClass:[NSArray class]]) {
-//            button.tools = tool;
-//        } else {
-//            button.tool = tool;
-//        }
-//        
-//        button.frame = buttonRect;
-//        [button addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-//        [self addSubview:button];
-//        
-//        if (tool == [WDToolManager sharedInstance].activeTool) {
-//            button.selected = YES;
-//        }
-//        
-//        buttonRect = CGRectOffset(buttonRect, 0, [WDToolButton dimension]);
-//    }
-//}
-
+#pragma mark Plan Navigation
 
 // Needs to save the current plan, and open prev or next one
 - (IBAction)changePlan:(id)sender {
@@ -108,11 +75,52 @@
 	}
 	
 	// TODO: make sure current document is saved
+	// TODO: make sure the selection view is cleared, selected path points show up in the next plan
 	
 	WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:planIndex withCompletionHandler:nil];
 	[self.sidebar.canvasController setDocument:document];
 	
 }
+
+#pragma mark Tools
+
+- (void) chooseTool:(id)sender
+{
+	//    if (self.owner) {
+	//        [self.owner didChooseTool:self];
+	//    }
+    
+    [WDToolManager sharedInstance].activeTool = ((WDToolButton *)sender).tool;
+}
+
+//
+//- (void) setTools:(NSArray *)tools
+//{
+//    tools_ = tools;
+//
+//    // build tool buttons
+//    CGRect buttonRect = CGRectMake(0, 0, [WDToolButton dimension], [WDToolButton dimension]);
+//
+//    for (id tool in tools_) {
+//        WDToolButton *button = [WDToolButton buttonWithType:UIButtonTypeCustom];
+//
+//        if ([tool isKindOfClass:[NSArray class]]) {
+//            button.tools = tool;
+//        } else {
+//            button.tool = tool;
+//        }
+//
+//        button.frame = buttonRect;
+//        [button addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+//        [self addSubview:button];
+//
+//        if (tool == [WDToolManager sharedInstance].activeTool) {
+//            button.selected = YES;
+//        }
+//
+//        buttonRect = CGRectOffset(buttonRect, 0, [WDToolButton dimension]);
+//    }
+//}
 
 - (void) drawingChanged:(NSNotification *)aNotification
 {
@@ -121,5 +129,26 @@
     [self.planNameLabel setText:document.displayName];
 }
 
+- (void) initTools
+{
+	WDTool *freehand = nil;
+	WDTool *enclosed = nil;
+	
+	for (WDTool *tool in [WDToolManager sharedInstance].tools) {
+		if ([tool isKindOfClass:[WDFreehandTool class]]) {
+			if ([(WDFreehandTool *)tool closeShape]) {
+				enclosed = tool;
+			} else {
+				freehand = tool;
+			}
+		}
+	}
+	
+	self.freehandButton.tool = freehand;
+	[self.freehandButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	self.enclosedButton.tool = enclosed;
+	[self.enclosedButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+}
 
 @end

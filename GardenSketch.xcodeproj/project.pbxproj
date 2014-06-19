@@ -245,12 +245,8 @@
 		4D05DDF2194F9FB2001F19A7 /* PlansViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DDF0194F9FB2001F19A7 /* PlansViewController.xib */; };
 		4D05DDF4194FB39A001F19A7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D05DDF3194FB39A001F19A7 /* Security.framework */; };
 		4D05DDF6194FB3A4001F19A7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D05DDF5194FB3A4001F19A7 /* QuartzCore.framework */; };
-		4D05DDFE194FB56C001F19A7 /* Boring.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DDF8194FB56C001F19A7 /* Boring.inkpad */; };
-		4D05DDFF194FB56C001F19A7 /* Devilish.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DDF9194FB56C001F19A7 /* Devilish.inkpad */; };
 		4D05DE00194FB56C001F19A7 /* Marker.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DDFA194FB56C001F19A7 /* Marker.inkpad */; };
 		4D05DE01194FB56C001F19A7 /* Mushroom Breakdown.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DDFB194FB56C001F19A7 /* Mushroom Breakdown.inkpad */; };
-		4D05DE02194FB56C001F19A7 /* Space.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DDFC194FB56C001F19A7 /* Space.inkpad */; };
-		4D05DE03194FB56C001F19A7 /* Toucan in the Shade.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DDFD194FB56C001F19A7 /* Toucan in the Shade.inkpad */; };
 		4D05DE06194FC4CA001F19A7 /* WDThumbnailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE05194FC4CA001F19A7 /* WDThumbnailView.xib */; };
 		4D05DE081950A8AA001F19A7 /* CanvasController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE071950A8AA001F19A7 /* CanvasController.xib */; };
 		4D05DE191950AC3F001F19A7 /* Activity.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE0A1950AC3F001F19A7 /* Activity.xib */; };
@@ -273,6 +269,10 @@
 		4D05DE311950B8CB001F19A7 /* ImportFormats.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE2C1950B8CB001F19A7 /* ImportFormats.plist */; };
 		4D05DE321950B8CB001F19A7 /* PageSizes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE2D1950B8CB001F19A7 /* PageSizes.plist */; };
 		4D05DE331950B8CB001F19A7 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DE2E1950B8CB001F19A7 /* Settings.plist */; };
+		4D081BD1195351AC00F8871C /* Boring.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BCD195351AC00F8871C /* Boring.inkpad */; };
+		4D081BD2195351AC00F8871C /* Devilish.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BCE195351AC00F8871C /* Devilish.inkpad */; };
+		4D081BD3195351AC00F8871C /* Space.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BCF195351AC00F8871C /* Space.inkpad */; };
+		4D081BD4195351AC00F8871C /* Toucan in the Shade.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BD0195351AC00F8871C /* Toucan in the Shade.inkpad */; };
 		4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D862ECA1952043A0066A848 /* DesignViewController.m */; };
 		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
 /* End PBXBuildFile section */
@@ -694,12 +694,8 @@
 		4D05DDF0194F9FB2001F19A7 /* PlansViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlansViewController.xib; sourceTree = "<group>"; };
 		4D05DDF3194FB39A001F19A7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4D05DDF5194FB3A4001F19A7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		4D05DDF8194FB56C001F19A7 /* Boring.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Boring.inkpad; sourceTree = "<group>"; };
-		4D05DDF9194FB56C001F19A7 /* Devilish.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Devilish.inkpad; sourceTree = "<group>"; };
 		4D05DDFA194FB56C001F19A7 /* Marker.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Marker.inkpad; sourceTree = "<group>"; };
 		4D05DDFB194FB56C001F19A7 /* Mushroom Breakdown.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "Mushroom Breakdown.inkpad"; sourceTree = "<group>"; };
-		4D05DDFC194FB56C001F19A7 /* Space.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Space.inkpad; sourceTree = "<group>"; };
-		4D05DDFD194FB56C001F19A7 /* Toucan in the Shade.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "Toucan in the Shade.inkpad"; sourceTree = "<group>"; };
 		4D05DE05194FC4CA001F19A7 /* WDThumbnailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDThumbnailView.xib; sourceTree = "<group>"; };
 		4D05DE071950A8AA001F19A7 /* CanvasController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CanvasController.xib; sourceTree = "<group>"; };
 		4D05DE0A1950AC3F001F19A7 /* Activity.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Activity.xib; sourceTree = "<group>"; };
@@ -722,6 +718,10 @@
 		4D05DE2C1950B8CB001F19A7 /* ImportFormats.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ImportFormats.plist; sourceTree = "<group>"; };
 		4D05DE2D1950B8CB001F19A7 /* PageSizes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PageSizes.plist; sourceTree = "<group>"; };
 		4D05DE2E1950B8CB001F19A7 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
+		4D081BCD195351AC00F8871C /* Boring.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Boring.inkpad; sourceTree = "<group>"; };
+		4D081BCE195351AC00F8871C /* Devilish.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Devilish.inkpad; sourceTree = "<group>"; };
+		4D081BCF195351AC00F8871C /* Space.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Space.inkpad; sourceTree = "<group>"; };
+		4D081BD0195351AC00F8871C /* Toucan in the Shade.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "Toucan in the Shade.inkpad"; sourceTree = "<group>"; };
 		4D862EC91952043A0066A848 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		4D862ECA1952043A0066A848 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		4D862ECB1952043A0066A848 /* DesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignViewController.xib; sourceTree = "<group>"; };
@@ -1396,12 +1396,12 @@
 		4D05DDF7194FB56C001F19A7 /* Samples */ = {
 			isa = PBXGroup;
 			children = (
-				4D05DDF8194FB56C001F19A7 /* Boring.inkpad */,
-				4D05DDF9194FB56C001F19A7 /* Devilish.inkpad */,
+				4D081BCD195351AC00F8871C /* Boring.inkpad */,
+				4D081BCE195351AC00F8871C /* Devilish.inkpad */,
+				4D081BCF195351AC00F8871C /* Space.inkpad */,
+				4D081BD0195351AC00F8871C /* Toucan in the Shade.inkpad */,
 				4D05DDFA194FB56C001F19A7 /* Marker.inkpad */,
 				4D05DDFB194FB56C001F19A7 /* Mushroom Breakdown.inkpad */,
-				4D05DDFC194FB56C001F19A7 /* Space.inkpad */,
-				4D05DDFD194FB56C001F19A7 /* Toucan in the Shade.inkpad */,
 			);
 			path = Samples;
 			sourceTree = "<group>";
@@ -1524,7 +1524,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D05DE02194FB56C001F19A7 /* Space.inkpad in Resources */,
 				4D05DE241950AC3F001F19A7 /* Shadow.xib in Resources */,
 				4D05DCB6194F7FF2001F19A7 /* scale.png in Resources */,
 				4D05DE251950AC3F001F19A7 /* ShapeOptions.xib in Resources */,
@@ -1540,7 +1539,6 @@
 				4D05DE191950AC3F001F19A7 /* Activity.xib in Resources */,
 				4D05DE201950AC3F001F19A7 /* Import.xib in Resources */,
 				4D05DCA5194F7FF2001F19A7 /* eyedropper@2x.png in Resources */,
-				4D05DE03194FB56C001F19A7 /* Toucan in the Shade.inkpad in Resources */,
 				4D05DBB9194F5C81001F19A7 /* undo.png in Resources */,
 				4D05DE231950AC3F001F19A7 /* Samples.xib in Resources */,
 				4D05DAF6194A70C7001F19A7 /* InfoPlist.strings in Resources */,
@@ -1579,16 +1577,17 @@
 				4D05DCBE194F7FF2001F19A7 /* star.png in Resources */,
 				4D05DCBB194F7FF2001F19A7 /* select@2x.png in Resources */,
 				4D05DBAE194F5C81001F19A7 /* delete.png in Resources */,
+				4D081BD3195351AC00F8871C /* Space.inkpad in Resources */,
 				4D05DE01194FB56C001F19A7 /* Mushroom Breakdown.inkpad in Resources */,
 				4D05DBB0194F5C81001F19A7 /* enclosed.png in Resources */,
 				4D05DE1D1950AC3F001F19A7 /* Font.xib in Resources */,
 				4D05DCB9194F7FF2001F19A7 /* scissor@2x.png in Resources */,
 				4D05DBC6194F6347001F19A7 /* StructureViewController.xib in Resources */,
 				4D05DE1C1950AC3F001F19A7 /* Fill.xib in Resources */,
+				4D081BD1195351AC00F8871C /* Boring.inkpad in Resources */,
 				4D05DCBC194F7FF2001F19A7 /* spiral.png in Resources */,
 				4D05DB24194A74FE001F19A7 /* SidebarViewController.xib in Resources */,
 				4D05DE311950B8CB001F19A7 /* ImportFormats.plist in Resources */,
-				4D05DDFF194FB56C001F19A7 /* Devilish.inkpad in Resources */,
 				4D05DCAC194F7FF2001F19A7 /* line@2x.png in Resources */,
 				4D05DCA3194F7FF2001F19A7 /* eraser@2x.png in Resources */,
 				4D05DE211950AC3F001F19A7 /* LayerCell.xib in Resources */,
@@ -1599,14 +1598,15 @@
 				4D05DCAD194F7FF2001F19A7 /* oval.png in Resources */,
 				4D05DCB5194F7FF2001F19A7 /* rotate@2x.png in Resources */,
 				4D05DCA2194F7FF2001F19A7 /* eraser.png in Resources */,
+				4D081BD2195351AC00F8871C /* Devilish.inkpad in Resources */,
 				4D05DE221950AC3F001F19A7 /* OpenClipArt.xib in Resources */,
+				4D081BD4195351AC00F8871C /* Toucan in the Shade.inkpad in Resources */,
 				4D05DBBF194F5FBF001F19A7 /* property@2x.png in Resources */,
 				4D05DCC0194F7FF2001F19A7 /* text.png in Resources */,
 				4D05DBB4194F5C81001F19A7 /* notes.png in Resources */,
 				4D05DBB7194F5C81001F19A7 /* structure.png in Resources */,
 				4D05DBAD194F5C81001F19A7 /* clone.png in Resources */,
 				4D05DE06194FC4CA001F19A7 /* WDThumbnailView.xib in Resources */,
-				4D05DDFE194FB56C001F19A7 /* Boring.inkpad in Resources */,
 				4D05DCB3194F7FF2001F19A7 /* rect.png in Resources */,
 				4D05DCAE194F7FF2001F19A7 /* oval@2x.png in Resources */,
 				4D05DE00194FB56C001F19A7 /* Marker.inkpad in Resources */,

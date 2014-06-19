@@ -7,10 +7,14 @@
 //
 
 #import "SidebarContentViewController.h"
+#import "WDToolButton.h"
 
 @interface DesignViewController : SidebarContentViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *planNameLabel;
+@property (weak, nonatomic) IBOutlet WDToolButton *freehandButton;
+@property (weak, nonatomic) IBOutlet WDToolButton *enclosedButton;
+
 
 - (IBAction)changePlan:(id)sender;
 

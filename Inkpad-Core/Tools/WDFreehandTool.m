@@ -30,7 +30,7 @@ NSString *WDDefaultFreehandTool = @"WDDefaultFreehandTool";
 
 - (NSString *) iconName
 {
-    return closeShape_ ? @"freehand_shape.png" : @"brush.png";
+    return closeShape_ ? @"enclosed.png" : @"freehand.png";
 }
 
 - (BOOL) createsObject
@@ -51,7 +51,13 @@ NSString *WDDefaultFreehandTool = @"WDDefaultFreehandTool";
 
 - (void) beginWithEvent:(WDEvent *)theEvent inCanvas:(WDCanvas *)canvas
 {
-    [canvas.drawingController selectNone:nil];
+	if (closeShape_) {
+		[canvas.drawingController setValue:[WDColor randomColor] forProperty:WDFillProperty];
+	} else {
+		[canvas.drawingController setValue:[NSNull null] forProperty:WDFillProperty];
+	}
+    
+	[canvas.drawingController selectNone:nil];
     
     pathStarted_ = YES;
     

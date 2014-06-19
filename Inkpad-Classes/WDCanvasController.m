@@ -1341,7 +1341,7 @@
 
 - (void) setDocument:(WDDocument *)document
 {
-    if (document != self.document) {
+	if (document != self.document) {
         [canvas_ startActivity];
         [CATransaction flush];
         

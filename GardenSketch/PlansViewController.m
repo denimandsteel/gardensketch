@@ -9,6 +9,7 @@
 #import "PlansViewController.h"
 #import "WDDrawingManager.h"
 #import "WDThumbnailView.h"
+#import "WDDocument.h"
 
 @interface PlansViewController ()
 
@@ -30,8 +31,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	
-	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
-	NSLog(@"%d", drawingManager.drawingNames.count);
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(drawingChanged:)
+                                                 name:UIDocumentStateChangedNotification
+                                               object:nil];
 	
 	[self.collectionView registerNib:[UINib nibWithNibName:@"WDThumbnailView" bundle:nil] forCellWithReuseIdentifier:@"cellID"];
 }
@@ -48,6 +51,8 @@
 {
     return [[WDDrawingManager sharedInstance] numberOfDrawings];
 }
+
+#pragma mark Collection View delegate
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
@@ -73,6 +78,25 @@
 	
 	[self.sidebar.canvasController setDocument:document];
 
+}
+
+#pragma mark - Thumbnail Editing
+
+- (WDThumbnailView *) getThumbnail:(NSString *)filename
+{
+    NSString *barefile = [[filename stringByDeletingPathExtension] stringByAppendingPathExtension:@"inkpad"];
+    NSIndexPath *indexPath = [[WDDrawingManager sharedInstance] indexPathForFilename:barefile];
+    
+    return (WDThumbnailView *) [self.collectionView cellForItemAtIndexPath:indexPath];
+}
+
+#pragma mark - Drawing Notifications
+
+- (void) drawingChanged:(NSNotification *)aNotification
+{
+    WDDocument *document = [aNotification object];
+    
+    [[self getThumbnail:document.filename] reload];
 }
 
 
