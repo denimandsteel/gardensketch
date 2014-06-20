@@ -591,8 +591,8 @@
     }
     //Create the search array
     NSMutableArray *searchArray = [NSMutableArray array];
-    for (int i = _selectedIndex + 1; i <= _viewControllers.count + _selectedIndex - 1; i++) {
-        [searchArray addObject:[NSNumber numberWithInt:(i % _viewControllers.count)]];
+    for (NSInteger i = _selectedIndex + 1; i <= _viewControllers.count + _selectedIndex - 1; i++) {
+        [searchArray addObject:@(i % _viewControllers.count)];
     }
     
     //Figure out the maximum importance level for each side

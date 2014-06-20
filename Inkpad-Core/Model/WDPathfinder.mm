@@ -129,7 +129,7 @@
     Path   *paths[pathCount];
     Shape  *temp = new Shape();
     Shape   *shapes[pathCount];
-    Shape   *result;
+    Shape   *result = nil;
     int     i = 0, shapeIx = 0;
     
     for (WDAbstractPath *ap in abstractPaths) {

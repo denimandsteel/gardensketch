@@ -470,7 +470,8 @@ NSString *WDTextPathAlignmentKey = @"WDTextPathAlignmentKey";
         CGPoint     positions[glyphCount];
         BOOL        avoidPreviousGlyph = NO;
         CGPoint     tangent;
-        float       curvature, start, end, midGlyph;
+        float       curvature, start, end;
+		float		midGlyph = 0;
         
         CTRunGetGlyphs(run, CFRangeMake(0, 0), buffer);
         CTRunGetPositions(run, CFRangeMake(0,0), positions);

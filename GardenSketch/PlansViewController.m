@@ -154,7 +154,6 @@
 - (void) keyboardWillShow:(NSNotification *)aNotification
 {
     NSValue     *endFrame = [aNotification userInfo][UIKeyboardFrameEndUserInfoKey];
-    NSNumber    *duration = [aNotification userInfo][UIKeyboardAnimationDurationUserInfoKey];
     CGRect      frame = [endFrame CGRectValue];
     float       delta = 0;
     

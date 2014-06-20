@@ -19,7 +19,7 @@
     
     entry.title = dict[@"title"];
     entry.uploader = dict[@"uploader"];
-    entry.ID = dict[@"id"];
+    entry.ID = [dict[@"id"] integerValue];
     entry.favorites = [dict[@"total_favorites"] integerValue];
     entry.downloads = [dict[@"downloaded_by"] integerValue];
     entry.SVGURL = [dict[@"svg"][@"url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];

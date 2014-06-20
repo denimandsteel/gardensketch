@@ -698,7 +698,8 @@ void            Path::ConvertEvenLines(float treshhold)
 		path_descr*  curD=descr_data+curP;
 		int          nType=curD->flags&descr_type_mask;
 		bool         nWeight=curD->flags&descr_weighted;
-		float        nextX,nextY,nextW;
+		float        nextX, nextW;
+		float		nextY = 0;
 		if ( nType == descr_forced ) {
 			if ( weighted ) (curD)->associated=AddForcedPoint(curX,curY,curW); else (curD)->associated=AddForcedPoint(curX,curY);
 			curP++;
