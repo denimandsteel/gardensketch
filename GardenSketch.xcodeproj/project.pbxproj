@@ -274,6 +274,10 @@
 		4D081BD3195351AC00F8871C /* Space.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BCF195351AC00F8871C /* Space.inkpad */; };
 		4D081BD4195351AC00F8871C /* Toucan in the Shade.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BD0195351AC00F8871C /* Toucan in the Shade.inkpad */; };
 		4D081BD619538D7400F8871C /* NewPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BD519538D7400F8871C /* NewPlanCell.xib */; };
+		4D081BDB1954A31600F8871C /* design@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BD71954A31600F8871C /* design@2x.png */; };
+		4D081BDC1954A31600F8871C /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BD81954A31600F8871C /* more@2x.png */; };
+		4D081BDD1954A31600F8871C /* north@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BD91954A31600F8871C /* north@2x.png */; };
+		4D081BDE1954A31600F8871C /* notes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BDA1954A31600F8871C /* notes@2x.png */; };
 		4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D862ECA1952043A0066A848 /* DesignViewController.m */; };
 		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
 /* End PBXBuildFile section */
@@ -724,6 +728,10 @@
 		4D081BCF195351AC00F8871C /* Space.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Space.inkpad; sourceTree = "<group>"; };
 		4D081BD0195351AC00F8871C /* Toucan in the Shade.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "Toucan in the Shade.inkpad"; sourceTree = "<group>"; };
 		4D081BD519538D7400F8871C /* NewPlanCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewPlanCell.xib; sourceTree = "<group>"; };
+		4D081BD71954A31600F8871C /* design@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "design@2x.png"; sourceTree = "<group>"; };
+		4D081BD81954A31600F8871C /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
+		4D081BD91954A31600F8871C /* north@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "north@2x.png"; sourceTree = "<group>"; };
+		4D081BDA1954A31600F8871C /* notes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notes@2x.png"; sourceTree = "<group>"; };
 		4D862EC91952043A0066A848 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		4D862ECA1952043A0066A848 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		4D862ECB1952043A0066A848 /* DesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignViewController.xib; sourceTree = "<group>"; };
@@ -887,6 +895,10 @@
 		4D05DB9F194F5C80001F19A7 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				4D081BD71954A31600F8871C /* design@2x.png */,
+				4D081BD81954A31600F8871C /* more@2x.png */,
+				4D081BD91954A31600F8871C /* north@2x.png */,
+				4D081BDA1954A31600F8871C /* notes@2x.png */,
 				4D05DDEB194F9F85001F19A7 /* plans@2x.png */,
 				4D05DBC8194F6664001F19A7 /* structure@2x.png */,
 				4D05DBC0194F5FD2001F19A7 /* property.png */,
@@ -1563,12 +1575,14 @@
 				4D05DCB7194F7FF2001F19A7 /* scale@2x.png in Resources */,
 				4D05DCA9194F7FF2001F19A7 /* groupSelect@2x.png in Resources */,
 				4D05DBB1194F5C81001F19A7 /* freehand.png in Resources */,
+				4D081BDB1954A31600F8871C /* design@2x.png in Resources */,
 				4D05DCA4194F7FF2001F19A7 /* eyedropper.png in Resources */,
 				4D05DCC2194F7FF2001F19A7 /* zoom.png in Resources */,
 				4D05DBB3194F5C81001F19A7 /* north.png in Resources */,
 				4D05DCE7194F7FF2001F19A7 /* SVGColors.plist in Resources */,
 				4D05DC9E194F7FF2001F19A7 /* add_anchor.png in Resources */,
 				4D05DCBA194F7FF2001F19A7 /* select.png in Resources */,
+				4D081BDC1954A31600F8871C /* more@2x.png in Resources */,
 				4D05DE1B1950AC3F001F19A7 /* ColorBalance.xib in Resources */,
 				4D05DBAF194F5C81001F19A7 /* design.png in Resources */,
 				4D05DBB8194F5C81001F19A7 /* switcher.png in Resources */,
@@ -1607,11 +1621,13 @@
 				4D081BD619538D7400F8871C /* NewPlanCell.xib in Resources */,
 				4D05DBBF194F5FBF001F19A7 /* property@2x.png in Resources */,
 				4D05DCC0194F7FF2001F19A7 /* text.png in Resources */,
+				4D081BDE1954A31600F8871C /* notes@2x.png in Resources */,
 				4D05DBB4194F5C81001F19A7 /* notes.png in Resources */,
 				4D05DBB7194F5C81001F19A7 /* structure.png in Resources */,
 				4D05DBAD194F5C81001F19A7 /* clone.png in Resources */,
 				4D05DE06194FC4CA001F19A7 /* WDThumbnailView.xib in Resources */,
 				4D05DCB3194F7FF2001F19A7 /* rect.png in Resources */,
+				4D081BDD1954A31600F8871C /* north@2x.png in Resources */,
 				4D05DCAE194F7FF2001F19A7 /* oval@2x.png in Resources */,
 				4D05DE00194FB56C001F19A7 /* Marker.inkpad in Resources */,
 				4D05DE081950A8AA001F19A7 /* CanvasController.xib in Resources */,
