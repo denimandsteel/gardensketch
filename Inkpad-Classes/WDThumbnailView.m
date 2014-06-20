@@ -196,7 +196,7 @@
     }
     
     if (!titleField_) {
-        titleField_ = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, kTitleFieldHeight)];
+        titleField_ = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width - self.actionView.bounds.size.width, kTitleFieldHeight)];
         titleField_.textAlignment = NSTextAlignmentCenter;
         titleField_.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         titleField_.delegate = self;
@@ -277,10 +277,10 @@
         imageView_.image = thumbImage;
     }
     
-    imageView_.sharpCenter = CGPointMake(WDCenterOfRect(self.bounds).x, WDCenterOfRect(self.bounds).y - (kTitleFieldHeight / 2));
+    imageView_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)-CGRectGetWidth(self.actionView.bounds)) / 2, WDCenterOfRect(self.bounds).y - (kTitleFieldHeight / 2));
     [self updateShadow_];
     
-    titleField_.sharpCenter = CGPointMake(CGRectGetWidth(self.bounds) / 2, CGRectGetMaxY(imageView_.frame) + (kTitleFieldHeight / 2) + 3);
+    titleField_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)-CGRectGetWidth(self.actionView.bounds)) / 2, CGRectGetMaxY(imageView_.frame) + (kTitleFieldHeight / 2) + 3);
     titleLabel_.sharpCenter = titleField_.sharpCenter;
     
     [self reloadFilenameFields_];

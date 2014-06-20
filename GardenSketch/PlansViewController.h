@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "SidebarContentViewController.h"
 
+@class WDThumbnailView;
+
 @interface PlansViewController : SidebarContentViewController
+{
+	WDThumbnailView         *editingThumbnail_;
+}
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 

@@ -46,6 +46,17 @@
                                                  name:WDDrawingsDeleted
                                                object:nil];
 	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didEnterBackground:)
+                                                 name:UIApplicationDidEnterBackgroundNotification
+                                               object:nil];
+    
+	
 	[self.collectionView registerNib:[UINib nibWithNibName:@"WDThumbnailView" bundle:nil] forCellWithReuseIdentifier:@"cellID"];
 	[self.collectionView registerNib:[UINib nibWithNibName:@"NewPlanCell" bundle:nil] forCellWithReuseIdentifier:@"newCellID"];
 }
@@ -101,22 +112,6 @@
 	
 }
 
-#pragma mark - Thumbnail Editing
-
-- (WDThumbnailView *) getThumbnail:(NSString *)filename
-{
-    NSString *barefile = [[filename stringByDeletingPathExtension] stringByAppendingPathExtension:@"inkpad"];
-    NSIndexPath *indexPath = [[WDDrawingManager sharedInstance] indexPathForFilename:barefile];
-    
-	UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
-	
-	if ([cell isKindOfClass:[WDThumbnailView class]]) {
-		return (WDThumbnailView *)cell;
-	} else {
-		return nil;
-	}
-}
-
 #pragma mark - Drawing Notifications
 
 - (void) drawingChanged:(NSNotification *)aNotification
@@ -147,6 +142,78 @@
                                                                               andUnits:@"Centimeters"];
 	
     [self.sidebar.canvasController setDocument:document];
+}
+
+#pragma mark - keyboard
+
+- (void) keyboardWillShow:(NSNotification *)aNotification
+{
+    NSValue     *endFrame = [aNotification userInfo][UIKeyboardFrameEndUserInfoKey];
+    NSNumber    *duration = [aNotification userInfo][UIKeyboardAnimationDurationUserInfoKey];
+    CGRect      frame = [endFrame CGRectValue];
+    float       delta = 0;
+    
+    CGRect thumbFrame = editingThumbnail_.frame;
+    thumbFrame.size.height += 20; // add a little extra margin between the thumb and the keyboard
+    frame = [self.collectionView convertRect:frame fromView:nil];
+    
+    if (CGRectIntersectsRect(thumbFrame, frame)) {
+        delta = CGRectGetMaxY(thumbFrame) - CGRectGetMinY(frame);
+        
+        CGPoint offset = self.collectionView.contentOffset;
+        offset.y += delta;
+        [self.collectionView setContentOffset:offset animated:YES];
+    }
+}
+
+- (void) didEnterBackground:(NSNotification *)aNotification
+{
+    if (!editingThumbnail_) {
+        return;
+    }
+    
+    [editingThumbnail_ stopEditing];
+}
+
+#pragma mark - Thumbnail Editing
+
+- (BOOL) thumbnailShouldBeginEditing:(WDThumbnailView *)thumb
+{
+    if (self.isEditing) {
+        return NO;
+    }
+    
+    // can't start editing if we're already editing another thumbnail
+    return (editingThumbnail_ ? NO : YES);
+}
+
+- (void) blockingViewTapped:(id)sender
+{
+    [editingThumbnail_ stopEditing];
+}
+
+- (void) thumbnailDidBeginEditing:(WDThumbnailView *)thumbView
+{
+    editingThumbnail_ = thumbView;
+}
+
+- (void) thumbnailDidEndEditing:(WDThumbnailView *)thumbView
+{
+    editingThumbnail_ = nil;
+}
+
+- (WDThumbnailView *) getThumbnail:(NSString *)filename
+{
+    NSString *barefile = [[filename stringByDeletingPathExtension] stringByAppendingPathExtension:@"inkpad"];
+    NSIndexPath *indexPath = [[WDDrawingManager sharedInstance] indexPathForFilename:barefile];
+    
+	UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
+	
+	if ([cell isKindOfClass:[WDThumbnailView class]]) {
+		return (WDThumbnailView *)cell;
+	} else {
+		return nil;
+	}
 }
 
 @end
