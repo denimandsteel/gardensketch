@@ -126,6 +126,11 @@
     NSUInteger count = [[WDDrawingManager sharedInstance] numberOfDrawings] - 1;
     NSArray *indexPaths = @[[NSIndexPath indexPathForItem:count inSection:0]];
     [self.collectionView insertItemsAtIndexPaths:indexPaths];
+	
+	// scroll to the very bottom, so that the add button is visible
+	NSInteger item = [self collectionView:self.collectionView numberOfItemsInSection:0] - 1;
+	NSIndexPath *lastIndexPath = [NSIndexPath indexPathForItem:item inSection:0];
+	[self.collectionView scrollToItemAtIndexPath:lastIndexPath atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
 }
 
 - (void) drawingsDeleted:(NSNotification *)aNotification

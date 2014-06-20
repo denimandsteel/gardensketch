@@ -319,12 +319,21 @@
 
 - (void)showActions
 {
+	[self.actionView setAlpha:0.0];
 	[self.actionView setHidden:NO];
+	[UIView animateWithDuration:.4 animations:^{
+		[self.actionView setAlpha:1.0];
+	}];
 }
 
 - (void)hideActions
 {
-	[self.actionView setHidden:YES];
+	[self.actionView setAlpha:1.0];
+	[UIView animateWithDuration:.4 animations:^{
+		[self.actionView setAlpha:0.0];
+	} completion:^(BOOL success) {
+		[self.actionView setHidden:YES];
+	}];
 }
 
 - (IBAction)copyTapped:(id)sender {
