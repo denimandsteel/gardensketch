@@ -10,7 +10,7 @@
 #import "M13InfiniteTabBarController.h"
 #import "WDCanvasController.h"
 
-@interface SidebarViewController : M13InfiniteTabBarController
+@interface SidebarViewController : M13InfiniteTabBarController <UIGestureRecognizerDelegate>
 
 @property (nonatomic, weak) WDCanvasController *canvasController;
 

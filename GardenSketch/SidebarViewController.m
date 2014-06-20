@@ -30,16 +30,22 @@
 	
 	UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedLeft:)];
 	swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+	swipeLeft.delegate = self;
 	[self.view addGestureRecognizer:swipeLeft];
 	
 	UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipedRight:)];
 	swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
+	swipeRight.delegate = self;
 	[self.view addGestureRecognizer:swipeRight];
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+    CGPoint touchPoint = [touch locationInView:self.view];
+	return !CGRectContainsPoint(self.infiniteTabBar.frame, touchPoint);
 }
 
 - (void)swipedLeft:(UISwipeGestureRecognizer*)gestureRecognizer
 {
-	NSLog(@"swiped left!");
 	[UIView animateWithDuration:.3 animations:^{
 		CGRect frame = self.view.frame;
 		frame.origin.x = -300;
@@ -49,7 +55,6 @@
 
 - (void)swipedRight:(UISwipeGestureRecognizer*)gestureRecognizer
 {
-	NSLog(@"swiped right!");
 	[UIView animateWithDuration:.3 animations:^{
 		CGRect frame = self.view.frame;
 		frame.origin.x = 0;
