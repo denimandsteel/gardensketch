@@ -278,6 +278,10 @@
 		4D081BDC1954A31600F8871C /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BD81954A31600F8871C /* more@2x.png */; };
 		4D081BDD1954A31600F8871C /* north@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BD91954A31600F8871C /* north@2x.png */; };
 		4D081BDE1954A31600F8871C /* notes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BDA1954A31600F8871C /* notes@2x.png */; };
+		4D081BE21954B54800F8871C /* ColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D081BE01954B54800F8871C /* ColorPickerViewController.m */; };
+		4D081BE31954B54800F8871C /* ColorPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BE11954B54800F8871C /* ColorPickerViewController.xib */; };
+		4D081BE61954B63C00F8871C /* ColorPickerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D081BE51954B63C00F8871C /* ColorPickerButton.m */; };
+		4D081BE81954DB1D00F8871C /* ColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BE71954DB1D00F8871C /* ColorCell.xib */; };
 		4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D862ECA1952043A0066A848 /* DesignViewController.m */; };
 		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
 /* End PBXBuildFile section */
@@ -732,6 +736,12 @@
 		4D081BD81954A31600F8871C /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
 		4D081BD91954A31600F8871C /* north@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "north@2x.png"; sourceTree = "<group>"; };
 		4D081BDA1954A31600F8871C /* notes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notes@2x.png"; sourceTree = "<group>"; };
+		4D081BDF1954B54800F8871C /* ColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerViewController.h; sourceTree = "<group>"; };
+		4D081BE01954B54800F8871C /* ColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewController.m; sourceTree = "<group>"; };
+		4D081BE11954B54800F8871C /* ColorPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorPickerViewController.xib; sourceTree = "<group>"; };
+		4D081BE41954B63C00F8871C /* ColorPickerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerButton.h; sourceTree = "<group>"; };
+		4D081BE51954B63C00F8871C /* ColorPickerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerButton.m; sourceTree = "<group>"; };
+		4D081BE71954DB1D00F8871C /* ColorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorCell.xib; sourceTree = "<group>"; };
 		4D862EC91952043A0066A848 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		4D862ECA1952043A0066A848 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		4D862ECB1952043A0066A848 /* DesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignViewController.xib; sourceTree = "<group>"; };
@@ -812,6 +822,8 @@
 				4D05DAFD194A70C7001F19A7 /* Main.storyboard */,
 				4D05DB03194A70C7001F19A7 /* Images.xcassets */,
 				4D05DAF2194A70C7001F19A7 /* Supporting Files */,
+				4D081BE41954B63C00F8871C /* ColorPickerButton.h */,
+				4D081BE51954B63C00F8871C /* ColorPickerButton.m */,
 			);
 			path = GardenSketch;
 			sourceTree = "<group>";
@@ -943,6 +955,9 @@
 				4D862EC91952043A0066A848 /* DesignViewController.h */,
 				4D862ECA1952043A0066A848 /* DesignViewController.m */,
 				4D862ECB1952043A0066A848 /* DesignViewController.xib */,
+				4D081BDF1954B54800F8871C /* ColorPickerViewController.h */,
+				4D081BE01954B54800F8871C /* ColorPickerViewController.m */,
+				4D081BE11954B54800F8871C /* ColorPickerViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1425,6 +1440,7 @@
 			children = (
 				4D05DE05194FC4CA001F19A7 /* WDThumbnailView.xib */,
 				4D081BD519538D7400F8871C /* NewPlanCell.xib */,
+				4D081BE71954DB1D00F8871C /* ColorCell.xib */,
 			);
 			name = xibs;
 			sourceTree = "<group>";
@@ -1594,6 +1610,7 @@
 				4D05DCBE194F7FF2001F19A7 /* star.png in Resources */,
 				4D05DCBB194F7FF2001F19A7 /* select@2x.png in Resources */,
 				4D05DBAE194F5C81001F19A7 /* delete.png in Resources */,
+				4D081BE81954DB1D00F8871C /* ColorCell.xib in Resources */,
 				4D081BD3195351AC00F8871C /* Space.inkpad in Resources */,
 				4D05DE01194FB56C001F19A7 /* Mushroom Breakdown.inkpad in Resources */,
 				4D05DBB0194F5C81001F19A7 /* enclosed.png in Resources */,
@@ -1609,6 +1626,7 @@
 				4D05DCA3194F7FF2001F19A7 /* eraser@2x.png in Resources */,
 				4D05DE211950AC3F001F19A7 /* LayerCell.xib in Resources */,
 				4D05DCB0194F7FF2001F19A7 /* pen@2x.png in Resources */,
+				4D081BE31954B54800F8871C /* ColorPickerViewController.xib in Resources */,
 				4D05DCA0194F7FF2001F19A7 /* brush.png in Resources */,
 				4D05DCA1194F7FF2001F19A7 /* brush@2x.png in Resources */,
 				4D05DCB4194F7FF2001F19A7 /* rotate.png in Resources */,
@@ -1789,6 +1807,8 @@
 				4D05DB23194A74FE001F19A7 /* SidebarViewController.m in Sources */,
 				4D05DC9D194F7FF2001F19A7 /* FitCurves.m in Sources */,
 				4D05DCDF194F7FF2001F19A7 /* WDPickResult.m in Sources */,
+				4D081BE61954B63C00F8871C /* ColorPickerButton.m in Sources */,
+				4D081BE21954B54800F8871C /* ColorPickerViewController.m in Sources */,
 				4D05DDBC194F8042001F19A7 /* WDLayerController.m in Sources */,
 				4D05DCFB194F7FF2001F19A7 /* WDSelectionTool.m in Sources */,
 				4D05DDB6194F8042001F19A7 /* WDHelpController.m in Sources */,

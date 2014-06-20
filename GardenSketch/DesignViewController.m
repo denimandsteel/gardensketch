@@ -11,6 +11,7 @@
 #import "WDDrawingManager.h"
 #import "WDToolManager.h"
 #import "WDFreehandTool.h"
+#import "WDColor.h"
 
 @interface DesignViewController ()
 
@@ -41,6 +42,11 @@
                                              selector:@selector(drawingChanged:)
                                                  name:UIDocumentStateChangedNotification
                                                object:nil];
+	
+	NSArray *outlineColors = @[[[WDColor randomColor] UIColor],
+							   [[WDColor randomColor] UIColor],
+							   [[WDColor randomColor] UIColor]];
+	[self.outlineColorPicker setColors:outlineColors];
 	
 	[self initTools];
 }
@@ -80,6 +86,11 @@
 	WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:planIndex withCompletionHandler:nil];
 	[self.sidebar.canvasController setDocument:document];
 	
+}
+
+- (IBAction)colorPickerTapped:(id)sender {
+	ColorPickerButton *button = (ColorPickerButton *)sender;
+	[button showColors:self];
 }
 
 #pragma mark Tools

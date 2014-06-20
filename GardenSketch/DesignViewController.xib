@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="enclosedButton" destination="pV1-DC-Ftb" id="64s-8y-B73"/>
                 <outlet property="freehandButton" destination="BCz-Ro-S7V" id="msP-k3-u1n"/>
+                <outlet property="outlineColorPicker" destination="unO-uW-Cbo" id="i2K-nJ-XbT"/>
                 <outlet property="planNameLabel" destination="lrp-fC-sle" id="0Dv-8G-UQA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -58,6 +59,17 @@
                     <rect key="frame" x="76" y="104" width="32" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="enclosed.png"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unO-uW-Cbo" customClass="ColorPickerButton">
+                    <rect key="frame" x="149" y="104" width="32" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.95587543269999997" blue="0.69363249370000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="colorPickerTapped:" destination="-1" eventType="touchUpInside" id="nIy-wt-bdU"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.96677564538043481" green="0.96677564538043481" blue="0.96677564538043481" alpha="1" colorSpace="calibratedRGB"/>

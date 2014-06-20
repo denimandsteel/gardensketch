@@ -8,6 +8,7 @@
 
 #import "SidebarContentViewController.h"
 #import "WDToolButton.h"
+#import "ColorPickerButton.h"
 
 @interface DesignViewController : SidebarContentViewController
 
@@ -15,7 +16,9 @@
 @property (weak, nonatomic) IBOutlet WDToolButton *freehandButton;
 @property (weak, nonatomic) IBOutlet WDToolButton *enclosedButton;
 
+@property (weak, nonatomic) IBOutlet ColorPickerButton *outlineColorPicker;
 
 - (IBAction)changePlan:(id)sender;
+- (IBAction)colorPickerTapped:(id)sender;
 
 @end
