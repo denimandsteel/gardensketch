@@ -21,8 +21,6 @@
 
 - (void) showColors:(id)sender
 {
-//    [self sendActionsForControlEvents:UIControlEventTouchUpInside];
-    
     if (!popover_) {
         colorController = [[ColorPickerViewController alloc] initWithColors:self.colors];
 		
@@ -31,6 +29,7 @@
         popover_ = [[UIPopoverController alloc] initWithContentViewController:colorController];
 
         popover_.delegate = self;
+		colorController.delegate = self;
         
         [popover_ presentPopoverFromRect:self.bounds inView:self permittedArrowDirections:UIPopoverArrowDirectionUp|UIPopoverArrowDirectionLeft animated:NO];
     }
@@ -43,6 +42,10 @@
     }
 }
 
+- (void)pickedColor:(UIColor *)color
+{
+	[self setBackgroundColor:color];
+}
 
 
 /*

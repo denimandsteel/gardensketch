@@ -59,13 +59,15 @@ static NSString *CellIdentifier = @"colorCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	cell.backgroundColor = [[WDColor randomColor] UIColor];
+	cell.backgroundColor = self.colors[indexPath.row];
+	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	NSLog(@"item %ld selected!", indexPath.row);
+	[self.delegate pickedColor:self.colors[indexPath.row]];
 }
 
 @end

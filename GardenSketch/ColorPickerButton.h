@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ColorPickerViewController.h"
 
-@interface ColorPickerButton : UIButton <UIPopoverControllerDelegate> {
+@interface ColorPickerButton : UIButton <UIPopoverControllerDelegate, ColorPickerDelegate> {
 	UIPopoverController			*popover_;
 	ColorPickerViewController	*colorController;
 }
