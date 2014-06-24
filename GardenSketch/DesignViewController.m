@@ -35,10 +35,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	
-	[[NSNotificationCenter defaultCenter] addObserver:self
+	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+	[nc addObserver:self
            selector:@selector(selectionChanged:)
                name:WDSelectionChangedNotification
              object:self.sidebar.canvasController.drawingController];
+	
+	NSUndoManager *undoManager = self.sidebar.canvasController.drawingController.drawing.undoManager;
+    [nc addObserver:self selector:@selector(undoStatusDidChange:) name:NSUndoManagerDidUndoChangeNotification object:undoManager];
+	[nc addObserver:self selector:@selector(undoStatusDidChange:) name:NSUndoManagerDidRedoChangeNotification object:undoManager];
+    [nc addObserver:self selector:@selector(undoStatusDidChange:) name:NSUndoManagerDidCloseUndoGroupNotification object:undoManager];
 	
 	WDDocument *currentDocument = self.sidebar.canvasController.document;
 	NSString *planName = currentDocument.displayName;
@@ -102,6 +108,17 @@
 
 - (IBAction)deleteTapped:(id)sender {
 	[self.sidebar.canvasController delete:self];
+}
+
+- (IBAction)cloneTapped:(id)sender {
+}
+
+- (IBAction)redoTapped:(id)sender {
+	[self.sidebar.canvasController.document.undoManager redo];
+}
+
+- (IBAction)undoTapped:(id)sender {
+	[self.sidebar.canvasController.document.undoManager undo];
 }
 
 #pragma mark Tools
@@ -183,6 +200,14 @@
 {
     self.deleteButton.enabled = (self.sidebar.canvasController.drawingController.selectedObjects.count > 0) ? YES : NO;
     
+}
+
+- (void) undoStatusDidChange:(NSNotification *)aNotification
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.undoButton.enabled = [self.sidebar.canvasController.document.undoManager canUndo];
+        self.redoButton.enabled = [self.sidebar.canvasController.document.undoManager canRedo];
+    });
 }
 
 

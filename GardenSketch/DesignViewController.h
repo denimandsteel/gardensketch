@@ -29,6 +29,9 @@
 - (IBAction)colorPickerTapped:(id)sender;
 
 - (IBAction)deleteTapped:(id)sender;
+- (IBAction)cloneTapped:(id)sender;
+- (IBAction)redoTapped:(id)sender;
+- (IBAction)undoTapped:(id)sender;
 
 
 @end
