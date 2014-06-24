@@ -14,8 +14,6 @@
 
 + (SVGShapeManager *)sharedInstance;
 
-- (WDPath *)pathFromSVGFile:(NSString *)filename;
-
-@property (nonatomic, strong) WDGroup *testGroup;
+@property (nonatomic, strong) NSMutableDictionary *shapes;
 
 @end

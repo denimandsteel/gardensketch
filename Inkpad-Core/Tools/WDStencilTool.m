@@ -31,7 +31,7 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 
 - (NSString *) iconName
 {
-    return @"structure";
+    return @"big_plant.png";
 }
 
 - (BOOL) createsObject
@@ -83,7 +83,7 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 		CGRect rect = WDRectWithPointsConstrained(CGPointMake(center.x-20, center.y-20), CGPointMake(center.x+20, center.y+20), NO);
         WDPath *smoothPath = [WDPath pathWithOvalInRect:rect];
 		
-		WDGroup *group = [[SVGShapeManager sharedInstance].testGroup copy];
+		WDGroup *group = [[SVGShapeManager sharedInstance].shapes[@"gazebo"] copy];
 		
 		CGAffineTransform transform = CGAffineTransformMakeTranslation(center.x, center.y);
 		

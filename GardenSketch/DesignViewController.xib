@@ -59,8 +59,8 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6Q-z9-bWt" customClass="WDToolButton">
                     <rect key="frame" x="20" y="188" width="32" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.40126849279999999" green="1" blue="0.56808234639999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" image="structure.png"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="big_plant.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pV1-DC-Ftb" customClass="WDToolButton">
                     <rect key="frame" x="76" y="104" width="32" height="32"/>
@@ -78,6 +78,18 @@
                         <action selector="colorPickerTapped:" destination="-1" eventType="touchUpInside" id="nIy-wt-bdU"/>
                     </connections>
                 </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Planting Areas &amp; Freehand" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7Y-pt-IPx">
+                    <rect key="frame" x="20" y="75" width="221" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Plants" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHm-AT-1H8">
+                    <rect key="frame" x="20" y="159" width="221" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.96677564538043481" green="0.96677564538043481" blue="0.96677564538043481" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -85,8 +97,8 @@
         </view>
     </objects>
     <resources>
+        <image name="big_plant.png" width="185" height="185"/>
         <image name="enclosed.png" width="115" height="106"/>
         <image name="freehand.png" width="102" height="106"/>
-        <image name="structure.png" width="30" height="30"/>
     </resources>
 </document>

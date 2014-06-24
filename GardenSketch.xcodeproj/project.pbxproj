@@ -286,6 +286,7 @@
 		4D081BF21958E83100F8871C /* gazebo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BF01958E83100F8871C /* gazebo.svg */; };
 		4D081BF31958E83100F8871C /* plant.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BF11958E83100F8871C /* plant.svg */; };
 		4D081BF61958F70900F8871C /* SVGShapeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D081BF51958F70900F8871C /* SVGShapeManager.m */; };
+		4D081BF8195A2C5A00F8871C /* big_plant.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BF7195A2C5A00F8871C /* big_plant.png */; };
 		4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D862ECA1952043A0066A848 /* DesignViewController.m */; };
 		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
 /* End PBXBuildFile section */
@@ -752,6 +753,7 @@
 		4D081BF11958E83100F8871C /* plant.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = plant.svg; sourceTree = "<group>"; };
 		4D081BF41958F70900F8871C /* SVGShapeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVGShapeManager.h; sourceTree = "<group>"; };
 		4D081BF51958F70900F8871C /* SVGShapeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVGShapeManager.m; sourceTree = "<group>"; };
+		4D081BF7195A2C5A00F8871C /* big_plant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = big_plant.png; sourceTree = "<group>"; };
 		4D862EC91952043A0066A848 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		4D862ECA1952043A0066A848 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		4D862ECB1952043A0066A848 /* DesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignViewController.xib; sourceTree = "<group>"; };
@@ -920,6 +922,7 @@
 		4D05DB9F194F5C80001F19A7 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				4D081BF7195A2C5A00F8871C /* big_plant.png */,
 				4D081BD71954A31600F8871C /* design@2x.png */,
 				4D081BD81954A31600F8871C /* more@2x.png */,
 				4D081BD91954A31600F8871C /* north@2x.png */,
@@ -1614,6 +1617,7 @@
 				4D05DB9E194BB109001F19A7 /* PropertyViewController.xib in Resources */,
 				4D05DE1A1950AC3F001F19A7 /* Color.xib in Resources */,
 				4D05DCB7194F7FF2001F19A7 /* scale@2x.png in Resources */,
+				4D081BF8195A2C5A00F8871C /* big_plant.png in Resources */,
 				4D05DCA9194F7FF2001F19A7 /* groupSelect@2x.png in Resources */,
 				4D05DBB1194F5C81001F19A7 /* freehand.png in Resources */,
 				4D081BDB1954A31600F8871C /* design@2x.png in Resources */,

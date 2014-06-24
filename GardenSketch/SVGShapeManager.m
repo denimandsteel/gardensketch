@@ -23,17 +23,37 @@
 	return sharedInstance;
 }
 
-- (WDPath *)pathFromSVGFile:(NSString *)filename
+- (id) init
 {
-	NSURL *url = [[NSBundle mainBundle] URLForResource:@"plant" withExtension:@"svg"];
+    self = [super init];
+    
+    if (!self) {
+        return nil;
+    }
+	
+	[self loadShapes];
+	
+	return self;
+}
+
+- (void)loadShapes
+{
+	self.shapes = [NSMutableDictionary dictionary];
+	NSArray *shapeNames = @[@"plant", @"gazebo"];
+	for (NSString *shapeName in shapeNames) {
+		[self loadShape:shapeName];
+	}
+}
+
+- (void)loadShape:(NSString *)shapeName
+{
+	NSURL *url = [[NSBundle mainBundle] URLForResource:shapeName withExtension:@"svg"];
 	
     WDDocument *document = [[WDDocument alloc] initWithFileURL:url];
 	
 	[document openWithCompletionHandler:^(BOOL success) {
-		NSLog(@"Success = %d", success);
-		NSLog(@"%@", document.drawing);
+		NSLog(@"%@ opened!", shapeName);
 		NSMutableArray *pathArray = [NSMutableArray arrayWithArray:[((WDLayer *)document.drawing.layers[0]) elements]];
-//		WDCompoundPath *compPath = [[WDCompoundPath alloc] init];
 		WDGroup *group = [[WDGroup alloc] init];
 		
 		[group setElements:pathArray];
@@ -44,12 +64,12 @@
 		
 		CGAffineTransform scale = CGAffineTransformMakeScale(.2, .2);
 		[group transform:scale];
-		
-//		[compPath setSubpaths:pathArray];
-		self.testGroup = group;
+
+		self.shapes[shapeName] = group;
+		[document closeWithCompletionHandler:^(BOOL success) {
+			NSLog(@"%@ closed!", shapeName);
+		}];
     }];
-	
-	return nil;
 }
 
 @end

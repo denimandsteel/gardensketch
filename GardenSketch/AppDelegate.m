@@ -11,6 +11,7 @@
 #import "WDInspectableProperties.h"
 #import "WDColor.h"
 #import "WDGradient.h"
+#import "SVGShapeManager.h"
 
 @implementation AppDelegate
 
@@ -18,8 +19,10 @@
 {
 	// Load the fonts at startup. Dispatch this call at the end of the main queue;
 	// It will then dispatch the real work on another queue after the app launches.
+	// Also load the svg shapes upfront
 	dispatch_async(dispatch_get_main_queue(), ^{
 		[WDFontManager sharedInstance];
+		[SVGShapeManager sharedInstance];
 	});
 	
 	[self clearTempDirectory];
