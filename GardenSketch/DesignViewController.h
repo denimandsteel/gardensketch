@@ -19,7 +19,16 @@
 
 @property (weak, nonatomic) IBOutlet ColorPickerButton *outlineColorPicker;
 
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+@property (weak, nonatomic) IBOutlet UIButton *cloneButton;
+@property (weak, nonatomic) IBOutlet UIButton *redoButton;
+@property (weak, nonatomic) IBOutlet UIButton *undoButton;
+
+
 - (IBAction)changePlan:(id)sender;
 - (IBAction)colorPickerTapped:(id)sender;
+
+- (IBAction)deleteTapped:(id)sender;
+
 
 @end

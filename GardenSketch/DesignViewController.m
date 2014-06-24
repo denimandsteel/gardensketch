@@ -13,6 +13,7 @@
 #import "WDFreehandTool.h"
 #import "WDStencilTool.h"
 #import "WDColor.h"
+#import "WDDrawingController.h"
 
 @interface DesignViewController ()
 
@@ -33,6 +34,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+           selector:@selector(selectionChanged:)
+               name:WDSelectionChangedNotification
+             object:self.sidebar.canvasController.drawingController];
 	
 	WDDocument *currentDocument = self.sidebar.canvasController.document;
 	NSString *planName = currentDocument.displayName;
@@ -92,6 +98,10 @@
 - (IBAction)colorPickerTapped:(id)sender {
 	ColorPickerButton *button = (ColorPickerButton *)sender;
 	[button showColors:self];
+}
+
+- (IBAction)deleteTapped:(id)sender {
+	[self.sidebar.canvasController delete:self];
 }
 
 #pragma mark Tools
@@ -168,5 +178,12 @@
 	self.stencilButton.tool = stencil;
 	[self.stencilButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 }
+
+- (void) selectionChanged:(NSNotification *)aNotification
+{
+    self.deleteButton.enabled = (self.sidebar.canvasController.drawingController.selectedObjects.count > 0) ? YES : NO;
+    
+}
+
 
 @end
