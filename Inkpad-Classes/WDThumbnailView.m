@@ -337,6 +337,7 @@
 }
 
 - (IBAction)copyTapped:(id)sender {
+	[self.delegate duplicateTapped:self];
 }
 
 - (IBAction)shareTapped:(id)sender {

@@ -10,6 +10,7 @@
                 <outlet property="freehandButton" destination="BCz-Ro-S7V" id="msP-k3-u1n"/>
                 <outlet property="outlineColorPicker" destination="unO-uW-Cbo" id="i2K-nJ-XbT"/>
                 <outlet property="planNameLabel" destination="lrp-fC-sle" id="0Dv-8G-UQA"/>
+                <outlet property="stencilButton" destination="L6Q-z9-bWt" id="hg3-NT-yrJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -55,6 +56,12 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="freehand.png"/>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6Q-z9-bWt" customClass="WDToolButton">
+                    <rect key="frame" x="20" y="188" width="32" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.40126849279999999" green="1" blue="0.56808234639999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" image="structure.png"/>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pV1-DC-Ftb" customClass="WDToolButton">
                     <rect key="frame" x="76" y="104" width="32" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -80,5 +87,6 @@
     <resources>
         <image name="enclosed.png" width="115" height="106"/>
         <image name="freehand.png" width="102" height="106"/>
+        <image name="structure.png" width="30" height="30"/>
     </resources>
 </document>

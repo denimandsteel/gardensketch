@@ -31,14 +31,8 @@ NSString *WDDropboxWasUnlinkedNotification = @"WDDropboxWasUnlinkedNotification"
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application
 {
-    #if !WD_DEBUG
-    #warning "Set appropriate Dropbox keys before submitting to the app store"
-    #endif
-    
-    NSLog(@"No Dropbox Keys!");
-    
-    NSString *consumerKey = @"xxxx";
-    NSString *consumerSecret = @"xxxx";
+    NSString *consumerKey = @"ddkeuma70678g5c";
+    NSString *consumerSecret = @"wx4zfjcf5l9x9yb";
     
     DBSession *session = [[DBSession alloc] initWithAppKey:consumerKey appSecret:consumerSecret root:kDBRootDropbox];
     

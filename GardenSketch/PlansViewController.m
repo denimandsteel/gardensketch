@@ -10,6 +10,7 @@
 #import "WDDrawingManager.h"
 #import "WDThumbnailView.h"
 #import "WDDocument.h"
+#import "WDCanvasController.h"
 
 @interface PlansViewController ()
 
@@ -204,6 +205,11 @@
 - (void) thumbnailDidEndEditing:(WDThumbnailView *)thumbView
 {
     editingThumbnail_ = nil;
+}
+
+- (void) duplicateTapped:(WDThumbnailView *)thumbView
+{
+	[self.sidebar.canvasController duplicateDrawing:self];
 }
 
 - (WDThumbnailView *) getThumbnail:(NSString *)filename

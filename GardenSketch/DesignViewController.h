@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *planNameLabel;
 @property (weak, nonatomic) IBOutlet WDToolButton *freehandButton;
 @property (weak, nonatomic) IBOutlet WDToolButton *enclosedButton;
+@property (weak, nonatomic) IBOutlet WDToolButton *stencilButton;
 
 @property (weak, nonatomic) IBOutlet ColorPickerButton *outlineColorPicker;
 

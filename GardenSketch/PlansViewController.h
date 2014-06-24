@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "SidebarContentViewController.h"
+#import "WDThumbnailView.h"
 
-@class WDThumbnailView;
-
-@interface PlansViewController : SidebarContentViewController
+@interface PlansViewController : SidebarContentViewController <WDThumbnailViewDelegate>
 {
 	WDThumbnailView         *editingThumbnail_;
 }

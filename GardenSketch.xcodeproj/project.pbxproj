@@ -282,6 +282,10 @@
 		4D081BE31954B54800F8871C /* ColorPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BE11954B54800F8871C /* ColorPickerViewController.xib */; };
 		4D081BE61954B63C00F8871C /* ColorPickerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D081BE51954B63C00F8871C /* ColorPickerButton.m */; };
 		4D081BE81954DB1D00F8871C /* ColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BE71954DB1D00F8871C /* ColorCell.xib */; };
+		4D081BEE1958B1A100F8871C /* WDStencilTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D081BED1958B1A100F8871C /* WDStencilTool.m */; };
+		4D081BF21958E83100F8871C /* gazebo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BF01958E83100F8871C /* gazebo.svg */; };
+		4D081BF31958E83100F8871C /* plant.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BF11958E83100F8871C /* plant.svg */; };
+		4D081BF61958F70900F8871C /* SVGShapeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D081BF51958F70900F8871C /* SVGShapeManager.m */; };
 		4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D862ECA1952043A0066A848 /* DesignViewController.m */; };
 		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
 /* End PBXBuildFile section */
@@ -742,6 +746,12 @@
 		4D081BE41954B63C00F8871C /* ColorPickerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerButton.h; sourceTree = "<group>"; };
 		4D081BE51954B63C00F8871C /* ColorPickerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerButton.m; sourceTree = "<group>"; };
 		4D081BE71954DB1D00F8871C /* ColorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorCell.xib; sourceTree = "<group>"; };
+		4D081BEC1958B1A100F8871C /* WDStencilTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDStencilTool.h; sourceTree = "<group>"; };
+		4D081BED1958B1A100F8871C /* WDStencilTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDStencilTool.m; sourceTree = "<group>"; };
+		4D081BF01958E83100F8871C /* gazebo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = gazebo.svg; sourceTree = "<group>"; };
+		4D081BF11958E83100F8871C /* plant.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = plant.svg; sourceTree = "<group>"; };
+		4D081BF41958F70900F8871C /* SVGShapeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVGShapeManager.h; sourceTree = "<group>"; };
+		4D081BF51958F70900F8871C /* SVGShapeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVGShapeManager.m; sourceTree = "<group>"; };
 		4D862EC91952043A0066A848 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		4D862ECA1952043A0066A848 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		4D862ECB1952043A0066A848 /* DesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignViewController.xib; sourceTree = "<group>"; };
@@ -824,6 +834,8 @@
 				4D05DAF2194A70C7001F19A7 /* Supporting Files */,
 				4D081BE41954B63C00F8871C /* ColorPickerButton.h */,
 				4D081BE51954B63C00F8871C /* ColorPickerButton.m */,
+				4D081BF41958F70900F8871C /* SVGShapeManager.h */,
+				4D081BF51958F70900F8871C /* SVGShapeManager.m */,
 			);
 			path = GardenSketch;
 			sourceTree = "<group>";
@@ -899,6 +911,7 @@
 		4D05DB45194B820A001F19A7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4D081BEF1958E82500F8871C /* svg */,
 				4D05DB9F194F5C80001F19A7 /* icons */,
 			);
 			path = Images;
@@ -1213,6 +1226,8 @@
 		4D05DC6F194F7FF2001F19A7 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				4D081BEC1958B1A100F8871C /* WDStencilTool.h */,
+				4D081BED1958B1A100F8871C /* WDStencilTool.m */,
 				4D05DC70194F7FF2001F19A7 /* WDAddAnchorTool.h */,
 				4D05DC71194F7FF2001F19A7 /* WDAddAnchorTool.m */,
 				4D05DC72194F7FF2001F19A7 /* WDEraserTool.h */,
@@ -1479,6 +1494,15 @@
 			path = PLists;
 			sourceTree = "<group>";
 		};
+		4D081BEF1958E82500F8871C /* svg */ = {
+			isa = PBXGroup;
+			children = (
+				4D081BF01958E83100F8871C /* gazebo.svg */,
+				4D081BF11958E83100F8871C /* plant.svg */,
+			);
+			name = svg;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1561,6 +1585,7 @@
 				4D05DDED194F9F85001F19A7 /* plans@2x.png in Resources */,
 				4D05DBB2194F5C81001F19A7 /* more.png in Resources */,
 				4D05DCBF194F7FF2001F19A7 /* star@2x.png in Resources */,
+				4D081BF31958E83100F8871C /* plant.svg in Resources */,
 				4D05DE2F1950B8CB001F19A7 /* BlendModes.plist in Resources */,
 				4D05DCB8194F7FF2001F19A7 /* scissor.png in Resources */,
 				4D05DC9F194F7FF2001F19A7 /* add_anchor@2x.png in Resources */,
@@ -1620,6 +1645,7 @@
 				4D05DE1C1950AC3F001F19A7 /* Fill.xib in Resources */,
 				4D081BD1195351AC00F8871C /* Boring.inkpad in Resources */,
 				4D05DCBC194F7FF2001F19A7 /* spiral.png in Resources */,
+				4D081BF21958E83100F8871C /* gazebo.svg in Resources */,
 				4D05DB24194A74FE001F19A7 /* SidebarViewController.xib in Resources */,
 				4D05DE311950B8CB001F19A7 /* ImportFormats.plist in Resources */,
 				4D05DCAC194F7FF2001F19A7 /* line@2x.png in Resources */,
@@ -1732,6 +1758,7 @@
 				4D05DCF7194F7FF2001F19A7 /* WDPenTool.m in Sources */,
 				4D05DDB4194F8042001F19A7 /* WDGradientEditor.m in Sources */,
 				4D05DCE4194F7FF2001F19A7 /* WDText.m in Sources */,
+				4D081BEE1958B1A100F8871C /* WDStencilTool.m in Sources */,
 				4D05DD9C194F8042001F19A7 /* WDBrowserController.m in Sources */,
 				4D05DC94194F7FF2001F19A7 /* NSData+Additions.m in Sources */,
 				4D05DDC7194F8042001F19A7 /* WDSelectionView.m in Sources */,
@@ -1829,6 +1856,7 @@
 				4D05DDCB194F8042001F19A7 /* WDSimpleColorView.m in Sources */,
 				4D05DCD2194F7FF2001F19A7 /* WDDrawing.m in Sources */,
 				4D05DCD6194F7FF2001F19A7 /* WDGradient.m in Sources */,
+				4D081BF61958F70900F8871C /* SVGShapeManager.m in Sources */,
 				4D05DCDA194F7FF2001F19A7 /* WDImageData.m in Sources */,
 				4D05DCCB194F7FF2001F19A7 /* WDAbstractPath.m in Sources */,
 				4D05DCE5194F7FF2001F19A7 /* WDTextPath.m in Sources */,

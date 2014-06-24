@@ -54,4 +54,5 @@
 - (BOOL) thumbnailShouldBeginEditing:(WDThumbnailView *)thumb;
 - (void) thumbnailDidBeginEditing:(WDThumbnailView *)thumb;
 - (void) thumbnailDidEndEditing:(WDThumbnailView *)thumb;
+- (void) duplicateTapped:(WDThumbnailView *)thumb;
 @end

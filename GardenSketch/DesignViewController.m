@@ -11,6 +11,7 @@
 #import "WDDrawingManager.h"
 #import "WDToolManager.h"
 #import "WDFreehandTool.h"
+#import "WDStencilTool.h"
 #import "WDColor.h"
 
 @interface DesignViewController ()
@@ -144,6 +145,7 @@
 {
 	WDTool *freehand = nil;
 	WDTool *enclosed = nil;
+	WDTool *stencil = nil;
 	
 	for (WDTool *tool in [WDToolManager sharedInstance].tools) {
 		if ([tool isKindOfClass:[WDFreehandTool class]]) {
@@ -152,6 +154,8 @@
 			} else {
 				freehand = tool;
 			}
+		} else if ([tool isKindOfClass:[WDStencilTool class]]) {
+			stencil = tool;
 		}
 	}
 	
@@ -160,6 +164,9 @@
 	
 	self.enclosedButton.tool = enclosed;
 	[self.enclosedButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	self.stencilButton.tool = stencil;
+	[self.stencilButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 @end

@@ -97,5 +97,7 @@ enum {
 - (void) editTextObject:(WDText *)text selectAll:(BOOL)selectAll;
 - (void) undoStatusDidChange:(NSNotification *)aNotification;
 
+- (void) duplicateDrawing:(id)sender;
+
 @end
 

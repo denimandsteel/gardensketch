@@ -20,7 +20,9 @@
 #import "WDSelectionTool.h"
 #import "WDShapeTool.h"
 #import "WDTextTool.h"
+#import "WDStencilTool.h"
 #import "WDToolManager.h"
+
 
 NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 
@@ -82,6 +84,7 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 //                   [WDRotateTool tool]];
 		tools_ = @[[WDSelectionTool tool],
                    [WDFreehandTool tool],
+				   [WDStencilTool tool],
 				   closedFreehand];
     }
     
