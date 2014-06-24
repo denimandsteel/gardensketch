@@ -7,7 +7,9 @@
 //
 
 #import "SVGShapeManager.h"
-#import "WDPath.h"
+#import "WDDocument.h"
+#import "WDLayer.h"
+#import "WDCompoundPath.h"
 
 @implementation SVGShapeManager
 
@@ -23,7 +25,30 @@
 
 - (WDPath *)pathFromSVGFile:(NSString *)filename
 {
+	NSURL *url = [[NSBundle mainBundle] URLForResource:@"plant" withExtension:@"svg"];
+	
+    WDDocument *document = [[WDDocument alloc] initWithFileURL:url];
+	
+	[document openWithCompletionHandler:^(BOOL success) {
+		NSLog(@"Success = %d", success);
+		NSLog(@"%@", document.drawing);
+		NSMutableArray *pathArray = [NSMutableArray arrayWithArray:[((WDLayer *)document.drawing.layers[0]) elements]];
+//		WDCompoundPath *compPath = [[WDCompoundPath alloc] init];
+		WDGroup *group = [[WDGroup alloc] init];
+		
+		[group setElements:pathArray];
+		CGPoint center = CGPointMake(CGRectGetMidX(group.bounds), CGRectGetMidY(group.bounds));
 
+		CGAffineTransform translate = CGAffineTransformMakeTranslation(-center.x, -center.y);
+		[group transform:translate];
+		
+		CGAffineTransform scale = CGAffineTransformMakeScale(.2, .2);
+		[group transform:scale];
+		
+//		[compPath setSubpaths:pathArray];
+		self.testGroup = group;
+    }];
+	
 	return nil;
 }
 

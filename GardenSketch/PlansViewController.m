@@ -103,7 +103,6 @@
 
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"did select!");
 	if (indexPath.row < [collectionView numberOfItemsInSection:0] - 1) {
 		WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:indexPath.row withCompletionHandler:nil];
 		[self.sidebar.canvasController setDocument:document];

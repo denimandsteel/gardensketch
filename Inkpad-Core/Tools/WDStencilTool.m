@@ -19,6 +19,7 @@
 #import "WDPath.h"
 #import "WDPropertyManager.h"
 #import "WDUtilities.h"
+#import "SVGShapeManager.h"
 
 #define kMaxError 10.0f
 
@@ -61,8 +62,9 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
     
     pathStarted_ = YES;
     
-    tempPath_ = [[WDPath alloc] init];
-    canvas.shapeUnderConstruction = tempPath_;
+    // TODO: change this to show the sillouhette of the stencil to be drawn!
+	tempPath_ = [[WDPath alloc] init];
+	canvas.shapeUnderConstruction = tempPath_;
     
     [self moveWithEvent:theEvent inCanvas:canvas];
 }
@@ -80,6 +82,12 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 		
 		CGRect rect = WDRectWithPointsConstrained(CGPointMake(center.x-20, center.y-20), CGPointMake(center.x+20, center.y+20), NO);
         WDPath *smoothPath = [WDPath pathWithOvalInRect:rect];
+		
+		WDGroup *group = [[SVGShapeManager sharedInstance].testGroup copy];
+		
+		CGAffineTransform transform = CGAffineTransformMakeTranslation(center.x, center.y);
+		
+		[group transform:transform];
         
         if (smoothPath) {
             smoothPath.fill = [canvas.drawingController.propertyManager activeFillStyle];
@@ -87,8 +95,8 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
             smoothPath.opacity = [[canvas.drawingController.propertyManager defaultValueForProperty:WDOpacityProperty] floatValue];
             smoothPath.shadow = [canvas.drawingController.propertyManager activeShadow];
             
-            [canvas.drawing addObject:smoothPath];
-            [canvas.drawingController selectObject:smoothPath];
+            [canvas.drawing addObject:group];
+//            [canvas.drawingController selectObject:group];
         }
 	}
     

@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WDPath.h"
+#import "WDGroup.h"
 
 @interface SVGShapeManager : NSObject
+
++ (SVGShapeManager *)sharedInstance;
+
+- (WDPath *)pathFromSVGFile:(NSString *)filename;
+
+@property (nonatomic, strong) WDGroup *testGroup;
 
 @end

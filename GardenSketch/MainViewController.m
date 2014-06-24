@@ -14,6 +14,7 @@
 #import "PlansViewController.h"
 #import "WDCanvasController.h"
 #import "DesignViewController.h"
+#import "SVGShapeManager.h"
 
 @interface MainViewController ()
 
@@ -25,6 +26,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+	
+	[[SVGShapeManager sharedInstance] pathFromSVGFile:@"gazebo.svg"];
 	
 	[self addChildViewControllers];
 }

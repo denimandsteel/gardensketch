@@ -163,7 +163,8 @@ NSString *WDCanvasBeganTrackingTouches = @"WDCanvasBeganTrackingTouches";
              object:self.drawingController];
     
     [self showRulers:drawing_.rulersVisible];
-    [self hideTools];
+	// Changed this to show or hide tools
+    [self showTools];
     
     [self scaleDocumentToFit];
 }
