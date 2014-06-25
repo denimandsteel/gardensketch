@@ -113,7 +113,7 @@
 
 - (UIColor *) toolSelectedBackgroundColor
 {
-    return [UIColor colorWithRed:0.0f green:(118.0f / 255) blue:1.0f alpha:1.0f];
+    return [UIColor colorWithRed:(166.0f / 255) green:(202.0f / 255) blue:(251.0f / 255) alpha:1.0f];
 }
 
 - (void) drawDisclosueInContext:(CGContextRef)ctx
@@ -168,8 +168,7 @@
 {
     tool_ = tool;
     
-    UIImage *tinted = [tool.icon imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    [self setImage:tinted forState:UIControlStateNormal];
+    [self setImage:tool.icon forState:UIControlStateNormal];
     self.tintColor = [self toolTintColor];
     [self setImage:tool.icon forState:UIControlStateSelected];
     
