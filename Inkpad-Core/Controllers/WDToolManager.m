@@ -46,8 +46,8 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 - (NSArray *) tools
 {
     if (!tools_) {
-//        WDSelectionTool *groupSelect = (WDSelectionTool *) [WDSelectionTool tool];
-//        groupSelect.groupSelect = YES;
+        WDSelectionTool *groupSelect = (WDSelectionTool *) [WDSelectionTool tool];
+        groupSelect.groupSelect = NO;
         
         WDFreehandTool *closedFreehand = (WDFreehandTool *) [WDFreehandTool tool];
         closedFreehand.closeShape = YES;
@@ -82,7 +82,8 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 //                   [WDEyedropperTool tool],
 //                   [WDScaleTool tool],
 //                   [WDRotateTool tool]];
-		tools_ = @[[WDSelectionTool tool],
+		tools_ = @[groupSelect,
+				   [WDSelectionTool tool],
                    [WDFreehandTool tool],
 				   [WDStencilTool tool],
 				   closedFreehand];

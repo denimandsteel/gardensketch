@@ -10,6 +10,7 @@
 #import "WDDocument.h"
 #import "WDDrawingManager.h"
 #import "WDToolManager.h"
+#import "WDSelectionTool.h"
 #import "WDFreehandTool.h"
 #import "WDStencilTool.h"
 #import "WDColor.h"
@@ -87,11 +88,9 @@
 	UIButton *button = (UIButton *)sender;
 	if (button.tag == 0) {
 		// previous
-		NSLog(@"previous!");
 		planIndex--;
 	} else {
 		// next
-		NSLog(@"next!");
 		planIndex++;
 	}
 	
@@ -101,6 +100,7 @@
 	
 	// TODO: make sure current document is saved
 	// TODO: make sure the selection view is cleared, selected path points show up in the next plan
+	// TODO: disable next/previous buttons when there's no point
 	
 	WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:planIndex withCompletionHandler:nil];
 	[self.sidebar.canvasController setDocument:document];
@@ -147,6 +147,7 @@
 
 - (void) initTools
 {
+	WDTool *select = nil;
 	WDTool *freehand = nil;
 	WDTool *enclosed = nil;
 	WDTool *stencil = nil;
@@ -160,8 +161,13 @@
 			}
 		} else if ([tool isKindOfClass:[WDStencilTool class]]) {
 			stencil = tool;
+		} else if ([tool isKindOfClass:[WDSelectionTool class]]) {
+			select = tool;
 		}
 	}
+	
+	self.selectButton.tool = select;
+	[self.selectButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 	
 	self.freehandButton.tool = freehand;
 	[self.freehandButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
