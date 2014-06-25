@@ -13,11 +13,24 @@
 
 @class WDPath;
 
+typedef enum {
+    kPlantBig,
+	kPlantSmall,
+	kHedge,
+    kShrub,
+	kTree1,
+    kTree2,
+    kDriveway,
+	kSidewalk,
+	kShed,
+	kGazebo
+} ShapeType;
+
 @interface WDStencilTool : WDTool {
     WDPath          *tempPath_;
     BOOL            pathStarted_;
 }
 
-@property (nonatomic, assign) BOOL closeShape;
+@property (nonatomic, assign) ShapeType type;
 
 @end

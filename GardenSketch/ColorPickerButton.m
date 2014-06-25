@@ -15,8 +15,24 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+		[self initialize];
     }
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+	self = [super initWithCoder:aDecoder];
+	if (self) {
+		[self initialize];
+	}
+	return self;
+}
+
+- (void)initialize
+{
+	self.layer.cornerRadius = 16; // this value vary as per your desire
+    self.clipsToBounds = YES;
 }
 
 - (void) showColors:(id)sender
@@ -24,7 +40,7 @@
     if (!popover_) {
         colorController = [[ColorPickerViewController alloc] initWithColors:self.colors];
 		
-		[colorController setPreferredContentSize:CGSizeMake(200, self.colors.count * 40)];
+		[colorController setPreferredContentSize:CGSizeMake(200, self.colors.count * 40 + 20)]; // + 20 is to account for 20 px of margin at the top and bottom.
         
         popover_ = [[UIPopoverController alloc] initWithContentViewController:colorController];
 

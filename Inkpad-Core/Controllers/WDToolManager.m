@@ -46,11 +46,17 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 - (NSArray *) tools
 {
     if (!tools_) {
-        WDSelectionTool *groupSelect = (WDSelectionTool *) [WDSelectionTool tool];
-        groupSelect.groupSelect = NO;
-        
-        WDFreehandTool *closedFreehand = (WDFreehandTool *) [WDFreehandTool tool];
+        WDFreehandTool *closedFreehand = (WDFreehandTool *)[WDFreehandTool tool];
         closedFreehand.closeShape = YES;
+		
+		WDStencilTool *bigPlant = (WDStencilTool *)[WDStencilTool tool];
+		[bigPlant setType:kPlantBig];
+		
+		WDStencilTool *smallPlant = (WDStencilTool *)[WDStencilTool tool];
+		[smallPlant setType:kPlantSmall];
+		
+		WDStencilTool *gazebo = (WDStencilTool *)[WDStencilTool tool];
+		[gazebo setType:kGazebo];
         
 //        WDShapeTool *oval = (WDShapeTool *) [WDShapeTool tool];
 //        oval.shapeMode = WDShapeOval;
@@ -82,10 +88,11 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 //                   [WDEyedropperTool tool],
 //                   [WDScaleTool tool],
 //                   [WDRotateTool tool]];
-		tools_ = @[groupSelect,
-				   [WDSelectionTool tool],
+		tools_ = @[[WDSelectionTool tool],
                    [WDFreehandTool tool],
-				   [WDStencilTool tool],
+				   bigPlant,
+				   smallPlant,
+				   gazebo,
 				   closedFreehand];
     }
     

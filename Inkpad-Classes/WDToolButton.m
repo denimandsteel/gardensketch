@@ -34,9 +34,27 @@
         return nil;
     }
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(activeToolChanged:) name:WDActiveToolDidChange object:nil];
+    [self initialize];
     
     return self;
+}
+
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+	self = [super initWithCoder:aDecoder];
+	
+	if (!self) {
+		return nil;
+	}
+	
+	[self initialize];
+	
+	return self;
+}
+
+- (void)initialize
+{
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(activeToolChanged:) name:WDActiveToolDidChange object:nil];
 }
 
 - (void) dealloc

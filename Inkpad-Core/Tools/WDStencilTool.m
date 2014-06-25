@@ -27,11 +27,22 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 
 @implementation WDStencilTool
 
-@synthesize closeShape = closeShape_;
-
 - (NSString *) iconName
 {
-    return @"big_plant.png";
+	switch (self.type) {
+		case kPlantBig:
+			return @"Plant_Grey_Green.png";
+		case kPlantSmall:
+			return @"Plant_Grey_Green.png";
+			break;
+		case kGazebo:
+			return @"Gazebo.png";
+			break;
+		default:
+			return @"";
+			break;
+	}
+    return nil;
 }
 
 - (BOOL) createsObject
@@ -41,23 +52,15 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 
 - (BOOL) isDefaultForKind
 {
-    NSNumber *defaultFreehand = [[NSUserDefaults standardUserDefaults] valueForKey:WDDefaultStencilTool];
-    return (closeShape_ == [defaultFreehand intValue]) ? YES : NO;
+    return YES;
 }
 
 - (void) activated
 {
-    [[NSUserDefaults standardUserDefaults] setValue:@(closeShape_) forKey:WDDefaultStencilTool];
 }
 
 - (void) beginWithEvent:(WDEvent *)theEvent inCanvas:(WDCanvas *)canvas
 {
-	if (closeShape_) {
-		[canvas.drawingController setValue:[WDColor randomColor] forProperty:WDFillProperty];
-	} else {
-		[canvas.drawingController setValue:[NSNull null] forProperty:WDFillProperty];
-	}
-    
 	[canvas.drawingController selectNone:nil];
     
     pathStarted_ = YES;
@@ -79,29 +82,47 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 {
     if (pathStarted_) {
         CGPoint center = theEvent.location;
-		
-		CGRect rect = WDRectWithPointsConstrained(CGPointMake(center.x-20, center.y-20), CGPointMake(center.x+20, center.y+20), NO);
-        WDPath *smoothPath = [WDPath pathWithOvalInRect:rect];
-		
-		WDGroup *group = [[SVGShapeManager sharedInstance].shapes[@"gazebo"] copy];
+        
+		WDElement *element = [self shapeForType:self.type];
 		
 		CGAffineTransform transform = CGAffineTransformMakeTranslation(center.x, center.y);
 		
-		[group transform:transform];
+		[element transform:transform];
         
-        if (smoothPath) {
-            smoothPath.fill = [canvas.drawingController.propertyManager activeFillStyle];
-            smoothPath.strokeStyle = [canvas.drawingController.propertyManager activeStrokeStyle];
-            smoothPath.opacity = [[canvas.drawingController.propertyManager defaultValueForProperty:WDOpacityProperty] floatValue];
-            smoothPath.shadow = [canvas.drawingController.propertyManager activeShadow];
-            
-            [canvas.drawing addObject:group];
-//            [canvas.drawingController selectObject:group];
-        }
+        [canvas.drawing addObject:element];
 	}
     
     pathStarted_ = NO;
     tempPath_ = nil;
+}
+
+- (WDGroup *)shapeForType:(ShapeType)type
+{
+	NSString *filename = @"";
+	CGFloat scale = 1.0;
+	
+	switch (type) {
+		case kPlantBig:
+			filename = @"plant";
+			break;
+		case kPlantSmall:
+			filename = @"plant";
+			scale = .5;
+			break;
+		case kGazebo:
+			filename = @"gazebo";
+			break;
+		default:
+			break;
+	}
+	
+	WDGroup *result = [[SVGShapeManager sharedInstance].shapes[filename] copy];
+	
+	CGAffineTransform transform = CGAffineTransformMakeScale(scale, scale);
+	
+	[result transform:transform];
+	
+	return result;
 }
 
 @end

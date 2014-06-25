@@ -16,7 +16,13 @@
 @property (weak, nonatomic) IBOutlet WDToolButton *selectButton;
 @property (weak, nonatomic) IBOutlet WDToolButton *freehandButton;
 @property (weak, nonatomic) IBOutlet WDToolButton *enclosedButton;
-@property (weak, nonatomic) IBOutlet WDToolButton *stencilButton;
+
+@property (weak, nonatomic) IBOutlet WDToolButton *bigPlantButton;
+@property (weak, nonatomic) IBOutlet WDToolButton *smallPlantButton;
+
+@property (weak, nonatomic) IBOutlet WDToolButton *tileButton;
+@property (weak, nonatomic) IBOutlet WDToolButton *gazeboButton;
+@property (weak, nonatomic) IBOutlet WDToolButton *shedButton;
 
 @property (weak, nonatomic) IBOutlet ColorPickerButton *outlineColorPicker;
 

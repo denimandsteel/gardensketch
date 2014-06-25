@@ -150,7 +150,9 @@
 	WDTool *select = nil;
 	WDTool *freehand = nil;
 	WDTool *enclosed = nil;
-	WDTool *stencil = nil;
+	WDTool *bigPlant = nil;
+	WDTool *smallPlant = nil;
+	WDTool *gazebo = nil;
 	
 	for (WDTool *tool in [WDToolManager sharedInstance].tools) {
 		if ([tool isKindOfClass:[WDFreehandTool class]]) {
@@ -160,7 +162,20 @@
 				freehand = tool;
 			}
 		} else if ([tool isKindOfClass:[WDStencilTool class]]) {
-			stencil = tool;
+			switch ([(WDStencilTool *)tool type]) {
+				case kPlantBig:
+					bigPlant = tool;
+					break;
+				case kPlantSmall:
+					smallPlant = tool;
+					break;
+				case kGazebo:
+					gazebo = tool;
+					break;
+				default:
+					NSLog(@"hmm.. wierd");
+			}
+			
 		} else if ([tool isKindOfClass:[WDSelectionTool class]]) {
 			select = tool;
 		}
@@ -175,8 +190,14 @@
 	self.enclosedButton.tool = enclosed;
 	[self.enclosedButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 	
-	self.stencilButton.tool = stencil;
-	[self.stencilButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	self.bigPlantButton.tool = bigPlant;
+	[self.bigPlantButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	self.smallPlantButton.tool = smallPlant;
+	[self.smallPlantButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	self.gazeboButton.tool = gazebo;
+	[self.gazeboButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void) selectionChanged:(NSNotification *)aNotification
