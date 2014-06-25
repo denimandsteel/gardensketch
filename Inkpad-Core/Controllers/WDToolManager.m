@@ -55,45 +55,23 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 		WDStencilTool *smallPlant = (WDStencilTool *)[WDStencilTool tool];
 		[smallPlant setType:kPlantSmall];
 		
+		WDStencilTool *sidewalk = (WDStencilTool *)[WDStencilTool tool];
+		[sidewalk setType:kSidewalk];
+		
 		WDStencilTool *gazebo = (WDStencilTool *)[WDStencilTool tool];
 		[gazebo setType:kGazebo];
+		
+		WDStencilTool *shed = (WDStencilTool *)[WDStencilTool tool];
+		[shed setType:kShed];
         
-//        WDShapeTool *oval = (WDShapeTool *) [WDShapeTool tool];
-//        oval.shapeMode = WDShapeOval;
-//        
-//        WDShapeTool *rect = (WDShapeTool *) [WDShapeTool tool];
-//        rect.shapeMode = WDShapeRectangle;
-//        
-//        WDShapeTool *star = (WDShapeTool *) [WDShapeTool tool];
-//        star.shapeMode = WDShapeStar;
-//        
-//        WDShapeTool *poly = (WDShapeTool *) [WDShapeTool tool];
-//        poly.shapeMode = WDShapePolygon;
-//        
-//        WDShapeTool *line = (WDShapeTool *) [WDShapeTool tool];
-//        line.shapeMode = WDShapeLine;
-//        
-//        WDShapeTool *spiral = (WDShapeTool *) [WDShapeTool tool];
-//        spiral.shapeMode = WDShapeSpiral;
-        
-//        tools_ = @[[WDSelectionTool tool],
-//                   groupSelect,
-//                   [WDPenTool tool],
-//                   [WDAddAnchorTool tool],
-//                   [WDScissorTool tool],
-//                   @[[WDFreehandTool tool], closedFreehand],
-//                   [WDEraserTool tool],
-//                   @[rect, oval, star, poly, spiral, line],
-//                   [WDTextTool tool],
-//                   [WDEyedropperTool tool],
-//                   [WDScaleTool tool],
-//                   [WDRotateTool tool]];
 		tools_ = @[[WDSelectionTool tool],
                    [WDFreehandTool tool],
+				   closedFreehand,
 				   bigPlant,
 				   smallPlant,
+				   sidewalk,
 				   gazebo,
-				   closedFreehand];
+				   shed];
     }
     
     return tools_;

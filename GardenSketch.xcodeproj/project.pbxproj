@@ -295,6 +295,8 @@
 		4D081C04195B468B00F8871C /* Plant_Light_Pink.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C03195B468B00F8871C /* Plant_Light_Pink.png */; };
 		4D081C08195B484100F8871C /* GSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D081C07195B484100F8871C /* GSLabel.m */; };
 		4D081C0B195B485E00F8871C /* GSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D081C0A195B485E00F8871C /* GSButton.m */; };
+		4D081C0E195B79A100F8871C /* Shed.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C0D195B79A100F8871C /* Shed.svg */; };
+		4D081C10195B7BA500F8871C /* Tile.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C0F195B7BA500F8871C /* Tile.svg */; };
 		4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D862ECA1952043A0066A848 /* DesignViewController.m */; };
 		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
 /* End PBXBuildFile section */
@@ -773,6 +775,8 @@
 		4D081C09195B485E00F8871C /* GSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSButton.h; sourceTree = "<group>"; };
 		4D081C0A195B485E00F8871C /* GSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSButton.m; sourceTree = "<group>"; };
 		4D081C0C195B48D600F8871C /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		4D081C0D195B79A100F8871C /* Shed.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Shed.svg; sourceTree = "<group>"; };
+		4D081C0F195B7BA500F8871C /* Tile.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Tile.svg; sourceTree = "<group>"; };
 		4D862EC91952043A0066A848 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		4D862ECA1952043A0066A848 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		4D862ECB1952043A0066A848 /* DesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignViewController.xib; sourceTree = "<group>"; };
@@ -1527,6 +1531,8 @@
 		4D081BEF1958E82500F8871C /* svg */ = {
 			isa = PBXGroup;
 			children = (
+				4D081C0F195B7BA500F8871C /* Tile.svg */,
+				4D081C0D195B79A100F8871C /* Shed.svg */,
 				4D081BF01958E83100F8871C /* gazebo.svg */,
 				4D081BF11958E83100F8871C /* plant.svg */,
 			);
@@ -1646,6 +1652,7 @@
 				4D05DCA6194F7FF2001F19A7 /* freehand_shape.png in Resources */,
 				4D05DCB2194F7FF2001F19A7 /* polygon@2x.png in Resources */,
 				4D05DCB1194F7FF2001F19A7 /* polygon.png in Resources */,
+				4D081C0E195B79A100F8871C /* Shed.svg in Resources */,
 				4D05DE1E1950AC3F001F19A7 /* Gradient.xib in Resources */,
 				4D05DBC1194F5FD2001F19A7 /* property.png in Resources */,
 				4D05DE301950B8CB001F19A7 /* Defaults.plist in Resources */,
@@ -1656,6 +1663,7 @@
 				4D05DCAA194F7FF2001F19A7 /* hand.png in Resources */,
 				4D05DB9E194BB109001F19A7 /* PropertyViewController.xib in Resources */,
 				4D05DE1A1950AC3F001F19A7 /* Color.xib in Resources */,
+				4D081C10195B7BA500F8871C /* Tile.svg in Resources */,
 				4D05DCB7194F7FF2001F19A7 /* scale@2x.png in Resources */,
 				4D081BF8195A2C5A00F8871C /* big_plant.png in Resources */,
 				4D05DCA9194F7FF2001F19A7 /* groupSelect@2x.png in Resources */,

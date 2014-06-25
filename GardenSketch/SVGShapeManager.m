@@ -39,7 +39,7 @@
 - (void)loadShapes
 {
 	self.shapes = [NSMutableDictionary dictionary];
-	NSArray *shapeNames = @[@"plant", @"gazebo"];
+	NSArray *shapeNames = @[@"plant", @"gazebo", @"Tile", @"Shed"];
 	for (NSString *shapeName in shapeNames) {
 		[self loadShape:shapeName];
 	}

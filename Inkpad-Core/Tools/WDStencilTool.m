@@ -35,8 +35,14 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 		case kPlantSmall:
 			return @"Plant_Grey_Green.png";
 			break;
+		case kSidewalk:
+			return @"Tile.png";
+			break;
 		case kGazebo:
 			return @"Gazebo.png";
+			break;
+		case kShed:
+			return @"Shed.png";
 			break;
 		default:
 			return @"";
@@ -109,8 +115,14 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 			filename = @"plant";
 			scale = .5;
 			break;
+		case kSidewalk:
+			filename = @"Tile";
+			break;
 		case kGazebo:
 			filename = @"gazebo";
+			break;
+		case kShed:
+			filename = @"Shed";
 			break;
 		default:
 			break;

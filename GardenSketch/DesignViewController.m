@@ -152,7 +152,9 @@
 	WDTool *enclosed = nil;
 	WDTool *bigPlant = nil;
 	WDTool *smallPlant = nil;
+	WDTool *sidewalk = nil;
 	WDTool *gazebo = nil;
+	WDTool *shed = nil;
 	
 	for (WDTool *tool in [WDToolManager sharedInstance].tools) {
 		if ([tool isKindOfClass:[WDFreehandTool class]]) {
@@ -169,8 +171,14 @@
 				case kPlantSmall:
 					smallPlant = tool;
 					break;
+				case kSidewalk:
+					sidewalk = tool;
+					break;
 				case kGazebo:
 					gazebo = tool;
+					break;
+				case kShed:
+					shed = tool;
 					break;
 				default:
 					NSLog(@"hmm.. wierd");
@@ -196,8 +204,14 @@
 	self.smallPlantButton.tool = smallPlant;
 	[self.smallPlantButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 	
+	self.tileButton.tool = sidewalk;
+	[self.tileButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
 	self.gazeboButton.tool = gazebo;
 	[self.gazeboButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	self.shedButton.tool = shed;
+	[self.shedButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void) selectionChanged:(NSNotification *)aNotification
