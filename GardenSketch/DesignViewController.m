@@ -35,6 +35,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	
+	
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(drawingChanged:)
+                                                 name:UIDocumentStateChangedNotification
+                                               object:nil];
+	
+	NSArray *outlineColors = @[[[WDColor randomColor] UIColor],
+							   [[WDColor randomColor] UIColor],
+							   [[WDColor randomColor] UIColor]];
+	[self.outlineColorPicker setColors:outlineColors];
+	
+	[self initTools];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	NSLog(@"did appear!");
 	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 	[nc addObserver:self
            selector:@selector(selectionChanged:)
@@ -50,18 +68,6 @@
 	NSString *planName = currentDocument.displayName;
 	
 	[self.planNameLabel setText:planName];
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(drawingChanged:)
-                                                 name:UIDocumentStateChangedNotification
-                                               object:nil];
-	
-	NSArray *outlineColors = @[[[WDColor randomColor] UIColor],
-							   [[WDColor randomColor] UIColor],
-							   [[WDColor randomColor] UIColor]];
-	[self.outlineColorPicker setColors:outlineColors];
-	
-	[self initTools];
 }
 
 - (void)didReceiveMemoryWarning
@@ -131,35 +137,6 @@
     
     [WDToolManager sharedInstance].activeTool = ((WDToolButton *)sender).tool;
 }
-
-//
-//- (void) setTools:(NSArray *)tools
-//{
-//    tools_ = tools;
-//
-//    // build tool buttons
-//    CGRect buttonRect = CGRectMake(0, 0, [WDToolButton dimension], [WDToolButton dimension]);
-//
-//    for (id tool in tools_) {
-//        WDToolButton *button = [WDToolButton buttonWithType:UIButtonTypeCustom];
-//
-//        if ([tool isKindOfClass:[NSArray class]]) {
-//            button.tools = tool;
-//        } else {
-//            button.tool = tool;
-//        }
-//
-//        button.frame = buttonRect;
-//        [button addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-//        [self addSubview:button];
-//
-//        if (tool == [WDToolManager sharedInstance].activeTool) {
-//            button.selected = YES;
-//        }
-//
-//        buttonRect = CGRectOffset(buttonRect, 0, [WDToolButton dimension]);
-//    }
-//}
 
 - (void) drawingChanged:(NSNotification *)aNotification
 {
