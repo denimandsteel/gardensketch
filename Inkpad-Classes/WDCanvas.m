@@ -27,6 +27,7 @@
 #import "WDToolView.h"
 #import "WDToolManager.h"
 #import "WDUtilities.h"
+#import "Constants.h"
 
 #define kFitBuffer                  30
 #define kPrintSizeFactor            (72.0f / 132.0f)
@@ -89,7 +90,7 @@ NSString *WDCanvasBeganTrackingTouches = @"WDCanvasBeganTrackingTouches";
     selectionTransform_ = CGAffineTransformIdentity;
     transform_ = CGAffineTransformIdentity;
     
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = GS_COLOR_CANVAS;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)

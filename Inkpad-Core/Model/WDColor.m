@@ -54,6 +54,17 @@ NSString *WDAlphaKey = @"WDAlphaKey";
     
     return [[WDColor alloc] initWithHue:hue saturation:saturation brightness:brightness alpha:alpha];
 }
+
++ (WDColor *) colorWithUIColor:(UIColor *)color
+{
+	CGFloat red, green, blue, alpha;
+	[color getRed:&red green:&green blue:&blue alpha:&alpha];
+	float hue, saturation, brightness;
+    
+    RGBtoHSV(red, green, blue, &hue, &saturation, &brightness);
+    
+    return [[WDColor alloc] initWithHue:hue saturation:saturation brightness:brightness alpha:alpha];
+}
     
 + (WDColor *) colorWithHue:(CGFloat)hue saturation:(CGFloat)saturation brightness:(CGFloat)brightness alpha:(CGFloat)alpha
 {

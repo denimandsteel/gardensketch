@@ -17,6 +17,7 @@
 #import "WDDrawingController.h"
 #import "Constants.h"
 #import "StencilManager.h"
+#import "WDInspectableProperties.h"
 
 @interface DesignViewController ()
 
@@ -45,9 +46,9 @@
                                                  name:UIDocumentStateChangedNotification
                                                object:nil];
 	
-	NSArray *outlineColors = @[[[WDColor randomColor] UIColor],
-							   [[WDColor randomColor] UIColor],
-							   [[WDColor randomColor] UIColor]];
+	NSArray *outlineColors = @[GS_COLOR_STROKE_RED,
+							   GS_COLOR_STROKE_DARK_GREY,
+							   GS_COLOR_STROKE_LIGHT_GREY];
 	[self.outlineColorPicker setColors:outlineColors];
 	[self.outlineColorPicker setDelegate:self];
 	
@@ -247,6 +248,22 @@
 {
 	if (colorpicker == self.plantColorPicker) {
 		[[StencilManager sharedInstance] setPlantColor:(PlantColor)index];
+	} else if (colorpicker == self.outlineColorPicker) {
+		UIColor *color = nil;
+		switch (index) {
+			case 0:
+				color = GS_COLOR_STROKE_RED;
+				break;
+			case 1:
+				color = GS_COLOR_STROKE_DARK_GREY;
+				break;
+			case 2:
+				color = GS_COLOR_STROKE_LIGHT_GREY;
+				break;
+			default:
+				break;
+		}
+		[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
 	}
 }
 

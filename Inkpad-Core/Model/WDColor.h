@@ -26,6 +26,7 @@
 + (WDColor *) colorWithHue:(CGFloat)hue saturation:(CGFloat)saturation brightness:(CGFloat)brightness alpha:(CGFloat)alpha;
 + (WDColor *) colorWithWhite:(float)white alpha:(CGFloat)alpha;
 + (WDColor *) colorWithRed:(float)red green:(float)green blue:(float)blue alpha:(CGFloat)alpha;
++ (WDColor *) colorWithUIColor:(UIColor *)color;
 - (WDColor *) initWithHue:(CGFloat)hue saturation:(CGFloat)saturation brightness:(CGFloat)brightness alpha:(CGFloat)alpha;
 
 + (WDColor *) colorWithDictionary:(NSDictionary *)dict;
