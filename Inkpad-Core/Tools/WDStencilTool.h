@@ -20,5 +20,6 @@
 }
 
 @property (nonatomic, assign) ShapeType type;
+@property (nonatomic, assign) BOOL randomRotation;
 
 @end

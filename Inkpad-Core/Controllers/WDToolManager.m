@@ -51,9 +51,11 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 		
 		WDStencilTool *bigPlant = (WDStencilTool *)[WDStencilTool tool];
 		[bigPlant setType:kPlantBig];
+		[bigPlant setRandomRotation:YES];
 		
 		WDStencilTool *smallPlant = (WDStencilTool *)[WDStencilTool tool];
 		[smallPlant setType:kPlantSmall];
+		[smallPlant setRandomRotation:YES];
 		
 		WDStencilTool *sidewalk = (WDStencilTool *)[WDStencilTool tool];
 		[sidewalk setType:kSidewalk];

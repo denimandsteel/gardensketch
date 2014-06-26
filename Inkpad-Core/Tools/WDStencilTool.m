@@ -90,6 +90,12 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
         
 		WDElement *element = [[StencilManager sharedInstance] shapeForType:self.type];
 		
+		if (self.randomRotation) {
+			float randomAngle = ((float)rand() / RAND_MAX) * M_PI;
+			CGAffineTransform rotate = CGAffineTransformMakeRotation(randomAngle);
+			[element transform:rotate];
+		}
+		
 		CGAffineTransform transform = CGAffineTransformMakeTranslation(center.x, center.y);
 		
 		[element transform:transform];
