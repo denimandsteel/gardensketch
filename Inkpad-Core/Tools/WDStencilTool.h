@@ -10,21 +10,9 @@
 //
 
 #import "WDTool.h"
+#import "StencilManager.h"
 
 @class WDPath;
-
-typedef enum {
-    kPlantBig,
-	kPlantSmall,
-	kHedge,
-    kShrub,
-	kTree1,
-    kTree2,
-    kDriveway,
-	kSidewalk,
-	kShed,
-	kGazebo
-} ShapeType;
 
 @interface WDStencilTool : WDTool {
     WDPath          *tempPath_;

@@ -14,7 +14,7 @@
 #import "PlansViewController.h"
 #import "WDCanvasController.h"
 #import "DesignViewController.h"
-#import "SVGShapeManager.h"
+#import "StencilManager.h"
 
 @interface MainViewController ()
 

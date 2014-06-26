@@ -40,7 +40,7 @@
     if (!popover_) {
         colorController = [[ColorPickerViewController alloc] initWithColors:self.colors];
 		
-		[colorController setPreferredContentSize:CGSizeMake(200, self.colors.count * 40 + 20)]; // + 20 is to account for 20 px of margin at the top and bottom.
+		[colorController setPreferredContentSize:CGSizeMake(200, self.colors.count * 40 + 10)]; // + 10 is to account for 20 px of margin at the top and bottom.
         
         popover_ = [[UIPopoverController alloc] initWithContentViewController:colorController];
 
@@ -58,9 +58,11 @@
     }
 }
 
-- (void)pickedColor:(UIColor *)color
+- (void)didSelectIndex:(NSInteger)index
 {
-	[self setBackgroundColor:color];
+	[self setBackgroundColor:self.colors[index]];
+	[self.delegate colorPicker:self didSelectIndex:index];
+	NSLog(@"%ld", index);
 }
 
 

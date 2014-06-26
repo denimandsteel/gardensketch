@@ -14,6 +14,7 @@
                 <outlet property="gazeboButton" destination="hu0-XY-lID" id="a27-J1-f01"/>
                 <outlet property="outlineColorPicker" destination="unO-uW-Cbo" id="i2K-nJ-XbT"/>
                 <outlet property="planNameLabel" destination="lrp-fC-sle" id="0Dv-8G-UQA"/>
+                <outlet property="plantColorPicker" destination="NXf-S6-Ztp" id="Nht-ga-Se8"/>
                 <outlet property="redoButton" destination="cqt-tn-aZb" id="0WF-kK-YJr"/>
                 <outlet property="selectButton" destination="hl5-1d-uRf" id="vuQ-an-ioz"/>
                 <outlet property="shedButton" destination="k4Z-US-a2F" id="hUn-PQ-sjV"/>
@@ -123,6 +124,9 @@
                     <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="colorPickerTapped:" destination="-1" eventType="touchUpInside" id="eSG-yw-faF"/>
+                    </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Planting Areas &amp; Freehand" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7Y-pt-IPx" customClass="GSLabel">
                     <rect key="frame" x="20" y="127" width="221" height="21"/>

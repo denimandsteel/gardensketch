@@ -10,7 +10,7 @@
 #import "WDToolButton.h"
 #import "ColorPickerButton.h"
 
-@interface DesignViewController : SidebarContentViewController
+@interface DesignViewController : SidebarContentViewController <ColorPickerButtonDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *planNameLabel;
 @property (weak, nonatomic) IBOutlet WDToolButton *selectButton;
@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet WDToolButton *shedButton;
 
 @property (weak, nonatomic) IBOutlet ColorPickerButton *outlineColorPicker;
+@property (weak, nonatomic) IBOutlet ColorPickerButton *plantColorPicker;
 
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet UIButton *cloneButton;

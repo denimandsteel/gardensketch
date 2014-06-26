@@ -19,7 +19,6 @@
 #import "WDPath.h"
 #import "WDPropertyManager.h"
 #import "WDUtilities.h"
-#import "SVGShapeManager.h"
 
 #define kMaxError 10.0f
 
@@ -89,7 +88,7 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
     if (pathStarted_) {
         CGPoint center = theEvent.location;
         
-		WDElement *element = [self shapeForType:self.type];
+		WDElement *element = [[StencilManager sharedInstance] shapeForType:self.type];
 		
 		CGAffineTransform transform = CGAffineTransformMakeTranslation(center.x, center.y);
 		
@@ -102,39 +101,6 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
     tempPath_ = nil;
 }
 
-- (WDGroup *)shapeForType:(ShapeType)type
-{
-	NSString *filename = @"";
-	CGFloat scale = 1.0;
-	
-	switch (type) {
-		case kPlantBig:
-			filename = @"plant";
-			break;
-		case kPlantSmall:
-			filename = @"plant";
-			scale = .5;
-			break;
-		case kSidewalk:
-			filename = @"Tile";
-			break;
-		case kGazebo:
-			filename = @"gazebo";
-			break;
-		case kShed:
-			filename = @"Shed";
-			break;
-		default:
-			break;
-	}
-	
-	WDGroup *result = [[SVGShapeManager sharedInstance].shapes[filename] copy];
-	
-	CGAffineTransform transform = CGAffineTransformMakeScale(scale, scale);
-	
-	[result transform:transform];
-	
-	return result;
-}
+
 
 @end

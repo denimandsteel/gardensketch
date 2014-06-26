@@ -15,6 +15,8 @@
 #import "WDStencilTool.h"
 #import "WDColor.h"
 #import "WDDrawingController.h"
+#import "Constants.h"
+#import "StencilManager.h"
 
 @interface DesignViewController ()
 
@@ -47,6 +49,18 @@
 							   [[WDColor randomColor] UIColor],
 							   [[WDColor randomColor] UIColor]];
 	[self.outlineColorPicker setColors:outlineColors];
+	[self.outlineColorPicker setDelegate:self];
+	
+	
+	NSArray *plantColors = @[GS_COLOR_PLANT_DARK_GREEN,
+							 GS_COLOR_PLANT_GOLD,
+							 GS_COLOR_PLANT_GREEN,
+							 GS_COLOR_PLANT_GREY_GREEN,
+							 GS_COLOR_PLANT_INDIGO,
+							 GS_COLOR_PLANT_LIGHT_GREEN,
+							 GS_COLOR_PLANT_LIGHT_PINK];
+	[self.plantColorPicker setColors:plantColors];
+	[self.plantColorPicker setDelegate:self];
 	
 	[self initTools];
 }
@@ -228,5 +242,12 @@
     });
 }
 
+#pragma mark - Color cpiker delegate methods
+- (void)colorPicker:(ColorPickerButton *)colorpicker didSelectIndex:(NSInteger)index
+{
+	if (colorpicker == self.plantColorPicker) {
+		[[StencilManager sharedInstance] setPlantColor:(PlantColor)index];
+	}
+}
 
 @end

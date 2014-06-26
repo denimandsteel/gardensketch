@@ -11,7 +11,7 @@
 #import "WDInspectableProperties.h"
 #import "WDColor.h"
 #import "WDGradient.h"
-#import "SVGShapeManager.h"
+#import "StencilManager.h"
 
 @implementation AppDelegate
 
@@ -22,7 +22,7 @@
 	// Also load the svg shapes upfront
 	dispatch_async(dispatch_get_main_queue(), ^{
 		[WDFontManager sharedInstance];
-		[SVGShapeManager sharedInstance];
+		[StencilManager sharedInstance];
 	});
 	
 	[self clearTempDirectory];

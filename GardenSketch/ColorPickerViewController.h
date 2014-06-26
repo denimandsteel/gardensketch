@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol ColorPickerDelegate <NSObject>
+@protocol ColorPickerPopoverDelegate <NSObject>
 
-- (void)pickedColor:(UIColor *)color;
+- (void)didSelectIndex:(NSInteger)index;
 
 @end
 
@@ -18,7 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) NSArray *colors;
-@property (nonatomic, assign) id<ColorPickerDelegate> delegate;
+@property (nonatomic, assign) id<ColorPickerPopoverDelegate> delegate;
 
 -(id)initWithColors:(NSArray *)colors;
 

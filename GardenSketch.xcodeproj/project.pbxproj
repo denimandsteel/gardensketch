@@ -285,7 +285,7 @@
 		4D081BEE1958B1A100F8871C /* WDStencilTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D081BED1958B1A100F8871C /* WDStencilTool.m */; };
 		4D081BF21958E83100F8871C /* gazebo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BF01958E83100F8871C /* gazebo.svg */; };
 		4D081BF31958E83100F8871C /* plant.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BF11958E83100F8871C /* plant.svg */; };
-		4D081BF61958F70900F8871C /* SVGShapeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D081BF51958F70900F8871C /* SVGShapeManager.m */; };
+		4D081BF61958F70900F8871C /* StencilManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D081BF51958F70900F8871C /* StencilManager.m */; };
 		4D081BF8195A2C5A00F8871C /* big_plant.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BF7195A2C5A00F8871C /* big_plant.png */; };
 		4D081BFA195B3DC100F8871C /* Plant_Grey_Green.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BF9195B3DC100F8871C /* Plant_Grey_Green.png */; };
 		4D081BFC195B3DE300F8871C /* House_No_Lines.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BFB195B3DE300F8871C /* House_No_Lines.png */; };
@@ -297,6 +297,13 @@
 		4D081C0B195B485E00F8871C /* GSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D081C0A195B485E00F8871C /* GSButton.m */; };
 		4D081C0E195B79A100F8871C /* Shed.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C0D195B79A100F8871C /* Shed.svg */; };
 		4D081C10195B7BA500F8871C /* Tile.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C0F195B7BA500F8871C /* Tile.svg */; };
+		4D081C18195B8B4A00F8871C /* Plant_Dark_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C11195B8B4A00F8871C /* Plant_Dark_Green.svg */; };
+		4D081C19195B8B4A00F8871C /* Plant_Gold.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C12195B8B4A00F8871C /* Plant_Gold.svg */; };
+		4D081C1A195B8B4A00F8871C /* Plant_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C13195B8B4A00F8871C /* Plant_Green.svg */; };
+		4D081C1B195B8B4A00F8871C /* Plant_Grey_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C14195B8B4A00F8871C /* Plant_Grey_Green.svg */; };
+		4D081C1C195B8B4A00F8871C /* Plant_Indigo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C15195B8B4A00F8871C /* Plant_Indigo.svg */; };
+		4D081C1D195B8B4A00F8871C /* Plant_Light_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C16195B8B4A00F8871C /* Plant_Light_Green.svg */; };
+		4D081C1E195B8B4A00F8871C /* Plant_Light_Pink.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C17195B8B4A00F8871C /* Plant_Light_Pink.svg */; };
 		4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D862ECA1952043A0066A848 /* DesignViewController.m */; };
 		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
 /* End PBXBuildFile section */
@@ -761,8 +768,8 @@
 		4D081BED1958B1A100F8871C /* WDStencilTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDStencilTool.m; sourceTree = "<group>"; };
 		4D081BF01958E83100F8871C /* gazebo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = gazebo.svg; sourceTree = "<group>"; };
 		4D081BF11958E83100F8871C /* plant.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = plant.svg; sourceTree = "<group>"; };
-		4D081BF41958F70900F8871C /* SVGShapeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVGShapeManager.h; sourceTree = "<group>"; };
-		4D081BF51958F70900F8871C /* SVGShapeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVGShapeManager.m; sourceTree = "<group>"; };
+		4D081BF41958F70900F8871C /* StencilManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StencilManager.h; sourceTree = "<group>"; };
+		4D081BF51958F70900F8871C /* StencilManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StencilManager.m; sourceTree = "<group>"; };
 		4D081BF7195A2C5A00F8871C /* big_plant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = big_plant.png; sourceTree = "<group>"; };
 		4D081BF9195B3DC100F8871C /* Plant_Grey_Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Plant_Grey_Green.png; sourceTree = "<group>"; };
 		4D081BFB195B3DE300F8871C /* House_No_Lines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = House_No_Lines.png; sourceTree = "<group>"; };
@@ -777,6 +784,13 @@
 		4D081C0C195B48D600F8871C /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		4D081C0D195B79A100F8871C /* Shed.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Shed.svg; sourceTree = "<group>"; };
 		4D081C0F195B7BA500F8871C /* Tile.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Tile.svg; sourceTree = "<group>"; };
+		4D081C11195B8B4A00F8871C /* Plant_Dark_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Dark_Green.svg; sourceTree = "<group>"; };
+		4D081C12195B8B4A00F8871C /* Plant_Gold.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Gold.svg; sourceTree = "<group>"; };
+		4D081C13195B8B4A00F8871C /* Plant_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Green.svg; sourceTree = "<group>"; };
+		4D081C14195B8B4A00F8871C /* Plant_Grey_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Grey_Green.svg; sourceTree = "<group>"; };
+		4D081C15195B8B4A00F8871C /* Plant_Indigo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Indigo.svg; sourceTree = "<group>"; };
+		4D081C16195B8B4A00F8871C /* Plant_Light_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Light_Green.svg; sourceTree = "<group>"; };
+		4D081C17195B8B4A00F8871C /* Plant_Light_Pink.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Light_Pink.svg; sourceTree = "<group>"; };
 		4D862EC91952043A0066A848 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		4D862ECA1952043A0066A848 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		4D862ECB1952043A0066A848 /* DesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignViewController.xib; sourceTree = "<group>"; };
@@ -860,8 +874,8 @@
 				4D05DAF2194A70C7001F19A7 /* Supporting Files */,
 				4D081BE41954B63C00F8871C /* ColorPickerButton.h */,
 				4D081BE51954B63C00F8871C /* ColorPickerButton.m */,
-				4D081BF41958F70900F8871C /* SVGShapeManager.h */,
-				4D081BF51958F70900F8871C /* SVGShapeManager.m */,
+				4D081BF41958F70900F8871C /* StencilManager.h */,
+				4D081BF51958F70900F8871C /* StencilManager.m */,
 				4D081C0C195B48D600F8871C /* Constants.h */,
 			);
 			path = GardenSketch;
@@ -1531,6 +1545,13 @@
 		4D081BEF1958E82500F8871C /* svg */ = {
 			isa = PBXGroup;
 			children = (
+				4D081C11195B8B4A00F8871C /* Plant_Dark_Green.svg */,
+				4D081C12195B8B4A00F8871C /* Plant_Gold.svg */,
+				4D081C13195B8B4A00F8871C /* Plant_Green.svg */,
+				4D081C14195B8B4A00F8871C /* Plant_Grey_Green.svg */,
+				4D081C15195B8B4A00F8871C /* Plant_Indigo.svg */,
+				4D081C16195B8B4A00F8871C /* Plant_Light_Green.svg */,
+				4D081C17195B8B4A00F8871C /* Plant_Light_Pink.svg */,
 				4D081C0F195B7BA500F8871C /* Tile.svg */,
 				4D081C0D195B79A100F8871C /* Shed.svg */,
 				4D081BF01958E83100F8871C /* gazebo.svg */,
@@ -1630,6 +1651,7 @@
 				4D081BFC195B3DE300F8871C /* House_No_Lines.png in Resources */,
 				4D05DCB6194F7FF2001F19A7 /* scale.png in Resources */,
 				4D05DE251950AC3F001F19A7 /* ShapeOptions.xib in Resources */,
+				4D081C18195B8B4A00F8871C /* Plant_Dark_Green.svg in Resources */,
 				4D05DDED194F9F85001F19A7 /* plans@2x.png in Resources */,
 				4D05DBB2194F5C81001F19A7 /* more.png in Resources */,
 				4D05DCBF194F7FF2001F19A7 /* star@2x.png in Resources */,
@@ -1643,6 +1665,7 @@
 				4D05DE191950AC3F001F19A7 /* Activity.xib in Resources */,
 				4D05DE201950AC3F001F19A7 /* Import.xib in Resources */,
 				4D05DCA5194F7FF2001F19A7 /* eyedropper@2x.png in Resources */,
+				4D081C1B195B8B4A00F8871C /* Plant_Grey_Green.svg in Resources */,
 				4D05DBB9194F5C81001F19A7 /* undo.png in Resources */,
 				4D05DE231950AC3F001F19A7 /* Samples.xib in Resources */,
 				4D05DAF6194A70C7001F19A7 /* InfoPlist.strings in Resources */,
@@ -1653,6 +1676,7 @@
 				4D05DCB2194F7FF2001F19A7 /* polygon@2x.png in Resources */,
 				4D05DCB1194F7FF2001F19A7 /* polygon.png in Resources */,
 				4D081C0E195B79A100F8871C /* Shed.svg in Resources */,
+				4D081C1A195B8B4A00F8871C /* Plant_Green.svg in Resources */,
 				4D05DE1E1950AC3F001F19A7 /* Gradient.xib in Resources */,
 				4D05DBC1194F5FD2001F19A7 /* property.png in Resources */,
 				4D05DE301950B8CB001F19A7 /* Defaults.plist in Resources */,
@@ -1661,6 +1685,7 @@
 				4D05DE331950B8CB001F19A7 /* Settings.plist in Resources */,
 				4D05DCAB194F7FF2001F19A7 /* line.png in Resources */,
 				4D05DCAA194F7FF2001F19A7 /* hand.png in Resources */,
+				4D081C1D195B8B4A00F8871C /* Plant_Light_Green.svg in Resources */,
 				4D05DB9E194BB109001F19A7 /* PropertyViewController.xib in Resources */,
 				4D05DE1A1950AC3F001F19A7 /* Color.xib in Resources */,
 				4D081C10195B7BA500F8871C /* Tile.svg in Resources */,
@@ -1675,6 +1700,7 @@
 				4D05DCE7194F7FF2001F19A7 /* SVGColors.plist in Resources */,
 				4D05DC9E194F7FF2001F19A7 /* add_anchor.png in Resources */,
 				4D05DCBA194F7FF2001F19A7 /* select.png in Resources */,
+				4D081C1E195B8B4A00F8871C /* Plant_Light_Pink.svg in Resources */,
 				4D081BDC1954A31600F8871C /* more@2x.png in Resources */,
 				4D05DE1B1950AC3F001F19A7 /* ColorBalance.xib in Resources */,
 				4D05DBAF194F5C81001F19A7 /* design.png in Resources */,
@@ -1689,6 +1715,7 @@
 				4D05DCBB194F7FF2001F19A7 /* select@2x.png in Resources */,
 				4D05DBAE194F5C81001F19A7 /* delete.png in Resources */,
 				4D081BE81954DB1D00F8871C /* ColorCell.xib in Resources */,
+				4D081C1C195B8B4A00F8871C /* Plant_Indigo.svg in Resources */,
 				4D081BD3195351AC00F8871C /* Space.inkpad in Resources */,
 				4D05DE01194FB56C001F19A7 /* Mushroom Breakdown.inkpad in Resources */,
 				4D05DBB0194F5C81001F19A7 /* enclosed.png in Resources */,
@@ -1719,6 +1746,7 @@
 				4D081BD4195351AC00F8871C /* Toucan in the Shade.inkpad in Resources */,
 				4D081C00195B3E4F00F8871C /* Tile.png in Resources */,
 				4D081BD619538D7400F8871C /* NewPlanCell.xib in Resources */,
+				4D081C19195B8B4A00F8871C /* Plant_Gold.svg in Resources */,
 				4D05DBBF194F5FBF001F19A7 /* property@2x.png in Resources */,
 				4D05DCC0194F7FF2001F19A7 /* text.png in Resources */,
 				4D081BDE1954A31600F8871C /* notes@2x.png in Resources */,
@@ -1914,7 +1942,7 @@
 				4D05DDCB194F8042001F19A7 /* WDSimpleColorView.m in Sources */,
 				4D05DCD2194F7FF2001F19A7 /* WDDrawing.m in Sources */,
 				4D05DCD6194F7FF2001F19A7 /* WDGradient.m in Sources */,
-				4D081BF61958F70900F8871C /* SVGShapeManager.m in Sources */,
+				4D081BF61958F70900F8871C /* StencilManager.m in Sources */,
 				4D05DCDA194F7FF2001F19A7 /* WDImageData.m in Sources */,
 				4D05DCCB194F7FF2001F19A7 /* WDAbstractPath.m in Sources */,
 				4D05DCE5194F7FF2001F19A7 /* WDTextPath.m in Sources */,

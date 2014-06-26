@@ -66,7 +66,7 @@ static NSString *CellIdentifier = @"colorCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	[self.delegate pickedColor:self.colors[indexPath.row]];
+	[self.delegate didSelectIndex:indexPath.row];
 }
 
 @end
