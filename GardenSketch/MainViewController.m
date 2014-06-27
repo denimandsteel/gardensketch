@@ -27,7 +27,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	
+	[[UIApplication sharedApplication] setStatusBarHidden:YES
+											withAnimation:UIStatusBarAnimationFade];
+	
 	[self addChildViewControllers];
+}
+
+- (BOOL)prefersStatusBarHidden {
+	return YES;
 }
 
 - (void)addChildViewControllers

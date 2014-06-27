@@ -29,5 +29,9 @@
 #define		GS_COLOR_PLANT_LIGHT_GREEN		[UIColor colorWithRed:220/255.0 green:228/255. blue:188/255.0 alpha:1.0]
 #define		GS_COLOR_PLANT_LIGHT_PINK		[UIColor colorWithRed:240/255.0 green:217/255. blue:213/255.0 alpha:1.0]
 
+#define		GS_COLOR_SHRUB_BROWN			[UIColor colorWithRed:147/255.0 green:143/255. blue:136/255.0 alpha:1.0]
+#define		GS_COLOR_SHRUB_GREEN			[UIColor colorWithRed:181/255.0 green:192/255. blue:154/255.0 alpha:1.0]
+#define		GS_COLOR_SHRUB_MAROON			[UIColor colorWithRed:161/255.0 green:130/255. blue:136/255.0 alpha:1.0]
+#define		GS_COLOR_SHRUB_VIRIDIAN			[UIColor colorWithRed:137/255.0 green:151/255. blue:133/255.0 alpha:1.0]
 
 #endif

@@ -59,6 +59,13 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 		[smallPlant setRandomRotation:YES];
 		[smallPlant setRepeatCount:2];
 		
+		WDStencilTool *shrub = (WDStencilTool *)[WDStencilTool tool];
+		[shrub setType:kShrub];
+		[shrub setRandomRotation:YES];
+		
+		WDStencilTool *hedge = (WDStencilTool *)[WDStencilTool tool];
+		[hedge setType:kHedge];
+
 		WDStencilTool *sidewalk = (WDStencilTool *)[WDStencilTool tool];
 		[sidewalk setType:kSidewalk];
 		
@@ -73,6 +80,8 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 				   closedFreehand,
 				   bigPlant,
 				   smallPlant,
+				   shrub,
+				   hedge,
 				   sidewalk,
 				   gazebo,
 				   shed];

@@ -52,7 +52,6 @@
 	[self.outlineColorPicker setColors:outlineColors];
 	[self.outlineColorPicker setDelegate:self];
 	
-	
 	NSArray *plantColors = @[GS_COLOR_PLANT_DARK_GREEN,
 							 GS_COLOR_PLANT_GOLD,
 							 GS_COLOR_PLANT_GREEN,
@@ -62,6 +61,13 @@
 							 GS_COLOR_PLANT_LIGHT_PINK];
 	[self.plantColorPicker setColors:plantColors];
 	[self.plantColorPicker setDelegate:self];
+	
+	NSArray *shrubColors = @[GS_COLOR_SHRUB_BROWN,
+							 GS_COLOR_SHRUB_GREEN,
+							 GS_COLOR_SHRUB_MAROON,
+							 GS_COLOR_SHRUB_VIRIDIAN];
+	[self.shrubColorPicker setColors:shrubColors];
+	[self.shrubColorPicker setDelegate:self];
 	
 	[self initTools];
 }
@@ -167,6 +173,8 @@
 	WDTool *enclosed = nil;
 	WDTool *bigPlant = nil;
 	WDTool *smallPlant = nil;
+	WDTool *shrub = nil;
+	WDTool *hedge = nil;
 	WDTool *sidewalk = nil;
 	WDTool *gazebo = nil;
 	WDTool *shed = nil;
@@ -185,6 +193,12 @@
 					break;
 				case kPlantSmall:
 					smallPlant = tool;
+					break;
+				case kShrub:
+					shrub = tool;
+					break;
+				case kHedge:
+					hedge = tool;
 					break;
 				case kSidewalk:
 					sidewalk = tool;
@@ -219,6 +233,12 @@
 	self.smallPlantButton.tool = smallPlant;
 	[self.smallPlantButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 	
+	self.shrubButton.tool = shrub;
+	[self.shrubButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	self.hedgeButton.tool = hedge;
+	[self.hedgeButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
 	self.tileButton.tool = sidewalk;
 	[self.tileButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 	
@@ -232,7 +252,6 @@
 - (void) selectionChanged:(NSNotification *)aNotification
 {
     self.deleteButton.enabled = (self.sidebar.canvasController.drawingController.selectedObjects.count > 0) ? YES : NO;
-    
 }
 
 - (void) undoStatusDidChange:(NSNotification *)aNotification
@@ -249,21 +268,10 @@
 	if (colorpicker == self.plantColorPicker) {
 		[[StencilManager sharedInstance] setPlantColor:(PlantColor)index];
 	} else if (colorpicker == self.outlineColorPicker) {
-		UIColor *color = nil;
-		switch (index) {
-			case 0:
-				color = GS_COLOR_STROKE_RED;
-				break;
-			case 1:
-				color = GS_COLOR_STROKE_DARK_GREY;
-				break;
-			case 2:
-				color = GS_COLOR_STROKE_LIGHT_GREY;
-				break;
-			default:
-				break;
-		}
+		UIColor *color = self.outlineColorPicker.colors[index];
 		[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
+	} else if (colorpicker == self.shrubColorPicker) {
+		[[StencilManager sharedInstance] setShrubColor:(ShrubColor)index];
 	}
 }
 

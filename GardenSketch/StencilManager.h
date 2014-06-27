@@ -33,12 +33,20 @@ typedef enum {
     kLightPink
 } PlantColor;
 
+typedef enum {
+    kBrown = 0,
+	kShrubGreen,
+    kMaroon,
+	kViridian
+} ShrubColor;
+
 @interface StencilManager : NSObject
 
 + (StencilManager *)sharedInstance;
 
 @property (nonatomic, strong) NSMutableDictionary *shapes;
 @property (nonatomic, assign) PlantColor plantColor;
+@property (nonatomic, assign) ShrubColor shrubColor;
 
 - (WDGroup *)shapeForType:(ShapeType)type;
 

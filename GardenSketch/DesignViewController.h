@@ -20,12 +20,18 @@
 @property (weak, nonatomic) IBOutlet WDToolButton *bigPlantButton;
 @property (weak, nonatomic) IBOutlet WDToolButton *smallPlantButton;
 
+@property (weak, nonatomic) IBOutlet WDToolButton *shrubButton;
+@property (weak, nonatomic) IBOutlet WDToolButton *hedgeButton;
+
+
 @property (weak, nonatomic) IBOutlet WDToolButton *tileButton;
 @property (weak, nonatomic) IBOutlet WDToolButton *gazeboButton;
 @property (weak, nonatomic) IBOutlet WDToolButton *shedButton;
 
 @property (weak, nonatomic) IBOutlet ColorPickerButton *outlineColorPicker;
 @property (weak, nonatomic) IBOutlet ColorPickerButton *plantColorPicker;
+@property (weak, nonatomic) IBOutlet ColorPickerButton *shrubColorPicker;
+
 
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet UIButton *cloneButton;

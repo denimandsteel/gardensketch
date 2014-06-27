@@ -40,7 +40,7 @@
 - (void)loadShapes
 {
 	self.shapes = [NSMutableDictionary dictionary];
-	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Grey_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink"];
+	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Grey_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian"];
 	for (NSString *shapeName in shapeNames) {
 		[self loadShape:shapeName];
 	}
@@ -108,6 +108,42 @@
 					break;
 			}
 			break;
+		case kShrub:
+			switch (self.shrubColor) {
+				case kBrown:
+					filename = @"Shrub_Brown";
+					break;
+				case kShrubGreen:
+					filename = @"Shrub_Green";
+					break;
+				case kMaroon:
+					filename = @"Shrub_Maroon";
+					break;
+				case kViridian:
+					filename = @"Shrub_Viridian";
+					break;
+				default:
+					break;
+			}
+			break;
+		case kHedge:
+			switch (self.shrubColor) {
+				case kBrown:
+					filename = @"Hedge_Brown";
+					break;
+				case kShrubGreen:
+					filename = @"Hedge_Green";
+					break;
+				case kMaroon:
+					filename = @"Hedge_Maroon";
+					break;
+				case kViridian:
+					filename = @"Hedge_Viridian";
+					break;
+				default:
+					break;
+			}
+			break;
 		case kSidewalk:
 			filename = @"Tile";
 			break;
@@ -128,6 +164,9 @@
 			break;
 		case kSidewalk:
 			scale = .2;
+			break;
+		case kHedge:
+			scale = 2;
 			break;
 		default:
 			break;

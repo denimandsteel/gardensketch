@@ -44,6 +44,12 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 		case kPlantSmall:
 			return @"Plant_Grey_Green.png";
 			break;
+		case kShrub:
+			return @"Shrub_Brown.png";
+			break;
+		case kHedge:
+			return @"Hedge_brown.png";
+			break;
 		case kSidewalk:
 			return @"Tile.png";
 			break;
