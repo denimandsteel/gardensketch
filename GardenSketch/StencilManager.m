@@ -10,6 +10,7 @@
 #import "WDDocument.h"
 #import "WDLayer.h"
 #import "WDCompoundPath.h"
+#import "WDInspectableProperties.h"
 
 @implementation StencilManager
 
@@ -64,7 +65,7 @@
 		
 		CGAffineTransform scale = CGAffineTransformMakeScale(.2, .2);
 		[group transform:scale];
-
+		
 		self.shapes[shapeName] = group;
 		[document closeWithCompletionHandler:^(BOOL success) {
 			NSLog(@"%@ closed!", shapeName);
@@ -77,6 +78,7 @@
 	NSString *filename = @"";
 	CGFloat scale = 1.0;
 	
+	// 1. Pick the right shape
 	switch (type) {
 		case kPlantBig:
 		case kPlantSmall:
@@ -119,9 +121,13 @@
 			break;
 	}
 	
+	// 2. Scale it
 	switch (type) {
 		case kPlantSmall:
 			scale = .5;
+			break;
+		case kSidewalk:
+			scale = .2;
 			break;
 		default:
 			break;

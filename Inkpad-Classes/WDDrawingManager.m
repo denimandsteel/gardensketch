@@ -499,7 +499,7 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 - (void) createNecessaryDirectories_
 {
     NSFileManager   *fm = [NSFileManager defaultManager];
-    BOOL createSamples = NO;
+    BOOL createSamples = YES;
     
     if (![fm fileExistsAtPath:[WDDrawingManager drawingPath]]) {
         // assume this is the first time we've been run... copy over the sample drawings

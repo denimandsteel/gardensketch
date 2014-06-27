@@ -121,7 +121,18 @@ NSString *WDMaskedElementsKey = @"WDMaskedElementsKey";
 - (NSSet *) transform:(CGAffineTransform)transform
 {
     self.fillTransform = [fillTransform_ transform:transform];
-    
+	
+	CGFloat scale = sqrt(transform.a * transform.a + transform.c * transform.c);
+	
+	WDStrokeStyle *style = [[WDStrokeStyle alloc] initWithWidth:self.strokeStyle.width * scale
+															cap:self.strokeStyle.cap
+														   join:self.strokeStyle.join
+														  color:self.strokeStyle.color
+													dashPattern:self.strokeStyle.dashPattern
+													 startArrow:self.strokeStyle.startArrow
+													   endArrow:self.strokeStyle.endArrow];
+	[self setStrokeStyle:style];
+	
     for (WDElement *element in self.maskedElements) {
         [element transform:transform];
     }

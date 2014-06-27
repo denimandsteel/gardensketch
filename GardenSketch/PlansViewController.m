@@ -143,7 +143,7 @@
 
 - (void) createNewDrawing:(id)sender
 {
-    WDDocument *document = [[WDDrawingManager sharedInstance] createNewDrawingWithSize:CGSizeMake(1024, 1024)
+    WDDocument *document = [[WDDrawingManager sharedInstance] createNewDrawingWithSize:CGSizeMake(2048, 2048)
                                                                               andUnits:@"Centimeters"];
 	
     [self.sidebar.canvasController setDocument:document];

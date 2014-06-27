@@ -26,6 +26,16 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 
 @implementation WDStencilTool
 
+- (id)init
+{
+	self = [super init];
+	if (self) {
+		self.repeatCount = 1;
+		self.randomRotation = NO;
+	}
+	return self;
+}
+
 - (NSString *) iconName
 {
 	switch (self.type) {
@@ -86,27 +96,44 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 - (void) endWithEvent:(WDEvent *)theEvent inCanvas:(WDCanvas *)canvas
 {
     if (pathStarted_) {
+		WDElement *result = nil;
         CGPoint center = theEvent.location;
         
-		WDElement *element = [[StencilManager sharedInstance] shapeForType:self.type];
-		
-		if (self.randomRotation) {
-			float randomAngle = ((float)rand() / RAND_MAX) * M_PI;
-			CGAffineTransform rotate = CGAffineTransformMakeRotation(randomAngle);
-			[element transform:rotate];
+		if (self.repeatCount > 1) {
+			NSMutableArray *elements = [NSMutableArray arrayWithCapacity:self.repeatCount];
+			for (NSInteger i = 0; i < self.repeatCount; i++) {
+				elements[i] = [self singleShapeAtPoint:center];
+			}
+			WDGroup *group = [[WDGroup alloc] init];
+			[group setElements:elements];
+			result = group;
+		} else {
+			result = [self singleShapeAtPoint:center];
 		}
 		
-		CGAffineTransform transform = CGAffineTransformMakeTranslation(center.x, center.y);
-		
-		[element transform:transform];
-        
-        [canvas.drawing addObject:element];
+        [canvas.drawing addObject:result];
 	}
     
     pathStarted_ = NO;
     tempPath_ = nil;
 }
 
+- (WDElement *)singleShapeAtPoint:(CGPoint)center
+{
+	WDElement *element = [[StencilManager sharedInstance] shapeForType:self.type];
+	
+	if (self.randomRotation) {
+		float randomAngle = ((float)rand() / RAND_MAX) * M_PI;
+		CGAffineTransform rotate = CGAffineTransformMakeRotation(randomAngle);
+		[element transform:rotate];
+	}
+	
+	CGAffineTransform transform = CGAffineTransformMakeTranslation(center.x, center.y);
+	
+	[element transform:transform];
+	
+	return element;
+}
 
 
 @end
