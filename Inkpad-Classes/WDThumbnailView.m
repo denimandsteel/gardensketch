@@ -349,8 +349,22 @@
 
 - (void) deletePlan
 {
-	NSMutableSet *toDelete = [NSMutableSet setWithObject:filename_];
-	[[WDDrawingManager sharedInstance] deleteDrawings:toDelete];
+	// TODO confirm first!
+	UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Delete the plan?"
+													  message:@"There is no undo for deleting plans."
+													 delegate:self
+											cancelButtonTitle:@"Delete"
+											otherButtonTitles:@"Keep Plan", nil];
+
+	[message show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+		NSMutableSet *toDelete = [NSMutableSet setWithObject:filename_];
+		[[WDDrawingManager sharedInstance] deleteDrawings:toDelete];
+	}
 }
 
 
