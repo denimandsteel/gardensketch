@@ -9,11 +9,14 @@
 #ifndef GardenSketch_Constants_h
 #define GardenSketch_Constants_h
 
+#define		GS_SIDEBAR_WIDTH				320.0
+
 #define		GS_COLOR_DARK_GREY				[UIColor colorWithRed:.2 green:.19 blue:.19 alpha:1.0]
 #define		GS_FONT_AVENIR_BODY				[UIFont fontWithName:@"Avenir" size:14.0]
 
 // yellow paper canvas background
 #define		GS_COLOR_CANVAS					[UIColor colorWithRed:249/255.0 green:247/255. blue:237/255.0 alpha:1.0]
+#define		GS_COLOR_SOIL					[UIColor colorWithRed:184/255.0 green:150/255. blue:160/255.0 alpha:0.8]
 
 // stroke colors:
 #define		GS_COLOR_STROKE_RED				[UIColor colorWithRed:167/255.0 green:59/255. blue:57/255.0 alpha:1.0]

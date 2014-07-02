@@ -19,6 +19,7 @@
 #import "WDPath.h"
 #import "WDPropertyManager.h"
 #import "WDUtilities.h"
+#import "Constants.h"
 
 #define kMaxError 10.0f
 
@@ -96,10 +97,11 @@ NSString *WDDefaultFreehandTool = @"WDDefaultFreehandTool";
         
         if (smoothPath) {
 			if (closeShape_) {
-				smoothPath.fill = [WDColor randomColor];
+				smoothPath.fill = [WDColor colorWithUIColor:GS_COLOR_SOIL];
+				[canvas.drawingController setValue:@NO forProperty:WDStrokeVisibleProperty];
 			} else {
 				smoothPath.fill = [WDColor colorWithWhite:1.0 alpha:0.0];
-//				smoothPath.strokeStyle = [[WDStrokeStyle alloc] initWithWidth:1.0 cap:kCGLineCapRound join:kCGLineJoinRound color:[WDColor randomColor] dashPattern:nil startArrow:nil endArrow:nil];
+				smoothPath.strokeStyle = [[WDStrokeStyle alloc] initWithWidth:1.0 cap:kCGLineCapRound join:kCGLineJoinRound color:[WDColor randomColor] dashPattern:nil startArrow:nil endArrow:nil];
 			}
 			
 			smoothPath.strokeStyle = [canvas.drawingController.propertyManager activeStrokeStyle];

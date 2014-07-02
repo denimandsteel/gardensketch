@@ -320,11 +320,11 @@ NSString *WDCanvasBeganTrackingTouches = @"WDCanvasBeganTrackingTouches";
     }
     
     float   documentAspect = drawing_.dimensions.width / drawing_.dimensions.height;
-    float   boundsAspect = CGRectGetWidth(self.bounds) / CGRectGetHeight(self.bounds);
+    float   boundsAspect = ( CGRectGetWidth(self.bounds)  - GS_SIDEBAR_WIDTH ) / CGRectGetHeight(self.bounds);
     float   scale;
     
     if (documentAspect > boundsAspect) {
-        scale = (CGRectGetWidth(self.bounds) - (kFitBuffer * 2)) / drawing_.dimensions.width;
+        scale = (CGRectGetWidth(self.bounds) - GS_SIDEBAR_WIDTH - (kFitBuffer * 2)) / drawing_.dimensions.width;
     } else {
         scale = (CGRectGetHeight(self.bounds) - (kFitBuffer * 2)) / drawing_.dimensions.height;
     }
@@ -333,6 +333,7 @@ NSString *WDCanvasBeganTrackingTouches = @"WDCanvasBeganTrackingTouches";
     
     userSpacePivot_ = CGPointMake(drawing_.dimensions.width / 2, drawing_.dimensions.height / 2);
     deviceSpacePivot_ = WDCenterOfRect(self.bounds);
+	deviceSpacePivot_.x += GS_SIDEBAR_WIDTH/2;
     
     [self rebuildViewTransform_];
 }
