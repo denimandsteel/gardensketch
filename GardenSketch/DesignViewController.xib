@@ -14,6 +14,7 @@
                 <outlet property="enclosedButton" destination="pV1-DC-Ftb" id="64s-8y-B73"/>
                 <outlet property="freehandButton" destination="BCz-Ro-S7V" id="msP-k3-u1n"/>
                 <outlet property="gazeboButton" destination="hu0-XY-lID" id="a27-J1-f01"/>
+                <outlet property="gridButton" destination="ufh-Yh-Q4g" id="BdO-bp-yqV"/>
                 <outlet property="horizontalHedgeButton" destination="Ax6-qf-Rf8" id="BSg-eM-DJf"/>
                 <outlet property="outlineColorPicker" destination="unO-uW-Cbo" id="i2K-nJ-XbT"/>
                 <outlet property="planNameLabel" destination="lrp-fC-sle" id="0Dv-8G-UQA"/>
@@ -270,6 +271,17 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufh-Yh-Q4g">
+                    <rect key="frame" x="60" y="81" width="27" height="27"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="grid-inactive.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="grid-active.png"/>
+                    <connections>
+                        <action selector="gridTapped:" destination="-1" eventType="touchUpInside" id="fEH-tH-hMA"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.96677564538043481" green="0.96677564538043481" blue="0.96677564538043481" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -286,6 +298,8 @@
         <image name="Tile.png" width="120" height="120"/>
         <image name="enclosed.png" width="115" height="106"/>
         <image name="freehand.png" width="102" height="106"/>
+        <image name="grid-active.png" width="256" height="256"/>
+        <image name="grid-inactive.png" width="256" height="256"/>
         <image name="select.png" width="25" height="25"/>
     </resources>
 </document>

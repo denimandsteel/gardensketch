@@ -51,7 +51,7 @@
 	<key>WDShapeToolSpiralDecay</key>
 	<string>80</string>
 	<key>WDShowGrid</key>
-	<false/>
+	<true/>
 	<key>WDSnapToEdge</key>
 	<false/>
 	<key>WDSnapToGrid</key>

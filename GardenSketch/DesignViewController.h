@@ -14,6 +14,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *planNameLabel;
 @property (weak, nonatomic) IBOutlet WDToolButton *selectButton;
+@property (weak, nonatomic) IBOutlet UIButton *gridButton;
+
+
 @property (weak, nonatomic) IBOutlet WDToolButton *freehandButton;
 @property (weak, nonatomic) IBOutlet WDToolButton *enclosedButton;
 
@@ -41,6 +44,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *redoButton;
 @property (weak, nonatomic) IBOutlet UIButton *undoButton;
 
+
+
+
+- (IBAction)gridTapped:(id)sender;
 
 - (IBAction)changePlan:(id)sender;
 - (IBAction)colorPickerTapped:(id)sender;

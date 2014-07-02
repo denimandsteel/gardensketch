@@ -110,6 +110,12 @@
 #pragma mark Plan Navigation
 
 // Needs to save the current plan, and open prev or next one
+- (IBAction)gridTapped:(id)sender {
+	BOOL state = [self.sidebar.canvasController.drawing showGrid];
+	[self.sidebar.canvasController.drawing setShowGrid:!state];
+	[self.gridButton setSelected:!state];
+}
+
 - (IBAction)changePlan:(id)sender {
 	WDDocument *currentDocument = self.sidebar.canvasController.document;
 	
