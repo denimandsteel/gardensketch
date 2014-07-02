@@ -65,6 +65,15 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 		
 		WDStencilTool *hedge = (WDStencilTool *)[WDStencilTool tool];
 		[hedge setType:kHedge];
+		
+		
+		WDStencilTool *deciduousTree = (WDStencilTool *)[WDStencilTool tool];
+		[deciduousTree setType:kTreeDeciduous];
+		[deciduousTree setRandomRotation:YES];
+		
+		WDStencilTool *confirousTree = (WDStencilTool *)[WDStencilTool tool];
+		[confirousTree setType:kTreeConiferous];
+		[confirousTree setRandomRotation:YES];
 
 		WDStencilTool *sidewalk = (WDStencilTool *)[WDStencilTool tool];
 		[sidewalk setType:kSidewalk];
@@ -82,6 +91,8 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 				   smallPlant,
 				   shrub,
 				   hedge,
+				   deciduousTree,
+				   confirousTree,
 				   sidewalk,
 				   gazebo,
 				   shed];

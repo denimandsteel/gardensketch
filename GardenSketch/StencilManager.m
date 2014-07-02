@@ -40,7 +40,7 @@
 - (void)loadShapes
 {
 	self.shapes = [NSMutableDictionary dictionary];
-	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Grey_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian"];
+	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Grey_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian", @"Deciduous_Tree_Burgundy", @"Deciduous_Tree_Dark_Green", @"Deciduous_Tree_Green", @"Deciduous_Tree_Mustard", @"Deciduous_Tree_Teal", @"Deciduous_Tree_Violet"];
 	for (NSString *shapeName in shapeNames) {
 		[self loadShape:shapeName];
 	}
@@ -144,6 +144,30 @@
 					break;
 			}
 			break;
+		case kTreeDeciduous:
+			switch (self.treeColor) {
+				case kBurgundy:
+					filename = @"Deciduous_Tree_Burgundy";
+					break;
+				case kTreeDarkGreen:
+					filename = @"Deciduous_Tree_Dark_Green";
+					break;
+				case kTreeGreen:
+					filename = @"Deciduous_Tree_Green";
+					break;
+				case kMustard:
+					filename = @"Deciduous_Tree_Mustard";
+					break;
+				case kTeal:
+					filename = @"Deciduous_Tree_Teal";
+					break;
+				case kViolet:
+					filename = @"Deciduous_Tree_Violet";
+					break;
+				default:
+					break;
+			}
+			break;
 		case kSidewalk:
 			filename = @"Tile";
 			break;
@@ -168,11 +192,15 @@
 		case kHedge:
 			scale = 2;
 			break;
+		case kTreeDeciduous:
+		case kTreeConiferous:
+			scale = 3;
+			break;
 		default:
 			break;
 	}
 	
-	WDGroup *result = [[StencilManager sharedInstance].shapes[filename] copy];
+	WDGroup *result = [self.shapes[filename] copy];
 	
 	CGAffineTransform transform = CGAffineTransformMakeScale(scale, scale);
 	

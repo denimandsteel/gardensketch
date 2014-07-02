@@ -8,6 +8,8 @@
             <connections>
                 <outlet property="bigPlantButton" destination="L6Q-z9-bWt" id="ig0-T1-Ykm"/>
                 <outlet property="cloneButton" destination="zbP-KG-mCL" id="6rd-AT-o9J"/>
+                <outlet property="coniferousTreeButton" destination="D1x-it-Oh8" id="7M2-wo-g8s"/>
+                <outlet property="deciduousTreeButton" destination="Kvk-5x-SnG" id="bxJ-mb-Uao"/>
                 <outlet property="deleteButton" destination="6oK-vt-3Eb" id="j6g-K5-deA"/>
                 <outlet property="enclosedButton" destination="pV1-DC-Ftb" id="64s-8y-B73"/>
                 <outlet property="freehandButton" destination="BCz-Ro-S7V" id="msP-k3-u1n"/>
@@ -23,6 +25,7 @@
                 <outlet property="shrubColorPicker" destination="DGb-Cw-jXe" id="xXL-V8-ewm"/>
                 <outlet property="smallPlantButton" destination="Om2-Js-KIT" id="Tui-ZS-tKG"/>
                 <outlet property="tileButton" destination="d3j-8E-AlP" id="xy0-Ey-FWV"/>
+                <outlet property="treeColorPicker" destination="A0B-tM-Hnj" id="Bmx-Bc-a8T"/>
                 <outlet property="undoButton" destination="Yok-Gi-P6z" id="aGc-XX-eII"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -82,6 +85,18 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SU-0P-2yL" customClass="WDToolButton">
                     <rect key="frame" x="20" y="320" width="44" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="Shrub_Brown.png"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kvk-5x-SnG" customClass="WDToolButton">
+                    <rect key="frame" x="22" y="401" width="44" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="Shrub_Brown.png"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1x-it-Oh8" customClass="WDToolButton">
+                    <rect key="frame" x="75" y="401" width="44" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <state key="normal" image="Shrub_Brown.png"/>
@@ -152,6 +167,17 @@
                     </state>
                     <connections>
                         <action selector="colorPickerTapped:" destination="-1" eventType="touchUpInside" id="qEE-sJ-hO2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0B-tM-Hnj" customClass="ColorPickerButton">
+                    <rect key="frame" x="81" y="367" width="32" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.95587543269999997" blue="0.69363249370000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="colorPickerTapped:" destination="-1" eventType="touchUpInside" id="yqI-Pm-vrc"/>
                     </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Planting Areas &amp; Freehand" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7Y-pt-IPx" customClass="GSLabel">

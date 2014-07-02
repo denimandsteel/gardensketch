@@ -15,8 +15,8 @@ typedef enum {
 	kPlantSmall,
 	kHedge,
     kShrub,
-	kTree1,
-    kTree2,
+	kTreeDeciduous,
+    kTreeConiferous,
     kDriveway,
 	kSidewalk,
 	kShed,
@@ -40,6 +40,15 @@ typedef enum {
 	kViridian
 } ShrubColor;
 
+typedef enum {
+    kBurgundy = 0,
+	kTreeDarkGreen,
+	kTreeGreen,
+    kMustard,
+	kTeal,
+    kViolet
+} TreeColor;
+
 @interface StencilManager : NSObject
 
 + (StencilManager *)sharedInstance;
@@ -47,6 +56,7 @@ typedef enum {
 @property (nonatomic, strong) NSMutableDictionary *shapes;
 @property (nonatomic, assign) PlantColor plantColor;
 @property (nonatomic, assign) ShrubColor shrubColor;
+@property (nonatomic, assign) TreeColor treeColor;
 
 - (WDGroup *)shapeForType:(ShapeType)type;
 

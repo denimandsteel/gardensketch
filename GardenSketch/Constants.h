@@ -29,9 +29,18 @@
 #define		GS_COLOR_PLANT_LIGHT_GREEN		[UIColor colorWithRed:220/255.0 green:228/255. blue:188/255.0 alpha:1.0]
 #define		GS_COLOR_PLANT_LIGHT_PINK		[UIColor colorWithRed:240/255.0 green:217/255. blue:213/255.0 alpha:1.0]
 
+// shrub colors
 #define		GS_COLOR_SHRUB_BROWN			[UIColor colorWithRed:147/255.0 green:143/255. blue:136/255.0 alpha:1.0]
 #define		GS_COLOR_SHRUB_GREEN			[UIColor colorWithRed:181/255.0 green:192/255. blue:154/255.0 alpha:1.0]
 #define		GS_COLOR_SHRUB_MAROON			[UIColor colorWithRed:161/255.0 green:130/255. blue:136/255.0 alpha:1.0]
 #define		GS_COLOR_SHRUB_VIRIDIAN			[UIColor colorWithRed:137/255.0 green:151/255. blue:133/255.0 alpha:1.0]
+
+// tree colors
+#define		GS_COLOR_TREE_BURGUNDY			[UIColor colorWithRed:224/255.0 green:195/255. blue:197/255.0 alpha:1.0]
+#define		GS_COLOR_TREE_DARK_GREEN		[UIColor colorWithRed:195/255.0 green:205/255. blue:198/255.0 alpha:1.0]
+#define		GS_COLOR_TREE_GREEN				[UIColor colorWithRed:212/255.0 green:227/255. blue:204/255.0 alpha:1.0]
+#define		GS_COLOR_TREE_MUSTARD			[UIColor colorWithRed:224/255.0 green:223/255. blue:200/255.0 alpha:1.0]
+#define		GS_COLOR_TREE_TEAL				[UIColor colorWithRed:221/255.0 green:230/255. blue:226/255.0 alpha:1.0]
+#define		GS_COLOR_TREE_VIOLET			[UIColor colorWithRed:198/255.0 green:196/255. blue:206/255.0 alpha:1.0]
 
 #endif

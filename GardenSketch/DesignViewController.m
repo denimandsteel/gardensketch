@@ -69,6 +69,15 @@
 	[self.shrubColorPicker setColors:shrubColors];
 	[self.shrubColorPicker setDelegate:self];
 	
+	NSArray *treeColors = @[GS_COLOR_TREE_BURGUNDY,
+							GS_COLOR_TREE_DARK_GREEN,
+							GS_COLOR_TREE_GREEN,
+							GS_COLOR_TREE_MUSTARD,
+							GS_COLOR_TREE_TEAL,
+							GS_COLOR_TREE_VIOLET];
+	[self.treeColorPicker setColors:treeColors];
+	[self.treeColorPicker setDelegate:self];
+	
 	[self initTools];
 }
 
@@ -175,6 +184,8 @@
 	WDTool *smallPlant = nil;
 	WDTool *shrub = nil;
 	WDTool *hedge = nil;
+	WDTool *deciduousTree = nil;
+	WDTool *coniferousTree = nil;
 	WDTool *sidewalk = nil;
 	WDTool *gazebo = nil;
 	WDTool *shed = nil;
@@ -199,6 +210,12 @@
 					break;
 				case kHedge:
 					hedge = tool;
+					break;
+				case kTreeDeciduous:
+					deciduousTree = tool;
+					break;
+				case kTreeConiferous:
+					coniferousTree = tool;
 					break;
 				case kSidewalk:
 					sidewalk = tool;
@@ -239,6 +256,12 @@
 	self.hedgeButton.tool = hedge;
 	[self.hedgeButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 	
+	self.deciduousTreeButton.tool = deciduousTree;
+	[self.deciduousTreeButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	self.coniferousTreeButton.tool = coniferousTree;
+	[self.coniferousTreeButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
 	self.tileButton.tool = sidewalk;
 	[self.tileButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 	
@@ -272,6 +295,8 @@
 		[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
 	} else if (colorpicker == self.shrubColorPicker) {
 		[[StencilManager sharedInstance] setShrubColor:(ShrubColor)index];
+	} else if (colorpicker == self.treeColorPicker) {
+		[[StencilManager sharedInstance] setTreeColor:(TreeColor)index];
 	}
 }
 
