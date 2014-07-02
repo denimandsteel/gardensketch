@@ -350,7 +350,7 @@
 - (void) deletePlan
 {
 	// TODO confirm first!
-	UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Delete the plan?"
+	UIAlertView *message = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Delete the plan titled ‘%@’?", [filename_ stringByDeletingPathExtension]]
 													  message:@"There is no undo for deleting plans."
 													 delegate:self
 											cancelButtonTitle:@"Delete"
