@@ -14,7 +14,7 @@
                 <outlet property="enclosedButton" destination="pV1-DC-Ftb" id="64s-8y-B73"/>
                 <outlet property="freehandButton" destination="BCz-Ro-S7V" id="msP-k3-u1n"/>
                 <outlet property="gazeboButton" destination="hu0-XY-lID" id="a27-J1-f01"/>
-                <outlet property="hedgeButton" destination="56E-Tv-rMd" id="n3u-aQ-PHM"/>
+                <outlet property="horizontalHedgeButton" destination="Ax6-qf-Rf8" id="BSg-eM-DJf"/>
                 <outlet property="outlineColorPicker" destination="unO-uW-Cbo" id="i2K-nJ-XbT"/>
                 <outlet property="planNameLabel" destination="lrp-fC-sle" id="0Dv-8G-UQA"/>
                 <outlet property="plantColorPicker" destination="NXf-S6-Ztp" id="Nht-ga-Se8"/>
@@ -27,6 +27,7 @@
                 <outlet property="tileButton" destination="d3j-8E-AlP" id="xy0-Ey-FWV"/>
                 <outlet property="treeColorPicker" destination="A0B-tM-Hnj" id="Bmx-Bc-a8T"/>
                 <outlet property="undoButton" destination="Yok-Gi-P6z" id="aGc-XX-eII"/>
+                <outlet property="verticalHedgeButton" destination="56E-Tv-rMd" id="u9p-d1-xJV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -106,6 +107,12 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <state key="normal" image="Hedge_brown.png"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-qf-Rf8" customClass="WDToolButton">
+                    <rect key="frame" x="131" y="342" width="44" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="Hedge_brown_horizontal.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Om2-Js-KIT" customClass="WDToolButton">
                     <rect key="frame" x="76" y="252" width="32" height="32"/>
@@ -272,6 +279,7 @@
     <resources>
         <image name="Gazebo.png" width="197" height="188"/>
         <image name="Hedge_brown.png" width="111" height="246"/>
+        <image name="Hedge_brown_horizontal.png" width="246" height="111"/>
         <image name="Plant_Grey_Green.png" width="115" height="114"/>
         <image name="Shed.png" width="175" height="175"/>
         <image name="Shrub_Brown.png" width="114" height="98"/>

@@ -21,7 +21,8 @@
 @property (weak, nonatomic) IBOutlet WDToolButton *smallPlantButton;
 
 @property (weak, nonatomic) IBOutlet WDToolButton *shrubButton;
-@property (weak, nonatomic) IBOutlet WDToolButton *hedgeButton;
+@property (weak, nonatomic) IBOutlet WDToolButton *verticalHedgeButton;
+@property (weak, nonatomic) IBOutlet WDToolButton *horizontalHedgeButton;
 
 @property (weak, nonatomic) IBOutlet WDToolButton *deciduousTreeButton;
 @property (weak, nonatomic) IBOutlet WDToolButton *coniferousTreeButton;

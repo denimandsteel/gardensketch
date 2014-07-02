@@ -32,6 +32,7 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 	if (self) {
 		self.repeatCount = 1;
 		self.randomRotation = NO;
+		self.initialRotation = 0.0;
 	}
 	return self;
 }
@@ -48,7 +49,8 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 			return @"Shrub_Brown.png";
 			break;
 		case kHedge:
-			return @"Hedge_brown.png";
+			if (self.initialRotation > 0.0)		return @"Hedge_brown_horizontal.png";
+			else								return @"Hedge_brown.png";
 			break;
 		case kTreeConiferous:
 		case kTreeDeciduous:
@@ -135,6 +137,11 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 	if (self.randomRotation) {
 		float randomAngle = ((float)rand() / RAND_MAX) * M_PI;
 		CGAffineTransform rotate = CGAffineTransformMakeRotation(randomAngle);
+		[element transform:rotate];
+	}
+	
+	if (self.initialRotation > 0.0) {
+		CGAffineTransform rotate = CGAffineTransformMakeRotation(self.initialRotation);
 		[element transform:rotate];
 	}
 	

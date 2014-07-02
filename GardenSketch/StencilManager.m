@@ -34,6 +34,10 @@
 	
 	[self loadShapes];
 	
+	self.treeColor = (TreeColor)0;
+	self.shrubColor = (ShrubColor)0;
+	self.plantColor = (PlantColor)0;
+	
 	return self;
 }
 

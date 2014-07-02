@@ -183,7 +183,8 @@
 	WDTool *bigPlant = nil;
 	WDTool *smallPlant = nil;
 	WDTool *shrub = nil;
-	WDTool *hedge = nil;
+	WDTool *verticalHedge = nil;
+	WDTool *horizontalHedge = nil;
 	WDTool *deciduousTree = nil;
 	WDTool *coniferousTree = nil;
 	WDTool *sidewalk = nil;
@@ -209,7 +210,11 @@
 					shrub = tool;
 					break;
 				case kHedge:
-					hedge = tool;
+					if ([((WDStencilTool *)tool) initialRotation] > 0.0) {
+						horizontalHedge = tool;
+					} else {
+						verticalHedge = tool;
+					}
 					break;
 				case kTreeDeciduous:
 					deciduousTree = tool;
@@ -253,8 +258,11 @@
 	self.shrubButton.tool = shrub;
 	[self.shrubButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 	
-	self.hedgeButton.tool = hedge;
-	[self.hedgeButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	self.verticalHedgeButton.tool = verticalHedge;
+	[self.verticalHedgeButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	self.horizontalHedgeButton.tool = horizontalHedge;
+	[self.horizontalHedgeButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 	
 	self.deciduousTreeButton.tool = deciduousTree;
 	[self.deciduousTreeButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];

@@ -20,6 +20,7 @@
 }
 
 @property (nonatomic, assign) ShapeType type;
+@property (nonatomic, assign) CGFloat initialRotation;
 @property (nonatomic, assign) BOOL randomRotation;
 @property (nonatomic, assign) NSInteger repeatCount;
 

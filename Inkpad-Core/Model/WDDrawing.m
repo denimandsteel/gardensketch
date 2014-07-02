@@ -23,6 +23,7 @@
 #import "WDRulerUnit.h"
 #import "WDSVGHelper.h"
 #import "WDUtilities.h"
+#import "Constants.h"
 
 const float kMinimumDrawingDimension = 16;
 const float kMaximumDrawingDimension = 16000;
@@ -770,7 +771,8 @@ NSLog(@"Elements in drawing: %lu", (unsigned long)[self allElements].count);
     UIGraphicsBeginImageContextWithOptions(size, NO, 2);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     
-    CGContextSetGrayFillColor(ctx, 1, 1);
+//    CGContextSetGrayFillColor(ctx, 1, 1);
+	CGContextSetFillColorWithColor(ctx, GS_COLOR_CANVAS.CGColor);
     CGContextFillRect(ctx, CGRectMake(0, 0, size.width, size.height));
     
     float scale = width / dimensions_.width;

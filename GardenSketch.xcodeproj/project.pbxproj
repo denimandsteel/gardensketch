@@ -303,6 +303,7 @@
 		4D081C1C195B8B4A00F8871C /* Plant_Indigo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C15195B8B4A00F8871C /* Plant_Indigo.svg */; };
 		4D081C1D195B8B4A00F8871C /* Plant_Light_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C16195B8B4A00F8871C /* Plant_Light_Green.svg */; };
 		4D081C1E195B8B4A00F8871C /* Plant_Light_Pink.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C17195B8B4A00F8871C /* Plant_Light_Pink.svg */; };
+		4D53F60A1964A80B0097C8E3 /* Hedge_brown_horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal.png */; };
 		4D576048195E0D3500DCCBEF /* Hedge_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576044195E0D3500DCCBEF /* Hedge_Green.svg */; };
 		4D576049195E0D3500DCCBEF /* Hedge_Maroon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576045195E0D3500DCCBEF /* Hedge_Maroon.svg */; };
 		4D57604A195E0D3500DCCBEF /* Hedge_Viridian.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576046195E0D3500DCCBEF /* Hedge_Viridian.svg */; };
@@ -806,6 +807,7 @@
 		4D081C15195B8B4A00F8871C /* Plant_Indigo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Indigo.svg; sourceTree = "<group>"; };
 		4D081C16195B8B4A00F8871C /* Plant_Light_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Light_Green.svg; sourceTree = "<group>"; };
 		4D081C17195B8B4A00F8871C /* Plant_Light_Pink.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Light_Pink.svg; sourceTree = "<group>"; };
+		4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hedge_brown_horizontal.png; sourceTree = "<group>"; };
 		4D576044195E0D3500DCCBEF /* Hedge_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Green.svg; sourceTree = "<group>"; };
 		4D576045195E0D3500DCCBEF /* Hedge_Maroon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Maroon.svg; sourceTree = "<group>"; };
 		4D576046195E0D3500DCCBEF /* Hedge_Viridian.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Viridian.svg; sourceTree = "<group>"; };
@@ -993,6 +995,7 @@
 		4D05DB9F194F5C80001F19A7 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal.png */,
 				4D5760661964866400DCCBEF /* Tree_Green.png */,
 				4D576053195E0FF600DCCBEF /* Hedge_brown.png */,
 				4D576054195E0FF600DCCBEF /* Shrub_Brown.png */,
@@ -1825,6 +1828,7 @@
 				4D081BF21958E83100F8871C /* gazebo.svg in Resources */,
 				4D05DB24194A74FE001F19A7 /* SidebarViewController.xib in Resources */,
 				4D05DE311950B8CB001F19A7 /* ImportFormats.plist in Resources */,
+				4D53F60A1964A80B0097C8E3 /* Hedge_brown_horizontal.png in Resources */,
 				4D576060196481CE00DCCBEF /* Deciduous_Tree_Burgundy.svg in Resources */,
 				4D05DCAC194F7FF2001F19A7 /* line@2x.png in Resources */,
 				4D05DCA3194F7FF2001F19A7 /* eraser@2x.png in Resources */,

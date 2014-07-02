@@ -35,6 +35,12 @@
     self.clipsToBounds = YES;
 }
 
+- (void)setColors:(NSArray *)colors
+{
+	[self setBackgroundColor:colors.firstObject];
+	_colors = colors;
+}
+
 - (void) showColors:(id)sender
 {
     if (!popover_) {
@@ -46,9 +52,9 @@
 
         popover_.delegate = self;
 		colorController.delegate = self;
-        
-        [popover_ presentPopoverFromRect:self.bounds inView:self permittedArrowDirections:UIPopoverArrowDirectionUp|UIPopoverArrowDirectionLeft animated:NO];
     }
+	
+	[popover_ presentPopoverFromRect:self.bounds inView:self permittedArrowDirections:UIPopoverArrowDirectionUp|UIPopoverArrowDirectionLeft animated:NO];
 }
 
 - (void) popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
@@ -62,7 +68,7 @@
 {
 	[self setBackgroundColor:self.colors[index]];
 	[self.delegate colorPicker:self didSelectIndex:index];
-	NSLog(@"%ld", index);
+	[popover_ dismissPopoverAnimated:YES];
 }
 
 
