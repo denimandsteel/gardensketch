@@ -13,6 +13,7 @@
 
 #define		GS_COLOR_DARK_GREY				[UIColor colorWithRed:.2 green:.19 blue:.19 alpha:1.0]
 #define		GS_FONT_AVENIR_BODY				[UIFont fontWithName:@"Avenir" size:14.0]
+#define		GS_FONT_AVENIR_SMALL			[UIFont fontWithName:@"Avenir" size:7.0]
 
 // yellow paper canvas background
 #define		GS_COLOR_CANVAS					[UIColor colorWithRed:249/255.0 green:247/255.0 blue:237/255.0 alpha:0.8]

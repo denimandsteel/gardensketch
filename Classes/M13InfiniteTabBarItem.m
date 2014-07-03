@@ -13,6 +13,7 @@
  */
 
 #import "M13InfiniteTabBarItem.h"
+#import "Constants.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation M13InfiniteTabBarItem
@@ -61,7 +62,7 @@
         _titleLabel.textColor = _unselectedTitleColor;
         _titleLabel.backgroundColor = [UIColor clearColor];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleFont = [UIFont boldSystemFontOfSize:7.0];
+        _titleFont = GS_FONT_AVENIR_SMALL;
         _titleLabel.font = _titleFont;
         [_containerView addSubview:_titleLabel];
         
