@@ -53,6 +53,8 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 			else								return @"Hedge_brown.png";
 			break;
 		case kTreeConiferous:
+			return @"Coniferous_Dark_Green.png";
+			break;
 		case kTreeDeciduous:
 			return @"Tree_Green.png";
 			break;

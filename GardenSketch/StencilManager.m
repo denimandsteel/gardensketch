@@ -149,6 +149,7 @@
 			}
 			break;
 		case kTreeDeciduous:
+		case kTreeConiferous:
 			switch (self.treeColor) {
 				case kBurgundy:
 					filename = @"Deciduous_Tree_Burgundy";
