@@ -312,6 +312,7 @@
 		4D53F6191965E9E50097C8E3 /* OneFingerRotationGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D53F6181965E9E50097C8E3 /* OneFingerRotationGestureRecognizer.m */; };
 		4D53F61B1965EBD30097C8E3 /* north-big.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F61A1965EBD30097C8E3 /* north-big.png */; };
 		4D53F61D1965FC910097C8E3 /* Coniferous_Dark_Green.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F61C1965FC910097C8E3 /* Coniferous_Dark_Green.png */; };
+		4D53F6201965FE2D0097C8E3 /* GSLabelHead.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D53F61F1965FE2D0097C8E3 /* GSLabelHead.m */; };
 		4D576048195E0D3500DCCBEF /* Hedge_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576044195E0D3500DCCBEF /* Hedge_Green.svg */; };
 		4D576049195E0D3500DCCBEF /* Hedge_Maroon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576045195E0D3500DCCBEF /* Hedge_Maroon.svg */; };
 		4D57604A195E0D3500DCCBEF /* Hedge_Viridian.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576046195E0D3500DCCBEF /* Hedge_Viridian.svg */; };
@@ -826,6 +827,8 @@
 		4D53F6181965E9E50097C8E3 /* OneFingerRotationGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneFingerRotationGestureRecognizer.m; sourceTree = "<group>"; };
 		4D53F61A1965EBD30097C8E3 /* north-big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "north-big.png"; sourceTree = "<group>"; };
 		4D53F61C1965FC910097C8E3 /* Coniferous_Dark_Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Coniferous_Dark_Green.png; sourceTree = "<group>"; };
+		4D53F61E1965FE2D0097C8E3 /* GSLabelHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSLabelHead.h; sourceTree = "<group>"; };
+		4D53F61F1965FE2D0097C8E3 /* GSLabelHead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSLabelHead.m; sourceTree = "<group>"; };
 		4D576044195E0D3500DCCBEF /* Hedge_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Green.svg; sourceTree = "<group>"; };
 		4D576045195E0D3500DCCBEF /* Hedge_Maroon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Maroon.svg; sourceTree = "<group>"; };
 		4D576046195E0D3500DCCBEF /* Hedge_Viridian.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Viridian.svg; sourceTree = "<group>"; };
@@ -1622,6 +1625,8 @@
 		4D081C05195B482200F8871C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4D53F61E1965FE2D0097C8E3 /* GSLabelHead.h */,
+				4D53F61F1965FE2D0097C8E3 /* GSLabelHead.m */,
 				4D081C06195B484100F8871C /* GSLabel.h */,
 				4D081C07195B484100F8871C /* GSLabel.m */,
 				4D081C09195B485E00F8871C /* GSButton.h */,
@@ -2007,6 +2012,7 @@
 				4D05DDB8194F8042001F19A7 /* WDHueShifter.m in Sources */,
 				4D05DB3D194A7C94001F19A7 /* M13PanGestureRecognizer.m in Sources */,
 				4D05DCC5194F7FF2001F19A7 /* Path.cpp in Sources */,
+				4D53F6201965FE2D0097C8E3 /* GSLabelHead.m in Sources */,
 				4D05DCF4194F7FF2001F19A7 /* WDEyedropperTool.m in Sources */,
 				4D05DDA7194F8042001F19A7 /* WDDocument.m in Sources */,
 				4D05DCD5194F7FF2001F19A7 /* WDFillTransform.m in Sources */,
