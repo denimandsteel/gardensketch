@@ -110,6 +110,17 @@
 #pragma mark Plan Navigation
 
 // Needs to save the current plan, and open prev or next one
+- (IBAction)toolsTabChanged:(id)sender {
+	NSUInteger index = [((UISegmentedControl *)sender) selectedSegmentIndex];
+	if (index == 0) {
+		[self.plantsView setHidden:NO];
+		[self.structuresView setHidden:YES];
+	} else {
+		[self.plantsView setHidden:YES];
+		[self.structuresView setHidden:NO];
+	}
+}
+
 - (IBAction)gridTapped:(id)sender {
 	BOOL state = [self.sidebar.canvasController.drawing showGrid];
 	[self.sidebar.canvasController.drawing setShowGrid:!state];

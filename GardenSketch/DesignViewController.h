@@ -12,6 +12,10 @@
 
 @interface DesignViewController : SidebarContentViewController <ColorPickerButtonDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *plantsView;
+@property (weak, nonatomic) IBOutlet UIView *structuresView;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *planNameLabel;
 @property (weak, nonatomic) IBOutlet WDToolButton *selectButton;
 @property (weak, nonatomic) IBOutlet UIButton *gridButton;
@@ -45,6 +49,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *undoButton;
 
 
+- (IBAction)toolsTabChanged:(id)sender;
 
 
 - (IBAction)gridTapped:(id)sender;
