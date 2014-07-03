@@ -307,6 +307,10 @@
 		4D53F60C1964CBE50097C8E3 /* grid-xxl.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F60B1964CBE50097C8E3 /* grid-xxl.png */; };
 		4D53F60F1964D21D0097C8E3 /* grid-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F60D1964D21D0097C8E3 /* grid-active.png */; };
 		4D53F6101964D21D0097C8E3 /* grid-inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F60E1964D21D0097C8E3 /* grid-inactive.png */; };
+		4D53F6141965DD110097C8E3 /* NorthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D53F6121965DD110097C8E3 /* NorthViewController.m */; };
+		4D53F6151965DD110097C8E3 /* NorthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F6131965DD110097C8E3 /* NorthViewController.xib */; };
+		4D53F6191965E9E50097C8E3 /* OneFingerRotationGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D53F6181965E9E50097C8E3 /* OneFingerRotationGestureRecognizer.m */; };
+		4D53F61B1965EBD30097C8E3 /* north-big.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F61A1965EBD30097C8E3 /* north-big.png */; };
 		4D576048195E0D3500DCCBEF /* Hedge_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576044195E0D3500DCCBEF /* Hedge_Green.svg */; };
 		4D576049195E0D3500DCCBEF /* Hedge_Maroon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576045195E0D3500DCCBEF /* Hedge_Maroon.svg */; };
 		4D57604A195E0D3500DCCBEF /* Hedge_Viridian.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576046195E0D3500DCCBEF /* Hedge_Viridian.svg */; };
@@ -814,6 +818,12 @@
 		4D53F60B1964CBE50097C8E3 /* grid-xxl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-xxl.png"; sourceTree = "<group>"; };
 		4D53F60D1964D21D0097C8E3 /* grid-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-active.png"; sourceTree = "<group>"; };
 		4D53F60E1964D21D0097C8E3 /* grid-inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-inactive.png"; sourceTree = "<group>"; };
+		4D53F6111965DD110097C8E3 /* NorthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NorthViewController.h; sourceTree = "<group>"; };
+		4D53F6121965DD110097C8E3 /* NorthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NorthViewController.m; sourceTree = "<group>"; };
+		4D53F6131965DD110097C8E3 /* NorthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NorthViewController.xib; sourceTree = "<group>"; };
+		4D53F6171965E9E50097C8E3 /* OneFingerRotationGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneFingerRotationGestureRecognizer.h; sourceTree = "<group>"; };
+		4D53F6181965E9E50097C8E3 /* OneFingerRotationGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneFingerRotationGestureRecognizer.m; sourceTree = "<group>"; };
+		4D53F61A1965EBD30097C8E3 /* north-big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "north-big.png"; sourceTree = "<group>"; };
 		4D576044195E0D3500DCCBEF /* Hedge_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Green.svg; sourceTree = "<group>"; };
 		4D576045195E0D3500DCCBEF /* Hedge_Maroon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Maroon.svg; sourceTree = "<group>"; };
 		4D576046195E0D3500DCCBEF /* Hedge_Viridian.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Viridian.svg; sourceTree = "<group>"; };
@@ -953,6 +963,7 @@
 		4D05DB28194A7C7C001F19A7 /* ext */ = {
 			isa = PBXGroup;
 			children = (
+				4D53F6161965E9C00097C8E3 /* OneFingerRotationGesture */,
 				4D05DDD8194F80BF001F19A7 /* Openclipart */,
 				4D05DB29194A7C94001F19A7 /* M13InfiniteTabBar */,
 			);
@@ -1002,6 +1013,7 @@
 		4D05DB9F194F5C80001F19A7 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				4D53F61A1965EBD30097C8E3 /* north-big.png */,
 				4D53F60D1964D21D0097C8E3 /* grid-active.png */,
 				4D53F60E1964D21D0097C8E3 /* grid-inactive.png */,
 				4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal.png */,
@@ -1066,6 +1078,9 @@
 				4D081BDF1954B54800F8871C /* ColorPickerViewController.h */,
 				4D081BE01954B54800F8871C /* ColorPickerViewController.m */,
 				4D081BE11954B54800F8871C /* ColorPickerViewController.xib */,
+				4D53F6111965DD110097C8E3 /* NorthViewController.h */,
+				4D53F6121965DD110097C8E3 /* NorthViewController.m */,
+				4D53F6131965DD110097C8E3 /* NorthViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1612,6 +1627,15 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
+		4D53F6161965E9C00097C8E3 /* OneFingerRotationGesture */ = {
+			isa = PBXGroup;
+			children = (
+				4D53F6171965E9E50097C8E3 /* OneFingerRotationGestureRecognizer.h */,
+				4D53F6181965E9E50097C8E3 /* OneFingerRotationGestureRecognizer.m */,
+			);
+			name = OneFingerRotationGesture;
+			sourceTree = "<group>";
+		};
 		4D57603F195E0CEF00DCCBEF /* Plants */ = {
 			isa = PBXGroup;
 			children = (
@@ -1749,6 +1773,7 @@
 			files = (
 				4D05DE241950AC3F001F19A7 /* Shadow.xib in Resources */,
 				4D081BFC195B3DE300F8871C /* House_No_Lines.png in Resources */,
+				4D53F61B1965EBD30097C8E3 /* north-big.png in Resources */,
 				4D05DCB6194F7FF2001F19A7 /* scale.png in Resources */,
 				4D05DE251950AC3F001F19A7 /* ShapeOptions.xib in Resources */,
 				4D081C18195B8B4A00F8871C /* Plant_Dark_Green.svg in Resources */,
@@ -1780,6 +1805,7 @@
 				4D081C0E195B79A100F8871C /* Shed.svg in Resources */,
 				4D081C1A195B8B4A00F8871C /* Plant_Green.svg in Resources */,
 				4D05DE1E1950AC3F001F19A7 /* Gradient.xib in Resources */,
+				4D53F6151965DD110097C8E3 /* NorthViewController.xib in Resources */,
 				4D05DBC1194F5FD2001F19A7 /* property.png in Resources */,
 				4D05DE301950B8CB001F19A7 /* Defaults.plist in Resources */,
 				4D05DAFF194A70C7001F19A7 /* Main.storyboard in Resources */,
@@ -1987,6 +2013,7 @@
 				4D05DD00194F7FF2001F19A7 /* WDZoomTool.m in Sources */,
 				4D05DC97194F7FF2001F19A7 /* UIImage+Additions.m in Sources */,
 				4D05DDB7194F8042001F19A7 /* WDHueSaturationController.m in Sources */,
+				4D53F6141965DD110097C8E3 /* NorthViewController.m in Sources */,
 				4D05DC93194F7FF2001F19A7 /* NSArray+Additions.m in Sources */,
 				4D05DB3F194A7C94001F19A7 /* UIViewController+M13InfiniteTabBarExtension.m in Sources */,
 				4D05DC98194F7FF2001F19A7 /* UIImage+Resize.m in Sources */,
@@ -2047,6 +2074,7 @@
 				4D05DDB6194F8042001F19A7 /* WDHelpController.m in Sources */,
 				4D05DD95194F8042001F19A7 /* WDActivityManager.m in Sources */,
 				4D05DDAB194F8042001F19A7 /* WDEtchedLine.m in Sources */,
+				4D53F6191965E9E50097C8E3 /* OneFingerRotationGestureRecognizer.m in Sources */,
 				4D05DCE2194F7FF2001F19A7 /* WDStrokeStyle.m in Sources */,
 				4D05DDE4194F80BF001F19A7 /* OCAEntry.m in Sources */,
 				4D05DDD2194F8042001F19A7 /* WDToolButton.m in Sources */,

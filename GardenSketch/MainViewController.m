@@ -11,6 +11,7 @@
 #import "SidebarContentViewController.h"
 #import "PropertyViewController.h"
 #import "StructureViewController.h"
+#import "NorthViewController.h"
 #import "PlansViewController.h"
 #import "WDCanvasController.h"
 #import "DesignViewController.h"
@@ -75,7 +76,7 @@
     
     PropertyViewController *vc1 = [[PropertyViewController alloc] initWithNibName:@"PropertyViewController" bundle:nil];
 	StructureViewController *vc2 = [[StructureViewController alloc] initWithNibName:@"StructureViewController" bundle:nil];
-	SidebarContentViewController *vc3 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
+	NorthViewController *vc3 = [[NorthViewController alloc] initWithNibName:@"NorthViewController" bundle:nil];
 	PlansViewController *vc4 = [[PlansViewController alloc] initWithNibName:@"PlansViewController" bundle:nil];
 	DesignViewController *vc5 = [[DesignViewController alloc] initWithNibName:@"DesignViewController" bundle:nil];
 	SidebarContentViewController *vc6 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];

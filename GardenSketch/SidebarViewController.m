@@ -7,6 +7,7 @@
 //
 
 #import "SidebarViewController.h"
+#import "NorthViewController.h"
 
 @interface SidebarViewController ()
 
@@ -41,6 +42,9 @@
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
     CGPoint touchPoint = [touch locationInView:self.view];
+	if ([self.selectedViewController isKindOfClass:[NorthViewController class]]) {
+		return NO;
+	}
 	return !CGRectContainsPoint(self.infiniteTabBar.frame, touchPoint);
 }
 
