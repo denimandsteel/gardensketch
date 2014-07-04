@@ -27,6 +27,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+	
+	for (PropertyShapeButton *shape in self.shapes) {
+		shape.primaryFrame = shape.frame;
+		shape.secondaryFrame = CGRectMake(40, 80, shape.bounds.size.width / 2, shape.bounds.size.height / 2);
+	}
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,13 +50,56 @@
 */
 
 - (IBAction)shapeSelected:(id)sender {
-	[self.shapesView setHidden:YES];
+	[self.sizeView setAlpha:0.0];
 	[self.sizeView setHidden:NO];
+	[UIView animateWithDuration:.3 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+		for (PropertyShapeButton *shape in self.shapes) {
+			if (shape != sender) {
+				[shape setAlpha:0.0];
+			}
+		}
+	} completion:^(BOOL success) {
+		if (success) {
+			for (PropertyShapeButton *shape in self.shapes) {
+				if (shape != sender) {
+					[shape setHidden:YES];
+				}
+			}
+		}
+	}];
+	
+	[self moveShapeUp:sender];
+}
+
+- (void)moveShapeUp:(PropertyShapeButton *)shape
+{
+	[UIView animateWithDuration:.3 delay:.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
+		[shape setFrame:shape.secondaryFrame];
+		[self.sizeView setAlpha:1.0];
+	} completion:^(BOOL success) {
+		
+	}];
 }
 
 - (IBAction)changeShapeTapped:(id)sender {
-	[self.shapesView setHidden:NO];
-	[self.sizeView setHidden:YES];
+	for (PropertyShapeButton *shape in self.shapes) {
+		[shape setHidden:NO];
+		[shape setAlpha:0.0];
+	}
+	[UIView animateWithDuration:.3 animations:^{
+		for (PropertyShapeButton *shape in self.shapes) {
+			[shape setAlpha:1.0];
+			[shape setFrame:shape.primaryFrame];
+		}
+		[self.sizeView setAlpha:0.0];
+	} completion:^(BOOL success) {
+		[self.sizeView setHidden:YES];
+	}];
+}
+
+- (IBAction)doneTapped:(id)sender {
+	NSInteger structureTabIndex = 1;
+	[self.sidebar setSelectedIndex:structureTabIndex];
 }
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "StructureViewController.h"
+#import "WDToolManager.h"
+#import "WDStencilTool.h"
 
 @interface StructureViewController ()
 
@@ -27,6 +29,22 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+	
+	
+	WDTool *house = nil;
+	
+	for (WDTool *tool in [WDToolManager sharedInstance].tools) {
+		if ([tool isKindOfClass:[WDStencilTool class]]) {
+			if ([(WDStencilTool *)tool type] == kHouse) {
+				house = tool;
+				break;
+			}
+		}
+	}
+	
+	[self.houseButton setTool:house];
+	
+	[self.houseButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,5 +52,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void) chooseTool:(id)sender
+{
+    [WDToolManager sharedInstance].activeTool = ((WDToolButton *)sender).tool;
+}
+
 
 @end

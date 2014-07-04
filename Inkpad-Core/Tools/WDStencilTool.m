@@ -67,6 +67,9 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 		case kShed:
 			return @"Shed.png";
 			break;
+		case kHouse:
+			return @"House_No_Lines.png";
+			break;
 		default:
 			return @"";
 			break;

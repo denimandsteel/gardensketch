@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "SidebarContentViewController.h"
+#import "WDToolButton.h"
 
 @interface StructureViewController : SidebarContentViewController
+
+@property (weak, nonatomic) IBOutlet WDToolButton *houseButton;
 
 @end

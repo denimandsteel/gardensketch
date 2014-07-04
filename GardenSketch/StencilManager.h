@@ -11,6 +11,7 @@
 #import "WDGroup.h"
 
 typedef enum {
+	kHouse,
     kPlantBig,
 	kPlantSmall,
 	kHedge,

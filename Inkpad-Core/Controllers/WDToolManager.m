@@ -87,6 +87,9 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 		WDStencilTool *shed = (WDStencilTool *)[WDStencilTool tool];
 		[shed setType:kShed];
         
+		WDStencilTool *house = (WDStencilTool *)[WDStencilTool tool];
+		[house setType:kHouse];
+		
 		tools_ = @[[WDSelectionTool tool],
                    [WDFreehandTool tool],
 				   closedFreehand,
@@ -99,7 +102,8 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 				   confirousTree,
 				   sidewalk,
 				   gazebo,
-				   shed];
+				   shed,
+				   house];
     }
     
     return tools_;

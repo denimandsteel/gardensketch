@@ -8,15 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "SidebarContentViewController.h"
+#import "PropertyShapeButton.h"
 
 @interface PropertyViewController : SidebarContentViewController
 
-@property (weak, nonatomic) IBOutlet UIView *shapesView;
 @property (weak, nonatomic) IBOutlet UIView *sizeView;
 
+@property (strong, nonatomic) IBOutletCollection(PropertyShapeButton) NSArray *shapes;
 
 - (IBAction)shapeSelected:(id)sender;
 - (IBAction)changeShapeTapped:(id)sender;
 
+- (IBAction)doneTapped:(id)sender;
 
 @end

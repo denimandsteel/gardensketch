@@ -10,4 +10,7 @@
 
 @interface PropertyShapeButton : UIButton
 
+@property (nonatomic, assign) CGRect primaryFrame;
+@property (nonatomic, assign) CGRect secondaryFrame;
+
 @end
