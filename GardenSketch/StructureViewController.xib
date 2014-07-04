@@ -14,23 +14,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="708"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STRUCTURE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osy-UL-vJA">
-                    <rect key="frame" x="20" y="299" width="280" height="109"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What does your house look like?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCz-oa-Reu" customClass="GSLabel">
+                    <rect key="frame" x="20" y="20" width="280" height="43"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="280" id="3YN-3T-3Km"/>
-                        <constraint firstAttribute="height" constant="109" id="Qbv-M6-Wyj"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.36311706660373411" green="0.5447465746220348" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-            <constraints>
-                <constraint firstAttribute="centerY" secondItem="Osy-UL-vJA" secondAttribute="centerY" id="Zw5-Qp-COf"/>
-                <constraint firstAttribute="centerX" secondItem="Osy-UL-vJA" secondAttribute="centerX" id="fIw-Zf-XbK"/>
-            </constraints>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>

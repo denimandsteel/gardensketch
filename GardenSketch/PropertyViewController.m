@@ -35,4 +35,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
+ 
+ Property Boundaries
+ The red lines mark the property boundaries.
+ 
+ You can draw and write notes outside the red lines, but be mindful of where you can actually plant.
+ 
+*/
+
+- (IBAction)shapeSelected:(id)sender {
+	[self.shapesView setHidden:YES];
+	[self.sizeView setHidden:NO];
+}
+
+- (IBAction)changeShapeTapped:(id)sender {
+	[self.shapesView setHidden:NO];
+	[self.sizeView setHidden:YES];
+}
+
 @end

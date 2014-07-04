@@ -11,4 +11,12 @@
 
 @interface PropertyViewController : SidebarContentViewController
 
+@property (weak, nonatomic) IBOutlet UIView *shapesView;
+@property (weak, nonatomic) IBOutlet UIView *sizeView;
+
+
+- (IBAction)shapeSelected:(id)sender;
+- (IBAction)changeShapeTapped:(id)sender;
+
+
 @end

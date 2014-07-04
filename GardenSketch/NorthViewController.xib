@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="north-big.png" translatesAutoresizingMaskIntoConstraints="NO" id="FXU-5a-5nn">
-                    <rect key="frame" x="20" y="214" width="280" height="280"/>
+                    <rect key="frame" x="20" y="94" width="280" height="280"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="280" id="ALx-ZZ-Mk5"/>
@@ -34,7 +34,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="FXU-5a-5nn" secondAttribute="centerX" id="HrW-T7-woK"/>
-                <constraint firstAttribute="centerY" secondItem="FXU-5a-5nn" secondAttribute="centerY" id="si0-J8-yDm"/>
+                <constraint firstAttribute="centerY" secondItem="FXU-5a-5nn" secondAttribute="centerY" constant="120" id="si0-J8-yDm"/>
             </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
