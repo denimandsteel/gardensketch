@@ -315,6 +315,7 @@
 		4D53F6201965FE2D0097C8E3 /* GSLabelHead.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D53F61F1965FE2D0097C8E3 /* GSLabelHead.m */; };
 		4D53F623196721140097C8E3 /* PropertyShapeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D53F622196721140097C8E3 /* PropertyShapeButton.m */; };
 		4D53F625196759080097C8E3 /* House_No_Lines.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F624196759080097C8E3 /* House_No_Lines.svg */; };
+		4D53F62719677C410097C8E3 /* left-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F62619677C410097C8E3 /* left-arrow@2x.png */; };
 		4D576048195E0D3500DCCBEF /* Hedge_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576044195E0D3500DCCBEF /* Hedge_Green.svg */; };
 		4D576049195E0D3500DCCBEF /* Hedge_Maroon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576045195E0D3500DCCBEF /* Hedge_Maroon.svg */; };
 		4D57604A195E0D3500DCCBEF /* Hedge_Viridian.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576046195E0D3500DCCBEF /* Hedge_Viridian.svg */; };
@@ -834,6 +835,7 @@
 		4D53F621196721140097C8E3 /* PropertyShapeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyShapeButton.h; sourceTree = "<group>"; };
 		4D53F622196721140097C8E3 /* PropertyShapeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyShapeButton.m; sourceTree = "<group>"; };
 		4D53F624196759080097C8E3 /* House_No_Lines.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = House_No_Lines.svg; sourceTree = "<group>"; };
+		4D53F62619677C410097C8E3 /* left-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-arrow@2x.png"; sourceTree = "<group>"; };
 		4D576044195E0D3500DCCBEF /* Hedge_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Green.svg; sourceTree = "<group>"; };
 		4D576045195E0D3500DCCBEF /* Hedge_Maroon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Maroon.svg; sourceTree = "<group>"; };
 		4D576046195E0D3500DCCBEF /* Hedge_Viridian.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Viridian.svg; sourceTree = "<group>"; };
@@ -1024,6 +1026,7 @@
 			isa = PBXGroup;
 			children = (
 				4D53F61C1965FC910097C8E3 /* Coniferous_Dark_Green.png */,
+				4D53F62619677C410097C8E3 /* left-arrow@2x.png */,
 				4D53F61A1965EBD30097C8E3 /* north-big.png */,
 				4D53F60D1964D21D0097C8E3 /* grid-active.png */,
 				4D53F60E1964D21D0097C8E3 /* grid-inactive.png */,
@@ -1873,6 +1876,7 @@
 				4D05DBB0194F5C81001F19A7 /* enclosed.png in Resources */,
 				4D05DE1D1950AC3F001F19A7 /* Font.xib in Resources */,
 				4D05DCB9194F7FF2001F19A7 /* scissor@2x.png in Resources */,
+				4D53F62719677C410097C8E3 /* left-arrow@2x.png in Resources */,
 				4D576049195E0D3500DCCBEF /* Hedge_Maroon.svg in Resources */,
 				4D05DBC6194F6347001F19A7 /* StructureViewController.xib in Resources */,
 				4D576061196481CE00DCCBEF /* Deciduous_Tree_Dark_Green.svg in Resources */,

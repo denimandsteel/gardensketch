@@ -12,8 +12,9 @@
 
 @interface PropertyViewController : SidebarContentViewController
 
-@property (weak, nonatomic) IBOutlet UIView *sizeView;
+@property (nonatomic, assign) BOOL isInShapeMode;
 
+@property (weak, nonatomic) IBOutlet UIView *sizeView;
 @property (strong, nonatomic) IBOutletCollection(PropertyShapeButton) NSArray *shapes;
 
 - (IBAction)shapeSelected:(id)sender;

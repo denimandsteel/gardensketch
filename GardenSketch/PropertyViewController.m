@@ -30,8 +30,10 @@
 	
 	for (PropertyShapeButton *shape in self.shapes) {
 		shape.primaryFrame = shape.frame;
-		shape.secondaryFrame = CGRectMake(40, 80, shape.bounds.size.width / 2, shape.bounds.size.height / 2);
+		shape.secondaryFrame = CGRectMake(40, 90, shape.bounds.size.width / 2, shape.bounds.size.height / 2);
 	}
+	
+	self.isInShapeMode = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,25 +52,31 @@
 */
 
 - (IBAction)shapeSelected:(id)sender {
-	[self.sizeView setAlpha:0.0];
-	[self.sizeView setHidden:NO];
-	[UIView animateWithDuration:.3 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-		for (PropertyShapeButton *shape in self.shapes) {
-			if (shape != sender) {
-				[shape setAlpha:0.0];
-			}
-		}
-	} completion:^(BOOL success) {
-		if (success) {
+	if (self.isInShapeMode) {
+		[self.sizeView setAlpha:0.0];
+		[self.sizeView setHidden:NO];
+		[UIView animateWithDuration:.3 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
 			for (PropertyShapeButton *shape in self.shapes) {
 				if (shape != sender) {
-					[shape setHidden:YES];
+					[shape setAlpha:0.0];
 				}
 			}
-		}
-	}];
-	
-	[self moveShapeUp:sender];
+		} completion:^(BOOL success) {
+			if (success) {
+				for (PropertyShapeButton *shape in self.shapes) {
+					if (shape != sender) {
+						[shape setHidden:YES];
+					}
+				}
+			}
+		}];
+		
+		[self moveShapeUp:sender];
+		
+		self.isInShapeMode = NO;
+	} else {
+		[self changeShapeTapped:nil];
+	}
 }
 
 - (void)moveShapeUp:(PropertyShapeButton *)shape
@@ -95,6 +103,8 @@
 	} completion:^(BOOL success) {
 		[self.sizeView setHidden:YES];
 	}];
+	
+	self.isInShapeMode = YES;
 }
 
 - (IBAction)doneTapped:(id)sender {
