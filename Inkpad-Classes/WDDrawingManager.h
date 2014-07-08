@@ -35,8 +35,7 @@
 - (WDDocument *) openDocumentAtIndex:(NSUInteger)ix withCompletionHandler:(void (^)(WDDocument *document))completionHandler;
 - (NSData *) dataForFilename:(NSString *)name;
 - (NSUInteger) numberOfDrawings;
-- (NSUInteger) numberOfPlans;
-- (NSArray *) planNames;
+- (NSString *) basePlanFilename;
 - (NSArray *) drawingNames;
 - (NSIndexPath *) indexPathForFilename:(NSString *)filename;
 

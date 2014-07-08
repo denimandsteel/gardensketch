@@ -49,7 +49,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-	// TODO: if not already loaded, load base plan on canvas
+	// TODO: if not already loaded, load base plan on canvas | see property view controller
 }
 
 
