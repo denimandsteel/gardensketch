@@ -434,7 +434,7 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 
 - (NSIndexPath *) indexPathForFilename:(NSString *)filename
 {
-    return [NSIndexPath indexPathForItem:[[self drawingNames] indexOfObject:filename] inSection:0];
+    return [NSIndexPath indexPathForItem:[[self planNames] indexOfObject:filename] inSection:0];
 }
 
 - (void) deleteDrawings:(NSMutableSet *)set

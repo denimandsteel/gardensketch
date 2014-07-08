@@ -81,9 +81,9 @@
 {
 	if (indexPath.row < [collectionView numberOfItemsInSection:0] - 1) {
 		WDThumbnailView *thumbnail = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellID" forIndexPath:indexPath];
-		NSArray         *drawings = [[WDDrawingManager sharedInstance] planNames];
+		NSArray         *plans = [[WDDrawingManager sharedInstance] planNames];
 		
-		thumbnail.filename = drawings[indexPath.item];
+		thumbnail.filename = plans[indexPath.item];
 		thumbnail.tag = indexPath.item;
 		thumbnail.delegate = self;
 		return thumbnail;
@@ -123,7 +123,7 @@
 
 - (void) drawingAdded:(NSNotification *)aNotification
 {
-    NSUInteger count = [[WDDrawingManager sharedInstance] numberOfDrawings] - 1;
+    NSUInteger count = [[WDDrawingManager sharedInstance] numberOfPlans] - 1;
     NSArray *indexPaths = @[[NSIndexPath indexPathForItem:count inSection:0]];
     [self.collectionView insertItemsAtIndexPaths:indexPaths];
 	
