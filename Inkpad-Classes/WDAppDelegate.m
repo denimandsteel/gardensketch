@@ -47,6 +47,8 @@ NSString *WDDropboxWasUnlinkedNotification = @"WDDropboxWasUnlinkedNotification"
     
     [self clearTempDirectory];
     
+	
+	
     [self setupDefaults];
 }
 

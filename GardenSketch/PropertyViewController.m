@@ -7,6 +7,7 @@
 //
 
 #import "PropertyViewController.h"
+#import "WDDrawingManager.h"
 
 @interface PropertyViewController ()
 
@@ -34,6 +35,13 @@
 	}
 	
 	self.isInShapeMode = YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	// TODO: if not already loaded, load base plan on canvas and listen for notification:
+	WDDocument *basePlanDocument = [[WDDrawingManager sharedInstance] openDocumentAtIndex:0 withCompletionHandler:nil];
+	[self.sidebar.canvasController setDocument:basePlanDocument];
 }
 
 - (void)didReceiveMemoryWarning

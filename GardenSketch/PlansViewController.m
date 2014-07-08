@@ -72,7 +72,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
 {
-    return [[WDDrawingManager sharedInstance] numberOfDrawings] + 1; // add new
+    return [[WDDrawingManager sharedInstance] numberOfPlans] + 1; // add new
 }
 
 #pragma mark Collection View delegate
@@ -81,7 +81,7 @@
 {
 	if (indexPath.row < [collectionView numberOfItemsInSection:0] - 1) {
 		WDThumbnailView *thumbnail = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellID" forIndexPath:indexPath];
-		NSArray         *drawings = [[WDDrawingManager sharedInstance] drawingNames];
+		NSArray         *drawings = [[WDDrawingManager sharedInstance] planNames];
 		
 		thumbnail.filename = drawings[indexPath.item];
 		thumbnail.tag = indexPath.item;
@@ -104,7 +104,7 @@
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
 	if (indexPath.row < [collectionView numberOfItemsInSection:0] - 1) {
-		WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:indexPath.row withCompletionHandler:nil];
+		WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:indexPath.row + 1 withCompletionHandler:nil]; // +1 to account for the base plan
 		[self.sidebar.canvasController setDocument:document];
 	} else {
 		[self createNewDrawing:nil];

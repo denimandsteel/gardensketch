@@ -146,7 +146,7 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 + (NSString *) documentDirectory
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
-    NSString *documentsDirectory = paths[0]; 
+    NSString *documentsDirectory = paths[0];
     return documentsDirectory;
 }
 
@@ -168,14 +168,34 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
     return [fm fileExistsAtPath:svgPath] || [fm fileExistsAtPath:inkpadPath];
 }
 
+- (NSUInteger) numberOfPlans
+{
+    return [drawingNames_ count] - 1;
+}
+
 - (NSUInteger) numberOfDrawings
 {
     return [drawingNames_ count];
 }
 
+- (NSArray *) planNames
+{
+	if ([self numberOfDrawings] > 1) {
+		NSArray *array = [drawingNames_ subarrayWithRange:NSMakeRange(1, drawingNames_.count - 1)];
+		return array;
+	} else {
+		return [NSMutableArray array];
+	}
+}
+
 - (NSArray *) drawingNames
 {
     return drawingNames_;
+}
+
+- (NSString *) basePlanFilename
+{
+	return @"_GS_BASE_PLAN.inkpad";
 }
 
 - (NSString *) uniqueFilename
@@ -257,9 +277,15 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
     return document;
 }
 
+- (WDDocument *) createBasePlanDrawingWithSize:(CGSize)size andUnits:(NSString *)units
+{
+    WDDrawing *drawing = [[WDDrawing alloc] initWithSize:size andUnits:units isBasePlan:YES];
+    return [self installDrawing:drawing withName:[self basePlanFilename] closeAfterSaving:NO];
+}
+
 - (WDDocument *) createNewDrawingWithSize:(CGSize)size andUnits:(NSString *)units
 {   
-    WDDrawing *drawing = [[WDDrawing alloc] initWithSize:size andUnits:units];
+    WDDrawing *drawing = [[WDDrawing alloc] initWithSize:size andUnits:units isBasePlan:NO];
     return [self installDrawing:drawing withName:[self uniqueFilename] closeAfterSaving:NO];
 }
 
@@ -499,26 +525,27 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 - (void) createNecessaryDirectories_
 {
     NSFileManager   *fm = [NSFileManager defaultManager];
-    BOOL createSamples = NO;
+    BOOL createBasePlan = NO;
     
     if (![fm fileExistsAtPath:[WDDrawingManager drawingPath]]) {
         // assume this is the first time we've been run... copy over the sample drawings
-        createSamples = YES;
+        createBasePlan = YES;
     }
     
     [fm createDirectoryAtPath:[WDDrawingManager drawingPath] withIntermediateDirectories:YES attributes:nil error:NULL];
     
-    if (createSamples) {
-        NSArray *samplePaths = [[NSBundle mainBundle] pathsForResourcesOfType:WDDrawingFileExtension inDirectory:@"./"];
-		
-        for (NSString *path in samplePaths) {
-            [fm copyItemAtPath:path toPath:[[WDDrawingManager drawingPath] stringByAppendingPathComponent:[path lastPathComponent]] error:NULL];
-        }
-        
-        samplePaths = [[NSBundle mainBundle] pathsForResourcesOfType:WDSVGFileExtension inDirectory:@"Samples"];
-        for (NSString *path in samplePaths) {
-            [fm copyItemAtPath:path toPath:[[WDDrawingManager drawingPath] stringByAppendingPathComponent:[path lastPathComponent]] error:NULL];
-        }
+    if (createBasePlan) {
+//        NSArray *samplePaths = [[NSBundle mainBundle] pathsForResourcesOfType:WDDrawingFileExtension inDirectory:@"./"];
+//		
+//        for (NSString *path in samplePaths) {
+//            [fm copyItemAtPath:path toPath:[[WDDrawingManager drawingPath] stringByAppendingPathComponent:[path lastPathComponent]] error:NULL];
+//        }
+//        
+//        samplePaths = [[NSBundle mainBundle] pathsForResourcesOfType:WDSVGFileExtension inDirectory:@"Samples"];
+//        for (NSString *path in samplePaths) {
+//            [fm copyItemAtPath:path toPath:[[WDDrawingManager drawingPath] stringByAppendingPathComponent:[path lastPathComponent]] error:NULL];
+//        }
+		[self createBasePlanDrawingWithSize:CGSizeMake(2048, 2048) andUnits:@"Centimeters"];
     }
 }
 

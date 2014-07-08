@@ -76,7 +76,7 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData);
 @property (nonatomic, readonly) BOOL isSuppressingNotifications;
 
 - (id) initWithUnits:(NSString *)units; // for use with SVG import only
-- (id) initWithSize:(CGSize)size andUnits:(NSString *)units;
+- (id) initWithSize:(CGSize)size andUnits:(NSString *)units isBasePlan:(BOOL)isBasePlan;
 
 - (void) beginSuppressingNotifications;
 - (void) endSuppressingNotifications;

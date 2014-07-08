@@ -12,6 +12,7 @@
 #import "WDColor.h"
 #import "WDGradient.h"
 #import "StencilManager.h"
+#import "WDDrawingManager.h"
 
 @implementation AppDelegate
 
@@ -28,6 +29,8 @@
 	[self clearTempDirectory];
 	
 	[self setupDefaults];
+	
+	[WDDrawingManager sharedInstance];
 }
 
 

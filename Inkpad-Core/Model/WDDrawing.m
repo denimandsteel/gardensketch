@@ -121,7 +121,7 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
     return self;
 }
 
-- (id) initWithSize:(CGSize)size andUnits:(NSString *)units
+- (id) initWithSize:(CGSize)size andUnits:(NSString *)units isBasePlan:(BOOL)isBasePlan
 {
     self = [super init];
     
@@ -133,9 +133,19 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
     [self beginSuppressingNotifications];
     
     dimensions_ = size;
+	
+	layers_ = [[NSMutableArray alloc] init];
     
-    layers_ = [[NSMutableArray alloc] init];
-    WDLayer *layer = [WDLayer layer];
+	if (!isBasePlan) {
+		//TODO: get this by making a copy of the base plan's only layer.
+		WDLayer *baseLayer = [WDLayer layer];
+		baseLayer.drawing = self;
+		[layers_ addObject:baseLayer];
+		baseLayer.name = [self uniqueLayerName];
+		baseLayer.locked = YES;
+	}
+    
+	WDLayer *layer = [WDLayer layer];
     layer.drawing = self;
     [layers_ addObject:layer];
     
@@ -169,7 +179,7 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
 
 - (id) initWithImage:(UIImage *)image imageName:(NSString *)imageName
 {
-    self = [self initWithSize:image.size andUnits:@"Pixels"];
+    self = [self initWithSize:image.size andUnits:@"Pixels" isBasePlan:NO];
     
     if (!self) {
         return nil;

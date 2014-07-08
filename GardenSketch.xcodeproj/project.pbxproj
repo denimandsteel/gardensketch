@@ -316,6 +316,16 @@
 		4D53F623196721140097C8E3 /* PropertyShapeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D53F622196721140097C8E3 /* PropertyShapeButton.m */; };
 		4D53F625196759080097C8E3 /* House_No_Lines.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F624196759080097C8E3 /* House_No_Lines.svg */; };
 		4D53F62719677C410097C8E3 /* left-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F62619677C410097C8E3 /* left-arrow@2x.png */; };
+		4D53F633196B149C0097C8E3 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F629196B149C0097C8E3 /* AppIcon29x29.png */; };
+		4D53F634196B149C0097C8E3 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F62A196B149C0097C8E3 /* AppIcon29x29@2x.png */; };
+		4D53F635196B149C0097C8E3 /* AppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F62B196B149C0097C8E3 /* AppIcon40x40.png */; };
+		4D53F636196B149C0097C8E3 /* AppIcon40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F62C196B149C0097C8E3 /* AppIcon40x40@2x.png */; };
+		4D53F637196B149C0097C8E3 /* AppIcon60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F62D196B149C0097C8E3 /* AppIcon60x60.png */; };
+		4D53F638196B149C0097C8E3 /* AppIcon60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F62E196B149C0097C8E3 /* AppIcon60x60@2x.png */; };
+		4D53F639196B149C0097C8E3 /* AppIcon76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F62F196B149C0097C8E3 /* AppIcon76x76.png */; };
+		4D53F63A196B149C0097C8E3 /* AppIcon76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F630196B149C0097C8E3 /* AppIcon76x76@2x.png */; };
+		4D53F63B196B149C0097C8E3 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F631196B149C0097C8E3 /* iTunesArtwork.png */; };
+		4D53F63C196B149C0097C8E3 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F632196B149C0097C8E3 /* iTunesArtwork@2x.png */; };
 		4D576048195E0D3500DCCBEF /* Hedge_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576044195E0D3500DCCBEF /* Hedge_Green.svg */; };
 		4D576049195E0D3500DCCBEF /* Hedge_Maroon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576045195E0D3500DCCBEF /* Hedge_Maroon.svg */; };
 		4D57604A195E0D3500DCCBEF /* Hedge_Viridian.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576046195E0D3500DCCBEF /* Hedge_Viridian.svg */; };
@@ -836,6 +846,16 @@
 		4D53F622196721140097C8E3 /* PropertyShapeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyShapeButton.m; sourceTree = "<group>"; };
 		4D53F624196759080097C8E3 /* House_No_Lines.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = House_No_Lines.svg; sourceTree = "<group>"; };
 		4D53F62619677C410097C8E3 /* left-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-arrow@2x.png"; sourceTree = "<group>"; };
+		4D53F629196B149C0097C8E3 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
+		4D53F62A196B149C0097C8E3 /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
+		4D53F62B196B149C0097C8E3 /* AppIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon40x40.png; sourceTree = "<group>"; };
+		4D53F62C196B149C0097C8E3 /* AppIcon40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40x40@2x.png"; sourceTree = "<group>"; };
+		4D53F62D196B149C0097C8E3 /* AppIcon60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon60x60.png; sourceTree = "<group>"; };
+		4D53F62E196B149C0097C8E3 /* AppIcon60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@2x.png"; sourceTree = "<group>"; };
+		4D53F62F196B149C0097C8E3 /* AppIcon76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon76x76.png; sourceTree = "<group>"; };
+		4D53F630196B149C0097C8E3 /* AppIcon76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76@2x.png"; sourceTree = "<group>"; };
+		4D53F631196B149C0097C8E3 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		4D53F632196B149C0097C8E3 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		4D576044195E0D3500DCCBEF /* Hedge_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Green.svg; sourceTree = "<group>"; };
 		4D576045195E0D3500DCCBEF /* Hedge_Maroon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Maroon.svg; sourceTree = "<group>"; };
 		4D576046195E0D3500DCCBEF /* Hedge_Viridian.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Viridian.svg; sourceTree = "<group>"; };
@@ -1015,6 +1035,7 @@
 		4D05DB45194B820A001F19A7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4D53F628196B14840097C8E3 /* AppIcon */,
 				4D53F60B1964CBE50097C8E3 /* grid-xxl.png */,
 				4D081BEF1958E82500F8871C /* svg */,
 				4D05DB9F194F5C80001F19A7 /* icons */,
@@ -1654,6 +1675,23 @@
 			name = OneFingerRotationGesture;
 			sourceTree = "<group>";
 		};
+		4D53F628196B14840097C8E3 /* AppIcon */ = {
+			isa = PBXGroup;
+			children = (
+				4D53F629196B149C0097C8E3 /* AppIcon29x29.png */,
+				4D53F62A196B149C0097C8E3 /* AppIcon29x29@2x.png */,
+				4D53F62B196B149C0097C8E3 /* AppIcon40x40.png */,
+				4D53F62C196B149C0097C8E3 /* AppIcon40x40@2x.png */,
+				4D53F62D196B149C0097C8E3 /* AppIcon60x60.png */,
+				4D53F62E196B149C0097C8E3 /* AppIcon60x60@2x.png */,
+				4D53F62F196B149C0097C8E3 /* AppIcon76x76.png */,
+				4D53F630196B149C0097C8E3 /* AppIcon76x76@2x.png */,
+				4D53F631196B149C0097C8E3 /* iTunesArtwork.png */,
+				4D53F632196B149C0097C8E3 /* iTunesArtwork@2x.png */,
+			);
+			name = AppIcon;
+			sourceTree = "<group>";
+		};
 		4D57603F195E0CEF00DCCBEF /* Plants */ = {
 			isa = PBXGroup;
 			children = (
@@ -1799,6 +1837,7 @@
 				4D05DDED194F9F85001F19A7 /* plans@2x.png in Resources */,
 				4D53F60F1964D21D0097C8E3 /* grid-active.png in Resources */,
 				4D05DBB2194F5C81001F19A7 /* more.png in Resources */,
+				4D53F634196B149C0097C8E3 /* AppIcon29x29@2x.png in Resources */,
 				4D05DCBF194F7FF2001F19A7 /* star@2x.png in Resources */,
 				4D05DE2F1950B8CB001F19A7 /* BlendModes.plist in Resources */,
 				4D5760671964866400DCCBEF /* Tree_Green.png in Resources */,
@@ -1824,7 +1863,9 @@
 				4D081C0E195B79A100F8871C /* Shed.svg in Resources */,
 				4D081C1A195B8B4A00F8871C /* Plant_Green.svg in Resources */,
 				4D05DE1E1950AC3F001F19A7 /* Gradient.xib in Resources */,
+				4D53F639196B149C0097C8E3 /* AppIcon76x76.png in Resources */,
 				4D53F6151965DD110097C8E3 /* NorthViewController.xib in Resources */,
+				4D53F636196B149C0097C8E3 /* AppIcon40x40@2x.png in Resources */,
 				4D05DBC1194F5FD2001F19A7 /* property.png in Resources */,
 				4D05DE301950B8CB001F19A7 /* Defaults.plist in Resources */,
 				4D05DAFF194A70C7001F19A7 /* Main.storyboard in Resources */,
@@ -1833,8 +1874,10 @@
 				4D05DE331950B8CB001F19A7 /* Settings.plist in Resources */,
 				4D576048195E0D3500DCCBEF /* Hedge_Green.svg in Resources */,
 				4D05DCAB194F7FF2001F19A7 /* line.png in Resources */,
+				4D53F63C196B149C0097C8E3 /* iTunesArtwork@2x.png in Resources */,
 				4D05DCAA194F7FF2001F19A7 /* hand.png in Resources */,
 				4D081C1D195B8B4A00F8871C /* Plant_Light_Green.svg in Resources */,
+				4D53F63B196B149C0097C8E3 /* iTunesArtwork.png in Resources */,
 				4D05DB9E194BB109001F19A7 /* PropertyViewController.xib in Resources */,
 				4D05DE1A1950AC3F001F19A7 /* Color.xib in Resources */,
 				4D081C10195B7BA500F8871C /* Tile.svg in Resources */,
@@ -1855,11 +1898,13 @@
 				4D081BDC1954A31600F8871C /* more@2x.png in Resources */,
 				4D05DE1B1950AC3F001F19A7 /* ColorBalance.xib in Resources */,
 				4D57604A195E0D3500DCCBEF /* Hedge_Viridian.svg in Resources */,
+				4D53F633196B149C0097C8E3 /* AppIcon29x29.png in Resources */,
 				4D05DBAF194F5C81001F19A7 /* design.png in Resources */,
 				4D05DBB8194F5C81001F19A7 /* switcher.png in Resources */,
 				4D05DE261950AC3F001F19A7 /* Stroke.xib in Resources */,
 				4D081BFA195B3DC100F8871C /* Plant_Grey_Green.png in Resources */,
 				4D05DCAF194F7FF2001F19A7 /* pen.png in Resources */,
+				4D53F638196B149C0097C8E3 /* AppIcon60x60@2x.png in Resources */,
 				4D576058195E284B00DCCBEF /* Hedge_Brown.svg in Resources */,
 				4D05DE321950B8CB001F19A7 /* PageSizes.plist in Resources */,
 				4D576056195E0FF600DCCBEF /* Shrub_Brown.png in Resources */,
@@ -1890,6 +1935,7 @@
 				4D53F60A1964A80B0097C8E3 /* Hedge_brown_horizontal.png in Resources */,
 				4D576060196481CE00DCCBEF /* Deciduous_Tree_Burgundy.svg in Resources */,
 				4D05DCAC194F7FF2001F19A7 /* line@2x.png in Resources */,
+				4D53F637196B149C0097C8E3 /* AppIcon60x60.png in Resources */,
 				4D05DCA3194F7FF2001F19A7 /* eraser@2x.png in Resources */,
 				4D081C02195B3FCF00F8871C /* Shed.png in Resources */,
 				4D05DE211950AC3F001F19A7 /* LayerCell.xib in Resources */,
@@ -1897,6 +1943,7 @@
 				4D05DCB0194F7FF2001F19A7 /* pen@2x.png in Resources */,
 				4D081BE31954B54800F8871C /* ColorPickerViewController.xib in Resources */,
 				4D05DCA0194F7FF2001F19A7 /* brush.png in Resources */,
+				4D53F635196B149C0097C8E3 /* AppIcon40x40.png in Resources */,
 				4D05DCA1194F7FF2001F19A7 /* brush@2x.png in Resources */,
 				4D05DCB4194F7FF2001F19A7 /* rotate.png in Resources */,
 				4D05DCAD194F7FF2001F19A7 /* oval.png in Resources */,
@@ -1914,6 +1961,7 @@
 				4D081BD619538D7400F8871C /* NewPlanCell.xib in Resources */,
 				4D081C19195B8B4A00F8871C /* Plant_Gold.svg in Resources */,
 				4D05DBBF194F5FBF001F19A7 /* property@2x.png in Resources */,
+				4D53F63A196B149C0097C8E3 /* AppIcon76x76@2x.png in Resources */,
 				4D05DCC0194F7FF2001F19A7 /* text.png in Resources */,
 				4D081BDE1954A31600F8871C /* notes@2x.png in Resources */,
 				4D05DBB4194F5C81001F19A7 /* notes.png in Resources */,
