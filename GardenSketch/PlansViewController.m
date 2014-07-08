@@ -11,6 +11,7 @@
 #import "WDThumbnailView.h"
 #import "WDDocument.h"
 #import "WDCanvasController.h"
+#import "Constants.h"
 
 @interface PlansViewController ()
 
@@ -142,7 +143,7 @@
 
 - (void) createNewDrawing:(id)sender
 {
-    WDDocument *document = [[WDDrawingManager sharedInstance] createNewDrawingWithSize:CGSizeMake(2048, 2048)
+    WDDocument *document = [[WDDrawingManager sharedInstance] createNewDrawingWithSize:CG_DEFAULT_CANVAS_SIZE
                                                                               andUnits:@"Centimeters"];
 	
     [self.sidebar.canvasController setDocument:document];

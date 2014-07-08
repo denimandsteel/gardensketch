@@ -9,6 +9,7 @@
 #import "PropertyViewController.h"
 #import "WDDrawingManager.h"
 #import "WDDrawing.h"
+#import "Constants.h"
 
 @interface PropertyViewController ()
 
@@ -63,6 +64,23 @@
 
 - (IBAction)shapeSelected:(id)sender {
 	if (self.isInShapeMode) {
+		CGSize size;
+		switch ([(UIButton *)sender tag]) {
+			case 0:
+				size = CGSizeMake(1024, 2048);
+				break;
+			case 1:
+				size = CGSizeMake(2048, 2048);
+				break;
+			case 2:
+				size = CGSizeMake(2048, 1024);
+				break;
+			default:
+				size = CG_DEFAULT_CANVAS_SIZE;
+				break;
+		}
+		[self setPlanSize:size];
+		
 		[self.sizeView setAlpha:0.0];
 		[self.sizeView setHidden:NO];
 		[UIView animateWithDuration:.3 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
@@ -121,18 +139,17 @@
 	NSInteger structureTabIndex = 1;
 	[self.sidebar setSelectedIndex:structureTabIndex];
 	
-	CGFloat width = 2048;
-	CGFloat height = 2048;
+	CGSize size = CG_DEFAULT_CANVAS_SIZE;
 	
 	if (![self.firstField.text isEqualToString:@""]) {
-		width = [self.firstField.text integerValue] * 100;
+		size.width = [self.firstField.text integerValue] * 100;
 	}
 	
 	if (![self.secondField.text isEqualToString:@""]) {
-		height = [self.secondField.text integerValue] * 100;
+		size.height = [self.secondField.text integerValue] * 100;
 	}
 	
-	[self setPlanSize:CGSizeMake(width, height)];
+	[self setPlanSize:size];
 }
 
 - (void)setPlanSize:(CGSize)size
