@@ -242,11 +242,13 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
     return unique;
 }
 
-- (WDDocument *) installDrawing:(WDDrawing *)drawing withName:(NSString *)drawingName closeAfterSaving:(BOOL)shouldClose
+- (WDDocument *) installDrawing:(WDDrawing *)drawing withName:(NSString *)drawingName closeAfterSaving:(BOOL)shouldClose isBasePlan:(BOOL)isBasePlan
 {
-    [drawingNames_ addObject:drawingName];
-    [self saveDrawingOrder_];
-    
+    if (!isBasePlan) {
+		[drawingNames_ addObject:drawingName];
+		[self saveDrawingOrder_];
+	}
+	
     NSString *path = [[WDDrawingManager drawingPath] stringByAppendingPathComponent:drawingName];
     NSURL *url = [NSURL fileURLWithPath:path];
     
@@ -267,13 +269,13 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
     WDDrawing *drawing = [[WDDrawing alloc] initWithSize:size andUnits:units isBasePlan:YES];
 	
 	// TODO: install base plan differently:
-    return [self installDrawing:drawing withName:[self basePlanFilename] closeAfterSaving:NO];
+    return [self installDrawing:drawing withName:[self basePlanFilename] closeAfterSaving:NO isBasePlan:YES];
 }
 
 - (WDDocument *) createNewDrawingWithSize:(CGSize)size andUnits:(NSString *)units
 {   
     WDDrawing *drawing = [[WDDrawing alloc] initWithSize:size andUnits:units isBasePlan:NO];
-    return [self installDrawing:drawing withName:[self uniqueFilename] closeAfterSaving:NO];
+    return [self installDrawing:drawing withName:[self uniqueFilename] closeAfterSaving:NO isBasePlan:NO];
 }
 
 - (BOOL) createNewDrawingWithImage:(UIImage *)image imageName:(NSString *)imageName drawingName:(NSString *)drawingName
@@ -285,7 +287,7 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
     image = [image downsampleWithMaxArea:4096*4096];
     
     WDDrawing *drawing = [[WDDrawing alloc] initWithImage:image imageName:imageName];
-    return [self installDrawing:drawing withName:drawingName closeAfterSaving:YES] ? YES : NO;
+    return [self installDrawing:drawing withName:drawingName closeAfterSaving:YES isBasePlan:NO] ? YES : NO;
 }
 
 - (BOOL) createNewDrawingWithImage:(UIImage *)image
@@ -332,9 +334,24 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
     return [NSData dataWithContentsOfFile:archivePath]; 
 }
 
+- (WDDocument *) openBasePlanDocumentWithCompletionHandler:(void (^)(WDDocument *document))completionHandler
+{
+	NSString *filename = [self basePlanFilename];
+	NSString *path = [[WDDrawingManager drawingPath] stringByAppendingPathComponent:filename];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    WDDocument *document = [[WDDocument alloc] initWithFileURL:url];
+    [document openWithCompletionHandler:^(BOOL success) {
+        if (completionHandler) {
+            completionHandler(document);
+        }
+    }];
+    
+    return document;
+}
+
 - (WDDocument *) openDocumentWithName:(NSString *)name withCompletionHandler:(void (^)(WDDocument *document))completionHandler
 {
-    return [self openDocumentAtIndex:[drawingNames_ indexOfObject:name] withCompletionHandler:completionHandler];    
+	return [self openDocumentAtIndex:[drawingNames_ indexOfObject:name] withCompletionHandler:completionHandler];
 }
 
 - (WDDocument *) openDocumentAtIndex:(NSUInteger)ix withCompletionHandler:(void (^)(WDDocument *document))completionHandler
@@ -359,7 +376,7 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
     
     // the original drawing will save when it's freed
     
-    return [self installDrawing:document.drawing withName:unique closeAfterSaving:NO];
+    return [self installDrawing:document.drawing withName:unique closeAfterSaving:NO isBasePlan:NO];
 }
 
 - (void) importDrawingAtURL:(NSURL *)url errorBlock:(void (^)(void))errorBlock withCompletionHandler:(void (^)(WDDocument *document))completionBlock

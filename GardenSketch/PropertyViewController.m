@@ -41,7 +41,7 @@
 {
 	// TODO: if not already loaded, load base plan on canvas and listen for notification:
 	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
-	WDDocument *basePlanDocument = [drawingManager openDocumentWithName:[drawingManager basePlanFilename] withCompletionHandler:nil];
+	WDDocument *basePlanDocument = [drawingManager openBasePlanDocumentWithCompletionHandler:nil];
 	[self.sidebar.canvasController setDocument:basePlanDocument];
 }
 

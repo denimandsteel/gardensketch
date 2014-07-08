@@ -31,6 +31,7 @@
 // these import methods are asynchronous
 - (void) importDrawingAtURL:(NSURL *)url errorBlock:(void (^)(void))errorBlock withCompletionHandler:(void (^)(WDDocument *))completionBlock;
 
+- (WDDocument *) openBasePlanDocumentWithCompletionHandler:(void (^)(WDDocument *document))completionHandler;
 - (WDDocument *) openDocumentWithName:(NSString *)name withCompletionHandler:(void (^)(WDDocument *document))completionHandler;
 - (WDDocument *) openDocumentAtIndex:(NSUInteger)ix withCompletionHandler:(void (^)(WDDocument *document))completionHandler;
 - (NSData *) dataForFilename:(NSString *)name;
