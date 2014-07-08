@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PropertyViewController">
             <connections>
+                <outlet property="firstField" destination="0aN-IH-6ck" id="b7Z-ri-GUN"/>
+                <outlet property="secondField" destination="X4c-UV-4uk" id="O6b-Av-tco"/>
                 <outlet property="sizeView" destination="zBk-6Q-E0x" id="tRX-H8-nXF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="shapes" destination="Ybe-a0-e4f" id="w77-Ws-el7"/>
@@ -95,7 +97,7 @@
                         <action selector="shapeSelected:" destination="-1" eventType="touchUpInside" id="W8M-lj-Ksy"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="v03-Z6-j1u" customClass="PropertyShapeButton">
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="v03-Z6-j1u" customClass="PropertyShapeButton">
                     <rect key="frame" x="53" y="377" width="200" height="95"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -106,7 +108,7 @@
                         <action selector="shapeSelected:" destination="-1" eventType="touchUpInside" id="Bii-Va-d4P"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bms-Zx-VIL" customClass="PropertyShapeButton">
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bms-Zx-VIL" customClass="PropertyShapeButton">
                     <rect key="frame" x="160" y="231" width="120" height="120"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>

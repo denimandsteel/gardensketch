@@ -16,6 +16,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *sizeView;
 @property (strong, nonatomic) IBOutletCollection(PropertyShapeButton) NSArray *shapes;
+@property (weak, nonatomic) IBOutlet UITextField *firstField;
+@property (weak, nonatomic) IBOutlet UITextField *secondField;
 
 - (IBAction)shapeSelected:(id)sender;
 - (IBAction)changeShapeTapped:(id)sender;

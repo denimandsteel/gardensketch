@@ -8,6 +8,7 @@
 
 #import "PropertyViewController.h"
 #import "WDDrawingManager.h"
+#import "WDDrawing.h"
 
 @interface PropertyViewController ()
 
@@ -119,6 +120,28 @@
 - (IBAction)doneTapped:(id)sender {
 	NSInteger structureTabIndex = 1;
 	[self.sidebar setSelectedIndex:structureTabIndex];
+	
+	CGFloat width = 2048;
+	CGFloat height = 2048;
+	
+	if (![self.firstField.text isEqualToString:@""]) {
+		width = [self.firstField.text integerValue] * 100;
+	}
+	
+	if (![self.secondField.text isEqualToString:@""]) {
+		height = [self.secondField.text integerValue] * 100;
+	}
+	
+	[self setPlanSize:CGSizeMake(width, height)];
+}
+
+- (void)setPlanSize:(CGSize)size
+{
+	WDDrawing *basePlanDrawing = self.sidebar.canvasController.drawing;
+	[basePlanDrawing setHeight:size.height];
+	[basePlanDrawing setWidth:size.width];
+	
+	// TODO: send notification for base plan size being changed
 }
 
 @end
