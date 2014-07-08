@@ -77,6 +77,21 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
     return filtered;
 }
 
+- (NSMutableArray *) plansOnly:(NSArray *)files
+{
+	NSMutableArray *plans = [[NSMutableArray alloc] init];
+    
+    for (NSString *file in files) {
+        if ([file isEqualToString:[self basePlanFilename]]) {
+            continue;
+        } else {
+			[plans addObject:file];
+		}
+	}
+    
+    return plans;
+}
+
 - (id) init
 {
     self = [super init];
@@ -131,9 +146,9 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
             [finalNames addObject:newFile];
         }
         
-        drawingNames_ = finalNames;
+        drawingNames_ = [self plansOnly:finalNames];
     } else {
-        drawingNames_ = [[files sortedArrayUsingSelector:@selector(compareNumeric:)] mutableCopy];
+        drawingNames_ = [self plansOnly:[[files sortedArrayUsingSelector:@selector(compareNumeric:)] mutableCopy]];
     }
     
     // save the accurate file list
