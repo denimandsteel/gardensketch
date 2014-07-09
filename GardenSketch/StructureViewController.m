@@ -55,6 +55,12 @@
 	[self.sidebar.canvasController setDocument:basePlanDocument];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+	WDLayer *baseLayer = self.sidebar.canvasController.drawing.layers.firstObject;
+	[[WDDrawingManager sharedInstance] setBasePlanLayer:baseLayer];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

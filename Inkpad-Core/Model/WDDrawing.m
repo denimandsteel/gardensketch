@@ -140,12 +140,12 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
     
 	if (!isBasePlan) {
 		//TODO: get this by making a copy of the base plan's only layer.
-		WDLayer *baseLayer = [[WDDrawingManager sharedInstance] basePlanLayer];
+		WDLayer *baseLayer = [[[WDDrawingManager sharedInstance] basePlanLayer] copy];
 //		WDLayer *baseLayer = [WDLayer layer];
 		baseLayer.drawing = self;
-		[layers_ addObject:baseLayer];
 		baseLayer.name = [self uniqueLayerName];
-		baseLayer.locked = YES;
+		[baseLayer setLocked:YES];
+		[layers_ addObject:baseLayer];
 	}
     
 	WDLayer *layer = [WDLayer layer];

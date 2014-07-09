@@ -167,6 +167,8 @@
 	WDLayer *baseLayer = self.sidebar.canvasController.drawing.layers.firstObject;
 	
 	[[WDDrawingManager sharedInstance] setBasePlanLayer:baseLayer];
+	
+	NSLog(@"Setting plan size to %f, %f", size.width, size.height);
 }
 
 @end
