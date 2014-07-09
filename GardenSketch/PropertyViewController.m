@@ -42,6 +42,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
 	// TODO: if not already loaded, load base plan on canvas and listen for notification:
+	// TODO: make sure SelectTool is the active tool
 	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
 	WDDocument *basePlanDocument = [drawingManager openBasePlanDocumentWithCompletionHandler:nil];
 	[self.sidebar.canvasController setDocument:basePlanDocument];
@@ -144,14 +145,18 @@
 	CGSize size = CG_DEFAULT_CANVAS_SIZE;
 	
 	if (![self.firstField.text isEqualToString:@""]) {
-		size.width = [self.firstField.text integerValue] * 100;
+		size.width = [self.firstField.text integerValue] * 32;
 	}
 	
 	if (![self.secondField.text isEqualToString:@""]) {
-		size.height = [self.secondField.text integerValue] * 100;
+		size.height = [self.secondField.text integerValue] * 32;
 	}
 	
 	[self setPlanSize:size];
+	
+	WDLayer *baseLayer = self.sidebar.canvasController.drawing.layers.firstObject;
+	
+	[[WDDrawingManager sharedInstance] setBaseLayer:baseLayer];
 }
 
 - (void)setPlanSize:(CGSize)size

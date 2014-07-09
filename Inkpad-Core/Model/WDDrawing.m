@@ -24,6 +24,8 @@
 #import "WDSVGHelper.h"
 #import "WDUtilities.h"
 #import "Constants.h"
+#import "WDDrawing.h"
+#import "WDDrawingManager.h"
 
 const float kMinimumDrawingDimension = 16;
 const float kMaximumDrawingDimension = 16000;
@@ -138,7 +140,8 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
     
 	if (!isBasePlan) {
 		//TODO: get this by making a copy of the base plan's only layer.
-		WDLayer *baseLayer = [WDLayer layer];
+		WDLayer *baseLayer = [[WDDrawingManager sharedInstance] baseLayer];
+//		WDLayer *baseLayer = [WDLayer layer];
 		baseLayer.drawing = self;
 		[layers_ addObject:baseLayer];
 		baseLayer.name = [self uniqueLayerName];

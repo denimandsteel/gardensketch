@@ -13,6 +13,7 @@
 
 @class WDDrawing;
 @class WDDocument;
+@class WDLayer;
 
 @interface WDDrawingManager : NSObject {
     NSMutableArray  *drawingNames_;
@@ -52,6 +53,8 @@
 - (void) renameDrawing:(NSString *)drawing newName:(NSString *)newName;
 
 - (UIImage *) getThumbnail:(NSString *)name;
+
+@property (nonatomic, strong) WDLayer* baseLayer;
 
 @end
 
