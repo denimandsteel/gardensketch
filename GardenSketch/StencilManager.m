@@ -71,9 +71,6 @@
 		[group transform:scale];
 		
 		self.shapes[shapeName] = group;
-		[document closeWithCompletionHandler:^(BOOL success) {
-			NSLog(@"%@ closed!", shapeName);
-		}];
     }];
 }
 
