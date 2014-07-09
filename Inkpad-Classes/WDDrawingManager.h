@@ -54,7 +54,8 @@
 
 - (UIImage *) getThumbnail:(NSString *)name;
 
-@property (nonatomic, strong) WDLayer* baseLayer;
+@property (nonatomic, strong) WDLayer* basePlanLayer;
+@property (nonatomic, assign) CGSize basePlanSize;
 
 @end
 

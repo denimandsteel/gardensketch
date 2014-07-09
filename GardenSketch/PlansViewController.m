@@ -143,7 +143,9 @@
 
 - (void) createNewDrawing:(id)sender
 {
-    WDDocument *document = [[WDDrawingManager sharedInstance] createNewDrawingWithSize:CG_DEFAULT_CANVAS_SIZE
+	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
+	
+    WDDocument *document = [drawingManager createNewDrawingWithSize:[drawingManager basePlanSize]
                                                                               andUnits:@"Centimeters"];
 	
     [self.sidebar.canvasController setDocument:document];

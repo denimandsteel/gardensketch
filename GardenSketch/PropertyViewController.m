@@ -153,10 +153,6 @@
 	}
 	
 	[self setPlanSize:size];
-	
-	WDLayer *baseLayer = self.sidebar.canvasController.drawing.layers.firstObject;
-	
-	[[WDDrawingManager sharedInstance] setBaseLayer:baseLayer];
 }
 
 - (void)setPlanSize:(CGSize)size
@@ -166,6 +162,11 @@
 	[basePlanDrawing setWidth:size.width];
 	
 	// TODO: send notification for base plan size being changed
+	[[WDDrawingManager sharedInstance] setBasePlanSize:size];
+	
+	WDLayer *baseLayer = self.sidebar.canvasController.drawing.layers.firstObject;
+	
+	[[WDDrawingManager sharedInstance] setBasePlanLayer:baseLayer];
 }
 
 @end
