@@ -10,6 +10,7 @@
 #import "WDDrawingManager.h"
 #import "WDDrawing.h"
 #import "Constants.h"
+#import "WDDrawingController.h"
 
 @interface PropertyViewController ()
 
@@ -46,6 +47,14 @@
 	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
 	WDDocument *basePlanDocument = [drawingManager openBasePlanDocumentWithCompletionHandler:nil];
 	[self.sidebar.canvasController setDocument:basePlanDocument];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	// TODO: write methods to access the drawing :
+	[[WDDrawingManager sharedInstance] setBasePlanSize:self.sidebar.canvasController.drawingController.drawing.dimensions];
+	WDLayer *baseLayer = self.sidebar.canvasController.drawingController.drawing.layers.firstObject;
+	[[WDDrawingManager sharedInstance] setBasePlanLayer:baseLayer];
 }
 
 - (void)didReceiveMemoryWarning
