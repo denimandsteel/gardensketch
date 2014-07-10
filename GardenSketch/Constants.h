@@ -52,4 +52,6 @@
 #define		GS_COLOR_TREE_TEAL				[UIColor colorWithRed:221/255.0 green:230/255.0 blue:226/255.0 alpha:1.0]
 #define		GS_COLOR_TREE_VIOLET			[UIColor colorWithRed:198/255.0 green:196/255.0 blue:206/255.0 alpha:1.0]
 
+#define		GS_NORTH_ANGLE					@"GS_NORTH_ANGLE"
+
 #endif

@@ -7,6 +7,7 @@
 //
 
 #import "NorthViewController.h"
+#import "Constants.h"
 
 @interface NorthViewController ()
 {
@@ -34,6 +35,12 @@
     // Do any additional setup after loading the view from its nib.
 	
 	imageAngle = 0;
+	
+	NSNumber *angle = [[NSUserDefaults standardUserDefaults] valueForKey:GS_NORTH_ANGLE];
+	
+	if (angle) {
+		[self rotation:[angle floatValue]];
+	}
 	
 	[self setupGestureRecognizer];
 }
@@ -70,7 +77,9 @@ CGAffineTransform CGAffineTransformMakeRotationAt(CGFloat angle, CGPoint pt){
 - (void) finalAngle: (CGFloat) angle
 {
     // circular gesture ended, update text field
-    NSLog(@"angle adjusted: %f", angle);
+    NSLog(@"angle adjusted: %f", imageAngle);
+	[[NSUserDefaults standardUserDefaults] setValue:@(imageAngle) forKey:GS_NORTH_ANGLE];
+	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 #pragma mark - Helper methods

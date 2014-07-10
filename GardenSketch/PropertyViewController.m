@@ -42,7 +42,6 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-	// TODO: if not already loaded, load base plan on canvas and listen for notification:
 	// TODO: make sure SelectTool is the active tool
 	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
 	WDDocument *basePlanDocument = [drawingManager openBasePlanDocumentWithCompletionHandler:nil];

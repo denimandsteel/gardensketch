@@ -102,11 +102,11 @@
 		4D05DCC3194F7FF2001F19A7 /* AVL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DC0D194F7FF1001F19A7 /* AVL.cpp */; };
 		4D05DCC4194F7FF2001F19A7 /* DblLinked.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DC0F194F7FF1001F19A7 /* DblLinked.cpp */; };
 		4D05DCC5194F7FF2001F19A7 /* Path.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DC13194F7FF1001F19A7 /* Path.cpp */; };
-		4D05DCC6194F7FF2001F19A7 /* PathConversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DC15194F7FF1001F19A7 /* PathConversion.cpp */; };
+		4D05DCC6194F7FF2001F19A7 /* PathConversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DC15194F7FF1001F19A7 /* PathConversion.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		4D05DCC7194F7FF2001F19A7 /* Shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DC16194F7FF1001F19A7 /* Shape.cpp */; };
-		4D05DCC8194F7FF2001F19A7 /* ShapeMisc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DC18194F7FF1001F19A7 /* ShapeMisc.cpp */; };
-		4D05DCC9194F7FF2001F19A7 /* ShapeSweep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DC19194F7FF1001F19A7 /* ShapeSweep.cpp */; };
-		4D05DCCA194F7FF2001F19A7 /* ShapeSweepUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DC1A194F7FF1001F19A7 /* ShapeSweepUtils.cpp */; };
+		4D05DCC8194F7FF2001F19A7 /* ShapeMisc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DC18194F7FF1001F19A7 /* ShapeMisc.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
+		4D05DCC9194F7FF2001F19A7 /* ShapeSweep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DC19194F7FF1001F19A7 /* ShapeSweep.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
+		4D05DCCA194F7FF2001F19A7 /* ShapeSweepUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DC1A194F7FF1001F19A7 /* ShapeSweepUtils.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		4D05DCCB194F7FF2001F19A7 /* WDAbstractPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DC1E194F7FF1001F19A7 /* WDAbstractPath.m */; };
 		4D05DCCC194F7FF2001F19A7 /* WDArrowhead.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DC20194F7FF1001F19A7 /* WDArrowhead.m */; };
 		4D05DCCD194F7FF2001F19A7 /* WDBezierNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DC22194F7FF1001F19A7 /* WDBezierNode.m */; };

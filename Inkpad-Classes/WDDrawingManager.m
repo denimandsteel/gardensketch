@@ -56,6 +56,12 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
     return shared;
 }
 
+- (void)setBasePlanLayer:(WDLayer *)basePlanLayer
+{
+	_basePlanLayer = basePlanLayer;
+	NSLog(@"BASE LAYER UPDATED!");
+}
+
 + (NSString *) drawingOrderPath
 {
     return [[WDDrawingManager drawingPath] stringByAppendingPathComponent:@".order.plist"];

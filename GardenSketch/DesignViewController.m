@@ -194,6 +194,9 @@
 
 - (void) initTools
 {
+	// TODO: make this more sane by moving actions to IB
+	// TODO: also having one property per tool on the tool manager, to get rid of the massive loop down here:
+	
 	WDTool *select = nil;
 	WDTool *freehand = nil;
 	WDTool *enclosed = nil;
