@@ -159,8 +159,21 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
     
     // save the accurate file list
     [self saveDrawingOrder_];
+	
+	
+	// initialize the base plan layer and size
+	[self initBaseLayer];
     
     return self;
+}
+
+- (void)initBaseLayer
+{
+	[self openBasePlanDocumentWithCompletionHandler:^(WDDocument *document)
+	{
+		[self setBasePlanLayer:document.drawing.layers.firstObject];
+		[self setBasePlanSize:document.drawing.dimensions];
+	}];
 }
 
 

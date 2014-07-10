@@ -216,6 +216,7 @@ static NSString *errorDomain = @"WDDocument";
 - (void) markChanged
 {
     [self updateChangeCount:UIDocumentChangeDone];
+	NSLog(@"Chaged!");
 }
 
 - (void) handleError:(NSError *)error userInteractionPermitted:(BOOL)userInteractionPermitted

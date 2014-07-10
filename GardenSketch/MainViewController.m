@@ -32,6 +32,12 @@
 											withAnimation:UIStatusBarAnimationFade];
 	
 	[self addChildViewControllers];
+	
+	BOOL firstLaunch = NO;
+	
+	if (!firstLaunch) {
+		[self.sidebar setSelectedIndex:3];
+	}
 }
 
 - (BOOL)prefersStatusBarHidden {

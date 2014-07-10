@@ -96,7 +96,7 @@ CGAffineTransform CGAffineTransformMakeRotationAt(CGFloat angle, CGPoint pt){
     // outRadius / 3 is arbitrary, just choose something >> 0 to avoid strange
     // effects when touching the control near of it's center
     gestureRecognizer = [[OneFingerRotationGestureRecognizer alloc] initWithMidPoint: midPoint
-																		 innerRadius: outRadius / 4
+																		 innerRadius: 10
 																		 outerRadius: outRadius * 3 / 2
 																			  target: self];
     [self.view addGestureRecognizer: gestureRecognizer];
