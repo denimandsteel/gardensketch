@@ -57,7 +57,6 @@
     WDDocument *document = [[WDDocument alloc] initWithFileURL:url];
 	
 	[document openWithCompletionHandler:^(BOOL success) {
-		NSLog(@"%@ opened!", shapeName);
 		NSMutableArray *pathArray = [NSMutableArray arrayWithArray:[((WDLayer *)document.drawing.layers[0]) elements]];
 		WDGroup *group = [[WDGroup alloc] init];
 		

@@ -472,7 +472,7 @@ NSString *WDCanvasBeganTrackingTouches = @"WDCanvasBeganTrackingTouches";
 
 - (void)drawRect:(CGRect)rect
 {
-    if (!drawing_) {
+    if (!drawing_ || drawing_.dimensions.width <= 0 || drawing_.dimensions.height <= 0) {
         CGContextRef    ctx = UIGraphicsGetCurrentContext();
         
         CGContextSetRGBFillColor(ctx, 0.941f, 0.941f, 0.941f, 1.0f);

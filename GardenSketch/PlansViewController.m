@@ -12,6 +12,7 @@
 #import "WDDocument.h"
 #import "WDCanvasController.h"
 #import "Constants.h"
+#import "WDToolManager.h"
 
 @interface PlansViewController ()
 
@@ -63,6 +64,12 @@
 	[self.collectionView registerNib:[UINib nibWithNibName:@"NewPlanCell" bundle:nil] forCellWithReuseIdentifier:@"newCellID"];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+	WDToolManager *toolManager = [WDToolManager sharedInstance];
+	[toolManager setActiveTool:toolManager.tools.firstObject];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -93,13 +100,11 @@
 		return cell;
 	}
     
-    
 //    if (self.isEditing) {
 //        thumbnail.shouldShowSelectionIndicator = YES;
 //        thumbnail.selected = [selectedDrawings_ containsObject:thumbnail.filename] ? YES : NO;
 //    }
-    
-    
+ 
 }
 
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
