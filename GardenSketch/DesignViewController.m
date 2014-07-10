@@ -249,7 +249,7 @@
 					shed = tool;
 					break;
 				default:
-					NSLog(@"hmm.. wierd");
+					NSLog(@"hmm.. weird");
 			}
 			
 		} else if ([tool isKindOfClass:[WDSelectionTool class]]) {

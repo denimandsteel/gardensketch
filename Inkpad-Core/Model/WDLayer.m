@@ -437,15 +437,9 @@ NSString *WDOpacityKey = @"WDOpacityKey";
     self.visible = !self.visible;
 }
 
-- (BOOL) locked
-{
-	return NO;
-}
-
 - (BOOL) editable
 {
-	return YES;
-    return (!self.locked && self.visible);
+	return (!self.locked && self.visible);
 }
 
 - (BOOL) hidden 

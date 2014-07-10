@@ -37,7 +37,6 @@
 - (IBAction)shareTapped:(id)sender;
 - (IBAction)deleteTapped:(id)sender;
 
-
 // image management
 - (void) reload;
 

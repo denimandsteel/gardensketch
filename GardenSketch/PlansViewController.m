@@ -11,6 +11,8 @@
 #import "WDThumbnailView.h"
 #import "WDDocument.h"
 #import "WDCanvasController.h"
+#import "Constants.h"
+#import "WDToolManager.h"
 
 @interface PlansViewController ()
 
@@ -62,6 +64,20 @@
 	[self.collectionView registerNib:[UINib nibWithNibName:@"NewPlanCell" bundle:nil] forCellWithReuseIdentifier:@"newCellID"];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+	WDToolManager *toolManager = [WDToolManager sharedInstance];
+	[toolManager setActiveTool:toolManager.tools.firstObject];
+	
+	NSInteger numberOfPlans = [[WDDrawingManager sharedInstance] numberOfDrawings];
+	
+	if (numberOfPlans > 0) {
+		NSIndexPath *mostRecent = [NSIndexPath indexPathForRow:numberOfPlans-1 inSection:0];
+		[self.collectionView selectItemAtIndexPath:mostRecent animated:YES scrollPosition:UICollectionViewScrollPositionBottom];
+		[self collectionView:self.collectionView didSelectItemAtIndexPath:mostRecent];
+	}
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -72,7 +88,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
 {
-    return [[WDDrawingManager sharedInstance] numberOfPlans] + 1; // add new
+    return [[WDDrawingManager sharedInstance] numberOfDrawings] + 1; // add new
 }
 
 #pragma mark Collection View delegate
@@ -81,7 +97,7 @@
 {
 	if (indexPath.row < [collectionView numberOfItemsInSection:0] - 1) {
 		WDThumbnailView *thumbnail = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellID" forIndexPath:indexPath];
-		NSArray         *plans = [[WDDrawingManager sharedInstance] planNames];
+		NSArray         *plans = [[WDDrawingManager sharedInstance] drawingNames];
 		
 		thumbnail.filename = plans[indexPath.item];
 		thumbnail.tag = indexPath.item;
@@ -92,24 +108,21 @@
 		return cell;
 	}
     
-    
 //    if (self.isEditing) {
 //        thumbnail.shouldShowSelectionIndicator = YES;
 //        thumbnail.selected = [selectedDrawings_ containsObject:thumbnail.filename] ? YES : NO;
 //    }
-    
-    
+ 
 }
 
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
 	if (indexPath.row < [collectionView numberOfItemsInSection:0] - 1) {
-		WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:indexPath.row + 1 withCompletionHandler:nil]; // +1 to account for the base plan
+		WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:indexPath.row withCompletionHandler:nil];
 		[self.sidebar.canvasController setDocument:document];
 	} else {
 		[self createNewDrawing:nil];
 	}
-	
 }
 
 #pragma mark - Drawing Notifications
@@ -123,7 +136,7 @@
 
 - (void) drawingAdded:(NSNotification *)aNotification
 {
-    NSUInteger count = [[WDDrawingManager sharedInstance] numberOfPlans] - 1;
+    NSUInteger count = [[WDDrawingManager sharedInstance] numberOfDrawings] - 1;
     NSArray *indexPaths = @[[NSIndexPath indexPathForItem:count inSection:0]];
     [self.collectionView insertItemsAtIndexPaths:indexPaths];
 	
@@ -143,7 +156,9 @@
 
 - (void) createNewDrawing:(id)sender
 {
-    WDDocument *document = [[WDDrawingManager sharedInstance] createNewDrawingWithSize:CGSizeMake(2048, 2048)
+	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
+	
+    WDDocument *document = [drawingManager createNewDrawingWithSize:[drawingManager basePlanSize]
                                                                               andUnits:@"Centimeters"];
 	
     [self.sidebar.canvasController setDocument:document];

@@ -8,6 +8,9 @@
 
 #import "PropertyViewController.h"
 #import "WDDrawingManager.h"
+#import "WDDrawing.h"
+#import "Constants.h"
+#import "WDDrawingController.h"
 
 @interface PropertyViewController ()
 
@@ -40,8 +43,18 @@
 - (void)viewDidAppear:(BOOL)animated
 {
 	// TODO: if not already loaded, load base plan on canvas and listen for notification:
-	WDDocument *basePlanDocument = [[WDDrawingManager sharedInstance] openDocumentAtIndex:0 withCompletionHandler:nil];
+	// TODO: make sure SelectTool is the active tool
+	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
+	WDDocument *basePlanDocument = [drawingManager openBasePlanDocumentWithCompletionHandler:nil];
 	[self.sidebar.canvasController setDocument:basePlanDocument];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	// TODO: write methods to access the drawing :
+	[[WDDrawingManager sharedInstance] setBasePlanSize:self.sidebar.canvasController.drawingController.drawing.dimensions];
+	WDLayer *baseLayer = self.sidebar.canvasController.drawingController.drawing.layers.firstObject;
+	[[WDDrawingManager sharedInstance] setBasePlanLayer:baseLayer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,6 +74,25 @@
 
 - (IBAction)shapeSelected:(id)sender {
 	if (self.isInShapeMode) {
+		CGSize size;
+		switch ([(UIButton *)sender tag]) {
+			case 0:
+				size = CGSizeMake(1024, 2048);
+				break;
+			case 1:
+				size = CGSizeMake(2048, 2048);
+				break;
+			case 2:
+				size = CGSizeMake(2048, 1024);
+				break;
+			default:
+				size = CG_DEFAULT_CANVAS_SIZE;
+				break;
+		}
+		[self setPlanSize:size];
+		[self.firstField setText:[NSString stringWithFormat:@"%lu", [@(size.width / 32) integerValue]]];
+		[self.secondField setText:[NSString stringWithFormat:@"%lu", [@(size.height / 32) integerValue]]];
+		
 		[self.sizeView setAlpha:0.0];
 		[self.sizeView setHidden:NO];
 		[UIView animateWithDuration:.3 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
@@ -118,6 +150,34 @@
 - (IBAction)doneTapped:(id)sender {
 	NSInteger structureTabIndex = 1;
 	[self.sidebar setSelectedIndex:structureTabIndex];
+	
+	CGSize size = CG_DEFAULT_CANVAS_SIZE;
+	
+	if (![self.firstField.text isEqualToString:@""]) {
+		size.width = [self.firstField.text integerValue] * 32;
+	}
+	
+	if (![self.secondField.text isEqualToString:@""]) {
+		size.height = [self.secondField.text integerValue] * 32;
+	}
+	
+	[self setPlanSize:size];
+}
+
+- (void)setPlanSize:(CGSize)size
+{
+	WDDrawing *basePlanDrawing = self.sidebar.canvasController.drawing;
+	[basePlanDrawing setHeight:size.height];
+	[basePlanDrawing setWidth:size.width];
+	
+	// TODO: send notification for base plan size being changed
+	[[WDDrawingManager sharedInstance] setBasePlanSize:size];
+	
+	WDLayer *baseLayer = self.sidebar.canvasController.drawing.layers.firstObject;
+	
+	[[WDDrawingManager sharedInstance] setBasePlanLayer:baseLayer];
+	
+	NSLog(@"Setting plan size to %f, %f", size.width, size.height);
 }
 
 @end

@@ -326,6 +326,7 @@
 		4D53F63A196B149C0097C8E3 /* AppIcon76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F630196B149C0097C8E3 /* AppIcon76x76@2x.png */; };
 		4D53F63B196B149C0097C8E3 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F631196B149C0097C8E3 /* iTunesArtwork.png */; };
 		4D53F63C196B149C0097C8E3 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F632196B149C0097C8E3 /* iTunesArtwork@2x.png */; };
+		4D53F63F196CBB9D0097C8E3 /* GSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D53F63E196CBB9D0097C8E3 /* GSTextField.m */; };
 		4D576048195E0D3500DCCBEF /* Hedge_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576044195E0D3500DCCBEF /* Hedge_Green.svg */; };
 		4D576049195E0D3500DCCBEF /* Hedge_Maroon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576045195E0D3500DCCBEF /* Hedge_Maroon.svg */; };
 		4D57604A195E0D3500DCCBEF /* Hedge_Viridian.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576046195E0D3500DCCBEF /* Hedge_Viridian.svg */; };
@@ -856,6 +857,8 @@
 		4D53F630196B149C0097C8E3 /* AppIcon76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76@2x.png"; sourceTree = "<group>"; };
 		4D53F631196B149C0097C8E3 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		4D53F632196B149C0097C8E3 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		4D53F63D196CBB9D0097C8E3 /* GSTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSTextField.h; sourceTree = "<group>"; };
+		4D53F63E196CBB9D0097C8E3 /* GSTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSTextField.m; sourceTree = "<group>"; };
 		4D576044195E0D3500DCCBEF /* Hedge_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Green.svg; sourceTree = "<group>"; };
 		4D576045195E0D3500DCCBEF /* Hedge_Maroon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Maroon.svg; sourceTree = "<group>"; };
 		4D576046195E0D3500DCCBEF /* Hedge_Viridian.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Viridian.svg; sourceTree = "<group>"; };
@@ -1093,29 +1096,20 @@
 				4D05DB01194A70C7001F19A7 /* MainViewController.m */,
 				4D05DB20194A74FE001F19A7 /* SidebarViewController.h */,
 				4D05DB21194A74FE001F19A7 /* SidebarViewController.m */,
-				4D05DB22194A74FE001F19A7 /* SidebarViewController.xib */,
 				4D05DB40194B7ED8001F19A7 /* SidebarContentViewController.h */,
 				4D05DB41194B7ED8001F19A7 /* SidebarContentViewController.m */,
-				4D05DB42194B7ED8001F19A7 /* SidebarContentViewController.xib */,
 				4D05DB9A194BB109001F19A7 /* PropertyViewController.h */,
 				4D05DB9B194BB109001F19A7 /* PropertyViewController.m */,
-				4D05DB9C194BB109001F19A7 /* PropertyViewController.xib */,
 				4D05DBC2194F6347001F19A7 /* StructureViewController.h */,
 				4D05DBC3194F6347001F19A7 /* StructureViewController.m */,
-				4D05DBC4194F6347001F19A7 /* StructureViewController.xib */,
 				4D05DDEE194F9FB2001F19A7 /* PlansViewController.h */,
 				4D05DDEF194F9FB2001F19A7 /* PlansViewController.m */,
-				4D05DDF0194F9FB2001F19A7 /* PlansViewController.xib */,
-				4D05DE071950A8AA001F19A7 /* CanvasController.xib */,
 				4D862EC91952043A0066A848 /* DesignViewController.h */,
 				4D862ECA1952043A0066A848 /* DesignViewController.m */,
-				4D862ECB1952043A0066A848 /* DesignViewController.xib */,
 				4D081BDF1954B54800F8871C /* ColorPickerViewController.h */,
 				4D081BE01954B54800F8871C /* ColorPickerViewController.m */,
-				4D081BE11954B54800F8871C /* ColorPickerViewController.xib */,
 				4D53F6111965DD110097C8E3 /* NorthViewController.h */,
 				4D53F6121965DD110097C8E3 /* NorthViewController.m */,
-				4D53F6131965DD110097C8E3 /* NorthViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1601,6 +1595,15 @@
 				4D05DE05194FC4CA001F19A7 /* WDThumbnailView.xib */,
 				4D081BD519538D7400F8871C /* NewPlanCell.xib */,
 				4D081BE71954DB1D00F8871C /* ColorCell.xib */,
+				4D05DB22194A74FE001F19A7 /* SidebarViewController.xib */,
+				4D05DB42194B7ED8001F19A7 /* SidebarContentViewController.xib */,
+				4D05DB9C194BB109001F19A7 /* PropertyViewController.xib */,
+				4D05DBC4194F6347001F19A7 /* StructureViewController.xib */,
+				4D05DDF0194F9FB2001F19A7 /* PlansViewController.xib */,
+				4D05DE071950A8AA001F19A7 /* CanvasController.xib */,
+				4D862ECB1952043A0066A848 /* DesignViewController.xib */,
+				4D081BE11954B54800F8871C /* ColorPickerViewController.xib */,
+				4D53F6131965DD110097C8E3 /* NorthViewController.xib */,
 			);
 			name = xibs;
 			sourceTree = "<group>";
@@ -1662,6 +1665,8 @@
 				4D081C0A195B485E00F8871C /* GSButton.m */,
 				4D53F621196721140097C8E3 /* PropertyShapeButton.h */,
 				4D53F622196721140097C8E3 /* PropertyShapeButton.m */,
+				4D53F63D196CBB9D0097C8E3 /* GSTextField.h */,
+				4D53F63E196CBB9D0097C8E3 /* GSTextField.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -1799,6 +1804,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Denim & Steel";
 				TargetAttributes = {
+					4D05DAE7194A70C7001F19A7 = {
+						DevelopmentTeam = 6ZBHR6257P;
+					};
 					4D05DB08194A70C7001F19A7 = {
 						TestTargetID = 4D05DAE7194A70C7001F19A7;
 					};
@@ -2072,6 +2080,7 @@
 				4D05DAFC194A70C7001F19A7 /* AppDelegate.m in Sources */,
 				4D05DDB8194F8042001F19A7 /* WDHueShifter.m in Sources */,
 				4D05DB3D194A7C94001F19A7 /* M13PanGestureRecognizer.m in Sources */,
+				4D53F63F196CBB9D0097C8E3 /* GSTextField.m in Sources */,
 				4D05DCC5194F7FF2001F19A7 /* Path.cpp in Sources */,
 				4D53F6201965FE2D0097C8E3 /* GSLabelHead.m in Sources */,
 				4D05DCF4194F7FF2001F19A7 /* WDEyedropperTool.m in Sources */,
@@ -2298,6 +2307,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2306,6 +2317,7 @@
 				GCC_PREFIX_HEADER = "GardenSketch/GardenSketch-Prefix.pch";
 				INFOPLIST_FILE = "GardenSketch/GardenSketch-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2315,6 +2327,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Denim & Steel Interactive, Inc. (6ZBHR6257P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Denim & Steel Interactive, Inc. (6ZBHR6257P)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2323,6 +2337,7 @@
 				GCC_PREFIX_HEADER = "GardenSketch/GardenSketch-Prefix.pch";
 				INFOPLIST_FILE = "GardenSketch/GardenSketch-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "BAFFF3E8-5521-434B-9D31-535AE331CB5C";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

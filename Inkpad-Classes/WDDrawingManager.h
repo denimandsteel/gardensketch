@@ -13,6 +13,7 @@
 
 @class WDDrawing;
 @class WDDocument;
+@class WDLayer;
 
 @interface WDDrawingManager : NSObject {
     NSMutableArray  *drawingNames_;
@@ -31,12 +32,12 @@
 // these import methods are asynchronous
 - (void) importDrawingAtURL:(NSURL *)url errorBlock:(void (^)(void))errorBlock withCompletionHandler:(void (^)(WDDocument *))completionBlock;
 
+- (WDDocument *) openBasePlanDocumentWithCompletionHandler:(void (^)(WDDocument *document))completionHandler;
 - (WDDocument *) openDocumentWithName:(NSString *)name withCompletionHandler:(void (^)(WDDocument *document))completionHandler;
 - (WDDocument *) openDocumentAtIndex:(NSUInteger)ix withCompletionHandler:(void (^)(WDDocument *document))completionHandler;
 - (NSData *) dataForFilename:(NSString *)name;
 - (NSUInteger) numberOfDrawings;
-- (NSUInteger) numberOfPlans;
-- (NSArray *) planNames;
+- (NSString *) basePlanFilename;
 - (NSArray *) drawingNames;
 - (NSIndexPath *) indexPathForFilename:(NSString *)filename;
 
@@ -52,6 +53,9 @@
 - (void) renameDrawing:(NSString *)drawing newName:(NSString *)newName;
 
 - (UIImage *) getThumbnail:(NSString *)name;
+
+@property (nonatomic, strong) WDLayer* basePlanLayer;
+@property (nonatomic, assign) CGSize basePlanSize;
 
 @end
 

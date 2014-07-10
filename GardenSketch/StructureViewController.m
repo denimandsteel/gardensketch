@@ -9,6 +9,7 @@
 #import "StructureViewController.h"
 #import "WDToolManager.h"
 #import "WDStencilTool.h"
+#import "WDDrawingManager.h"
 
 @interface StructureViewController ()
 
@@ -49,7 +50,15 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-	// TODO: if not already loaded, load base plan on canvas
+	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
+	WDDocument *basePlanDocument = [drawingManager openBasePlanDocumentWithCompletionHandler:nil];
+	[self.sidebar.canvasController setDocument:basePlanDocument];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	WDLayer *baseLayer = self.sidebar.canvasController.drawing.layers.firstObject;
+	[[WDDrawingManager sharedInstance] setBasePlanLayer:baseLayer];
 }
 
 

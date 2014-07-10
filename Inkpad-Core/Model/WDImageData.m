@@ -117,7 +117,7 @@ NSString *WDDataKey = @"WDDataKey";
     size_t          bitmapBytesPerRow = (width * 4);
     
     colorSpace = CGColorSpaceCreateDeviceRGB();
-    context = CGBitmapContextCreate (NULL, width, height, 8, bitmapBytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast);
+    context = CGBitmapContextCreate (NULL, width, height, 8, bitmapBytesPerRow, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
     CGColorSpaceRelease(colorSpace);
     
     CGContextSetInterpolationQuality(context, kCGInterpolationNone);

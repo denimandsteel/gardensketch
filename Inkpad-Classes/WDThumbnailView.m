@@ -270,6 +270,10 @@
 {
     UIImage *thumbImage = [[WDDrawingManager sharedInstance] getThumbnail:filename_];
     
+	if (!thumbImage) {
+		return;
+	}
+	
     if (!imageView_) {
         imageView_ = [[WDImageView alloc] initWithImage:thumbImage maxDimension:kMaxThumbnailDimension];
         [self addSubview:imageView_];

@@ -57,7 +57,6 @@
     WDDocument *document = [[WDDocument alloc] initWithFileURL:url];
 	
 	[document openWithCompletionHandler:^(BOOL success) {
-		NSLog(@"%@ opened!", shapeName);
 		NSMutableArray *pathArray = [NSMutableArray arrayWithArray:[((WDLayer *)document.drawing.layers[0]) elements]];
 		WDGroup *group = [[WDGroup alloc] init];
 		
@@ -67,13 +66,10 @@
 		CGAffineTransform translate = CGAffineTransformMakeTranslation(-center.x, -center.y);
 		[group transform:translate];
 		
-		CGAffineTransform scale = CGAffineTransformMakeScale(.2, .2);
+		CGAffineTransform scale = CGAffineTransformMakeScale(.1, .1);
 		[group transform:scale];
 		
 		self.shapes[shapeName] = group;
-		[document closeWithCompletionHandler:^(BOOL success) {
-			NSLog(@"%@ closed!", shapeName);
-		}];
     }];
 }
 

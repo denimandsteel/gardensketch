@@ -205,7 +205,7 @@ static NSString *orientations_[] = { @"Portrait", @"Landscape" };
     
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [formatter setMaximumFractionDigits:2];
-    [formatter setRoundingMode:kCFNumberFormatterRoundCeiling];
+    [formatter setRoundingMode:NSNumberFormatterRoundCeiling];
     [formatter setUsesGroupingSeparator:NO];
     
     if (config[@"Custom"]) {
