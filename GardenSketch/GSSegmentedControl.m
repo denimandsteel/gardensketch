@@ -1,15 +1,15 @@
 //
-//  GSButton.m
+//  GSSegmentedControl.m
 //  GardenSketch
 //
-//  Created by Arian Khosravi on 2014-06-25.
+//  Created by Arian Khosravi on 2014-07-10.
 //  Copyright (c) 2014 Denim & Steel. All rights reserved.
 //
 
-#import "GSButton.h"
+#import "GSSegmentedControl.h"
 #import "Constants.h"
 
-@implementation GSButton
+@implementation GSSegmentedControl
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -30,13 +30,18 @@
 	return self;
 }
 
+
 - (void)initialize
 {
-	[self.titleLabel setFont:GS_FONT_AVENIR_BODY];
-	[self setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-	[self setBackgroundColor:[UIColor colorWithWhite:249/255.0 alpha:1.0]];
-	[self.layer setCornerRadius:2.0];
-	[self.layer setMasksToBounds:YES];
+	[self setTitleTextAttributes:@{NSForegroundColorAttributeName:GS_COLOR_DARK_GREY,
+								   NSFontAttributeName:GS_FONT_AVENIR_BODY}
+						forState:UIControlStateNormal];
+	
+	self.tintColor = GS_COLOR_PEACHY_HIGHLIGHT;
+	
+	// The attributes dictionary can specify the font, text color, text shadow color, and text
+	// shadow offset for the title in the text attributes dictionary
+	
 }
 
 /*

@@ -14,8 +14,8 @@
 #define		CG_DEFAULT_CANVAS_SIZE			CGSizeMake(2048, 2048)
 
 #define		GS_COLOR_DARK_GREY				[UIColor colorWithRed:.2 green:.19 blue:.19 alpha:1.0]
-#define		GS_FONT_AVENIR_BODY				[UIFont fontWithName:@"Avenir" size:14.0]
-#define		GS_FONT_AVENIR_ACTION			[UIFont fontWithName:@"Avenir" size:16.0]
+#define		GS_FONT_AVENIR_BODY				[UIFont fontWithName:@"Avenir" size:16.0]
+#define		GS_FONT_AVENIR_ACTION			[UIFont fontWithName:@"Avenir" size:18.0]
 #define		GS_FONT_AVENIR_HEAD				[UIFont fontWithName:@"Avenir" size:28.0]
 #define		GS_FONT_AVENIR_SMALL			[UIFont fontWithName:@"Avenir" size:8.0]
 

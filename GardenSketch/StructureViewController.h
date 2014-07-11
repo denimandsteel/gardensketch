@@ -13,5 +13,8 @@
 @interface StructureViewController : SidebarContentViewController
 
 @property (weak, nonatomic) IBOutlet WDToolButton *houseButton;
+@property (weak, nonatomic) IBOutlet WDToolButton *scaleButton;
+@property (weak, nonatomic) IBOutlet WDToolButton *selectButton;
+
 
 @end

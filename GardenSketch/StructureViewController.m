@@ -9,6 +9,8 @@
 #import "StructureViewController.h"
 #import "WDToolManager.h"
 #import "WDStencilTool.h"
+#import "WDScaleTool.h"
+#import "WDSelectionTool.h"
 #import "WDDrawingManager.h"
 
 @interface StructureViewController ()
@@ -33,19 +35,29 @@
 	
 	
 	WDTool *house = nil;
+	WDTool *scale = nil;
+	WDTool *select = nil;
 	
 	for (WDTool *tool in [WDToolManager sharedInstance].tools) {
 		if ([tool isKindOfClass:[WDStencilTool class]]) {
 			if ([(WDStencilTool *)tool type] == kHouse) {
 				house = tool;
-				break;
 			}
+		} else if ([tool isKindOfClass:[WDScaleTool class]]) {
+			scale = tool;
+		} else if ([tool isKindOfClass:[WDSelectionTool class]]) {
+			select = tool;
 		}
 	}
 	
 	[self.houseButton setTool:house];
-	
 	[self.houseButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	[self.scaleButton setTool:scale];
+	[self.scaleButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	[self.selectButton setTool:select];
+	[self.selectButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewDidAppear:(BOOL)animated

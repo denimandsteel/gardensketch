@@ -15,6 +15,7 @@
 #import "WDToolButton.h"
 #import "WDToolManager.h"
 #import "WDToolView.h"
+#import "Constants.h"
 
 @implementation WDToolButton
 
@@ -113,7 +114,7 @@
 
 - (UIColor *) toolSelectedBackgroundColor
 {
-    return [UIColor colorWithRed:(166.0f / 255) green:(202.0f / 255) blue:(251.0f / 255) alpha:1.0f];
+    return GS_COLOR_PEACHY_HIGHLIGHT;
 }
 
 - (void) drawDisclosueInContext:(CGContextRef)ctx

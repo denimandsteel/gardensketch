@@ -103,7 +103,8 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 				   sidewalk,
 				   gazebo,
 				   shed,
-				   house];
+				   house,
+				   [WDScaleTool tool]];
     }
     
     return tools_;

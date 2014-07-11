@@ -18,7 +18,7 @@
 
 - (NSString *) iconName
 {
-    return @"scale.png";
+    return @"scale-icon.png";
 }
 
 - (CGAffineTransform) computeTransform:(CGPoint)pt pivot:(CGPoint)pivot constrain:(WDToolFlags)flags
@@ -49,6 +49,10 @@
         // preserve the direction of the scaling
         scaleX *= xSign;
         scaleY *= ySign;
+		
+		// no flipping
+		scaleX = ABS(scaleX);
+		scaleY = ABS(scaleY);
     }
     
     CGAffineTransform transform = CGAffineTransformMakeTranslation(pivot.x, pivot.y);

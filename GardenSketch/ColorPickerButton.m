@@ -31,7 +31,7 @@
 
 - (void)initialize
 {
-	self.layer.cornerRadius = 16; // this value vary as per your desire
+	self.layer.cornerRadius = 3; // this value vary as per your desire
     self.clipsToBounds = YES;
 }
 

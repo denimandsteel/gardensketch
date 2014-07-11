@@ -8,6 +8,7 @@
 
 #import "NorthViewController.h"
 #import "Constants.h"
+#import "WDDrawingManager.h"
 
 @interface NorthViewController ()
 {
@@ -43,6 +44,14 @@
 	}
 	
 	[self setupGestureRecognizer];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	// TODO: make sure SelectTool is the active tool
+	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
+	WDDocument *basePlanDocument = [drawingManager openBasePlanDocumentWithCompletionHandler:nil];
+	[self.sidebar.canvasController setDocument:basePlanDocument];
 }
 
 - (void)didReceiveMemoryWarning

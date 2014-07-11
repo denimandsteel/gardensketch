@@ -40,18 +40,18 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T7k-Tt-jL5">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                    <rect key="frame" x="0.0" y="8" width="320" height="47"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrp-fC-sle" customClass="GSLabel">
-                            <rect key="frame" x="20" y="16" width="147" height="28"/>
+                            <rect key="frame" x="20" y="8" width="147" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMj-ES-ynl" customClass="GSButton">
-                            <rect key="frame" x="254" y="16" width="46" height="30"/>
+                            <rect key="frame" x="254" y="8" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Next">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,7 +61,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2n-qN-U5C" customClass="GSButton">
-                            <rect key="frame" x="200" y="16" width="46" height="30"/>
+                            <rect key="frame" x="200" y="8" width="46" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Prev"/>
                             <connections>
@@ -69,12 +69,12 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.96677564540000005" green="0.96677564540000005" blue="0.96677564540000005" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hl5-1d-uRf" customClass="WDToolButton">
-                    <rect key="frame" x="20" y="107" width="32" height="32"/>
+                    <rect key="frame" x="58" y="118" width="32" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="select.png"/>
+                    <state key="normal" image="select-icon.png"/>
                 </button>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YXC-68-eNs">
                     <rect key="frame" x="0.0" y="658" width="320" height="50"/>
@@ -121,10 +121,10 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufh-Yh-Q4g">
-                    <rect key="frame" x="60" y="109" width="27" height="27"/>
+                    <rect key="frame" x="103" y="120" width="27" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="grid-inactive.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -134,7 +134,7 @@
                         <action selector="gridTapped:" destination="-1" eventType="touchUpInside" id="fEH-tH-hMA"/>
                     </connections>
                 </button>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fa6-h2-ISt">
+                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fa6-h2-ISt" customClass="GSSegmentedControl">
                     <rect key="frame" x="20" y="71" width="280" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <segments>
@@ -183,63 +183,63 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1oJ-Yu-5aa" userLabel="Plants View">
-                    <rect key="frame" x="20" y="144" width="280" height="394"/>
+                    <rect key="frame" x="20" y="144" width="280" height="506"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCz-Ro-S7V" customClass="WDToolButton">
-                            <rect key="frame" x="0.0" y="37" width="32" height="32"/>
+                            <rect key="frame" x="42" y="65" width="32" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="freehand.png"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6Q-z9-bWt" customClass="WDToolButton">
-                            <rect key="frame" x="0.0" y="121" width="44" height="44"/>
+                            <rect key="frame" x="42" y="163" width="44" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <state key="normal" image="Plant_Grey_Green.png"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SU-0P-2yL" customClass="WDToolButton">
-                            <rect key="frame" x="0.0" y="201" width="44" height="44"/>
+                            <rect key="frame" x="42" y="271" width="44" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <state key="normal" image="Shrub_Brown.png"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kvk-5x-SnG" customClass="WDToolButton">
-                            <rect key="frame" x="2" y="282" width="44" height="44"/>
+                            <rect key="frame" x="42" y="404" width="71" height="71"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="Shrub_Brown.png"/>
+                            <state key="normal" image="Tree_Green.png"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1x-it-Oh8" customClass="WDToolButton">
-                            <rect key="frame" x="55" y="282" width="44" height="44"/>
+                            <rect key="frame" x="129" y="404" width="72" height="72"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="Shrub_Brown.png"/>
+                            <state key="normal" image="Coniferous_Dark_Green.png"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56E-Tv-rMd" customClass="WDToolButton">
-                            <rect key="frame" x="66" y="201" width="22" height="44"/>
+                            <rect key="frame" x="104" y="271" width="31" height="67"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <state key="normal" image="Hedge_brown.png"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-qf-Rf8" customClass="WDToolButton">
-                            <rect key="frame" x="111" y="223" width="44" height="22"/>
+                            <rect key="frame" x="155" y="271" width="68" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <state key="normal" image="Hedge_brown_horizontal.png"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Om2-Js-KIT" customClass="WDToolButton">
-                            <rect key="frame" x="56" y="133" width="32" height="32"/>
+                            <rect key="frame" x="98" y="163" width="32" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <state key="normal" image="Plant_Grey_Green.png"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pV1-DC-Ftb" customClass="WDToolButton">
-                            <rect key="frame" x="56" y="37" width="32" height="32"/>
+                            <rect key="frame" x="89" y="65" width="32" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="enclosed.png"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unO-uW-Cbo" customClass="ColorPickerButton">
-                            <rect key="frame" x="229" y="3" width="32" height="32"/>
+                            <rect key="frame" x="2" y="23" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="0.95587543269999997" blue="0.69363249370000002" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -250,7 +250,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXf-S6-Ztp" customClass="ColorPickerButton">
-                            <rect key="frame" x="56" y="87" width="32" height="32"/>
+                            <rect key="frame" x="2" y="124" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="0.95587543269999997" blue="0.69363249370000002" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -261,7 +261,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGb-Cw-jXe" customClass="ColorPickerButton">
-                            <rect key="frame" x="145" y="168" width="32" height="32"/>
+                            <rect key="frame" x="2" y="229" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="0.95587543269999997" blue="0.69363249370000002" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -272,7 +272,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0B-tM-Hnj" customClass="ColorPickerButton">
-                            <rect key="frame" x="61" y="248" width="32" height="32"/>
+                            <rect key="frame" x="2" y="363" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="0.95587543269999997" blue="0.69363249370000002" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal">
@@ -283,25 +283,25 @@
                             </connections>
                         </button>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Planting Areas &amp; Freehand" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7Y-pt-IPx" customClass="GSLabel">
-                            <rect key="frame" x="0.0" y="8" width="221" height="21"/>
+                            <rect key="frame" x="42" y="31" width="218" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Plants" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHm-AT-1H8" customClass="GSLabel">
-                            <rect key="frame" x="0.0" y="92" width="221" height="21"/>
+                            <rect key="frame" x="42" y="129" width="218" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hedges &amp; Shrubs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHZ-nu-3dc" customClass="GSLabel">
-                            <rect key="frame" x="0.0" y="173" width="221" height="21"/>
+                            <rect key="frame" x="42" y="234" width="218" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trees" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCk-bu-ouO" customClass="GSLabel">
-                            <rect key="frame" x="0.0" y="253" width="42" height="21"/>
+                            <rect key="frame" x="42" y="368" width="218" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
@@ -310,12 +310,13 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.96677564538043481" green="0.96677564538043481" blue="0.96677564538043481" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
     <resources>
+        <image name="Coniferous_Dark_Green.png" width="331" height="332"/>
         <image name="Gazebo.png" width="197" height="188"/>
         <image name="Hedge_brown.png" width="111" height="246"/>
         <image name="Hedge_brown_horizontal.png" width="246" height="111"/>
@@ -323,10 +324,11 @@
         <image name="Shed.png" width="175" height="175"/>
         <image name="Shrub_Brown.png" width="114" height="98"/>
         <image name="Tile.png" width="120" height="120"/>
+        <image name="Tree_Green.png" width="273" height="272"/>
         <image name="enclosed.png" width="115" height="106"/>
         <image name="freehand.png" width="102" height="106"/>
         <image name="grid-active.png" width="256" height="256"/>
         <image name="grid-inactive.png" width="256" height="256"/>
-        <image name="select.png" width="25" height="25"/>
+        <image name="select-icon.png" width="30" height="30"/>
     </resources>
 </document>

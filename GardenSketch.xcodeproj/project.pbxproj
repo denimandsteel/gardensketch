@@ -327,6 +327,9 @@
 		4D53F63B196B149C0097C8E3 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F631196B149C0097C8E3 /* iTunesArtwork.png */; };
 		4D53F63C196B149C0097C8E3 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F632196B149C0097C8E3 /* iTunesArtwork@2x.png */; };
 		4D53F63F196CBB9D0097C8E3 /* GSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D53F63E196CBB9D0097C8E3 /* GSTextField.m */; };
+		4D53F641196F4C900097C8E3 /* select-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F640196F4C900097C8E3 /* select-icon.png */; };
+		4D53F644196F4FC10097C8E3 /* GSSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D53F643196F4FC10097C8E3 /* GSSegmentedControl.m */; };
+		4D53F646196F5DB60097C8E3 /* scale-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F645196F5DB60097C8E3 /* scale-icon.png */; };
 		4D576048195E0D3500DCCBEF /* Hedge_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576044195E0D3500DCCBEF /* Hedge_Green.svg */; };
 		4D576049195E0D3500DCCBEF /* Hedge_Maroon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576045195E0D3500DCCBEF /* Hedge_Maroon.svg */; };
 		4D57604A195E0D3500DCCBEF /* Hedge_Viridian.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D576046195E0D3500DCCBEF /* Hedge_Viridian.svg */; };
@@ -859,6 +862,10 @@
 		4D53F632196B149C0097C8E3 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		4D53F63D196CBB9D0097C8E3 /* GSTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSTextField.h; sourceTree = "<group>"; };
 		4D53F63E196CBB9D0097C8E3 /* GSTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSTextField.m; sourceTree = "<group>"; };
+		4D53F640196F4C900097C8E3 /* select-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select-icon.png"; sourceTree = "<group>"; };
+		4D53F642196F4FC10097C8E3 /* GSSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSSegmentedControl.h; sourceTree = "<group>"; };
+		4D53F643196F4FC10097C8E3 /* GSSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSSegmentedControl.m; sourceTree = "<group>"; };
+		4D53F645196F5DB60097C8E3 /* scale-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scale-icon.png"; sourceTree = "<group>"; };
 		4D576044195E0D3500DCCBEF /* Hedge_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Green.svg; sourceTree = "<group>"; };
 		4D576045195E0D3500DCCBEF /* Hedge_Maroon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Maroon.svg; sourceTree = "<group>"; };
 		4D576046195E0D3500DCCBEF /* Hedge_Viridian.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hedge_Viridian.svg; sourceTree = "<group>"; };
@@ -957,8 +964,6 @@
 				4D05DAFD194A70C7001F19A7 /* Main.storyboard */,
 				4D05DB03194A70C7001F19A7 /* Images.xcassets */,
 				4D05DAF2194A70C7001F19A7 /* Supporting Files */,
-				4D081BE41954B63C00F8871C /* ColorPickerButton.h */,
-				4D081BE51954B63C00F8871C /* ColorPickerButton.m */,
 				4D081BF41958F70900F8871C /* StencilManager.h */,
 				4D081BF51958F70900F8871C /* StencilManager.m */,
 				4D081C0C195B48D600F8871C /* Constants.h */,
@@ -1050,7 +1055,9 @@
 			isa = PBXGroup;
 			children = (
 				4D53F61C1965FC910097C8E3 /* Coniferous_Dark_Green.png */,
+				4D53F640196F4C900097C8E3 /* select-icon.png */,
 				4D53F62619677C410097C8E3 /* left-arrow@2x.png */,
+				4D53F645196F5DB60097C8E3 /* scale-icon.png */,
 				4D53F61A1965EBD30097C8E3 /* north-big.png */,
 				4D53F60D1964D21D0097C8E3 /* grid-active.png */,
 				4D53F60E1964D21D0097C8E3 /* grid-inactive.png */,
@@ -1657,6 +1664,8 @@
 		4D081C05195B482200F8871C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4D081BE41954B63C00F8871C /* ColorPickerButton.h */,
+				4D081BE51954B63C00F8871C /* ColorPickerButton.m */,
 				4D53F61E1965FE2D0097C8E3 /* GSLabelHead.h */,
 				4D53F61F1965FE2D0097C8E3 /* GSLabelHead.m */,
 				4D081C06195B484100F8871C /* GSLabel.h */,
@@ -1667,6 +1676,8 @@
 				4D53F622196721140097C8E3 /* PropertyShapeButton.m */,
 				4D53F63D196CBB9D0097C8E3 /* GSTextField.h */,
 				4D53F63E196CBB9D0097C8E3 /* GSTextField.m */,
+				4D53F642196F4FC10097C8E3 /* GSSegmentedControl.h */,
+				4D53F643196F4FC10097C8E3 /* GSSegmentedControl.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -1860,6 +1871,7 @@
 				4D05DCA5194F7FF2001F19A7 /* eyedropper@2x.png in Resources */,
 				4D081C1B195B8B4A00F8871C /* Plant_Grey_Green.svg in Resources */,
 				4D05DBB9194F5C81001F19A7 /* undo.png in Resources */,
+				4D53F641196F4C900097C8E3 /* select-icon.png in Resources */,
 				4D05DE231950AC3F001F19A7 /* Samples.xib in Resources */,
 				4D05DAF6194A70C7001F19A7 /* InfoPlist.strings in Resources */,
 				4D05DCBD194F7FF2001F19A7 /* spiral@2x.png in Resources */,
@@ -1908,6 +1920,7 @@
 				4D57604A195E0D3500DCCBEF /* Hedge_Viridian.svg in Resources */,
 				4D53F633196B149C0097C8E3 /* AppIcon29x29.png in Resources */,
 				4D05DBAF194F5C81001F19A7 /* design.png in Resources */,
+				4D53F646196F5DB60097C8E3 /* scale-icon.png in Resources */,
 				4D05DBB8194F5C81001F19A7 /* switcher.png in Resources */,
 				4D05DE261950AC3F001F19A7 /* Stroke.xib in Resources */,
 				4D081BFA195B3DC100F8871C /* Plant_Grey_Green.png in Resources */,
@@ -2048,6 +2061,7 @@
 				4D05DCE0194F7FF2001F19A7 /* WDRulerUnit.m in Sources */,
 				4D05DDCD194F8042001F19A7 /* WDStrokeController.m in Sources */,
 				4D05DDC2194F8042001F19A7 /* WDPalette.m in Sources */,
+				4D53F644196F4FC10097C8E3 /* GSSegmentedControl.m in Sources */,
 				4D05DCEF194F7FF2001F19A7 /* WDSVGStyleParser.m in Sources */,
 				4D05DCDC194F7FF2001F19A7 /* WDLayer.m in Sources */,
 				4D05DDE3194F80BF001F19A7 /* OCADownloader.m in Sources */,
