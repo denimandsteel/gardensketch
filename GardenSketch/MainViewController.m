@@ -33,7 +33,7 @@
 	
 	[self addChildViewControllers];
 	
-	BOOL firstLaunch = NO;
+	BOOL firstLaunch = YES;
 	
 	if (!firstLaunch) {
 		[self.sidebar setSelectedIndex:3];

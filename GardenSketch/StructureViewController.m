@@ -12,6 +12,7 @@
 #import "WDScaleTool.h"
 #import "WDSelectionTool.h"
 #import "WDDrawingManager.h"
+#import "WDDrawingController.h"
 
 @interface StructureViewController ()
 
@@ -69,7 +70,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-	WDLayer *baseLayer = self.sidebar.canvasController.drawing.layers.firstObject;
+	WDLayer *baseLayer = self.sidebar.canvasController.drawingController.drawing.layers.firstObject;
 	[[WDDrawingManager sharedInstance] setBasePlanLayer:baseLayer];
 }
 

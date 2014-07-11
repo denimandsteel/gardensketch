@@ -9,6 +9,8 @@
 #import "NorthViewController.h"
 #import "Constants.h"
 #import "WDDrawingManager.h"
+#import "WDToolManager.h"
+#import "WDDrawingController.h"
 
 @interface NorthViewController ()
 {
@@ -52,6 +54,12 @@
 	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
 	WDDocument *basePlanDocument = [drawingManager openBasePlanDocumentWithCompletionHandler:nil];
 	[self.sidebar.canvasController setDocument:basePlanDocument];
+	
+	WDToolManager *toolManager = [WDToolManager sharedInstance];
+	[toolManager setActiveTool:toolManager.tools.firstObject];
+	
+	WDDrawingController *drawingController = self.sidebar.canvasController.drawingController;
+	[drawingController deselectAllNodes];
 }
 
 - (void)didReceiveMemoryWarning
