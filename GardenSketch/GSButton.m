@@ -34,6 +34,7 @@
 {
 	[self.titleLabel setFont:GS_FONT_AVENIR_BODY];
 	[self setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+	[self setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
 	[self setBackgroundColor:[UIColor colorWithWhite:249/255.0 alpha:1.0]];
 	[self.layer setCornerRadius:2.0];
 	[self.layer setMasksToBounds:YES];

@@ -66,6 +66,12 @@
 	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
 	WDDocument *basePlanDocument = [drawingManager openBasePlanDocumentWithCompletionHandler:nil];
 	[self.sidebar.canvasController setDocument:basePlanDocument];
+	
+	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+	[nc addObserver:self
+           selector:@selector(selectionChanged:)
+               name:WDSelectionChangedNotification
+             object:self.sidebar.canvasController.drawingController];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -86,5 +92,13 @@
     [WDToolManager sharedInstance].activeTool = ((WDToolButton *)sender).tool;
 }
 
+- (void) selectionChanged:(NSNotification *)aNotification
+{
+    self.deleteButton.enabled = (self.sidebar.canvasController.drawingController.selectedObjects.count > 0) ? YES : NO;
+}
+
+- (IBAction)deleteTapped:(id)sender {
+	[self.sidebar.canvasController delete:self];
+}
 
 @end

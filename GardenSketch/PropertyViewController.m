@@ -89,8 +89,8 @@
 				break;
 		}
 		[self setPlanSize:size];
-		[self.firstField setText:[NSString stringWithFormat:@"%lu", [@(size.width / 32) integerValue]]];
-		[self.secondField setText:[NSString stringWithFormat:@"%lu", [@(size.height / 32) integerValue]]];
+		[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(size.width / 32) integerValue]]];
+		[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(size.height / 32) integerValue]]];
 		
 		[self.sizeView setAlpha:0.0];
 		[self.sizeView setHidden:NO];

@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StructureViewController">
             <connections>
+                <outlet property="deleteButton" destination="Wd6-d0-Xb2" id="OP7-WX-F2y"/>
                 <outlet property="houseButton" destination="Nyn-Tz-Z2h" id="gzR-Ls-Yka"/>
                 <outlet property="scaleButton" destination="mcN-n1-NRc" id="yap-9U-M6U"/>
                 <outlet property="selectButton" destination="knV-la-TjT" id="27B-yj-K78"/>
@@ -45,6 +46,16 @@
                     <rect key="frame" x="20" y="283" width="40" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="select-icon.png"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wd6-d0-Xb2" customClass="GSButton">
+                    <rect key="frame" x="20" y="658" width="60" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Delete">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="deleteTapped:" destination="-1" eventType="touchUpInside" id="R3e-6C-EH9"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

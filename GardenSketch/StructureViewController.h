@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SidebarContentViewController.h"
 #import "WDToolButton.h"
+#import "GSButton.h"
 
 @interface StructureViewController : SidebarContentViewController
 
@@ -16,5 +17,8 @@
 @property (weak, nonatomic) IBOutlet WDToolButton *scaleButton;
 @property (weak, nonatomic) IBOutlet WDToolButton *selectButton;
 
+@property (weak, nonatomic) IBOutlet GSButton *deleteButton;
+
+- (IBAction)deleteTapped:(id)sender;
 
 @end
