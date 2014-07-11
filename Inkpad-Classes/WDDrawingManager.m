@@ -14,6 +14,7 @@
 #import "WDDrawingManager.h"
 #import "WDSVGParser.h"
 #import "WDSVGThumbnailExtractor.h"
+#import "WDlayer.h"
 
 NSString *WDDrawingFileExtension = @"inkpad";
 NSString *WDSVGFileExtension = @"svg";
@@ -60,6 +61,24 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 {
 	_basePlanLayer = basePlanLayer;
 	NSLog(@"BASE LAYER UPDATED!");
+	
+	for (NSString *drawingName in drawingNames_) {
+		[self openDocumentWithName:drawingName withCompletionHandler:^(WDDocument *document)
+		{
+			[document.drawing setHeight:self.basePlanSize.height];
+			[document.drawing setWidth:self.basePlanSize.width];
+			[document.drawing.layers replaceObjectAtIndex:0 withObject:[self.basePlanLayer copy]];
+			[document updateChangeCount:UIDocumentChangeDone];
+			[document closeWithCompletionHandler:^(BOOL success) {
+				if (success) {
+					NSLog(@"success!");
+				} else {
+					NSLog(@"failure!");
+				}
+				
+			}];
+		}];
+	}
 }
 
 + (NSString *) drawingOrderPath
