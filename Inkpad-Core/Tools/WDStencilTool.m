@@ -19,6 +19,7 @@
 #import "WDPath.h"
 #import "WDPropertyManager.h"
 #import "WDUtilities.h"
+#import "WDToolManager.h"
 
 #define kMaxError 10.0f
 
@@ -133,6 +134,9 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
     
     pathStarted_ = NO;
     tempPath_ = nil;
+	
+	// FIXME: change this to toolManager.selectionTool
+	[[WDToolManager sharedInstance] setActiveTool:[WDToolManager sharedInstance].tools.firstObject];
 }
 
 - (WDElement *)singleShapeAtPoint:(CGPoint)center
