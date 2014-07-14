@@ -42,9 +42,12 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 @interface WDDrawingManager (Private)
 - (void) createNecessaryDirectories_;
 - (void) saveDrawingOrder_;
+
 @end
 
-@implementation WDDrawingManager
+@implementation WDDrawingManager{
+	BOOL isOpeningBaseDocument;
+}
 
 + (WDDrawingManager *) sharedInstance
 {
@@ -59,6 +62,9 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 
 - (void)setBasePlanLayer:(WDLayer *)basePlanLayer
 {
+	if (!basePlanLayer) {
+		return;
+	}
 	_basePlanLayer = basePlanLayer;
 	NSLog(@"BASE LAYER UPDATED!");
 	
@@ -67,7 +73,9 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 		{
 			[document.drawing setHeight:self.basePlanSize.height];
 			[document.drawing setWidth:self.basePlanSize.width];
-			[document.drawing.layers replaceObjectAtIndex:0 withObject:[self.basePlanLayer copy]];
+			WDLayer *lockedBaseLayerCopy = [self.basePlanLayer copy];
+			[lockedBaseLayerCopy setLocked:YES];
+			[document.drawing.layers replaceObjectAtIndex:0 withObject:lockedBaseLayerCopy];
 			[document updateChangeCount:UIDocumentChangeDone];
 			[document closeWithCompletionHandler:^(BOOL success) {
 				if (success) {
@@ -389,17 +397,24 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 
 - (WDDocument *) openBasePlanDocumentWithCompletionHandler:(void (^)(WDDocument *document))completionHandler
 {
-	NSString *filename = [self basePlanFilename];
-	NSString *path = [[WDDrawingManager drawingPath] stringByAppendingPathComponent:filename];
-    NSURL *url = [NSURL fileURLWithPath:path];
-    WDDocument *document = [[WDDocument alloc] initWithFileURL:url];
-    [document openWithCompletionHandler:^(BOOL success) {
-        if (completionHandler) {
-            completionHandler(document);
-        }
-    }];
-    
-    return document;
+	if (!self.baseDocument) {
+		NSString *filename = [self basePlanFilename];
+		NSString *path = [[WDDrawingManager drawingPath] stringByAppendingPathComponent:filename];
+		NSURL *url = [NSURL fileURLWithPath:path];
+		self.baseDocument = [[WDDocument alloc] initWithFileURL:url];
+	}
+	
+	if (self.baseDocument.documentState == UIDocumentStateClosed && !isOpeningBaseDocument) {
+		isOpeningBaseDocument = YES;
+		[self.baseDocument openWithCompletionHandler:^(BOOL success) {
+			isOpeningBaseDocument = NO;
+			if (completionHandler) {
+				completionHandler(self.baseDocument);
+			}
+		}];
+	}
+	
+	return self.baseDocument;
 }
 
 - (WDDocument *) openDocumentWithName:(NSString *)name withCompletionHandler:(void (^)(WDDocument *document))completionHandler

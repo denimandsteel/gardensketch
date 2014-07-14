@@ -54,6 +54,7 @@
 
 - (UIImage *) getThumbnail:(NSString *)name;
 
+@property (nonatomic, strong) WDDocument *baseDocument;
 @property (nonatomic, copy) WDLayer* basePlanLayer;
 @property (nonatomic, assign) CGSize basePlanSize;
 
