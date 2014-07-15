@@ -189,7 +189,9 @@
 {
     WDDocument *document = [aNotification object];
     
-    [self.planNameLabel setText:document.displayName];
+	if (document == self.sidebar.canvasController.document) {
+		[self.planNameLabel setText:document.displayName];
+	}
 }
 
 - (void) initTools
