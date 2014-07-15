@@ -166,6 +166,12 @@
 {
     NSArray *indexPaths = aNotification.object;
     [self.collectionView deleteItemsAtIndexPaths:indexPaths];
+	
+	NSInteger count = [self.collectionView numberOfItemsInSection:0];
+	
+	if (count > 1) {
+		[self collectionView:self.collectionView didSelectItemAtIndexPath:[NSIndexPath indexPathForItem:count-2 inSection:0]];
+	}
 }
 
 #pragma mark -

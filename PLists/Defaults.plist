@@ -25,7 +25,7 @@
 	<key>WDFontSizeProperty</key>
 	<integer>24</integer>
 	<key>WDGridSpacing</key>
-	<integer>36</integer>
+	<integer>32</integer>
 	<key>WDOpacityProperty</key>
 	<integer>1</integer>
 	<key>WDPageOrientation</key>
