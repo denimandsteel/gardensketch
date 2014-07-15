@@ -14,6 +14,8 @@
 #import "WDImageView.h"
 #import "WDUtilities.h"
 #import "UIView+Additions.h"
+#import "GSButton.h"
+#import "GSTextField.h"
 
 @interface WDThumbnailView (Private)
 - (void) reloadFilenameFields_;
@@ -21,7 +23,7 @@
 @end
 
 #define kTitleFieldHeight       30
-#define kMaxThumbnailDimension  120
+#define kMaxThumbnailDimension  140
 
 @implementation WDThumbnailView
 
@@ -177,18 +179,16 @@
     filename_ = filename;
     
     if (!titleLabel_) {
-        titleLabel_ = [UIButton buttonWithType:UIButtonTypeCustom];
+        titleLabel_ = [GSButton buttonWithType:UIButtonTypeCustom];
         titleLabel_.frame = CGRectMake(0, 0, self.bounds.size.width, kTitleFieldHeight);
         titleLabel_.opaque = NO;
         titleLabel_.backgroundColor = nil;
         titleLabel_.exclusiveTouch = YES;
         
         titleLabel_.titleLabel.textAlignment = NSTextAlignmentCenter;
-        titleLabel_.titleLabel.font = [UIFont systemFontOfSize:15];
         titleLabel_.titleLabel.shadowOffset = CGSizeMake(0, 1);
         titleLabel_.titleLabel.lineBreakMode = NSLineBreakByTruncatingMiddle;
-        
-        [titleLabel_ setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+
         [titleLabel_ setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [titleLabel_ addTarget:self action:@selector(editTitle:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -196,12 +196,10 @@
     }
     
     if (!titleField_) {
-        titleField_ = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width - self.actionView.bounds.size.width, kTitleFieldHeight)];
+        titleField_ = [[GSTextField alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width - self.actionView.bounds.size.width, kTitleFieldHeight)];
         titleField_.textAlignment = NSTextAlignmentCenter;
         titleField_.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         titleField_.delegate = self;
-        titleField_.font = [UIFont systemFontOfSize:15];
-        titleField_.textColor = [UIColor blackColor];
         titleField_.clearButtonMode = UITextFieldViewModeWhileEditing;
         titleField_.returnKeyType = UIReturnKeyDone;
         titleField_.borderStyle = UITextBorderStyleRoundedRect;
@@ -281,10 +279,10 @@
         imageView_.image = thumbImage;
     }
     
-    imageView_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)-CGRectGetWidth(self.actionView.bounds)) / 2, WDCenterOfRect(self.bounds).y - (kTitleFieldHeight / 2));
+    imageView_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)-CGRectGetWidth(self.actionView.bounds)) / 2, WDCenterOfRect(self.bounds).y - (kTitleFieldHeight/2));
     [self updateShadow_];
     
-    titleField_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)-CGRectGetWidth(self.actionView.bounds)) / 2, CGRectGetMaxY(imageView_.frame) + (kTitleFieldHeight / 2) + 3);
+    titleField_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)-CGRectGetWidth(self.actionView.bounds)) / 2, CGRectGetMaxY(imageView_.frame) + kTitleFieldHeight );
     titleLabel_.sharpCenter = titleField_.sharpCenter;
     
     [self reloadFilenameFields_];

@@ -1124,7 +1124,6 @@
 				4D53F6121965DD110097C8E3 /* NorthViewController.m */,
 				4D9115D0197597FB008B11CC /* MoreViewController.h */,
 				4D9115D1197597FB008B11CC /* MoreViewController.m */,
-				4D9115D2197597FB008B11CC /* MoreViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1618,6 +1617,7 @@
 				4D05DE071950A8AA001F19A7 /* CanvasController.xib */,
 				4D862ECB1952043A0066A848 /* DesignViewController.xib */,
 				4D081BE11954B54800F8871C /* ColorPickerViewController.xib */,
+				4D9115D2197597FB008B11CC /* MoreViewController.xib */,
 				4D53F6131965DD110097C8E3 /* NorthViewController.xib */,
 			);
 			name = xibs;
