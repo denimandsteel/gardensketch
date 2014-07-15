@@ -191,10 +191,11 @@
 			scale = .5;
 			break;
 		case kSidewalk:
-			scale = .2;
+			scale = .5;
 			break;
 		case kGazebo:
-			scale = 3;
+		case kShed:
+			scale = 4;
 		case kHedge:
 			scale = 2;
 			break;
