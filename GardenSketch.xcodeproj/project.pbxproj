@@ -349,6 +349,8 @@
 		4D5760671964866400DCCBEF /* Tree_Green.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5760661964866400DCCBEF /* Tree_Green.png */; };
 		4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D862ECA1952043A0066A848 /* DesignViewController.m */; };
 		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
+		4D9115D3197597FB008B11CC /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115D1197597FB008B11CC /* MoreViewController.m */; };
+		4D9115D4197597FB008B11CC /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9115D2197597FB008B11CC /* MoreViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -886,6 +888,9 @@
 		4D862EC91952043A0066A848 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		4D862ECA1952043A0066A848 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		4D862ECB1952043A0066A848 /* DesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignViewController.xib; sourceTree = "<group>"; };
+		4D9115D0197597FB008B11CC /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		4D9115D1197597FB008B11CC /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		4D9115D2197597FB008B11CC /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1117,6 +1122,9 @@
 				4D081BE01954B54800F8871C /* ColorPickerViewController.m */,
 				4D53F6111965DD110097C8E3 /* NorthViewController.h */,
 				4D53F6121965DD110097C8E3 /* NorthViewController.m */,
+				4D9115D0197597FB008B11CC /* MoreViewController.h */,
+				4D9115D1197597FB008B11CC /* MoreViewController.m */,
+				4D9115D2197597FB008B11CC /* MoreViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1914,6 +1922,7 @@
 				4D05DC9E194F7FF2001F19A7 /* add_anchor.png in Resources */,
 				4D53F60C1964CBE50097C8E3 /* grid-xxl.png in Resources */,
 				4D05DCBA194F7FF2001F19A7 /* select.png in Resources */,
+				4D9115D4197597FB008B11CC /* MoreViewController.xib in Resources */,
 				4D081C1E195B8B4A00F8871C /* Plant_Light_Pink.svg in Resources */,
 				4D081BDC1954A31600F8871C /* more@2x.png in Resources */,
 				4D05DE1B1950AC3F001F19A7 /* ColorBalance.xib in Resources */,
@@ -2165,6 +2174,7 @@
 				4D081BE21954B54800F8871C /* ColorPickerViewController.m in Sources */,
 				4D05DDBC194F8042001F19A7 /* WDLayerController.m in Sources */,
 				4D05DCFB194F7FF2001F19A7 /* WDSelectionTool.m in Sources */,
+				4D9115D3197597FB008B11CC /* MoreViewController.m in Sources */,
 				4D05DDB6194F8042001F19A7 /* WDHelpController.m in Sources */,
 				4D53F623196721140097C8E3 /* PropertyShapeButton.m in Sources */,
 				4D05DD95194F8042001F19A7 /* WDActivityManager.m in Sources */,

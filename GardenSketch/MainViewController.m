@@ -16,6 +16,7 @@
 #import "WDCanvasController.h"
 #import "DesignViewController.h"
 #import "StencilManager.h"
+#import "MoreViewController.h"
 
 @interface MainViewController ()
 
@@ -86,7 +87,7 @@
 	PlansViewController *vc4 = [[PlansViewController alloc] initWithNibName:@"PlansViewController" bundle:nil];
 	DesignViewController *vc5 = [[DesignViewController alloc] initWithNibName:@"DesignViewController" bundle:nil];
 	SidebarContentViewController *vc6 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
-	SidebarContentViewController *vc7 = [[SidebarContentViewController alloc] initWithNibName:@"SidebarContentViewController" bundle:nil];
+	MoreViewController *vc7 = [[MoreViewController alloc] initWithNibName:@"MoreViewController" bundle:nil];
 	
 	for (SidebarContentViewController *contentView in @[vc1, vc2, vc3, vc4, vc5, vc6, vc7]) {
 		contentView.sidebar = self.sidebar;
