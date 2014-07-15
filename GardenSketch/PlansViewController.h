@@ -16,5 +16,6 @@
 }
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
 
 @end

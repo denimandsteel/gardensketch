@@ -62,6 +62,15 @@
 	
 	[self.collectionView registerNib:[UINib nibWithNibName:@"WDThumbnailView" bundle:nil] forCellWithReuseIdentifier:@"cellID"];
 	[self.collectionView registerNib:[UINib nibWithNibName:@"NewPlanCell" bundle:nil] forCellWithReuseIdentifier:@"newCellID"];
+	
+	self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(canvasTapped:)];
+	[self.sidebar.canvasController.view addGestureRecognizer:self.tapRecognizer];
+}
+
+- (void)canvasTapped:(UIGestureRecognizer *)gestureRecognizer
+{
+	// Switch to design tab
+	[self.sidebar setSelectedIndex:4];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -76,6 +85,13 @@
 		[self.collectionView selectItemAtIndexPath:mostRecent animated:YES scrollPosition:UICollectionViewScrollPositionBottom];
 		[self collectionView:self.collectionView didSelectItemAtIndexPath:mostRecent];
 	}
+	
+	[self.tapRecognizer setEnabled:YES];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+	[self.tapRecognizer setEnabled:NO];
 }
 
 - (void)didReceiveMemoryWarning
