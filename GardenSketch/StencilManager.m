@@ -191,20 +191,23 @@
 			scale = .5;
 			break;
 		case kSidewalk:
-			scale = .5;
+			scale = 1.1;
 			break;
 		case kGazebo:
+			scale = 5;
+			break;
 		case kShed:
-			scale = 4;
+			scale = 3.0;
+			break;
 		case kHedge:
-			scale = 2;
+			scale = 1.4;
 			break;
 		case kTreeDeciduous:
 		case kTreeConiferous:
 			scale = 3;
 			break;
 		case kHouse:
-			scale = 4;
+			scale = 12;
 			break;
 		default:
 			break;
