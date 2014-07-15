@@ -164,6 +164,7 @@
 }
 
 - (IBAction)cloneTapped:(id)sender {
+	[self.sidebar.canvasController.drawingController duplicate:self];
 }
 
 - (IBAction)redoTapped:(id)sender {
@@ -304,7 +305,7 @@
 
 - (void) selectionChanged:(NSNotification *)aNotification
 {
-    self.deleteButton.enabled = (self.sidebar.canvasController.drawingController.selectedObjects.count > 0) ? YES : NO;
+    self.deleteButton.enabled = self.cloneButton.enabled = (self.sidebar.canvasController.drawingController.selectedObjects.count > 0) ? YES : NO;
 }
 
 - (void) undoStatusDidChange:(NSNotification *)aNotification
