@@ -107,7 +107,6 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 
 - (void) moveWithEvent:(WDEvent *)theEvent inCanvas:(WDCanvas *)canvas
 {
-    [tempPath_.nodes addObject:[WDBezierNode bezierNodeWithAnchorPoint:theEvent.location]];
     [canvas invalidateSelectionView];
 }
 
@@ -139,6 +138,7 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 		// FIXME: change this to toolManager.selectionTool
 		[[WDToolManager sharedInstance] setActiveTool:[WDToolManager sharedInstance].tools.firstObject];
 	}
+	
 }
 
 - (WDElement *)singleShapeAtPoint:(CGPoint)center

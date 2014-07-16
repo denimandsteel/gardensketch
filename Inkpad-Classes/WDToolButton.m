@@ -222,7 +222,6 @@
 
 - (void) doubleTapped:(id)sender
 {
-	NSLog(@"button double tapped!");
 	[(WDStencilTool *)self.tool setStaysOn:YES];
 	[WDToolManager sharedInstance].activeTool = self.tool;
 }

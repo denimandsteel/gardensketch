@@ -66,7 +66,6 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 		return;
 	}
 	_basePlanLayer = basePlanLayer;
-	NSLog(@"BASE LAYER UPDATED!");
 	
 	for (NSString *drawingName in drawingNames_) {
 		[self openDocumentWithName:drawingName withCompletionHandler:^(WDDocument *document)
@@ -77,14 +76,7 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 			[lockedBaseLayerCopy setLocked:YES];
 			[document.drawing.layers replaceObjectAtIndex:0 withObject:lockedBaseLayerCopy];
 			[document updateChangeCount:UIDocumentChangeDone];
-			[document closeWithCompletionHandler:^(BOOL success) {
-				if (success) {
-					NSLog(@"success!");
-				} else {
-					NSLog(@"failure!");
-				}
-				
-			}];
+			[document closeWithCompletionHandler:nil];
 		}];
 	}
 }

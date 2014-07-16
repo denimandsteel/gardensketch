@@ -94,7 +94,6 @@ CGAffineTransform CGAffineTransformMakeRotationAt(CGFloat angle, CGPoint pt){
 - (void) finalAngle: (CGFloat) angle
 {
     // circular gesture ended, update text field
-    NSLog(@"angle adjusted: %f", imageAngle);
 	[[NSUserDefaults standardUserDefaults] setValue:@(imageAngle) forKey:GS_NORTH_ANGLE];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }

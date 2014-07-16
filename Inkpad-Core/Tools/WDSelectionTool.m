@@ -276,7 +276,7 @@
         WDTextPath *path = (WDTextPath *) [canvas.drawingController.selectedObjects anyObject];
         [path moveStartKnobToNearestPoint:currentPt]; 
         [canvas invalidateSelectionView];
-    } else { 
+    } else {
         // transform selected
         canvas.transforming = YES;
         canvas.transformingNode = [canvas.drawingController selectedNodes].count;
