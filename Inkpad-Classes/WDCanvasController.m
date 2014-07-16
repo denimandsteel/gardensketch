@@ -214,13 +214,13 @@
                                   action:@selector(addToPhotoAlbum:) target:self];
         [menus addObject:item];
         
-        item = [WDMenuItem itemWithTitle:NSLocalizedString(@"Copy Drawing", @"Copy Drawing")
-                                  action:@selector(copyDrawing:) target:self];
-        [menus addObject:item];
-        
-        item = [WDMenuItem itemWithTitle:NSLocalizedString(@"Duplicate Drawing", @"Duplicate Drawing")
-                                  action:@selector(duplicateDrawing:) target:self];
-        [menus addObject:item];
+//        item = [WDMenuItem itemWithTitle:NSLocalizedString(@"Copy Drawing", @"Copy Drawing")
+//                                  action:@selector(copyDrawing:) target:self];
+//        [menus addObject:item];
+//        
+//        item = [WDMenuItem itemWithTitle:NSLocalizedString(@"Duplicate Drawing", @"Duplicate Drawing")
+//                                  action:@selector(duplicateDrawing:) target:self];
+//        [menus addObject:item];
         
         item = [WDMenuItem itemWithTitle:NSLocalizedString(@"Print Drawing", @"Print Drawing") action:@selector(printDrawing:) target:self];
         [menus addObject:item];
@@ -918,10 +918,9 @@
     
     popoverController_ = [[UIPopoverController alloc] initWithContentViewController:controller];
 	popoverController_.delegate = self;
-    popoverController_.passthroughViews = @[self.navigationController.toolbar,
-                                           self.navigationController.navigationBar,
-                                           self.canvas];
-    [popoverController_ presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    popoverController_.passthroughViews = @[self.canvas];
+//    [popoverController_ presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+	[popoverController_ presentPopoverFromRect:((UIView *)sender).frame inView:((UIView *)sender).superview permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     
     return popoverController_;
 }

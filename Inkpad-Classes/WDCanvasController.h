@@ -99,5 +99,7 @@ enum {
 
 - (void) duplicateDrawing:(id)sender;
 
+- (void) showActionMenu:(id)sender;
+
 @end
 

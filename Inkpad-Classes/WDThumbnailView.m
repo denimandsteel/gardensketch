@@ -343,6 +343,7 @@
 }
 
 - (IBAction)shareTapped:(id)sender {
+	[self.delegate shareTapped:self];
 }
 
 - (IBAction)deleteTapped:(id)sender {

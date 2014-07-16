@@ -248,6 +248,11 @@
 	[self.sidebar.canvasController duplicateDrawing:self];
 }
 
+- (void) shareTapped:(WDThumbnailView *)thumbView
+{
+	[self.sidebar.canvasController showActionMenu:thumbView.sharePlanButton];
+}
+
 - (WDThumbnailView *) getThumbnail:(NSString *)filename
 {
     NSString *barefile = [[filename stringByDeletingPathExtension] stringByAppendingPathExtension:@"inkpad"];
