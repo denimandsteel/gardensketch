@@ -2,15 +2,15 @@
 <!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="256.708 208.5 188 188" enable-background="new 256.708 208.5 188 188" xml:space="preserve">
-<rect x="257.208" y="209" fill="none" stroke="#000000" stroke-miterlimit="10" width="187" height="187"/>
-<rect x="269.958" y="221.75" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="161.5" height="161.5"/>
-<rect x="316.521" y="268.312" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="68.376" height="68.375"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="384.896" y1="268.312" x2="431.459" y2="221.75"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="316.521" y1="268.312" x2="269.958" y2="221.75"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="316.521" y1="336.688" x2="269.958" y2="383.25"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="384.896" y1="336.688" x2="431.459" y2="383.25"/>
-<polygon fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" points="332.844,299.379 332.844,319.311 354.671,319.311 
-	354.671,309.346 361.789,309.346 361.789,319.311 368.906,319.311 368.906,299.379 "/>
-<polygon fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" points="332.844,296.532 368.906,296.532 350.875,280.873 "/>
+	 viewBox="2.8 150.1 609.7 609.7" enable-background="new 2.8 150.1 609.7 609.7" xml:space="preserve">
+<rect x="3.3" y="150.6" fill="none" stroke="#000000" stroke-miterlimit="10" width="608.7" height="608.7"/>
+<rect x="44.8" y="192.1" fill="none" stroke="#000000" stroke-miterlimit="10" width="525.7" height="525.7"/>
+<rect x="196.3" y="343.7" fill="none" stroke="#000000" stroke-miterlimit="10" width="222.6" height="222.6"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="418.9" y1="343.7" x2="570.5" y2="192.1"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="196.3" y1="343.7" x2="44.8" y2="192.1"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="196.3" y1="566.3" x2="44.8" y2="717.8"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="418.9" y1="566.3" x2="570.5" y2="717.8"/>
+<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="249.5,444.8 249.5,509.7 320.5,509.7 320.5,477.3 
+	343.7,477.3 343.7,509.7 366.9,509.7 366.9,444.8 "/>
+<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="249.5,435.5 366.9,435.5 308.2,384.6 "/>
 </svg>

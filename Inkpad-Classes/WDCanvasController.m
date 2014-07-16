@@ -1392,7 +1392,7 @@
         hueController_.drawingController = drawingController_;
         balanceController_.drawingController = drawingController_;
     }
-    
+	
     if (document_.documentState == UIDocumentStateNormal) {
         [self documentStateChanged:nil];
     } else {
