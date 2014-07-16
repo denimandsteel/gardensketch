@@ -1340,6 +1340,30 @@
 
 - (void) setDocument:(WDDocument *)document
 {
+	if (!document) {
+		// TODO: handle this case to clear the canvas and remove the spinning wheel.
+		if (document_ && (document_.documentState != UIDocumentStateClosed)) {
+            [document_ closeWithCompletionHandler:nil];
+        }
+		
+		if (drawingController_) {
+			drawingController_ = nil;
+		}
+		
+		if (canvas_) {
+			[canvas_ setDrawing:nil];
+			[canvas_ setHidden:YES];
+		}
+		
+		document_ = nil;
+		
+		[canvas_ stopActivity];
+		
+		return;
+	}
+	
+	[canvas_ setHidden:NO];
+	
 	if (document != self.document) {
         [canvas_ startActivity];
         [CATransaction flush];

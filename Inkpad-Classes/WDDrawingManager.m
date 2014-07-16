@@ -246,7 +246,7 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 
 - (NSString *) uniqueFilename
 {
-    return [self uniqueFilenameWithPrefix:NSLocalizedString(@"Drawing", @"Default drawing name prefix")
+    return [self uniqueFilenameWithPrefix:@"Garden Plan"
                                 extension:WDDefaultDrawingExtension];
 }
 
@@ -285,9 +285,9 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 
 - (NSString *) uniqueFilenameWithPrefix:(NSString *)prefix extension:(NSString *)extension
 {
-    if (![WDDrawingManager drawingExists:prefix]) {
-        return [prefix stringByAppendingPathExtension:extension];
-    }
+//    if (![WDDrawingManager drawingExists:prefix]) {
+//        return [prefix stringByAppendingPathExtension:extension];
+//    }
     
     prefix = [self cleanPrefix:prefix];
 

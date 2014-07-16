@@ -84,6 +84,8 @@
 		NSIndexPath *mostRecent = [NSIndexPath indexPathForRow:numberOfPlans-1 inSection:0];
 		[self.collectionView selectItemAtIndexPath:mostRecent animated:YES scrollPosition:UICollectionViewScrollPositionBottom];
 		[self collectionView:self.collectionView didSelectItemAtIndexPath:mostRecent];
+	} else {
+		[self.sidebar.canvasController setDocument:nil];
 	}
 	
 	[self.tapRecognizer setEnabled:YES];
@@ -171,6 +173,9 @@
 	
 	if (count > 1) {
 		[self collectionView:self.collectionView didSelectItemAtIndexPath:[NSIndexPath indexPathForItem:count-2 inSection:0]];
+	} else {
+		// no plans left.
+		[self.sidebar.canvasController setDocument:nil];
 	}
 }
 
