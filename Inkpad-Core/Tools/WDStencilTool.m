@@ -135,8 +135,10 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
     pathStarted_ = NO;
     tempPath_ = nil;
 	
-	// FIXME: change this to toolManager.selectionTool
-	[[WDToolManager sharedInstance] setActiveTool:[WDToolManager sharedInstance].tools.firstObject];
+	if (!self.staysOn) {
+		// FIXME: change this to toolManager.selectionTool
+		[[WDToolManager sharedInstance] setActiveTool:[WDToolManager sharedInstance].tools.firstObject];
+	}
 }
 
 - (WDElement *)singleShapeAtPoint:(CGPoint)center

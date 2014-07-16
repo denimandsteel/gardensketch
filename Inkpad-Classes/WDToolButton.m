@@ -16,6 +16,7 @@
 #import "WDToolManager.h"
 #import "WDToolView.h"
 #import "Constants.h"
+#import "WDStencilTool.h"
 
 @implementation WDToolButton
 
@@ -176,6 +177,13 @@
     if (!tools_) {
         [self setBackgroundImage:[self selectedBackgroundWithDisclosure:NO] forState:UIControlStateSelected];
     }
+	
+	if ([tool isKindOfClass:[WDStencilTool class]]) {
+		UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapped:)];
+		doubleTap.numberOfTapsRequired = 2;
+		[self addGestureRecognizer:doubleTap];
+	}
+	
 }
 
 - (void) popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
@@ -212,6 +220,13 @@
     }
 }
 
+- (void) doubleTapped:(id)sender
+{
+	NSLog(@"button double tapped!");
+	[(WDStencilTool *)self.tool setStaysOn:YES];
+	[WDToolManager sharedInstance].activeTool = self.tool;
+}
+
 - (void) setTools:(NSArray *)tools
 {
     tools_ = tools;
@@ -230,8 +245,8 @@
     UILongPressGestureRecognizer *longTap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(showTools:)];
     longTap.minimumPressDuration = 0.25f;
     [self addGestureRecognizer:longTap];
-    
-    // if the palette moves we need to hide our popover
+	
+	// if the palette moves we need to hide our popover
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(paletteMoved:)
                                                  name:WDPaletteMovedNotification

@@ -179,11 +179,12 @@
 
 - (void) chooseTool:(id)sender
 {
-	//    if (self.owner) {
-	//        [self.owner didChooseTool:self];
-	//    }
+	WDTool *tool = ((WDToolButton *)sender).tool;
+	if ([tool isKindOfClass:[WDStencilTool class]]) {
+		[(WDStencilTool *)tool setStaysOn:NO];
+	}
     
-    [WDToolManager sharedInstance].activeTool = ((WDToolButton *)sender).tool;
+    [WDToolManager sharedInstance].activeTool = tool;
 }
 
 - (void) drawingChanged:(NSNotification *)aNotification

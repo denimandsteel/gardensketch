@@ -23,5 +23,6 @@
 @property (nonatomic, assign) CGFloat initialRotation;
 @property (nonatomic, assign) BOOL randomRotation;
 @property (nonatomic, assign) NSInteger repeatCount;
+@property (nonatomic, assign) BOOL staysOn;
 
 @end
