@@ -99,7 +99,7 @@
     [vc1 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Property"
 														   selectedIconMask:[UIImage imageNamed:@"property"]
 														 unselectedIconMask:[UIImage imageNamed:@"property"]]];
-    [vc2 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Structures"
+    [vc2 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"House"
 														   selectedIconMask:[UIImage imageNamed:@"structure"]
 														 unselectedIconMask:[UIImage imageNamed:@"structure"]]];
     [vc3 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"North"

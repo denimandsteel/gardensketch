@@ -32,7 +32,7 @@
 #import "WDTextPath.h"
 #import "WDUtilities.h"
 
-const float kDuplicateOffset = 20.0f;
+const float kDuplicateOffset = 64.0f;
 
 NSString *WDPasteboardDataType = @"WDPasteboardDataType";
 NSString *WDSelectionChangedNotification = @"WDSelectionChangedNotification";
