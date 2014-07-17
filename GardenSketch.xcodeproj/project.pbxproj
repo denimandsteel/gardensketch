@@ -351,11 +351,12 @@
 		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
 		4D9115D3197597FB008B11CC /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115D1197597FB008B11CC /* MoreViewController.m */; };
 		4D9115D4197597FB008B11CC /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9115D2197597FB008B11CC /* MoreViewController.xib */; };
-		4D9115E4197838AB008B11CC /* Coniferous_Dark_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D9115E3197838AB008B11CC /* Coniferous_Dark_Green.svg */; };
 		4D9115D819773654008B11CC /* NotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115D619773654008B11CC /* NotesViewController.m */; };
 		4D9115D919773654008B11CC /* NotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9115D719773654008B11CC /* NotesViewController.xib */; };
 		4D9115DC197737A8008B11CC /* NoteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115DB197737A8008B11CC /* NoteCellView.m */; };
 		4D9115DE197737BC008B11CC /* NoteCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9115DD197737BC008B11CC /* NoteCellView.xib */; };
+		4D9115E4197838AB008B11CC /* Coniferous_Dark_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D9115E3197838AB008B11CC /* Coniferous_Dark_Green.svg */; };
+		4D9115E719787DFB008B11CC /* GSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115E619787DFB008B11CC /* GSTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -896,13 +897,15 @@
 		4D9115D0197597FB008B11CC /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		4D9115D1197597FB008B11CC /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		4D9115D2197597FB008B11CC /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
-		4D9115E3197838AB008B11CC /* Coniferous_Dark_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Coniferous_Dark_Green.svg; sourceTree = "<group>"; };
 		4D9115D519773654008B11CC /* NotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesViewController.h; sourceTree = "<group>"; };
 		4D9115D619773654008B11CC /* NotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesViewController.m; sourceTree = "<group>"; };
 		4D9115D719773654008B11CC /* NotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotesViewController.xib; sourceTree = "<group>"; };
 		4D9115DA197737A8008B11CC /* NoteCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteCellView.h; sourceTree = "<group>"; };
 		4D9115DB197737A8008B11CC /* NoteCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteCellView.m; sourceTree = "<group>"; };
 		4D9115DD197737BC008B11CC /* NoteCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteCellView.xib; sourceTree = "<group>"; };
+		4D9115E3197838AB008B11CC /* Coniferous_Dark_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Coniferous_Dark_Green.svg; sourceTree = "<group>"; };
+		4D9115E519787DFB008B11CC /* GSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSTextView.h; sourceTree = "<group>"; };
+		4D9115E619787DFB008B11CC /* GSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1705,6 +1708,8 @@
 				4D53F643196F4FC10097C8E3 /* GSSegmentedControl.m */,
 				4D9115DA197737A8008B11CC /* NoteCellView.h */,
 				4D9115DB197737A8008B11CC /* NoteCellView.m */,
+				4D9115E519787DFB008B11CC /* GSTextView.h */,
+				4D9115E619787DFB008B11CC /* GSTextView.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -2063,6 +2068,7 @@
 				4D05DB02194A70C7001F19A7 /* MainViewController.m in Sources */,
 				4D05DCED194F7FF2001F19A7 /* WDSVGParserStateStack.m in Sources */,
 				4D05DDAD194F8042001F19A7 /* WDExportController.m in Sources */,
+				4D9115E719787DFB008B11CC /* GSTextView.m in Sources */,
 				4D05DDA0194F8042001F19A7 /* WDColorAdjustmentController.m in Sources */,
 				4D05DCD1194F7FF2001F19A7 /* WDCurveFit.m in Sources */,
 				4D05DDCF194F8042001F19A7 /* WDSwatchController.m in Sources */,

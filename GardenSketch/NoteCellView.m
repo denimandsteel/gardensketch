@@ -28,4 +28,20 @@
 }
 */
 
+- (void) switchToEditMode
+{
+	return;
+	[self.bodyTextView setText:nil];
+	[self.bodyTextView setText:self.bodyLabel.text];
+	[self.bodyLabel setHidden:YES];
+	[self.bodyTextView setHidden:NO];
+}
+
+- (void) switchToViewMode
+{
+	[self.bodyLabel setText:self.bodyTextView.text];
+	[self.bodyLabel setHidden:NO];
+	[self.bodyTextView setHidden:YES];
+}
+
 @end
