@@ -26,6 +26,7 @@
 #import "Constants.h"
 #import "WDDrawing.h"
 #import "WDDrawingManager.h"
+#import "WDDocument.h"
 
 const float kMinimumDrawingDimension = 16;
 const float kMaximumDrawingDimension = 16000;
@@ -42,6 +43,7 @@ NSString *WDImageDatasKey = @"WDImageDatasKey";
 NSString *WDSettingsKey = @"WDSettingsKey";
 NSString *WDActiveLayerKey = @"WDActiveLayerKey";
 NSString *WDUnitsKey = @"WDUnitsKey";
+NSString *WDNotesKey = @"WDNotesKey";
 
 // Setting Keys
 NSString *WDSnapToPoints = @"WDSnapToPoints";
@@ -141,7 +143,6 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
 	if (!isBasePlan) {
 		//TODO: get this by making a copy of the base plan's only layer.
 		WDLayer *baseLayer = [[[WDDrawingManager sharedInstance] basePlanLayer] copy];
-//		WDLayer *baseLayer = [WDLayer layer];
 		baseLayer.drawing = self;
 		baseLayer.name = [self uniqueLayerName];
 		[baseLayer setLocked:YES];
@@ -815,6 +816,7 @@ NSLog(@"Elements in drawing: %lu", (unsigned long)[self allElements].count);
     // Customize archiver here
     [archiver encodeObject:self forKey:WDDrawingKey];
     [archiver encodeObject:[self thumbnailData] forKey:WDThumbnailKey];
+//	[archiver encodeObject:[((WDDocument *)self.document) notes] forKey:WDNotesKey];
     
     [archiver finishEncoding];
     

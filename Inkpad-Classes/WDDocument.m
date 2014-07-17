@@ -24,6 +24,17 @@ static NSString *errorDomain = @"WDDocument";
 @synthesize loadOnlyThumbnail = loadOnlyThumbnail_;
 @synthesize fileTypeOverride;
 
+- (id)initWithFileURL:(NSURL *)url
+{
+	self = [super initWithFileURL:url];
+	
+	if (self) {
+		self.notes = [NSMutableArray arrayWithObject:@"This is my note!"];
+	}
+	
+	return self;
+}
+
 - (NSString *) filename
 {
     return [self.fileURL.path lastPathComponent];
@@ -61,6 +72,7 @@ static NSString *errorDomain = @"WDDocument";
             self.thumbnail = [UIImage imageWithData:[unarchiver decodeObjectForKey:WDThumbnailKey]];
         } else {
             self.drawing = [unarchiver decodeObjectForKey:WDDrawingKey];
+			self.notes = [unarchiver decodeObjectForKey:WDNotesKey];
             self.undoManager = self.drawing.undoManager;
         }
         

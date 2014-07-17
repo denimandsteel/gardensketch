@@ -146,3 +146,4 @@ extern NSString *WDGridSpacingChangedNotification;
 // encoder keys
 extern NSString *WDDrawingKey;
 extern NSString *WDThumbnailKey;
+extern NSString *WDNotesKey;

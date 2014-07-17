@@ -352,6 +352,10 @@
 		4D9115D3197597FB008B11CC /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115D1197597FB008B11CC /* MoreViewController.m */; };
 		4D9115D4197597FB008B11CC /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9115D2197597FB008B11CC /* MoreViewController.xib */; };
 		4D9115E4197838AB008B11CC /* Coniferous_Dark_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D9115E3197838AB008B11CC /* Coniferous_Dark_Green.svg */; };
+		4D9115D819773654008B11CC /* NotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115D619773654008B11CC /* NotesViewController.m */; };
+		4D9115D919773654008B11CC /* NotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9115D719773654008B11CC /* NotesViewController.xib */; };
+		4D9115DC197737A8008B11CC /* NoteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115DB197737A8008B11CC /* NoteCellView.m */; };
+		4D9115DE197737BC008B11CC /* NoteCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9115DD197737BC008B11CC /* NoteCellView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -893,6 +897,12 @@
 		4D9115D1197597FB008B11CC /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		4D9115D2197597FB008B11CC /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
 		4D9115E3197838AB008B11CC /* Coniferous_Dark_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Coniferous_Dark_Green.svg; sourceTree = "<group>"; };
+		4D9115D519773654008B11CC /* NotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesViewController.h; sourceTree = "<group>"; };
+		4D9115D619773654008B11CC /* NotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesViewController.m; sourceTree = "<group>"; };
+		4D9115D719773654008B11CC /* NotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotesViewController.xib; sourceTree = "<group>"; };
+		4D9115DA197737A8008B11CC /* NoteCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteCellView.h; sourceTree = "<group>"; };
+		4D9115DB197737A8008B11CC /* NoteCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteCellView.m; sourceTree = "<group>"; };
+		4D9115DD197737BC008B11CC /* NoteCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteCellView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1126,6 +1136,9 @@
 				4D53F6121965DD110097C8E3 /* NorthViewController.m */,
 				4D9115D0197597FB008B11CC /* MoreViewController.h */,
 				4D9115D1197597FB008B11CC /* MoreViewController.m */,
+				4D9115D519773654008B11CC /* NotesViewController.h */,
+				4D9115D619773654008B11CC /* NotesViewController.m */,
+				4D9115D719773654008B11CC /* NotesViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1621,6 +1634,7 @@
 				4D081BE11954B54800F8871C /* ColorPickerViewController.xib */,
 				4D9115D2197597FB008B11CC /* MoreViewController.xib */,
 				4D53F6131965DD110097C8E3 /* NorthViewController.xib */,
+				4D9115DD197737BC008B11CC /* NoteCellView.xib */,
 			);
 			name = xibs;
 			sourceTree = "<group>";
@@ -1689,6 +1703,8 @@
 				4D53F63E196CBB9D0097C8E3 /* GSTextField.m */,
 				4D53F642196F4FC10097C8E3 /* GSSegmentedControl.h */,
 				4D53F643196F4FC10097C8E3 /* GSSegmentedControl.m */,
+				4D9115DA197737A8008B11CC /* NoteCellView.h */,
+				4D9115DB197737A8008B11CC /* NoteCellView.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -1910,6 +1926,7 @@
 				4D05DAFF194A70C7001F19A7 /* Main.storyboard in Resources */,
 				4D05DB44194B7ED8001F19A7 /* SidebarContentViewController.xib in Resources */,
 				4D576055195E0FF600DCCBEF /* Hedge_brown.png in Resources */,
+				4D9115D919773654008B11CC /* NotesViewController.xib in Resources */,
 				4D05DE331950B8CB001F19A7 /* Settings.plist in Resources */,
 				4D576048195E0D3500DCCBEF /* Hedge_Green.svg in Resources */,
 				4D05DCAB194F7FF2001F19A7 /* line.png in Resources */,
@@ -1975,6 +1992,7 @@
 				4D05DE311950B8CB001F19A7 /* ImportFormats.plist in Resources */,
 				4D53F60A1964A80B0097C8E3 /* Hedge_brown_horizontal.png in Resources */,
 				4D576060196481CE00DCCBEF /* Deciduous_Tree_Burgundy.svg in Resources */,
+				4D9115DE197737BC008B11CC /* NoteCellView.xib in Resources */,
 				4D05DCAC194F7FF2001F19A7 /* line@2x.png in Resources */,
 				4D53F637196B149C0097C8E3 /* AppIcon60x60.png in Resources */,
 				4D9115E4197838AB008B11CC /* Coniferous_Dark_Green.svg in Resources */,
@@ -2059,6 +2077,7 @@
 				4D05DDB3194F8042001F19A7 /* WDGradientController.m in Sources */,
 				4D05DDB2194F8042001F19A7 /* WDFontManager.m in Sources */,
 				4D05DCFE194F7FF2001F19A7 /* WDTool.m in Sources */,
+				4D9115D819773654008B11CC /* NotesViewController.m in Sources */,
 				4D05DCCA194F7FF2001F19A7 /* ShapeSweepUtils.cpp in Sources */,
 				4D05DB3C194A7C94001F19A7 /* M13InfiniteTabBarRequiresAttentionBackgroundView.m in Sources */,
 				4D05DDB0194F8042001F19A7 /* WDFontController.m in Sources */,
@@ -2100,6 +2119,7 @@
 				4D05DCFF194F7FF2001F19A7 /* WDTransformTool.m in Sources */,
 				4D05DCF7194F7FF2001F19A7 /* WDPenTool.m in Sources */,
 				4D05DDB4194F8042001F19A7 /* WDGradientEditor.m in Sources */,
+				4D9115DC197737A8008B11CC /* NoteCellView.m in Sources */,
 				4D05DCE4194F7FF2001F19A7 /* WDText.m in Sources */,
 				4D081BEE1958B1A100F8871C /* WDStencilTool.m in Sources */,
 				4D05DD9C194F8042001F19A7 /* WDBrowserController.m in Sources */,

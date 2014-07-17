@@ -23,6 +23,7 @@
 @property (weak, nonatomic, readonly) NSString *displayName;
 @property (nonatomic, assign) BOOL loadOnlyThumbnail;
 @property (nonatomic, strong) NSString *fileTypeOverride;
+@property (nonatomic, strong) NSMutableArray *notes;
 
 extern NSString *WDDocumentDidLoadNotification;
 
