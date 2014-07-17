@@ -502,7 +502,7 @@
         }
         
         [UIView beginAnimations:@"TabChangedAnimation" context:nil];
-        [UIView setAnimationDuration:.5];
+        [UIView setAnimationDuration:.3];
         [UIView setAnimationDelegate:self];
         
         //Swap Nav controllers
