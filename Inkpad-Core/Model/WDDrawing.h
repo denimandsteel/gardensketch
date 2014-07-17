@@ -57,6 +57,7 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData);
 @property (nonatomic, assign) BOOL deleted;
 @property (nonatomic, strong) NSUndoManager *undoManager;
 @property (nonatomic, weak) id<WDDocumentProtocol> document;
+@property (nonatomic, strong) NSMutableArray *notes;
 
 @property (nonatomic, assign) float width;
 @property (nonatomic, assign) float height;

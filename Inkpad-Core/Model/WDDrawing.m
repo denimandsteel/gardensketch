@@ -97,6 +97,7 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
 @synthesize deleted = deleted_;
 @synthesize undoManager = undoManager_;
 @synthesize document = document_;
+@synthesize notes = notes_;
 
 #pragma mark - Setup
 
@@ -175,6 +176,9 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
     imageDatas_ = [[NSMutableDictionary alloc] init];
     
     undoManager_ = [[NSUndoManager alloc] init];
+	
+	notes_ = [NSMutableArray arrayWithObjects:@"This is my note!", @"And this one is a much much longer note that may take up a few rows. Wonder what would happen to this, would it fit in a row. Would the row resize to fit this much text? I keep typing this... mhhmm..", @"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their", @"tiny!", @"Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their", @" is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-", nil];
+
     
     [self endSuppressingNotifications];
     
@@ -215,6 +219,7 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
     [coder encodeObject:layers_ forKey:WDLayersKey];
     [coder encodeObject:activeLayer_ forKey:WDActiveLayerKey];
     [coder encodeCGSize:dimensions_ forKey:WDDimensionsKey];
+	[coder encodeObject:notes_ forKey:WDNotesKey];
     
     [coder encodeObject:settings_ forKey:WDSettingsKey];
 }
@@ -227,7 +232,8 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
     dimensions_ = [coder decodeCGSizeForKey:WDDimensionsKey]; 
     imageDatas_ = [coder decodeObjectForKey:WDImageDatasKey];
     settings_ = [coder decodeObjectForKey:WDSettingsKey];
-    
+	notes_ = [coder decodeObjectForKey:WDNotesKey];
+	
     if (!settings_[WDUnits]) {
         settings_[WDUnits] = [[NSUserDefaults standardUserDefaults] objectForKey:WDUnits];
     }
@@ -260,6 +266,8 @@ NSLog(@"Elements in drawing: %lu", (unsigned long)[self allElements].count);
     
     // active layer
     drawing->activeLayer_ = drawing->layers_[[layers_ indexOfObject:activeLayer_]];
+	
+	drawing->notes_ = [notes_ mutableCopy];
     
     [drawing purgeUnreferencedImageDatas];
     
@@ -816,7 +824,7 @@ NSLog(@"Elements in drawing: %lu", (unsigned long)[self allElements].count);
     // Customize archiver here
     [archiver encodeObject:self forKey:WDDrawingKey];
     [archiver encodeObject:[self thumbnailData] forKey:WDThumbnailKey];
-//	[archiver encodeObject:[((WDDocument *)self.document) notes] forKey:WDNotesKey];
+	[archiver encodeObject:self.notes forKey:WDNotesKey];
     
     [archiver finishEncoding];
     
