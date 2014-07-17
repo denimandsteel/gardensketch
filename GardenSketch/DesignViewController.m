@@ -78,6 +78,10 @@
 	[self.treeColorPicker setColors:treeColors];
 	[self.treeColorPicker setDelegate:self];
 	
+	// Set initial stroke color:
+	UIColor *color = self.outlineColorPicker.colors[1];
+	[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
+	
 	[self initTools];
 }
 
