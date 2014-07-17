@@ -44,7 +44,7 @@
 - (void)loadShapes
 {
 	self.shapes = [NSMutableDictionary dictionary];
-	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Grey_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian", @"Deciduous_Tree_Burgundy", @"Deciduous_Tree_Dark_Green", @"Deciduous_Tree_Green", @"Deciduous_Tree_Mustard", @"Deciduous_Tree_Teal", @"Deciduous_Tree_Violet", @"House_No_Lines"];
+	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Grey_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian", @"Deciduous_Tree_Burgundy", @"Deciduous_Tree_Dark_Green", @"Deciduous_Tree_Green", @"Deciduous_Tree_Mustard", @"Deciduous_Tree_Teal", @"Deciduous_Tree_Violet", @"House_No_Lines", @"Coniferous_Dark_Green"];
 	for (NSString *shapeName in shapeNames) {
 		[self loadShape:shapeName];
 	}
@@ -144,8 +144,20 @@
 					break;
 			}
 			break;
-		case kTreeDeciduous:
 		case kTreeConiferous:
+			switch (self.treeColor) {
+				case kBurgundy:
+				case kTreeDarkGreen:
+				case kTreeGreen:
+				case kMustard:
+				case kTeal:
+				case kViolet:
+				default:
+					filename = @"Coniferous_Dark_Green";
+					break;
+			}
+			break;
+		case kTreeDeciduous:
 			switch (self.treeColor) {
 				case kBurgundy:
 					filename = @"Deciduous_Tree_Burgundy";
