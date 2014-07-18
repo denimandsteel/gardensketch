@@ -357,6 +357,7 @@
 		4D9115DE197737BC008B11CC /* NoteCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9115DD197737BC008B11CC /* NoteCellView.xib */; };
 		4D9115E4197838AB008B11CC /* Coniferous_Dark_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D9115E3197838AB008B11CC /* Coniferous_Dark_Green.svg */; };
 		4D9115E719787DFB008B11CC /* GSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115E619787DFB008B11CC /* GSTextView.m */; };
+		4D9115EA1979CD44008B11CC /* NSURL+Equivalence.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115E91979CD44008B11CC /* NSURL+Equivalence.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -906,6 +907,8 @@
 		4D9115E3197838AB008B11CC /* Coniferous_Dark_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Coniferous_Dark_Green.svg; sourceTree = "<group>"; };
 		4D9115E519787DFB008B11CC /* GSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSTextView.h; sourceTree = "<group>"; };
 		4D9115E619787DFB008B11CC /* GSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSTextView.m; sourceTree = "<group>"; };
+		4D9115E81979CD44008B11CC /* NSURL+Equivalence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Equivalence.h"; sourceTree = "<group>"; };
+		4D9115E91979CD44008B11CC /* NSURL+Equivalence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Equivalence.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1191,6 +1194,8 @@
 				4D05DBD6194F7FF1001F19A7 /* UIImage+Additions.m */,
 				4D05DBD7194F7FF1001F19A7 /* UIImage+Resize.h */,
 				4D05DBD8194F7FF1001F19A7 /* UIImage+Resize.m */,
+				4D9115E81979CD44008B11CC /* NSURL+Equivalence.h */,
+				4D9115E91979CD44008B11CC /* NSURL+Equivalence.m */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -2217,6 +2222,7 @@
 				4D53F623196721140097C8E3 /* PropertyShapeButton.m in Sources */,
 				4D05DD95194F8042001F19A7 /* WDActivityManager.m in Sources */,
 				4D05DDAB194F8042001F19A7 /* WDEtchedLine.m in Sources */,
+				4D9115EA1979CD44008B11CC /* NSURL+Equivalence.m in Sources */,
 				4D53F6191965E9E50097C8E3 /* OneFingerRotationGestureRecognizer.m in Sources */,
 				4D05DCE2194F7FF2001F19A7 /* WDStrokeStyle.m in Sources */,
 				4D05DDE4194F80BF001F19A7 /* OCAEntry.m in Sources */,

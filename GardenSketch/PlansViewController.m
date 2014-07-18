@@ -13,6 +13,7 @@
 #import "WDCanvasController.h"
 #import "Constants.h"
 #import "WDToolManager.h"
+#import "NSURL+Equivalence.h"
 
 @interface PlansViewController ()
 
@@ -135,9 +136,16 @@
 
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+	NSLog(@"Did select called!");
 	if (indexPath.row < [collectionView numberOfItemsInSection:0] - 1) {
 		WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:indexPath.row withCompletionHandler:nil];
-		[self.sidebar.canvasController setDocument:document];
+		if ([self.sidebar.canvasController.document.fileURL isEquivalent:document.fileURL]) {
+			// TODO switch to design tab
+			NSLog(@"Should switch to design tab");
+		} else {
+			[self.sidebar.canvasController setDocument:document];
+		}
+		
 	} else {
 		[self createNewDrawing:nil];
 	}

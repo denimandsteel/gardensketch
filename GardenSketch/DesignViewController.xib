@@ -93,7 +93,7 @@
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbP-KG-mCL" customClass="GSButton">
                             <rect key="frame" x="88" y="10" width="60" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Clone">
+                            <state key="normal" title="Copy">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -323,7 +323,7 @@
         <image name="Plant_Grey_Green.png" width="115" height="114"/>
         <image name="Shed.png" width="175" height="175"/>
         <image name="Shrub_Brown.png" width="114" height="98"/>
-        <image name="Tile.png" width="120" height="120"/>
+        <image name="Tile.png" width="125" height="126"/>
         <image name="Tree_Green.png" width="273" height="272"/>
         <image name="enclosed.png" width="115" height="106"/>
         <image name="freehand.png" width="102" height="106"/>

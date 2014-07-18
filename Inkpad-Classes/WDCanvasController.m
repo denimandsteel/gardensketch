@@ -1343,7 +1343,9 @@
 	if (!document) {
 		// TODO: handle this case to clear the canvas and remove the spinning wheel.
 		if (document_ && (document_.documentState != UIDocumentStateClosed)) {
-            [document_ closeWithCompletionHandler:nil];
+            [document_ closeWithCompletionHandler:^(BOOL success) {
+				NSLog(@"Closed!");
+			}];
         }
 		
 		if (drawingController_) {
@@ -1369,7 +1371,9 @@
         [CATransaction flush];
         
         if (document_ && (document_.documentState != UIDocumentStateClosed)) {
-            [document_ closeWithCompletionHandler:nil];
+            [document_ closeWithCompletionHandler:^(BOOL success) {
+				NSLog(@"Closed!");
+			}];
         }
         
         // hide various UI elements
@@ -1397,8 +1401,10 @@
         [self documentStateChanged:nil];
     } else {
         // listen for this document to load
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(documentStateChanged:)
-                                                     name:UIDocumentStateChangedNotification object:document_];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(documentStateChanged:)
+                                                     name:UIDocumentStateChangedNotification
+												   object:document_];
     }
 }
 
