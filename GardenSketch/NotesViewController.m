@@ -10,6 +10,7 @@
 #import "NoteCellView.h"
 #import "WDDrawing.h"
 #import "Constants.h"
+#import "WDDocument.h"
 
 @interface NotesViewController ()
 
@@ -92,6 +93,7 @@
 - (IBAction)addNoteTapped:(id)sender {
 	NSString *anotherNote = @"Another note!";
 	[self.sidebar.canvasController.drawing.notes addObject:anotherNote];
+	[self.sidebar.canvasController.document updateChangeCount:UIDocumentChangeDone];
 	
 	NSUInteger count = self.sidebar.canvasController.drawing.notes.count - 1;
     NSArray *indexPaths = @[[NSIndexPath indexPathForItem:count inSection:0]];
