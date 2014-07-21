@@ -82,6 +82,8 @@
 	NSInteger numberOfPlans = [[WDDrawingManager sharedInstance] numberOfDrawings];
 	
 	if (numberOfPlans > 0) {
+		// TODO: do this only if currently loaded document is the base plan or empty.
+		// in other words! if another plan is selected, do not switch to the last plan for no reason.
 		NSIndexPath *mostRecent = [NSIndexPath indexPathForRow:numberOfPlans-1 inSection:0];
 		[self.collectionView selectItemAtIndexPath:mostRecent animated:YES scrollPosition:UICollectionViewScrollPositionBottom];
 		[self collectionView:self.collectionView didSelectItemAtIndexPath:mostRecent];

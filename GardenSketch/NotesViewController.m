@@ -60,6 +60,7 @@
 	NoteCellView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"NoteCellIdentifier" forIndexPath:indexPath];
 	[cell.bodyLabel setText:self.sidebar.canvasController.drawing.notes[indexPath.row]];
 	cell.delegate = self;
+	[cell.bodyTextView setDelegate:cell];
 	return cell;
 }
 
@@ -67,9 +68,9 @@
 {
 	NSLog(@"Did select!");
 
-	NoteCellView *noteCell = (NoteCellView *)[collectionView cellForItemAtIndexPath:indexPath];
-	
-	[noteCell switchToEditMode];
+//	NoteCellView *noteCell = (NoteCellView *)[collectionView cellForItemAtIndexPath:indexPath];
+//	
+//	[noteCell switchToEditMode];
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -88,7 +89,7 @@
                                               context:nil];
 	
 	// TODO add some margins for the top and the bottom of the note body text.
-	rect.size.height = MAX(rect.size.height, NOTE_CELL_MIN_HEIGHT);
+	rect.size.height = MAX(rect.size.height, NOTE_CELL_MIN_HEIGHT) + 20;
 	rect.size.width = 280;
 	return rect.size;
 }
@@ -125,6 +126,27 @@
 	[self.sidebar.canvasController.document updateChangeCount:UIDocumentChangeDone];
 	
 	[self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
+}
+
+- (void)updateNoteForCell:(id)sender
+{
+	NoteCellView *noteCellView = (NoteCellView *)sender;
+	NSIndexPath *indexPath = [self.collectionView indexPathForCell:noteCellView];
+	NSInteger index = indexPath.row;
+	
+	NSString *updatedNoteBody = noteCellView.bodyLabel.text;
+	
+	[self.sidebar.canvasController.drawing.notes replaceObjectAtIndex:index withObject:updatedNoteBody];
+	[self.sidebar.canvasController.document updateChangeCount:UIDocumentChangeDone];
+}
+
+- (void)willSwitchToEditMode:(id)sender
+{
+	for (NoteCellView *noteCell in self.collectionView.visibleCells) {
+		if (noteCell != sender) {
+			[noteCell switchToViewMode];
+		}
+	}
 }
 
 

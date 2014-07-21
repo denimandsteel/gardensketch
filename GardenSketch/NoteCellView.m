@@ -30,8 +30,6 @@
 
 - (void) switchToEditMode
 {
-	return;
-	[self.bodyTextView setText:nil];
 	[self.bodyTextView setText:self.bodyLabel.text];
 	[self.bodyLabel setHidden:YES];
 	[self.bodyTextView setHidden:NO];
@@ -49,7 +47,16 @@
 }
 
 - (IBAction)editTapped:(id)sender {
+	[self.delegate willSwitchToEditMode:self];
 	[self switchToEditMode];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+	NSLog(@"Did end editing!");
+	
+	[self switchToViewMode];
+	[self.delegate updateNoteForCell:self];
 }
 
 @end

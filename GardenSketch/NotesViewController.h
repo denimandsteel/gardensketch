@@ -11,7 +11,8 @@
 
 @interface NotesViewController : SidebarContentViewController <UICollectionViewDataSource,
 																UICollectionViewDelegate,
-																NoteCellDelegate>
+																NoteCellDelegate,
+																UITextViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;

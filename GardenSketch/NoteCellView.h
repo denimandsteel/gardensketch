@@ -13,6 +13,8 @@
 @protocol NoteCellDelegate <NSObject>
 
 - (void)removeNoteForCell:(id)sender;
+- (void)updateNoteForCell:(id)sender;
+- (void)willSwitchToEditMode:(id)sender;
 
 @end
 
