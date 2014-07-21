@@ -44,4 +44,12 @@
 	[self.bodyTextView setHidden:YES];
 }
 
+- (IBAction)deleteTapped:(id)sender {
+	[self.delegate removeNoteForCell:self];
+}
+
+- (IBAction)editTapped:(id)sender {
+	[self switchToEditMode];
+}
+
 @end

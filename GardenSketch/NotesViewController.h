@@ -7,8 +7,11 @@
 //
 
 #import "SidebarContentViewController.h"
+#import "NoteCellView.h"
 
-@interface NotesViewController : SidebarContentViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface NotesViewController : SidebarContentViewController <UICollectionViewDataSource,
+																UICollectionViewDelegate,
+																NoteCellDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;

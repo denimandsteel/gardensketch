@@ -59,6 +59,7 @@
 {
 	NoteCellView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"NoteCellIdentifier" forIndexPath:indexPath];
 	[cell.bodyLabel setText:self.sidebar.canvasController.drawing.notes[indexPath.row]];
+	cell.delegate = self;
 	return cell;
 }
 
@@ -86,12 +87,21 @@
                                            attributes:attributes
                                               context:nil];
 	
+	// TODO add some margins for the top and the bottom of the note body text.
+	rect.size.height = MAX(rect.size.height, NOTE_CELL_MIN_HEIGHT);
 	rect.size.width = 280;
 	return rect.size;
 }
 
 - (IBAction)addNoteTapped:(id)sender {
-	NSString *anotherNote = @"Another note!";
+	NSDateFormatter *formatter;
+	NSString        *dateString;
+	
+	formatter = [[NSDateFormatter alloc] init];
+	[formatter setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
+	
+	dateString = [formatter stringFromDate:[NSDate date]];
+	NSString *anotherNote = dateString;
 	[self.sidebar.canvasController.drawing.notes addObject:anotherNote];
 	[self.sidebar.canvasController.document updateChangeCount:UIDocumentChangeDone];
 	
@@ -103,6 +113,18 @@
 	NSInteger item = [self collectionView:self.collectionView numberOfItemsInSection:0] - 1;
 	NSIndexPath *lastIndexPath = [NSIndexPath indexPathForItem:item inSection:0];
 	[self.collectionView scrollToItemAtIndexPath:lastIndexPath atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
+}
+
+- (void)removeNoteForCell:(id)sender
+{
+	NoteCellView *noteCellView = (NoteCellView *)sender;
+	NSIndexPath *indexPath = [self.collectionView indexPathForCell:noteCellView];
+	NSInteger index = indexPath.row;
+	
+	[self.sidebar.canvasController.drawing.notes removeObjectAtIndex:index];
+	[self.sidebar.canvasController.document updateChangeCount:UIDocumentChangeDone];
+	
+	[self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
 }
 
 

@@ -10,15 +10,22 @@
 #import "GSLabel.h"
 #import "GSTextView.h"
 
+@protocol NoteCellDelegate <NSObject>
+
+- (void)removeNoteForCell:(id)sender;
+
+@end
+
 @interface NoteCellView : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet GSLabel *bodyLabel;
 @property (weak, nonatomic) IBOutlet GSTextView *bodyTextView;
-
-
+@property (nonatomic, assign) id<NoteCellDelegate> delegate;
 
 - (void) switchToEditMode;
 - (void) switchToViewMode;
 
+- (IBAction)deleteTapped:(id)sender;
+- (IBAction)editTapped:(id)sender;
 
 @end
