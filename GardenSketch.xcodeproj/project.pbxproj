@@ -1144,7 +1144,6 @@
 				4D9115D1197597FB008B11CC /* MoreViewController.m */,
 				4D9115D519773654008B11CC /* NotesViewController.h */,
 				4D9115D619773654008B11CC /* NotesViewController.m */,
-				4D9115D719773654008B11CC /* NotesViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1642,6 +1641,7 @@
 				4D081BE11954B54800F8871C /* ColorPickerViewController.xib */,
 				4D9115D2197597FB008B11CC /* MoreViewController.xib */,
 				4D53F6131965DD110097C8E3 /* NorthViewController.xib */,
+				4D9115D719773654008B11CC /* NotesViewController.xib */,
 				4D9115DD197737BC008B11CC /* NoteCellView.xib */,
 			);
 			name = xibs;

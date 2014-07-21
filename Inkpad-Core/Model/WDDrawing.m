@@ -177,7 +177,7 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
     
     undoManager_ = [[NSUndoManager alloc] init];
 	
-	notes_ = [NSMutableArray arrayWithObjects:@"This is my note!", @"And this one is a much much longer note that may take up a few rows. Wonder what would happen to this, would it fit in a row. Would the row resize to fit this much text? I keep typing this... mhhmm..", @"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their", @"tiny!", @"Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their", @" is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-", nil];
+	notes_ = [NSMutableArray array];
 
     
     [self endSuppressingNotifications];

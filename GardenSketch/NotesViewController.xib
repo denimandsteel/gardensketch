@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotesViewController">
             <connections>
+                <outlet property="addNoteButton" destination="5AH-zu-fzn" id="eBr-oQ-9ZD"/>
                 <outlet property="collectionView" destination="B4c-AL-hRy" id="0Ma-3W-CY5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,6 +22,9 @@
                     <state key="normal" title="Add Note">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="addNoteTapped:" destination="-1" eventType="touchUpInside" id="dfu-MZ-I5M"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b0U-S7-fLP">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>

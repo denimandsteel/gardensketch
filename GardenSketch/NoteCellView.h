@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet GSLabel *bodyLabel;
 @property (weak, nonatomic) IBOutlet GSTextView *bodyTextView;
 
+
+
 - (void) switchToEditMode;
 - (void) switchToViewMode;
 

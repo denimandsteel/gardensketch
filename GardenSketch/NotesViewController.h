@@ -13,6 +13,9 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+@property (weak, nonatomic) IBOutlet UIButton *addNoteButton;
+
+- (IBAction)addNoteTapped:(id)sender;
 
 
 @end

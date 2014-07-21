@@ -34,6 +34,11 @@
 	[self.collectionView registerNib:[UINib nibWithNibName:@"NoteCellView" bundle:nil] forCellWithReuseIdentifier:@"NoteCellIdentifier"];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+	[self.collectionView reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -83,5 +88,20 @@
 	rect.size.width = 280;
 	return rect.size;
 }
+
+- (IBAction)addNoteTapped:(id)sender {
+	NSString *anotherNote = @"Another note!";
+	[self.sidebar.canvasController.drawing.notes addObject:anotherNote];
+	
+	NSUInteger count = self.sidebar.canvasController.drawing.notes.count - 1;
+    NSArray *indexPaths = @[[NSIndexPath indexPathForItem:count inSection:0]];
+    [self.collectionView insertItemsAtIndexPaths:indexPaths];
+	
+	// scroll to the very bottom, so that the add button is visible
+	NSInteger item = [self collectionView:self.collectionView numberOfItemsInSection:0] - 1;
+	NSIndexPath *lastIndexPath = [NSIndexPath indexPathForItem:item inSection:0];
+	[self.collectionView scrollToItemAtIndexPath:lastIndexPath atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
+}
+
 
 @end
