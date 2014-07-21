@@ -26,6 +26,7 @@
 #import "Constants.h"
 #import "WDDrawing.h"
 #import "WDDrawingManager.h"
+#import "WDDocument.h"
 
 const float kMinimumDrawingDimension = 16;
 const float kMaximumDrawingDimension = 16000;
@@ -42,6 +43,7 @@ NSString *WDImageDatasKey = @"WDImageDatasKey";
 NSString *WDSettingsKey = @"WDSettingsKey";
 NSString *WDActiveLayerKey = @"WDActiveLayerKey";
 NSString *WDUnitsKey = @"WDUnitsKey";
+NSString *WDNotesKey = @"WDNotesKey";
 
 // Setting Keys
 NSString *WDSnapToPoints = @"WDSnapToPoints";
@@ -95,6 +97,7 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
 @synthesize deleted = deleted_;
 @synthesize undoManager = undoManager_;
 @synthesize document = document_;
+@synthesize notes = notes_;
 
 #pragma mark - Setup
 
@@ -141,7 +144,6 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
 	if (!isBasePlan) {
 		//TODO: get this by making a copy of the base plan's only layer.
 		WDLayer *baseLayer = [[[WDDrawingManager sharedInstance] basePlanLayer] copy];
-//		WDLayer *baseLayer = [WDLayer layer];
 		baseLayer.drawing = self;
 		baseLayer.name = [self uniqueLayerName];
 		[baseLayer setLocked:YES];
@@ -174,6 +176,9 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
     imageDatas_ = [[NSMutableDictionary alloc] init];
     
     undoManager_ = [[NSUndoManager alloc] init];
+	
+	notes_ = [NSMutableArray array];
+
     
     [self endSuppressingNotifications];
     
@@ -214,6 +219,7 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
     [coder encodeObject:layers_ forKey:WDLayersKey];
     [coder encodeObject:activeLayer_ forKey:WDActiveLayerKey];
     [coder encodeCGSize:dimensions_ forKey:WDDimensionsKey];
+	[coder encodeObject:notes_ forKey:WDNotesKey];
     
     [coder encodeObject:settings_ forKey:WDSettingsKey];
 }
@@ -226,7 +232,8 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
     dimensions_ = [coder decodeCGSizeForKey:WDDimensionsKey]; 
     imageDatas_ = [coder decodeObjectForKey:WDImageDatasKey];
     settings_ = [coder decodeObjectForKey:WDSettingsKey];
-    
+	notes_ = [coder decodeObjectForKey:WDNotesKey];
+	
     if (!settings_[WDUnits]) {
         settings_[WDUnits] = [[NSUserDefaults standardUserDefaults] objectForKey:WDUnits];
     }
@@ -259,6 +266,8 @@ NSLog(@"Elements in drawing: %lu", (unsigned long)[self allElements].count);
     
     // active layer
     drawing->activeLayer_ = drawing->layers_[[layers_ indexOfObject:activeLayer_]];
+	
+	drawing->notes_ = [notes_ mutableCopy];
     
     [drawing purgeUnreferencedImageDatas];
     
@@ -815,6 +824,7 @@ NSLog(@"Elements in drawing: %lu", (unsigned long)[self allElements].count);
     // Customize archiver here
     [archiver encodeObject:self forKey:WDDrawingKey];
     [archiver encodeObject:[self thumbnailData] forKey:WDThumbnailKey];
+	[archiver encodeObject:self.notes forKey:WDNotesKey];
     
     [archiver finishEncoding];
     

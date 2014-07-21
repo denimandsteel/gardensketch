@@ -55,11 +55,13 @@ NSString *WDDropboxWasUnlinkedNotification = @"WDDropboxWasUnlinkedNotification"
 - (BOOL) validFile:(NSURL *)url
 {
     WDDrawing *drawing = nil;
+	NSMutableArray *notes = nil;
     
     @try {
         NSData *data = [NSData dataWithContentsOfURL:url];
         NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
         drawing = [unarchiver decodeObjectForKey:WDDrawingKey];
+		notes = [unarchiver decodeObjectForKey:WDNotesKey];
         [unarchiver finishDecoding];
     } @catch (NSException *exception) {
     } @finally {

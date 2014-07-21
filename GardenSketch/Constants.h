@@ -13,6 +13,8 @@
 
 #define		CG_DEFAULT_CANVAS_SIZE			CGSizeMake(2048, 2048)
 
+#define		NOTE_CELL_MIN_HEIGHT			100.0
+
 #define		GS_COLOR_DARK_GREY				[UIColor colorWithRed:.2 green:.19 blue:.19 alpha:1.0]
 #define		GS_FONT_AVENIR_BODY				[UIFont fontWithName:@"Avenir" size:16.0]
 #define		GS_FONT_AVENIR_ACTION			[UIFont fontWithName:@"Avenir" size:18.0]

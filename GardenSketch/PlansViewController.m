@@ -13,6 +13,7 @@
 #import "WDCanvasController.h"
 #import "Constants.h"
 #import "WDToolManager.h"
+#import "NSURL+Equivalence.h"
 
 @interface PlansViewController ()
 
@@ -81,6 +82,8 @@
 	NSInteger numberOfPlans = [[WDDrawingManager sharedInstance] numberOfDrawings];
 	
 	if (numberOfPlans > 0) {
+		// TODO: do this only if currently loaded document is the base plan or empty.
+		// in other words! if another plan is selected, do not switch to the last plan for no reason.
 		NSIndexPath *mostRecent = [NSIndexPath indexPathForRow:numberOfPlans-1 inSection:0];
 		[self.collectionView selectItemAtIndexPath:mostRecent animated:YES scrollPosition:UICollectionViewScrollPositionBottom];
 		[self collectionView:self.collectionView didSelectItemAtIndexPath:mostRecent];
@@ -135,9 +138,16 @@
 
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+	NSLog(@"Did select called!");
 	if (indexPath.row < [collectionView numberOfItemsInSection:0] - 1) {
 		WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:indexPath.row withCompletionHandler:nil];
-		[self.sidebar.canvasController setDocument:document];
+		if ([self.sidebar.canvasController.document.fileURL isEquivalent:document.fileURL]) {
+			// TODO switch to design tab
+			NSLog(@"Should switch to design tab");
+		} else {
+			[self.sidebar.canvasController setDocument:document];
+		}
+		
 	} else {
 		[self createNewDrawing:nil];
 	}

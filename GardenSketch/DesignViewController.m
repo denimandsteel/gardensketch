@@ -78,12 +78,15 @@
 	[self.treeColorPicker setColors:treeColors];
 	[self.treeColorPicker setDelegate:self];
 	
+	// Set initial stroke color:
+	UIColor *color = self.outlineColorPicker.colors[1];
+	[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
+	
 	[self initTools];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-	NSLog(@"did appear!");
 	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 	[nc addObserver:self
            selector:@selector(selectionChanged:)
@@ -97,6 +100,8 @@
 	
 	WDDocument *currentDocument = self.sidebar.canvasController.document;
 	NSString *planName = currentDocument.displayName;
+	
+	[self.gridButton setSelected:[self.sidebar.canvasController.drawing showGrid]];
 	
 	[self.planNameLabel setText:planName];
 }
@@ -147,7 +152,6 @@
 	
 	// TODO: make sure current document is saved
 	// TODO: make sure the selection view is cleared, selected path points show up in the next plan
-	// TODO: disable next/previous buttons when there's no point
 	
 	WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:planIndex withCompletionHandler:nil];
 	[self.sidebar.canvasController setDocument:document];

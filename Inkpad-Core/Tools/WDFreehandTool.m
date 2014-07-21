@@ -102,6 +102,7 @@ NSString *WDDefaultFreehandTool = @"WDDefaultFreehandTool";
 			} else {
 				smoothPath.fill = [WDColor colorWithWhite:1.0 alpha:0.0];
 				smoothPath.strokeStyle = [[WDStrokeStyle alloc] initWithWidth:1.0 cap:kCGLineCapRound join:kCGLineJoinRound color:[WDColor randomColor] dashPattern:nil startArrow:nil endArrow:nil];
+				[canvas.drawingController setValue:@YES forProperty:WDStrokeVisibleProperty];
 			}
 			
 			smoothPath.strokeStyle = [canvas.drawingController.propertyManager activeStrokeStyle];
