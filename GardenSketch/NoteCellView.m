@@ -33,6 +33,7 @@
 	[self.bodyTextView setText:self.bodyLabel.text];
 	[self.bodyLabel setHidden:YES];
 	[self.bodyTextView setHidden:NO];
+	[self.bodyTextView becomeFirstResponder];
 }
 
 - (void) switchToViewMode

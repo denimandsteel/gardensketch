@@ -358,6 +358,7 @@
 		4D9115E4197838AB008B11CC /* Coniferous_Dark_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D9115E3197838AB008B11CC /* Coniferous_Dark_Green.svg */; };
 		4D9115E719787DFB008B11CC /* GSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115E619787DFB008B11CC /* GSTextView.m */; };
 		4D9115EA1979CD44008B11CC /* NSURL+Equivalence.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115E91979CD44008B11CC /* NSURL+Equivalence.m */; };
+		4D9115EE197ED1D4008B11CC /* GSNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115ED197ED1D4008B11CC /* GSNote.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -909,6 +910,8 @@
 		4D9115E619787DFB008B11CC /* GSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSTextView.m; sourceTree = "<group>"; };
 		4D9115E81979CD44008B11CC /* NSURL+Equivalence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Equivalence.h"; sourceTree = "<group>"; };
 		4D9115E91979CD44008B11CC /* NSURL+Equivalence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Equivalence.m"; sourceTree = "<group>"; };
+		4D9115EC197ED1D4008B11CC /* GSNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSNote.h; sourceTree = "<group>"; };
+		4D9115ED197ED1D4008B11CC /* GSNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSNote.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -977,6 +980,7 @@
 		4D05DAF1194A70C7001F19A7 /* GardenSketch */ = {
 			isa = PBXGroup;
 			children = (
+				4D9115EB197ED1B1008B11CC /* Model */,
 				4D081C05195B482200F8871C /* Components */,
 				4D05DBCA194F7FB4001F19A7 /* Inkpad */,
 				4D05DE04194FC4B5001F19A7 /* xibs */,
@@ -1813,6 +1817,15 @@
 			name = "Coniferous Trees";
 			sourceTree = "<group>";
 		};
+		4D9115EB197ED1B1008B11CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D9115EC197ED1D4008B11CC /* GSNote.h */,
+				4D9115ED197ED1D4008B11CC /* GSNote.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2231,6 +2244,7 @@
 				4D05DCDB194F7FF2001F19A7 /* WDInspectableProperties.m in Sources */,
 				4D05DDA1194F8042001F19A7 /* WDColorBalanceController.m in Sources */,
 				4D05DB3A194A7C94001F19A7 /* M13InfiniteTabBarController.m in Sources */,
+				4D9115EE197ED1D4008B11CC /* GSNote.m in Sources */,
 				4D05DDD4194F8042001F19A7 /* WDUnitsController.m in Sources */,
 				4D05DBC5194F6347001F19A7 /* StructureViewController.m in Sources */,
 				4D05DCCD194F7FF2001F19A7 /* WDBezierNode.m in Sources */,

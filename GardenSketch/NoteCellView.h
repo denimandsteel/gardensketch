@@ -18,10 +18,12 @@
 
 @end
 
-@interface NoteCellView : UICollectionViewCell
+@interface NoteCellView : UICollectionViewCell <UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet GSLabel *bodyLabel;
 @property (weak, nonatomic) IBOutlet GSTextView *bodyTextView;
+@property (weak, nonatomic) IBOutlet UILabel *letterLabel;
+
 @property (nonatomic, assign) id<NoteCellDelegate> delegate;
 
 - (void) switchToEditMode;

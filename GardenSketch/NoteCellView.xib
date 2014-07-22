@@ -62,6 +62,13 @@
                             <action selector="editTapped:" destination="lBK-1J-of6" eventType="touchUpInside" id="RoC-dP-09S"/>
                         </connections>
                     </button>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibd-B8-tD6">
+                        <rect key="frame" x="0.0" y="31" width="28" height="34"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
@@ -83,6 +90,7 @@
             <connections>
                 <outlet property="bodyLabel" destination="c3N-YQ-Mnt" id="41c-XJ-mKv"/>
                 <outlet property="bodyTextView" destination="MBl-W8-ORS" id="G5o-Rf-F7m"/>
+                <outlet property="letterLabel" destination="ibd-B8-tD6" id="7rh-cI-SGf"/>
             </connections>
         </collectionViewCell>
     </objects>
