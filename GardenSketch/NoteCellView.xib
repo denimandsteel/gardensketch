@@ -33,13 +33,13 @@
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ifc-iz-7Zd" userLabel="Delete Button">
-                        <rect key="frame" x="246" y="7" width="32" height="32"/>
+                        <rect key="frame" x="246" y="34" width="32" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="AAD-9C-ppm"/>
                             <constraint firstAttribute="width" constant="32" id="aUn-fL-gYf"/>
                         </constraints>
-                        <inset key="contentEdgeInsets" minX="2" minY="0.0" maxX="2" maxY="0.0"/>
+                        <inset key="contentEdgeInsets" minX="4" minY="2" maxX="4" maxY="2"/>
                         <state key="normal" image="delete.png">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
@@ -47,7 +47,7 @@
                             <action selector="deleteTapped:" destination="lBK-1J-of6" eventType="touchUpInside" id="Oew-5X-M8l"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMY-aD-1OE" userLabel="Edit Button">
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMY-aD-1OE" userLabel="Edit Button">
                         <rect key="frame" x="246" y="59" width="32" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
@@ -62,9 +62,13 @@
                             <action selector="editTapped:" destination="lBK-1J-of6" eventType="touchUpInside" id="RoC-dP-09S"/>
                         </connections>
                     </button>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibd-B8-tD6">
-                        <rect key="frame" x="0.0" y="31" width="28" height="34"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibd-B8-tD6" customClass="GSLabelHead">
+                        <rect key="frame" x="0.0" y="33" width="28" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="28" id="IcA-1S-wv2"/>
+                            <constraint firstAttribute="height" constant="34" id="qc9-gh-ikF"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -75,14 +79,16 @@
             <color key="backgroundColor" red="0.96677564540000005" green="0.96677564540000005" blue="0.96677564540000005" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="AMY-aD-1OE" firstAttribute="leading" secondItem="MBl-W8-ORS" secondAttribute="trailing" constant="8" id="00A-Bt-eAA"/>
+                <constraint firstAttribute="centerY" secondItem="ibd-B8-tD6" secondAttribute="centerY" id="1oY-4s-lRQ"/>
+                <constraint firstAttribute="centerY" secondItem="Ifc-iz-7Zd" secondAttribute="centerY" id="2lR-kt-DmR"/>
+                <constraint firstItem="ibd-B8-tD6" firstAttribute="leading" secondItem="lBK-1J-of6" secondAttribute="leading" id="3uL-zd-VrG"/>
                 <constraint firstAttribute="bottom" secondItem="c3N-YQ-Mnt" secondAttribute="bottom" constant="10" id="FqY-fa-zG2"/>
+                <constraint firstAttribute="bottom" secondItem="AMY-aD-1OE" secondAttribute="bottom" constant="9" id="Hll-FI-oBX"/>
                 <constraint firstAttribute="trailing" secondItem="Ifc-iz-7Zd" secondAttribute="trailing" constant="2" id="RhB-df-yid"/>
                 <constraint firstItem="c3N-YQ-Mnt" firstAttribute="top" secondItem="lBK-1J-of6" secondAttribute="top" constant="10" id="TXM-pT-4js"/>
                 <constraint firstAttribute="bottom" secondItem="MBl-W8-ORS" secondAttribute="bottom" constant="10" id="Xod-8r-J0g"/>
                 <constraint firstAttribute="trailing" secondItem="AMY-aD-1OE" secondAttribute="trailing" constant="2" id="bvq-dV-9Yk"/>
                 <constraint firstItem="c3N-YQ-Mnt" firstAttribute="leading" secondItem="lBK-1J-of6" secondAttribute="leading" constant="28" id="eQ4-sG-fdt"/>
-                <constraint firstItem="AMY-aD-1OE" firstAttribute="top" secondItem="Ifc-iz-7Zd" secondAttribute="bottom" constant="20" id="hR6-wu-jKI"/>
-                <constraint firstItem="Ifc-iz-7Zd" firstAttribute="top" secondItem="lBK-1J-of6" secondAttribute="top" constant="7" id="jVe-n1-XJ1"/>
                 <constraint firstItem="MBl-W8-ORS" firstAttribute="top" secondItem="lBK-1J-of6" secondAttribute="top" constant="10" id="nVX-pH-PAc"/>
                 <constraint firstItem="AMY-aD-1OE" firstAttribute="leading" secondItem="c3N-YQ-Mnt" secondAttribute="trailing" constant="8" id="vvX-XM-jLV"/>
                 <constraint firstItem="MBl-W8-ORS" firstAttribute="leading" secondItem="lBK-1J-of6" secondAttribute="leading" constant="28" id="xOD-9q-SSW"/>

@@ -30,6 +30,7 @@
 
 - (void) switchToEditMode
 {
+	[self.delegate willSwitchToEditMode:self];
 	[self.bodyTextView setText:self.bodyLabel.text];
 	[self.bodyLabel setHidden:YES];
 	[self.bodyTextView setHidden:NO];
@@ -48,7 +49,6 @@
 }
 
 - (IBAction)editTapped:(id)sender {
-	[self.delegate willSwitchToEditMode:self];
 	[self switchToEditMode];
 }
 

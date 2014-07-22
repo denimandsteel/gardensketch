@@ -80,9 +80,9 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 {
 	NSLog(@"Did select!");
 
-//	NoteCellView *noteCell = (NoteCellView *)[collectionView cellForItemAtIndexPath:indexPath];
-//	
-//	[noteCell switchToEditMode];
+	NoteCellView *noteCell = (NoteCellView *)[collectionView cellForItemAtIndexPath:indexPath];
+	
+	[noteCell switchToEditMode];
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath

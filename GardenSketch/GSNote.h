@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GSNote : NSObject
+@interface GSNote : NSObject <NSCoding, NSCopying>
 
 @property (nonatomic, copy) NSString *bodyText;
 @property (nonatomic, assign) NSInteger letterIndex;
