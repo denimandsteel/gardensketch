@@ -18,6 +18,7 @@
 #import "Constants.h"
 #import "StencilManager.h"
 #import "WDInspectableProperties.h"
+#import "WDLayer.h"
 
 @interface DesignViewController ()
 
@@ -104,6 +105,14 @@
 	[self.gridButton setSelected:[self.sidebar.canvasController.drawing showGrid]];
 	
 	[self.planNameLabel setText:planName];
+	
+	WDDrawing *drawing = self.sidebar.canvasController.drawing;
+	WDLayer *planLayer = (WDLayer *)drawing.layers[1];
+	WDLayer *notesLayer = (WDLayer *)drawing.layers[2];
+	[notesLayer setVisible:NO];
+	[planLayer setLocked:NO];
+	
+	[drawing activateLayerAtIndex:1];
 }
 
 - (void)didReceiveMemoryWarning

@@ -11,6 +11,7 @@
 #import "WDDrawing.h"
 #import "Constants.h"
 #import "WDDocument.h"
+#import "WDLayer.h"
 #import "GSNote.h"
 
 NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -44,7 +45,24 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 - (void)viewDidAppear:(BOOL)animated
 {
+	WDDrawing *drawing = self.sidebar.canvasController.drawing;
+	WDLayer *notesLayer = (WDLayer *)drawing.layers[2];
+	WDLayer *planLayer = (WDLayer *)drawing.layers[1];
+	[notesLayer setVisible:YES];
+	[planLayer setLocked:YES];
+	
+	[drawing activateLayerAtIndex:2];
+	
 	[self.collectionView reloadData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	WDDrawing *drawing = self.sidebar.canvasController.drawing;
+	WDLayer *notesLayer = (WDLayer *)drawing.layers[2];
+	[notesLayer setVisible:NO];
+	
+	[drawing activateLayerAtIndex:1];
 }
 
 - (void)didReceiveMemoryWarning
@@ -133,10 +151,6 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		NoteCellView *cell = (NoteCellView *)[self.collectionView cellForItemAtIndexPath:lastIndexPath];
 		[cell switchToEditMode];
 	}];
-		
-	
-	
-	
 }
 
 - (GSNote *)createNoteWithText:(NSString *)text

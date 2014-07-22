@@ -142,7 +142,6 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
 	layers_ = [[NSMutableArray alloc] init];
     
 	if (!isBasePlan) {
-		//TODO: get this by making a copy of the base plan's only layer.
 		WDLayer *baseLayer = [[[WDDrawingManager sharedInstance] basePlanLayer] copy];
 		baseLayer.drawing = self;
 		baseLayer.name = [self uniqueLayerName];
@@ -156,6 +155,16 @@ BOOL WDRenderingMetaDataOutlineOnly(WDRenderingMetaData metaData)
     
     layer.name = [self uniqueLayerName];
     activeLayer_ = layer;
+	
+	// Notes layer
+	if (!isBasePlan) {
+		WDLayer *layer = [WDLayer layer];
+		layer.drawing = self;
+		layer.visible = NO;
+		[layers_ addObject:layer];
+		
+		layer.name = [self uniqueLayerName];
+	}
     
     settings_ = [[NSMutableDictionary alloc] init];
     
