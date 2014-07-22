@@ -13,6 +13,8 @@
 #import "WDDocument.h"
 #import "WDLayer.h"
 #import "GSNote.h"
+#import "WDToolManager.h"
+#import "WDDrawingController.h"
 
 NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -52,6 +54,9 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	[planLayer setLocked:YES];
 	
 	[drawing activateLayerAtIndex:2];
+	
+	// Set selection tool as the default tool:
+	[[WDToolManager sharedInstance] setActiveTool:[WDToolManager sharedInstance].tools.firstObject];
 	
 	[self.collectionView reloadData];
 }
@@ -151,6 +156,8 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		NoteCellView *cell = (NoteCellView *)[self.collectionView cellForItemAtIndexPath:lastIndexPath];
 		[cell switchToEditMode];
 	}];
+	
+	[self addNoteToCanvas:anotherNote];
 }
 
 - (GSNote *)createNoteWithText:(NSString *)text
@@ -284,5 +291,23 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     self.collectionView.scrollIndicatorInsets = contentInsets;
 }
 
+#pragma mark - Methods for handling canvas notes
+
+- (void)addNoteToCanvas:(GSNote *)note
+{
+	WDDrawingController *drawingController = self.sidebar.canvasController.drawingController;
+	[drawingController createTextObjectWithText:[LETTERS substringWithRange:NSMakeRange(note.letterIndex, 1)]];
+}
+
+- (void)removeNoteFromCanvas:(GSNote *)note
+{
+	
+}
+
+- (WDText *)textElementForNote:(GSNote *)note
+{
+	WDText *result = nil;
+	return result;
+}
 
 @end

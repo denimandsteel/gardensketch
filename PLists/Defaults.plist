@@ -21,9 +21,9 @@
 	<key>WDFillModeProperty</key>
 	<integer>1</integer>
 	<key>WDFontNameProperty</key>
-	<string>Helvetica</string>
+	<string>Avenir</string>
 	<key>WDFontSizeProperty</key>
-	<integer>24</integer>
+	<integer>100</integer>
 	<key>WDGridSpacing</key>
 	<integer>32</integer>
 	<key>WDOpacityProperty</key>

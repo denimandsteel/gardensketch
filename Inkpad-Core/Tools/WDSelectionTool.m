@@ -172,7 +172,7 @@
             } else
                 if (result.type == kWDLeftTextKnob || result.type == kWDRightTextKnob) {
                 activeTextHandle_ = result.type;
-                transformingTextKnobs_ = YES;
+//                transformingTextKnobs_ = YES;
                 [(WDText *)element cacheTransformAndWidth];
             }
         }
