@@ -121,12 +121,22 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	
 	NSUInteger count = self.sidebar.canvasController.drawing.notes.count - 1;
     NSArray *indexPaths = @[[NSIndexPath indexPathForItem:count inSection:0]];
-    [self.collectionView insertItemsAtIndexPaths:indexPaths];
+    
+	[self.collectionView performBatchUpdates:^{
+		[self.collectionView insertItemsAtIndexPaths:indexPaths];
+	} completion:^(BOOL finished) {
+		// scroll to the very bottom, so that the add button is visible
+		NSInteger item = [self collectionView:self.collectionView numberOfItemsInSection:0] - 1;
+		NSIndexPath *lastIndexPath = [NSIndexPath indexPathForItem:item inSection:0];
+		[self.collectionView scrollToItemAtIndexPath:lastIndexPath atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
+		
+		NoteCellView *cell = (NoteCellView *)[self.collectionView cellForItemAtIndexPath:lastIndexPath];
+		[cell switchToEditMode];
+	}];
+		
 	
-	// scroll to the very bottom, so that the add button is visible
-	NSInteger item = [self collectionView:self.collectionView numberOfItemsInSection:0] - 1;
-	NSIndexPath *lastIndexPath = [NSIndexPath indexPathForItem:item inSection:0];
-	[self.collectionView scrollToItemAtIndexPath:lastIndexPath atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
+	
+	
 }
 
 - (GSNote *)createNoteWithText:(NSString *)text
@@ -135,27 +145,27 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	[result setBodyText:text];
 	[result setPosition:CGPointMake(0, 0)];
 	
-	NSInteger smallestIndexAvailable = 0;
+//	NSInteger smallestIndexAvailable = 0;
+//	
+//	NSMutableArray *occupiedIndexArray = [NSMutableArray array];
+//	for (GSNote *note in self.sidebar.canvasController.drawing.notes) {
+//		[occupiedIndexArray addObject:@(note.letterIndex)];
+//	}
+//	
+//	NSSortDescriptor *lowestToHighest = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
+//	[occupiedIndexArray sortUsingDescriptors:[NSArray arrayWithObject:lowestToHighest]];
+//	
+//	for (NSNumber *taken in occupiedIndexArray) {
+//		if (taken.intValue == smallestIndexAvailable) {
+//			smallestIndexAvailable++;
+//		} else {
+//			break;
+//		}
+//	}
+//	
+//	result.letterIndex = smallestIndexAvailable;
 	
-	NSMutableArray *occupiedIndexArray = [NSMutableArray array];
-	for (GSNote *note in self.sidebar.canvasController.drawing.notes) {
-		[occupiedIndexArray addObject:@(note.letterIndex)];
-	}
-	
-	NSSortDescriptor *lowestToHighest = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
-	[occupiedIndexArray sortUsingDescriptors:[NSArray arrayWithObject:lowestToHighest]];
-	
-	for (NSNumber *taken in occupiedIndexArray) {
-		if (taken.intValue == smallestIndexAvailable) {
-			smallestIndexAvailable++;
-		} else {
-			break;
-		}
-	}
-	
-	result.letterIndex = smallestIndexAvailable;
-	
-	NSLog(@"smallest index: %lu", smallestIndexAvailable);
+	result.letterIndex = self.sidebar.canvasController.drawing.notes.count;
 	
 	return result;
 }
@@ -166,10 +176,25 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	NSIndexPath *indexPath = [self.collectionView indexPathForCell:noteCellView];
 	NSInteger index = indexPath.row;
 	
-	[self.sidebar.canvasController.drawing.notes removeObjectAtIndex:index];
-	[self.sidebar.canvasController.document updateChangeCount:UIDocumentChangeDone];
+	[self.collectionView performBatchUpdates:^{
+		[self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
+		[self.sidebar.canvasController.drawing.notes removeObjectAtIndex:index];
+	} completion:^(BOOL finished) {
+		NSMutableArray *needUpdate = [NSMutableArray array];
+		NSInteger curIndex = index;
+		
+		for (GSNote *note in self.sidebar.canvasController.drawing.notes) {
+			if (note.letterIndex >= index) {
+				note.letterIndex--;
+				[needUpdate addObject:[NSIndexPath indexPathForItem:curIndex inSection:0]];
+				curIndex++;
+			}
+		}
+		
+		[self.collectionView reloadItemsAtIndexPaths:needUpdate];
+	}];
 	
-	[self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
+	[self.sidebar.canvasController.document updateChangeCount:UIDocumentChangeDone];
 }
 
 - (void)updateNoteForCell:(id)sender
