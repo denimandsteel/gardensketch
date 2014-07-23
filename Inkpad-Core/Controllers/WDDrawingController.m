@@ -1509,9 +1509,16 @@ NSString *WDSelectionChangedNotification = @"WDSelectionChangedNotification";
 {
     WDText *text = [[WDText alloc] init];
     text.text = string;
+	
+	CGFloat drawingSize = MAX(self.drawing.dimensions.width, self.drawing.dimensions.height);
+	
     text.fontName = [propertyManager_ defaultValueForProperty:WDFontNameProperty];
-    text.fontSize = [[propertyManager_ defaultValueForProperty:WDFontSizeProperty] floatValue];
+//    text.fontSize = [[propertyManager_ defaultValueForProperty:WDFontSizeProperty] floatValue];
     
+	// Size the text relative to the drawing dimensions,
+	//	so that they appear the same size in the fitted view of the plan, regardless of the size of the property.
+	text.fontSize = drawingSize / 20;
+	
     CTFontRef fontRef = [[WDFontManager sharedInstance] newFontRefForFont:text.fontName withSize:text.fontSize provideDefault:YES];
     CGSize naturalSize = [string sizeWithCTFont:fontRef constrainedToSize:CGSizeMake(drawing_.dimensions.width, MAXFLOAT)];
     CFRelease(fontRef);
@@ -1523,7 +1530,9 @@ NSString *WDSelectionChangedNotification = @"WDSelectionChangedNotification";
                                                       (drawing_.dimensions.width - naturalSize.height) / 2);
     
     // set this after width, so that the gradient will be set up properly
-    text.fill = [propertyManager_ activeFillStyle];
+//    text.fill = [propertyManager_ activeFillStyle];
+	// Use black color for the notes
+	text.fill = [WDColor blackColor];
     
     if (!text.fill) {
         // make sure the text isn't invisible

@@ -17,7 +17,7 @@
 #import "WDDrawingController.h"
 #import "WDText.h"
 
-NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 @interface NotesViewController ()
 
@@ -210,6 +210,7 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		
 		for (GSNote *note in self.sidebar.canvasController.drawing.notes) {
 			if (note.letterIndex >= index) {
+				[self decreaseTextElementLetterForNote:note];
 				note.letterIndex--;
 				[needUpdate addObject:[NSIndexPath indexPathForItem:curIndex inSection:0]];
 				curIndex++;
@@ -230,8 +231,10 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	
 	NSString *updatedNoteBody = noteCellView.bodyLabel.text;
 	
-	[self.sidebar.canvasController.drawing.notes[index] setBodyText:updatedNoteBody];
-	[self.sidebar.canvasController.document updateChangeCount:UIDocumentChangeDone];
+	if (self.sidebar.canvasController.drawing.notes.count > index) {
+		[self.sidebar.canvasController.drawing.notes[index] setBodyText:updatedNoteBody];
+		[self.sidebar.canvasController.document updateChangeCount:UIDocumentChangeDone];
+	}
 	
 	// to take care of possible height changes on the cell:
 	[self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
@@ -316,6 +319,13 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	} else {
 		NSLog(@"Ooops, text element not found!");
 	}
+}
+
+- (void)decreaseTextElementLetterForNote:(GSNote *)note
+{
+//	WDDrawingController *drawingController = self.sidebar.canvasController.drawingController;
+	WDText *textElement = [self textElementForNote:note];
+	[textElement setText:[LETTERS substringWithRange:NSMakeRange(note.letterIndex - 1, 1)]];
 }
 
 - (WDText *)textElementForNote:(GSNote *)note
