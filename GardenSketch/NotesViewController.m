@@ -15,6 +15,7 @@
 #import "GSNote.h"
 #import "WDToolManager.h"
 #import "WDDrawingController.h"
+#import "WDText.h"
 
 NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -197,6 +198,9 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	NSIndexPath *indexPath = [self.collectionView indexPathForCell:noteCellView];
 	NSInteger index = indexPath.row;
 	
+	GSNote *noteToRemove = [self.sidebar.canvasController.drawing.notes objectAtIndex:index];
+	[self removeNoteFromCanvas:noteToRemove];
+	
 	[self.collectionView performBatchUpdates:^{
 		[self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
 		[self.sidebar.canvasController.drawing.notes removeObjectAtIndex:index];
@@ -301,13 +305,30 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 - (void)removeNoteFromCanvas:(GSNote *)note
 {
+	WDDrawingController *drawingController = self.sidebar.canvasController.drawingController;
+	WDText *textElement = [self textElementForNote:note];
 	
+	if (textElement) {
+		[drawingController selectObject:textElement];
+		[drawingController delete:self];
+		
+		NSLog(@"must remove wdtext: %@", textElement);
+	} else {
+		NSLog(@"Ooops, text element not found!");
+	}
 }
 
 - (WDText *)textElementForNote:(GSNote *)note
 {
-	WDText *result = nil;
-	return result;
+	WDLayer *notesLayer = self.sidebar.canvasController.drawing.layers[2];
+	
+	for (WDText *textElement in notesLayer.elements) {
+		if ([textElement.text isEqualToString:[LETTERS substringWithRange:NSMakeRange(note.letterIndex, 1)]]) {
+			return textElement;
+		}
+	}
+	
+	return nil;
 }
 
 @end
