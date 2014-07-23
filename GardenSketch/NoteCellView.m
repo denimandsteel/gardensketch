@@ -57,9 +57,9 @@
 
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
+	[self switchToViewMode];
 	NSLog(@"Did end editing!");
 	if (!willBeRemoved) {
-		[self switchToViewMode];
 		[self.delegate updateNoteForCell:self];
 	}
 }
