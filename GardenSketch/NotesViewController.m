@@ -312,6 +312,7 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	WDText *textElement = [self textElementForNote:note];
 	
 	if (textElement) {
+		[drawingController selectNone:self];
 		[drawingController selectObject:textElement];
 		[drawingController delete:self];
 		

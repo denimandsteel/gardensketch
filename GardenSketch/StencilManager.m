@@ -48,29 +48,53 @@
 	for (NSString *shapeName in shapeNames) {
 		[self loadShape:shapeName];
 	}
+	
+	NSLog(@"all done!");
 }
 
 - (void)loadShape:(NSString *)shapeName
 {
-	NSURL *url = [[NSBundle mainBundle] URLForResource:shapeName withExtension:@"svg"];
+//	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//	NSString *documentsDirectoryPath = [paths objectAtIndex:0];
+//	NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:[shapeName stringByAppendingPathExtension:@"stencil"]];
 	
-    WDDocument *document = [[WDDocument alloc] initWithFileURL:url];
+	NSString *filePath = [[NSBundle mainBundle] pathForResource:shapeName ofType:@"stencil"];
 	
-	[document openWithCompletionHandler:^(BOOL success) {
-		NSMutableArray *pathArray = [NSMutableArray arrayWithArray:[((WDLayer *)document.drawing.layers[0]) elements]];
-		WDGroup *group = [[WDGroup alloc] init];
-		
-		[group setElements:pathArray];
-		CGPoint center = CGPointMake(CGRectGetMidX(group.bounds), CGRectGetMidY(group.bounds));
-
-		CGAffineTransform translate = CGAffineTransformMakeTranslation(-center.x, -center.y);
-		[group transform:translate];
-		
-		CGAffineTransform scale = CGAffineTransformMakeScale(.1, .1);
-		[group transform:scale];
-		
-		self.shapes[shapeName] = group;
-    }];
+	NSData *data = [NSData dataWithContentsOfFile:filePath];
+	WDGroup *group = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+	self.shapes[shapeName] = group;
+	
+	return;
+//	
+//	NSURL *url = [[NSBundle mainBundle] URLForResource:shapeName withExtension:@"svg"];
+//	
+//    WDDocument *document = [[WDDocument alloc] initWithFileURL:url];
+//	
+//	[document openWithCompletionHandler:^(BOOL success) {
+//		NSLog(@"OPEN!");
+//		NSMutableArray *pathArray = [NSMutableArray arrayWithArray:[((WDLayer *)document.drawing.layers[0]) elements]];
+//		WDGroup *group = [[WDGroup alloc] init];
+//		
+//		[group setElements:pathArray];
+//		CGPoint center = CGPointMake(CGRectGetMidX(group.bounds), CGRectGetMidY(group.bounds));
+//
+//		CGAffineTransform translate = CGAffineTransformMakeTranslation(-center.x, -center.y);
+//		[group transform:translate];
+//		
+//		CGAffineTransform scale = CGAffineTransformMakeScale(.1, .1);
+//		[group transform:scale];
+//		
+//		self.shapes[shapeName] = group;
+//		
+//		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//		NSString *documentsDirectoryPath = [paths objectAtIndex:0];
+//		NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:[shapeName stringByAppendingPathExtension:@"stencil"]];
+//		[NSKeyedArchiver archiveRootObject:group toFile:filePath];
+//		
+//		[document closeWithCompletionHandler:^(BOOL success) {
+//			NSLog(@"CLOSE!");
+//		}];
+//    }];
 }
 
 - (WDGroup *)shapeForType:(ShapeType)type
