@@ -39,6 +39,8 @@
 {
 	[self setBackgroundColor:colors.firstObject];
 	_colors = colors;
+	colorController = nil;
+	popover_ = nil;
 }
 
 - (void) showColors:(id)sender

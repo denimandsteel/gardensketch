@@ -26,13 +26,20 @@ static NSString *CellIdentifier = @"colorCell";
     return self;
 }
 
--(id)initWithColors:(NSArray *)colors
+- (id)initWithColors:(NSArray *)colors
 {
 	self = [super init];
 	if (self) {
 		self.colors = colors;
 	}
 	return self;
+}
+
+- (void)setColors:(NSArray *)colors
+{
+	_colors = colors;
+	[self setPreferredContentSize:CGSizeMake(200, colors.count * 40 + 10)];
+	[self.tableView reloadData];
 }
 
 - (void)viewDidLoad

@@ -79,7 +79,7 @@
 	[self.colorPicker setDelegate:self];
 	
 	// Set initial stroke color:
-	UIColor *color = self.colorPicker.colors[1];
+	UIColor *color = self.colorPicker.colors[0];
 	[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
 	
 	[self initTools];
@@ -226,6 +226,7 @@
 	
 	WDTool *select = nil;
 	WDTool *freehand = nil;
+	WDTool *line = nil;
 	WDTool *enclosed = nil;
 	WDTool *plant = nil;
 	WDTool *shrub = nil;
@@ -280,7 +281,10 @@
 			
 		} else if ([tool isKindOfClass:[WDSelectionTool class]]) {
 			select = tool;
+		} else if ([tool isKindOfClass:[WDShapeTool class]]) {
+			line = tool;
 		}
+		
 	}
 	
 	self.selectButton.tool = select;
@@ -289,7 +293,7 @@
 	self.freehandButton.tool = freehand;
 	[self.freehandButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 	
-	self.straightLineButton.tool = freehand;
+	self.straightLineButton.tool = line;
 	[self.straightLineButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 	
 	self.enclosedButton.tool = enclosed;

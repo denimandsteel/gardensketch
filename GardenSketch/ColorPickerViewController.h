@@ -17,7 +17,7 @@
 @interface ColorPickerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, weak) NSArray *colors;
+@property (nonatomic, strong) NSArray *colors;
 @property (nonatomic, assign) id<ColorPickerPopoverDelegate> delegate;
 
 -(id)initWithColors:(NSArray *)colors;

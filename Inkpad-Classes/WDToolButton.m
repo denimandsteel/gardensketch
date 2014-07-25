@@ -223,7 +223,7 @@
 - (void) doubleTapped:(id)sender
 {
 	[(WDStencilTool *)self.tool setStaysOn:YES];
-	[WDToolManager sharedInstance].activeTool = self.tool;
+	[[WDToolManager sharedInstance] setActiveTool:self.tool];
 }
 
 - (void) setTools:(NSArray *)tools
