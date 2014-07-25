@@ -255,12 +255,12 @@
                     </subviews>
                     <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aOi-Oh-tMw" userLabel="Structures View">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aOi-Oh-tMw" userLabel="Structures View">
                     <rect key="frame" x="0.0" y="175" width="320" height="478"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3j-8E-AlP" customClass="WDToolButton">
-                            <rect key="frame" x="39" y="37" width="44" height="44"/>
+                            <rect key="frame" x="39" y="47" width="44" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <state key="normal" title="Driveway" image="Tile.png"/>
@@ -278,19 +278,19 @@
                             <state key="normal" image="Shed.png"/>
                         </button>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALE-07-wQP" customClass="GSLabel">
-                            <rect key="frame" x="20" y="89" width="82" height="21"/>
+                            <rect key="frame" x="20" y="99" width="82" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHh-bW-t8b" userLabel="Button - Water feature" customClass="WDToolButton">
-                            <rect key="frame" x="149" y="37" width="43" height="44"/>
+                            <rect key="frame" x="138" y="25" width="65" height="66"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="oval.png"/>
+                            <state key="normal" image="Water_Feature.png"/>
                         </button>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Water Feature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcQ-cl-MWe" customClass="GSLabel">
-                            <rect key="frame" x="105" y="89" width="130" height="21"/>
+                            <rect key="frame" x="105" y="99" width="130" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
@@ -367,12 +367,12 @@
         <image name="Shrub_Brown.png" width="114" height="98"/>
         <image name="Tile.png" width="125" height="126"/>
         <image name="Tree_Green.png" width="273" height="272"/>
+        <image name="Water_Feature.png" width="251" height="251"/>
         <image name="enclosed.png" width="115" height="106"/>
         <image name="freehand.png" width="102" height="106"/>
         <image name="grid-active.png" width="256" height="256"/>
         <image name="grid-inactive.png" width="256" height="256"/>
         <image name="line.png" width="25" height="25"/>
-        <image name="oval.png" width="25" height="25"/>
         <image name="select-icon.png" width="30" height="30"/>
     </resources>
 </document>

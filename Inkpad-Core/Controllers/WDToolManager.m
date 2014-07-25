@@ -126,6 +126,7 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 		self.sidewalk = sidewalk;
 		self.gazebo = gazebo;
 		self.shed = shed;
+		self.waterFeature = waterFeature;
     }
     
     return tools_;

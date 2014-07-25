@@ -237,6 +237,7 @@
 	WDTool *sidewalk = nil;
 	WDTool *gazebo = nil;
 	WDTool *shed = nil;
+	WDTool *waterFeature = nil;
 	
 	for (WDTool *tool in [WDToolManager sharedInstance].tools) {
 		if ([tool isKindOfClass:[WDFreehandTool class]]) {
@@ -274,6 +275,9 @@
 					break;
 				case kShed:
 					shed = tool;
+					break;
+				case kWaterFeature:
+					waterFeature = tool;
 					break;
 				default:
 					NSLog(@"hmm.. weird");
@@ -325,6 +329,9 @@
 	
 	self.shedButton.tool = shed;
 	[self.shedButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	self.waterFeatureButton.tool = waterFeature;
+	[self.waterFeatureButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void) selectionChanged:(NSNotification *)aNotification

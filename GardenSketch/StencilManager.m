@@ -48,7 +48,7 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 {
 	self.shapes = [NSMutableDictionary dictionary];
 	// TODO: move this into a plist
-	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Grey_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian", @"Deciduous_Tree_Burgundy", @"Deciduous_Tree_Dark_Green", @"Deciduous_Tree_Green", @"Deciduous_Tree_Mustard", @"Deciduous_Tree_Teal", @"Deciduous_Tree_Violet", @"House_No_Lines", @"Coniferous_Dark_Green"];
+	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Grey_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian", @"Deciduous_Tree_Burgundy", @"Deciduous_Tree_Dark_Green", @"Deciduous_Tree_Green", @"Deciduous_Tree_Mustard", @"Deciduous_Tree_Teal", @"Deciduous_Tree_Violet", @"House_No_Lines", @"Coniferous_Burgundy", @"Coniferous_DarkGreen", @"Coniferous_Green", @"Coniferous_Mustard", @"Coniferous_Teal", @"Coniferous_Violet", @"Water_Feature"];
 	for (NSString *shapeName in shapeNames) {
 		[self loadShape:shapeName];
 	}
@@ -56,17 +56,18 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 
 - (void)loadShape:(NSString *)shapeName
 {
-//	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//	NSString *documentsDirectoryPath = [paths objectAtIndex:0];
-//	NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:[shapeName stringByAppendingPathExtension:@"stencil"]];
 	
 	NSString *filePath = [[NSBundle mainBundle] pathForResource:shapeName ofType:@"stencil"];
 	
 	NSData *data = [NSData dataWithContentsOfFile:filePath];
 	WDGroup *group = [NSKeyedUnarchiver unarchiveObjectWithData:data];
 	self.shapes[shapeName] = group;
-	
+
 	return;
+	
+//	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//	NSString *documentsDirectoryPath = [paths objectAtIndex:0];
+//	NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:[shapeName stringByAppendingPathExtension:@"svg"]];
 //	
 //	NSURL *url = [[NSBundle mainBundle] URLForResource:shapeName withExtension:@"svg"];
 //	
@@ -97,6 +98,7 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 //			NSLog(@"CLOSE!");
 //		}];
 //    }];
+
 }
 
 - (void)setActiveShapeType:(ShapeType)activeShapeType
@@ -179,13 +181,25 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 		case kTreeConiferous:
 			switch (self.treeColor) {
 				case kBurgundy:
+					filename = @"Coniferous_Burgundy";
+					break;
 				case kTreeDarkGreen:
+					filename = @"Coniferous_DarkGreen";
+					break;
 				case kTreeGreen:
+					filename = @"Coniferous_Green";
+					break;
 				case kMustard:
+					filename = @"Coniferous_Mustard";
+					break;
 				case kTeal:
+					filename = @"Coniferous_Teal";
+					break;
 				case kViolet:
+					filename = @"Coniferous_Violet";
+					break;
 				default:
-					filename = @"Coniferous_Dark_Green";
+					filename = @"Coniferous_DarkGreen";
 					break;
 			}
 			break;
@@ -225,15 +239,15 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 		case kHouse:
 			filename = @"House_No_Lines";
 			break;
+		case kWaterFeature:
+			filename = @"Water_Feature";
+			break;
 		default:
 			break;
 	}
 	
 	// 2. Scale it
 	switch (type) {
-		case kPlant:
-			scale = .5;
-			break;
 		case kSidewalk:
 			scale = 1.1;
 			break;
@@ -242,6 +256,9 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 			break;
 		case kShed:
 			scale = 3.0;
+			break;
+		case kWaterFeature:
+			scale = 2.5;
 			break;
 		case kHedge:
 			scale = 1.4;
