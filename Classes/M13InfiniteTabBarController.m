@@ -188,7 +188,7 @@
     [super viewWillAppear:animated];
     [_selectedViewController viewWillAppear:animated];
     
-    [_infiniteTabBar rotateItemsToOrientation:[UIDevice currentDevice].orientation];
+//    [_infiniteTabBar rotateItemsToOrientation:[UIDevice currentDevice].orientation];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

@@ -41,9 +41,7 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 - (NSString *) iconName
 {
 	switch (self.type) {
-		case kPlantBig:
-			return @"Plant_Grey_Green.png";
-		case kPlantSmall:
+		case kPlant:
 			return @"Plant_Grey_Green.png";
 			break;
 		case kShrub:
@@ -90,6 +88,7 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 
 - (void) activated
 {
+	[[StencilManager sharedInstance] setActiveShapeType:self.type];
 }
 
 - (void) beginWithEvent:(WDEvent *)theEvent inCanvas:(WDCanvas *)canvas

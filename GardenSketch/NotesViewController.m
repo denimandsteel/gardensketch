@@ -49,12 +49,15 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 - (void)viewDidAppear:(BOOL)animated
 {
 	WDDrawing *drawing = self.sidebar.canvasController.drawing;
-	WDLayer *notesLayer = (WDLayer *)drawing.layers[2];
-	WDLayer *planLayer = (WDLayer *)drawing.layers[1];
-	[notesLayer setVisible:YES];
-	[planLayer setLocked:YES];
 	
-	[drawing activateLayerAtIndex:2];
+	if (drawing.layers.count > 2) {
+		WDLayer *notesLayer = (WDLayer *)drawing.layers[2];
+		[notesLayer setVisible:YES];
+		[drawing activateLayerAtIndex:2];
+	}
+	
+	WDLayer *planLayer = (WDLayer *)drawing.layers[1];
+	[planLayer setLocked:YES];
 	
 	// Set selection tool as the default tool:
 	[[WDToolManager sharedInstance] setActiveTool:[WDToolManager sharedInstance].tools.firstObject];
@@ -166,26 +169,6 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	GSNote * result = [[GSNote alloc] init];
 	[result setBodyText:text];
 	[result setPosition:CGPointMake(0, 0)];
-	
-//	NSInteger smallestIndexAvailable = 0;
-//	
-//	NSMutableArray *occupiedIndexArray = [NSMutableArray array];
-//	for (GSNote *note in self.sidebar.canvasController.drawing.notes) {
-//		[occupiedIndexArray addObject:@(note.letterIndex)];
-//	}
-//	
-//	NSSortDescriptor *lowestToHighest = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
-//	[occupiedIndexArray sortUsingDescriptors:[NSArray arrayWithObject:lowestToHighest]];
-//	
-//	for (NSNumber *taken in occupiedIndexArray) {
-//		if (taken.intValue == smallestIndexAvailable) {
-//			smallestIndexAvailable++;
-//		} else {
-//			break;
-//		}
-//	}
-//	
-//	result.letterIndex = smallestIndexAvailable;
 	
 	result.letterIndex = self.sidebar.canvasController.drawing.notes.count;
 	
@@ -315,8 +298,6 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 		[drawingController selectNone:self];
 		[drawingController selectObject:textElement];
 		[drawingController delete:self];
-		
-		NSLog(@"must remove wdtext: %@", textElement);
 	} else {
 		NSLog(@"Ooops, text element not found!");
 	}

@@ -12,6 +12,9 @@
 #import "WDCompoundPath.h"
 #import "WDInspectableProperties.h"
 
+// notifications
+NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
+
 @implementation StencilManager
 
 + (StencilManager *)sharedInstance
@@ -44,12 +47,11 @@
 - (void)loadShapes
 {
 	self.shapes = [NSMutableDictionary dictionary];
+	// TODO: move this into a plist
 	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Grey_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian", @"Deciduous_Tree_Burgundy", @"Deciduous_Tree_Dark_Green", @"Deciduous_Tree_Green", @"Deciduous_Tree_Mustard", @"Deciduous_Tree_Teal", @"Deciduous_Tree_Violet", @"House_No_Lines", @"Coniferous_Dark_Green"];
 	for (NSString *shapeName in shapeNames) {
 		[self loadShape:shapeName];
 	}
-	
-	NSLog(@"all done!");
 }
 
 - (void)loadShape:(NSString *)shapeName
@@ -97,6 +99,13 @@
 //    }];
 }
 
+- (void)setActiveShapeType:(ShapeType)activeShapeType
+{
+	_activeShapeType = activeShapeType;
+	NSDictionary *userInfo = @{@"shapeType": @(activeShapeType)};
+    [[NSNotificationCenter defaultCenter] postNotificationName:WDStencilShapeChanged object:self userInfo:userInfo];
+}
+
 - (WDGroup *)shapeForType:(ShapeType)type
 {
 	NSString *filename = @"";
@@ -104,8 +113,7 @@
 	
 	// 1. Pick the right shape
 	switch (type) {
-		case kPlantBig:
-		case kPlantSmall:
+		case kPlant:
 			switch (self.plantColor) {
 				case kDarkGreen:
 					filename = @"Plant_Dark_Green";
@@ -223,7 +231,7 @@
 	
 	// 2. Scale it
 	switch (type) {
-		case kPlantSmall:
+		case kPlant:
 			scale = .5;
 			break;
 		case kSidewalk:
@@ -256,6 +264,16 @@
 	[result transform:transform];
 	
 	return result;
+}
+
+- (void)setSizeForActiveShape:(ShapeSize)size
+{
+	self.shapeSize[@(self.activeShapeType)] = @(size);
+}
+
+- (ShapeSize)sizeForActiveShape
+{
+	return (ShapeSize)[self.shapeSize[@(self.activeShapeType)] integerValue];
 }
 
 @end

@@ -12,8 +12,7 @@
 
 typedef enum {
 	kHouse,
-    kPlantBig,
-	kPlantSmall,
+    kPlant,
 	kHedge,
     kShrub,
 	kTreeDeciduous,
@@ -21,8 +20,15 @@ typedef enum {
     kDriveway,
 	kSidewalk,
 	kShed,
+	kWaterFeature,
 	kGazebo
 } ShapeType;
+
+typedef enum {
+    kRedOutline = 0,
+	kDarkGreyOutline,
+    kLightGreyOutline
+} OutlineColor;
 
 typedef enum {
     kDarkGreen = 0,
@@ -50,15 +56,32 @@ typedef enum {
     kViolet
 } TreeColor;
 
+typedef enum {
+	kSmall = 0,
+	kMedium,
+	kBig
+} ShapeSize;
+
+
 @interface StencilManager : NSObject
 
 + (StencilManager *)sharedInstance;
 
 @property (nonatomic, strong) NSMutableDictionary *shapes;
+
+@property (nonatomic, assign) ShapeType activeShapeType;
+
 @property (nonatomic, assign) PlantColor plantColor;
 @property (nonatomic, assign) ShrubColor shrubColor;
 @property (nonatomic, assign) TreeColor treeColor;
+@property (nonatomic, assign) OutlineColor outlineColor;
+
+@property (nonatomic, strong) NSMutableDictionary *shapeSize;
+@property (nonatomic, strong) NSMutableDictionary *shapeColor;
 
 - (WDGroup *)shapeForType:(ShapeType)type;
+- (void)setSizeForActiveShape:(ShapeSize)size;
+
+extern NSString *WDStencilShapeChanged;
 
 @end
