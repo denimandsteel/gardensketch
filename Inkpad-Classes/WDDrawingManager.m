@@ -179,11 +179,7 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
     // save the accurate file list
     [self saveDrawingOrder_];
 	
-	
-	// initialize the base plan layer and size
-	[self initBaseLayer];
-    
-    return self;
+	return self;
 }
 
 - (void)initBaseLayer
@@ -312,6 +308,10 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
         if (shouldClose) {
             [document closeWithCompletionHandler:nil];
         }
+		if (isBasePlan) {
+			// initialize the base plan layer and size
+			[self initBaseLayer];
+		}
     }];
 
     return document;
@@ -404,6 +404,12 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 				completionHandler(self.baseDocument);
 			}
 		}];
+	}
+	
+	if (self.baseDocument.documentState == UIDocumentStateNormal) {
+		if (completionHandler) {
+			completionHandler(self.baseDocument);
+		}
 	}
 	
 	return self.baseDocument;
@@ -590,7 +596,7 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 {
     NSFileManager   *fm = [NSFileManager defaultManager];
     BOOL createBasePlan = NO;
-    
+	
     if (![fm fileExistsAtPath:[WDDrawingManager drawingPath]]) {
         // assume this is the first time we've been run... copy over the sample drawings
         createBasePlan = YES;
@@ -600,7 +606,10 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
     
     if (createBasePlan) {
 		[self createBasePlanDrawingWithSize:CGSizeMake(2048, 2048) andUnits:@"Centimeters"];
-    }
+    } else {
+		// initialize the base plan layer and size
+		[self initBaseLayer];
+	}
 }
 
 - (void) saveDrawingOrder_

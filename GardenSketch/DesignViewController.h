@@ -20,12 +20,14 @@
 @property (weak, nonatomic) IBOutlet WDToolButton *selectButton;
 @property (weak, nonatomic) IBOutlet UIButton *gridButton;
 
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *sizeButtons;
+@property (weak, nonatomic) IBOutlet ColorPickerButton *colorPicker;
 
 @property (weak, nonatomic) IBOutlet WDToolButton *freehandButton;
+@property (weak, nonatomic) IBOutlet WDToolButton *straightLineButton;
 @property (weak, nonatomic) IBOutlet WDToolButton *enclosedButton;
 
-@property (weak, nonatomic) IBOutlet WDToolButton *bigPlantButton;
-@property (weak, nonatomic) IBOutlet WDToolButton *smallPlantButton;
+@property (weak, nonatomic) IBOutlet WDToolButton *plantButton;
 
 @property (weak, nonatomic) IBOutlet WDToolButton *shrubButton;
 @property (weak, nonatomic) IBOutlet WDToolButton *verticalHedgeButton;
@@ -35,13 +37,9 @@
 @property (weak, nonatomic) IBOutlet WDToolButton *coniferousTreeButton;
 
 @property (weak, nonatomic) IBOutlet WDToolButton *tileButton;
+@property (weak, nonatomic) IBOutlet WDToolButton *waterFeatureButton;
 @property (weak, nonatomic) IBOutlet WDToolButton *gazeboButton;
 @property (weak, nonatomic) IBOutlet WDToolButton *shedButton;
-
-@property (weak, nonatomic) IBOutlet ColorPickerButton *outlineColorPicker;
-@property (weak, nonatomic) IBOutlet ColorPickerButton *plantColorPicker;
-@property (weak, nonatomic) IBOutlet ColorPickerButton *shrubColorPicker;
-@property (weak, nonatomic) IBOutlet ColorPickerButton *treeColorPicker;
 
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet UIButton *cloneButton;
@@ -56,6 +54,7 @@
 
 - (IBAction)changePlan:(id)sender;
 - (IBAction)colorPickerTapped:(id)sender;
+- (IBAction)sizeButtonTapped:(id)sender;
 
 - (IBAction)deleteTapped:(id)sender;
 - (IBAction)cloneTapped:(id)sender;

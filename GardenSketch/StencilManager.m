@@ -12,6 +12,9 @@
 #import "WDCompoundPath.h"
 #import "WDInspectableProperties.h"
 
+// notifications
+NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
+
 @implementation StencilManager
 
 + (StencilManager *)sharedInstance
@@ -44,7 +47,8 @@
 - (void)loadShapes
 {
 	self.shapes = [NSMutableDictionary dictionary];
-	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Grey_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian", @"Deciduous_Tree_Burgundy", @"Deciduous_Tree_Dark_Green", @"Deciduous_Tree_Green", @"Deciduous_Tree_Mustard", @"Deciduous_Tree_Teal", @"Deciduous_Tree_Violet", @"House_No_Lines", @"Coniferous_Dark_Green"];
+	// TODO: move this into a plist
+	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Grey_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian", @"Deciduous_Tree_Burgundy", @"Deciduous_Tree_Dark_Green", @"Deciduous_Tree_Green", @"Deciduous_Tree_Mustard", @"Deciduous_Tree_Teal", @"Deciduous_Tree_Violet", @"House_No_Lines", @"Coniferous_Burgundy", @"Coniferous_DarkGreen", @"Coniferous_Green", @"Coniferous_Mustard", @"Coniferous_Teal", @"Coniferous_Violet", @"Water_Feature"];
 	for (NSString *shapeName in shapeNames) {
 		[self loadShape:shapeName];
 	}
@@ -52,25 +56,56 @@
 
 - (void)loadShape:(NSString *)shapeName
 {
-	NSURL *url = [[NSBundle mainBundle] URLForResource:shapeName withExtension:@"svg"];
 	
-    WDDocument *document = [[WDDocument alloc] initWithFileURL:url];
+	NSString *filePath = [[NSBundle mainBundle] pathForResource:shapeName ofType:@"stencil"];
 	
-	[document openWithCompletionHandler:^(BOOL success) {
-		NSMutableArray *pathArray = [NSMutableArray arrayWithArray:[((WDLayer *)document.drawing.layers[0]) elements]];
-		WDGroup *group = [[WDGroup alloc] init];
-		
-		[group setElements:pathArray];
-		CGPoint center = CGPointMake(CGRectGetMidX(group.bounds), CGRectGetMidY(group.bounds));
+	NSData *data = [NSData dataWithContentsOfFile:filePath];
+	WDGroup *group = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+	self.shapes[shapeName] = group;
 
-		CGAffineTransform translate = CGAffineTransformMakeTranslation(-center.x, -center.y);
-		[group transform:translate];
-		
-		CGAffineTransform scale = CGAffineTransformMakeScale(.1, .1);
-		[group transform:scale];
-		
-		self.shapes[shapeName] = group;
-    }];
+	return;
+	
+//	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//	NSString *documentsDirectoryPath = [paths objectAtIndex:0];
+//	NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:[shapeName stringByAppendingPathExtension:@"svg"]];
+//	
+//	NSURL *url = [[NSBundle mainBundle] URLForResource:shapeName withExtension:@"svg"];
+//	
+//    WDDocument *document = [[WDDocument alloc] initWithFileURL:url];
+//	
+//	[document openWithCompletionHandler:^(BOOL success) {
+//		NSLog(@"OPEN!");
+//		NSMutableArray *pathArray = [NSMutableArray arrayWithArray:[((WDLayer *)document.drawing.layers[0]) elements]];
+//		WDGroup *group = [[WDGroup alloc] init];
+//		
+//		[group setElements:pathArray];
+//		CGPoint center = CGPointMake(CGRectGetMidX(group.bounds), CGRectGetMidY(group.bounds));
+//
+//		CGAffineTransform translate = CGAffineTransformMakeTranslation(-center.x, -center.y);
+//		[group transform:translate];
+//		
+//		CGAffineTransform scale = CGAffineTransformMakeScale(.1, .1);
+//		[group transform:scale];
+//		
+//		self.shapes[shapeName] = group;
+//		
+//		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//		NSString *documentsDirectoryPath = [paths objectAtIndex:0];
+//		NSString *filePath = [documentsDirectoryPath stringByAppendingPathComponent:[shapeName stringByAppendingPathExtension:@"stencil"]];
+//		[NSKeyedArchiver archiveRootObject:group toFile:filePath];
+//		
+//		[document closeWithCompletionHandler:^(BOOL success) {
+//			NSLog(@"CLOSE!");
+//		}];
+//    }];
+
+}
+
+- (void)setActiveShapeType:(ShapeType)activeShapeType
+{
+	_activeShapeType = activeShapeType;
+	NSDictionary *userInfo = @{@"shapeType": @(activeShapeType)};
+    [[NSNotificationCenter defaultCenter] postNotificationName:WDStencilShapeChanged object:self userInfo:userInfo];
 }
 
 - (WDGroup *)shapeForType:(ShapeType)type
@@ -80,8 +115,7 @@
 	
 	// 1. Pick the right shape
 	switch (type) {
-		case kPlantBig:
-		case kPlantSmall:
+		case kPlant:
 			switch (self.plantColor) {
 				case kDarkGreen:
 					filename = @"Plant_Dark_Green";
@@ -147,13 +181,25 @@
 		case kTreeConiferous:
 			switch (self.treeColor) {
 				case kBurgundy:
+					filename = @"Coniferous_Burgundy";
+					break;
 				case kTreeDarkGreen:
+					filename = @"Coniferous_DarkGreen";
+					break;
 				case kTreeGreen:
+					filename = @"Coniferous_Green";
+					break;
 				case kMustard:
+					filename = @"Coniferous_Mustard";
+					break;
 				case kTeal:
+					filename = @"Coniferous_Teal";
+					break;
 				case kViolet:
+					filename = @"Coniferous_Violet";
+					break;
 				default:
-					filename = @"Coniferous_Dark_Green";
+					filename = @"Coniferous_DarkGreen";
 					break;
 			}
 			break;
@@ -193,15 +239,15 @@
 		case kHouse:
 			filename = @"House_No_Lines";
 			break;
+		case kWaterFeature:
+			filename = @"Water_Feature";
+			break;
 		default:
 			break;
 	}
 	
 	// 2. Scale it
 	switch (type) {
-		case kPlantSmall:
-			scale = .5;
-			break;
 		case kSidewalk:
 			scale = 1.1;
 			break;
@@ -210,6 +256,9 @@
 			break;
 		case kShed:
 			scale = 3.0;
+			break;
+		case kWaterFeature:
+			scale = 2.5;
 			break;
 		case kHedge:
 			scale = 1.4;
@@ -232,6 +281,16 @@
 	[result transform:transform];
 	
 	return result;
+}
+
+- (void)setSizeForActiveShape:(ShapeSize)size
+{
+	self.shapeSize[@(self.activeShapeType)] = @(size);
+}
+
+- (ShapeSize)sizeForActiveShape
+{
+	return (ShapeSize)[self.shapeSize[@(self.activeShapeType)] integerValue];
 }
 
 @end

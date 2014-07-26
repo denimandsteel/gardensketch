@@ -18,12 +18,19 @@
 #import "Constants.h"
 #import "StencilManager.h"
 #import "WDInspectableProperties.h"
+#import "WDLayer.h"
 
 @interface DesignViewController ()
 
 @end
 
 @implementation DesignViewController
+{
+	NSArray *outlineColors;
+	NSArray *plantColors;
+	NSArray *shrubColors;
+	NSArray *treeColors;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,47 +46,40 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	
-	
-	
 	[[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(drawingChanged:)
                                                  name:UIDocumentStateChangedNotification
                                                object:nil];
 	
-	NSArray *outlineColors = @[GS_COLOR_STROKE_RED,
+	outlineColors = @[GS_COLOR_STROKE_RED,
 							   GS_COLOR_STROKE_DARK_GREY,
 							   GS_COLOR_STROKE_LIGHT_GREY];
-	[self.outlineColorPicker setColors:outlineColors];
-	[self.outlineColorPicker setDelegate:self];
 	
-	NSArray *plantColors = @[GS_COLOR_PLANT_DARK_GREEN,
+	plantColors = @[GS_COLOR_PLANT_DARK_GREEN,
 							 GS_COLOR_PLANT_GOLD,
 							 GS_COLOR_PLANT_GREEN,
 							 GS_COLOR_PLANT_GREY_GREEN,
 							 GS_COLOR_PLANT_INDIGO,
 							 GS_COLOR_PLANT_LIGHT_GREEN,
 							 GS_COLOR_PLANT_LIGHT_PINK];
-	[self.plantColorPicker setColors:plantColors];
-	[self.plantColorPicker setDelegate:self];
 	
-	NSArray *shrubColors = @[GS_COLOR_SHRUB_BROWN,
+	shrubColors = @[GS_COLOR_SHRUB_BROWN,
 							 GS_COLOR_SHRUB_GREEN,
 							 GS_COLOR_SHRUB_MAROON,
 							 GS_COLOR_SHRUB_VIRIDIAN];
-	[self.shrubColorPicker setColors:shrubColors];
-	[self.shrubColorPicker setDelegate:self];
 	
-	NSArray *treeColors = @[GS_COLOR_TREE_BURGUNDY,
+	treeColors = @[GS_COLOR_TREE_BURGUNDY,
 							GS_COLOR_TREE_DARK_GREEN,
 							GS_COLOR_TREE_GREEN,
 							GS_COLOR_TREE_MUSTARD,
 							GS_COLOR_TREE_TEAL,
 							GS_COLOR_TREE_VIOLET];
-	[self.treeColorPicker setColors:treeColors];
-	[self.treeColorPicker setDelegate:self];
+	
+	[self.colorPicker setColors:outlineColors];
+	[self.colorPicker setDelegate:self];
 	
 	// Set initial stroke color:
-	UIColor *color = self.outlineColorPicker.colors[1];
+	UIColor *color = self.colorPicker.colors[0];
 	[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
 	
 	[self initTools];
@@ -98,12 +98,25 @@
 	[nc addObserver:self selector:@selector(undoStatusDidChange:) name:NSUndoManagerDidRedoChangeNotification object:undoManager];
     [nc addObserver:self selector:@selector(undoStatusDidChange:) name:NSUndoManagerDidCloseUndoGroupNotification object:undoManager];
 	
+	[nc addObserver:self
+           selector:@selector(activeShapeChanged:)
+               name:WDStencilShapeChanged
+             object:nil];
+	
 	WDDocument *currentDocument = self.sidebar.canvasController.document;
 	NSString *planName = currentDocument.displayName;
 	
 	[self.gridButton setSelected:[self.sidebar.canvasController.drawing showGrid]];
 	
 	[self.planNameLabel setText:planName];
+	
+	WDDrawing *drawing = self.sidebar.canvasController.drawing;
+	WDLayer *planLayer = (WDLayer *)drawing.layers[1];
+	WDLayer *notesLayer = (WDLayer *)drawing.layers[2];
+	[notesLayer setVisible:NO];
+	[planLayer setLocked:NO];
+	
+	[drawing activateLayerAtIndex:1];
 }
 
 - (void)didReceiveMemoryWarning
@@ -163,6 +176,12 @@
 	[button showColors:self];
 }
 
+- (IBAction)sizeButtonTapped:(id)sender {
+	UIButton *button = (UIButton *)sender;
+	// tags: 0, 1 and 2
+	[[StencilManager sharedInstance] setSizeForActiveShape:(ShapeSize)button.tag];
+}
+
 - (IBAction)deleteTapped:(id)sender {
 	[self.sidebar.canvasController delete:self];
 }
@@ -207,9 +226,9 @@
 	
 	WDTool *select = nil;
 	WDTool *freehand = nil;
+	WDTool *line = nil;
 	WDTool *enclosed = nil;
-	WDTool *bigPlant = nil;
-	WDTool *smallPlant = nil;
+	WDTool *plant = nil;
 	WDTool *shrub = nil;
 	WDTool *verticalHedge = nil;
 	WDTool *horizontalHedge = nil;
@@ -218,6 +237,7 @@
 	WDTool *sidewalk = nil;
 	WDTool *gazebo = nil;
 	WDTool *shed = nil;
+	WDTool *waterFeature = nil;
 	
 	for (WDTool *tool in [WDToolManager sharedInstance].tools) {
 		if ([tool isKindOfClass:[WDFreehandTool class]]) {
@@ -228,11 +248,8 @@
 			}
 		} else if ([tool isKindOfClass:[WDStencilTool class]]) {
 			switch ([(WDStencilTool *)tool type]) {
-				case kPlantBig:
-					bigPlant = tool;
-					break;
-				case kPlantSmall:
-					smallPlant = tool;
+				case kPlant:
+					plant = tool;
 					break;
 				case kShrub:
 					shrub = tool;
@@ -259,13 +276,19 @@
 				case kShed:
 					shed = tool;
 					break;
+				case kWaterFeature:
+					waterFeature = tool;
+					break;
 				default:
 					NSLog(@"hmm.. weird");
 			}
 			
 		} else if ([tool isKindOfClass:[WDSelectionTool class]]) {
 			select = tool;
+		} else if ([tool isKindOfClass:[WDShapeTool class]]) {
+			line = tool;
 		}
+		
 	}
 	
 	self.selectButton.tool = select;
@@ -274,14 +297,14 @@
 	self.freehandButton.tool = freehand;
 	[self.freehandButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 	
+	self.straightLineButton.tool = line;
+	[self.straightLineButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
 	self.enclosedButton.tool = enclosed;
 	[self.enclosedButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 	
-	self.bigPlantButton.tool = bigPlant;
-	[self.bigPlantButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-	
-	self.smallPlantButton.tool = smallPlant;
-	[self.smallPlantButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	self.plantButton.tool = plant;
+	[self.plantButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 	
 	self.shrubButton.tool = shrub;
 	[self.shrubButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
@@ -306,11 +329,42 @@
 	
 	self.shedButton.tool = shed;
 	[self.shedButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	self.waterFeatureButton.tool = waterFeature;
+	[self.waterFeatureButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void) selectionChanged:(NSNotification *)aNotification
 {
     self.deleteButton.enabled = self.cloneButton.enabled = (self.sidebar.canvasController.drawingController.selectedObjects.count > 0) ? YES : NO;
+}
+
+- (void) activeShapeChanged:(NSNotification *)aNotification
+{
+	ShapeType type = (ShapeType)[aNotification.userInfo[@"shapeType"] integerValue];
+    // TODO: update the selected size, and the color picker palette and active colors.
+	NSLog(@"active shape changed to: %lu", [aNotification.userInfo[@"shapeType"] integerValue]);
+	
+	switch (type) {
+		case kPlant:
+			[self.colorPicker setColors:plantColors];
+			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] plantColor]];
+			break;
+		case kShrub:
+		case kHedge:
+			[self.colorPicker setColors:shrubColors];
+			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] shrubColor]];
+			break;
+		case kTreeConiferous:
+		case kTreeDeciduous:
+			[self.colorPicker setColors:treeColors];
+			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] treeColor]];
+			break;
+		default:
+			[self.colorPicker setColors:outlineColors];
+			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] outlineColor]];
+			break;
+	}
 }
 
 - (void) undoStatusDidChange:(NSNotification *)aNotification
@@ -324,15 +378,26 @@
 #pragma mark - Color cpiker delegate methods
 - (void)colorPicker:(ColorPickerButton *)colorpicker didSelectIndex:(NSInteger)index
 {
-	if (colorpicker == self.plantColorPicker) {
-		[[StencilManager sharedInstance] setPlantColor:(PlantColor)index];
-	} else if (colorpicker == self.outlineColorPicker) {
-		UIColor *color = self.outlineColorPicker.colors[index];
-		[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
-	} else if (colorpicker == self.shrubColorPicker) {
-		[[StencilManager sharedInstance] setShrubColor:(ShrubColor)index];
-	} else if (colorpicker == self.treeColorPicker) {
-		[[StencilManager sharedInstance] setTreeColor:(TreeColor)index];
+	ShapeType activeType = [StencilManager sharedInstance].activeShapeType;
+	
+	switch (activeType) {
+		case kPlant:
+			[[StencilManager sharedInstance] setPlantColor:(PlantColor)index];
+			break;
+		case kShrub:
+		case kHedge:
+			[[StencilManager sharedInstance] setShrubColor:(ShrubColor)index];
+			break;
+		case kTreeConiferous:
+		case kTreeDeciduous:
+			[[StencilManager sharedInstance] setTreeColor:(TreeColor)index];
+			break;
+		default:
+		{
+			UIColor *color = self.colorPicker.colors[index];
+			[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
+			break;
+		}
 	}
 }
 

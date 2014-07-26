@@ -8,7 +8,9 @@
 
 #import "NoteCellView.h"
 
-@implementation NoteCellView
+@implementation NoteCellView {
+	BOOL willBeRemoved;
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -30,9 +32,11 @@
 
 - (void) switchToEditMode
 {
+	[self.delegate willSwitchToEditMode:self];
 	[self.bodyTextView setText:self.bodyLabel.text];
 	[self.bodyLabel setHidden:YES];
 	[self.bodyTextView setHidden:NO];
+	[self.bodyTextView becomeFirstResponder];
 }
 
 - (void) switchToViewMode
@@ -43,20 +47,21 @@
 }
 
 - (IBAction)deleteTapped:(id)sender {
+	willBeRemoved = YES;
 	[self.delegate removeNoteForCell:self];
 }
 
 - (IBAction)editTapped:(id)sender {
-	[self.delegate willSwitchToEditMode:self];
 	[self switchToEditMode];
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
-	NSLog(@"Did end editing!");
-	
 	[self switchToViewMode];
-	[self.delegate updateNoteForCell:self];
+	NSLog(@"Did end editing!");
+	if (!willBeRemoved) {
+		[self.delegate updateNoteForCell:self];
+	}
 }
 
 @end

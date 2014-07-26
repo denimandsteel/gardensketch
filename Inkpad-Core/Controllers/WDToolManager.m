@@ -46,37 +46,39 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 - (NSArray *) tools
 {
     if (!tools_) {
-        WDFreehandTool *closedFreehand = (WDFreehandTool *)[WDFreehandTool tool];
-        closedFreehand.closeShape = YES;
+		WDSelectionTool *select = (WDSelectionTool *)[WDSelectionTool tool];
 		
-		WDStencilTool *bigPlant = (WDStencilTool *)[WDStencilTool tool];
-		[bigPlant setType:kPlantBig];
-		[bigPlant setRandomRotation:YES];
-		[bigPlant setRepeatCount:2];
+		WDFreehandTool *freehand = (WDFreehandTool *)[WDFreehandTool tool];
 		
-		WDStencilTool *smallPlant = (WDStencilTool *)[WDStencilTool tool];
-		[smallPlant setType:kPlantSmall];
-		[smallPlant setRandomRotation:YES];
-		[smallPlant setRepeatCount:2];
+        WDFreehandTool *enclosed = (WDFreehandTool *)[WDFreehandTool tool];
+        enclosed.closeShape = YES;
+		
+		WDStencilTool *plant = (WDStencilTool *)[WDStencilTool tool];
+		[plant setType:kPlant];
+		[plant setRandomRotation:YES];
+		[plant setRepeatCount:2];
+		
+		WDShapeTool *line = (WDShapeTool *)[WDShapeTool tool];
+		[line setShapeMode:WDShapeLine];
 		
 		WDStencilTool *shrub = (WDStencilTool *)[WDStencilTool tool];
 		[shrub setType:kShrub];
 		[shrub setRandomRotation:YES];
 		
-		WDStencilTool *hedgeVertical = (WDStencilTool *)[WDStencilTool tool];
-		[hedgeVertical setType:kHedge];
+		WDStencilTool *verticalHedge = (WDStencilTool *)[WDStencilTool tool];
+		[verticalHedge setType:kHedge];
 		
-		WDStencilTool *hedgeHorizontal = (WDStencilTool *)[WDStencilTool tool];
-		[hedgeHorizontal setType:kHedge];
-		[hedgeHorizontal setInitialRotation:M_PI/2];
+		WDStencilTool *horizontalHedge = (WDStencilTool *)[WDStencilTool tool];
+		[horizontalHedge setType:kHedge];
+		[horizontalHedge setInitialRotation:M_PI/2];
 		
 		WDStencilTool *deciduousTree = (WDStencilTool *)[WDStencilTool tool];
 		[deciduousTree setType:kTreeDeciduous];
 		[deciduousTree setRandomRotation:YES];
 		
-		WDStencilTool *confirousTree = (WDStencilTool *)[WDStencilTool tool];
-		[confirousTree setType:kTreeConiferous];
-		[confirousTree setRandomRotation:YES];
+		WDStencilTool *coniferousTree = (WDStencilTool *)[WDStencilTool tool];
+		[coniferousTree setType:kTreeConiferous];
+		[coniferousTree setRandomRotation:YES];
 
 		WDStencilTool *sidewalk = (WDStencilTool *)[WDStencilTool tool];
 		[sidewalk setType:kSidewalk];
@@ -86,25 +88,45 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 		
 		WDStencilTool *shed = (WDStencilTool *)[WDStencilTool tool];
 		[shed setType:kShed];
+		
+		WDStencilTool *waterFeature = (WDStencilTool *)[WDStencilTool tool];
+		[waterFeature setType:kWaterFeature];
         
 		WDStencilTool *house = (WDStencilTool *)[WDStencilTool tool];
 		[house setType:kHouse];
 		
-		tools_ = @[[WDSelectionTool tool],
-                   [WDFreehandTool tool],
-				   closedFreehand,
-				   bigPlant,
-				   smallPlant,
+		WDScaleTool *scale = (WDScaleTool *)[WDScaleTool tool];
+		
+		tools_ = @[select,
+                   freehand,
+				   line,
+				   enclosed,
+				   plant,
 				   shrub,
-				   hedgeVertical,
-				   hedgeHorizontal,
+				   verticalHedge,
+				   horizontalHedge,
 				   deciduousTree,
-				   confirousTree,
+				   coniferousTree,
 				   sidewalk,
 				   gazebo,
 				   shed,
+				   waterFeature,
 				   house,
-				   [WDScaleTool tool]];
+				   scale];
+		
+		self.select = select;
+		self.freehand = freehand;
+		self.enclosed = enclosed;
+		self.plant = plant;
+		self.shrub = shrub;
+		self.verticalHedge = verticalHedge;
+		self.horizontalHedge = horizontalHedge;
+		self.deciduousTree = deciduousTree;
+		self.coniferousTree = coniferousTree;
+		self.sidewalk = sidewalk;
+		self.gazebo = gazebo;
+		self.shed = shed;
+		self.waterFeature = waterFeature;
     }
     
     return tools_;

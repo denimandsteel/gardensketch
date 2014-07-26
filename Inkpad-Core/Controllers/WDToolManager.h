@@ -10,6 +10,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WDShapeTool.h"
+#import "WDStencilTool.h"
+#import "WDFreehandTool.h"
+#import "WDSelectionTool.h"
 
 @class WDTool;
 
@@ -17,6 +21,22 @@
 
 @property (nonatomic, weak) WDTool *activeTool;
 @property (nonatomic, strong, readonly) NSArray *tools;
+
+@property (nonatomic, weak) WDSelectionTool *select;
+@property (nonatomic, weak) WDFreehandTool	*freehand;
+@property (nonatomic, weak) WDFreehandTool  *enclosed;
+@property (nonatomic, weak) WDStencilTool   *plant;
+@property (nonatomic, weak) WDShapeTool     *line;
+@property (nonatomic, weak) WDStencilTool   *shrub;
+@property (nonatomic, weak) WDStencilTool   *verticalHedge;
+@property (nonatomic, weak) WDStencilTool   *horizontalHedge;
+@property (nonatomic, weak) WDStencilTool   *deciduousTree;
+@property (nonatomic, weak) WDStencilTool   *coniferousTree;
+@property (nonatomic, weak) WDStencilTool   *sidewalk;
+@property (nonatomic, weak) WDStencilTool   *gazebo;
+@property (nonatomic, weak) WDStencilTool   *shed;
+@property (nonatomic, weak) WDStencilTool   *waterFeature;
+@property (nonatomic, weak) WDStencilTool   *house;
 
 + (WDToolManager *) sharedInstance;
 

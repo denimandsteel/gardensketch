@@ -20,6 +20,7 @@
 @property (nonatomic, assign) id<ColorPickerButtonDelegate> delegate;
 
 - (void) showColors:(id)sender;
+- (void)setSelectedColorIndex:(NSInteger)index;
 
 @end
 

@@ -39,6 +39,8 @@
 {
 	[self setBackgroundColor:colors.firstObject];
 	_colors = colors;
+	colorController = nil;
+	popover_ = nil;
 }
 
 - (void) showColors:(id)sender
@@ -66,9 +68,14 @@
 
 - (void)didSelectIndex:(NSInteger)index
 {
-	[self setBackgroundColor:self.colors[index]];
+	[self setSelectedColorIndex:index];
 	[self.delegate colorPicker:self didSelectIndex:index];
 	[popover_ dismissPopoverAnimated:YES];
+}
+
+- (void)setSelectedColorIndex:(NSInteger)index
+{
+	[self setBackgroundColor:self.colors[index]];
 }
 
 
