@@ -47,12 +47,12 @@
 #define		GS_COLOR_SHRUB_VIRIDIAN			[UIColor colorWithRed:137/255.0 green:151/255.0 blue:133/255.0 alpha:1.0]
 
 // tree colors
-#define		GS_COLOR_TREE_BURGUNDY			[UIColor colorWithRed:224/255.0 green:195/255.0 blue:197/255.0 alpha:1.0]
-#define		GS_COLOR_TREE_DARK_GREEN		[UIColor colorWithRed:195/255.0 green:205/255.0 blue:198/255.0 alpha:1.0]
-#define		GS_COLOR_TREE_GREEN				[UIColor colorWithRed:212/255.0 green:227/255.0 blue:204/255.0 alpha:1.0]
-#define		GS_COLOR_TREE_MUSTARD			[UIColor colorWithRed:224/255.0 green:223/255.0 blue:200/255.0 alpha:1.0]
-#define		GS_COLOR_TREE_TEAL				[UIColor colorWithRed:221/255.0 green:230/255.0 blue:226/255.0 alpha:1.0]
-#define		GS_COLOR_TREE_VIOLET			[UIColor colorWithRed:198/255.0 green:196/255.0 blue:206/255.0 alpha:1.0]
+#define		GS_COLOR_TREE_BURGUNDY			[UIColor colorWithRed:202/255.0 green:153/255.0 blue:157/255.0 alpha:1.0]
+#define		GS_COLOR_TREE_DARK_GREEN		[UIColor colorWithRed:154/255.0 green:171/255.0 blue:158/255.0 alpha:1.0]
+#define		GS_COLOR_TREE_GREEN				[UIColor colorWithRed:182/255.0 green:208/255.0 blue:168/255.0 alpha:1.0]
+#define		GS_COLOR_TREE_MUSTARD			[UIColor colorWithRed:203/255.0 green:201/255.0 blue:163/255.0 alpha:1.0]
+#define		GS_COLOR_TREE_TEAL				[UIColor colorWithRed:199/255.0 green:213/255.0 blue:207/255.0 alpha:1.0]
+#define		GS_COLOR_TREE_VIOLET			[UIColor colorWithRed:159/255.0 green:156/255.0 blue:173/255.0 alpha:1.0]
 
 #define		GS_NORTH_ANGLE					@"GS_NORTH_ANGLE"
 
