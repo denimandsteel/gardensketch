@@ -179,6 +179,8 @@
 - (IBAction)sizeButtonTapped:(id)sender {
 	UIButton *button = (UIButton *)sender;
 	// tags: 0, 1 and 2
+	[self setSelectedSize:(ShapeSize)(button.tag)];
+	
 	[[StencilManager sharedInstance] setSizeForActiveShape:(ShapeSize)button.tag];
 }
 
@@ -364,6 +366,21 @@
 			[self.colorPicker setColors:outlineColors];
 			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] outlineColor]];
 			break;
+	}
+	
+	ShapeSize activeShapeSize = [[StencilManager sharedInstance] sizeForActiveShape];
+	
+	[self setSelectedSize:activeShapeSize];
+}
+
+- (void)setSelectedSize:(ShapeSize)shapeSize
+{
+	for (UIButton *button in self.sizeButtons) {
+		if (button.tag == shapeSize) {
+			[button setSelected:YES];
+		} else {
+			[button setSelected:NO];
+		}
 	}
 }
 

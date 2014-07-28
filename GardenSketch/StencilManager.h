@@ -77,10 +77,10 @@ typedef enum {
 @property (nonatomic, assign) OutlineColor outlineColor;
 
 @property (nonatomic, strong) NSMutableDictionary *shapeSize;
-@property (nonatomic, strong) NSMutableDictionary *shapeColor;
 
 - (WDGroup *)shapeForType:(ShapeType)type;
 - (void)setSizeForActiveShape:(ShapeSize)size;
+- (ShapeSize)sizeForActiveShape;
 
 extern NSString *WDStencilShapeChanged;
 

@@ -2584,7 +2584,7 @@
 				GCC_PREFIX_HEADER = "GardenSketch/GardenSketch-Prefix.pch";
 				INFOPLIST_FILE = "GardenSketch/GardenSketch-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "BCEC9D15-9795-400A-9976-D9D277F85D67";
+				PROVISIONING_PROFILE = "2D229676-CBB2-487B-A063-B2BA488C2167";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -35,6 +35,8 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
         return nil;
     }
 	
+	self.shapeSize = [NSMutableDictionary dictionary];
+	
 	[self loadShapes];
 	
 	self.treeColor = (TreeColor)0;
@@ -269,6 +271,20 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 			break;
 		case kHouse:
 			scale = 12;
+			break;
+		default:
+			break;
+	}
+	
+	switch (self.sizeForActiveShape) {
+		case kSmall:
+			scale *= 1;
+			break;
+		case kMedium:
+			scale *= 1.5;
+			break;
+		case kBig:
+			scale *= 2;
 			break;
 		default:
 			break;
