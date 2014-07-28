@@ -20,6 +20,7 @@
 #import "WDPropertyManager.h"
 #import "WDUtilities.h"
 #import "Constants.h"
+#import "StencilManager.h"
 
 #define kMaxError 10.0f
 
@@ -47,6 +48,7 @@ NSString *WDDefaultFreehandTool = @"WDDefaultFreehandTool";
 
 - (void) activated
 {
+	[[StencilManager sharedInstance] setActiveShapeType:kLine];
     [[NSUserDefaults standardUserDefaults] setValue:@(closeShape_) forKey:WDDefaultFreehandTool];
 }
 
@@ -101,7 +103,6 @@ NSString *WDDefaultFreehandTool = @"WDDefaultFreehandTool";
 				[canvas.drawingController setValue:@NO forProperty:WDStrokeVisibleProperty];
 			} else {
 				smoothPath.fill = [WDColor colorWithWhite:1.0 alpha:0.0];
-				smoothPath.strokeStyle = [[WDStrokeStyle alloc] initWithWidth:1.0 cap:kCGLineCapRound join:kCGLineJoinRound color:[WDColor randomColor] dashPattern:nil startArrow:nil endArrow:nil];
 				[canvas.drawingController setValue:@YES forProperty:WDStrokeVisibleProperty];
 			}
 			

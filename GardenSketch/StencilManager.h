@@ -21,7 +21,8 @@ typedef enum {
 	kSidewalk,
 	kShed,
 	kWaterFeature,
-	kGazebo
+	kGazebo,
+	kLine
 } ShapeType;
 
 typedef enum {

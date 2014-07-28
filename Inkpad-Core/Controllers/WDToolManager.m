@@ -56,7 +56,7 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 		WDStencilTool *plant = (WDStencilTool *)[WDStencilTool tool];
 		[plant setType:kPlant];
 		[plant setRandomRotation:YES];
-		[plant setRepeatCount:2];
+		[plant setRepeatCount:1];
 		
 		WDShapeTool *line = (WDShapeTool *)[WDShapeTool tool];
 		[line setShapeMode:WDShapeLine];

@@ -182,6 +182,28 @@
 	[self setSelectedSize:(ShapeSize)(button.tag)];
 	
 	[[StencilManager sharedInstance] setSizeForActiveShape:(ShapeSize)button.tag];
+	
+	if ([StencilManager sharedInstance].activeShapeType == kLine) {
+		// TODO set stroke width here!
+		
+		CGFloat strokeWidth = 1.0;
+		
+		switch ((ShapeSize)button.tag) {
+			case kSmall:
+				strokeWidth = 1.0;
+				break;
+			case kMedium:
+				strokeWidth = 2.0;
+				break;
+			case kBig:
+				strokeWidth = 3.0;
+				break;
+			default:
+				break;
+		}
+		[self.sidebar.canvasController.drawingController setValue:@(strokeWidth)
+						 forProperty:WDStrokeWidthProperty];
+	}
 }
 
 - (IBAction)deleteTapped:(id)sender {
@@ -362,9 +384,11 @@
 			[self.colorPicker setColors:treeColors];
 			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] treeColor]];
 			break;
-		default:
+		case kLine:
 			[self.colorPicker setColors:outlineColors];
 			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] outlineColor]];
+			break;
+		default:
 			break;
 	}
 	
@@ -409,12 +433,15 @@
 		case kTreeDeciduous:
 			[[StencilManager sharedInstance] setTreeColor:(TreeColor)index];
 			break;
-		default:
+		case kLine:
 		{
+			[[StencilManager sharedInstance] setOutlineColor:(OutlineColor)index];
 			UIColor *color = self.colorPicker.colors[index];
 			[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
 			break;
 		}
+		default:
+			break;
 	}
 }
 

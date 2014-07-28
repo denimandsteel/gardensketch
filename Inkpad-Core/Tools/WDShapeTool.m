@@ -19,6 +19,7 @@
 #import "WDPropertyManager.h"
 #import "WDShapeTool.h"
 #import "WDUtilities.h"
+#import "StencilManager.h"
 
 NSString *WDShapeToolStarInnerRadiusRatio = @"WDShapeToolStarInnerRadiusRatio";
 NSString *WDShapeToolStarPointCount = @"WDShapeToolStarPointCount";
@@ -66,6 +67,10 @@ NSString *WDShapeToolSpiralDecay = @"WDShapeToolSpiralDecay";
 
 - (void) activated
 {
+	if (self.shapeMode == WDShapeLine) {
+		[[StencilManager sharedInstance] setActiveShapeType:kLine];
+	}
+	
     [[NSUserDefaults standardUserDefaults] setValue:@(shapeMode_) forKey:WDDefaultShapeTool];
 }
 
@@ -246,14 +251,16 @@ NSString *WDShapeToolSpiralDecay = @"WDShapeToolSpiralDecay";
     if (self.moved) {
         if (!CGPointEqualToPoint(self.initialEvent.snappedLocation, theEvent.snappedLocation)) {
             WDPath  *path = [self pathWithPoint:theEvent.snappedLocation constrain:[self constrain]];
+			
+			if (shapeMode_ != WDShapeLine) {
+                path.fill = [canvas.drawingController.propertyManager activeFillStyle];
+            } else {
+				[canvas.drawingController setValue:@YES forProperty:WDStrokeVisibleProperty];
+			}
             
             WDStrokeStyle *stroke = [canvas.drawingController.propertyManager activeStrokeStyle];
             path.strokeStyle = (shapeMode_ == WDShapeLine) ? stroke : [stroke strokeStyleSansArrows];
-            
-            if (shapeMode_ != WDShapeLine) {
-                path.fill = [canvas.drawingController.propertyManager activeFillStyle];
-            }
-            
+         
             path.opacity = [[canvas.drawingController.propertyManager defaultValueForProperty:WDOpacityProperty] floatValue];
             path.shadow = [canvas.drawingController.propertyManager activeShadow];
             
