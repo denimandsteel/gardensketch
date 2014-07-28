@@ -387,6 +387,12 @@
 		4D66744B1983212B00A17C4E /* Shrub_Viridian.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 4D66742B1983212B00A17C4E /* Shrub_Viridian.stencil */; };
 		4D66744C1983212B00A17C4E /* Tile.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 4D66742C1983212B00A17C4E /* Tile.stencil */; };
 		4D66744D1983212B00A17C4E /* Water_Feature.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 4D66742D1983212B00A17C4E /* Water_Feature.stencil */; };
+		4D66745E1986EDB800A17C4E /* GCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6674541986EDB800A17C4E /* GCAlertView.m */; };
+		4D66745F1986EDB800A17C4E /* ABNotice.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6674571986EDB800A17C4E /* ABNotice.m */; };
+		4D6674601986EDB800A17C4E /* ABNotifier.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674581986EDB800A17C4E /* ABNotifier.bundle */; };
+		4D6674611986EDB800A17C4E /* ABNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D66745A1986EDB800A17C4E /* ABNotifier.m */; };
+		4D6674621986EDB800A17C4E /* ABNotifierFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D66745D1986EDB800A17C4E /* ABNotifierFunctions.m */; };
+		4D6674641986EE4E00A17C4E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6674631986EE4E00A17C4E /* SystemConfiguration.framework */; };
 		4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D862ECA1952043A0066A848 /* DesignViewController.m */; };
 		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
 		4D9115D3197597FB008B11CC /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115D1197597FB008B11CC /* MoreViewController.m */; };
@@ -972,6 +978,17 @@
 		4D66742B1983212B00A17C4E /* Shrub_Viridian.stencil */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Shrub_Viridian.stencil; sourceTree = "<group>"; };
 		4D66742C1983212B00A17C4E /* Tile.stencil */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Tile.stencil; sourceTree = "<group>"; };
 		4D66742D1983212B00A17C4E /* Water_Feature.stencil */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Water_Feature.stencil; sourceTree = "<group>"; };
+		4D6674531986EDB800A17C4E /* GCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCAlertView.h; sourceTree = "<group>"; };
+		4D6674541986EDB800A17C4E /* GCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCAlertView.m; sourceTree = "<group>"; };
+		4D6674561986EDB800A17C4E /* ABNotice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABNotice.h; sourceTree = "<group>"; };
+		4D6674571986EDB800A17C4E /* ABNotice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABNotice.m; sourceTree = "<group>"; };
+		4D6674581986EDB800A17C4E /* ABNotifier.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ABNotifier.bundle; sourceTree = "<group>"; };
+		4D6674591986EDB800A17C4E /* ABNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABNotifier.h; sourceTree = "<group>"; };
+		4D66745A1986EDB800A17C4E /* ABNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABNotifier.m; sourceTree = "<group>"; };
+		4D66745B1986EDB800A17C4E /* ABNotifierDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABNotifierDelegate.h; sourceTree = "<group>"; };
+		4D66745C1986EDB800A17C4E /* ABNotifierFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABNotifierFunctions.h; sourceTree = "<group>"; };
+		4D66745D1986EDB800A17C4E /* ABNotifierFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABNotifierFunctions.m; sourceTree = "<group>"; };
+		4D6674631986EE4E00A17C4E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4D862EC91952043A0066A848 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		4D862ECA1952043A0066A848 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		4D862ECB1952043A0066A848 /* DesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignViewController.xib; sourceTree = "<group>"; };
@@ -997,6 +1014,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D6674641986EE4E00A17C4E /* SystemConfiguration.framework in Frameworks */,
 				4D05DDF6194FB3A4001F19A7 /* QuartzCore.framework in Frameworks */,
 				4D05DDF4194FB39A001F19A7 /* Security.framework in Frameworks */,
 				4D05DDD7194F8094001F19A7 /* DropboxSDK.framework in Frameworks */,
@@ -1043,6 +1061,7 @@
 		4D05DAEA194A70C7001F19A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D6674631986EE4E00A17C4E /* SystemConfiguration.framework */,
 				4D05DDF5194FB3A4001F19A7 /* QuartzCore.framework */,
 				4D05DDF3194FB39A001F19A7 /* Security.framework */,
 				4D05DDE8194F89F7001F19A7 /* libz.dylib */,
@@ -1108,6 +1127,7 @@
 		4D05DB28194A7C7C001F19A7 /* ext */ = {
 			isa = PBXGroup;
 			children = (
+				4D6674511986EDB800A17C4E /* Airbrake */,
 				4D53F6161965E9C00097C8E3 /* OneFingerRotationGesture */,
 				4D05DDD8194F80BF001F19A7 /* Openclipart */,
 				4D05DB29194A7C94001F19A7 /* M13InfiniteTabBar */,
@@ -1890,6 +1910,39 @@
 			name = "Deciduous Trees";
 			sourceTree = "<group>";
 		};
+		4D6674511986EDB800A17C4E /* Airbrake */ = {
+			isa = PBXGroup;
+			children = (
+				4D6674521986EDB800A17C4E /* gcalertview */,
+				4D6674551986EDB800A17C4E /* notifier */,
+			);
+			path = Airbrake;
+			sourceTree = "<group>";
+		};
+		4D6674521986EDB800A17C4E /* gcalertview */ = {
+			isa = PBXGroup;
+			children = (
+				4D6674531986EDB800A17C4E /* GCAlertView.h */,
+				4D6674541986EDB800A17C4E /* GCAlertView.m */,
+			);
+			path = gcalertview;
+			sourceTree = "<group>";
+		};
+		4D6674551986EDB800A17C4E /* notifier */ = {
+			isa = PBXGroup;
+			children = (
+				4D6674561986EDB800A17C4E /* ABNotice.h */,
+				4D6674571986EDB800A17C4E /* ABNotice.m */,
+				4D6674581986EDB800A17C4E /* ABNotifier.bundle */,
+				4D6674591986EDB800A17C4E /* ABNotifier.h */,
+				4D66745A1986EDB800A17C4E /* ABNotifier.m */,
+				4D66745B1986EDB800A17C4E /* ABNotifierDelegate.h */,
+				4D66745C1986EDB800A17C4E /* ABNotifierFunctions.h */,
+				4D66745D1986EDB800A17C4E /* ABNotifierFunctions.m */,
+			);
+			path = notifier;
+			sourceTree = "<group>";
+		};
 		4D9115E21978389C008B11CC /* Coniferous Trees */ = {
 			isa = PBXGroup;
 			children = (
@@ -2155,6 +2208,7 @@
 				4D05DE1C1950AC3F001F19A7 /* Fill.xib in Resources */,
 				4D081BD1195351AC00F8871C /* Boring.inkpad in Resources */,
 				4D05DCBC194F7FF2001F19A7 /* spiral.png in Resources */,
+				4D6674601986EDB800A17C4E /* ABNotifier.bundle in Resources */,
 				4D576051195E0E5300DCCBEF /* Shrub_Maroon.svg in Resources */,
 				4D081BF21958E83100F8871C /* gazebo.svg in Resources */,
 				4D05DB24194A74FE001F19A7 /* SidebarViewController.xib in Resources */,
@@ -2335,6 +2389,7 @@
 				4D05DDA3194F8042001F19A7 /* WDColorIndicator.m in Sources */,
 				4D05DD00194F7FF2001F19A7 /* WDZoomTool.m in Sources */,
 				4D05DC97194F7FF2001F19A7 /* UIImage+Additions.m in Sources */,
+				4D6674621986EDB800A17C4E /* ABNotifierFunctions.m in Sources */,
 				4D05DDB7194F8042001F19A7 /* WDHueSaturationController.m in Sources */,
 				4D53F6141965DD110097C8E3 /* NorthViewController.m in Sources */,
 				4D05DC93194F7FF2001F19A7 /* NSArray+Additions.m in Sources */,
@@ -2388,6 +2443,7 @@
 				4D05DCE1194F7FF2001F19A7 /* WDShadow.m in Sources */,
 				4D05DCD9194F7FF2001F19A7 /* WDImage.m in Sources */,
 				4D05DB23194A74FE001F19A7 /* SidebarViewController.m in Sources */,
+				4D6674611986EDB800A17C4E /* ABNotifier.m in Sources */,
 				4D05DC9D194F7FF2001F19A7 /* FitCurves.m in Sources */,
 				4D05DCDF194F7FF2001F19A7 /* WDPickResult.m in Sources */,
 				4D081BE61954B63C00F8871C /* ColorPickerButton.m in Sources */,
@@ -2401,6 +2457,7 @@
 				4D05DDAB194F8042001F19A7 /* WDEtchedLine.m in Sources */,
 				4D9115EA1979CD44008B11CC /* NSURL+Equivalence.m in Sources */,
 				4D53F6191965E9E50097C8E3 /* OneFingerRotationGestureRecognizer.m in Sources */,
+				4D66745F1986EDB800A17C4E /* ABNotice.m in Sources */,
 				4D05DCE2194F7FF2001F19A7 /* WDStrokeStyle.m in Sources */,
 				4D05DDE4194F80BF001F19A7 /* OCAEntry.m in Sources */,
 				4D05DDD2194F8042001F19A7 /* WDToolButton.m in Sources */,
@@ -2425,6 +2482,7 @@
 				4D05DC99194F7FF2001F19A7 /* WDDrawingController.m in Sources */,
 				4D05DCD3194F7FF2001F19A7 /* WDDynamicGuide.m in Sources */,
 				4D05DDE7194F80BF001F19A7 /* OCAViewController.m in Sources */,
+				4D66745E1986EDB800A17C4E /* GCAlertView.m in Sources */,
 				4D05DD9E194F8042001F19A7 /* WDCanvas.m in Sources */,
 				4D05DD93194F8042001F19A7 /* WDActivity.m in Sources */,
 			);

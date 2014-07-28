@@ -31,6 +31,12 @@
 	[self setupDefaults];
 	
 	[WDDrawingManager sharedInstance];
+
+	[ABNotifier startNotifierWithAPIKey:@"5ed97c39a5243755d2e6ea78dbcfe662"
+						environmentName:ABNotifierAutomaticEnvironment
+								 useSSL:YES // only if your account supports it
+							   delegate:self];
+	[ABNotifier writeTestNotice];
 }
 
 

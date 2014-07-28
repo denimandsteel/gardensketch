@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ABNotifier.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, ABNotifierDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
