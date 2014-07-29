@@ -18,28 +18,42 @@
 #import "StencilManager.h"
 #import "MoreViewController.h"
 #import "NotesViewController.h"
+#import "Constants.h"
 
 @interface MainViewController ()
 	@property (strong, nonatomic) TutorialViewController *tutorial;
 @end
 
 @implementation MainViewController
+{
+	NSArray *tabKey;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	
+	tabKey = @[GS_VISITED_PROPERTY_TAB, GS_VISITED_HOUSE_TAB, GS_VISITED_NORTH_TAB, GS_VISITED_PLANS_TAB, GS_VISITED_DESIGN_TAB, GS_VISITED_NOTES_TAB, GS_VISITED_MORE_TAB];
+	
 	[[UIApplication sharedApplication] setStatusBarHidden:YES
 											withAnimation:UIStatusBarAnimationFade];
 	
 	[self addChildViewControllers];
 	
-	BOOL firstLaunch = YES;
-	
-	if (!firstLaunch) {
-		[self.sidebar setSelectedIndex:3];
-	}
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:GS_HAS_LAUNCHED_ONCE])
+    {
+        // app already launched
+    }
+    else
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:GS_HAS_LAUNCHED_ONCE];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        // This is the first launch ever
+		
+		// -1 is the first app launch tutorial pages!
+		[self showTutorialForTab:-1];
+    }
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -136,16 +150,37 @@
 
 - (void)infiniteTabBarController:(M13InfiniteTabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-	//Do nothing
-	[self toggleTutorial:nil];
+	// TODO: if first visit show tutorial for this section
+	NSInteger tabIndex = [self.sidebar selectedIndex];
+	
+	if (![self hasVisitedTab:tabIndex]) {
+		[self showTutorialForTab:tabIndex];
+	}
+	
+	[self setVisited:YES forTab:tabIndex];
 }
 
-- (IBAction)toggleTutorial:(UIButton *)sender {
-	return;
+- (BOOL)hasVisitedTab:(NSInteger)tabIndex
+{
+	BOOL result = [[NSUserDefaults standardUserDefaults] boolForKey:tabKey[tabIndex]];
+	return result;
+}
+
+- (void)setVisited:(BOOL)visited forTab:(NSInteger)tabIndex
+{
+	[[NSUserDefaults standardUserDefaults] setBool:visited forKey:tabKey[tabIndex]];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (IBAction)showTutorialForTab:(NSInteger)tabIndex {
     if (self.tutorial == nil) {
-        self.tutorial = [[TutorialViewController alloc] initWithNibName:@"TutorialViewController" bundle:nil];
+        NSArray *pages = [self tutorialPageNamesForTab:tabIndex];
+		if (!pages || pages.count == 0) {
+			return;
+		}
+		self.tutorial = [[TutorialViewController alloc] initWithNibName:@"TutorialViewController" bundle:nil];
 		[self.tutorial setDelegate:self];
-		[self.tutorial setXibsToShow:[NSMutableArray arrayWithArray:@[@"AppStart1", @"AppStart2", @"AppStart3"]]];
+		[self.tutorial setXibsToShow:pages];
         [self addChildViewController:self.tutorial];
         [self.view addSubview:self.tutorial.view];
 		// center horizontally and move up to hide.
@@ -161,21 +196,44 @@
             [self.tutorial didMoveToParentViewController:self];
         }];
     } else {
-        [UIView animateWithDuration:.5 animations:^{
-            CGRect frame = self.tutorial.view.frame;
-			frame.origin.y = -frame.size.height;
-			[self.tutorial.view setFrame:frame];
-        } completion:^(BOOL finished) {
-            [self.tutorial.view removeFromSuperview];
-            [self.tutorial removeFromParentViewController];
-            self.tutorial = nil;
-        }];
-    }
+		[self hideTutorial];
+	}
+}
+
+- (NSArray *)tutorialPageNamesForTab:(NSInteger)tabIndex
+{
+	switch (tabIndex) {
+		case -1:
+			return [NSMutableArray arrayWithArray:@[@"AppStart1"]];
+			break;
+		case 0:
+			return [NSMutableArray arrayWithArray:@[@"AppStart1", @"AppStart2", @"AppStart3"]];
+			break;
+		case 1:
+			return [NSMutableArray arrayWithArray:@[@"AppStart1", @"AppStart3"]];
+			break;
+		default:
+			return [NSMutableArray arrayWithArray:@[@"AppStart1", @"AppStart2", @"AppStart3"]];
+			break;
+	}
+}
+
+- (void)hideTutorial
+{
+	[UIView animateWithDuration:.5 animations:^{
+		CGRect frame = self.tutorial.view.frame;
+		frame.origin.y = -frame.size.height;
+		[self.tutorial.view setFrame:frame];
+	} completion:^(BOOL finished) {
+		[self.tutorial.view removeFromSuperview];
+		[self.tutorial removeFromParentViewController];
+		self.tutorial = nil;
+	}];
 }
 
 - (void)letMeGo
 {
-	[self toggleTutorial:nil];
+	[self hideTutorial];
 }
 
 - (void)didReceiveMemoryWarning

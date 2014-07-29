@@ -449,7 +449,7 @@ NSString *WDCanvasBeganTrackingTouches = @"WDCanvasBeganTrackingTouches";
         CGContextAddLineToPoint(ctx, pt.x, pt.y);
     }
     
-    CGContextSetRGBStrokeColor(ctx, 0, 0, 0, 0.125);
+    CGContextSetRGBStrokeColor(ctx, 0, 0, 0, 0.08);
     CGContextStrokePath(ctx);
     CGContextRestoreGState(ctx);
 }
