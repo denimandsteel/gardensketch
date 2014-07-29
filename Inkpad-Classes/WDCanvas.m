@@ -82,7 +82,7 @@ NSString *WDCanvasBeganTrackingTouches = @"WDCanvasBeganTrackingTouches";
     selectionView_.canvas = self;
     
     self.multipleTouchEnabled = YES;
-//    self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+
     self.contentMode = UIViewContentModeCenter;
     self.exclusiveTouch = YES;
     self.clearsContextBeforeDrawing = YES;

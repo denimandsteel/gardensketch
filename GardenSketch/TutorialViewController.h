@@ -16,7 +16,7 @@
 
 @interface TutorialViewController : UIViewController
 
-@property (nonatomic, strong) NSArray *xibsToShow;
+@property (nonatomic, strong) NSMutableArray *xibsToShow;
 @property (nonatomic, assign) id<TutorialDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;

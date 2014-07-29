@@ -41,7 +41,7 @@
 	
 	[self addChildViewControllers];
 	
-	if ([[NSUserDefaults standardUserDefaults] boolForKey:GS_HAS_LAUNCHED_ONCE])
+	if (NO && [[NSUserDefaults standardUserDefaults] boolForKey:GS_HAS_LAUNCHED_ONCE])
     {
         // app already launched
     }
@@ -163,7 +163,8 @@
 - (BOOL)hasVisitedTab:(NSInteger)tabIndex
 {
 	BOOL result = [[NSUserDefaults standardUserDefaults] boolForKey:tabKey[tabIndex]];
-	return result;
+//	return result;
+	return NO;
 }
 
 - (void)setVisited:(BOOL)visited forTab:(NSInteger)tabIndex
@@ -174,7 +175,7 @@
 
 - (IBAction)showTutorialForTab:(NSInteger)tabIndex {
     if (self.tutorial == nil) {
-        NSArray *pages = [self tutorialPageNamesForTab:tabIndex];
+        NSMutableArray *pages = [self tutorialPageNamesForTab:tabIndex];
 		if (!pages || pages.count == 0) {
 			return;
 		}
@@ -196,11 +197,11 @@
             [self.tutorial didMoveToParentViewController:self];
         }];
     } else {
-		[self hideTutorial];
+		[self.tutorial.xibsToShow addObjectsFromArray:[self tutorialPageNamesForTab:tabIndex]];
 	}
 }
 
-- (NSArray *)tutorialPageNamesForTab:(NSInteger)tabIndex
+- (NSMutableArray *)tutorialPageNamesForTab:(NSInteger)tabIndex
 {
 	switch (tabIndex) {
 		case -1:
