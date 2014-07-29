@@ -9,6 +9,8 @@
 #ifndef GardenSketch_Constants_h
 #define GardenSketch_Constants_h
 
+#define		GS_BASE_PLAN_FILE_NAME			@"_GS_BASE_PLAN.inkpad"
+
 #define		GS_SIDEBAR_WIDTH				320.0
 
 #define		CG_DEFAULT_CANVAS_SIZE			CGSizeMake(2048, 2048)

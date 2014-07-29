@@ -51,10 +51,11 @@
 }
 
 - (IBAction)resetTutorialTapped:(id)sender {
-	NSArray *tabKeys = @[GS_VISITED_PROPERTY_TAB, GS_VISITED_HOUSE_TAB, GS_VISITED_NORTH_TAB, GS_VISITED_PLANS_TAB, GS_VISITED_DESIGN_TAB, GS_VISITED_NOTES_TAB, GS_VISITED_MORE_TAB];
-	for (NSString *tabKey in tabKeys) {
+	NSArray *defaultKeys = @[GS_VISITED_PROPERTY_TAB, GS_VISITED_HOUSE_TAB, GS_VISITED_NORTH_TAB, GS_VISITED_PLANS_TAB, GS_VISITED_DESIGN_TAB, GS_VISITED_NOTES_TAB, GS_VISITED_MORE_TAB, GS_HAS_LAUNCHED_ONCE];
+	for (NSString *tabKey in defaultKeys) {
 		[[NSUserDefaults standardUserDefaults] setBool:NO forKey:tabKey];
     }
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
+
 @end

@@ -15,6 +15,7 @@
 #import "WDSVGParser.h"
 #import "WDSVGThumbnailExtractor.h"
 #import "WDlayer.h"
+#import "Constants.h"
 
 NSString *WDDrawingFileExtension = @"inkpad";
 NSString *WDSVGFileExtension = @"svg";
@@ -229,7 +230,7 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 
 - (NSString *) basePlanFilename
 {
-	return @"_GS_BASE_PLAN.inkpad";
+	return GS_BASE_PLAN_FILE_NAME;
 }
 
 - (NSString *) uniqueFilename
