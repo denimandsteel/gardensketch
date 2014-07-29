@@ -205,16 +205,28 @@
 {
 	switch (tabIndex) {
 		case -1:
-			return [NSMutableArray arrayWithArray:@[@"AppStart1"]];
+			return [NSMutableArray arrayWithArray:@[@"AppStart1", @"AppStart2", @"AppStart3"]];
 			break;
 		case 0:
-			return [NSMutableArray arrayWithArray:@[@"AppStart1", @"AppStart2", @"AppStart3"]];
+			return [NSMutableArray arrayWithArray:@[@"Property1", @"Property2"]];
 			break;
 		case 1:
-			return [NSMutableArray arrayWithArray:@[@"AppStart1", @"AppStart3"]];
+			return [NSMutableArray arrayWithArray:@[@"House1", @"House2", @"House3"]];
+			break;
+		case 2:
+			return [NSMutableArray arrayWithArray:@[@"North1"]];
+			break;
+		case 3:
+			return [NSMutableArray arrayWithArray:@[@"Plans1", @"Plans2"]];
+			break;
+		case 4:
+			return [NSMutableArray arrayWithArray:@[@"Design1", @"Design2", @"Design3", @"Design4"]];
+			break;
+		case 6:
+			return [NSMutableArray arrayWithArray:@[@"More1"]];
 			break;
 		default:
-			return [NSMutableArray arrayWithArray:@[@"AppStart1", @"AppStart2", @"AppStart3"]];
+			return [NSMutableArray array];
 			break;
 	}
 }

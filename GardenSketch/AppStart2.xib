@@ -10,11 +10,18 @@
             <rect key="frame" x="0.0" y="0.0" width="800" height="500"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejB-pr-VEI">
-                    <rect key="frame" x="185" y="93" width="431" height="314"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Before you begin..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="417" translatesAutoresizingMaskIntoConstraints="NO" id="NQw-Wg-Aks">
+                    <rect key="frame" x="192" y="65" width="417" height="111"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="40"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="632" translatesAutoresizingMaskIntoConstraints="NO" id="aGp-hK-iWd">
+                    <rect key="frame" x="84" y="227" width="632" height="208"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <string key="text">Garden Sketch is a tool for planning and communicating layouts for your garden. Play with ideas here, then go outside and make them real.</string>
+                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="25"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
