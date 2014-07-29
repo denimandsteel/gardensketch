@@ -393,6 +393,11 @@
 		4D6674611986EDB800A17C4E /* ABNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D66745A1986EDB800A17C4E /* ABNotifier.m */; };
 		4D6674621986EDB800A17C4E /* ABNotifierFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D66745D1986EDB800A17C4E /* ABNotifierFunctions.m */; };
 		4D6674641986EE4E00A17C4E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D6674631986EE4E00A17C4E /* SystemConfiguration.framework */; };
+		4D66746E1987171F00A17C4E /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D66746C1987171F00A17C4E /* TutorialViewController.m */; };
+		4D66746F1987171F00A17C4E /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D66746D1987171F00A17C4E /* TutorialViewController.xib */; };
+		4D6674721987220300A17C4E /* AppStart1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674711987220300A17C4E /* AppStart1.xib */; };
+		4D6674751987225F00A17C4E /* AppStart2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674731987225F00A17C4E /* AppStart2.xib */; };
+		4D6674761987225F00A17C4E /* AppStart3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674741987225F00A17C4E /* AppStart3.xib */; };
 		4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D862ECA1952043A0066A848 /* DesignViewController.m */; };
 		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
 		4D9115D3197597FB008B11CC /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115D1197597FB008B11CC /* MoreViewController.m */; };
@@ -989,6 +994,12 @@
 		4D66745C1986EDB800A17C4E /* ABNotifierFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABNotifierFunctions.h; sourceTree = "<group>"; };
 		4D66745D1986EDB800A17C4E /* ABNotifierFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABNotifierFunctions.m; sourceTree = "<group>"; };
 		4D6674631986EE4E00A17C4E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4D66746B1987171F00A17C4E /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
+		4D66746C1987171F00A17C4E /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		4D66746D1987171F00A17C4E /* TutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialViewController.xib; sourceTree = "<group>"; };
+		4D6674711987220300A17C4E /* AppStart1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppStart1.xib; sourceTree = "<group>"; };
+		4D6674731987225F00A17C4E /* AppStart2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppStart2.xib; sourceTree = "<group>"; };
+		4D6674741987225F00A17C4E /* AppStart3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppStart3.xib; sourceTree = "<group>"; };
 		4D862EC91952043A0066A848 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		4D862ECA1952043A0066A848 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		4D862ECB1952043A0066A848 /* DesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignViewController.xib; sourceTree = "<group>"; };
@@ -1248,6 +1259,9 @@
 				4D9115D1197597FB008B11CC /* MoreViewController.m */,
 				4D9115D519773654008B11CC /* NotesViewController.h */,
 				4D9115D619773654008B11CC /* NotesViewController.m */,
+				4D66746B1987171F00A17C4E /* TutorialViewController.h */,
+				4D66746C1987171F00A17C4E /* TutorialViewController.m */,
+				4D66746D1987171F00A17C4E /* TutorialViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1732,6 +1746,7 @@
 		4D05DE04194FC4B5001F19A7 /* xibs */ = {
 			isa = PBXGroup;
 			children = (
+				4D667470198721DB00A17C4E /* Tutorial */,
 				4D05DE05194FC4CA001F19A7 /* WDThumbnailView.xib */,
 				4D081BD519538D7400F8871C /* NewPlanCell.xib */,
 				4D081BE71954DB1D00F8871C /* ColorCell.xib */,
@@ -1943,6 +1958,16 @@
 			path = notifier;
 			sourceTree = "<group>";
 		};
+		4D667470198721DB00A17C4E /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				4D6674711987220300A17C4E /* AppStart1.xib */,
+				4D6674731987225F00A17C4E /* AppStart2.xib */,
+				4D6674741987225F00A17C4E /* AppStart3.xib */,
+			);
+			name = Tutorial;
+			sourceTree = "<group>";
+		};
 		4D9115E21978389C008B11CC /* Coniferous Trees */ = {
 			isa = PBXGroup;
 			children = (
@@ -2107,6 +2132,7 @@
 				4D05DCA8194F7FF2001F19A7 /* groupSelect.png in Resources */,
 				4D05DE191950AC3F001F19A7 /* Activity.xib in Resources */,
 				4D66743E1983212B00A17C4E /* Hedge_Viridian.stencil in Resources */,
+				4D66746F1987171F00A17C4E /* TutorialViewController.xib in Resources */,
 				4D05DE201950AC3F001F19A7 /* Import.xib in Resources */,
 				4D53F6101964D21D0097C8E3 /* grid-inactive.png in Resources */,
 				4D05DCA5194F7FF2001F19A7 /* eyedropper@2x.png in Resources */,
@@ -2169,6 +2195,7 @@
 				4D081BDC1954A31600F8871C /* more@2x.png in Resources */,
 				4D05DE1B1950AC3F001F19A7 /* ColorBalance.xib in Resources */,
 				4D57604A195E0D3500DCCBEF /* Hedge_Viridian.svg in Resources */,
+				4D6674721987220300A17C4E /* AppStart1.xib in Resources */,
 				4D53F633196B149C0097C8E3 /* AppIcon29x29.png in Resources */,
 				4D05DBAF194F5C81001F19A7 /* design.png in Resources */,
 				4D6673C61983116200A17C4E /* Coniferous_Burgundy.svg in Resources */,
@@ -2189,6 +2216,7 @@
 				4D05DBB5194F5C81001F19A7 /* plans.png in Resources */,
 				4D05DCBE194F7FF2001F19A7 /* star.png in Resources */,
 				4D05DCBB194F7FF2001F19A7 /* select@2x.png in Resources */,
+				4D6674761987225F00A17C4E /* AppStart3.xib in Resources */,
 				4D05DBAE194F5C81001F19A7 /* delete.png in Resources */,
 				4D081BE81954DB1D00F8871C /* ColorCell.xib in Resources */,
 				4D081C1C195B8B4A00F8871C /* Plant_Indigo.svg in Resources */,
@@ -2240,6 +2268,7 @@
 				4D6674311983212B00A17C4E /* Coniferous_Mustard.stencil in Resources */,
 				4D05DCB5194F7FF2001F19A7 /* rotate@2x.png in Resources */,
 				4D05DCA2194F7FF2001F19A7 /* eraser.png in Resources */,
+				4D6674751987225F00A17C4E /* AppStart2.xib in Resources */,
 				4D57604F195E0E5300DCCBEF /* Shrub_Brown.svg in Resources */,
 				4D66743D1983212B00A17C4E /* Hedge_Maroon.stencil in Resources */,
 				4D081BD2195351AC00F8871C /* Devilish.inkpad in Resources */,
@@ -2484,6 +2513,7 @@
 				4D05DDE7194F80BF001F19A7 /* OCAViewController.m in Sources */,
 				4D66745E1986EDB800A17C4E /* GCAlertView.m in Sources */,
 				4D05DD9E194F8042001F19A7 /* WDCanvas.m in Sources */,
+				4D66746E1987171F00A17C4E /* TutorialViewController.m in Sources */,
 				4D05DD93194F8042001F19A7 /* WDActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

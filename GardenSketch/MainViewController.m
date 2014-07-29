@@ -20,7 +20,7 @@
 #import "NotesViewController.h"
 
 @interface MainViewController ()
-
+	@property (strong, nonatomic) TutorialViewController *tutorial;
 @end
 
 @implementation MainViewController
@@ -125,6 +125,8 @@
 //Delegate Protocol
 - (BOOL)infiniteTabBarController:(M13InfiniteTabBarController *)tabBarController shouldSelectViewContoller:(UIViewController *)viewController
 {
+	// TODO: limit access to tabs based on the progress:
+	//			e.g. notes and design tabs are not allowed unless at least one plan exists and is selected.
     if ([viewController.title isEqualToString:@"Search"]) { //Prevent selection of first view controller
         return NO;
     } else {
@@ -134,7 +136,46 @@
 
 - (void)infiniteTabBarController:(M13InfiniteTabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-    //Do nothing
+	//Do nothing
+	[self toggleTutorial:nil];
+}
+
+- (IBAction)toggleTutorial:(UIButton *)sender {
+	return;
+    if (self.tutorial == nil) {
+        self.tutorial = [[TutorialViewController alloc] initWithNibName:@"TutorialViewController" bundle:nil];
+		[self.tutorial setDelegate:self];
+		[self.tutorial setXibsToShow:[NSMutableArray arrayWithArray:@[@"AppStart1", @"AppStart2", @"AppStart3"]]];
+        [self addChildViewController:self.tutorial];
+        [self.view addSubview:self.tutorial.view];
+		// center horizontally and move up to hide.
+		CGRect frame = self.tutorial.view.frame;
+		frame.origin.x = (1024 - self.tutorial.view.frame.size.width) / 2;
+		frame.origin.y = -frame.size.height;
+		[self.tutorial.view setFrame:frame];
+        [UIView animateWithDuration:.5 animations:^{
+            CGRect frame = self.tutorial.view.frame;
+			frame.origin.y = 0;
+			[self.tutorial.view setFrame:frame];
+        } completion:^(BOOL finished) {
+            [self.tutorial didMoveToParentViewController:self];
+        }];
+    } else {
+        [UIView animateWithDuration:.5 animations:^{
+            CGRect frame = self.tutorial.view.frame;
+			frame.origin.y = -frame.size.height;
+			[self.tutorial.view setFrame:frame];
+        } completion:^(BOOL finished) {
+            [self.tutorial.view removeFromSuperview];
+            [self.tutorial removeFromParentViewController];
+            self.tutorial = nil;
+        }];
+    }
+}
+
+- (void)letMeGo
+{
+	[self toggleTutorial:nil];
 }
 
 - (void)didReceiveMemoryWarning

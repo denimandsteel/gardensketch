@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "M13InfiniteTabBarController.h"
 #import "SidebarViewController.h"
+#import "TutorialViewController.h"
 
-@interface MainViewController : UIViewController <M13InfiniteTabBarControllerDelegate>
+@interface MainViewController : UIViewController <M13InfiniteTabBarControllerDelegate, TutorialDelegate>
 
 @property (nonatomic, weak) SidebarViewController *sidebar;
 
