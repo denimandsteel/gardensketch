@@ -41,7 +41,7 @@
 	
 	[self addChildViewControllers];
 	
-	if (NO && [[NSUserDefaults standardUserDefaults] boolForKey:GS_HAS_LAUNCHED_ONCE])
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:GS_HAS_LAUNCHED_ONCE])
     {
         // app already launched
     }
@@ -163,8 +163,7 @@
 - (BOOL)hasVisitedTab:(NSInteger)tabIndex
 {
 	BOOL result = [[NSUserDefaults standardUserDefaults] boolForKey:tabKey[tabIndex]];
-//	return result;
-	return NO;
+	return result;
 }
 
 - (void)setVisited:(BOOL)visited forTab:(NSInteger)tabIndex

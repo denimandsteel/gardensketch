@@ -17,16 +17,23 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Image + Tip: tap the plan name to change it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="632" translatesAutoresizingMaskIntoConstraints="NO" id="bqh-04-edV">
-                    <rect key="frame" x="84" y="227" width="632" height="208"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tip: tap the plan name to change it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="632" translatesAutoresizingMaskIntoConstraints="NO" id="bqh-04-edV">
+                    <rect key="frame" x="84" y="366" width="632" height="69"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="25"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Plans2.png" translatesAutoresizingMaskIntoConstraints="NO" id="3dc-vt-5AV">
+                    <rect key="frame" x="230" y="191" width="341" height="167"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="Plans2.png" width="115" height="156"/>
+    </resources>
 </document>

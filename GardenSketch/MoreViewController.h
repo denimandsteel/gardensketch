@@ -13,4 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet GSLabel *versionLabel;
 
+- (IBAction)resetTutorialTapped:(id)sender;
+
 @end

@@ -18,17 +18,23 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="632" translatesAutoresizingMaskIntoConstraints="NO" id="bqh-04-edV">
-                    <rect key="frame" x="84" y="227" width="632" height="208"/>
+                    <rect key="frame" x="84" y="175" width="632" height="82"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">Double-tap a shape to place many of the same shape.Tap any other shape to turn it off.
-+ Images</string>
+                    <string key="text">Double-tap a shape to place many of the same shape.Tap any other shape to turn it off.</string>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="25"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Design2.png" translatesAutoresizingMaskIntoConstraints="NO" id="pnB-TS-UsR">
+                    <rect key="frame" x="213" y="264" width="375" height="234"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="Design2.png" width="157" height="219"/>
+    </resources>
 </document>

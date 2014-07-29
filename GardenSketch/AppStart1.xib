@@ -21,6 +21,7 @@
                     <rect key="frame" x="84" y="224" width="632" height="208"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <string key="text">Gardening is the art that uses flowers and plants as paint, and the soil and sky as canvas. 
+
 - Elizabeth Murray</string>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="25"/>
                     <nil key="highlightedColor"/>

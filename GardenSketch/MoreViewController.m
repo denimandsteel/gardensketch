@@ -7,6 +7,7 @@
 //
 
 #import "MoreViewController.h"
+#import "Constants.h"
 
 @interface MoreViewController ()
 
@@ -49,4 +50,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)resetTutorialTapped:(id)sender {
+	NSArray *tabKeys = @[GS_VISITED_PROPERTY_TAB, GS_VISITED_HOUSE_TAB, GS_VISITED_NORTH_TAB, GS_VISITED_PLANS_TAB, GS_VISITED_DESIGN_TAB, GS_VISITED_NOTES_TAB, GS_VISITED_MORE_TAB];
+	for (NSString *tabKey in tabKeys) {
+		[[NSUserDefaults standardUserDefaults] setBool:NO forKey:tabKey];
+    }
+	[[NSUserDefaults standardUserDefaults] synchronize];
+}
 @end

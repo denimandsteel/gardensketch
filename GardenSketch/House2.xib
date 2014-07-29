@@ -17,16 +17,17 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Images!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="632" translatesAutoresizingMaskIntoConstraints="NO" id="bqh-04-edV">
-                    <rect key="frame" x="84" y="227" width="632" height="208"/>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="House2.png" translatesAutoresizingMaskIntoConstraints="NO" id="2sG-9M-T4r">
+                    <rect key="frame" x="79" y="184" width="642" height="249"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="25"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="House2.png" width="456" height="211"/>
+    </resources>
 </document>

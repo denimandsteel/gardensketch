@@ -17,18 +17,23 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="632" translatesAutoresizingMaskIntoConstraints="NO" id="bqh-04-edV">
-                    <rect key="frame" x="84" y="227" width="632" height="208"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use two fingers and drag in any direction." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="632" translatesAutoresizingMaskIntoConstraints="NO" id="bqh-04-edV">
+                    <rect key="frame" x="84" y="217" width="632" height="66"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <string key="text">Use two fingers and drag in any direction.
-+ Images</string>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="25"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Design4.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vhr-SS-nuC">
+                    <rect key="frame" x="264" y="287" width="273" height="151"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="Design4.png" width="87" height="98"/>
+    </resources>
 </document>
