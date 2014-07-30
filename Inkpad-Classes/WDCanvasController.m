@@ -222,9 +222,9 @@
 //                                  action:@selector(duplicateDrawing:) target:self];
 //        [menus addObject:item];
         
-        item = [WDMenuItem itemWithTitle:NSLocalizedString(@"Print Drawing", @"Print Drawing") action:@selector(printDrawing:) target:self];
-        [menus addObject:item];
-        
+//        item = [WDMenuItem itemWithTitle:NSLocalizedString(@"Print Drawing", @"Print Drawing") action:@selector(printDrawing:) target:self];
+//        [menus addObject:item];
+//        
         [menus addObject:[WDMenuItem separatorItem]];
         
         if (NSClassFromString(@"SLComposeViewController")) { // if we can facebook
@@ -247,9 +247,9 @@
                                   action:@selector(exportAsPDF:) target:self];
         [menus addObject:item];
 
-        item = [WDMenuItem itemWithTitle:NSLocalizedString(@"Export as SVG", @"Export as SVG")
-                                  action:@selector(exportAsSVG:) target:self];
-        [menus addObject:item];
+//        item = [WDMenuItem itemWithTitle:NSLocalizedString(@"Export as SVG", @"Export as SVG")
+//                                  action:@selector(exportAsSVG:) target:self];
+//        [menus addObject:item];
         
         actionMenu_ = [[WDMenu alloc] initWithItems:menus];
         actionMenu_.delegate = self;

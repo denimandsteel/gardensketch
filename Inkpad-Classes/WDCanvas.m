@@ -40,6 +40,9 @@
 
 NSString *WDCanvasBeganTrackingTouches = @"WDCanvasBeganTrackingTouches";
 
+NSString * const GSNotificationCanvasActivityStarted      = @"GSNotificationCanvasActivityStarted";
+NSString * const GSNotificationCanvasActivityStopped      = @"GSNotificationCanvasActivityStopped";
+
 @interface WDCanvas (Private)
 - (void) setTrueViewScale_:(float)scale;
 - (void) rebuildViewTransform_;
@@ -1034,6 +1037,8 @@ NSString *WDCanvasBeganTrackingTouches = @"WDCanvasBeganTrackingTouches";
 
 - (void) startActivity
 {
+	[[NSNotificationCenter defaultCenter] postNotificationName:GSNotificationCanvasActivityStarted object:self];
+	
     if (!activityView_) {
         [[NSBundle mainBundle] loadNibNamed:@"Activity" owner:self options:nil];
     }
@@ -1048,6 +1053,8 @@ NSString *WDCanvasBeganTrackingTouches = @"WDCanvasBeganTrackingTouches";
 
 - (void) stopActivity
 {
+	[[NSNotificationCenter defaultCenter] postNotificationName:GSNotificationCanvasActivityStopped object:self];
+	
     if (activityView_) {
         [activityView_ removeFromSuperview];
         activityView_ = nil;

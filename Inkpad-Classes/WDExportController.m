@@ -119,7 +119,7 @@ NSString *WDDropboxFormatDefault = @"WDDropboxFormatDefault";
     NSUserDefaults  *defaults = [NSUserDefaults standardUserDefaults];
     UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];
     UITableViewCell *oldCell = nil;
-    NSIndexPath     *oldIndexPath = nil; 
+    NSIndexPath     *oldIndexPath = nil;
     NSString        *defaultsKey = (mode_ == kWDExportViaEmailMode) ? WDEmailFormatDefault : WDDropboxFormatDefault;
 
     NSString *oldValue = [defaults objectForKey:defaultsKey];

@@ -19,6 +19,10 @@
 #import "MoreViewController.h"
 #import "NotesViewController.h"
 #import "Constants.h"
+#import "WDDocument.h"
+
+extern const NSString* GSNotificationCanvasActivityStarted;
+extern const NSString* GSNotificationCanvasActivityStopped;
 
 @interface MainViewController ()
 	@property (strong, nonatomic) TutorialViewController *tutorial;
@@ -54,6 +58,21 @@
 		// -1 is the first app launch tutorial pages!
 		[self showTutorialForTab:-1];
     }
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(canvasActivityStarted:) name:GSNotificationCanvasActivityStarted object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(canvasActivityStopped:) name:GSNotificationCanvasActivityStopped object:nil];
+}
+
+- (void)canvasActivityStarted:(NSNotification *)notification
+{
+	NSLog(@"disable all interactions!");
+	[self.sidebar.view setUserInteractionEnabled:NO];
+}
+
+- (void)canvasActivityStopped:(NSNotification *)notification
+{
+	NSLog(@"enable all interactions!");
+	[self.sidebar.view setUserInteractionEnabled:YES];
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -127,11 +146,11 @@
 														   selectedIconMask:[UIImage imageNamed:@"design"]
 														 unselectedIconMask:[UIImage imageNamed:@"design"]]];
     [vc6 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Notes"
-														   selectedIconMask:[UIImage imageNamed:@"notes.png"]
-														 unselectedIconMask:[UIImage imageNamed:@"notes.png"]]];
+														   selectedIconMask:[UIImage imageNamed:@"notes"]
+														 unselectedIconMask:[UIImage imageNamed:@"notes"]]];
     [vc7 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"More"
-														   selectedIconMask:[UIImage imageNamed:@"more.png"]
-														 unselectedIconMask:[UIImage imageNamed:@"more.png"]]];
+														   selectedIconMask:[UIImage imageNamed:@"more"]
+														 unselectedIconMask:[UIImage imageNamed:@"more"]]];
     
     return @[vc1, vc2, vc3, vc4, vc5, vc6, vc7];
 }
@@ -139,6 +158,15 @@
 //Delegate Protocol
 - (BOOL)infiniteTabBarController:(M13InfiniteTabBarController *)tabBarController shouldSelectViewContoller:(UIViewController *)viewController
 {
+	NSInteger tabIndex = [self.sidebar.viewControllers indexOfObject:viewController];
+	
+	// Do not allow jumping to design or notes tabs if no plan, or the base plan is loaded.
+	if (tabIndex == 4 || tabIndex == 5) {
+		if (!self.sidebar.canvasController.document ||
+			[self.sidebar.canvasController.document.filename isEqualToString:GS_BASE_PLAN_FILE_NAME]) {
+			return NO;
+		}
+	}
 	// TODO: limit access to tabs based on the progress:
 	//			e.g. notes and design tabs are not allowed unless at least one plan exists and is selected.
     if ([viewController.title isEqualToString:@"Search"]) { //Prevent selection of first view controller

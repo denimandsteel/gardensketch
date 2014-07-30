@@ -36,7 +36,6 @@
 						environmentName:ABNotifierAutomaticEnvironment
 								 useSSL:YES // only if your account supports it
 							   delegate:self];
-	[ABNotifier writeTestNotice];
 }
 
 
