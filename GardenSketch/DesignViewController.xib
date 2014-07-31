@@ -152,7 +152,7 @@
                     </connections>
                 </segmentedControl>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1oJ-Yu-5aa" userLabel="Plants View">
-                    <rect key="frame" x="0.0" y="175" width="320" height="479"/>
+                    <rect key="frame" x="0.0" y="675" width="320" height="479"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCz-Ro-S7V" customClass="WDToolButton">
@@ -257,7 +257,7 @@
                     </subviews>
                     <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aOi-Oh-tMw" userLabel="Structures View">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aOi-Oh-tMw" userLabel="Structures View">
                     <rect key="frame" x="0.0" y="175" width="320" height="478"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -286,7 +286,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHh-bW-t8b" userLabel="Button - Water feature" customClass="WDToolButton">
-                            <rect key="frame" x="138" y="25" width="65" height="66"/>
+                            <rect key="frame" x="138" y="25" width="65" height="65"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <state key="normal" image="Water_Feature.png"/>
@@ -361,15 +361,15 @@
     </objects>
     <resources>
         <image name="Coniferous_Dark_Green.png" width="331" height="332"/>
-        <image name="Gazebo.png" width="197" height="188"/>
+        <image name="Gazebo.png" width="90" height="90"/>
         <image name="Hedge_brown.png" width="111" height="246"/>
         <image name="Hedge_brown_horizontal.png" width="246" height="111"/>
         <image name="Plant_Grey_Green.png" width="115" height="114"/>
-        <image name="Shed.png" width="175" height="175"/>
+        <image name="Shed.png" width="82" height="82"/>
         <image name="Shrub_Brown.png" width="114" height="98"/>
-        <image name="Tile.png" width="125" height="126"/>
+        <image name="Tile.png" width="62" height="63"/>
         <image name="Tree_Green.png" width="273" height="272"/>
-        <image name="Water_Feature.png" width="251" height="251"/>
+        <image name="Water_Feature.png" width="65" height="65"/>
         <image name="enclosed.png" width="115" height="106"/>
         <image name="freehand.png" width="102" height="106"/>
         <image name="grid-active.png" width="256" height="256"/>
