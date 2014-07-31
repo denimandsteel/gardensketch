@@ -50,7 +50,7 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 {
 	self.shapes = [NSMutableDictionary dictionary];
 	// TODO: move this into a plist
-	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Grey_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian", @"Deciduous_Tree_Burgundy", @"Deciduous_Tree_Dark_Green", @"Deciduous_Tree_Green", @"Deciduous_Tree_Mustard", @"Deciduous_Tree_Teal", @"Deciduous_Tree_Violet", @"House_No_Lines", @"Coniferous_Burgundy", @"Coniferous_DarkGreen", @"Coniferous_Green", @"Coniferous_Mustard", @"Coniferous_Teal", @"Coniferous_Violet", @"Water_Feature"];
+	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Grey_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian", @"Deciduous_Tree_Burgundy", @"Deciduous_Tree_Dark_Green", @"Deciduous_Tree_Green", @"Deciduous_Tree_Mustard", @"Deciduous_Tree_Teal", @"Deciduous_Tree_Violet", @"House_No_Lines", @"Coniferous_Burgundy", @"Coniferous_DarkGreen", @"Coniferous_Green", @"Coniferous_Mustard", @"Coniferous_Teal", @"Coniferous_Violet", @"Water_Feature", @"Rectangular_House_Horizontal", @"Rectangular_House_Vertical", @"L_Shaped_House_1", @"L_Shaped_House_2", @"L_Shaped_House_3", @"L_Shaped_House_4"];
 	for (NSString *shapeName in shapeNames) {
 		[self loadShape:shapeName];
 	}
@@ -241,6 +241,24 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 		case kHouse:
 			filename = @"House_No_Lines";
 			break;
+		case kHouseL1:
+			filename = @"L_Shaped_House_1";
+			break;
+		case kHouseL2:
+			filename = @"L_Shaped_House_2";
+			break;
+		case kHouseL3:
+			filename = @"L_Shaped_House_3";
+			break;
+		case kHouseL4:
+			filename = @"L_Shaped_House_4";
+			break;
+		case kHouseRectHor:
+			filename = @"Rectangular_House_Horizontal";
+			break;
+		case kHouseRectVer:
+			filename = @"Rectangular_House_Vertical";
+			break;
 		case kWaterFeature:
 			filename = @"Water_Feature";
 			break;
@@ -270,6 +288,12 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 			scale = 3;
 			break;
 		case kHouse:
+		case kHouseL1:
+		case kHouseL2:
+		case kHouseL3:
+		case kHouseL4:
+		case kHouseRectHor:
+		case kHouseRectVer:
 			scale = 12;
 			break;
 		default:

@@ -2,15 +2,16 @@
 <!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="2.8 150.1 609.7 609.7" enable-background="new 2.8 150.1 609.7 609.7" xml:space="preserve">
-<rect x="3.3" y="150.6" fill="none" stroke="#000000" stroke-miterlimit="10" width="608.7" height="608.7"/>
-<rect x="44.8" y="192.1" fill="none" stroke="#000000" stroke-miterlimit="10" width="525.7" height="525.7"/>
-<rect x="196.3" y="343.7" fill="none" stroke="#000000" stroke-miterlimit="10" width="222.6" height="222.6"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="418.9" y1="343.7" x2="570.5" y2="192.1"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="196.3" y1="343.7" x2="44.8" y2="192.1"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="196.3" y1="566.3" x2="44.8" y2="717.8"/>
-<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="418.9" y1="566.3" x2="570.5" y2="717.8"/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="249.5,444.8 249.5,509.7 320.5,509.7 320.5,477.3 
-	343.7,477.3 343.7,509.7 366.9,509.7 366.9,444.8 "/>
-<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="249.5,435.5 366.9,435.5 308.2,384.6 "/>
+	 viewBox="0 0 187.601 187.6" enable-background="new 0 0 187.601 187.6" xml:space="preserve">
+<rect x="0.3" y="0.3" fill="none" stroke="#565656" stroke-width="0.6" stroke-miterlimit="10" width="187.001" height="187"/>
+<rect x="13.05" y="13.05" fill="none" stroke="#565656" stroke-width="0.6" stroke-miterlimit="10" width="161.501" height="161.5"/>
+<rect x="59.612" y="59.612" fill="none" stroke="#565656" stroke-width="0.6" stroke-miterlimit="10" width="68.376" height="68.375"/>
+<line fill="none" stroke="#565656" stroke-width="0.6" stroke-miterlimit="10" x1="127.988" y1="59.612" x2="174.55" y2="13.05"/>
+<line fill="none" stroke="#565656" stroke-width="0.6" stroke-miterlimit="10" x1="59.612" y1="59.612" x2="13.05" y2="13.05"/>
+<line fill="none" stroke="#565656" stroke-width="0.6" stroke-miterlimit="10" x1="59.612" y1="127.987" x2="13.05" y2="174.55"/>
+<line fill="none" stroke="#565656" stroke-width="0.6" stroke-miterlimit="10" x1="127.988" y1="127.987" x2="174.55" y2="174.55"/>
+<polygon fill="none" stroke="#565656" stroke-width="0.6" stroke-miterlimit="10" points="75.935,90.679 75.935,110.61 
+	97.762,110.61 97.762,100.646 104.881,100.646 104.881,110.61 111.998,110.61 111.998,90.679 "/>
+<polygon fill="none" stroke="#565656" stroke-width="0.6" stroke-miterlimit="10" points="75.935,87.832 111.998,87.832 
+	93.966,72.173 "/>
 </svg>

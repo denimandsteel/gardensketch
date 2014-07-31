@@ -12,6 +12,12 @@
 
 typedef enum {
 	kHouse,
+	kHouseRectHor,
+	kHouseRectVer,
+	kHouseL1,
+    kHouseL2,
+    kHouseL3,
+    kHouseL4,
     kPlant,
 	kHedge,
     kShrub,

@@ -10,7 +10,7 @@
 #import "SidebarViewController.h"
 #import "SidebarContentViewController.h"
 #import "PropertyViewController.h"
-#import "StructureViewController.h"
+#import "HouseViewController.h"
 #import "NorthViewController.h"
 #import "PlansViewController.h"
 #import "WDCanvasController.h"
@@ -116,7 +116,7 @@ extern const NSString* GSNotificationCanvasActivityStopped;
     //Load the view controllers from the storyboard and add them to the array.
     
     PropertyViewController *vc1 = [[PropertyViewController alloc] initWithNibName:@"PropertyViewController" bundle:nil];
-	StructureViewController *vc2 = [[StructureViewController alloc] initWithNibName:@"StructureViewController" bundle:nil];
+	HouseViewController *vc2 = [[HouseViewController alloc] initWithNibName:@"HouseViewController" bundle:nil];
 	NorthViewController *vc3 = [[NorthViewController alloc] initWithNibName:@"NorthViewController" bundle:nil];
 	PlansViewController *vc4 = [[PlansViewController alloc] initWithNibName:@"PlansViewController" bundle:nil];
 	DesignViewController *vc5 = [[DesignViewController alloc] initWithNibName:@"DesignViewController" bundle:nil];
@@ -208,7 +208,7 @@ extern const NSString* GSNotificationCanvasActivityStopped;
 		}
 		self.tutorial = [[TutorialViewController alloc] initWithNibName:@"TutorialViewController" bundle:nil];
 		[self.tutorial setDelegate:self];
-		[self.tutorial setXibsToShow:pages];
+		[self.tutorial setPagesToShow:pages];
         [self addChildViewController:self.tutorial];
         [self.view addSubview:self.tutorial.view];
 		// center horizontally and move up to hide.
@@ -224,7 +224,7 @@ extern const NSString* GSNotificationCanvasActivityStopped;
             [self.tutorial didMoveToParentViewController:self];
         }];
     } else {
-		[self.tutorial.xibsToShow addObjectsFromArray:[self tutorialPageNamesForTab:tabIndex]];
+		[self.tutorial.pagesToShow addObjectsFromArray:[self tutorialPageNamesForTab:tabIndex]];
 	}
 }
 

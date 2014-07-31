@@ -37,7 +37,7 @@
 
 - (void)showPageAtIndex:(NSInteger)index
 {
-	UIView *view = [[[NSBundle mainBundle] loadNibNamed:[self.xibsToShow objectAtIndex:index] owner:self options:nil] lastObject];
+	UIView *view = [[[NSBundle mainBundle] loadNibNamed:[self.pagesToShow objectAtIndex:index] owner:self options:nil] lastObject];
 	
 	for (UIView *subview in self.containerView.subviews) {
 		[subview removeFromSuperview];
@@ -55,7 +55,7 @@
 - (IBAction)continueTapped:(id)sender {
 	currentIndex++;
 	
-	if (currentIndex < self.xibsToShow.count) {
+	if (currentIndex < self.pagesToShow.count) {
 		[self showPageAtIndex:currentIndex];
 	} else {
 		[self.delegate letMeGo];

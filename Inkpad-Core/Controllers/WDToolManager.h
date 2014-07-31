@@ -11,6 +11,7 @@
 
 #import <Foundation/Foundation.h>
 #import "WDShapeTool.h"
+#import "WDScaleTool.h"
 #import "WDStencilTool.h"
 #import "WDFreehandTool.h"
 #import "WDSelectionTool.h"
@@ -37,6 +38,13 @@
 @property (nonatomic, weak) WDStencilTool   *shed;
 @property (nonatomic, weak) WDStencilTool   *waterFeature;
 @property (nonatomic, weak) WDStencilTool   *house;
+@property (nonatomic, weak) WDStencilTool   *houseL1;
+@property (nonatomic, weak) WDStencilTool   *houseL2;
+@property (nonatomic, weak) WDStencilTool   *houseL3;
+@property (nonatomic, weak) WDStencilTool   *houseL4;
+@property (nonatomic, weak) WDStencilTool   *houseRectHor;
+@property (nonatomic, weak) WDStencilTool   *houseRectVer;
+@property (nonatomic, weak) WDScaleTool		*scale;
 
 + (WDToolManager *) sharedInstance;
 

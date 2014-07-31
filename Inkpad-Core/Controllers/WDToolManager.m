@@ -95,6 +95,24 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 		WDStencilTool *house = (WDStencilTool *)[WDStencilTool tool];
 		[house setType:kHouse];
 		
+		WDStencilTool *houseL1 = (WDStencilTool *)[WDStencilTool tool];
+		[houseL1 setType:kHouseL1];
+		
+		WDStencilTool *houseL2 = (WDStencilTool *)[WDStencilTool tool];
+		[houseL2 setType:kHouseL2];
+		
+		WDStencilTool *houseL3 = (WDStencilTool *)[WDStencilTool tool];
+		[houseL3 setType:kHouseL3];
+		
+		WDStencilTool *houseL4 = (WDStencilTool *)[WDStencilTool tool];
+		[houseL4 setType:kHouseL4];
+		
+		WDStencilTool *houseRectHor = (WDStencilTool *)[WDStencilTool tool];
+		[houseRectHor setType:kHouseRectHor];
+		
+		WDStencilTool *houseRectVer = (WDStencilTool *)[WDStencilTool tool];
+		[houseRectVer setType:kHouseRectVer];
+		
 		WDScaleTool *scale = (WDScaleTool *)[WDScaleTool tool];
 		
 		tools_ = @[select,
@@ -112,6 +130,12 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 				   shed,
 				   waterFeature,
 				   house,
+				   houseL1,
+				   houseL2,
+				   houseL3,
+				   houseL4,
+				   houseRectHor,
+				   houseRectVer,
 				   scale];
 		
 		self.select = select;
@@ -127,6 +151,14 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 		self.gazebo = gazebo;
 		self.shed = shed;
 		self.waterFeature = waterFeature;
+		self.house = house;
+		self.houseL1 = houseL1;
+		self.houseL2 = houseL2;
+		self.houseL3 = houseL3;
+		self.houseL4 = houseL4;
+		self.houseRectHor = houseRectHor;
+		self.houseRectVer = houseRectVer;
+		self.scale = scale;
     }
     
     return tools_;

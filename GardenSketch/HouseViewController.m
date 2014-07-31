@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Denim & Steel. All rights reserved.
 //
 
-#import "StructureViewController.h"
+#import "HouseViewController.h"
 #import "WDToolManager.h"
 #import "WDStencilTool.h"
 #import "WDScaleTool.h"
@@ -14,11 +14,11 @@
 #import "WDDrawingManager.h"
 #import "WDDrawingController.h"
 
-@interface StructureViewController ()
+@interface HouseViewController ()
 
 @end
 
-@implementation StructureViewController
+@implementation HouseViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,8 +34,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	
-	
 	WDTool *house = nil;
+	WDTool *houseL1 = nil;
+	WDTool *houseL2 = nil;
+	WDTool *houseL3 = nil;
+	WDTool *houseL4 = nil;
+	WDTool *houseRectHor = nil;
+	WDTool *houseRectVer = nil;
 	WDTool *scale = nil;
 	WDTool *select = nil;
 	
@@ -43,6 +48,18 @@
 		if ([tool isKindOfClass:[WDStencilTool class]]) {
 			if ([(WDStencilTool *)tool type] == kHouse) {
 				house = tool;
+			} else if ([(WDStencilTool *)tool type] == kHouseL1) {
+				houseL1 = tool;
+			} else if ([(WDStencilTool *)tool type] == kHouseL2) {
+				houseL2 = tool;
+			} else if ([(WDStencilTool *)tool type] == kHouseL3) {
+				houseL3 = tool;
+			} else if ([(WDStencilTool *)tool type] == kHouseL4) {
+				houseL4 = tool;
+			} else if ([(WDStencilTool *)tool type] == kHouseRectHor) {
+				houseRectHor = tool;
+			} else if ([(WDStencilTool *)tool type] == kHouseRectVer) {
+				houseRectVer = tool;
 			}
 		} else if ([tool isKindOfClass:[WDScaleTool class]]) {
 			scale = tool;
@@ -53,6 +70,24 @@
 	
 	[self.houseButton setTool:house];
 	[self.houseButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	[self.houseL1Button setTool:houseL1];
+	[self.houseL1Button addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	[self.houseL2Button setTool:houseL2];
+	[self.houseL2Button addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	[self.houseL3Button setTool:houseL3];
+	[self.houseL3Button addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	[self.houseL4Button setTool:houseL4];
+	[self.houseL4Button addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	[self.houseRectHorButton setTool:houseRectHor];
+	[self.houseRectHorButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	[self.houseRectVerButton setTool:houseRectVer];
+	[self.houseRectVerButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 	
 	[self.scaleButton setTool:scale];
 	[self.scaleButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];

@@ -11,9 +11,17 @@
 #import "WDToolButton.h"
 #import "GSButton.h"
 
-@interface StructureViewController : SidebarContentViewController
+@interface HouseViewController : SidebarContentViewController
 
 @property (weak, nonatomic) IBOutlet WDToolButton *houseButton;
+@property (weak, nonatomic) IBOutlet WDToolButton *houseRectHorButton;
+@property (weak, nonatomic) IBOutlet WDToolButton *houseRectVerButton;
+@property (weak, nonatomic) IBOutlet WDToolButton *houseL1Button;
+@property (weak, nonatomic) IBOutlet WDToolButton *houseL2Button;
+@property (weak, nonatomic) IBOutlet WDToolButton *houseL3Button;
+@property (weak, nonatomic) IBOutlet WDToolButton *houseL4Button;
+
+
 @property (weak, nonatomic) IBOutlet WDToolButton *scaleButton;
 @property (weak, nonatomic) IBOutlet WDToolButton *selectButton;
 
