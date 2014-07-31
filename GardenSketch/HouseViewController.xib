@@ -37,44 +37,44 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nyn-Tz-Z2h" customClass="WDToolButton">
-                    <rect key="frame" x="20" y="81" width="104" height="104"/>
+                    <rect key="frame" x="24" y="81" width="104" height="104"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="House_No_Lines.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjk-yN-USc" customClass="WDToolButton">
-                    <rect key="frame" x="20" y="195" width="104" height="104"/>
+                    <rect key="frame" x="162" y="173" width="73" height="114"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="House_No_Lines.png">
+                    <state key="normal" image="Rectangular_House_Vertical.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVf-hD-Yp0" customClass="WDToolButton">
-                    <rect key="frame" x="141" y="195" width="104" height="104"/>
+                    <rect key="frame" x="24" y="420" width="104" height="104"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="House_No_Lines.png">
+                    <state key="normal" image="L_Shaped_House_1.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HnF-WK-pNz" customClass="WDToolButton">
-                    <rect key="frame" x="20" y="309" width="104" height="104"/>
+                    <rect key="frame" x="24" y="306" width="104" height="104"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="House_No_Lines.png">
+                    <state key="normal" image="L_Shaped_House_2.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLd-Sf-DIo" customClass="WDToolButton">
-                    <rect key="frame" x="141" y="81" width="104" height="104"/>
+                    <rect key="frame" x="24" y="212" width="128" height="75"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="House_No_Lines.png">
+                    <state key="normal" image="Rectangular_House_Horizontal.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRp-p4-2AL" customClass="WDToolButton">
-                    <rect key="frame" x="141" y="309" width="104" height="104"/>
+                    <rect key="frame" x="138" y="306" width="104" height="104"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="House_No_Lines.png">
+                    <state key="normal" image="L_Shaped_House_3.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -99,9 +99,9 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ntz-5W-kw4" customClass="WDToolButton">
-                    <rect key="frame" x="20" y="423" width="104" height="104"/>
+                    <rect key="frame" x="138" y="421" width="104" height="104"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="House_No_Lines.png">
+                    <state key="normal" image="L_Shaped_House_4.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -113,6 +113,12 @@
     </objects>
     <resources>
         <image name="House_No_Lines.png" width="189" height="189"/>
+        <image name="L_Shaped_House_1.png" width="2554" height="2327"/>
+        <image name="L_Shaped_House_2.png" width="2553" height="2803"/>
+        <image name="L_Shaped_House_3.png" width="2554" height="2327"/>
+        <image name="L_Shaped_House_4.png" width="2553" height="2803"/>
+        <image name="Rectangular_House_Horizontal.png" width="2554" height="1480"/>
+        <image name="Rectangular_House_Vertical.png" width="1913" height="3302"/>
         <image name="scale-icon.png" width="25" height="25"/>
         <image name="select-icon.png" width="30" height="30"/>
     </resources>

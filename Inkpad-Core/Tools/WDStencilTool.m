@@ -67,13 +67,25 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 			return @"Shed.png";
 			break;
 		case kHouse:
-		case kHouseL1:
-		case kHouseL2:
-		case kHouseL3:
-		case kHouseL4:
-		case kHouseRectVer:
-		case kHouseRectHor:
 			return @"House_No_Lines.png";
+			break;
+		case kHouseL1:
+			return @"L_Shaped_House_1.png";
+			break;
+		case kHouseL2:
+			return @"L_Shaped_House_2.png";
+			break;
+		case kHouseL3:
+			return @"L_Shaped_House_3.png";
+			break;
+		case kHouseL4:
+			return @"L_Shaped_House_4.png";
+			break;
+		case kHouseRectVer:
+			return @"Rectangular_House_Vertical.png";
+			break;
+		case kHouseRectHor:
+			return @"Rectangular_House_Horizontal.png";
 			break;
 		case kWaterFeature:
 			return @"Water_Feature.png";

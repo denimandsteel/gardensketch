@@ -431,6 +431,12 @@
 		4D6674BA1989B4DC00A17C4E /* L_Shaped_House_4.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674B41989B4DC00A17C4E /* L_Shaped_House_4.stencil */; };
 		4D6674BB1989B4DC00A17C4E /* Rectangular_House_Horizontal.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674B51989B4DC00A17C4E /* Rectangular_House_Horizontal.stencil */; };
 		4D6674BC1989B4DC00A17C4E /* Rectangular_House_Vertical.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674B61989B4DC00A17C4E /* Rectangular_House_Vertical.stencil */; };
+		4D6674C11989C7CB00A17C4E /* L_Shaped_House_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674BD1989C7CB00A17C4E /* L_Shaped_House_1.png */; };
+		4D6674C21989C7CB00A17C4E /* L_Shaped_House_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674BE1989C7CB00A17C4E /* L_Shaped_House_2.png */; };
+		4D6674C31989C7CB00A17C4E /* L_Shaped_House_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674BF1989C7CB00A17C4E /* L_Shaped_House_3.png */; };
+		4D6674C41989C7CB00A17C4E /* L_Shaped_House_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674C01989C7CB00A17C4E /* L_Shaped_House_4.png */; };
+		4D6674C71989C7D800A17C4E /* Rectangular_House_Horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674C51989C7D800A17C4E /* Rectangular_House_Horizontal.png */; };
+		4D6674C81989C7D800A17C4E /* Rectangular_House_Vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674C61989C7D800A17C4E /* Rectangular_House_Vertical.png */; };
 		4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D862ECA1952043A0066A848 /* DesignViewController.m */; };
 		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
 		4D9115D3197597FB008B11CC /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115D1197597FB008B11CC /* MoreViewController.m */; };
@@ -1066,6 +1072,12 @@
 		4D6674B41989B4DC00A17C4E /* L_Shaped_House_4.stencil */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = L_Shaped_House_4.stencil; sourceTree = "<group>"; };
 		4D6674B51989B4DC00A17C4E /* Rectangular_House_Horizontal.stencil */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Rectangular_House_Horizontal.stencil; sourceTree = "<group>"; };
 		4D6674B61989B4DC00A17C4E /* Rectangular_House_Vertical.stencil */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Rectangular_House_Vertical.stencil; sourceTree = "<group>"; };
+		4D6674BD1989C7CB00A17C4E /* L_Shaped_House_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = L_Shaped_House_1.png; sourceTree = "<group>"; };
+		4D6674BE1989C7CB00A17C4E /* L_Shaped_House_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = L_Shaped_House_2.png; sourceTree = "<group>"; };
+		4D6674BF1989C7CB00A17C4E /* L_Shaped_House_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = L_Shaped_House_3.png; sourceTree = "<group>"; };
+		4D6674C01989C7CB00A17C4E /* L_Shaped_House_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = L_Shaped_House_4.png; sourceTree = "<group>"; };
+		4D6674C51989C7D800A17C4E /* Rectangular_House_Horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rectangular_House_Horizontal.png; sourceTree = "<group>"; };
+		4D6674C61989C7D800A17C4E /* Rectangular_House_Vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rectangular_House_Vertical.png; sourceTree = "<group>"; };
 		4D862EC91952043A0066A848 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		4D862ECA1952043A0066A848 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		4D862ECB1952043A0066A848 /* DesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignViewController.xib; sourceTree = "<group>"; };
@@ -1259,7 +1271,13 @@
 			isa = PBXGroup;
 			children = (
 				4D53F61C1965FC910097C8E3 /* Coniferous_Dark_Green.png */,
+				4D6674BD1989C7CB00A17C4E /* L_Shaped_House_1.png */,
+				4D6674BE1989C7CB00A17C4E /* L_Shaped_House_2.png */,
+				4D6674BF1989C7CB00A17C4E /* L_Shaped_House_3.png */,
+				4D6674C01989C7CB00A17C4E /* L_Shaped_House_4.png */,
 				4D53F640196F4C900097C8E3 /* select-icon.png */,
+				4D6674C51989C7D800A17C4E /* Rectangular_House_Horizontal.png */,
+				4D6674C61989C7D800A17C4E /* Rectangular_House_Vertical.png */,
 				4D53F62619677C410097C8E3 /* left-arrow@2x.png */,
 				4D66740C19831F4D00A17C4E /* Water_Feature.png */,
 				4D53F645196F5DB60097C8E3 /* scale-icon.png */,
@@ -2224,6 +2242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D05DE241950AC3F001F19A7 /* Shadow.xib in Resources */,
+				4D6674C41989C7CB00A17C4E /* L_Shaped_House_4.png in Resources */,
 				4D6674431983212B00A17C4E /* Plant_Grey_Green.stencil in Resources */,
 				4D081BFC195B3DE300F8871C /* House_No_Lines.png in Resources */,
 				4D53F61B1965EBD30097C8E3 /* north-big.png in Resources */,
@@ -2275,6 +2294,7 @@
 				4D05DCB1194F7FF2001F19A7 /* polygon.png in Resources */,
 				4D081C0E195B79A100F8871C /* Shed.svg in Resources */,
 				4D081C1A195B8B4A00F8871C /* Plant_Green.svg in Resources */,
+				4D6674C71989C7D800A17C4E /* Rectangular_House_Horizontal.png in Resources */,
 				4D05DE1E1950AC3F001F19A7 /* Gradient.xib in Resources */,
 				4D53F639196B149C0097C8E3 /* AppIcon76x76.png in Resources */,
 				4D66743B1983212B00A17C4E /* Hedge_Brown.stencil in Resources */,
@@ -2290,6 +2310,7 @@
 				4D05DE331950B8CB001F19A7 /* Settings.plist in Resources */,
 				4D576048195E0D3500DCCBEF /* Hedge_Green.svg in Resources */,
 				4D6674851988487A00A17C4E /* Plans1.xib in Resources */,
+				4D6674C81989C7D800A17C4E /* Rectangular_House_Vertical.png in Resources */,
 				4D6674791988465900A17C4E /* Property1.xib in Resources */,
 				4D05DCAB194F7FF2001F19A7 /* line.png in Resources */,
 				4D53F63C196B149C0097C8E3 /* iTunesArtwork@2x.png in Resources */,
@@ -2303,6 +2324,7 @@
 				4D081C10195B7BA500F8871C /* Tile.svg in Resources */,
 				4D6674371983212B00A17C4E /* Deciduous_Tree_Mustard.stencil in Resources */,
 				4D05DCB7194F7FF2001F19A7 /* scale@2x.png in Resources */,
+				4D6674C31989C7CB00A17C4E /* L_Shaped_House_3.png in Resources */,
 				4D081BF8195A2C5A00F8871C /* big_plant.png in Resources */,
 				4D05DCA9194F7FF2001F19A7 /* groupSelect@2x.png in Resources */,
 				4D05DBB1194F5C81001F19A7 /* freehand.png in Resources */,
@@ -2438,7 +2460,9 @@
 				4D576063196481CE00DCCBEF /* Deciduous_Tree_Mustard.svg in Resources */,
 				4D05DE06194FC4CA001F19A7 /* WDThumbnailView.xib in Resources */,
 				4D6674301983212B00A17C4E /* Coniferous_Green.stencil in Resources */,
+				4D6674C21989C7CB00A17C4E /* L_Shaped_House_2.png in Resources */,
 				4D66742E1983212B00A17C4E /* Coniferous_Burgundy.stencil in Resources */,
+				4D6674C11989C7CB00A17C4E /* L_Shaped_House_1.png in Resources */,
 				4D66748C1988488600A17C4E /* Design2.xib in Resources */,
 				4D66747F1988486500A17C4E /* House2.xib in Resources */,
 				4D05DCB3194F7FF2001F19A7 /* rect.png in Resources */,
