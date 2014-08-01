@@ -19,5 +19,6 @@
 }
 
 @property (nonatomic, assign) BOOL closeShape;
+@property (nonatomic, assign) BOOL staysOn;
 
 @end

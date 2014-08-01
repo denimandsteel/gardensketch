@@ -1272,10 +1272,11 @@ NSString *WDSelectionChangedNotification = @"WDSelectionChangedNotification";
         // and invalidate it so that inspectors react properly
         [propertyManager_ addToInvalidProperties:property];
     }
-    
-    for (WDElement *element in [self.selectedObjects objectEnumerator]) {
-        [element setValue:value forProperty:property propertyManager:propertyManager_];
-    }
+
+	// Don't apply style changeas to selected objects.
+//    for (WDElement *element in [self.selectedObjects objectEnumerator]) {
+//        [element setValue:value forProperty:property propertyManager:propertyManager_];
+//    }
 }
 
 #pragma mark -

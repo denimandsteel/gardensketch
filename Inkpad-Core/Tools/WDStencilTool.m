@@ -192,5 +192,10 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 	return element;
 }
 
+- (void)setStaysOnFromNumber:(NSNumber *)staysOnNumber
+{
+	self.staysOn = [staysOnNumber boolValue];
+}
+
 
 @end

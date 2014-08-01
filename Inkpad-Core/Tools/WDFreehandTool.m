@@ -21,6 +21,7 @@
 #import "WDUtilities.h"
 #import "Constants.h"
 #import "StencilManager.h"
+#import "WDToolManager.h"
 
 #define kMaxError 10.0f
 
@@ -48,7 +49,12 @@ NSString *WDDefaultFreehandTool = @"WDDefaultFreehandTool";
 
 - (void) activated
 {
-	[[StencilManager sharedInstance] setActiveShapeType:kLine];
+	if (closeShape_) {
+		[[StencilManager sharedInstance] setActiveShapeType:kArea];
+	} else {
+		[[StencilManager sharedInstance] setActiveShapeType:kLine];
+	}
+	
     [[NSUserDefaults standardUserDefaults] setValue:@(closeShape_) forKey:WDDefaultFreehandTool];
 }
 
@@ -117,6 +123,16 @@ NSString *WDDefaultFreehandTool = @"WDDefaultFreehandTool";
     
     pathStarted_ = NO;
     tempPath_ = nil;
+	
+	if (!self.staysOn) {
+		// FIXME: change this to toolManager.selectionTool
+		[[WDToolManager sharedInstance] setActiveTool:[WDToolManager sharedInstance].tools.firstObject];
+	}
+}
+
+- (void)setStaysOnFromNumber:(NSNumber *)staysOnNumber
+{
+	self.staysOn = [staysOnNumber boolValue];
 }
 
 @end

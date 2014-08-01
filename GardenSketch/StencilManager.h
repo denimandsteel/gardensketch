@@ -28,7 +28,8 @@ typedef enum {
 	kShed,
 	kWaterFeature,
 	kGazebo,
-	kLine
+	kLine,
+	kArea
 } ShapeType;
 
 typedef enum {

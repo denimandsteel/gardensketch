@@ -229,6 +229,10 @@
 	WDTool *tool = ((WDToolButton *)sender).tool;
 	if ([tool isKindOfClass:[WDStencilTool class]]) {
 		[(WDStencilTool *)tool setStaysOn:NO];
+	} else if ([tool isKindOfClass:[WDFreehandTool class]]) {
+		[(WDFreehandTool *)tool setStaysOn:NO];
+	} else if ([tool isKindOfClass:[WDShapeTool class]]) {
+		[(WDShapeTool *)tool setStaysOn:NO];
 	}
     
     [WDToolManager sharedInstance].activeTool = tool;
@@ -371,23 +375,29 @@
 	
 	switch (type) {
 		case kPlant:
+			[self.colorPicker setEnabled:YES];
 			[self.colorPicker setColors:plantColors];
 			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] plantColor]];
 			break;
 		case kShrub:
 		case kHedge:
+			[self.colorPicker setEnabled:YES];
 			[self.colorPicker setColors:shrubColors];
 			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] shrubColor]];
 			break;
 		case kTreeConiferous:
 		case kTreeDeciduous:
+			[self.colorPicker setEnabled:YES];
 			[self.colorPicker setColors:treeColors];
 			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] treeColor]];
 			break;
 		case kLine:
+			[self.colorPicker setEnabled:YES];
 			[self.colorPicker setColors:outlineColors];
 			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] outlineColor]];
 			break;
+		case kArea:
+			[self.colorPicker setEnabled:NO];
 		default:
 			break;
 	}

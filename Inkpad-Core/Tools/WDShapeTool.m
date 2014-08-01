@@ -20,6 +20,7 @@
 #import "WDShapeTool.h"
 #import "WDUtilities.h"
 #import "StencilManager.h"
+#import "WDToolManager.h"
 
 NSString *WDShapeToolStarInnerRadiusRatio = @"WDShapeToolStarInnerRadiusRatio";
 NSString *WDShapeToolStarPointCount = @"WDShapeToolStarPointCount";
@@ -275,12 +276,22 @@ NSString *WDShapeToolSpiralDecay = @"WDShapeToolSpiralDecay";
     if ([canvas.drawing dynamicGuides]) {
         [canvas.drawingController.dynamicGuideController endGuideOperation];
     }
+	
+	if (!self.staysOn) {
+		// FIXME: change this to toolManager.selectionTool
+		[[WDToolManager sharedInstance] setActiveTool:[WDToolManager sharedInstance].tools.firstObject];
+	}
 }
 
 - (void) flagsChangedInCanvas:(WDCanvas *)canvas
 {
     WDPath  *temp = [self pathWithPoint:self.previousEvent.snappedLocation constrain:[self constrain]];
     canvas.shapeUnderConstruction = temp;
+}
+
+- (void)setStaysOnFromNumber:(NSNumber *)staysOnNumber
+{
+	self.staysOn = [staysOnNumber boolValue];
 }
 
 #if TARGET_OS_IPHONE

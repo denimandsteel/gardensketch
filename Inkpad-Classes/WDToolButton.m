@@ -178,7 +178,7 @@
         [self setBackgroundImage:[self selectedBackgroundWithDisclosure:NO] forState:UIControlStateSelected];
     }
 	
-	if ([tool isKindOfClass:[WDStencilTool class]]) {
+	if ([tool isKindOfClass:[WDStencilTool class]] || [tool isKindOfClass:[WDFreehandTool class]] || [tool isKindOfClass:[WDShapeTool class]]) {
 		UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapped:)];
 		doubleTap.numberOfTapsRequired = 2;
 		[self addGestureRecognizer:doubleTap];
@@ -222,7 +222,9 @@
 
 - (void) doubleTapped:(id)sender
 {
-	[(WDStencilTool *)self.tool setStaysOn:YES];
+	if ([self.tool respondsToSelector:@selector(setStaysOnFromNumber:)]) {
+		[self.tool performSelector:@selector(setStaysOnFromNumber:) withObject:@(YES)];
+	}
 	[[WDToolManager sharedInstance] setActiveTool:self.tool];
 }
 

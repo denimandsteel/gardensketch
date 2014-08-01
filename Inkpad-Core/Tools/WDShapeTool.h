@@ -48,6 +48,7 @@ enum {
 }
 
 @property (nonatomic, assign) int shapeMode;
+@property (nonatomic, assign) BOOL staysOn;
 
 - (IBAction) increment:(id)sender;
 - (IBAction) decrement:(id)sender;
