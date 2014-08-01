@@ -38,8 +38,6 @@
 							   delegate:self];
 }
 
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	[self applicationDidFinishLaunching:application];

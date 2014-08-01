@@ -125,7 +125,9 @@
                     // only allow one node to be selected at a time
                     [controller deselectAllNodes];
                 }
-                [controller selectNode:result.node];
+				// do not allow single node selection in paths.
+//              [controller selectNode:result.node];
+				[controller setSelectedNodesFromSet:[NSSet setWithArray:[(WDPath *)element nodes]]];
             }
             
             if (event.count == 2) {
@@ -211,7 +213,7 @@
         
         canvas.marquee = [NSValue valueWithCGRect:selectionRect];
         [canvas.drawingController selectObjectsInRect:selectionRect];
-    }  else if (transformingNodes_) {
+    }  else if (NO & transformingNodes_) {
         canvas.transforming = canvas.transformingNode = YES;
         delta = WDSubtractPoints(snapped, initialSnapped);
     
@@ -226,7 +228,8 @@
         
         transform_ = CGAffineTransformMakeTranslation(delta.x, delta.y);
         [canvas transformSelection:transform_];
-    } else if (transformingHandles_) {
+    } else if (NO && transformingHandles_) {
+		
         canvas.transforming = canvas.transformingNode = YES;
         
         WDPath *path = (WDPath *) [canvas.drawingController singleSelection];
@@ -334,7 +337,7 @@
             path.fillTransform = path.displayFillTransform;
             path.displayFillTransform = nil;
         }
-    } else if (transformingNodes_) {
+    } else if (NO && transformingNodes_) {
         if (!self.moved && nodeWasSelected_) {
             [canvas.drawingController deselectNode:activeNode_];;
         } else if (self.moved) {
@@ -349,7 +352,7 @@
         WDBezierNode *node = [path convertNode:activeNode_ whichPoint:(int)pointToConvert_];
         [canvas.drawingController deselectNode:activeNode_];
         [canvas.drawingController selectNode:node];
-    } else if (transformingHandles_ && replacementNode_) {
+    } else if (NO && transformingHandles_ && replacementNode_) {
         WDPath *path = ((WDPath *) [canvas.drawingController singleSelection]);
         path.displayNodes = nil;
         NSMutableArray *newNodes = [NSMutableArray array];

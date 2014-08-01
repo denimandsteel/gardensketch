@@ -45,6 +45,7 @@
 - (void) deselectNode:(WDBezierNode *)node;
 - (void) deselectAllNodes;
 - (BOOL) isNodeSelected:(WDBezierNode *)node;
+- (void) setSelectedNodesFromSet:(NSSet *)set;
 
 // querying selection state
 - (WDElement *) singleSelection;
@@ -70,6 +71,7 @@
 - (void) deselectObject:(WDElement *)element;
 - (void) deselectObjectAndSubelements:(WDElement *)element;
 - (void) selectObjectsInRect:(CGRect)rect;
+
 
 - (void) selectNone:(id)sender;
 - (void) selectAll:(id)sender;

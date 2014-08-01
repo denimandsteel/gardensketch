@@ -832,6 +832,11 @@ NSString *WDClosedKey = @"WDClosedKey";
             [nodesInRect addObject:node];
         }
     }
+	
+	// if any node is selected, select all nodes.
+	if (nodesInRect.count > 0) {
+		nodesInRect = [NSMutableSet setWithArray:nodes_];
+	}
     
     return nodesInRect;
 }
@@ -966,7 +971,7 @@ NSString *WDClosedKey = @"WDClosedKey";
 
 - (void) drawOpenGLAnchorsWithViewTransform:(CGAffineTransform)transform
 {
-    UIColor *color = displayColor_ ? displayColor_ : self.layer.highlightColor;
+	UIColor *color = displayColor_ ? displayColor_ : self.layer.highlightColor;
     NSArray *nodes = displayNodes_ ? displayNodes_ : nodes_;
     
     for (WDBezierNode *node in nodes) {
