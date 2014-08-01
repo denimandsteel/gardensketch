@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (weak, nonatomic) IBOutlet UIButton *addNoteButton;
+@property (weak, nonatomic) IBOutlet GSLabel *planNameLabel;
+
 
 - (IBAction)addNoteTapped:(id)sender;
 

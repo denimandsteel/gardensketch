@@ -62,6 +62,11 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	// Set selection tool as the default tool:
 	[[WDToolManager sharedInstance] setActiveTool:[WDToolManager sharedInstance].tools.firstObject];
 	
+	WDDocument *currentDocument = self.sidebar.canvasController.document;
+	NSString *planName = currentDocument.displayName;
+	[self.planNameLabel setText:planName];
+
+	
 	[self.collectionView reloadData];
 }
 
@@ -133,15 +138,7 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 }
 
 - (IBAction)addNoteTapped:(id)sender {
-	NSDateFormatter *formatter;
-	NSString        *dateString;
-	
-	formatter = [[NSDateFormatter alloc] init];
-	[formatter setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
-	
-	dateString = [formatter stringFromDate:[NSDate date]];
-	
-	GSNote *anotherNote = [self createNoteWithText:dateString];
+	GSNote *anotherNote = [self createNoteWithText:@""];
 	
 	[self.sidebar.canvasController.drawing.notes addObject:anotherNote];
 	[self.sidebar.canvasController.document updateChangeCount:UIDocumentChangeDone];

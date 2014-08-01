@@ -292,7 +292,7 @@ NSString *WDPointArrayKey = @"WDPointArrayKey";
 
 - (void) drawGLWithViewTransform:(CGAffineTransform)transform color:(UIColor *)color mode:(WDBezierNodeRenderMode)mode
 {
-    CGPoint anchor, inPoint, outPoint;
+	CGPoint anchor, inPoint, outPoint;
     
     anchor = CGPointApplyAffineTransform(anchorPoint_, transform);
     inPoint = CGPointApplyAffineTransform(inPoint_, transform);
@@ -304,13 +304,13 @@ NSString *WDPointArrayKey = @"WDPointArrayKey";
     if (mode == kWDBezierNodeRenderSelected) {
         [color openGLSet];
         
-        if ([self hasInPoint]) {
-            WDGLLineFromPointToPoint(inPoint, anchor);
-        }
-        
-        if ([self hasOutPoint]) {
-            WDGLLineFromPointToPoint(outPoint, anchor);
-        }
+//        if ([self hasInPoint]) {
+//            WDGLLineFromPointToPoint(inPoint, anchor);
+//        }
+//        
+//        if ([self hasOutPoint]) {
+//            WDGLLineFromPointToPoint(outPoint, anchor);
+//        }
     }
     
     // draw the anchor
@@ -331,19 +331,19 @@ NSString *WDPointArrayKey = @"WDPointArrayKey";
     }
     
     // draw the control handle knobs
-    if (mode == kWDBezierNodeRenderSelected) {
-        [color openGLSet];
-        
-        if ([self hasInPoint]) {
-            inPoint = WDRoundPoint(inPoint);
-            WDGLFillCircle(inPoint, kControlPointRadius, 10);
-        }
-        
-        if ([self hasOutPoint]) {
-            outPoint = WDRoundPoint(outPoint);
-            WDGLFillCircle(outPoint, kControlPointRadius, 10);
-        }
-    }
+//    if (mode == kWDBezierNodeRenderSelected) {
+//        [color openGLSet];
+//        
+//        if ([self hasInPoint]) {
+//            inPoint = WDRoundPoint(inPoint);
+//            WDGLFillCircle(inPoint, kControlPointRadius, 10);
+//        }
+//        
+//        if ([self hasOutPoint]) {
+//            outPoint = WDRoundPoint(outPoint);
+//            WDGLFillCircle(outPoint, kControlPointRadius, 10);
+//        }
+//    }
 }
 
 @end
