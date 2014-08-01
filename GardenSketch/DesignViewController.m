@@ -117,6 +117,8 @@
 	[planLayer setLocked:NO];
 	
 	[drawing activateLayerAtIndex:1];
+	
+	[self selectionChanged:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -178,17 +180,17 @@
 
 - (IBAction)sizeButtonTapped:(id)sender {
 	UIButton *button = (UIButton *)sender;
+	ShapeSize shapeSize = (ShapeSize)(button.tag);
 	// tags: 0, 1 and 2
-	[self setSelectedSize:(ShapeSize)(button.tag)];
+	[self setSelectedSizeButton:shapeSize];
 	
-	[[StencilManager sharedInstance] setSizeForActiveShape:(ShapeSize)button.tag];
+	[[StencilManager sharedInstance] setSizeForActiveShape:shapeSize];
 	
 	if ([StencilManager sharedInstance].activeShapeType == kLine) {
-		// TODO set stroke width here!
 		
 		CGFloat strokeWidth = 1.0;
 		
-		switch ((ShapeSize)button.tag) {
+		switch (shapeSize) {
 			case kSmall:
 				strokeWidth = 1.0;
 				break;
@@ -201,8 +203,9 @@
 			default:
 				break;
 		}
-		[self.sidebar.canvasController.drawingController setValue:@(strokeWidth)
-						 forProperty:WDStrokeWidthProperty];
+		
+		[self.sidebar.canvasController.drawingController setValue:[NSNumber numberWithFloat:strokeWidth]
+													  forProperty:WDStrokeWidthProperty];
 	}
 }
 
@@ -395,6 +398,7 @@
 			[self.colorPicker setEnabled:YES];
 			[self.colorPicker setColors:outlineColors];
 			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] outlineColor]];
+						
 			break;
 		case kArea:
 			[self.colorPicker setEnabled:NO];
@@ -402,12 +406,34 @@
 			break;
 	}
 	
+	// update the selected size button
 	ShapeSize activeShapeSize = [[StencilManager sharedInstance] sizeForActiveShape];
+	[self setSelectedSizeButton:activeShapeSize];
 	
-	[self setSelectedSize:activeShapeSize];
+	if (type == kLine) {
+		
+		CGFloat strokeWidth = 1.0;
+		
+		switch (activeShapeSize) {
+			case kSmall:
+				strokeWidth = 1.0;
+				break;
+			case kMedium:
+				strokeWidth = 3.0;
+				break;
+			case kBig:
+				strokeWidth = 6.0;
+				break;
+			default:
+				break;
+		}
+		
+		[self.sidebar.canvasController.drawingController setValue:[NSNumber numberWithFloat:strokeWidth]
+													  forProperty:WDStrokeWidthProperty];
+	}
 }
 
-- (void)setSelectedSize:(ShapeSize)shapeSize
+- (void)setSelectedSizeButton:(ShapeSize)shapeSize
 {
 	for (UIButton *button in self.sizeButtons) {
 		if (button.tag == shapeSize) {
