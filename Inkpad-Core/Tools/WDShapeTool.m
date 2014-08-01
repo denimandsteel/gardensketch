@@ -265,7 +265,7 @@ NSString *WDShapeToolSpiralDecay = @"WDShapeToolSpiralDecay";
             path.shadow = [canvas.drawingController.propertyManager activeShadow];
             
             [canvas.drawing addObject:path];
-            [canvas.drawingController selectObject:path];
+//          [canvas.drawingController selectObject:path];
         }
         
         canvas.shapeUnderConstruction = nil;

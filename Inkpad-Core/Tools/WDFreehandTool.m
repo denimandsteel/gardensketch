@@ -111,7 +111,7 @@ NSString *WDDefaultFreehandTool = @"WDDefaultFreehandTool";
             smoothPath.shadow = [canvas.drawingController.propertyManager activeShadow];
             
             [canvas.drawing addObject:smoothPath];
-            [canvas.drawingController selectObject:smoothPath];
+//          [canvas.drawingController selectObject:smoothPath];
         }
     }
     

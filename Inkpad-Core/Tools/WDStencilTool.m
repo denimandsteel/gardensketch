@@ -149,6 +149,15 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 		}
 		
         [canvas.drawing addObject:result];
+		if (self.type == kHouse ||
+			self.type == kHouseL1 ||
+			self.type == kHouseL2 ||
+			self.type == kHouseL3 ||
+			self.type == kHouseL4 ||
+			self.type == kHouseRectHor ||
+			self.type == kHouseRectHor) {
+			[canvas.drawingController selectObject:result];
+		}
 	}
     
     pathStarted_ = NO;
