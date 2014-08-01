@@ -193,10 +193,10 @@
 				strokeWidth = 1.0;
 				break;
 			case kMedium:
-				strokeWidth = 2.0;
+				strokeWidth = 3.0;
 				break;
 			case kBig:
-				strokeWidth = 3.0;
+				strokeWidth = 6.0;
 				break;
 			default:
 				break;
