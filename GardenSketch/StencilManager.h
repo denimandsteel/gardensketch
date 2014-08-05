@@ -40,6 +40,14 @@ typedef enum {
 } OutlineColor;
 
 typedef enum {
+    kAreaWater = 0,
+	kAreaSand,
+    kAreaGreen,
+	kAreaWarmGrey,
+	kAreaCoolGrey
+} AreaColor;
+
+typedef enum {
     kGold = 0,
 	kLightGreen,
     kGreen,
@@ -84,6 +92,7 @@ typedef enum {
 @property (nonatomic, assign) ShrubColor shrubColor;
 @property (nonatomic, assign) TreeColor treeColor;
 @property (nonatomic, assign) OutlineColor outlineColor;
+@property (nonatomic, assign) AreaColor areaColor;
 
 @property (nonatomic, strong) NSMutableDictionary *shapeSize;
 

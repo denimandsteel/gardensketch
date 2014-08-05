@@ -25,7 +25,13 @@
 
 // yellow paper canvas background
 #define		GS_COLOR_CANVAS					[UIColor colorWithRed:251/255.0 green:250/255.0 blue:241/255.0 alpha:0.9]
-#define		GS_COLOR_SOIL					[UIColor colorWithRed:203/255.0 green:194/255.0 blue:184/255.0 alpha:0.4]
+
+#define		GS_COLOR_AREA_WATER				[UIColor colorWithRed:0.4 green:0.78 blue:0.86 alpha:0.4]
+#define		GS_COLOR_AREA_SAND				[UIColor colorWithRed:0.9 green:0.87 blue:0.73 alpha:0.4]
+#define		GS_COLOR_AREA_GREEN				[UIColor colorWithRed:0.78 green:0.9 blue:0.8 alpha:0.4]
+#define		GS_COLOR_AREA_WARM_GREY			[UIColor colorWithRed:0.8 green:0.8 blue:0.83 alpha:0.4]
+#define		GS_COLOR_AREA_COOL_GREY			[UIColor colorWithRed:0.79 green:0.76 blue:0.74 alpha:0.4]
+
 #define		GS_COLOR_PEACHY_HIGHLIGHT		[UIColor colorWithRed:251/255.0 green:176/255.0 blue:136/255.0 alpha:1.0]
 
 // stroke colors:

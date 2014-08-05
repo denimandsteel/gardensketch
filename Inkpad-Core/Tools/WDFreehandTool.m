@@ -105,12 +105,14 @@ NSString *WDDefaultFreehandTool = @"WDDefaultFreehandTool";
         
         if (smoothPath) {
 			if (closeShape_) {
-				smoothPath.fill = [WDColor colorWithUIColor:GS_COLOR_SOIL];
+				smoothPath.fill = [WDColor colorWithUIColor:GS_COLOR_AREA_WATER];
 				[canvas.drawingController setValue:@NO forProperty:WDStrokeVisibleProperty];
+				smoothPath.fill = [canvas.drawingController.propertyManager activeFillStyle];
 			} else {
 				smoothPath.fill = [WDColor colorWithWhite:1.0 alpha:0.0];
 				[canvas.drawingController setValue:@YES forProperty:WDStrokeVisibleProperty];
 			}
+			
 			
 			smoothPath.strokeStyle = [canvas.drawingController.propertyManager activeStrokeStyle];
             smoothPath.opacity = [[canvas.drawingController.propertyManager defaultValueForProperty:WDOpacityProperty] floatValue];

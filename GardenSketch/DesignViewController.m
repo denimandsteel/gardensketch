@@ -27,6 +27,7 @@
 @implementation DesignViewController
 {
 	NSArray *outlineColors;
+	NSArray *areaColors;
 	NSArray *plantColors;
 	NSArray *shrubColors;
 	NSArray *treeColors;
@@ -54,6 +55,12 @@
 	outlineColors = @[GS_COLOR_STROKE_RED,
 							   GS_COLOR_STROKE_DARK_GREY,
 							   GS_COLOR_STROKE_LIGHT_GREY];
+	
+	areaColors = @[GS_COLOR_AREA_WATER,
+				   GS_COLOR_AREA_SAND,
+				   GS_COLOR_AREA_GREEN,
+				   GS_COLOR_AREA_WARM_GREY,
+				   GS_COLOR_AREA_COOL_GREY];
 	
 	plantColors = @[GS_COLOR_PLANT_GOLD,
 					GS_COLOR_PLANT_LIGHT_GREEN,
@@ -408,7 +415,9 @@
 						
 			break;
 		case kArea:
-			[self.colorPicker setEnabled:NO];
+			[self.colorPicker setEnabled:YES];
+			[self.colorPicker setColors:areaColors];
+			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] areaColor]];
 		default:
 			break;
 	}
@@ -481,6 +490,13 @@
 			[[StencilManager sharedInstance] setOutlineColor:(OutlineColor)index];
 			UIColor *color = self.colorPicker.colors[index];
 			[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
+			break;
+		}
+		case kArea:
+		{
+			[[StencilManager sharedInstance] setAreaColor:(AreaColor)index];
+			UIColor *color = self.colorPicker.colors[index];
+			[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDFillProperty];
 			break;
 		}
 		default:
