@@ -261,7 +261,7 @@ NSString *WDShapeToolSpiralDecay = @"WDShapeToolSpiralDecay";
             
             WDStrokeStyle *stroke = [canvas.drawingController.propertyManager activeStrokeStyle];
             path.strokeStyle = (shapeMode_ == WDShapeLine) ? stroke : [stroke strokeStyleSansArrows];
-         
+			
             path.opacity = [[canvas.drawingController.propertyManager defaultValueForProperty:WDOpacityProperty] floatValue];
             path.shadow = [canvas.drawingController.propertyManager activeShadow];
             

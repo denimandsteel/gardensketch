@@ -266,7 +266,7 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 			break;
 	}
 	
-	// 2. Scale it
+	// 2. Initial scale
 	switch (type) {
 		case kSidewalk:
 			scale = 1.1;
@@ -300,18 +300,77 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 			break;
 	}
 	
-	switch (self.sizeForActiveShape) {
-		case kSmall:
-			scale *= 1;
+	// 3. Secondary scaling based on the shape size
+	switch (type) {
+		case kPlant:
+		{
+			switch (self.sizeForActiveShape) {
+				case kSmall:
+					scale *= 0.33;
+					break;
+				case kMedium:
+					scale *= 1.0;
+					break;
+				case kBig:
+					scale *= 1.67;
+					break;
+				default:
+					break;
+			}
 			break;
-		case kMedium:
-			scale *= 1.5;
+		}
+		case kShrub:
+		{
+			switch (self.sizeForActiveShape) {
+				case kSmall:
+					scale *= .67;
+					break;
+				case kMedium:
+					scale *= 1.3;
+					break;
+				case kBig:
+					scale *= 2;
+					break;
+				default:
+					break;
+			}
 			break;
-		case kBig:
-			scale *= 2;
+		}
+		case kTreeConiferous:
+		case kTreeDeciduous:
+		{
+			switch (self.sizeForActiveShape) {
+				case kSmall:
+					scale *= .6;
+					break;
+				case kMedium:
+					scale *= 1.2;
+					break;
+				case kBig:
+					scale *= 2;
+					break;
+				default:
+					break;
+			}
 			break;
+		}
 		default:
+		{
+			switch (self.sizeForActiveShape) {
+				case kSmall:
+					scale *= 1;
+					break;
+				case kMedium:
+					scale *= 1.5;
+					break;
+				case kBig:
+					scale *= 2;
+					break;
+				default:
+					break;
+			}
 			break;
+		}
 	}
 	
 	WDGroup *result = [self.shapes[filename] copy];
