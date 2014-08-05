@@ -90,6 +90,9 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 		case kWaterFeature:
 			return @"Water_Feature.png";
 			break;
+		case kFlowerPot:
+			return @"Flower_Pot.png";
+			break;
 		default:
 			return @"";
 			break;

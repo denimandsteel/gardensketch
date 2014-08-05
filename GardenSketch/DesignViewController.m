@@ -55,25 +55,25 @@
 							   GS_COLOR_STROKE_DARK_GREY,
 							   GS_COLOR_STROKE_LIGHT_GREY];
 	
-	plantColors = @[GS_COLOR_PLANT_DARK_GREEN,
-							 GS_COLOR_PLANT_GOLD,
-							 GS_COLOR_PLANT_GREEN,
-							 GS_COLOR_PLANT_GREY_GREEN,
-							 GS_COLOR_PLANT_INDIGO,
-							 GS_COLOR_PLANT_LIGHT_GREEN,
-							 GS_COLOR_PLANT_LIGHT_PINK];
+	plantColors = @[GS_COLOR_PLANT_GOLD,
+					GS_COLOR_PLANT_LIGHT_GREEN,
+					GS_COLOR_PLANT_GREEN,
+					GS_COLOR_PLANT_DARK_GREEN,
+					 GS_COLOR_PLANT_GREY_GREEN,
+					 GS_COLOR_PLANT_INDIGO,
+					 GS_COLOR_PLANT_LIGHT_PINK];
 	
-	shrubColors = @[GS_COLOR_SHRUB_BROWN,
-							 GS_COLOR_SHRUB_GREEN,
-							 GS_COLOR_SHRUB_MAROON,
-							 GS_COLOR_SHRUB_VIRIDIAN];
+	shrubColors = @[GS_COLOR_SHRUB_GREEN,
+					GS_COLOR_SHRUB_VIRIDIAN,
+					GS_COLOR_SHRUB_MAROON,
+					GS_COLOR_SHRUB_BROWN];
 	
-	treeColors = @[GS_COLOR_TREE_BURGUNDY,
-							GS_COLOR_TREE_DARK_GREEN,
-							GS_COLOR_TREE_GREEN,
-							GS_COLOR_TREE_MUSTARD,
-							GS_COLOR_TREE_TEAL,
-							GS_COLOR_TREE_VIOLET];
+	treeColors = @[GS_COLOR_TREE_MUSTARD,
+				   GS_COLOR_TREE_GREEN,
+				   GS_COLOR_TREE_DARK_GREEN,
+				   GS_COLOR_TREE_TEAL,
+				   GS_COLOR_TREE_VIOLET,
+				   GS_COLOR_TREE_BURGUNDY];
 	
 	[self.colorPicker setColors:outlineColors];
 	[self.colorPicker setDelegate:self];
@@ -269,6 +269,7 @@
 	WDTool *gazebo = nil;
 	WDTool *shed = nil;
 	WDTool *waterFeature = nil;
+	WDTool *flowerPot = nil;
 	
 	for (WDTool *tool in [WDToolManager sharedInstance].tools) {
 		if ([tool isKindOfClass:[WDFreehandTool class]]) {
@@ -309,6 +310,9 @@
 					break;
 				case kWaterFeature:
 					waterFeature = tool;
+					break;
+				case kFlowerPot:
+					flowerPot = tool;
 					break;
 				default:
 					NSLog(@"hmm.. weird");
@@ -363,6 +367,9 @@
 	
 	self.waterFeatureButton.tool = waterFeature;
 	[self.waterFeatureButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	
+	self.flowerPotButton.tool = flowerPot;
+	[self.flowerPotButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void) selectionChanged:(NSNotification *)aNotification

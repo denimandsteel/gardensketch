@@ -40,6 +40,7 @@
 @property (weak, nonatomic) IBOutlet WDToolButton *waterFeatureButton;
 @property (weak, nonatomic) IBOutlet WDToolButton *gazeboButton;
 @property (weak, nonatomic) IBOutlet WDToolButton *shedButton;
+@property (weak, nonatomic) IBOutlet WDToolButton *flowerPotButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet UIButton *cloneButton;

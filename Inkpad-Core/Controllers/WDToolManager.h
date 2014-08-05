@@ -37,6 +37,7 @@
 @property (nonatomic, weak) WDStencilTool   *gazebo;
 @property (nonatomic, weak) WDStencilTool   *shed;
 @property (nonatomic, weak) WDStencilTool   *waterFeature;
+@property (nonatomic, weak) WDStencilTool   *flowerPot;
 @property (nonatomic, weak) WDStencilTool   *house;
 @property (nonatomic, weak) WDStencilTool   *houseL1;
 @property (nonatomic, weak) WDStencilTool   *houseL2;

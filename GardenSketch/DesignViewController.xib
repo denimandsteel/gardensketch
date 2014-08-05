@@ -12,6 +12,7 @@
                 <outlet property="deciduousTreeButton" destination="Kvk-5x-SnG" id="bxJ-mb-Uao"/>
                 <outlet property="deleteButton" destination="6oK-vt-3Eb" id="j6g-K5-deA"/>
                 <outlet property="enclosedButton" destination="pV1-DC-Ftb" id="64s-8y-B73"/>
+                <outlet property="flowerPotButton" destination="2fz-je-Rio" id="ZZm-Cs-8g1"/>
                 <outlet property="freehandButton" destination="BCz-Ro-S7V" id="msP-k3-u1n"/>
                 <outlet property="gazeboButton" destination="hu0-XY-lID" id="a27-J1-f01"/>
                 <outlet property="gridButton" destination="ufh-Yh-Q4g" id="BdO-bp-yqV"/>
@@ -297,6 +298,18 @@
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fz-je-Rio" userLabel="Button - Water feature" customClass="WDToolButton">
+                            <rect key="frame" x="33" y="300" width="65" height="65"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="Flower_Pot.png"/>
+                        </button>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flower Pot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwX-Kz-2zE" customClass="GSLabel">
+                            <rect key="frame" x="0.0" y="374" width="130" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjz-JK-hNl" customClass="GSLabel">
                             <rect key="frame" x="26" y="255" width="78" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -361,6 +374,7 @@
     </objects>
     <resources>
         <image name="Coniferous_Dark_Green.png" width="331" height="332"/>
+        <image name="Flower_Pot.png" width="143" height="143"/>
         <image name="Gazebo.png" width="90" height="90"/>
         <image name="Hedge_brown.png" width="111" height="246"/>
         <image name="Hedge_brown_horizontal.png" width="246" height="111"/>

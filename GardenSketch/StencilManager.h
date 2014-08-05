@@ -29,7 +29,8 @@ typedef enum {
 	kWaterFeature,
 	kGazebo,
 	kLine,
-	kArea
+	kArea,
+	kFlowerPot
 } ShapeType;
 
 typedef enum {
@@ -39,29 +40,29 @@ typedef enum {
 } OutlineColor;
 
 typedef enum {
-    kDarkGreen = 0,
-	kGold,
-	kGreen,
-    kGreyGreen,
+    kGold = 0,
+	kLightGreen,
+    kGreen,
+    kDarkGreen,
+	kGreyGreen,
 	kIndigo,
-    kLightGreen,
     kLightPink
 } PlantColor;
 
 typedef enum {
-    kBrown = 0,
-	kShrubGreen,
-    kMaroon,
-	kViridian
+    kShrubGreen = 0,
+    kViridian,
+	kMaroon,
+	kBrown
 } ShrubColor;
 
 typedef enum {
-    kBurgundy = 0,
-	kTreeDarkGreen,
+    kMustard = 0,
 	kTreeGreen,
-    kMustard,
+    kTreeDarkGreen,
 	kTeal,
-    kViolet
+    kViolet,
+	kBurgundy
 } TreeColor;
 
 typedef enum {

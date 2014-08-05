@@ -50,7 +50,7 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 {
 	self.shapes = [NSMutableDictionary dictionary];
 	// TODO: move this into a plist
-	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Grey_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian", @"Deciduous_Tree_Burgundy", @"Deciduous_Tree_Dark_Green", @"Deciduous_Tree_Green", @"Deciduous_Tree_Mustard", @"Deciduous_Tree_Teal", @"Deciduous_Tree_Violet", @"House_No_Lines", @"Coniferous_Burgundy", @"Coniferous_DarkGreen", @"Coniferous_Green", @"Coniferous_Mustard", @"Coniferous_Teal", @"Coniferous_Violet", @"Water_Feature", @"Rectangular_House_Horizontal", @"Rectangular_House_Vertical", @"L_Shaped_House_1", @"L_Shaped_House_2", @"L_Shaped_House_3", @"L_Shaped_House_4"];
+	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Grey_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian", @"Deciduous_Tree_Burgundy", @"Deciduous_Tree_Dark_Green", @"Deciduous_Tree_Green", @"Deciduous_Tree_Mustard", @"Deciduous_Tree_Teal", @"Deciduous_Tree_Violet", @"House_No_Lines", @"Coniferous_Burgundy", @"Coniferous_DarkGreen", @"Coniferous_Green", @"Coniferous_Mustard", @"Coniferous_Teal", @"Coniferous_Violet", @"Water_Feature", @"Rectangular_House_Horizontal", @"Rectangular_House_Vertical", @"L_Shaped_House_1", @"L_Shaped_House_2", @"L_Shaped_House_3", @"L_Shaped_House_4", @"Flower_Pot"];
 	for (NSString *shapeName in shapeNames) {
 		[self loadShape:shapeName];
 	}
@@ -262,6 +262,9 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 		case kWaterFeature:
 			filename = @"Water_Feature";
 			break;
+		case kFlowerPot:
+			filename = @"Flower_Pot";
+			break;
 		default:
 			break;
 	}
@@ -319,6 +322,24 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 			}
 			break;
 		}
+		case kFlowerPot:
+		{
+			switch (self.sizeForActiveShape) {
+				case kSmall:
+					scale *= 0.4;
+					break;
+				case kMedium:
+					scale *= 1.2;
+					break;
+				case kBig:
+					scale *= 2;
+					break;
+				default:
+					break;
+			}
+			break;
+		}
+
 		case kShrub:
 		{
 			switch (self.sizeForActiveShape) {

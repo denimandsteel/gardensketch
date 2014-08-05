@@ -34,27 +34,27 @@
 #define		GS_COLOR_STROKE_LIGHT_GREY		[UIColor colorWithRed:192/255.0 green:192/255.0 blue:192/255.0 alpha:1.0]
 
 // plant colors:
-#define		GS_COLOR_PLANT_DARK_GREEN		[UIColor colorWithRed:190/255.0 green:198/255.0 blue:193/255.0 alpha:1.0]
-#define		GS_COLOR_PLANT_GOLD				[UIColor colorWithRed:218/255.0 green:212/255.0 blue:178/255.0 alpha:1.0]
-#define		GS_COLOR_PLANT_GREEN			[UIColor colorWithRed:204/255.0 green:226/255.0 blue:193/255.0 alpha:1.0]
-#define		GS_COLOR_PLANT_GREY_GREEN		[UIColor colorWithRed:186/255.0 green:187/255.0 blue:182/255.0 alpha:1.0]
-#define		GS_COLOR_PLANT_INDIGO			[UIColor colorWithRed:182/255.0 green:182/255.0 blue:194/255.0 alpha:1.0]
-#define		GS_COLOR_PLANT_LIGHT_GREEN		[UIColor colorWithRed:220/255.0 green:228/255.0 blue:188/255.0 alpha:1.0]
-#define		GS_COLOR_PLANT_LIGHT_PINK		[UIColor colorWithRed:240/255.0 green:217/255.0 blue:213/255.0 alpha:1.0]
+#define		GS_COLOR_PLANT_DARK_GREEN		[UIColor colorWithRed:0.565 green:0.620 blue:0.549 alpha:1.000]
+#define		GS_COLOR_PLANT_GOLD				[UIColor colorWithRed:0.843 green:0.757 blue:0.486 alpha:1.000]
+#define		GS_COLOR_PLANT_GREEN			[UIColor colorWithRed:0.710 green:0.859 blue:0.608 alpha:1.000]
+#define		GS_COLOR_PLANT_GREY_GREEN		[UIColor colorWithRed:0.553 green:0.553 blue:0.541 alpha:1.000]
+#define		GS_COLOR_PLANT_INDIGO			[UIColor colorWithRed:0.561 green:0.553 blue:0.718 alpha:1.000]
+#define		GS_COLOR_PLANT_LIGHT_GREEN		[UIColor colorWithRed:0.792 green:0.871 blue:0.569 alpha:1.000]
+#define		GS_COLOR_PLANT_LIGHT_PINK		[UIColor colorWithRed:0.945 green:0.663 blue:0.639 alpha:1.000]
 
 // shrub colors
-#define		GS_COLOR_SHRUB_BROWN			[UIColor colorWithRed:147/255.0 green:143/255.0 blue:136/255.0 alpha:1.0]
-#define		GS_COLOR_SHRUB_GREEN			[UIColor colorWithRed:181/255.0 green:192/255.0 blue:154/255.0 alpha:1.0]
-#define		GS_COLOR_SHRUB_MAROON			[UIColor colorWithRed:161/255.0 green:130/255.0 blue:136/255.0 alpha:1.0]
-#define		GS_COLOR_SHRUB_VIRIDIAN			[UIColor colorWithRed:137/255.0 green:151/255.0 blue:133/255.0 alpha:1.0]
+#define		GS_COLOR_SHRUB_BROWN			[UIColor colorWithRed:0.545 green:0.435 blue:0.353 alpha:1.000]
+#define		GS_COLOR_SHRUB_GREEN			[UIColor colorWithRed:0.651 green:0.725 blue:0.424 alpha:1.000]
+#define		GS_COLOR_SHRUB_MAROON			[UIColor colorWithRed:0.663 green:0.337 blue:0.365 alpha:1.000]
+#define		GS_COLOR_SHRUB_VIRIDIAN			[UIColor colorWithRed:0.380 green:0.525 blue:0.400 alpha:1.000]
 
 // tree colors
-#define		GS_COLOR_TREE_BURGUNDY			[UIColor colorWithRed:202/255.0 green:153/255.0 blue:157/255.0 alpha:1.0]
-#define		GS_COLOR_TREE_DARK_GREEN		[UIColor colorWithRed:154/255.0 green:171/255.0 blue:158/255.0 alpha:1.0]
-#define		GS_COLOR_TREE_GREEN				[UIColor colorWithRed:182/255.0 green:208/255.0 blue:168/255.0 alpha:1.0]
-#define		GS_COLOR_TREE_MUSTARD			[UIColor colorWithRed:203/255.0 green:201/255.0 blue:163/255.0 alpha:1.0]
-#define		GS_COLOR_TREE_TEAL				[UIColor colorWithRed:199/255.0 green:213/255.0 blue:207/255.0 alpha:1.0]
-#define		GS_COLOR_TREE_VIOLET			[UIColor colorWithRed:159/255.0 green:156/255.0 blue:173/255.0 alpha:1.0]
+#define		GS_COLOR_TREE_BURGUNDY			[UIColor colorWithRed:0.835 green:0.369 blue:0.420 alpha:1.000]
+#define		GS_COLOR_TREE_DARK_GREEN		[UIColor colorWithRed:0.400 green:0.565 blue:0.447 alpha:1.000]
+#define		GS_COLOR_TREE_GREEN				[UIColor colorWithRed:0.514 green:0.765 blue:0.486 alpha:1.000]
+#define		GS_COLOR_TREE_MUSTARD			[UIColor colorWithRed:0.796 green:0.741 blue:0.451 alpha:1.000]
+#define		GS_COLOR_TREE_TEAL				[UIColor colorWithRed:0.522 green:0.698 blue:0.604 alpha:1.000]
+#define		GS_COLOR_TREE_VIOLET			[UIColor colorWithRed:0.424 green:0.427 blue:0.659 alpha:1.000]
 
 #define		GS_NORTH_ANGLE					@"GS_NORTH_ANGLE"
 

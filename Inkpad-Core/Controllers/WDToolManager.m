@@ -91,6 +91,9 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 		
 		WDStencilTool *waterFeature = (WDStencilTool *)[WDStencilTool tool];
 		[waterFeature setType:kWaterFeature];
+		
+		WDStencilTool *flowerPot = (WDStencilTool *)[WDStencilTool tool];
+		[flowerPot setType:kFlowerPot];
         
 		WDStencilTool *house = (WDStencilTool *)[WDStencilTool tool];
 		[house setType:kHouse];
@@ -129,6 +132,7 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 				   gazebo,
 				   shed,
 				   waterFeature,
+				   flowerPot,
 				   house,
 				   houseL1,
 				   houseL2,
@@ -151,6 +155,7 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 		self.gazebo = gazebo;
 		self.shed = shed;
 		self.waterFeature = waterFeature;
+		self.flowerPot = flowerPot;
 		self.house = house;
 		self.houseL1 = houseL1;
 		self.houseL2 = houseL2;

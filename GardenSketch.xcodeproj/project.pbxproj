@@ -447,6 +447,9 @@
 		4D6674DA198AE35200A17C4E /* Gazebo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674D7198AE35200A17C4E /* Gazebo.png */; };
 		4D6674DB198AE35200A17C4E /* Shed.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674D8198AE35200A17C4E /* Shed.png */; };
 		4D6674DC198AE35200A17C4E /* Water_Feature.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674D9198AE35200A17C4E /* Water_Feature.png */; };
+		4D6674DE1991630B00A17C4E /* Flower_Pot.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674DD1991630B00A17C4E /* Flower_Pot.svg */; };
+		4D6674E0199179A700A17C4E /* Flower_Pot.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674DF199179A700A17C4E /* Flower_Pot.png */; };
+		4D6674E21991812A00A17C4E /* Flower_Pot.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674E11991812A00A17C4E /* Flower_Pot.stencil */; };
 		4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D862ECA1952043A0066A848 /* DesignViewController.m */; };
 		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
 		4D9115D3197597FB008B11CC /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115D1197597FB008B11CC /* MoreViewController.m */; };
@@ -1098,6 +1101,9 @@
 		4D6674D7198AE35200A17C4E /* Gazebo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gazebo.png; sourceTree = "<group>"; };
 		4D6674D8198AE35200A17C4E /* Shed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shed.png; sourceTree = "<group>"; };
 		4D6674D9198AE35200A17C4E /* Water_Feature.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Water_Feature.png; sourceTree = "<group>"; };
+		4D6674DD1991630B00A17C4E /* Flower_Pot.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Flower_Pot.svg; sourceTree = "<group>"; };
+		4D6674DF199179A700A17C4E /* Flower_Pot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flower_Pot.png; sourceTree = "<group>"; };
+		4D6674E11991812A00A17C4E /* Flower_Pot.stencil */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Flower_Pot.stencil; sourceTree = "<group>"; };
 		4D862EC91952043A0066A848 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		4D862ECA1952043A0066A848 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		4D862ECB1952043A0066A848 /* DesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignViewController.xib; sourceTree = "<group>"; };
@@ -1302,6 +1308,7 @@
 				4D6674BE1989C7CB00A17C4E /* L_Shaped_House_2@2x.png */,
 				4D6674BF1989C7CB00A17C4E /* L_Shaped_House_3@2x.png */,
 				4D6674C01989C7CB00A17C4E /* L_Shaped_House_4@2x.png */,
+				4D6674DF199179A700A17C4E /* Flower_Pot.png */,
 				4D53F640196F4C900097C8E3 /* select-icon.png */,
 				4D6674C51989C7D800A17C4E /* Rectangular_House_Horizontal@2x.png */,
 				4D6674C61989C7D800A17C4E /* Rectangular_House_Vertical@2x.png */,
@@ -2020,6 +2027,7 @@
 				4D6674A21989B07700A17C4E /* House */,
 				4D66740A19831B0400A17C4E /* Water_Feature.svg */,
 				4D081C0F195B7BA500F8871C /* Tile.svg */,
+				4D6674DD1991630B00A17C4E /* Flower_Pot.svg */,
 				4D081C0D195B79A100F8871C /* Shed.svg */,
 				4D081BF01958E83100F8871C /* gazebo.svg */,
 			);
@@ -2150,6 +2158,7 @@
 		4D9115EF198088DD008B11CC /* Stencils */ = {
 			isa = PBXGroup;
 			children = (
+				4D6674E11991812A00A17C4E /* Flower_Pot.stencil */,
 				4D6674B11989B4DC00A17C4E /* L_Shaped_House_1.stencil */,
 				4D6674B21989B4DC00A17C4E /* L_Shaped_House_2.stencil */,
 				4D6674B31989B4DC00A17C4E /* L_Shaped_House_3.stencil */,
@@ -2313,6 +2322,7 @@
 				4D66744A1983212B00A17C4E /* Shrub_Maroon.stencil in Resources */,
 				4D081C1B195B8B4A00F8871C /* Plant_Grey_Green.svg in Resources */,
 				4D05DBB9194F5C81001F19A7 /* undo.png in Resources */,
+				4D6674DE1991630B00A17C4E /* Flower_Pot.svg in Resources */,
 				4D53F641196F4C900097C8E3 /* select-icon.png in Resources */,
 				4D6674821988486E00A17C4E /* North1.xib in Resources */,
 				4D6674AA1989B09C00A17C4E /* L_Shaped_House_4.svg in Resources */,
@@ -2349,6 +2359,7 @@
 				4D05DCAB194F7FF2001F19A7 /* line.png in Resources */,
 				4D53F63C196B149C0097C8E3 /* iTunesArtwork@2x.png in Resources */,
 				4D05DCAA194F7FF2001F19A7 /* hand.png in Resources */,
+				4D6674E21991812A00A17C4E /* Flower_Pot.stencil in Resources */,
 				4D081C1D195B8B4A00F8871C /* Plant_Light_Green.svg in Resources */,
 				4D6674441983212B00A17C4E /* Plant_Indigo.stencil in Resources */,
 				4D53F63B196B149C0097C8E3 /* iTunesArtwork.png in Resources */,
@@ -2468,6 +2479,7 @@
 				4D6674311983212B00A17C4E /* Coniferous_Mustard.stencil in Resources */,
 				4D6674D3198AC68F00A17C4E /* Rectangular_House_Horizontal.png in Resources */,
 				4D05DCB5194F7FF2001F19A7 /* rotate@2x.png in Resources */,
+				4D6674E0199179A700A17C4E /* Flower_Pot.png in Resources */,
 				4D05DCA2194F7FF2001F19A7 /* eraser.png in Resources */,
 				4D6674751987225F00A17C4E /* AppStart2.xib in Resources */,
 				4D57604F195E0E5300DCCBEF /* Shrub_Brown.svg in Resources */,
