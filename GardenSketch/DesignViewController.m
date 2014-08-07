@@ -90,9 +90,6 @@
 				   GS_COLOR_TREE_VIOLET,
 				   GS_COLOR_TREE_BURGUNDY];
 	
-//	[self.colorPicker setColors:outlineColors];
-//	[self.colorPicker setDelegate:self];
-//	
 	// Set initial stroke color:
 	UIColor *color = outlineColors[0];
 	[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
@@ -358,6 +355,8 @@
 {
 	ToolCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ToolCellIdentifier" forIndexPath:indexPath];
 	
+	[cell.colorPicker setDelegate:self];
+	
 	WDTool *tool = nil;
 	
 	switch (indexPath.section) {
@@ -366,12 +365,15 @@
 			switch (indexPath.row) {
 				case 0:
 					tool = [WDToolManager sharedInstance].line;
+					[cell.colorPicker setColors:outlineColors];
 					break;
 				case 1:
 					tool = [WDToolManager sharedInstance].freehand;
+					[cell.colorPicker setColors:outlineColors];
 					break;
 				case 2:
 					tool = [WDToolManager sharedInstance].enclosed;
+					[cell.colorPicker setColors:areaColors];
 					break;
 			}
 			break;
@@ -381,18 +383,23 @@
 			switch (indexPath.row) {
 				case 0:
 					tool = [WDToolManager sharedInstance].plant;
+					[cell.colorPicker setColors:plantColors];
 					break;
 				case 1:
 					tool = [WDToolManager sharedInstance].shrub;
+					[cell.colorPicker setColors:shrubColors];
 					break;
 				case 2:
 					tool = [WDToolManager sharedInstance].horizontalHedge;
+					[cell.colorPicker setColors:shrubColors];
 					break;
 				case 3:
 					tool = [WDToolManager sharedInstance].deciduousTree;
+					[cell.colorPicker setColors:treeColors];
 					break;
 				case 4:
 					tool = [WDToolManager sharedInstance].coniferousTree;
+					[cell.colorPicker setColors:treeColors];
 					break;
 			}
 			break;

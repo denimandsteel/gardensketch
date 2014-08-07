@@ -42,6 +42,7 @@
 	[self.layer setCornerRadius:10.0];
 	[self.layer setMasksToBounds:YES];
 	[self.secondaryView setBackgroundColor:GS_COLOR_DARK_GREY_BACKGROUND];
+	[self customizeToolSubviews];
 }
 
 - (void)setSelected:(BOOL)selected
@@ -149,7 +150,7 @@
 				break;
 		}
 		
-//		[self.sidebar.canvasController.drawingController setValue:[NSNumber numberWithFloat:strokeWidth]
+//	[self.sidebar.canvasController.drawingController setValue:[NSNumber numberWithFloat:strokeWidth]
 //													  forProperty:WDStrokeWidthProperty];
 	}
 }
@@ -175,6 +176,33 @@
 			[button setSelected:NO];
 		}
 	}
+}
+
+- (void)customizeToolSubviews
+{
+	if ([self needColorPicker]) {
+		[self.colorPicker setHidden:NO];
+	} else {
+		[self.colorPicker setHidden:YES];
+	}
+}
+
+- (BOOL)needColorPicker
+{
+	WDTool *tool = self.toolButton.tool;
+	if ([tool isKindOfClass:[WDStencilTool class]]) {
+		ShapeType type = [(WDStencilTool *)tool type];
+		if (type == kPlant || type == kShrub || type == kTreeDeciduous || type == kTreeConiferous || type == kHedge) {
+			return YES;
+		}
+	} else if ([tool isKindOfClass:[WDFreehandTool class]]) {
+		return YES;
+	} else if ([tool isKindOfClass:[WDShapeTool class]]) {
+		if ([(WDShapeTool *)tool shapeMode] == WDShapeLine) {
+			return YES;
+		}
+	}
+	return NO;
 }
 
 @end
