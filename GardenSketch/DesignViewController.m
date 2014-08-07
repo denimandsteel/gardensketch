@@ -103,6 +103,8 @@
 	
 	[self.toolsCollectionView registerNib:[UINib nibWithNibName:@"ToolCollectionHeader" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"ToolCollectionHeaderIdentifier"];
 	
+	[self.toolsCollectionView setBackgroundColor:GS_COLOR_LIGHT_GREY_BACKGROUND];
+	
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -473,10 +475,10 @@
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
 	// TODO: call invalidateLayout after a cell has changed size, to receive a call here:
-	CGSize size = CGSizeMake(320, 80);
+	CGSize size = CGSizeMake(GS_SIDEBAR_WIDTH - 20, 80);
 	
 	if (selectedToolIndexPath == indexPath) {
-		size = CGSizeMake(320, 190);
+		size = CGSizeMake(GS_SIDEBAR_WIDTH - 20, 190);
 	}
 	
 	return size;

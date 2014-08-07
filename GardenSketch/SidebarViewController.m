@@ -8,6 +8,7 @@
 
 #import "SidebarViewController.h"
 #import "NorthViewController.h"
+#import "Constants.h"
 
 @interface SidebarViewController ()
 
@@ -52,7 +53,7 @@
 {
 	[UIView animateWithDuration:.3 animations:^{
 		CGRect frame = self.view.frame;
-		frame.origin.x = -300;
+		frame.origin.x = -(GS_SIDEBAR_WIDTH - 20); // leave 20px visible.
 		[self.view setFrame:frame];
 	}];
 }

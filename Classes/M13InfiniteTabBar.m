@@ -14,6 +14,7 @@
 
 #import "M13InfiniteTabBar.h"
 #import "M13InfiniteTabBarItem.h"
+#import "Constants.h"
 
 @implementation M13InfiniteTabBar
 {
@@ -27,7 +28,7 @@
 
 - (id)initWithInfiniteTabBarItems:(NSArray *)items
 {
-    self = [super initWithFrame:CGRectMake(0, 0, 320, 60)];
+    self = [super initWithFrame:CGRectMake(0, 0, GS_SIDEBAR_WIDTH, 60)];
     if (self) {
         // Initialization code
         self.delegate = self;

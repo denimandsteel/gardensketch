@@ -11,17 +11,21 @@
 
 #define		GS_BASE_PLAN_FILE_NAME			@"_GS_BASE_PLAN.inkpad"
 
-#define		GS_SIDEBAR_WIDTH				320.0
+#define		GS_SIDEBAR_WIDTH				340.0
 
 #define		CG_DEFAULT_CANVAS_SIZE			CGSizeMake(2048, 2048)
 
 #define		NOTE_CELL_MIN_HEIGHT			100.0
 
-#define		GS_FONT_AVENIR_BODY				[UIFont fontWithName:@"Avenir" size:16.0]
-#define		GS_FONT_AVENIR_ACTION_BOLD		[UIFont fontWithName:@"Avenir-Heavy" size:20.0]
-#define		GS_FONT_AVENIR_ACTION			[UIFont fontWithName:@"Avenir" size:20.0]
-#define		GS_FONT_AVENIR_HEAD				[UIFont fontWithName:@"Avenir" size:28.0]
-#define		GS_FONT_AVENIR_SMALL			[UIFont fontWithName:@"Avenir" size:8.0]
+#define		GS_FONT_AVENIR_BODY				[UIFont fontWithName:@"AvenirNext-Regular" size:16.0]
+#define		GS_FONT_AVENIR_ACTION_BOLD		[UIFont fontWithName:@"AvenirNext-Medium" size:20.0]
+#define		GS_FONT_AVENIR_ACTION			[UIFont fontWithName:@"AvenirNext-Regular" size:20.0]
+#define		GS_FONT_AVENIR_HEAD				[UIFont fontWithName:@"AvenirNext-Regular" size:28.0]
+
+#define		GS_FONT_AVENIR_SMALL			[UIFont fontWithName:@"AvenirNext-Regular" size:14.0]
+#define		GS_FONT_AVENIR_TINY				[UIFont fontWithName:@"AvenirNext-Regular" size:8.0]
+
+
 
 // APP CHROME COLORS:
 

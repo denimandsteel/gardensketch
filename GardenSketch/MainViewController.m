@@ -106,7 +106,7 @@ extern const NSString* GSNotificationCanvasActivityStopped;
 
 - (CGRect)frameForSidebar
 {
-	return CGRectMake(0, 0, 320, 768);
+	return CGRectMake(0, 0, GS_SIDEBAR_WIDTH, 768);
 }
 
 #pragma mark - M13InfiniteTabBarControllerDelegate
