@@ -454,6 +454,8 @@
 		4D6674EB1992A5D400A17C4E /* ToolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6674EA1992A5D400A17C4E /* ToolCell.m */; };
 		4D6674ED1993F3F800A17C4E /* ToolCollectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674EC1993F3F800A17C4E /* ToolCollectionHeader.xib */; };
 		4D6674F01993F46D00A17C4E /* ToolCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6674EF1993F46D00A17C4E /* ToolCollectionHeaderView.m */; };
+		4D6674F4199441E100A17C4E /* CompassLg_Base@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674F2199441E100A17C4E /* CompassLg_Base@2x.png */; };
+		4D6674F5199441E100A17C4E /* CompassLg_Pointer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674F3199441E100A17C4E /* CompassLg_Pointer@2x.png */; };
 		4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D862ECA1952043A0066A848 /* DesignViewController.m */; };
 		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
 		4D9115D3197597FB008B11CC /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115D1197597FB008B11CC /* MoreViewController.m */; };
@@ -1114,6 +1116,8 @@
 		4D6674EC1993F3F800A17C4E /* ToolCollectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolCollectionHeader.xib; sourceTree = "<group>"; };
 		4D6674EE1993F46D00A17C4E /* ToolCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolCollectionHeaderView.h; sourceTree = "<group>"; };
 		4D6674EF1993F46D00A17C4E /* ToolCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolCollectionHeaderView.m; sourceTree = "<group>"; };
+		4D6674F2199441E100A17C4E /* CompassLg_Base@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CompassLg_Base@2x.png"; sourceTree = "<group>"; };
+		4D6674F3199441E100A17C4E /* CompassLg_Pointer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CompassLg_Pointer@2x.png"; sourceTree = "<group>"; };
 		4D862EC91952043A0066A848 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		4D862ECA1952043A0066A848 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		4D862ECB1952043A0066A848 /* DesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignViewController.xib; sourceTree = "<group>"; };
@@ -1293,6 +1297,8 @@
 		4D05DB45194B820A001F19A7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4D6674F2199441E100A17C4E /* CompassLg_Base@2x.png */,
+				4D6674F3199441E100A17C4E /* CompassLg_Pointer@2x.png */,
 				4D66749119884CEA00A17C4E /* TutorialImages */,
 				4D9115EF198088DD008B11CC /* Stencils */,
 				4D53F628196B14840097C8E3 /* AppIcon */,
@@ -2513,10 +2519,12 @@
 				4D081C04195B468B00F8871C /* Plant_Light_Pink.png in Resources */,
 				4D6674481983212B00A17C4E /* Shrub_Brown.stencil in Resources */,
 				4D6674E519929C9A00A17C4E /* ToolCell.xib in Resources */,
+				4D6674F5199441E100A17C4E /* CompassLg_Pointer@2x.png in Resources */,
 				4D05DE221950AC3F001F19A7 /* OpenClipArt.xib in Resources */,
 				4D081BD4195351AC00F8871C /* Toucan in the Shade.inkpad in Resources */,
 				4D081C00195B3E4F00F8871C /* Tile@2x.png in Resources */,
 				4D576062196481CE00DCCBEF /* Deciduous_Tree_Green.svg in Resources */,
+				4D6674F4199441E100A17C4E /* CompassLg_Base@2x.png in Resources */,
 				4D576052195E0E5300DCCBEF /* Shrub_Viridian.svg in Resources */,
 				4D6674B91989B4DC00A17C4E /* L_Shaped_House_3.stencil in Resources */,
 				4D66749C19885E7A00A17C4E /* Design1@2x.png in Resources */,

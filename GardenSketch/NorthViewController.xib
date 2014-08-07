@@ -15,12 +15,12 @@
             <rect key="frame" x="0.0" y="0.0" width="340" height="708"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="north-big.png" translatesAutoresizingMaskIntoConstraints="NO" id="FXU-5a-5nn">
-                    <rect key="frame" x="30" y="94" width="280" height="280"/>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CompassLg_Pointer.png" translatesAutoresizingMaskIntoConstraints="NO" id="FXU-5a-5nn">
+                    <rect key="frame" x="26" y="85" width="288" height="288"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="280" id="ALx-ZZ-Mk5"/>
-                        <constraint firstAttribute="width" constant="280" id="Bsc-Z5-vq0"/>
+                        <constraint firstAttribute="height" constant="288" id="ALx-ZZ-Mk5"/>
+                        <constraint firstAttribute="width" constant="288" id="Bsc-Z5-vq0"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set North" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7Y-G3-kxt" customClass="GSLabelHead">
@@ -30,17 +30,28 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CompassLg_Base.png" translatesAutoresizingMaskIntoConstraints="NO" id="5K1-7X-AZm">
+                    <rect key="frame" x="26" y="85" width="288" height="288"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="288" id="UKd-33-urO"/>
+                        <constraint firstAttribute="width" constant="288" id="vN4-4g-P3l"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="FXU-5a-5nn" secondAttribute="centerX" id="HrW-T7-woK"/>
-                <constraint firstAttribute="centerY" secondItem="FXU-5a-5nn" secondAttribute="centerY" constant="120" id="si0-J8-yDm"/>
+                <constraint firstAttribute="centerX" secondItem="5K1-7X-AZm" secondAttribute="centerX" id="cE3-pD-BL4"/>
+                <constraint firstAttribute="centerY" secondItem="5K1-7X-AZm" secondAttribute="centerY" constant="125" id="img-fG-evW"/>
+                <constraint firstAttribute="centerY" secondItem="FXU-5a-5nn" secondAttribute="centerY" constant="125" id="si0-J8-yDm"/>
             </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
     <resources>
-        <image name="north-big.png" width="950" height="949"/>
+        <image name="CompassLg_Base.png" width="288" height="288"/>
+        <image name="CompassLg_Pointer.png" width="288" height="288"/>
     </resources>
 </document>
