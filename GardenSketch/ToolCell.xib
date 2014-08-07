@@ -25,12 +25,22 @@
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yy-S7-ApE" customClass="GSLabel">
-                                <rect key="frame" x="102" y="29" width="198" height="21"/>
+                                <rect key="frame" x="102" y="12" width="198" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcG-et-XBm">
+                                <rect key="frame" x="261" y="0.0" width="59" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Repeat">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="repeatTapped:" destination="zfM-hT-wWa" eventType="touchUpInside" id="H8S-YK-397"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96155315900000005" green="0.96155315900000005" blue="0.96155315900000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -102,6 +112,7 @@
             <connections>
                 <outlet property="colorPicker" destination="ejb-iy-E7m" id="UZY-cV-nPy"/>
                 <outlet property="primaryView" destination="gQ9-PJ-ABH" id="d9l-hq-8eL"/>
+                <outlet property="repeatButton" destination="KcG-et-XBm" id="xRR-6z-YOV"/>
                 <outlet property="secondaryView" destination="HEK-dF-hpb" id="aBn-OK-hFk"/>
                 <outlet property="toolButton" destination="oNt-K4-aPY" id="6S8-up-fn2"/>
                 <outlet property="toolNameLabel" destination="3yy-S7-ApE" id="K0n-Qq-A4k"/>

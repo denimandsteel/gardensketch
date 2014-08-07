@@ -105,6 +105,11 @@
 	
 	[self.toolsCollectionView setBackgroundColor:GS_COLOR_LIGHT_GREY_BACKGROUND];
 	
+	UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toolsCollectionViewDoubleTapped:)];
+	[doubleTapGestureRecognizer setNumberOfTapsRequired:2];
+	[doubleTapGestureRecognizer setNumberOfTouchesRequired:1];
+	[self.toolsCollectionView addGestureRecognizer:doubleTapGestureRecognizer];
+	
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -531,6 +536,23 @@
 	} else {
 		return nil;
 	}
+}
+
+- (void)toolsCollectionViewDoubleTapped:(UIGestureRecognizer *)gestureRecognizer
+{
+	if (gestureRecognizer.state == UIGestureRecognizerStateEnded)
+    {
+        CGPoint point = [gestureRecognizer locationInView:self.toolsCollectionView];
+        NSIndexPath *indexPath = [self.toolsCollectionView indexPathForItemAtPoint:point];
+        if (indexPath)
+        {
+            NSLog(@"Image was double tapped");
+        }
+        else
+        {
+            NSLog(@"Whaaa?!");
+        }
+    }
 }
 
 @end

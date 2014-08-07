@@ -51,6 +51,17 @@
 		[self.primaryView setBackgroundColor:GS_COLOR_ACCENT_BLUE];
 		[self.toolNameLabel setTextColor:[UIColor whiteColor]];
 		[self.toolNameLabel setFont:GS_FONT_AVENIR_ACTION_BOLD];
+		[self.repeatButton setHidden:NO];
+		BOOL isRepeatOn;
+		if ([self.toolButton.tool isKindOfClass:[WDStencilTool class]]) {
+			isRepeatOn = [(WDStencilTool *)self.toolButton.tool staysOn];
+		} else if ([self.toolButton.tool isKindOfClass:[WDFreehandTool class]]) {
+			isRepeatOn = [(WDFreehandTool *)self.toolButton.tool staysOn];
+		} else if ([self.toolButton.tool isKindOfClass:[WDShapeTool class]]) {
+			isRepeatOn = [(WDShapeTool *)self.toolButton.tool staysOn];
+		}
+		[self.repeatButton setSelected:isRepeatOn];
+
 		[UIView animateWithDuration:.5 delay:0.0 usingSpringWithDamping:.7 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
 			CGRect frame = self.frame;
 			frame.size.height = 190;
@@ -67,6 +78,7 @@
 		[self.primaryView setBackgroundColor:GS_COLOR_LIGHT_GREY_BACKGROUND];
 		[self.toolNameLabel setTextColor:GS_COLOR_DARK_GREY_TEXT];
 		[self.toolNameLabel setFont:GS_FONT_AVENIR_ACTION];
+		[self.repeatButton setHidden:YES];
 		[UIView animateWithDuration:.5 delay:0.0 usingSpringWithDamping:.7 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
 			CGRect frame = self.frame;
 			frame.size.height = 80;
@@ -140,6 +152,18 @@
 //		[self.sidebar.canvasController.drawingController setValue:[NSNumber numberWithFloat:strokeWidth]
 //													  forProperty:WDStrokeWidthProperty];
 	}
+}
+
+- (IBAction)repeatTapped:(id)sender {
+	WDTool *tool = self.toolButton.tool;
+	if ([tool isKindOfClass:[WDStencilTool class]]) {
+		((WDStencilTool *)tool).staysOn ^= YES;
+	} else if ([tool isKindOfClass:[WDFreehandTool class]]) {
+		((WDFreehandTool *)tool).staysOn ^= YES;
+	} else if ([tool isKindOfClass:[WDShapeTool class]]) {
+		((WDShapeTool *)tool).staysOn ^= YES;
+	}
+	[self.repeatButton setSelected:!self.repeatButton.selected];
 }
 
 - (void)setSelectedSizeButton:(ShapeSize)shapeSize

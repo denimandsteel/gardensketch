@@ -22,9 +22,13 @@
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *sizeButtons;
 @property (weak, nonatomic) IBOutlet ColorPickerButton *colorPicker;
+@property (weak, nonatomic) IBOutlet UIButton *repeatButton;
+
 
 - (IBAction)colorPickerTapped:(id)sender;
 - (IBAction)sizeButtonTapped:(id)sender;
+- (IBAction)repeatTapped:(id)sender;
+
 
 - (void)initialize;
 - (void)activateTool;
