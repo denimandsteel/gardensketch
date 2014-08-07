@@ -492,7 +492,12 @@
 	
 	if (indexPath) {
 		[self.toolsCollectionView selectItemAtIndexPath:[self indexPathForTool:tool] animated:YES scrollPosition:UICollectionViewScrollPositionNone];
+		selectedToolIndexPath = indexPath;
+	} else {
+		[self.toolsCollectionView deselectItemAtIndexPath:selectedToolIndexPath animated:YES];
+		selectedToolIndexPath = nil;
 	}
+	[self.toolsCollectionView performBatchUpdates:nil completion:nil];
 }
 
 - (NSIndexPath *)indexPathForTool:(WDTool *)tool
