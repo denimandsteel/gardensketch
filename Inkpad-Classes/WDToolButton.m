@@ -57,6 +57,7 @@
 - (void)initialize
 {
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(activeToolChanged:) name:WDActiveToolDidChange object:nil];
+	self.tintColor = nil;
 }
 
 - (void) dealloc
@@ -110,12 +111,12 @@
 
 - (UIColor *) toolTintColor
 {
-    return [UIColor colorWithRed:(66.0f / 255) green:(102.0f / 255) blue:(151.0f / 255) alpha:1.0f];
+    return nil;
 }
 
 - (UIColor *) toolSelectedBackgroundColor
 {
-    return GS_COLOR_ACCENT_BLUE;
+    return [UIColor redColor];
 }
 
 - (void) drawDisclosueInContext:(CGContextRef)ctx
@@ -171,11 +172,12 @@
     tool_ = tool;
     
     [self setImage:tool.icon forState:UIControlStateNormal];
-    self.tintColor = [self toolTintColor];
-    [self setImage:tool.icon forState:UIControlStateSelected];
+	[self setImageEdgeInsets:UIEdgeInsetsMake(8, 8, 8, 8)];
+//    self.tintColor = [self toolTintColor];
+//    [self setImage:tool.icon forState:UIControlStateSelected];
     
     if (!tools_) {
-        [self setBackgroundImage:[self selectedBackgroundWithDisclosure:NO] forState:UIControlStateSelected];
+//        [self setBackgroundImage:[self selectedBackgroundWithDisclosure:NO] forState:UIControlStateSelected];
     }
 	
 	if ([tool isKindOfClass:[WDStencilTool class]] || [tool isKindOfClass:[WDFreehandTool class]] || [tool isKindOfClass:[WDShapeTool class]]) {
@@ -239,8 +241,8 @@
         }
     }
     
-    [self setBackgroundImage:[self disclosureBackground] forState:UIControlStateNormal];
-    [self setBackgroundImage:[self selectedBackgroundWithDisclosure:YES] forState:UIControlStateSelected];
+//	[self setBackgroundImage:[self disclosureBackground] forState:UIControlStateNormal];
+//    [self setBackgroundImage:[self selectedBackgroundWithDisclosure:YES] forState:UIControlStateSelected];
     
     
     UILongPressGestureRecognizer *longTap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(showTools:)];

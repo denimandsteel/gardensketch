@@ -1,39 +1,22 @@
 //
-//  GSLabelHead.m
+//  ToolCollectionHeaderView.m
 //  GardenSketch
 //
-//  Created by Arian Khosravi on 2014-06-25.
+//  Created by Arian Khosravi on 2014-08-07.
 //  Copyright (c) 2014 Denim & Steel. All rights reserved.
 //
 
-#import "GSLabelHead.h"
-#import "Constants.h"
+#import "ToolCollectionHeaderView.h"
 
-@implementation GSLabelHead
+@implementation ToolCollectionHeaderView
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-		[self initialize];
     }
     return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-	self = [super initWithCoder:aDecoder];
-	if (self) {
-		[self initialize];
-	}
-	return self;
-}
-
-- (void)initialize
-{
-	[self setTextColor:GS_COLOR_DARK_GREY_TEXT];
-	[self setFont:GS_FONT_AVENIR_HEAD];
 }
 
 /*

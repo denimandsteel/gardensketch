@@ -33,7 +33,7 @@
 @property (nonatomic, weak) WDStencilTool   *horizontalHedge;
 @property (nonatomic, weak) WDStencilTool   *deciduousTree;
 @property (nonatomic, weak) WDStencilTool   *coniferousTree;
-@property (nonatomic, weak) WDStencilTool   *sidewalk;
+@property (nonatomic, weak) WDStencilTool   *tile;
 @property (nonatomic, weak) WDStencilTool   *gazebo;
 @property (nonatomic, weak) WDStencilTool   *shed;
 @property (nonatomic, weak) WDStencilTool   *waterFeature;

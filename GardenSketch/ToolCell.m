@@ -38,6 +38,9 @@
 {
 	[self setSelected:NO];
 	[self.toolButton addTarget:self action:@selector(toolButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+	[self.layer setCornerRadius:10.0];
+	[self.layer setMasksToBounds:YES];
+	[self.secondaryView setBackgroundColor:GS_COLOR_DARK_GREY_BACKGROUND];
 }
 
 - (void)setSelected:(BOOL)selected
@@ -53,8 +56,8 @@
 			[self setFrame:frame];
 		}];
 	} else {
-		[self.primaryView setBackgroundColor:GS_COLOR_GREY_BACKGROUND];
-		[self.toolNameLabel setTextColor:GS_COLOR_DARK_GREY];
+		[self.primaryView setBackgroundColor:GS_COLOR_LIGHT_GREY_BACKGROUND];
+		[self.toolNameLabel setTextColor:GS_COLOR_DARK_GREY_TEXT];
 		[self.toolNameLabel setFont:GS_FONT_AVENIR_ACTION];
 		[UIView animateWithDuration:.3 animations:^{
 			CGRect frame = self.frame;

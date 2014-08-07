@@ -452,6 +452,8 @@
 		4D6674E21991812A00A17C4E /* Flower_Pot.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674E11991812A00A17C4E /* Flower_Pot.stencil */; };
 		4D6674E519929C9A00A17C4E /* ToolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674E419929C9A00A17C4E /* ToolCell.xib */; };
 		4D6674EB1992A5D400A17C4E /* ToolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6674EA1992A5D400A17C4E /* ToolCell.m */; };
+		4D6674ED1993F3F800A17C4E /* ToolCollectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674EC1993F3F800A17C4E /* ToolCollectionHeader.xib */; };
+		4D6674F01993F46D00A17C4E /* ToolCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6674EF1993F46D00A17C4E /* ToolCollectionHeaderView.m */; };
 		4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D862ECA1952043A0066A848 /* DesignViewController.m */; };
 		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
 		4D9115D3197597FB008B11CC /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115D1197597FB008B11CC /* MoreViewController.m */; };
@@ -1109,6 +1111,9 @@
 		4D6674E419929C9A00A17C4E /* ToolCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolCell.xib; sourceTree = "<group>"; };
 		4D6674E91992A5D400A17C4E /* ToolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolCell.h; sourceTree = "<group>"; };
 		4D6674EA1992A5D400A17C4E /* ToolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolCell.m; sourceTree = "<group>"; };
+		4D6674EC1993F3F800A17C4E /* ToolCollectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolCollectionHeader.xib; sourceTree = "<group>"; };
+		4D6674EE1993F46D00A17C4E /* ToolCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolCollectionHeaderView.h; sourceTree = "<group>"; };
+		4D6674EF1993F46D00A17C4E /* ToolCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolCollectionHeaderView.m; sourceTree = "<group>"; };
 		4D862EC91952043A0066A848 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		4D862ECA1952043A0066A848 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		4D862ECB1952043A0066A848 /* DesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignViewController.xib; sourceTree = "<group>"; };
@@ -1881,6 +1886,7 @@
 				4D081BE11954B54800F8871C /* ColorPickerViewController.xib */,
 				4D9115DD197737BC008B11CC /* NoteCellView.xib */,
 				4D6674E419929C9A00A17C4E /* ToolCell.xib */,
+				4D6674EC1993F3F800A17C4E /* ToolCollectionHeader.xib */,
 			);
 			name = xibs;
 			sourceTree = "<group>";
@@ -1955,6 +1961,8 @@
 				4D9115E619787DFB008B11CC /* GSTextView.m */,
 				4D6674E91992A5D400A17C4E /* ToolCell.h */,
 				4D6674EA1992A5D400A17C4E /* ToolCell.m */,
+				4D6674EE1993F46D00A17C4E /* ToolCollectionHeaderView.h */,
+				4D6674EF1993F46D00A17C4E /* ToolCollectionHeaderView.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -2412,6 +2420,7 @@
 				4D53F633196B149C0097C8E3 /* AppIcon29x29.png in Resources */,
 				4D05DBAF194F5C81001F19A7 /* design.png in Resources */,
 				4D6673C61983116200A17C4E /* Coniferous_Burgundy.svg in Resources */,
+				4D6674ED1993F3F800A17C4E /* ToolCollectionHeader.xib in Resources */,
 				4D66748E1988488600A17C4E /* Design4.xib in Resources */,
 				4D53F646196F5DB60097C8E3 /* scale-icon.png in Resources */,
 				4D6674A019885E7A00A17C4E /* North1@2x.png in Resources */,
@@ -2609,6 +2618,7 @@
 				4D05DCCC194F7FF2001F19A7 /* WDArrowhead.m in Sources */,
 				4D05DCC4194F7FF2001F19A7 /* DblLinked.cpp in Sources */,
 				4D05DDC0194F8042001F19A7 /* WDModalTitleBar.m in Sources */,
+				4D6674F01993F46D00A17C4E /* ToolCollectionHeaderView.m in Sources */,
 				4D05DDCC194F8042001F19A7 /* WDSparkSlider.m in Sources */,
 				4D05DC9A194F7FF2001F19A7 /* WDDynamicGuideController.m in Sources */,
 				4D05DCE0194F7FF2001F19A7 /* WDRulerUnit.m in Sources */,

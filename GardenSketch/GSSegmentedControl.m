@@ -33,7 +33,7 @@
 
 - (void)initialize
 {
-	[self setTitleTextAttributes:@{NSForegroundColorAttributeName:GS_COLOR_DARK_GREY,
+	[self setTitleTextAttributes:@{NSForegroundColorAttributeName:GS_COLOR_DARK_GREY_TEXT,
 								   NSFontAttributeName:GS_FONT_AVENIR_BODY}
 						forState:UIControlStateNormal];
 	

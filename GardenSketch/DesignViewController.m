@@ -20,6 +20,7 @@
 #import "WDInspectableProperties.h"
 #import "WDLayer.h"
 #import "ToolCell.h"
+#import "ToolCollectionHeaderView.h"
 
 @interface DesignViewController ()
 
@@ -33,7 +34,7 @@
 	NSArray *shrubColors;
 	NSArray *treeColors;
 	
-	NSMutableArray *selectedToolIndexPaths;
+	NSIndexPath *selectedToolIndexPath;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -50,7 +51,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	
-	selectedToolIndexPaths = [NSMutableArray array];
+	selectedToolIndexPath = nil;
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(drawingChanged:)
@@ -99,6 +100,9 @@
 	[self initTools];
 	
 	[self.toolsCollectionView registerNib:[UINib nibWithNibName:@"ToolCell" bundle:nil] forCellWithReuseIdentifier:@"ToolCellIdentifier"];
+	
+	[self.toolsCollectionView registerNib:[UINib nibWithNibName:@"ToolCollectionHeader" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"ToolCollectionHeaderIdentifier"];
+	
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -194,124 +198,9 @@
 
 - (void) initTools
 {
-//	// TODO: make this more sane by moving actions to IB
-//	// TODO: also having one property per tool on the tool manager, to get rid of the massive loop down here:
-//	
-//	WDTool *select = nil;
-//	WDTool *freehand = nil;
-//	WDTool *line = nil;
-//	WDTool *enclosed = nil;
-//	WDTool *plant = nil;
-//	WDTool *shrub = nil;
-//	WDTool *verticalHedge = nil;
-//	WDTool *horizontalHedge = nil;
-//	WDTool *deciduousTree = nil;
-//	WDTool *coniferousTree = nil;
-//	WDTool *sidewalk = nil;
-//	WDTool *gazebo = nil;
-//	WDTool *shed = nil;
-//	WDTool *waterFeature = nil;
-//	WDTool *flowerPot = nil;
-//	
-//	for (WDTool *tool in [WDToolManager sharedInstance].tools) {
-//		if ([tool isKindOfClass:[WDFreehandTool class]]) {
-//			if ([(WDFreehandTool *)tool closeShape]) {
-//				enclosed = tool;
-//			} else {
-//				freehand = tool;
-//			}
-//		} else if ([tool isKindOfClass:[WDStencilTool class]]) {
-//			switch ([(WDStencilTool *)tool type]) {
-//				case kPlant:
-//					plant = tool;
-//					break;
-//				case kShrub:
-//					shrub = tool;
-//					break;
-//				case kHedge:
-//					if ([((WDStencilTool *)tool) initialRotation] > 0.0) {
-//						horizontalHedge = tool;
-//					} else {
-//						verticalHedge = tool;
-//					}
-//					break;
-//				case kTreeDeciduous:
-//					deciduousTree = tool;
-//					break;
-//				case kTreeConiferous:
-//					coniferousTree = tool;
-//					break;
-//				case kSidewalk:
-//					sidewalk = tool;
-//					break;
-//				case kGazebo:
-//					gazebo = tool;
-//					break;
-//				case kShed:
-//					shed = tool;
-//					break;
-//				case kWaterFeature:
-//					waterFeature = tool;
-//					break;
-//				case kFlowerPot:
-//					flowerPot = tool;
-//					break;
-//				default:
-//					NSLog(@"hmm.. weird");
-//			}
-//			
-//		} else if ([tool isKindOfClass:[WDSelectionTool class]]) {
-//			select = tool;
-//		} else if ([tool isKindOfClass:[WDShapeTool class]]) {
-//			line = tool;
-//		}
-//		
-//	}
-//	
-//	self.selectButton.tool = select;
-//	[self.selectButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-//	
-//	self.freehandButton.tool = freehand;
-//	[self.freehandButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-//	
-//	self.straightLineButton.tool = line;
-//	[self.straightLineButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-//	
-//	self.enclosedButton.tool = enclosed;
-//	[self.enclosedButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-//	
-//	self.plantButton.tool = plant;
-//	[self.plantButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-//	
-//	self.shrubButton.tool = shrub;
-//	[self.shrubButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-//	
-//	self.verticalHedgeButton.tool = verticalHedge;
-//	[self.verticalHedgeButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-//	
-//	self.horizontalHedgeButton.tool = horizontalHedge;
-//	[self.horizontalHedgeButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-//	
-//	self.deciduousTreeButton.tool = deciduousTree;
-//	[self.deciduousTreeButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-//	
-//	self.coniferousTreeButton.tool = coniferousTree;
-//	[self.coniferousTreeButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-//	
-//	self.tileButton.tool = sidewalk;
-//	[self.tileButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-//	
-//	self.gazeboButton.tool = gazebo;
-//	[self.gazeboButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-//	
-//	self.shedButton.tool = shed;
-//	[self.shedButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-//	
-//	self.waterFeatureButton.tool = waterFeature;
-//	[self.waterFeatureButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-//	
-//	self.flowerPotButton.tool = flowerPot;
-//	[self.flowerPotButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	WDTool *select = [WDToolManager sharedInstance].select;
+	self.selectButton.tool = select;
+	[self.selectButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void) selectionChanged:(NSNotification *)aNotification
@@ -505,7 +394,7 @@
 		{
 			switch (indexPath.row) {
 				case 0:
-					tool = [WDToolManager sharedInstance].sidewalk;
+					tool = [WDToolManager sharedInstance].tile;
 					break;
 				case 1:
 					tool = [WDToolManager sharedInstance].waterFeature;
@@ -531,7 +420,7 @@
 	
 	[cell initialize];
 	
-	if ([selectedToolIndexPaths containsObject:indexPath]) {
+	if (selectedToolIndexPath == indexPath) {
 		[cell setSelected:YES];
 	} else {
 		[cell setSelected:NO];
@@ -542,7 +431,7 @@
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionReusableView *reusableview = [[UICollectionReusableView alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
+    ToolCollectionHeaderView *reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"ToolCollectionHeaderIdentifier" forIndexPath:indexPath];
     
     if (kind == UICollectionElementKindSectionHeader) {
 		NSString *headerText = @"";
@@ -559,9 +448,7 @@
 			default:
 				break;
 		}
-		UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
-		[headerLabel setText:headerText];
-        [reusableview addSubview:headerLabel];
+		[reusableview.label setText:headerText];
     }
 	
     return reusableview;
@@ -569,18 +456,18 @@
 
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-	[selectedToolIndexPaths addObject:indexPath];
+	selectedToolIndexPath = indexPath;
 	NSLog(@"Did select tool!");
 	ToolCell *toolCell = (ToolCell *)[collectionView cellForItemAtIndexPath:indexPath];
 	
-	[collectionView.collectionViewLayout invalidateLayout];
+	[self.toolsCollectionView performBatchUpdates:nil completion:nil];
 	
 	[toolCell activateTool];
 }
 
 - (void) collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-	[selectedToolIndexPaths removeObject:indexPath];
+	
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -588,19 +475,54 @@
 	// TODO: call invalidateLayout after a cell has changed size, to receive a call here:
 	CGSize size = CGSizeMake(320, 80);
 	
-	if ([selectedToolIndexPaths containsObject:indexPath]) {
+	if (selectedToolIndexPath == indexPath) {
 		size = CGSizeMake(320, 190);
 	}
 	
 	return size;
 }
 
-- (void) activeToolChanged:(NSNotification *)aNotification
+- (void)activeToolChanged:(NSNotification *)aNotification
 {
     WDTool *tool = [[WDToolManager sharedInstance] activeTool];
 	
-	if (tool == [WDToolManager sharedInstance].freehand) {
-		[self.toolsCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:1 inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionTop];
+	NSIndexPath *indexPath = [self indexPathForTool:tool];
+	
+	if (indexPath) {
+		[self.toolsCollectionView selectItemAtIndexPath:[self indexPathForTool:tool] animated:YES scrollPosition:UICollectionViewScrollPositionNone];
+	}
+}
+
+- (NSIndexPath *)indexPathForTool:(WDTool *)tool
+{
+	if (tool == [WDToolManager sharedInstance].line) {
+		return [NSIndexPath indexPathForItem:0 inSection:0];
+	} else if (tool == [WDToolManager sharedInstance].freehand) {
+		return [NSIndexPath indexPathForItem:1 inSection:0];
+	} else if (tool == [WDToolManager sharedInstance].enclosed) {
+		return [NSIndexPath indexPathForItem:2 inSection:0];
+	} else if (tool == [WDToolManager sharedInstance].plant) {
+		return [NSIndexPath indexPathForItem:0 inSection:1];
+	} else if (tool == [WDToolManager sharedInstance].shrub) {
+		return [NSIndexPath indexPathForItem:1 inSection:1];
+	} else if (tool == [WDToolManager sharedInstance].horizontalHedge) {
+		return [NSIndexPath indexPathForItem:2 inSection:1];
+	} else if (tool == [WDToolManager sharedInstance].deciduousTree) {
+		return [NSIndexPath indexPathForItem:3 inSection:1];
+	} else if (tool == [WDToolManager sharedInstance].coniferousTree) {
+		return [NSIndexPath indexPathForItem:4 inSection:1];
+	} else if (tool == [WDToolManager sharedInstance].tile) {
+		return [NSIndexPath indexPathForItem:0 inSection:2];
+	} else if (tool == [WDToolManager sharedInstance].waterFeature) {
+		return [NSIndexPath indexPathForItem:1 inSection:2];
+	} else if (tool == [WDToolManager sharedInstance].shed) {
+		return [NSIndexPath indexPathForItem:2 inSection:2];
+	} else if (tool == [WDToolManager sharedInstance].gazebo) {
+		return [NSIndexPath indexPathForItem:3 inSection:2];
+	} else if (tool == [WDToolManager sharedInstance].flowerPot) {
+		return [NSIndexPath indexPathForItem:4 inSection:2];
+	} else {
+		return nil;
 	}
 }
 
