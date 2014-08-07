@@ -38,6 +38,7 @@
 {
 	[self setSelected:NO];
 	[self.toolButton addTarget:self action:@selector(toolButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+	[self.toolNameLabel setText:self.toolButton.tool.toolName];
 	[self.layer setCornerRadius:10.0];
 	[self.layer setMasksToBounds:YES];
 	[self.secondaryView setBackgroundColor:GS_COLOR_DARK_GREY_BACKGROUND];
@@ -50,19 +51,28 @@
 		[self.primaryView setBackgroundColor:GS_COLOR_ACCENT_BLUE];
 		[self.toolNameLabel setTextColor:[UIColor whiteColor]];
 		[self.toolNameLabel setFont:GS_FONT_AVENIR_ACTION_BOLD];
-		[UIView animateWithDuration:.3 animations:^{
+		[UIView animateWithDuration:.5 delay:0.0 usingSpringWithDamping:.7 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
 			CGRect frame = self.frame;
 			frame.size.height = 190;
 			[self setFrame:frame];
+		} completion:^(BOOL finished) {
+			
 		}];
+//		[UIView animateWithDuration:.3 animations:^{
+//			CGRect frame = self.frame;
+//			frame.size.height = 190;
+//			[self setFrame:frame];
+//		}];
 	} else {
 		[self.primaryView setBackgroundColor:GS_COLOR_LIGHT_GREY_BACKGROUND];
 		[self.toolNameLabel setTextColor:GS_COLOR_DARK_GREY_TEXT];
 		[self.toolNameLabel setFont:GS_FONT_AVENIR_ACTION];
-		[UIView animateWithDuration:.3 animations:^{
+		[UIView animateWithDuration:.5 delay:0.0 usingSpringWithDamping:.7 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
 			CGRect frame = self.frame;
 			frame.size.height = 80;
 			[self setFrame:frame];
+		} completion:^(BOOL finished) {
+			
 		}];
 	}
 }

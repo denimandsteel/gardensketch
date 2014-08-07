@@ -36,6 +36,11 @@ NSString *WDDefaultFreehandTool = @"WDDefaultFreehandTool";
     return closeShape_ ? @"enclosed.png" : @"freehand.png";
 }
 
+- (NSString *) toolName
+{
+    return closeShape_ ? @"Area" : @"Freehand Line";
+}
+
 - (BOOL) createsObject
 {
     return YES;

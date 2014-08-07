@@ -42,6 +42,11 @@
     return nil;
 }
 
+- (NSString *) toolName
+{
+    return nil;
+}
+
 - (id) icon
 {
 #if TARGET_OS_IPHONE

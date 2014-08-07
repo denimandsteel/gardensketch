@@ -40,6 +40,12 @@ NSString *WDShapeToolSpiralDecay = @"WDShapeToolSpiralDecay";
     return imageNames[shapeMode_];
 }
 
+- (NSString *) toolName
+{
+    NSArray *toolNames = @[@"Rectange", @"Ovale", @"Star", @"Polygon", @"Straight Line", @"Spiral"];
+    return toolNames[shapeMode_];
+}
+
 - (id) init
 {
     self = [super init];
