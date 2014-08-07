@@ -17,9 +17,9 @@
 
 #define		NOTE_CELL_MIN_HEIGHT			100.0
 
-#define		GS_COLOR_DARK_GREY				[UIColor colorWithRed:.2 green:.19 blue:.19 alpha:1.0]
 #define		GS_FONT_AVENIR_BODY				[UIFont fontWithName:@"Avenir" size:16.0]
-#define		GS_FONT_AVENIR_ACTION			[UIFont fontWithName:@"Avenir" size:18.0]
+#define		GS_FONT_AVENIR_ACTION_BOLD		[UIFont fontWithName:@"Avenir-Heavy" size:20.0]
+#define		GS_FONT_AVENIR_ACTION			[UIFont fontWithName:@"Avenir" size:20.0]
 #define		GS_FONT_AVENIR_HEAD				[UIFont fontWithName:@"Avenir" size:28.0]
 #define		GS_FONT_AVENIR_SMALL			[UIFont fontWithName:@"Avenir" size:8.0]
 
@@ -32,7 +32,9 @@
 #define		GS_COLOR_AREA_WARM_GREY			[UIColor colorWithRed:0.8 green:0.8 blue:0.83 alpha:0.4]
 #define		GS_COLOR_AREA_COOL_GREY			[UIColor colorWithRed:0.79 green:0.76 blue:0.74 alpha:0.4]
 
-#define		GS_COLOR_PEACHY_HIGHLIGHT		[UIColor colorWithRed:251/255.0 green:176/255.0 blue:136/255.0 alpha:1.0]
+#define		GS_COLOR_ACCENT_BLUE			[UIColor colorWithRed:0.345 green:0.784 blue:0.796 alpha:1.000]
+#define		GS_COLOR_GREY_BACKGROUND		[UIColor colorWithRed:0.969 green:0.969 blue:0.969 alpha:1.000]
+#define		GS_COLOR_DARK_GREY				[UIColor colorWithRed:0.216 green:0.204 blue:0.204 alpha:1.000]
 
 // stroke colors:
 #define		GS_COLOR_STROKE_RED				[UIColor colorWithRed:167/255.0 green:59/255.0 blue:57/255.0 alpha:1.0]

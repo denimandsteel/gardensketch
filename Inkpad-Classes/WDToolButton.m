@@ -115,7 +115,7 @@
 
 - (UIColor *) toolSelectedBackgroundColor
 {
-    return GS_COLOR_PEACHY_HIGHLIGHT;
+    return GS_COLOR_ACCENT_BLUE;
 }
 
 - (void) drawDisclosueInContext:(CGContextRef)ctx

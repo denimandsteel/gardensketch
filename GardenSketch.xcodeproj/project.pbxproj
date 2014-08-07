@@ -450,6 +450,8 @@
 		4D6674DE1991630B00A17C4E /* Flower_Pot.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674DD1991630B00A17C4E /* Flower_Pot.svg */; };
 		4D6674E0199179A700A17C4E /* Flower_Pot.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674DF199179A700A17C4E /* Flower_Pot.png */; };
 		4D6674E21991812A00A17C4E /* Flower_Pot.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674E11991812A00A17C4E /* Flower_Pot.stencil */; };
+		4D6674E519929C9A00A17C4E /* ToolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674E419929C9A00A17C4E /* ToolCell.xib */; };
+		4D6674EB1992A5D400A17C4E /* ToolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D6674EA1992A5D400A17C4E /* ToolCell.m */; };
 		4D862ECC1952043A0066A848 /* DesignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D862ECA1952043A0066A848 /* DesignViewController.m */; };
 		4D862ECD1952043A0066A848 /* DesignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D862ECB1952043A0066A848 /* DesignViewController.xib */; };
 		4D9115D3197597FB008B11CC /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115D1197597FB008B11CC /* MoreViewController.m */; };
@@ -1104,6 +1106,9 @@
 		4D6674DD1991630B00A17C4E /* Flower_Pot.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Flower_Pot.svg; sourceTree = "<group>"; };
 		4D6674DF199179A700A17C4E /* Flower_Pot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flower_Pot.png; sourceTree = "<group>"; };
 		4D6674E11991812A00A17C4E /* Flower_Pot.stencil */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Flower_Pot.stencil; sourceTree = "<group>"; };
+		4D6674E419929C9A00A17C4E /* ToolCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolCell.xib; sourceTree = "<group>"; };
+		4D6674E91992A5D400A17C4E /* ToolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolCell.h; sourceTree = "<group>"; };
+		4D6674EA1992A5D400A17C4E /* ToolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolCell.m; sourceTree = "<group>"; };
 		4D862EC91952043A0066A848 /* DesignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignViewController.h; sourceTree = "<group>"; };
 		4D862ECA1952043A0066A848 /* DesignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignViewController.m; sourceTree = "<group>"; };
 		4D862ECB1952043A0066A848 /* DesignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DesignViewController.xib; sourceTree = "<group>"; };
@@ -1867,22 +1872,15 @@
 		4D05DE04194FC4B5001F19A7 /* xibs */ = {
 			isa = PBXGroup;
 			children = (
+				4D6674E319929A0900A17C4E /* Sidebar */,
 				4D667470198721DB00A17C4E /* Tutorial */,
 				4D05DE05194FC4CA001F19A7 /* WDThumbnailView.xib */,
 				4D081BD519538D7400F8871C /* NewPlanCell.xib */,
 				4D081BE71954DB1D00F8871C /* ColorCell.xib */,
-				4D05DB22194A74FE001F19A7 /* SidebarViewController.xib */,
-				4D05DB42194B7ED8001F19A7 /* SidebarContentViewController.xib */,
-				4D05DB9C194BB109001F19A7 /* PropertyViewController.xib */,
-				4D05DBC4194F6347001F19A7 /* HouseViewController.xib */,
-				4D05DDF0194F9FB2001F19A7 /* PlansViewController.xib */,
 				4D05DE071950A8AA001F19A7 /* CanvasController.xib */,
-				4D862ECB1952043A0066A848 /* DesignViewController.xib */,
 				4D081BE11954B54800F8871C /* ColorPickerViewController.xib */,
-				4D9115D2197597FB008B11CC /* MoreViewController.xib */,
-				4D53F6131965DD110097C8E3 /* NorthViewController.xib */,
-				4D9115D719773654008B11CC /* NotesViewController.xib */,
 				4D9115DD197737BC008B11CC /* NoteCellView.xib */,
+				4D6674E419929C9A00A17C4E /* ToolCell.xib */,
 			);
 			name = xibs;
 			sourceTree = "<group>";
@@ -1955,6 +1953,8 @@
 				4D9115DB197737A8008B11CC /* NoteCellView.m */,
 				4D9115E519787DFB008B11CC /* GSTextView.h */,
 				4D9115E619787DFB008B11CC /* GSTextView.m */,
+				4D6674E91992A5D400A17C4E /* ToolCell.h */,
+				4D6674EA1992A5D400A17C4E /* ToolCell.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -2131,6 +2131,22 @@
 				4D6674A61989B09C00A17C4E /* L_Shaped_House_4.svg */,
 			);
 			name = House;
+			sourceTree = "<group>";
+		};
+		4D6674E319929A0900A17C4E /* Sidebar */ = {
+			isa = PBXGroup;
+			children = (
+				4D05DB22194A74FE001F19A7 /* SidebarViewController.xib */,
+				4D05DB42194B7ED8001F19A7 /* SidebarContentViewController.xib */,
+				4D05DB9C194BB109001F19A7 /* PropertyViewController.xib */,
+				4D05DBC4194F6347001F19A7 /* HouseViewController.xib */,
+				4D53F6131965DD110097C8E3 /* NorthViewController.xib */,
+				4D05DDF0194F9FB2001F19A7 /* PlansViewController.xib */,
+				4D862ECB1952043A0066A848 /* DesignViewController.xib */,
+				4D9115D719773654008B11CC /* NotesViewController.xib */,
+				4D9115D2197597FB008B11CC /* MoreViewController.xib */,
+			);
+			name = Sidebar;
 			sourceTree = "<group>";
 		};
 		4D9115E21978389C008B11CC /* Coniferous Trees */ = {
@@ -2487,6 +2503,7 @@
 				4D081BD2195351AC00F8871C /* Devilish.inkpad in Resources */,
 				4D081C04195B468B00F8871C /* Plant_Light_Pink.png in Resources */,
 				4D6674481983212B00A17C4E /* Shrub_Brown.stencil in Resources */,
+				4D6674E519929C9A00A17C4E /* ToolCell.xib in Resources */,
 				4D05DE221950AC3F001F19A7 /* OpenClipArt.xib in Resources */,
 				4D081BD4195351AC00F8871C /* Toucan in the Shade.inkpad in Resources */,
 				4D081C00195B3E4F00F8871C /* Tile@2x.png in Resources */,
@@ -2560,6 +2577,7 @@
 				4D9115E719787DFB008B11CC /* GSTextView.m in Sources */,
 				4D05DDA0194F8042001F19A7 /* WDColorAdjustmentController.m in Sources */,
 				4D05DCD1194F7FF2001F19A7 /* WDCurveFit.m in Sources */,
+				4D6674EB1992A5D400A17C4E /* ToolCell.m in Sources */,
 				4D05DDCF194F8042001F19A7 /* WDSwatchController.m in Sources */,
 				4D05DCF5194F7FF2001F19A7 /* WDFreehandTool.m in Sources */,
 				4D05DC95194F7FF2001F19A7 /* NSString+Additions.m in Sources */,

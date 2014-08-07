@@ -35,7 +35,7 @@
 - (void)initialize
 {
 	[[self layer] setBorderWidth:2.0f];
-	[[self layer] setBorderColor:GS_COLOR_PEACHY_HIGHLIGHT.CGColor];
+	[[self layer] setBorderColor:GS_COLOR_ACCENT_BLUE.CGColor];
 	self.backgroundColor = [UIColor whiteColor];
 }
 
