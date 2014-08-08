@@ -8,6 +8,7 @@
 
 #import "GSTextField.h"
 #import "Constants.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation GSTextField
 

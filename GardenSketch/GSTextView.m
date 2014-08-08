@@ -32,6 +32,8 @@
 - (void)initialize
 {
 	[self setFont:GS_FONT_AVENIR_BODY];
+	[self.layer setCornerRadius:3.0];
+	[self.layer setMasksToBounds:YES];
 }
 
 /*

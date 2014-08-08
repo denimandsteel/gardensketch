@@ -99,6 +99,8 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	GSNote *note = ((GSNote *)self.sidebar.canvasController.drawing.notes[indexPath.row]);
 	
 	NoteCellView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"NoteCellIdentifier" forIndexPath:indexPath];
+	[cell.layer setCornerRadius:5.0];
+	[cell.layer setMasksToBounds:YES];
 	[cell.bodyLabel setText:note.bodyText];
 	[cell.bodyTextView setText:note.bodyText];
 	NSString *letter = [LETTERS substringWithRange:NSMakeRange(note.letterIndex, 1)];
@@ -133,7 +135,7 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	
 	// TODO add some margins for the top and the bottom of the note body text.
 	rect.size.height = MAX(rect.size.height, NOTE_CELL_MIN_HEIGHT) + 20;
-	rect.size.width = 280;
+	rect.size.width = 320;
 	return rect.size;
 }
 

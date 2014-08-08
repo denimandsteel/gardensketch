@@ -302,7 +302,7 @@
     
     [self updateShadow_];
     
-    titleField_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)) / 2, CGRectGetMaxY(imageView_.frame) + kTitleFieldHeight );
+    titleField_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)) / 2, CGRectGetMaxY(self.actionView.frame) + kTitleFieldHeight );
     titleLabel_.sharpCenter = titleField_.sharpCenter;
     
     [self reloadFilenameFields_];

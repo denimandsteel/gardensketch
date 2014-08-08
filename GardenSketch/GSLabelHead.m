@@ -33,7 +33,7 @@
 - (void)initialize
 {
 	[self setTextColor:GS_COLOR_DARK_GREY_TEXT];
-	[self setFont:GS_FONT_AVENIR_HEAD];
+	[self setFont:GS_FONT_AVENIR_HEAD_BOLD];
 }
 
 /*
