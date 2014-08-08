@@ -35,7 +35,6 @@
 #define		GS_COLOR_DARK_GREY_BACKGROUND	[UIColor colorWithRed:0.922 green:0.922 blue:0.922 alpha:1.000]
 #define		GS_COLOR_DARK_GREY_TEXT			[UIColor colorWithRed:0.216 green:0.204 blue:0.204 alpha:1.000]
 
-
 // DRAWING COLORS:
 
 // yellow paper canvas background
