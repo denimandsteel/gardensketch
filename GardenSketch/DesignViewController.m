@@ -434,7 +434,7 @@
 	
 	[cell initialize];
 	
-	if (selectedToolIndexPath == indexPath) {
+	if (selectedToolIndexPath && [selectedToolIndexPath compare:indexPath] == NSOrderedSame) {
 		[cell setSelected:YES];
 	} else {
 		[cell setSelected:NO];
@@ -489,7 +489,7 @@
 	// TODO: call invalidateLayout after a cell has changed size, to receive a call here:
 	CGSize size = CGSizeMake(GS_SIDEBAR_WIDTH - 20, 80);
 	
-	if (selectedToolIndexPath == indexPath) {
+	if (selectedToolIndexPath && [selectedToolIndexPath compare:indexPath] == NSOrderedSame) {
 		size = CGSizeMake(GS_SIDEBAR_WIDTH - 20, 190);
 	}
 	

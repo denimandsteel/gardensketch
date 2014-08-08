@@ -13,7 +13,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="340" height="240"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndZ-7B-Xro" userLabel="Container View">
+                    <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndZ-7B-Xro" userLabel="Container View">
                         <rect key="frame" x="215" y="30" width="85" height="152"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>

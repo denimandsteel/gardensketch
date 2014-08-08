@@ -17,6 +17,7 @@
 #import "GSButton.h"
 #import "GSTextField.h"
 #import "Constants.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface WDThumbnailView (Private)
 - (void) reloadFilenameFields_;
@@ -27,6 +28,9 @@
 #define kMaxThumbnailDimension  150
 
 @implementation WDThumbnailView
+{
+	BOOL actionsVisible;
+}
 
 @synthesize filename = filename_;
 @synthesize titleField = titleField_;
@@ -67,6 +71,8 @@
     [self updateShadow_];
 	[self.actionView.layer setCornerRadius:20.0];
 	[self.actionView.layer setMasksToBounds:YES];
+	
+	actionsVisible = NO;
 }
 
 - (void) dealloc
@@ -80,10 +86,8 @@
 	
 	if (flag) {
 		[self showActions];
-		[self setBackgroundColor:[GS_COLOR_ACCENT_BLUE colorWithAlphaComponent:.3]];
 	} else {
 		[self hideActions];
-		[self setBackgroundColor:[UIColor clearColor]];
 	}
     
     if (!shouldShowSelectionIndicator) {
@@ -290,7 +294,12 @@
         imageView_.image = thumbImage;
     }
     
-    imageView_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)-CGRectGetWidth(self.actionView.bounds)) / 2, WDCenterOfRect(self.bounds).y - (kTitleFieldHeight/2));
+	if (actionsVisible) {
+		imageView_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)-CGRectGetWidth(self.actionView.bounds)) / 2, WDCenterOfRect(self.bounds).y - (kTitleFieldHeight/2));
+	} else {
+		imageView_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)) / 2, WDCenterOfRect(self.bounds).y - (kTitleFieldHeight/2));
+	}
+    
     [self updateShadow_];
     
     titleField_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)) / 2, CGRectGetMaxY(imageView_.frame) + kTitleFieldHeight );
@@ -332,18 +341,27 @@
 
 - (void)showActions
 {
+	actionsVisible = YES;
 	[self.actionView setAlpha:0.0];
 	[self.actionView setHidden:NO];
 	[UIView animateWithDuration:.4 animations:^{
 		[self.actionView setAlpha:1.0];
+		imageView_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)-CGRectGetWidth(self.actionView.bounds)) / 2, WDCenterOfRect(self.bounds).y - (kTitleFieldHeight/2));
+		[self updateShadow_];
+		[self setBackgroundColor:[GS_COLOR_ACCENT_BLUE colorWithAlphaComponent:.3]];
 	}];
+	
 }
 
 - (void)hideActions
 {
+	actionsVisible = NO;
 	[self.actionView setAlpha:1.0];
 	[UIView animateWithDuration:.4 animations:^{
 		[self.actionView setAlpha:0.0];
+		imageView_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)) / 2, WDCenterOfRect(self.bounds).y - (kTitleFieldHeight/2));
+		[self updateShadow_];
+		[self setBackgroundColor:[UIColor clearColor]];
 	} completion:^(BOOL success) {
 		[self.actionView setHidden:YES];
 	}];
