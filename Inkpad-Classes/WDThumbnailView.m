@@ -69,9 +69,6 @@
 {
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(drawingRenamed:) name:WDDrawingRenamed object:nil];
     [self updateShadow_];
-	[self.actionView.layer setCornerRadius:20.0];
-	[self.actionView.layer setMasksToBounds:YES];
-	
 	actionsVisible = NO;
 }
 
@@ -374,6 +371,10 @@
 
 - (IBAction)shareTapped:(id)sender {
 	[self.delegate shareTapped:self];
+}
+
+- (IBAction)renameTapped:(id)sender {
+	[self editTitle:sender];
 }
 
 - (IBAction)deleteTapped:(id)sender {

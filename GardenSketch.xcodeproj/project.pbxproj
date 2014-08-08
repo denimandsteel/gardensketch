@@ -273,7 +273,6 @@
 		4D081BD2195351AC00F8871C /* Devilish.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BCE195351AC00F8871C /* Devilish.inkpad */; };
 		4D081BD3195351AC00F8871C /* Space.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BCF195351AC00F8871C /* Space.inkpad */; };
 		4D081BD4195351AC00F8871C /* Toucan in the Shade.inkpad in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BD0195351AC00F8871C /* Toucan in the Shade.inkpad */; };
-		4D081BD619538D7400F8871C /* NewPlanCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BD519538D7400F8871C /* NewPlanCell.xib */; };
 		4D081BDB1954A31600F8871C /* design@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BD71954A31600F8871C /* design@2x.png */; };
 		4D081BDC1954A31600F8871C /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BD81954A31600F8871C /* more@2x.png */; };
 		4D081BDD1954A31600F8871C /* north@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D081BD91954A31600F8871C /* north@2x.png */; };
@@ -916,7 +915,6 @@
 		4D081BCE195351AC00F8871C /* Devilish.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Devilish.inkpad; sourceTree = "<group>"; };
 		4D081BCF195351AC00F8871C /* Space.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Space.inkpad; sourceTree = "<group>"; };
 		4D081BD0195351AC00F8871C /* Toucan in the Shade.inkpad */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "Toucan in the Shade.inkpad"; sourceTree = "<group>"; };
-		4D081BD519538D7400F8871C /* NewPlanCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewPlanCell.xib; sourceTree = "<group>"; };
 		4D081BD71954A31600F8871C /* design@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "design@2x.png"; sourceTree = "<group>"; };
 		4D081BD81954A31600F8871C /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
 		4D081BD91954A31600F8871C /* north@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "north@2x.png"; sourceTree = "<group>"; };
@@ -1892,7 +1890,6 @@
 				4D6674E319929A0900A17C4E /* Sidebar */,
 				4D667470198721DB00A17C4E /* Tutorial */,
 				4D05DE05194FC4CA001F19A7 /* WDThumbnailView.xib */,
-				4D081BD519538D7400F8871C /* NewPlanCell.xib */,
 				4D081BE71954DB1D00F8871C /* ColorCell.xib */,
 				4D05DE071950A8AA001F19A7 /* CanvasController.xib */,
 				4D081BE11954B54800F8871C /* ColorPickerViewController.xib */,
@@ -2537,7 +2534,6 @@
 				4D6674B91989B4DC00A17C4E /* L_Shaped_House_3.stencil in Resources */,
 				4D66749C19885E7A00A17C4E /* Design1@2x.png in Resources */,
 				4D6674361983212B00A17C4E /* Deciduous_Tree_Green.stencil in Resources */,
-				4D081BD619538D7400F8871C /* NewPlanCell.xib in Resources */,
 				4D6674471983212B00A17C4E /* Shed.stencil in Resources */,
 				4D66743C1983212B00A17C4E /* Hedge_Green.stencil in Resources */,
 				4D081C19195B8B4A00F8871C /* Plant_Gold.svg in Resources */,

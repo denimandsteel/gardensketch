@@ -44,7 +44,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="shareTapped:" destination="J6J-BF-CeX" eventType="touchUpInside" id="uh6-pA-KWf"/>
+                                    <action selector="renameTapped:" destination="J6J-BF-CeX" eventType="touchUpInside" id="2JN-dr-8vZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuH-Hk-GZG" customClass="GSButton">

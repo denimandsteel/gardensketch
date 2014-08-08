@@ -35,6 +35,7 @@
 - (void)hideActions;
 - (IBAction)copyTapped:(id)sender;
 - (IBAction)shareTapped:(id)sender;
+- (IBAction)renameTapped:(id)sender;
 - (IBAction)deleteTapped:(id)sender;
 
 // image management
