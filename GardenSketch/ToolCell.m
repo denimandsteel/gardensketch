@@ -70,11 +70,6 @@
 		} completion:^(BOOL finished) {
 			
 		}];
-//		[UIView animateWithDuration:.3 animations:^{
-//			CGRect frame = self.frame;
-//			frame.size.height = 190;
-//			[self setFrame:frame];
-//		}];
 	} else {
 		[self.primaryView setBackgroundColor:GS_COLOR_LIGHT_GREY_BACKGROUND];
 		[self.toolNameLabel setTextColor:GS_COLOR_DARK_GREY_TEXT];

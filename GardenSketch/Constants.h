@@ -24,6 +24,7 @@
 
 #define		GS_FONT_AVENIR_SMALL			[UIFont fontWithName:@"AvenirNext-Regular" size:14.0]
 #define		GS_FONT_AVENIR_TINY				[UIFont fontWithName:@"AvenirNext-Regular" size:8.0]
+#define		GS_FONT_AVENIR_BODY_BOLD		[UIFont fontWithName:@"AvenirNext-DemiBold" size:16.0]
 
 
 
