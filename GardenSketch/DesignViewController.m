@@ -106,6 +106,7 @@
 	[doubleTapGestureRecognizer setNumberOfTapsRequired:2];
 	[doubleTapGestureRecognizer setNumberOfTouchesRequired:1];
 	[self.toolsCollectionView addGestureRecognizer:doubleTapGestureRecognizer];
+	[self.toolsCollectionView setAllowsMultipleSelection:YES];
 	
 }
 
@@ -470,6 +471,15 @@
 
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+	if (selectedToolIndexPath) {
+		if ([selectedToolIndexPath compare:indexPath] == NSOrderedSame) {
+			[collectionView deselectItemAtIndexPath:selectedToolIndexPath animated:YES];
+			selectedToolIndexPath = nil;
+			[self.toolsCollectionView performBatchUpdates:nil completion:nil];
+			return;
+		}
+		[collectionView deselectItemAtIndexPath:selectedToolIndexPath animated:YES];
+	}
 	selectedToolIndexPath = indexPath;
 	NSLog(@"Did select tool!");
 	ToolCell *toolCell = (ToolCell *)[collectionView cellForItemAtIndexPath:indexPath];
@@ -481,7 +491,13 @@
 
 - (void) collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-	
+
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+	NSLog(@"Yep!");
+	return YES;
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath

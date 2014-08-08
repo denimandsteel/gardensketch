@@ -114,7 +114,7 @@
                              selectedIndicator_ = nil;
                          }];
     }
- }
+}
 
 - (void) editTitle:(id)sender
 {
@@ -349,8 +349,9 @@
 		imageView_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)-CGRectGetWidth(self.actionView.bounds)) / 2, WDCenterOfRect(self.bounds).y - (kTitleFieldHeight/2));
 		[self updateShadow_];
 		[self setBackgroundColor:[GS_COLOR_ACCENT_BLUE colorWithAlphaComponent:.3]];
+	} completion:^(BOOL finished) {
+		[self.actionView setHidden:NO];
 	}];
-	
 }
 
 - (void)hideActions

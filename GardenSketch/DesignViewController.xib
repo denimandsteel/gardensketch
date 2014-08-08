@@ -36,7 +36,7 @@
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nrh-Lt-ZnP" customClass="WDToolButton">
                             <rect key="frame" x="185" y="55" width="135" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Select" image="BB77F410-FF00-44AA-80B2-4D5F282AF3EA">
+                            <state key="normal" title="Select" image="34F774D7-CDB2-458A-9597-A0AA396D6F3C">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
@@ -126,7 +126,7 @@
         </view>
     </objects>
     <resources>
-        <image name="BB77F410-FF00-44AA-80B2-4D5F282AF3EA" width="30" height="30">
+        <image name="34F774D7-CDB2-458A-9597-A0AA396D6F3C" width="30" height="30">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
