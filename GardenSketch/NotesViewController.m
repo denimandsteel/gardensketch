@@ -46,6 +46,14 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	[self registerForKeyboardNotifications];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+	WDDocument *currentDocument = self.sidebar.canvasController.document;
+	NSString *planName = currentDocument.displayName;
+	[self.planNameLabel setText:planName];
+	[self.planNameLabel setFont:GS_FONT_AVENIR_BODY_BOLD];
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
 	WDDrawing *drawing = self.sidebar.canvasController.drawing;
@@ -107,6 +115,7 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	[cell.letterLabel setText:letter];
 	cell.delegate = self;
 	[cell.bodyTextView setDelegate:cell];
+	[cell.deleteButton.titleLabel setFont:GS_FONT_AVENIR_SMALL];
 	return cell;
 }
 

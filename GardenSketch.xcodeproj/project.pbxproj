@@ -35,7 +35,7 @@
 		4D05DB9D194BB109001F19A7 /* PropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D05DB9B194BB109001F19A7 /* PropertyViewController.m */; };
 		4D05DB9E194BB109001F19A7 /* PropertyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DB9C194BB109001F19A7 /* PropertyViewController.xib */; };
 		4D05DBAD194F5C81001F19A7 /* clone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DBA0194F5C80001F19A7 /* clone.png */; };
-		4D05DBAE194F5C81001F19A7 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DBA1194F5C80001F19A7 /* delete.png */; };
+		4D05DBAE194F5C81001F19A7 /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DBA1194F5C80001F19A7 /* delete@2x.png */; };
 		4D05DBAF194F5C81001F19A7 /* design.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DBA2194F5C80001F19A7 /* design.png */; };
 		4D05DBB0194F5C81001F19A7 /* enclosed.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DBA3194F5C80001F19A7 /* enclosed.png */; };
 		4D05DBB1194F5C81001F19A7 /* freehand.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D05DBA4194F5C80001F19A7 /* freehand.png */; };
@@ -303,6 +303,10 @@
 		4D081C1D195B8B4A00F8871C /* Plant_Light_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C16195B8B4A00F8871C /* Plant_Light_Green.svg */; };
 		4D081C1E195B8B4A00F8871C /* Plant_Light_Pink.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C17195B8B4A00F8871C /* Plant_Light_Pink.svg */; };
 		4D3CFA9519958B01000CCD31 /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA9419958B01000CCD31 /* Add@2x.png */; };
+		4D3CFA99199599F7000CCD31 /* Grid_Hide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */; };
+		4D3CFA9A199599F7000CCD31 /* Grid_Show@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */; };
+		4D3CFA9B199599F7000CCD31 /* Select_Colour@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA98199599F7000CCD31 /* Select_Colour@2x.png */; };
+		4D3CFA9D19959AE6000CCD31 /* Select_White@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA9C19959AE6000CCD31 /* Select_White@2x.png */; };
 		4D53F60A1964A80B0097C8E3 /* Hedge_brown_horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal.png */; };
 		4D53F60C1964CBE50097C8E3 /* grid-xxl.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F60B1964CBE50097C8E3 /* grid-xxl.png */; };
 		4D53F60F1964D21D0097C8E3 /* grid-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F60D1964D21D0097C8E3 /* grid-active.png */; };
@@ -524,7 +528,7 @@
 		4D05DB9B194BB109001F19A7 /* PropertyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyViewController.m; sourceTree = "<group>"; };
 		4D05DB9C194BB109001F19A7 /* PropertyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyViewController.xib; sourceTree = "<group>"; };
 		4D05DBA0194F5C80001F19A7 /* clone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clone.png; sourceTree = "<group>"; };
-		4D05DBA1194F5C80001F19A7 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
+		4D05DBA1194F5C80001F19A7 /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
 		4D05DBA2194F5C80001F19A7 /* design.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = design.png; sourceTree = "<group>"; };
 		4D05DBA3194F5C80001F19A7 /* enclosed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enclosed.png; sourceTree = "<group>"; };
 		4D05DBA4194F5C80001F19A7 /* freehand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = freehand.png; sourceTree = "<group>"; };
@@ -952,6 +956,10 @@
 		4D081C16195B8B4A00F8871C /* Plant_Light_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Light_Green.svg; sourceTree = "<group>"; };
 		4D081C17195B8B4A00F8871C /* Plant_Light_Pink.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Light_Pink.svg; sourceTree = "<group>"; };
 		4D3CFA9419958B01000CCD31 /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
+		4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Hide@2x.png"; sourceTree = "<group>"; };
+		4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Show@2x.png"; sourceTree = "<group>"; };
+		4D3CFA98199599F7000CCD31 /* Select_Colour@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Select_Colour@2x.png"; sourceTree = "<group>"; };
+		4D3CFA9C19959AE6000CCD31 /* Select_White@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Select_White@2x.png"; sourceTree = "<group>"; };
 		4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hedge_brown_horizontal.png; sourceTree = "<group>"; };
 		4D53F60B1964CBE50097C8E3 /* grid-xxl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-xxl.png"; sourceTree = "<group>"; };
 		4D53F60D1964D21D0097C8E3 /* grid-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-active.png"; sourceTree = "<group>"; };
@@ -1301,6 +1309,10 @@
 			children = (
 				4D6674F2199441E100A17C4E /* CompassLg_Base@2x.png */,
 				4D3CFA9419958B01000CCD31 /* Add@2x.png */,
+				4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */,
+				4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */,
+				4D3CFA98199599F7000CCD31 /* Select_Colour@2x.png */,
+				4D3CFA9C19959AE6000CCD31 /* Select_White@2x.png */,
 				4D6674F619957CE600A17C4E /* Done@2x.png */,
 				4D6674F3199441E100A17C4E /* CompassLg_Pointer@2x.png */,
 				4D66749119884CEA00A17C4E /* TutorialImages */,
@@ -1361,7 +1373,7 @@
 				4D05DBC0194F5FD2001F19A7 /* property.png */,
 				4D05DBBD194F5FBF001F19A7 /* property@2x.png */,
 				4D05DBA0194F5C80001F19A7 /* clone.png */,
-				4D05DBA1194F5C80001F19A7 /* delete.png */,
+				4D05DBA1194F5C80001F19A7 /* delete@2x.png */,
 				4D05DBA2194F5C80001F19A7 /* design.png */,
 				4D05DBA3194F5C80001F19A7 /* enclosed.png */,
 				4D05DBA4194F5C80001F19A7 /* freehand.png */,
@@ -2346,6 +2358,7 @@
 				4D05DE191950AC3F001F19A7 /* Activity.xib in Resources */,
 				4D66743E1983212B00A17C4E /* Hedge_Viridian.stencil in Resources */,
 				4D66746F1987171F00A17C4E /* TutorialViewController.xib in Resources */,
+				4D3CFA99199599F7000CCD31 /* Grid_Hide@2x.png in Resources */,
 				4D05DE201950AC3F001F19A7 /* Import.xib in Resources */,
 				4D53F6101964D21D0097C8E3 /* grid-inactive.png in Resources */,
 				4D66749D19885E7A00A17C4E /* Design2@2x.png in Resources */,
@@ -2398,6 +2411,7 @@
 				4D6674441983212B00A17C4E /* Plant_Indigo.stencil in Resources */,
 				4D53F63B196B149C0097C8E3 /* iTunesArtwork.png in Resources */,
 				4D05DB9E194BB109001F19A7 /* PropertyViewController.xib in Resources */,
+				4D3CFA9B199599F7000CCD31 /* Select_Colour@2x.png in Resources */,
 				4D6674B81989B4DC00A17C4E /* L_Shaped_House_2.stencil in Resources */,
 				4D05DE1A1950AC3F001F19A7 /* Color.xib in Resources */,
 				4D6674DC198AE35200A17C4E /* Water_Feature.png in Resources */,
@@ -2431,6 +2445,7 @@
 				4D53F633196B149C0097C8E3 /* AppIcon29x29.png in Resources */,
 				4D05DBAF194F5C81001F19A7 /* design.png in Resources */,
 				4D6673C61983116200A17C4E /* Coniferous_Burgundy.svg in Resources */,
+				4D3CFA9A199599F7000CCD31 /* Grid_Show@2x.png in Resources */,
 				4D6674ED1993F3F800A17C4E /* ToolCollectionHeader.xib in Resources */,
 				4D66748E1988488600A17C4E /* Design4.xib in Resources */,
 				4D53F646196F5DB60097C8E3 /* scale-icon.png in Resources */,
@@ -2454,7 +2469,8 @@
 				4D05DCBE194F7FF2001F19A7 /* star.png in Resources */,
 				4D05DCBB194F7FF2001F19A7 /* select@2x.png in Resources */,
 				4D6674761987225F00A17C4E /* AppStart3.xib in Resources */,
-				4D05DBAE194F5C81001F19A7 /* delete.png in Resources */,
+				4D3CFA9D19959AE6000CCD31 /* Select_White@2x.png in Resources */,
+				4D05DBAE194F5C81001F19A7 /* delete@2x.png in Resources */,
 				4D081BE81954DB1D00F8871C /* ColorCell.xib in Resources */,
 				4D081C1C195B8B4A00F8871C /* Plant_Indigo.svg in Resources */,
 				4D66749419884D0100A17C4E /* House2@2x.png in Resources */,

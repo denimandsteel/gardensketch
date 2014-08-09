@@ -107,7 +107,16 @@
 	[doubleTapGestureRecognizer setNumberOfTouchesRequired:1];
 	[self.toolsCollectionView addGestureRecognizer:doubleTapGestureRecognizer];
 	[self.toolsCollectionView setAllowsMultipleSelection:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	WDDocument *currentDocument = self.sidebar.canvasController.document;
+	NSString *planName = currentDocument.displayName;
+	[self.planNameLabel setText:planName];
+	[self.planNameLabel setFont:GS_FONT_AVENIR_BODY_BOLD];
 	
+	[self.gridButton setSelected:[self.sidebar.canvasController.drawing showGrid]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -130,8 +139,6 @@
 	
 	WDDocument *currentDocument = self.sidebar.canvasController.document;
 	NSString *planName = currentDocument.displayName;
-	
-	[self.gridButton setSelected:[self.sidebar.canvasController.drawing showGrid]];
 	
 	[self.planNameLabel setText:planName];
 	
@@ -157,8 +164,6 @@
 	[self.sidebar.canvasController.drawing setShowGrid:!state];
 	[self.gridButton setSelected:!state];
 }
-
-
 
 - (IBAction)deleteTapped:(id)sender {
 	[self.sidebar.canvasController delete:self];

@@ -42,6 +42,7 @@
 	[self.letterLabel setTextColor:[UIColor whiteColor]];
 	[self.deleteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 	[self.deleteButton setImage:[UIImage imageNamed:@"Done"] forState:UIControlStateNormal];
+	[self.deleteButton setTitle:@"Done" forState:UIControlStateNormal];
 	[UIView animateWithDuration:.3 animations:^{
 		[self setBackgroundColor:GS_COLOR_ACCENT_BLUE];
 	}];
@@ -56,6 +57,7 @@
 	[self.letterLabel setTextColor:GS_COLOR_DARK_GREY_TEXT];
 	[self.deleteButton setTitleColor:GS_COLOR_DARK_GREY_TEXT forState:UIControlStateNormal];
 	[self.deleteButton setImage:[UIImage imageNamed:@"delete"] forState:UIControlStateNormal];
+	[self.deleteButton setTitle:@"Delete" forState:UIControlStateNormal];
 	[self endEditing:YES];
 	[UIView animateWithDuration:.3 animations:^{
 		[self setBackgroundColor:GS_COLOR_LIGHT_GREY_BACKGROUND];
