@@ -117,6 +117,17 @@
 	[self.planNameLabel setFont:GS_FONT_AVENIR_BODY_BOLD];
 	
 	[self.gridButton setSelected:[self.sidebar.canvasController.drawing showGrid]];
+	
+	[self.selectButton setTitleColor:GS_COLOR_DARK_GREY_TEXT forState:UIControlStateNormal];
+	[self.selectButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+	
+	[self.selectButton setImage:[UIImage imageNamed:@"Select_Colour"] forState:UIControlStateNormal];
+	[self.selectButton setImage:[UIImage imageNamed:@"Select_White"] forState:UIControlStateSelected];
+	
+	[self.selectButton setBackgroundImage:[UIImage imageNamed:@"select_background_white"] forState:UIControlStateNormal];
+	[self.selectButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateSelected];
+	
+	[self.selectButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 20)];
 }
 
 - (void)viewDidAppear:(BOOL)animated

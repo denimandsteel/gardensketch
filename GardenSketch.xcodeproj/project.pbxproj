@@ -307,6 +307,8 @@
 		4D3CFA9A199599F7000CCD31 /* Grid_Show@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */; };
 		4D3CFA9B199599F7000CCD31 /* Select_Colour@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA98199599F7000CCD31 /* Select_Colour@2x.png */; };
 		4D3CFA9D19959AE6000CCD31 /* Select_White@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA9C19959AE6000CCD31 /* Select_White@2x.png */; };
+		4D3CFAA01995ABCA000CCD31 /* select_background_colour.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA9E1995ABCA000CCD31 /* select_background_colour.png */; };
+		4D3CFAA11995ABCA000CCD31 /* select_background_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA9F1995ABCA000CCD31 /* select_background_white.png */; };
 		4D53F60A1964A80B0097C8E3 /* Hedge_brown_horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal.png */; };
 		4D53F60C1964CBE50097C8E3 /* grid-xxl.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F60B1964CBE50097C8E3 /* grid-xxl.png */; };
 		4D53F60F1964D21D0097C8E3 /* grid-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F60D1964D21D0097C8E3 /* grid-active.png */; };
@@ -960,6 +962,8 @@
 		4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Show@2x.png"; sourceTree = "<group>"; };
 		4D3CFA98199599F7000CCD31 /* Select_Colour@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Select_Colour@2x.png"; sourceTree = "<group>"; };
 		4D3CFA9C19959AE6000CCD31 /* Select_White@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Select_White@2x.png"; sourceTree = "<group>"; };
+		4D3CFA9E1995ABCA000CCD31 /* select_background_colour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_background_colour.png; sourceTree = "<group>"; };
+		4D3CFA9F1995ABCA000CCD31 /* select_background_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_background_white.png; sourceTree = "<group>"; };
 		4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hedge_brown_horizontal.png; sourceTree = "<group>"; };
 		4D53F60B1964CBE50097C8E3 /* grid-xxl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-xxl.png"; sourceTree = "<group>"; };
 		4D53F60D1964D21D0097C8E3 /* grid-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-active.png"; sourceTree = "<group>"; };
@@ -1309,6 +1313,8 @@
 			children = (
 				4D6674F2199441E100A17C4E /* CompassLg_Base@2x.png */,
 				4D3CFA9419958B01000CCD31 /* Add@2x.png */,
+				4D3CFA9E1995ABCA000CCD31 /* select_background_colour.png */,
+				4D3CFA9F1995ABCA000CCD31 /* select_background_white.png */,
 				4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */,
 				4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */,
 				4D3CFA98199599F7000CCD31 /* Select_Colour@2x.png */,
@@ -2498,6 +2504,7 @@
 				4D576051195E0E5300DCCBEF /* Shrub_Maroon.svg in Resources */,
 				4D081BF21958E83100F8871C /* gazebo.svg in Resources */,
 				4D05DB24194A74FE001F19A7 /* SidebarViewController.xib in Resources */,
+				4D3CFAA11995ABCA000CCD31 /* select_background_white.png in Resources */,
 				4D05DE311950B8CB001F19A7 /* ImportFormats.plist in Resources */,
 				4D6674461983212B00A17C4E /* Plant_Light_Pink.stencil in Resources */,
 				4D53F60A1964A80B0097C8E3 /* Hedge_brown_horizontal.png in Resources */,
@@ -2587,6 +2594,7 @@
 				4D6674DB198AE35200A17C4E /* Shed.png in Resources */,
 				4D6674381983212B00A17C4E /* Deciduous_Tree_Teal.stencil in Resources */,
 				4D6674341983212B00A17C4E /* Deciduous_Tree_Burgundy.stencil in Resources */,
+				4D3CFAA01995ABCA000CCD31 /* select_background_colour.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
