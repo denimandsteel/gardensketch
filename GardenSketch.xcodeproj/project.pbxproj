@@ -311,6 +311,18 @@
 		4D3CFAA11995ABCA000CCD31 /* select_background_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA9F1995ABCA000CCD31 /* select_background_white.png */; };
 		4D3CFAA319992C53000CCD31 /* Repeat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAA219992C53000CCD31 /* Repeat@2x.png */; };
 		4D3CFAA519992F9C000CCD31 /* Repeat_Active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAA419992F9C000CCD31 /* Repeat_Active@2x.png */; };
+		4D3CFAB2199933F6000CCD31 /* SizeLg_Active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAA6199933F6000CCD31 /* SizeLg_Active@2x.png */; };
+		4D3CFAB3199933F6000CCD31 /* SizeLg_Inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAA7199933F6000CCD31 /* SizeLg_Inactive@2x.png */; };
+		4D3CFAB4199933F6000CCD31 /* SizeMd_Active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAA8199933F6000CCD31 /* SizeMd_Active@2x.png */; };
+		4D3CFAB5199933F6000CCD31 /* SizeMd_Inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAA9199933F6000CCD31 /* SizeMd_Inactive@2x.png */; };
+		4D3CFAB6199933F6000CCD31 /* SizeSm_Active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAAA199933F6000CCD31 /* SizeSm_Active@2x.png */; };
+		4D3CFAB7199933F6000CCD31 /* SizeSm_Inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAAB199933F6000CCD31 /* SizeSm_Inactive@2x.png */; };
+		4D3CFAB8199933F6000CCD31 /* WidthLg_Active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAAC199933F6000CCD31 /* WidthLg_Active@2x.png */; };
+		4D3CFAB9199933F6000CCD31 /* WidthLg_Inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAAD199933F6000CCD31 /* WidthLg_Inactive@2x.png */; };
+		4D3CFABA199933F6000CCD31 /* WidthMd_Active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAAE199933F6000CCD31 /* WidthMd_Active@2x.png */; };
+		4D3CFABB199933F6000CCD31 /* WidthMd_Inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAAF199933F6000CCD31 /* WidthMd_Inactive@2x.png */; };
+		4D3CFABC199933F6000CCD31 /* WidthSm_Active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAB0199933F6000CCD31 /* WidthSm_Active@2x.png */; };
+		4D3CFABD199933F6000CCD31 /* WidthSm_Inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAB1199933F6000CCD31 /* WidthSm_Inactive@2x.png */; };
 		4D53F60A1964A80B0097C8E3 /* Hedge_brown_horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal.png */; };
 		4D53F60C1964CBE50097C8E3 /* grid-xxl.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F60B1964CBE50097C8E3 /* grid-xxl.png */; };
 		4D53F60F1964D21D0097C8E3 /* grid-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F60D1964D21D0097C8E3 /* grid-active.png */; };
@@ -968,6 +980,18 @@
 		4D3CFA9F1995ABCA000CCD31 /* select_background_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_background_white.png; sourceTree = "<group>"; };
 		4D3CFAA219992C53000CCD31 /* Repeat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Repeat@2x.png"; sourceTree = "<group>"; };
 		4D3CFAA419992F9C000CCD31 /* Repeat_Active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Repeat_Active@2x.png"; sourceTree = "<group>"; };
+		4D3CFAA6199933F6000CCD31 /* SizeLg_Active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SizeLg_Active@2x.png"; sourceTree = "<group>"; };
+		4D3CFAA7199933F6000CCD31 /* SizeLg_Inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SizeLg_Inactive@2x.png"; sourceTree = "<group>"; };
+		4D3CFAA8199933F6000CCD31 /* SizeMd_Active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SizeMd_Active@2x.png"; sourceTree = "<group>"; };
+		4D3CFAA9199933F6000CCD31 /* SizeMd_Inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SizeMd_Inactive@2x.png"; sourceTree = "<group>"; };
+		4D3CFAAA199933F6000CCD31 /* SizeSm_Active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SizeSm_Active@2x.png"; sourceTree = "<group>"; };
+		4D3CFAAB199933F6000CCD31 /* SizeSm_Inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SizeSm_Inactive@2x.png"; sourceTree = "<group>"; };
+		4D3CFAAC199933F6000CCD31 /* WidthLg_Active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WidthLg_Active@2x.png"; sourceTree = "<group>"; };
+		4D3CFAAD199933F6000CCD31 /* WidthLg_Inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WidthLg_Inactive@2x.png"; sourceTree = "<group>"; };
+		4D3CFAAE199933F6000CCD31 /* WidthMd_Active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WidthMd_Active@2x.png"; sourceTree = "<group>"; };
+		4D3CFAAF199933F6000CCD31 /* WidthMd_Inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WidthMd_Inactive@2x.png"; sourceTree = "<group>"; };
+		4D3CFAB0199933F6000CCD31 /* WidthSm_Active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WidthSm_Active@2x.png"; sourceTree = "<group>"; };
+		4D3CFAB1199933F6000CCD31 /* WidthSm_Inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WidthSm_Inactive@2x.png"; sourceTree = "<group>"; };
 		4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hedge_brown_horizontal.png; sourceTree = "<group>"; };
 		4D53F60B1964CBE50097C8E3 /* grid-xxl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-xxl.png"; sourceTree = "<group>"; };
 		4D53F60D1964D21D0097C8E3 /* grid-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-active.png"; sourceTree = "<group>"; };
@@ -1327,6 +1351,18 @@
 				4D3CFA9C19959AE6000CCD31 /* Select_White@2x.png */,
 				4D6674F619957CE600A17C4E /* Done@2x.png */,
 				4D6674F3199441E100A17C4E /* CompassLg_Pointer@2x.png */,
+				4D3CFAA6199933F6000CCD31 /* SizeLg_Active@2x.png */,
+				4D3CFAA7199933F6000CCD31 /* SizeLg_Inactive@2x.png */,
+				4D3CFAA8199933F6000CCD31 /* SizeMd_Active@2x.png */,
+				4D3CFAA9199933F6000CCD31 /* SizeMd_Inactive@2x.png */,
+				4D3CFAAA199933F6000CCD31 /* SizeSm_Active@2x.png */,
+				4D3CFAAB199933F6000CCD31 /* SizeSm_Inactive@2x.png */,
+				4D3CFAAC199933F6000CCD31 /* WidthLg_Active@2x.png */,
+				4D3CFAAD199933F6000CCD31 /* WidthLg_Inactive@2x.png */,
+				4D3CFAAE199933F6000CCD31 /* WidthMd_Active@2x.png */,
+				4D3CFAAF199933F6000CCD31 /* WidthMd_Inactive@2x.png */,
+				4D3CFAB0199933F6000CCD31 /* WidthSm_Active@2x.png */,
+				4D3CFAB1199933F6000CCD31 /* WidthSm_Inactive@2x.png */,
 				4D66749119884CEA00A17C4E /* TutorialImages */,
 				4D9115EF198088DD008B11CC /* Stencils */,
 				4D53F628196B14840097C8E3 /* AppIcon */,
@@ -2415,6 +2451,7 @@
 				4D6674851988487A00A17C4E /* Plans1.xib in Resources */,
 				4D6674C81989C7D800A17C4E /* Rectangular_House_Vertical@2x.png in Resources */,
 				4D6674791988465900A17C4E /* Property1.xib in Resources */,
+				4D3CFABA199933F6000CCD31 /* WidthMd_Active@2x.png in Resources */,
 				4D05DCAB194F7FF2001F19A7 /* line.png in Resources */,
 				4D53F63C196B149C0097C8E3 /* iTunesArtwork@2x.png in Resources */,
 				4D3CFA9519958B01000CCD31 /* Add@2x.png in Resources */,
@@ -2447,9 +2484,11 @@
 				4D05DCE7194F7FF2001F19A7 /* SVGColors.plist in Resources */,
 				4D05DC9E194F7FF2001F19A7 /* add_anchor.png in Resources */,
 				4D53F60C1964CBE50097C8E3 /* grid-xxl.png in Resources */,
+				4D3CFAB8199933F6000CCD31 /* WidthLg_Active@2x.png in Resources */,
 				4D05DCBA194F7FF2001F19A7 /* select.png in Resources */,
 				4D66748B1988488600A17C4E /* Design1.xib in Resources */,
 				4D66740B19831B0400A17C4E /* Water_Feature.svg in Resources */,
+				4D3CFAB5199933F6000CCD31 /* SizeMd_Inactive@2x.png in Resources */,
 				4D9115D4197597FB008B11CC /* MoreViewController.xib in Resources */,
 				4D081C1E195B8B4A00F8871C /* Plant_Light_Pink.svg in Resources */,
 				4D081BDC1954A31600F8871C /* more@2x.png in Resources */,
@@ -2474,6 +2513,7 @@
 				4D081BFA195B3DC100F8871C /* Plant_Grey_Green.png in Resources */,
 				4D05DCAF194F7FF2001F19A7 /* pen.png in Resources */,
 				4D53F638196B149C0097C8E3 /* AppIcon60x60@2x.png in Resources */,
+				4D3CFAB4199933F6000CCD31 /* SizeMd_Active@2x.png in Resources */,
 				4D576058195E284B00DCCBEF /* Hedge_Brown.svg in Resources */,
 				4D05DE321950B8CB001F19A7 /* PageSizes.plist in Resources */,
 				4D576056195E0FF600DCCBEF /* Shrub_Brown.png in Resources */,
@@ -2491,8 +2531,13 @@
 				4D6674801988486500A17C4E /* House3.xib in Resources */,
 				4D66740D19831F4D00A17C4E /* Water_Feature@2x.png in Resources */,
 				4D66743A1983212B00A17C4E /* gazebo.stencil in Resources */,
+				4D3CFABD199933F6000CCD31 /* WidthSm_Inactive@2x.png in Resources */,
 				4D081BD3195351AC00F8871C /* Space.inkpad in Resources */,
+				4D3CFAB3199933F6000CCD31 /* SizeLg_Inactive@2x.png in Resources */,
+				4D3CFAB2199933F6000CCD31 /* SizeLg_Active@2x.png in Resources */,
 				4D05DE01194FB56C001F19A7 /* Mushroom Breakdown.inkpad in Resources */,
+				4D3CFAB9199933F6000CCD31 /* WidthLg_Inactive@2x.png in Resources */,
+				4D3CFABB199933F6000CCD31 /* WidthMd_Inactive@2x.png in Resources */,
 				4D05DBB0194F5C81001F19A7 /* enclosed.png in Resources */,
 				4D6674A119885E7A00A17C4E /* Plans2@2x.png in Resources */,
 				4D6674AC1989B0AB00A17C4E /* House_No_Lines.svg in Resources */,
@@ -2522,6 +2567,7 @@
 				4D05DCAC194F7FF2001F19A7 /* line@2x.png in Resources */,
 				4D66747A1988465900A17C4E /* Property2.xib in Resources */,
 				4D6674AF1989B0B600A17C4E /* Rectangular_House_Horizontal.svg in Resources */,
+				4D3CFABC199933F6000CCD31 /* WidthSm_Active@2x.png in Resources */,
 				4D6674D4198AC68F00A17C4E /* Rectangular_House_Vertical.png in Resources */,
 				4D53F637196B149C0097C8E3 /* AppIcon60x60.png in Resources */,
 				4D05DCA3194F7FF2001F19A7 /* eraser@2x.png in Resources */,
@@ -2541,6 +2587,7 @@
 				4D05DCA1194F7FF2001F19A7 /* brush@2x.png in Resources */,
 				4D05DCB4194F7FF2001F19A7 /* rotate.png in Resources */,
 				4D6673CB1983116200A17C4E /* Coniferous_Violet.svg in Resources */,
+				4D3CFAB7199933F6000CCD31 /* SizeSm_Inactive@2x.png in Resources */,
 				4D05DCAD194F7FF2001F19A7 /* oval.png in Resources */,
 				4D576065196481CE00DCCBEF /* Deciduous_Tree_Violet.svg in Resources */,
 				4D6674311983212B00A17C4E /* Coniferous_Mustard.stencil in Resources */,
@@ -2565,6 +2612,7 @@
 				4D6674B91989B4DC00A17C4E /* L_Shaped_House_3.stencil in Resources */,
 				4D66749C19885E7A00A17C4E /* Design1@2x.png in Resources */,
 				4D6674361983212B00A17C4E /* Deciduous_Tree_Green.stencil in Resources */,
+				4D3CFAB6199933F6000CCD31 /* SizeSm_Active@2x.png in Resources */,
 				4D6674471983212B00A17C4E /* Shed.stencil in Resources */,
 				4D66743C1983212B00A17C4E /* Hedge_Green.stencil in Resources */,
 				4D081C19195B8B4A00F8871C /* Plant_Gold.svg in Resources */,
