@@ -13,6 +13,7 @@
 #import "WDSelectionTool.h"
 #import "WDDrawingManager.h"
 #import "WDDrawingController.h"
+#import "Constants.h"
 
 @interface HouseViewController ()
 
@@ -107,6 +108,37 @@
            selector:@selector(selectionChanged:)
                name:WDSelectionChangedNotification
              object:self.sidebar.canvasController.drawingController];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[self.selectButton setTitleColor:GS_COLOR_DARK_GREY_TEXT forState:UIControlStateNormal];
+	[self.selectButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+	
+	[self.selectButton setImage:[UIImage imageNamed:@"Select_Colour"] forState:UIControlStateNormal];
+	[self.selectButton setImage:[UIImage imageNamed:@"Select_White"] forState:UIControlStateSelected];
+	
+	[self.selectButton setBackgroundImage:[UIImage imageNamed:@"select_background_white"] forState:UIControlStateNormal];
+	[self.selectButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateSelected];
+	
+	[self.selectButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 20)];
+	
+	[self.selectButton.layer setCornerRadius:3.0];
+	[self.selectButton.layer setMasksToBounds:YES];
+	
+	[self.scaleButton setTitleColor:GS_COLOR_DARK_GREY_TEXT forState:UIControlStateNormal];
+	[self.scaleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+	
+	[self.scaleButton setImage:[UIImage imageNamed:@"Resize_Colour"] forState:UIControlStateNormal];
+	[self.scaleButton setImage:[UIImage imageNamed:@"Resize_White"] forState:UIControlStateSelected];
+	
+	[self.scaleButton setBackgroundImage:[UIImage imageNamed:@"select_background_white"] forState:UIControlStateNormal];
+	[self.scaleButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateSelected];
+	
+	[self.scaleButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 20)];
+	
+	[self.scaleButton.layer setCornerRadius:3.0];
+	[self.scaleButton.layer setMasksToBounds:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

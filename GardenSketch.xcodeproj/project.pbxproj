@@ -325,6 +325,8 @@
 		4D3CFABD199933F6000CCD31 /* WidthSm_Inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAB1199933F6000CCD31 /* WidthSm_Inactive@2x.png */; };
 		4D3CFAC019995ED9000CCD31 /* Rotate_Horizontal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFABE19995ED9000CCD31 /* Rotate_Horizontal@2x.png */; };
 		4D3CFAC119995ED9000CCD31 /* Rotate_Vertical@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFABF19995ED9000CCD31 /* Rotate_Vertical@2x.png */; };
+		4D3CFAC419996DDE000CCD31 /* Resize_Colour@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAC219996DDE000CCD31 /* Resize_Colour@2x.png */; };
+		4D3CFAC519996DDE000CCD31 /* Resize_White@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAC319996DDE000CCD31 /* Resize_White@2x.png */; };
 		4D53F60A1964A80B0097C8E3 /* Hedge_brown_horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal.png */; };
 		4D53F60C1964CBE50097C8E3 /* grid-xxl.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F60B1964CBE50097C8E3 /* grid-xxl.png */; };
 		4D53F60F1964D21D0097C8E3 /* grid-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F60D1964D21D0097C8E3 /* grid-active.png */; };
@@ -996,6 +998,8 @@
 		4D3CFAB1199933F6000CCD31 /* WidthSm_Inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WidthSm_Inactive@2x.png"; sourceTree = "<group>"; };
 		4D3CFABE19995ED9000CCD31 /* Rotate_Horizontal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rotate_Horizontal@2x.png"; sourceTree = "<group>"; };
 		4D3CFABF19995ED9000CCD31 /* Rotate_Vertical@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rotate_Vertical@2x.png"; sourceTree = "<group>"; };
+		4D3CFAC219996DDE000CCD31 /* Resize_Colour@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resize_Colour@2x.png"; sourceTree = "<group>"; };
+		4D3CFAC319996DDE000CCD31 /* Resize_White@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resize_White@2x.png"; sourceTree = "<group>"; };
 		4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hedge_brown_horizontal.png; sourceTree = "<group>"; };
 		4D53F60B1964CBE50097C8E3 /* grid-xxl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-xxl.png"; sourceTree = "<group>"; };
 		4D53F60D1964D21D0097C8E3 /* grid-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-active.png"; sourceTree = "<group>"; };
@@ -1355,6 +1359,8 @@
 				4D3CFABF19995ED9000CCD31 /* Rotate_Vertical@2x.png */,
 				4D3CFA98199599F7000CCD31 /* Select_Colour@2x.png */,
 				4D3CFA9C19959AE6000CCD31 /* Select_White@2x.png */,
+				4D3CFAC219996DDE000CCD31 /* Resize_Colour@2x.png */,
+				4D3CFAC319996DDE000CCD31 /* Resize_White@2x.png */,
 				4D6674F619957CE600A17C4E /* Done@2x.png */,
 				4D6674F3199441E100A17C4E /* CompassLg_Pointer@2x.png */,
 				4D3CFAA6199933F6000CCD31 /* SizeLg_Active@2x.png */,
@@ -2432,6 +2438,7 @@
 				4D05DAF6194A70C7001F19A7 /* InfoPlist.strings in Resources */,
 				4D05DCBD194F7FF2001F19A7 /* spiral@2x.png in Resources */,
 				4D6674CF198AC4C200A17C4E /* L_Shaped_House_3.png in Resources */,
+				4D3CFAC419996DDE000CCD31 /* Resize_Colour@2x.png in Resources */,
 				4D081BFE195B3DF600F8871C /* Gazebo@2x.png in Resources */,
 				4D66747E1988486500A17C4E /* House1.xib in Resources */,
 				4D05DCC1194F7FF2001F19A7 /* text@2x.png in Resources */,
@@ -2522,6 +2529,7 @@
 				4D05DCAF194F7FF2001F19A7 /* pen.png in Resources */,
 				4D53F638196B149C0097C8E3 /* AppIcon60x60@2x.png in Resources */,
 				4D3CFAB4199933F6000CCD31 /* SizeMd_Active@2x.png in Resources */,
+				4D3CFAC519996DDE000CCD31 /* Resize_White@2x.png in Resources */,
 				4D576058195E284B00DCCBEF /* Hedge_Brown.svg in Resources */,
 				4D05DE321950B8CB001F19A7 /* PageSizes.plist in Resources */,
 				4D576056195E0FF600DCCBEF /* Shrub_Brown.png in Resources */,
