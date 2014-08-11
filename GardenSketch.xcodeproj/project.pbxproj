@@ -309,6 +309,8 @@
 		4D3CFA9D19959AE6000CCD31 /* Select_White@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA9C19959AE6000CCD31 /* Select_White@2x.png */; };
 		4D3CFAA01995ABCA000CCD31 /* select_background_colour.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA9E1995ABCA000CCD31 /* select_background_colour.png */; };
 		4D3CFAA11995ABCA000CCD31 /* select_background_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA9F1995ABCA000CCD31 /* select_background_white.png */; };
+		4D3CFAA319992C53000CCD31 /* Repeat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAA219992C53000CCD31 /* Repeat@2x.png */; };
+		4D3CFAA519992F9C000CCD31 /* Repeat_Active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAA419992F9C000CCD31 /* Repeat_Active@2x.png */; };
 		4D53F60A1964A80B0097C8E3 /* Hedge_brown_horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal.png */; };
 		4D53F60C1964CBE50097C8E3 /* grid-xxl.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F60B1964CBE50097C8E3 /* grid-xxl.png */; };
 		4D53F60F1964D21D0097C8E3 /* grid-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F60D1964D21D0097C8E3 /* grid-active.png */; };
@@ -964,6 +966,8 @@
 		4D3CFA9C19959AE6000CCD31 /* Select_White@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Select_White@2x.png"; sourceTree = "<group>"; };
 		4D3CFA9E1995ABCA000CCD31 /* select_background_colour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_background_colour.png; sourceTree = "<group>"; };
 		4D3CFA9F1995ABCA000CCD31 /* select_background_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select_background_white.png; sourceTree = "<group>"; };
+		4D3CFAA219992C53000CCD31 /* Repeat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Repeat@2x.png"; sourceTree = "<group>"; };
+		4D3CFAA419992F9C000CCD31 /* Repeat_Active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Repeat_Active@2x.png"; sourceTree = "<group>"; };
 		4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hedge_brown_horizontal.png; sourceTree = "<group>"; };
 		4D53F60B1964CBE50097C8E3 /* grid-xxl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-xxl.png"; sourceTree = "<group>"; };
 		4D53F60D1964D21D0097C8E3 /* grid-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-active.png"; sourceTree = "<group>"; };
@@ -1317,6 +1321,8 @@
 				4D3CFA9F1995ABCA000CCD31 /* select_background_white.png */,
 				4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */,
 				4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */,
+				4D3CFAA219992C53000CCD31 /* Repeat@2x.png */,
+				4D3CFAA419992F9C000CCD31 /* Repeat_Active@2x.png */,
 				4D3CFA98199599F7000CCD31 /* Select_Colour@2x.png */,
 				4D3CFA9C19959AE6000CCD31 /* Select_White@2x.png */,
 				4D6674F619957CE600A17C4E /* Done@2x.png */,
@@ -2334,6 +2340,7 @@
 				4D05DE241950AC3F001F19A7 /* Shadow.xib in Resources */,
 				4D6674C41989C7CB00A17C4E /* L_Shaped_House_4@2x.png in Resources */,
 				4D6674431983212B00A17C4E /* Plant_Grey_Green.stencil in Resources */,
+				4D3CFAA319992C53000CCD31 /* Repeat@2x.png in Resources */,
 				4D081BFC195B3DE300F8871C /* House_No_Lines@2x.png in Resources */,
 				4D53F61B1965EBD30097C8E3 /* north-big.png in Resources */,
 				4D6674CE198AC4C200A17C4E /* L_Shaped_House_2.png in Resources */,
@@ -2417,6 +2424,7 @@
 				4D6674441983212B00A17C4E /* Plant_Indigo.stencil in Resources */,
 				4D53F63B196B149C0097C8E3 /* iTunesArtwork.png in Resources */,
 				4D05DB9E194BB109001F19A7 /* PropertyViewController.xib in Resources */,
+				4D3CFAA519992F9C000CCD31 /* Repeat_Active@2x.png in Resources */,
 				4D3CFA9B199599F7000CCD31 /* Select_Colour@2x.png in Resources */,
 				4D6674B81989B4DC00A17C4E /* L_Shaped_House_2.stencil in Resources */,
 				4D05DE1A1950AC3F001F19A7 /* Color.xib in Resources */,
