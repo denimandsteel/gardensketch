@@ -11,6 +11,7 @@
 #import "WDToolButton.h"
 #import "GSLabel.h"
 #import "StencilManager.h"
+#import "GSButton.h"
 
 @interface ToolCell : UICollectionViewCell
 
@@ -26,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *largeButton;
 
 @property (weak, nonatomic) IBOutlet ColorPickerButton *colorPicker;
+@property (weak, nonatomic) IBOutlet UIButton *rotateButton;
 @property (weak, nonatomic) IBOutlet UIButton *repeatButton;
 
 @property (weak, nonatomic) IBOutlet GSLabel *sizeLabel;
@@ -34,7 +36,7 @@
 - (IBAction)colorPickerTapped:(id)sender;
 - (IBAction)sizeButtonTapped:(id)sender;
 - (IBAction)repeatTapped:(id)sender;
-
+- (IBAction)rotateTapped:(id)sender;
 
 - (void)initialize;
 - (void)activateTool;

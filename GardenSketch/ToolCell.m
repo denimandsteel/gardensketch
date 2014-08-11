@@ -44,6 +44,10 @@
 	[self.layer setCornerRadius:10.0];
 	[self.layer setMasksToBounds:YES];
 	[self.secondaryView setBackgroundColor:GS_COLOR_DARK_GREY_BACKGROUND];
+	[self.rotateButton.titleLabel setFont:GS_FONT_AVENIR_SMALL];
+	[self.sizeLabel setFont:GS_FONT_AVENIR_SMALL];
+	[self.colorLabel setFont:GS_FONT_AVENIR_SMALL];
+	
 	[self updateToolSubviews];
 }
 
@@ -143,8 +147,14 @@
 			isRepeatOn = [(WDShapeTool *)self.toolButton.tool staysOn];
 		}
 		[self.repeatButton setSelected:isRepeatOn];
+		
+		if ([self.toolButton.tool isKindOfClass:[WDStencilTool class]] && [(WDStencilTool *)self.toolButton.tool type] == kHedge) {
+			[self.rotateButton setHidden:NO];
+		} else {
+			[self.rotateButton setHidden:YES];
+		}
+		
 		[self updateToolSubviews];
-
 		[UIView animateWithDuration:.5 delay:0.0 usingSpringWithDamping:.7 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
 			CGRect frame = self.frame;
 			frame.size.height = 190;
@@ -157,6 +167,7 @@
 		[self.toolNameLabel setTextColor:GS_COLOR_DARK_GREY_TEXT];
 		[self.toolNameLabel setFont:GS_FONT_AVENIR_ACTION];
 		[self.repeatButton setHidden:YES];
+		[self.rotateButton setHidden:YES];
 		[UIView animateWithDuration:.5 delay:0.0 usingSpringWithDamping:.7 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
 			CGRect frame = self.frame;
 			frame.size.height = 80;
@@ -243,6 +254,28 @@
 		((WDShapeTool *)tool).staysOn ^= YES;
 	}
 	[self.repeatButton setSelected:!self.repeatButton.selected];
+}
+
+- (IBAction)rotateTapped:(id)sender {
+	WDTool *tool = self.toolButton.tool;
+	if ([tool isKindOfClass:[WDStencilTool class]] && [(WDStencilTool *)tool type] == kHedge) {
+		BOOL isHor = [(WDStencilTool *)tool initialRotation] > 0.0;
+		if (isHor) {
+			[(WDStencilTool *)tool setInitialRotation:0.0];
+		} else {
+			[(WDStencilTool *)tool setInitialRotation:M_PI/2.0];
+		}
+		
+	}
+	
+	[self.rotateButton setSelected:!self.rotateButton.selected];
+	
+	// to update the icon
+	
+	[self.toolButton setTool:tool];
+	[self.toolButton setNeedsDisplay];
+	[self.toolButton setNeedsLayout];
+	
 }
 
 - (void)setSelectedSizeButton:(ShapeSize)shapeSize

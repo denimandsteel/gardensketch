@@ -42,6 +42,20 @@
                                     <action selector="repeatTapped:" destination="zfM-hT-wWa" eventType="touchUpInside" id="H8S-YK-397"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="e9G-yA-iRs">
+                                <rect key="frame" x="182" y="0.0" width="70" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="titleEdgeInsets" minX="-36" minY="-41" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="17" minY="23" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Rotate" image="Rotate_Vertical.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="Rotate_Horizontal.png"/>
+                                <connections>
+                                    <action selector="rotateTapped:" destination="zfM-hT-wWa" eventType="touchUpInside" id="w9e-9Y-OJS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96155315900000005" green="0.96155315900000005" blue="0.96155315900000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -120,6 +134,7 @@
                 <outlet property="mediumButton" destination="CuF-fC-VUj" id="8JQ-Uq-RNY"/>
                 <outlet property="primaryView" destination="gQ9-PJ-ABH" id="d9l-hq-8eL"/>
                 <outlet property="repeatButton" destination="KcG-et-XBm" id="xRR-6z-YOV"/>
+                <outlet property="rotateButton" destination="e9G-yA-iRs" id="bQr-kT-VxN"/>
                 <outlet property="secondaryView" destination="HEK-dF-hpb" id="aBn-OK-hFk"/>
                 <outlet property="sizeLabel" destination="XAp-fM-mRq" id="dHq-Kf-hDk"/>
                 <outlet property="smallButton" destination="duP-Yl-3fU" id="VLe-Y8-sKg"/>
@@ -134,6 +149,8 @@
     <resources>
         <image name="Repeat.png" width="60" height="80"/>
         <image name="Repeat_Active.png" width="60" height="80"/>
+        <image name="Rotate_Horizontal.png" width="38" height="38"/>
+        <image name="Rotate_Vertical.png" width="38" height="38"/>
         <image name="SizeLg_Active.png" width="72" height="72"/>
         <image name="SizeLg_Inactive.png" width="72" height="72"/>
         <image name="SizeMd_Active.png" width="52" height="52"/>
