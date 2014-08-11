@@ -39,8 +39,10 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 	
 	[self loadShapes];
 	
-	self.treeColor = (TreeColor)0;
+	self.deciduousTreeColor = (TreeColor)0;
+	self.coniferousTreeColor = (TreeColor)0;
 	self.shrubColor = (ShrubColor)0;
+	self.hedgeColor = (ShrubColor)0;
 	self.plantColor = (PlantColor)0;
 	
 	return self;
@@ -163,7 +165,7 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 			}
 			break;
 		case kHedge:
-			switch (self.shrubColor) {
+			switch (self.hedgeColor) {
 				case kBrown:
 					filename = @"Hedge_Brown";
 					break;
@@ -181,7 +183,7 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 			}
 			break;
 		case kTreeConiferous:
-			switch (self.treeColor) {
+			switch (self.coniferousTreeColor) {
 				case kBurgundy:
 					filename = @"Coniferous_Burgundy";
 					break;
@@ -206,7 +208,7 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 			}
 			break;
 		case kTreeDeciduous:
-			switch (self.treeColor) {
+			switch (self.deciduousTreeColor) {
 				case kBurgundy:
 					filename = @"Deciduous_Tree_Burgundy";
 					break;
@@ -410,6 +412,11 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 
 - (ShapeSize)sizeForActiveShape
 {
+	if (!self.shapeSize[@(self.activeShapeType)]) {
+		// default to medium
+		self.shapeSize[@(self.activeShapeType)] = @(kMedium);
+	}
+	
 	return (ShapeSize)[self.shapeSize[@(self.activeShapeType)] integerValue];
 }
 

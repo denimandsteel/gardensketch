@@ -29,8 +29,7 @@
 @property (nonatomic, weak) WDStencilTool   *plant;
 @property (nonatomic, weak) WDShapeTool     *line;
 @property (nonatomic, weak) WDStencilTool   *shrub;
-@property (nonatomic, weak) WDStencilTool   *verticalHedge;
-@property (nonatomic, weak) WDStencilTool   *horizontalHedge;
+@property (nonatomic, weak) WDStencilTool   *hedge;
 @property (nonatomic, weak) WDStencilTool   *deciduousTree;
 @property (nonatomic, weak) WDStencilTool   *coniferousTree;
 @property (nonatomic, weak) WDStencilTool   *tile;

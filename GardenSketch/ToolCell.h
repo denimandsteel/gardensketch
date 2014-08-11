@@ -21,9 +21,15 @@
 @property (weak, nonatomic) IBOutlet GSLabel *toolNameLabel;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *sizeButtons;
+@property (weak, nonatomic) IBOutlet UIButton *smallButton;
+@property (weak, nonatomic) IBOutlet UIButton *mediumButton;
+@property (weak, nonatomic) IBOutlet UIButton *largeButton;
+
 @property (weak, nonatomic) IBOutlet ColorPickerButton *colorPicker;
 @property (weak, nonatomic) IBOutlet UIButton *repeatButton;
 
+@property (weak, nonatomic) IBOutlet GSLabel *sizeLabel;
+@property (weak, nonatomic) IBOutlet GSLabel *colorLabel;
 
 - (IBAction)colorPickerTapped:(id)sender;
 - (IBAction)sizeButtonTapped:(id)sender;

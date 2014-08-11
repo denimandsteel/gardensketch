@@ -314,12 +314,16 @@
 			[[StencilManager sharedInstance] setPlantColor:(PlantColor)index];
 			break;
 		case kShrub:
-		case kHedge:
 			[[StencilManager sharedInstance] setShrubColor:(ShrubColor)index];
 			break;
+		case kHedge:
+			[[StencilManager sharedInstance] setHedgeColor:(ShrubColor)index];
+			break;
 		case kTreeConiferous:
+			[[StencilManager sharedInstance] setConiferousTreeColor:(TreeColor)index];
+			break;
 		case kTreeDeciduous:
-			[[StencilManager sharedInstance] setTreeColor:(TreeColor)index];
+			[[StencilManager sharedInstance] setDeciduousTreeColor:(TreeColor)index];
 			break;
 		case kLine:
 		{
@@ -383,14 +387,17 @@
 				case 0:
 					tool = [WDToolManager sharedInstance].line;
 					[cell.colorPicker setColors:outlineColors];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] outlineColor]];
 					break;
 				case 1:
 					tool = [WDToolManager sharedInstance].freehand;
 					[cell.colorPicker setColors:outlineColors];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] outlineColor]];
 					break;
 				case 2:
 					tool = [WDToolManager sharedInstance].enclosed;
 					[cell.colorPicker setColors:areaColors];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] areaColor]];
 					break;
 			}
 			break;
@@ -401,22 +408,27 @@
 				case 0:
 					tool = [WDToolManager sharedInstance].plant;
 					[cell.colorPicker setColors:plantColors];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] plantColor]];
 					break;
 				case 1:
 					tool = [WDToolManager sharedInstance].shrub;
 					[cell.colorPicker setColors:shrubColors];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] shrubColor]];
 					break;
 				case 2:
-					tool = [WDToolManager sharedInstance].horizontalHedge;
+					tool = [WDToolManager sharedInstance].hedge;
 					[cell.colorPicker setColors:shrubColors];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] shrubColor]];
 					break;
 				case 3:
 					tool = [WDToolManager sharedInstance].deciduousTree;
 					[cell.colorPicker setColors:treeColors];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] deciduousTreeColor]];
 					break;
 				case 4:
 					tool = [WDToolManager sharedInstance].coniferousTree;
 					[cell.colorPicker setColors:treeColors];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] coniferousTreeColor]];
 					break;
 			}
 			break;
@@ -556,7 +568,7 @@
 		return [NSIndexPath indexPathForItem:0 inSection:1];
 	} else if (tool == [WDToolManager sharedInstance].shrub) {
 		return [NSIndexPath indexPathForItem:1 inSection:1];
-	} else if (tool == [WDToolManager sharedInstance].horizontalHedge) {
+	} else if (tool == [WDToolManager sharedInstance].hedge) {
 		return [NSIndexPath indexPathForItem:2 inSection:1];
 	} else if (tool == [WDToolManager sharedInstance].deciduousTree) {
 		return [NSIndexPath indexPathForItem:3 inSection:1];

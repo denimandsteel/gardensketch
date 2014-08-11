@@ -90,7 +90,9 @@ typedef enum {
 
 @property (nonatomic, assign) PlantColor plantColor;
 @property (nonatomic, assign) ShrubColor shrubColor;
-@property (nonatomic, assign) TreeColor treeColor;
+@property (nonatomic, assign) ShrubColor hedgeColor;
+@property (nonatomic, assign) TreeColor deciduousTreeColor;
+@property (nonatomic, assign) TreeColor coniferousTreeColor;
 @property (nonatomic, assign) OutlineColor outlineColor;
 @property (nonatomic, assign) AreaColor areaColor;
 

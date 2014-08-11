@@ -13,6 +13,8 @@
 #import "WDShapeTool.h"
 #import "WDToolManager.h"
 
+#define COLOR_PICKER_LEFT 225.0
+
 @implementation ToolCell
 
 - (id)initWithFrame:(CGRect)frame
@@ -20,7 +22,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-		[self initialize];
+		
     }
     return self;
 }
@@ -29,7 +31,7 @@
 {
 	self = [super initWithCoder:aDecoder];
 	if (self) {
-		[self initialize];
+		
 	}
 	return self;
 }
@@ -42,7 +44,86 @@
 	[self.layer setCornerRadius:10.0];
 	[self.layer setMasksToBounds:YES];
 	[self.secondaryView setBackgroundColor:GS_COLOR_DARK_GREY_BACKGROUND];
-	[self customizeToolSubviews];
+	[self updateToolSubviews];
+}
+
+- (void)updateToolSubviews
+{
+	if ([self needColorPicker]) {
+		[self.colorPicker setHidden:NO];
+		[self.colorLabel setHidden:NO];
+	} else {
+		[self.colorPicker setHidden:YES];
+		[self.colorLabel setHidden:YES];
+	}
+	
+	if ([self.toolButton.tool isKindOfClass:[WDShapeTool class]] ||
+		[self.toolButton.tool isKindOfClass:[WDFreehandTool class]]) {
+		[self.smallButton setImage:[UIImage imageNamed:@"WidthSm_Inactive"] forState:UIControlStateNormal];
+		[self.smallButton setImage:[UIImage imageNamed:@"WidthSm_Active"] forState:UIControlStateSelected];
+		[self.mediumButton setImage:[UIImage imageNamed:@"WidthMd_Inactive"] forState:UIControlStateNormal];
+		[self.mediumButton setImage:[UIImage imageNamed:@"WidthMd_Active"] forState:UIControlStateSelected];
+		[self.largeButton setImage:[UIImage imageNamed:@"WidthLg_Inactive"] forState:UIControlStateNormal];
+		[self.largeButton setImage:[UIImage imageNamed:@"WidthLg_Active"] forState:UIControlStateSelected];
+	} else if ([self.toolButton.tool isKindOfClass:[WDStencilTool class]]) {
+		[self.smallButton setImage:[UIImage imageNamed:@"SizeSm_Inactive"] forState:UIControlStateNormal];
+		[self.smallButton setImage:[UIImage imageNamed:@"SizeSm_Active"] forState:UIControlStateSelected];
+		[self.mediumButton setImage:[UIImage imageNamed:@"SizeMd_Inactive"] forState:UIControlStateNormal];
+		[self.mediumButton setImage:[UIImage imageNamed:@"SizeMd_Active"] forState:UIControlStateSelected];
+		[self.largeButton setImage:[UIImage imageNamed:@"SizeLg_Inactive"] forState:UIControlStateNormal];
+		[self.largeButton setImage:[UIImage imageNamed:@"SizeLg_Active"] forState:UIControlStateSelected];
+	}
+	
+	if ([self.toolButton.tool isKindOfClass:[WDFreehandTool class]] && ([(WDFreehandTool *)self.toolButton.tool closeShape])) {
+		self.smallButton.hidden = self.mediumButton.hidden = self.largeButton.hidden = YES;
+		[self.sizeLabel setHidden:YES];
+		CGRect frame = self.colorPicker.frame;
+		frame.origin.x = 0;
+		frame.size.width = self.frame.size.width;
+		[self.colorPicker setFrame:frame];
+		CGRect labelFrame = self.colorLabel.frame;
+		labelFrame.origin.x = 0;
+		labelFrame.size.width = self.frame.size.width;
+		[self.colorLabel setFrame:labelFrame];
+	} else {
+		self.smallButton.hidden = self.mediumButton.hidden = self.largeButton.hidden = NO;
+		[self.sizeLabel setHidden:NO];
+		CGRect frame = self.colorPicker.frame;
+		frame.origin.x = COLOR_PICKER_LEFT;
+		frame.size.width = self.frame.size.width - COLOR_PICKER_LEFT;
+		[self.colorPicker setFrame:frame];
+		CGRect labelFrame = self.colorLabel.frame;
+		labelFrame.origin.x = COLOR_PICKER_LEFT;
+		labelFrame.size.width = self.frame.size.width - COLOR_PICKER_LEFT;
+		[self.colorLabel setFrame:labelFrame];
+	}
+
+	
+	// update the selected size button
+	ShapeSize activeShapeSize = [[StencilManager sharedInstance] sizeForActiveShape];
+	[self setSelectedSizeButton:activeShapeSize];
+	
+	if ([StencilManager sharedInstance].activeShapeType == kLine) {
+		
+		CGFloat strokeWidth = 1.0;
+		
+		switch (activeShapeSize) {
+			case kSmall:
+				strokeWidth = 1.0;
+				break;
+			case kMedium:
+				strokeWidth = 3.0;
+				break;
+			case kBig:
+				strokeWidth = 6.0;
+				break;
+			default:
+				break;
+		}
+		
+		//		[self.sidebar.canvasController.drawingController setValue:[NSNumber numberWithFloat:strokeWidth]
+		//													  forProperty:WDStrokeWidthProperty];
+	}
 }
 
 - (void)setSelected:(BOOL)selected
@@ -62,6 +143,7 @@
 			isRepeatOn = [(WDShapeTool *)self.toolButton.tool staysOn];
 		}
 		[self.repeatButton setSelected:isRepeatOn];
+		[self updateToolSubviews];
 
 		[UIView animateWithDuration:.5 delay:0.0 usingSpringWithDamping:.7 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
 			CGRect frame = self.frame;
@@ -144,7 +226,8 @@
 			default:
 				break;
 		}
-		
+	
+		// FIXME:
 //	[self.sidebar.canvasController.drawingController setValue:[NSNumber numberWithFloat:strokeWidth]
 //													  forProperty:WDStrokeWidthProperty];
 	}
@@ -170,15 +253,6 @@
 		} else {
 			[button setSelected:NO];
 		}
-	}
-}
-
-- (void)customizeToolSubviews
-{
-	if ([self needColorPicker]) {
-		[self.colorPicker setHidden:NO];
-	} else {
-		[self.colorPicker setHidden:YES];
 	}
 }
 
