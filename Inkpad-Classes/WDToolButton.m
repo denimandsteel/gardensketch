@@ -172,7 +172,7 @@
     tool_ = tool;
     
     [self setImage:tool.icon forState:UIControlStateNormal];
-	[self setImageEdgeInsets:UIEdgeInsetsMake(8, 8, 8, 8)];
+	[self setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
 //    self.tintColor = [self toolTintColor];
 //    [self setImage:tool.icon forState:UIControlStateSelected];
     

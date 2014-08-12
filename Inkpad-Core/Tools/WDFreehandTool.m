@@ -33,7 +33,7 @@ NSString *WDDefaultFreehandTool = @"WDDefaultFreehandTool";
 
 - (NSString *) iconName
 {
-    return closeShape_ ? @"enclosed.png" : @"freehand.png";
+    return closeShape_ ? @"Area" : @"FreehandLine";
 }
 
 - (NSString *) toolName

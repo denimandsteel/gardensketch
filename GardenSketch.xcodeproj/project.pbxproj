@@ -327,6 +327,9 @@
 		4D3CFAC119995ED9000CCD31 /* Rotate_Vertical@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFABF19995ED9000CCD31 /* Rotate_Vertical@2x.png */; };
 		4D3CFAC419996DDE000CCD31 /* Resize_Colour@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAC219996DDE000CCD31 /* Resize_Colour@2x.png */; };
 		4D3CFAC519996DDE000CCD31 /* Resize_White@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAC319996DDE000CCD31 /* Resize_White@2x.png */; };
+		4D3CFAC919997FE9000CCD31 /* Area@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAC619997FE9000CCD31 /* Area@2x.png */; };
+		4D3CFACA19997FE9000CCD31 /* FreehandLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAC719997FE9000CCD31 /* FreehandLine@2x.png */; };
+		4D3CFACB19997FE9000CCD31 /* StraightLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAC819997FE9000CCD31 /* StraightLine@2x.png */; };
 		4D53F60A1964A80B0097C8E3 /* Hedge_brown_horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal.png */; };
 		4D53F60C1964CBE50097C8E3 /* grid-xxl.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F60B1964CBE50097C8E3 /* grid-xxl.png */; };
 		4D53F60F1964D21D0097C8E3 /* grid-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F60D1964D21D0097C8E3 /* grid-active.png */; };
@@ -1000,6 +1003,9 @@
 		4D3CFABF19995ED9000CCD31 /* Rotate_Vertical@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rotate_Vertical@2x.png"; sourceTree = "<group>"; };
 		4D3CFAC219996DDE000CCD31 /* Resize_Colour@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resize_Colour@2x.png"; sourceTree = "<group>"; };
 		4D3CFAC319996DDE000CCD31 /* Resize_White@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Resize_White@2x.png"; sourceTree = "<group>"; };
+		4D3CFAC619997FE9000CCD31 /* Area@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Area@2x.png"; sourceTree = "<group>"; };
+		4D3CFAC719997FE9000CCD31 /* FreehandLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FreehandLine@2x.png"; sourceTree = "<group>"; };
+		4D3CFAC819997FE9000CCD31 /* StraightLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StraightLine@2x.png"; sourceTree = "<group>"; };
 		4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hedge_brown_horizontal.png; sourceTree = "<group>"; };
 		4D53F60B1964CBE50097C8E3 /* grid-xxl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-xxl.png"; sourceTree = "<group>"; };
 		4D53F60D1964D21D0097C8E3 /* grid-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-active.png"; sourceTree = "<group>"; };
@@ -1375,6 +1381,9 @@
 				4D3CFAAF199933F6000CCD31 /* WidthMd_Inactive@2x.png */,
 				4D3CFAB0199933F6000CCD31 /* WidthSm_Active@2x.png */,
 				4D3CFAB1199933F6000CCD31 /* WidthSm_Inactive@2x.png */,
+				4D3CFAC619997FE9000CCD31 /* Area@2x.png */,
+				4D3CFAC719997FE9000CCD31 /* FreehandLine@2x.png */,
+				4D3CFAC819997FE9000CCD31 /* StraightLine@2x.png */,
 				4D66749119884CEA00A17C4E /* TutorialImages */,
 				4D9115EF198088DD008B11CC /* Stencils */,
 				4D53F628196B14840097C8E3 /* AppIcon */,
@@ -2496,6 +2505,7 @@
 				4D6674451983212B00A17C4E /* Plant_Light_Green.stencil in Resources */,
 				4D05DBB3194F5C81001F19A7 /* north.png in Resources */,
 				4D05DCE7194F7FF2001F19A7 /* SVGColors.plist in Resources */,
+				4D3CFACB19997FE9000CCD31 /* StraightLine@2x.png in Resources */,
 				4D05DC9E194F7FF2001F19A7 /* add_anchor.png in Resources */,
 				4D53F60C1964CBE50097C8E3 /* grid-xxl.png in Resources */,
 				4D3CFAB8199933F6000CCD31 /* WidthLg_Active@2x.png in Resources */,
@@ -2594,6 +2604,7 @@
 				4D05DE211950AC3F001F19A7 /* LayerCell.xib in Resources */,
 				4D6674BB1989B4DC00A17C4E /* Rectangular_House_Horizontal.stencil in Resources */,
 				4D05DCB0194F7FF2001F19A7 /* pen@2x.png in Resources */,
+				4D3CFACA19997FE9000CCD31 /* FreehandLine@2x.png in Resources */,
 				4D081BE31954B54800F8871C /* ColorPickerViewController.xib in Resources */,
 				4D05DCA0194F7FF2001F19A7 /* brush.png in Resources */,
 				4D66743F1983212B00A17C4E /* House_No_Lines.stencil in Resources */,
@@ -2631,6 +2642,7 @@
 				4D3CFAB6199933F6000CCD31 /* SizeSm_Active@2x.png in Resources */,
 				4D6674471983212B00A17C4E /* Shed.stencil in Resources */,
 				4D66743C1983212B00A17C4E /* Hedge_Green.stencil in Resources */,
+				4D3CFAC919997FE9000CCD31 /* Area@2x.png in Resources */,
 				4D081C19195B8B4A00F8871C /* Plant_Gold.svg in Resources */,
 				4D05DBBF194F5FBF001F19A7 /* property@2x.png in Resources */,
 				4D53F63A196B149C0097C8E3 /* AppIcon76x76@2x.png in Resources */,
