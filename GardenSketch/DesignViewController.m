@@ -128,6 +128,9 @@
 	[self.selectButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateSelected];
 	
 	[self.selectButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 20)];
+	
+	[self.selectButton.layer setCornerRadius:3.0];
+	[self.selectButton.layer setMasksToBounds:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
