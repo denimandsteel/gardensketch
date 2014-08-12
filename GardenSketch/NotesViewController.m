@@ -42,8 +42,6 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     // Do any additional setup after loading the view from its nib.
 	
 	[self.collectionView registerNib:[UINib nibWithNibName:@"NoteCellView" bundle:nil] forCellWithReuseIdentifier:@"NoteCellIdentifier"];
-	
-	[self registerForKeyboardNotifications];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -76,6 +74,8 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 	
 	[self.collectionView reloadData];
+	
+	[self registerForKeyboardNotifications];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -85,6 +85,8 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	[notesLayer setVisible:NO];
 	
 	[drawing activateLayerAtIndex:1];
+	
+	[self unregisterForKeyboardNotifications];
 }
 
 - (void)didReceiveMemoryWarning
@@ -260,6 +262,13 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 												 name:UIKeyboardWillHideNotification object:nil];
 	
 }
+
+- (void)unregisterForKeyboardNotifications
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
 
 // Called when the UIKeyboardDidShowNotification is sent.
 - (void)keyboardWasShown:(NSNotification*)aNotification
