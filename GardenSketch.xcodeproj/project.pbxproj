@@ -323,6 +323,21 @@
 		4D3CFAC919997FE9000CCD31 /* Area@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAC619997FE9000CCD31 /* Area@2x.png */; };
 		4D3CFACA19997FE9000CCD31 /* FreehandLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAC719997FE9000CCD31 /* FreehandLine@2x.png */; };
 		4D3CFACB19997FE9000CCD31 /* StraightLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAC819997FE9000CCD31 /* StraightLine@2x.png */; };
+		4D3CFAD51999955B000CCD31 /* Coniferous_Dark_Green.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFACC1999955B000CCD31 /* Coniferous_Dark_Green.png */; };
+		4D3CFAD61999955B000CCD31 /* Tree_Green.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFACD1999955B000CCD31 /* Tree_Green.png */; };
+		4D3CFAD71999955B000CCD31 /* Hedge_brown.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFACE1999955B000CCD31 /* Hedge_brown.png */; };
+		4D3CFAD81999955B000CCD31 /* Hedge_brown_horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFACF1999955B000CCD31 /* Hedge_brown_horizontal.png */; };
+		4D3CFAD91999955B000CCD31 /* Plant_Grey_Green.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAD01999955B000CCD31 /* Plant_Grey_Green.png */; };
+		4D3CFADA1999955B000CCD31 /* Gazebo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAD11999955B000CCD31 /* Gazebo.png */; };
+		4D3CFADB1999955B000CCD31 /* Shed.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAD21999955B000CCD31 /* Shed.png */; };
+		4D3CFADC1999955B000CCD31 /* Tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAD31999955B000CCD31 /* Tile.png */; };
+		4D3CFADD1999955B000CCD31 /* Water_Feature.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAD41999955B000CCD31 /* Water_Feature.png */; };
+		4D3CFADF199995B5000CCD31 /* Flower_Pot.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFADE199995B5000CCD31 /* Flower_Pot.png */; };
+		4D3CFAE5199996EE000CCD31 /* CompassLg_Pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAE0199996EE000CCD31 /* CompassLg_Pointer.png */; };
+		4D3CFAE6199996EE000CCD31 /* CompassLg_Base.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAE1199996EE000CCD31 /* CompassLg_Base.png */; };
+		4D3CFAE7199996EE000CCD31 /* FreehandLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAE2199996EE000CCD31 /* FreehandLine.png */; };
+		4D3CFAE8199996EE000CCD31 /* Area.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAE3199996EE000CCD31 /* Area.png */; };
+		4D3CFAE9199996EE000CCD31 /* StraightLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAE4199996EE000CCD31 /* StraightLine.png */; };
 		4D53F60A1964A80B0097C8E3 /* Hedge_brown_horizontal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal@2x.png */; };
 		4D53F60C1964CBE50097C8E3 /* grid-xxl.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F60B1964CBE50097C8E3 /* grid-xxl.png */; };
 		4D53F6141965DD110097C8E3 /* NorthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D53F6121965DD110097C8E3 /* NorthViewController.m */; };
@@ -984,6 +999,21 @@
 		4D3CFAC619997FE9000CCD31 /* Area@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Area@2x.png"; sourceTree = "<group>"; };
 		4D3CFAC719997FE9000CCD31 /* FreehandLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FreehandLine@2x.png"; sourceTree = "<group>"; };
 		4D3CFAC819997FE9000CCD31 /* StraightLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StraightLine@2x.png"; sourceTree = "<group>"; };
+		4D3CFACC1999955B000CCD31 /* Coniferous_Dark_Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Coniferous_Dark_Green.png; sourceTree = "<group>"; };
+		4D3CFACD1999955B000CCD31 /* Tree_Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tree_Green.png; sourceTree = "<group>"; };
+		4D3CFACE1999955B000CCD31 /* Hedge_brown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hedge_brown.png; sourceTree = "<group>"; };
+		4D3CFACF1999955B000CCD31 /* Hedge_brown_horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hedge_brown_horizontal.png; sourceTree = "<group>"; };
+		4D3CFAD01999955B000CCD31 /* Plant_Grey_Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Plant_Grey_Green.png; sourceTree = "<group>"; };
+		4D3CFAD11999955B000CCD31 /* Gazebo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gazebo.png; sourceTree = "<group>"; };
+		4D3CFAD21999955B000CCD31 /* Shed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shed.png; sourceTree = "<group>"; };
+		4D3CFAD31999955B000CCD31 /* Tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tile.png; sourceTree = "<group>"; };
+		4D3CFAD41999955B000CCD31 /* Water_Feature.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Water_Feature.png; sourceTree = "<group>"; };
+		4D3CFADE199995B5000CCD31 /* Flower_Pot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Flower_Pot.png; sourceTree = "<group>"; };
+		4D3CFAE0199996EE000CCD31 /* CompassLg_Pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CompassLg_Pointer.png; sourceTree = "<group>"; };
+		4D3CFAE1199996EE000CCD31 /* CompassLg_Base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CompassLg_Base.png; sourceTree = "<group>"; };
+		4D3CFAE2199996EE000CCD31 /* FreehandLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FreehandLine.png; sourceTree = "<group>"; };
+		4D3CFAE3199996EE000CCD31 /* Area.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Area.png; sourceTree = "<group>"; };
+		4D3CFAE4199996EE000CCD31 /* StraightLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StraightLine.png; sourceTree = "<group>"; };
 		4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hedge_brown_horizontal@2x.png"; sourceTree = "<group>"; };
 		4D53F60B1964CBE50097C8E3 /* grid-xxl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-xxl.png"; sourceTree = "<group>"; };
 		4D53F6111965DD110097C8E3 /* NorthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NorthViewController.h; sourceTree = "<group>"; };
@@ -1323,6 +1353,11 @@
 		4D05DB45194B820A001F19A7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4D3CFAE0199996EE000CCD31 /* CompassLg_Pointer.png */,
+				4D3CFAE1199996EE000CCD31 /* CompassLg_Base.png */,
+				4D3CFAE2199996EE000CCD31 /* FreehandLine.png */,
+				4D3CFAE3199996EE000CCD31 /* Area.png */,
+				4D3CFAE4199996EE000CCD31 /* StraightLine.png */,
 				4D6674F2199441E100A17C4E /* CompassLg_Base@2x.png */,
 				4D3CFA9419958B01000CCD31 /* Add@2x.png */,
 				4D3CFA9E1995ABCA000CCD31 /* select_background_colour.png */,
@@ -1367,6 +1402,16 @@
 		4D05DB9F194F5C80001F19A7 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				4D3CFADE199995B5000CCD31 /* Flower_Pot.png */,
+				4D3CFACC1999955B000CCD31 /* Coniferous_Dark_Green.png */,
+				4D3CFACD1999955B000CCD31 /* Tree_Green.png */,
+				4D3CFACE1999955B000CCD31 /* Hedge_brown.png */,
+				4D3CFACF1999955B000CCD31 /* Hedge_brown_horizontal.png */,
+				4D3CFAD01999955B000CCD31 /* Plant_Grey_Green.png */,
+				4D3CFAD11999955B000CCD31 /* Gazebo.png */,
+				4D3CFAD21999955B000CCD31 /* Shed.png */,
+				4D3CFAD31999955B000CCD31 /* Tile.png */,
+				4D3CFAD41999955B000CCD31 /* Water_Feature.png */,
 				4D53F61C1965FC910097C8E3 /* Coniferous_Dark_Green@2x.png */,
 				4D6674BD1989C7CB00A17C4E /* L_Shaped_House_1@2x.png */,
 				4D6674C9198AC1D200A17C4E /* L_Shaped_House_1.png */,
@@ -2349,8 +2394,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D3CFAE5199996EE000CCD31 /* CompassLg_Pointer.png in Resources */,
 				4D05DE241950AC3F001F19A7 /* Shadow.xib in Resources */,
 				4D6674C41989C7CB00A17C4E /* L_Shaped_House_4@2x.png in Resources */,
+				4D3CFAD71999955B000CCD31 /* Hedge_brown.png in Resources */,
 				4D3CFAC019995ED9000CCD31 /* Rotate_Horizontal@2x.png in Resources */,
 				4D6674431983212B00A17C4E /* Plant_Grey_Green.stencil in Resources */,
 				4D3CFAA319992C53000CCD31 /* Repeat@2x.png in Resources */,
@@ -2387,6 +2434,7 @@
 				4D66749D19885E7A00A17C4E /* Design2@2x.png in Resources */,
 				4D05DCA5194F7FF2001F19A7 /* eyedropper@2x.png in Resources */,
 				4D6674B01989B0B600A17C4E /* Rectangular_House_Vertical.svg in Resources */,
+				4D3CFAE8199996EE000CCD31 /* Area.png in Resources */,
 				4D6674CA198AC1D200A17C4E /* L_Shaped_House_1.png in Resources */,
 				4D66744A1983212B00A17C4E /* Shrub_Maroon.stencil in Resources */,
 				4D081C1B195B8B4A00F8871C /* Plant_Grey_Green.svg in Resources */,
@@ -2395,6 +2443,7 @@
 				4D6674AA1989B09C00A17C4E /* L_Shaped_House_4.svg in Resources */,
 				4D05DE231950AC3F001F19A7 /* Samples.xib in Resources */,
 				4D05DAF6194A70C7001F19A7 /* InfoPlist.strings in Resources */,
+				4D3CFAD51999955B000CCD31 /* Coniferous_Dark_Green.png in Resources */,
 				4D05DCBD194F7FF2001F19A7 /* spiral@2x.png in Resources */,
 				4D6674CF198AC4C200A17C4E /* L_Shaped_House_3.png in Resources */,
 				4D3CFAC419996DDE000CCD31 /* Resize_Colour@2x.png in Resources */,
@@ -2404,6 +2453,8 @@
 				4D05DCA6194F7FF2001F19A7 /* freehand_shape.png in Resources */,
 				4D05DCB2194F7FF2001F19A7 /* polygon@2x.png in Resources */,
 				4D05DCB1194F7FF2001F19A7 /* polygon.png in Resources */,
+				4D3CFADD1999955B000CCD31 /* Water_Feature.png in Resources */,
+				4D3CFADF199995B5000CCD31 /* Flower_Pot.png in Resources */,
 				4D081C0E195B79A100F8871C /* Shed.svg in Resources */,
 				4D081C1A195B8B4A00F8871C /* Plant_Green.svg in Resources */,
 				4D6674C71989C7D800A17C4E /* Rectangular_House_Horizontal@2x.png in Resources */,
@@ -2429,6 +2480,7 @@
 				4D53F63C196B149C0097C8E3 /* iTunesArtwork@2x.png in Resources */,
 				4D3CFA9519958B01000CCD31 /* Add@2x.png in Resources */,
 				4D05DCAA194F7FF2001F19A7 /* hand.png in Resources */,
+				4D3CFAD61999955B000CCD31 /* Tree_Green.png in Resources */,
 				4D6674E21991812A00A17C4E /* Flower_Pot.stencil in Resources */,
 				4D081C1D195B8B4A00F8871C /* Plant_Light_Green.svg in Resources */,
 				4D6674441983212B00A17C4E /* Plant_Indigo.stencil in Resources */,
@@ -2475,6 +2527,7 @@
 				4D6674A019885E7A00A17C4E /* North1@2x.png in Resources */,
 				4D6674A91989B09C00A17C4E /* L_Shaped_House_3.svg in Resources */,
 				4D6674A71989B09C00A17C4E /* L_Shaped_House_1.svg in Resources */,
+				4D3CFADA1999955B000CCD31 /* Gazebo.png in Resources */,
 				4D6673C81983116200A17C4E /* Coniferous_Green.svg in Resources */,
 				4D66742F1983212B00A17C4E /* Coniferous_DarkGreen.stencil in Resources */,
 				4D6674391983212B00A17C4E /* Deciduous_Tree_Violet.stencil in Resources */,
@@ -2482,6 +2535,7 @@
 				4D081BFA195B3DC100F8871C /* Plant_Grey_Green@2x.png in Resources */,
 				4D3CFAC119995ED9000CCD31 /* Rotate_Vertical@2x.png in Resources */,
 				4D05DCAF194F7FF2001F19A7 /* pen.png in Resources */,
+				4D3CFADC1999955B000CCD31 /* Tile.png in Resources */,
 				4D53F638196B149C0097C8E3 /* AppIcon60x60@2x.png in Resources */,
 				4D3CFAB4199933F6000CCD31 /* SizeMd_Active@2x.png in Resources */,
 				4D3CFAC519996DDE000CCD31 /* Resize_White@2x.png in Resources */,
@@ -2533,6 +2587,7 @@
 				4D53F60A1964A80B0097C8E3 /* Hedge_brown_horizontal@2x.png in Resources */,
 				4D6674D6198AC70D00A17C4E /* House_No_Lines.png in Resources */,
 				4D576060196481CE00DCCBEF /* Deciduous_Tree_Burgundy.svg in Resources */,
+				4D3CFAD91999955B000CCD31 /* Plant_Grey_Green.png in Resources */,
 				4D9115DE197737BC008B11CC /* NoteCellView.xib in Resources */,
 				4D05DCAC194F7FF2001F19A7 /* line@2x.png in Resources */,
 				4D66747A1988465900A17C4E /* Property2.xib in Resources */,
@@ -2548,6 +2603,7 @@
 				4D05DE211950AC3F001F19A7 /* LayerCell.xib in Resources */,
 				4D6674BB1989B4DC00A17C4E /* Rectangular_House_Horizontal.stencil in Resources */,
 				4D05DCB0194F7FF2001F19A7 /* pen@2x.png in Resources */,
+				4D3CFAE6199996EE000CCD31 /* CompassLg_Base.png in Resources */,
 				4D3CFACA19997FE9000CCD31 /* FreehandLine@2x.png in Resources */,
 				4D081BE31954B54800F8871C /* ColorPickerViewController.xib in Resources */,
 				4D05DCA0194F7FF2001F19A7 /* brush.png in Resources */,
@@ -2559,9 +2615,11 @@
 				4D05DCB4194F7FF2001F19A7 /* rotate.png in Resources */,
 				4D6673CB1983116200A17C4E /* Coniferous_Violet.svg in Resources */,
 				4D3CFAB7199933F6000CCD31 /* SizeSm_Inactive@2x.png in Resources */,
+				4D3CFAE9199996EE000CCD31 /* StraightLine.png in Resources */,
 				4D05DCAD194F7FF2001F19A7 /* oval.png in Resources */,
 				4D576065196481CE00DCCBEF /* Deciduous_Tree_Violet.svg in Resources */,
 				4D6674311983212B00A17C4E /* Coniferous_Mustard.stencil in Resources */,
+				4D3CFAE7199996EE000CCD31 /* FreehandLine.png in Resources */,
 				4D6674D3198AC68F00A17C4E /* Rectangular_House_Horizontal.png in Resources */,
 				4D05DCB5194F7FF2001F19A7 /* rotate@2x.png in Resources */,
 				4D6674E0199179A700A17C4E /* Flower_Pot@2x.png in Resources */,
@@ -2598,6 +2656,7 @@
 				4D05DE06194FC4CA001F19A7 /* WDThumbnailView.xib in Resources */,
 				4D6674301983212B00A17C4E /* Coniferous_Green.stencil in Resources */,
 				4D6674C21989C7CB00A17C4E /* L_Shaped_House_2@2x.png in Resources */,
+				4D3CFAD81999955B000CCD31 /* Hedge_brown_horizontal.png in Resources */,
 				4D66742E1983212B00A17C4E /* Coniferous_Burgundy.stencil in Resources */,
 				4D6674C11989C7CB00A17C4E /* L_Shaped_House_1@2x.png in Resources */,
 				4D66748C1988488600A17C4E /* Design2.xib in Resources */,
@@ -2607,6 +2666,7 @@
 				4D6674BC1989B4DC00A17C4E /* Rectangular_House_Vertical.stencil in Resources */,
 				4D6674421983212B00A17C4E /* Plant_Green.stencil in Resources */,
 				4D05DCAE194F7FF2001F19A7 /* oval@2x.png in Resources */,
+				4D3CFADB1999955B000CCD31 /* Shed.png in Resources */,
 				4D05DE00194FB56C001F19A7 /* Marker.inkpad in Resources */,
 				4D05DE081950A8AA001F19A7 /* CanvasController.xib in Resources */,
 				4D05DE271950AC3F001F19A7 /* Text.xib in Resources */,
