@@ -341,6 +341,13 @@
 		4D3CFAEC19999886000CCD31 /* Repeat.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAEA19999886000CCD31 /* Repeat.png */; };
 		4D3CFAED19999886000CCD31 /* Repeat_Active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAEB19999886000CCD31 /* Repeat_Active.png */; };
 		4D3CFAEF19999891000CCD31 /* Shrub_Brown.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAEE19999891000CCD31 /* Shrub_Brown.png */; };
+		4D3CFAF719999A71000CCD31 /* Rotate_Horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAF019999A71000CCD31 /* Rotate_Horizontal.png */; };
+		4D3CFAF819999A71000CCD31 /* Rotate_Vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAF119999A71000CCD31 /* Rotate_Vertical.png */; };
+		4D3CFAF919999A71000CCD31 /* Select_White.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAF219999A71000CCD31 /* Select_White.png */; };
+		4D3CFAFA19999A71000CCD31 /* Select_Colour.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAF319999A71000CCD31 /* Select_Colour.png */; };
+		4D3CFAFB19999A71000CCD31 /* Resize_White.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAF419999A71000CCD31 /* Resize_White.png */; };
+		4D3CFAFC19999A71000CCD31 /* Resize_Colour.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAF519999A71000CCD31 /* Resize_Colour.png */; };
+		4D3CFAFD19999A71000CCD31 /* Done.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFAF619999A71000CCD31 /* Done.png */; };
 		4D53F60A1964A80B0097C8E3 /* Hedge_brown_horizontal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal@2x.png */; };
 		4D53F60C1964CBE50097C8E3 /* grid-xxl.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D53F60B1964CBE50097C8E3 /* grid-xxl.png */; };
 		4D53F6141965DD110097C8E3 /* NorthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D53F6121965DD110097C8E3 /* NorthViewController.m */; };
@@ -1020,6 +1027,13 @@
 		4D3CFAEA19999886000CCD31 /* Repeat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Repeat.png; sourceTree = "<group>"; };
 		4D3CFAEB19999886000CCD31 /* Repeat_Active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Repeat_Active.png; sourceTree = "<group>"; };
 		4D3CFAEE19999891000CCD31 /* Shrub_Brown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shrub_Brown.png; sourceTree = "<group>"; };
+		4D3CFAF019999A71000CCD31 /* Rotate_Horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rotate_Horizontal.png; sourceTree = "<group>"; };
+		4D3CFAF119999A71000CCD31 /* Rotate_Vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rotate_Vertical.png; sourceTree = "<group>"; };
+		4D3CFAF219999A71000CCD31 /* Select_White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Select_White.png; sourceTree = "<group>"; };
+		4D3CFAF319999A71000CCD31 /* Select_Colour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Select_Colour.png; sourceTree = "<group>"; };
+		4D3CFAF419999A71000CCD31 /* Resize_White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Resize_White.png; sourceTree = "<group>"; };
+		4D3CFAF519999A71000CCD31 /* Resize_Colour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Resize_Colour.png; sourceTree = "<group>"; };
+		4D3CFAF619999A71000CCD31 /* Done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Done.png; sourceTree = "<group>"; };
 		4D53F6091964A80B0097C8E3 /* Hedge_brown_horizontal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hedge_brown_horizontal@2x.png"; sourceTree = "<group>"; };
 		4D53F60B1964CBE50097C8E3 /* grid-xxl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-xxl.png"; sourceTree = "<group>"; };
 		4D53F6111965DD110097C8E3 /* NorthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NorthViewController.h; sourceTree = "<group>"; };
@@ -1359,6 +1373,13 @@
 		4D05DB45194B820A001F19A7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4D3CFAF019999A71000CCD31 /* Rotate_Horizontal.png */,
+				4D3CFAF119999A71000CCD31 /* Rotate_Vertical.png */,
+				4D3CFAF219999A71000CCD31 /* Select_White.png */,
+				4D3CFAF319999A71000CCD31 /* Select_Colour.png */,
+				4D3CFAF419999A71000CCD31 /* Resize_White.png */,
+				4D3CFAF519999A71000CCD31 /* Resize_Colour.png */,
+				4D3CFAF619999A71000CCD31 /* Done.png */,
 				4D3CFAEA19999886000CCD31 /* Repeat.png */,
 				4D3CFAEB19999886000CCD31 /* Repeat_Active.png */,
 				4D3CFAE0199996EE000CCD31 /* CompassLg_Pointer.png */,
@@ -2468,6 +2489,7 @@
 				4D081C1A195B8B4A00F8871C /* Plant_Green.svg in Resources */,
 				4D6674C71989C7D800A17C4E /* Rectangular_House_Horizontal@2x.png in Resources */,
 				4D05DE1E1950AC3F001F19A7 /* Gradient.xib in Resources */,
+				4D3CFAF919999A71000CCD31 /* Select_White.png in Resources */,
 				4D53F639196B149C0097C8E3 /* AppIcon76x76.png in Resources */,
 				4D66743B1983212B00A17C4E /* Hedge_Brown.stencil in Resources */,
 				4D6674401983212B00A17C4E /* Plant_Dark_Green.stencil in Resources */,
@@ -2489,6 +2511,7 @@
 				4D53F63C196B149C0097C8E3 /* iTunesArtwork@2x.png in Resources */,
 				4D3CFA9519958B01000CCD31 /* Add@2x.png in Resources */,
 				4D05DCAA194F7FF2001F19A7 /* hand.png in Resources */,
+				4D3CFAFD19999A71000CCD31 /* Done.png in Resources */,
 				4D3CFAD61999955B000CCD31 /* Tree_Green.png in Resources */,
 				4D6674E21991812A00A17C4E /* Flower_Pot.stencil in Resources */,
 				4D081C1D195B8B4A00F8871C /* Plant_Light_Green.svg in Resources */,
@@ -2525,6 +2548,7 @@
 				4D081C1E195B8B4A00F8871C /* Plant_Light_Pink.svg in Resources */,
 				4D081BDC1954A31600F8871C /* more@2x.png in Resources */,
 				4D05DE1B1950AC3F001F19A7 /* ColorBalance.xib in Resources */,
+				4D3CFAFA19999A71000CCD31 /* Select_Colour.png in Resources */,
 				4D57604A195E0D3500DCCBEF /* Hedge_Viridian.svg in Resources */,
 				4D6674721987220300A17C4E /* AppStart1.xib in Resources */,
 				4D53F633196B149C0097C8E3 /* AppIcon29x29.png in Resources */,
@@ -2540,6 +2564,7 @@
 				4D6673C81983116200A17C4E /* Coniferous_Green.svg in Resources */,
 				4D66742F1983212B00A17C4E /* Coniferous_DarkGreen.stencil in Resources */,
 				4D6674391983212B00A17C4E /* Deciduous_Tree_Violet.stencil in Resources */,
+				4D3CFAFB19999A71000CCD31 /* Resize_White.png in Resources */,
 				4D05DE261950AC3F001F19A7 /* Stroke.xib in Resources */,
 				4D081BFA195B3DC100F8871C /* Plant_Grey_Green@2x.png in Resources */,
 				4D3CFAC119995ED9000CCD31 /* Rotate_Vertical@2x.png in Resources */,
@@ -2657,8 +2682,10 @@
 				4D66743C1983212B00A17C4E /* Hedge_Green.stencil in Resources */,
 				4D3CFAC919997FE9000CCD31 /* Area@2x.png in Resources */,
 				4D081C19195B8B4A00F8871C /* Plant_Gold.svg in Resources */,
+				4D3CFAFC19999A71000CCD31 /* Resize_Colour.png in Resources */,
 				4D05DBBF194F5FBF001F19A7 /* property@2x.png in Resources */,
 				4D53F63A196B149C0097C8E3 /* AppIcon76x76@2x.png in Resources */,
+				4D3CFAF819999A71000CCD31 /* Rotate_Vertical.png in Resources */,
 				4D05DCC0194F7FF2001F19A7 /* text.png in Resources */,
 				4D081BDE1954A31600F8871C /* notes@2x.png in Resources */,
 				4D05DBB4194F5C81001F19A7 /* notes.png in Resources */,
@@ -2672,6 +2699,7 @@
 				4D66742E1983212B00A17C4E /* Coniferous_Burgundy.stencil in Resources */,
 				4D6674C11989C7CB00A17C4E /* L_Shaped_House_1@2x.png in Resources */,
 				4D66748C1988488600A17C4E /* Design2.xib in Resources */,
+				4D3CFAF719999A71000CCD31 /* Rotate_Horizontal.png in Resources */,
 				4D66747F1988486500A17C4E /* House2.xib in Resources */,
 				4D05DCB3194F7FF2001F19A7 /* rect.png in Resources */,
 				4D081BDD1954A31600F8871C /* north@2x.png in Resources */,
