@@ -27,6 +27,8 @@
 #import "WDDrawing.h"
 #import "WDDrawingManager.h"
 #import "WDDocument.h"
+#import "GSNote.h"
+#import "GSLabelHead.h"
 
 const float kMinimumDrawingDimension = 16;
 const float kMaximumDrawingDimension = 16000;
@@ -72,6 +74,8 @@ NSString *WDUnitsChangedNotification = @"WDUnitsChangedNotification";
 NSString *WDActiveLayerChanged = @"WDActiveLayerChanged";
 NSString *WDDrawingDimensionsChanged = @"WDDrawingDimensionsChanged";
 NSString *WDGridSpacingChangedNotification = @"WDGridSpacingChangedNotification";
+
+extern NSString *LETTERS;
 
 WDRenderingMetaData WDRenderingMetaDataMake(float scale, UInt32 flags)
 {
@@ -652,10 +656,99 @@ NSLog(@"Elements in drawing: %lu", (unsigned long)[self allElements].count);
     CGContextTranslateCTM(ctx, -styleBounds.origin.x, -styleBounds.origin.y);
     [self renderInContext:ctx clipRect:self.bounds metaData:WDRenderingMetaDataMake(scale, WDRenderDefault)];
     
-    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+    UIImage *plan = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    return result;
+	UIImage *result = [self addNotesToPlanImage:plan];
+	
+	return result;
+}
+
+- (UIImage *)addNotesToPlanImage:(UIImage *)plan
+{
+	UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 3072, 2048)];
+	UIImage *borderedImage = [self imageWithBorderFromImage:plan];
+	UIImageView *imageView = [[UIImageView alloc] initWithImage:borderedImage];
+	[imageView setFrame:CGRectMake(50, 50, 1948, 1948)];
+	imageView.contentMode = UIViewContentModeScaleAspectFit;
+	[view setBackgroundColor:[GS_COLOR_CANVAS colorWithAlphaComponent:.5]];
+//	[imageView.layer setMasksToBounds:YES];
+//	[imageView.layer setBorderColor:GS_COLOR_DARK_GREY_TEXT.CGColor];
+//	[imageView.layer setBorderWidth:4];
+	[view addSubview:imageView];
+	
+	UIView *sideView = [self sideView];
+	
+	[view addSubview:sideView];
+	
+	UIGraphicsBeginImageContext(view.bounds.size);
+	[view.layer renderInContext:UIGraphicsGetCurrentContext()];
+	UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	
+	return result;
+}
+
+- (UIView *)sideView
+{
+	UIView *result = [[UIView alloc] initWithFrame:CGRectMake(2148, 0, 824, 2048)];
+	
+	CGFloat top = 100;
+	NSInteger index = 0;
+	
+	for (GSNote *note in self.notes) {
+		GSLabelHead *label = [[GSLabelHead alloc] initWithFrame:CGRectMake(0, top, 100, 100)];
+		[label setText:[LETTERS substringWithRange:NSMakeRange(index, 1)]];
+		[label setFont:GS_FONT_AVENIR_EXPORT_LETTER];
+		
+		[result addSubview:label];
+		
+		GSLabelHead *bodyLabel = [[GSLabelHead alloc] initWithFrame:CGRectMake(100, top, 724, 0)];
+		
+		[bodyLabel setNumberOfLines:0];
+		
+		NSString *text = note.bodyText;
+		[bodyLabel setText:text];
+		[bodyLabel setFont:GS_FONT_AVENIR_EXPORT_BODY];
+		
+		NSDictionary *attributes = @{NSFontAttributeName:GS_FONT_AVENIR_EXPORT_BODY};
+		// NSString class method: boundingRectWithSize:options:attributes:context is
+		// available only on ios7.0 sdk.
+		CGRect rect = [text boundingRectWithSize:CGSizeMake(724, CGFLOAT_MAX)
+										 options:NSStringDrawingUsesLineFragmentOrigin
+									  attributes:attributes
+										 context:nil];
+		
+		rect.origin.x = 100;
+		rect.origin.y = top + 20;
+		rect.size.width = 724;
+		[bodyLabel setFrame:rect];
+		
+		[result addSubview:bodyLabel];
+		
+		top += MAX(100, rect.size.height) + 20; // margin
+	
+		index++;
+	}
+	
+	return result;
+}
+
+- (UIImage*)imageWithBorderFromImage:(UIImage*)source;
+{
+	CGSize size = [source size];
+	UIGraphicsBeginImageContext(size);
+	CGRect rect = CGRectMake(0, 0, size.width, size.height);
+	[source drawInRect:rect blendMode:kCGBlendModeNormal alpha:1.0];
+	
+	CGContextRef context = UIGraphicsGetCurrentContext();
+	CGContextSetStrokeColorWithColor(context, GS_COLOR_DARK_GREY_TEXT.CGColor);
+	CGContextSetLineWidth(context, 2.0);
+	CGContextStrokeRect(context, rect);
+	
+	UIImage *testImg =  UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	return testImg;
 }
 
 //
