@@ -257,7 +257,7 @@
 
 - (void) shareTapped:(WDThumbnailView *)thumbView
 {
-	[self.sidebar.canvasController exportAsJPEG:self];
+	[self.sidebar.canvasController exportAsPNG:self];
 }
 
 - (WDThumbnailView *) getThumbnail:(NSString *)filename
