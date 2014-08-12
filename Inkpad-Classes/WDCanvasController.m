@@ -1481,7 +1481,9 @@
 
 - (void) export:(id)sender format:(NSString *)format
 {
-    NSString *baseFilename = [self.document.filename stringByDeletingPathExtension];
+	[self.canvas startActivity];
+	
+	NSString *baseFilename = [self.document.filename stringByDeletingPathExtension];
     NSString *filename = nil;
 
     // Generates export file in requested format
@@ -1491,6 +1493,9 @@
     } else if ([format isEqualToString:@"PNG"]) {
         filename = [NSTemporaryDirectory() stringByAppendingPathComponent:[baseFilename stringByAppendingPathExtension:@"png"]];
         [UIImagePNGRepresentation([canvas_.drawing image]) writeToFile:filename atomically:YES];
+    } else if ([format isEqualToString:@"JPEG"]) {
+        filename = [NSTemporaryDirectory() stringByAppendingPathComponent:[baseFilename stringByAppendingPathExtension:@"jpg"]];
+        [UIImageJPEGRepresentation([canvas_.drawing image], 0.9) writeToFile:filename atomically:YES];
     } else if ([format isEqualToString:@"SVG"]) {
         filename = [NSTemporaryDirectory() stringByAppendingPathComponent:[baseFilename stringByAppendingPathExtension:@"svg"]];
         [[self.drawing SVGRepresentation] writeToFile:filename atomically:YES];
@@ -1503,11 +1508,17 @@
         [self.documentInteractionController setDelegate:self];
         [self.documentInteractionController presentPreviewAnimated:YES];
     }
+
 }
 
 - (void) exportAsPNG:(id)sender
 {
     [self export:sender format:@"PNG"];
+}
+
+- (void) exportAsJPEG:(id)sender
+{
+    [self export:sender format:@"JPEG"];
 }
 
 - (void) exportAsPDF:(id)sender
@@ -1533,6 +1544,8 @@
     if(exportFileUrl) {
         [[NSFileManager defaultManager] removeItemAtURL:exportFileUrl error:&error];
     }
+	
+	[self.canvas stopActivity];
 }
 
 @end

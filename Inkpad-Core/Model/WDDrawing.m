@@ -30,7 +30,7 @@
 
 const float kMinimumDrawingDimension = 16;
 const float kMaximumDrawingDimension = 16000;
-const float kMaximumBitmapImageArea = 4096 * 4096;
+const float kMaximumBitmapImageArea = 4048 * 4048;
 const float kMaximumCopiedBitmapImageDimension = 2048;
 const float kMaximumThumbnailDimension = 120;
 
@@ -574,6 +574,9 @@ NSLog(@"Elements in drawing: %lu", (unsigned long)[self allElements].count);
 {
     // make sure blending modes behave correctly
     CGContextBeginTransparencyLayer(ctx, NULL);
+	
+	CGContextSetFillColorWithColor(ctx, GS_COLOR_CANVAS.CGColor);
+	CGContextFillRect(ctx, clip);
     
     for (WDLayer *layer in layers_) {
         if (!layer.hidden) {        
@@ -626,7 +629,7 @@ NSLog(@"Elements in drawing: %lu", (unsigned long)[self allElements].count);
     }
     
     // there's no canonical mapping from units to pixels: we'll double the resolution
-    double  scale = 2.0f;
+    double  scale = 1.0f;
     CGSize  dimensions = WDMultiplySizeScalar(styleBounds.size, scale);
     double  area = dimensions.width * dimensions.height;
     
