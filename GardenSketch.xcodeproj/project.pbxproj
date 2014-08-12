@@ -295,6 +295,7 @@
 		4D081C1C195B8B4A00F8871C /* Plant_Indigo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C15195B8B4A00F8871C /* Plant_Indigo.svg */; };
 		4D081C1D195B8B4A00F8871C /* Plant_Light_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C16195B8B4A00F8871C /* Plant_Light_Green.svg */; };
 		4D081C1E195B8B4A00F8871C /* Plant_Light_Pink.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C17195B8B4A00F8871C /* Plant_Light_Pink.svg */; };
+		4D242C21199ABA1B008433DC /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C20199ABA1B008433DC /* delete.png */; };
 		4D3CFA9519958B01000CCD31 /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA9419958B01000CCD31 /* Add@2x.png */; };
 		4D3CFA99199599F7000CCD31 /* Grid_Hide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */; };
 		4D3CFA9A199599F7000CCD31 /* Grid_Show@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */; };
@@ -981,6 +982,7 @@
 		4D081C15195B8B4A00F8871C /* Plant_Indigo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Indigo.svg; sourceTree = "<group>"; };
 		4D081C16195B8B4A00F8871C /* Plant_Light_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Light_Green.svg; sourceTree = "<group>"; };
 		4D081C17195B8B4A00F8871C /* Plant_Light_Pink.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Light_Pink.svg; sourceTree = "<group>"; };
+		4D242C20199ABA1B008433DC /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		4D3CFA9419958B01000CCD31 /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
 		4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Hide@2x.png"; sourceTree = "<group>"; };
 		4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Show@2x.png"; sourceTree = "<group>"; };
@@ -1431,6 +1433,7 @@
 		4D05DB9F194F5C80001F19A7 /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				4D242C20199ABA1B008433DC /* delete.png */,
 				4D3CFAEE19999891000CCD31 /* Shrub_Brown.png */,
 				4D3CFADE199995B5000CCD31 /* Flower_Pot.png */,
 				4D3CFACC1999955B000CCD31 /* Coniferous_Dark_Green.png */,
@@ -2672,6 +2675,7 @@
 				4D081BD4195351AC00F8871C /* Toucan in the Shade.inkpad in Resources */,
 				4D081C00195B3E4F00F8871C /* Tile@2x.png in Resources */,
 				4D576062196481CE00DCCBEF /* Deciduous_Tree_Green.svg in Resources */,
+				4D242C21199ABA1B008433DC /* delete.png in Resources */,
 				4D6674F4199441E100A17C4E /* CompassLg_Base@2x.png in Resources */,
 				4D576052195E0E5300DCCBEF /* Shrub_Viridian.svg in Resources */,
 				4D6674B91989B4DC00A17C4E /* L_Shaped_House_3.stencil in Resources */,
