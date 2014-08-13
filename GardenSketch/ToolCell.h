@@ -12,8 +12,11 @@
 #import "GSLabel.h"
 #import "StencilManager.h"
 #import "GSButton.h"
+#import "WDDrawingController.h"
 
 @interface ToolCell : UICollectionViewCell
+
+@property (nonatomic, weak) WDDrawingController *drawingController;
 
 @property (weak, nonatomic) IBOutlet UIView *primaryView;
 @property (weak, nonatomic) IBOutlet UIView *secondaryView;

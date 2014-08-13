@@ -12,8 +12,11 @@
 #import "WDFreehandTool.h"
 #import "WDShapeTool.h"
 #import "WDToolManager.h"
+#import "StencilManager.h"
 
 #define COLOR_PICKER_LEFT 225.0
+
+extern NSString *WDStrokeWidthProperty;
 
 @implementation ToolCell
 
@@ -53,13 +56,7 @@
 
 - (void)updateToolSubviews
 {
-	if ([self needColorPicker]) {
-		[self.colorPicker setHidden:NO];
-		[self.colorLabel setHidden:NO];
-	} else {
-		[self.colorPicker setHidden:YES];
-		[self.colorLabel setHidden:YES];
-	}
+	[self setupColorPickerForTool:self.toolButton.tool];
 	
 	if ([self.toolButton.tool isKindOfClass:[WDShapeTool class]] ||
 		[self.toolButton.tool isKindOfClass:[WDFreehandTool class]]) {
@@ -79,6 +76,7 @@
 	}
 	
 	if ([self.toolButton.tool isKindOfClass:[WDFreehandTool class]] && ([(WDFreehandTool *)self.toolButton.tool closeShape])) {
+		// Area tool
 		self.smallButton.hidden = self.mediumButton.hidden = self.largeButton.hidden = YES;
 		[self.sizeLabel setHidden:YES];
 		CGRect frame = self.colorPicker.frame;
@@ -90,6 +88,7 @@
 		labelFrame.size.width = self.frame.size.width;
 		[self.colorLabel setFrame:labelFrame];
 	} else {
+		// Everything else
 		self.smallButton.hidden = self.mediumButton.hidden = self.largeButton.hidden = NO;
 		[self.sizeLabel setHidden:NO];
 		CGRect frame = self.colorPicker.frame;
@@ -107,7 +106,8 @@
 	ShapeSize activeShapeSize = [[StencilManager sharedInstance] sizeForActiveShape];
 	[self setSelectedSizeButton:activeShapeSize];
 	
-	if ([StencilManager sharedInstance].activeShapeType == kFreehandLine) {
+	if ([StencilManager sharedInstance].activeShapeType == kFreehandLine ||
+		[StencilManager sharedInstance].activeShapeType == kStraightLine) {
 		
 		CGFloat strokeWidth = 1.0;
 		
@@ -125,10 +125,8 @@
 				break;
 		}
 		
-		//		[self.sidebar.canvasController.drawingController setValue:[NSNumber numberWithFloat:strokeWidth]
-		//													  forProperty:WDStrokeWidthProperty];
-	} else if ([StencilManager sharedInstance].activeShapeType == kStraightLine) {
-		// TODO
+		[self.drawingController setValue:[NSNumber numberWithFloat:strokeWidth]
+													  forProperty:WDStrokeWidthProperty];
 	}
 }
 
@@ -222,7 +220,8 @@
 	
 	[[StencilManager sharedInstance] setSizeForActiveShape:shapeSize];
 	
-	if ([StencilManager sharedInstance].activeShapeType == kFreehandLine) {
+	if ([StencilManager sharedInstance].activeShapeType == kFreehandLine ||
+		[StencilManager sharedInstance].activeShapeType == kStraightLine) {
 		
 		CGFloat strokeWidth = 1.0;
 		
@@ -239,12 +238,8 @@
 			default:
 				break;
 		}
-	
-		// FIXME:
-//	[self.sidebar.canvasController.drawingController setValue:[NSNumber numberWithFloat:strokeWidth]
-//													  forProperty:WDStrokeWidthProperty];
-	} else if ([StencilManager sharedInstance].activeShapeType == kStraightLine) {
-		// TODO
+		[self.drawingController setValue:[NSNumber numberWithFloat:strokeWidth]
+														forProperty:WDStrokeWidthProperty];
 	}
 }
 
@@ -290,6 +285,25 @@
 		} else {
 			[button setSelected:NO];
 		}
+	}
+}
+
+- (void)setupColorPickerForTool:(WDTool *)tool
+{
+	if (tool == [WDToolManager sharedInstance].straightLine) {
+		[self.colorPicker didSelectIndex:[[StencilManager sharedInstance] straightLineColor]];
+	} else if (tool == [WDToolManager sharedInstance].freehandLine) {
+		[self.colorPicker didSelectIndex:[[StencilManager sharedInstance] freehandLineColor]];
+	} else if (tool == [WDToolManager sharedInstance].area) {
+		[self.colorPicker didSelectIndex:[[StencilManager sharedInstance] areaColor]];
+	}
+	
+	if ([self needColorPicker]) {
+		[self.colorPicker setHidden:NO];
+		[self.colorLabel setHidden:NO];
+	} else {
+		[self.colorPicker setHidden:YES];
+		[self.colorLabel setHidden:YES];
 	}
 }
 

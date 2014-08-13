@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ColorPickerViewController.h"
+#import "WDTool.h"
 
 @protocol ColorPickerButtonDelegate;
 
@@ -18,9 +19,11 @@
 
 @property (nonatomic, strong) NSArray *colors;
 @property (nonatomic, assign) id<ColorPickerButtonDelegate> delegate;
+@property (nonatomic, assign) NSInteger selectedColorIndex;
+@property (nonatomic, weak) WDTool *tool;
 
 - (void) showColors:(id)sender;
-- (void)setSelectedColorIndex:(NSInteger)index;
+- (void) setSelectedColorIndex:(NSInteger)index;
 
 @end
 

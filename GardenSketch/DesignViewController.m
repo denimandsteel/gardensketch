@@ -148,11 +148,6 @@
 	[nc addObserver:self selector:@selector(undoStatusDidChange:) name:NSUndoManagerDidRedoChangeNotification object:undoManager];
     [nc addObserver:self selector:@selector(undoStatusDidChange:) name:NSUndoManagerDidCloseUndoGroupNotification object:undoManager];
 	
-	[nc addObserver:self
-           selector:@selector(activeShapeChanged:)
-               name:WDStencilShapeChanged
-             object:nil];
-	
 	WDDocument *currentDocument = self.sidebar.canvasController.document;
 	NSString *planName = currentDocument.displayName;
 	
@@ -234,73 +229,6 @@
     self.deleteButton.enabled = self.cloneButton.enabled = (self.sidebar.canvasController.drawingController.selectedObjects.count > 0) ? YES : NO;
 }
 
-- (void) activeShapeChanged:(NSNotification *)aNotification
-{
-//	ShapeType type = (ShapeType)[aNotification.userInfo[@"shapeType"] integerValue];
-//    // TODO: update the selected size, and the color picker palette and active colors.
-//	NSLog(@"active shape changed to: %lu", [aNotification.userInfo[@"shapeType"] integerValue]);
-	
-//	switch (type) {
-//		case kPlant:
-//			[self.colorPicker setEnabled:YES];
-//			[self.colorPicker setColors:plantColors];
-//			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] plantColor]];
-//			break;
-//		case kShrub:
-//		case kHedge:
-//			[self.colorPicker setEnabled:YES];
-//			[self.colorPicker setColors:shrubColors];
-//			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] shrubColor]];
-//			break;
-//		case kTreeConiferous:
-//		case kTreeDeciduous:
-//			[self.colorPicker setEnabled:YES];
-//			[self.colorPicker setColors:treeColors];
-//			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] treeColor]];
-//			break;
-//		case kLine:
-//			[self.colorPicker setEnabled:YES];
-//			[self.colorPicker setColors:outlineColors];
-//			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] outlineColor]];
-//						
-//			break;
-//		case kArea:
-//			[self.colorPicker setEnabled:YES];
-//			[self.colorPicker setColors:areaColors];
-//			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] areaColor]];
-//		default:
-//			break;
-//	}
-//	
-//	// update the selected size button
-//	ShapeSize activeShapeSize = [[StencilManager sharedInstance] sizeForActiveShape];
-//	[self setSelectedSizeButton:activeShapeSize];
-//	
-//	if (type == kLine) {
-//		
-//		CGFloat strokeWidth = 1.0;
-//		
-//		switch (activeShapeSize) {
-//			case kSmall:
-//				strokeWidth = 1.0;
-//				break;
-//			case kMedium:
-//				strokeWidth = 3.0;
-//				break;
-//			case kBig:
-//				strokeWidth = 6.0;
-//				break;
-//			default:
-//				break;
-//		}
-//		
-//		[self.sidebar.canvasController.drawingController setValue:[NSNumber numberWithFloat:strokeWidth]
-//													  forProperty:WDStrokeWidthProperty];
-//	}
-}
-
-
-
 - (void) undoStatusDidChange:(NSNotification *)aNotification
 {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -312,47 +240,31 @@
 #pragma mark - Color picker delegate methods
 - (void)colorPicker:(ColorPickerButton *)colorpicker didSelectIndex:(NSInteger)index
 {
+	WDTool *tool = colorpicker.tool;
 	ShapeType activeType = [StencilManager sharedInstance].activeShapeType;
 	
-	switch (activeType) {
-		case kPlant:
-			[[StencilManager sharedInstance] setPlantColor:(PlantColor)index];
-			break;
-		case kShrub:
-			[[StencilManager sharedInstance] setShrubColor:(ShrubColor)index];
-			break;
-		case kHedge:
-			[[StencilManager sharedInstance] setHedgeColor:(ShrubColor)index];
-			break;
-		case kTreeConiferous:
-			[[StencilManager sharedInstance] setConiferousTreeColor:(TreeColor)index];
-			break;
-		case kTreeDeciduous:
-			[[StencilManager sharedInstance] setDeciduousTreeColor:(TreeColor)index];
-			break;
-		case kFreehandLine:
-		{
-			[[StencilManager sharedInstance] setFreehandLineColor:(OutlineColor)index];
-			UIColor *color = colorpicker.colors[index];
-			[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
-			break;
-		}
-		case kStraightLine:
-		{
-			[[StencilManager sharedInstance] setStraightLineColor:(OutlineColor)index];
-			UIColor *color = colorpicker.colors[index];
-			[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
-			break;
-		}
-		case kArea:
-		{
-			[[StencilManager sharedInstance] setAreaColor:(AreaColor)index];
-			UIColor *color = colorpicker.colors[index];
-			[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDFillProperty];
-			break;
-		}
-		default:
-			break;
+	if (tool == [WDToolManager sharedInstance].plant) {
+		[[StencilManager sharedInstance] setPlantColor:(PlantColor)index];
+	} else if (tool == [WDToolManager sharedInstance].shrub) {
+		[[StencilManager sharedInstance] setShrubColor:(ShrubColor)index];
+	} else if (tool == [WDToolManager sharedInstance].hedge) {
+		[[StencilManager sharedInstance] setHedgeColor:(ShrubColor)index];
+	} else if (tool == [WDToolManager sharedInstance].coniferousTree) {
+		[[StencilManager sharedInstance] setConiferousTreeColor:(TreeColor)index];
+	} else if (tool == [WDToolManager sharedInstance].deciduousTree) {
+		[[StencilManager sharedInstance] setDeciduousTreeColor:(TreeColor)index];
+	} else if (tool == [WDToolManager sharedInstance].straightLine) {
+		[[StencilManager sharedInstance] setStraightLineColor:(OutlineColor)index];
+		UIColor *color = colorpicker.colors[index];
+		[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
+	} else if (tool == [WDToolManager sharedInstance].freehandLine) {
+		[[StencilManager sharedInstance] setFreehandLineColor:(OutlineColor)index];
+		UIColor *color = colorpicker.colors[index];
+		[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
+	} else if (tool == [WDToolManager sharedInstance].area) {
+		[[StencilManager sharedInstance] setAreaColor:(AreaColor)index];
+		UIColor *color = colorpicker.colors[index];
+		[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDFillProperty];
 	}
 }
 
@@ -389,6 +301,7 @@
 	ToolCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ToolCellIdentifier" forIndexPath:indexPath];
 	
 	[cell.colorPicker setDelegate:self];
+	cell.drawingController = self.sidebar.canvasController.drawingController;
 	
 	WDTool *tool = nil;
 	
@@ -397,17 +310,21 @@
 		{
 			switch (indexPath.row) {
 				case 0:
-					tool = [WDToolManager sharedInstance].line;
+					tool = [WDToolManager sharedInstance].straightLine;
+					[cell.colorPicker setTool:tool];
+					// TODO move these to the setTool setter in color picker.
 					[cell.colorPicker setColors:outlineColors];
 					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] straightLineColor]];
 					break;
 				case 1:
-					tool = [WDToolManager sharedInstance].freehand;
+					tool = [WDToolManager sharedInstance].freehandLine;
+					[cell.colorPicker setTool:tool];
 					[cell.colorPicker setColors:outlineColors];
 					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] freehandLineColor]];
 					break;
 				case 2:
-					tool = [WDToolManager sharedInstance].enclosed;
+					tool = [WDToolManager sharedInstance].area;
+					[cell.colorPicker setTool:tool];
 					[cell.colorPicker setColors:areaColors];
 					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] areaColor]];
 					break;
@@ -419,26 +336,31 @@
 			switch (indexPath.row) {
 				case 0:
 					tool = [WDToolManager sharedInstance].plant;
+					[cell.colorPicker setTool:tool];
 					[cell.colorPicker setColors:plantColors];
 					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] plantColor]];
 					break;
 				case 1:
 					tool = [WDToolManager sharedInstance].shrub;
+					[cell.colorPicker setTool:tool];
 					[cell.colorPicker setColors:shrubColors];
 					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] shrubColor]];
 					break;
 				case 2:
 					tool = [WDToolManager sharedInstance].hedge;
+					[cell.colorPicker setTool:tool];
 					[cell.colorPicker setColors:shrubColors];
 					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] shrubColor]];
 					break;
 				case 3:
 					tool = [WDToolManager sharedInstance].deciduousTree;
+					[cell.colorPicker setTool:tool];
 					[cell.colorPicker setColors:treeColors];
 					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] deciduousTreeColor]];
 					break;
 				case 4:
 					tool = [WDToolManager sharedInstance].coniferousTree;
+					[cell.colorPicker setTool:tool];
 					[cell.colorPicker setColors:treeColors];
 					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] coniferousTreeColor]];
 					break;
@@ -571,11 +493,11 @@
 
 - (NSIndexPath *)indexPathForTool:(WDTool *)tool
 {
-	if (tool == [WDToolManager sharedInstance].line) {
+	if (tool == [WDToolManager sharedInstance].straightLine) {
 		return [NSIndexPath indexPathForItem:0 inSection:0];
-	} else if (tool == [WDToolManager sharedInstance].freehand) {
+	} else if (tool == [WDToolManager sharedInstance].freehandLine) {
 		return [NSIndexPath indexPathForItem:1 inSection:0];
-	} else if (tool == [WDToolManager sharedInstance].enclosed) {
+	} else if (tool == [WDToolManager sharedInstance].area) {
 		return [NSIndexPath indexPathForItem:2 inSection:0];
 	} else if (tool == [WDToolManager sharedInstance].plant) {
 		return [NSIndexPath indexPathForItem:0 inSection:1];

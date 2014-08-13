@@ -41,6 +41,7 @@
 	_colors = colors;
 	colorController = nil;
 	popover_ = nil;
+	_selectedColorIndex = 0;
 }
 
 - (void) showColors:(id)sender
@@ -75,6 +76,7 @@
 
 - (void)setSelectedColorIndex:(NSInteger)index
 {
+	_selectedColorIndex = index;
 	[self setBackgroundColor:self.colors[index]];
 }
 

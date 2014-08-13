@@ -143,9 +143,9 @@ NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 				   scale];
 		
 		self.select = select;
-		self.freehand = freehand;
-		self.enclosed = enclosed;
-		self.line = line;
+		self.freehandLine = freehand;
+		self.area = enclosed;
+		self.straightLine = line;
 		self.plant = plant;
 		self.shrub = shrub;
 		self.hedge = horizontalHedge;
