@@ -21,8 +21,8 @@
 #import "Constants.h"
 #import "WDDocument.h"
 
-extern const NSString* GSNotificationCanvasActivityStarted;
-extern const NSString* GSNotificationCanvasActivityStopped;
+extern NSString* GSNotificationCanvasActivityStarted;
+extern NSString* GSNotificationCanvasActivityStopped;
 
 @interface MainViewController ()
 	@property (strong, nonatomic) TutorialViewController *tutorial;

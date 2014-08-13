@@ -111,6 +111,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+	[self.headerBackgroundView setBackgroundColor:GS_COLOR_DARK_GREY_BACKGROUND];
+	
 	WDDocument *currentDocument = self.sidebar.canvasController.document;
 	NSString *planName = currentDocument.displayName;
 	[self.planNameLabel setText:planName];
@@ -234,9 +236,9 @@
 
 - (void) activeShapeChanged:(NSNotification *)aNotification
 {
-	ShapeType type = (ShapeType)[aNotification.userInfo[@"shapeType"] integerValue];
-    // TODO: update the selected size, and the color picker palette and active colors.
-	NSLog(@"active shape changed to: %lu", [aNotification.userInfo[@"shapeType"] integerValue]);
+//	ShapeType type = (ShapeType)[aNotification.userInfo[@"shapeType"] integerValue];
+//    // TODO: update the selected size, and the color picker palette and active colors.
+//	NSLog(@"active shape changed to: %lu", [aNotification.userInfo[@"shapeType"] integerValue]);
 	
 //	switch (type) {
 //		case kPlant:
@@ -328,9 +330,16 @@
 		case kTreeDeciduous:
 			[[StencilManager sharedInstance] setDeciduousTreeColor:(TreeColor)index];
 			break;
-		case kLine:
+		case kFreehandLine:
 		{
-			[[StencilManager sharedInstance] setOutlineColor:(OutlineColor)index];
+			[[StencilManager sharedInstance] setFreehandLineColor:(OutlineColor)index];
+			UIColor *color = colorpicker.colors[index];
+			[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
+			break;
+		}
+		case kStraightLine:
+		{
+			[[StencilManager sharedInstance] setStraightLineColor:(OutlineColor)index];
 			UIColor *color = colorpicker.colors[index];
 			[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
 			break;
@@ -390,12 +399,12 @@
 				case 0:
 					tool = [WDToolManager sharedInstance].line;
 					[cell.colorPicker setColors:outlineColors];
-					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] outlineColor]];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] straightLineColor]];
 					break;
 				case 1:
 					tool = [WDToolManager sharedInstance].freehand;
 					[cell.colorPicker setColors:outlineColors];
-					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] outlineColor]];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] freehandLineColor]];
 					break;
 				case 2:
 					tool = [WDToolManager sharedInstance].enclosed;
@@ -503,6 +512,7 @@
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
 	if (selectedToolIndexPath) {
+		// Deselect if already selected:
 		if ([selectedToolIndexPath compare:indexPath] == NSOrderedSame) {
 			[collectionView deselectItemAtIndexPath:selectedToolIndexPath animated:YES];
 			selectedToolIndexPath = nil;

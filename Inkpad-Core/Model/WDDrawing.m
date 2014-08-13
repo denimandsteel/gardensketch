@@ -654,6 +654,12 @@ NSLog(@"Elements in drawing: %lu", (unsigned long)[self allElements].count);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     CGContextScaleCTM(ctx, scale, scale);
     CGContextTranslateCTM(ctx, -styleBounds.origin.x, -styleBounds.origin.y);
+	
+	// temporarily make the notes layer visible
+	for (WDLayer *layer in self.layers) {
+		[layer setHidden:NO];
+	}
+	
     [self renderInContext:ctx clipRect:self.bounds metaData:WDRenderingMetaDataMake(scale, WDRenderDefault)];
     
     UIImage *plan = UIGraphicsGetImageFromCurrentImageContext();
@@ -661,23 +667,30 @@ NSLog(@"Elements in drawing: %lu", (unsigned long)[self allElements].count);
     
 	UIImage *result = [self addNotesToPlanImage:plan];
 	
+	// hide notes layer
+	WDLayer *notesLayer = [self.layers lastObject];
+	[notesLayer setHidden:YES];
+	
 	return result;
 }
 
 - (UIImage *)addNotesToPlanImage:(UIImage *)plan
 {
-	UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 3072, 2048)];
+	UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 3072, 2148)];
 	UIImage *borderedImage = [self imageWithBorderFromImage:plan];
 	UIImageView *imageView = [[UIImageView alloc] initWithImage:borderedImage];
-	[imageView setFrame:CGRectMake(50, 50, 1948, 1948)];
+	[imageView setFrame:CGRectMake(100, 100, 1948, 1948)];
 	imageView.contentMode = UIViewContentModeScaleAspectFit;
-	[view setBackgroundColor:[GS_COLOR_CANVAS colorWithAlphaComponent:.5]];
-//	[imageView.layer setMasksToBounds:YES];
-//	[imageView.layer setBorderColor:GS_COLOR_DARK_GREY_TEXT.CGColor];
-//	[imageView.layer setBorderWidth:4];
+	[view setBackgroundColor:[UIColor whiteColor]];
 	[view addSubview:imageView];
 	
 	UIView *sideView = [self sideView];
+	
+	if (sideView.frame.size.height > view.frame.size.height) {
+		CGRect frame = view.frame;
+		frame.size.height = sideView.frame.size.height;
+		[view setFrame:frame];
+	}
 	
 	[view addSubview:sideView];
 	
@@ -696,6 +709,34 @@ NSLog(@"Elements in drawing: %lu", (unsigned long)[self allElements].count);
 	CGFloat top = 100;
 	NSInteger index = 0;
 	
+	NSString *planName = [[(WDDocument *)self.document filename] stringByDeletingPathExtension];
+	GSLabelHead *planNameLabel = [[GSLabelHead alloc] initWithFrame:CGRectMake(0, top, 824, 0)];
+	[planNameLabel setNumberOfLines:0];
+	[planNameLabel setText:planName];
+	[planNameLabel setFont:GS_FONT_AVENIR_EXPORT_LETTER];
+	NSDictionary *attributes = @{NSFontAttributeName:GS_FONT_AVENIR_EXPORT_LETTER};
+	CGRect rect = [planName boundingRectWithSize:CGSizeMake(724, CGFLOAT_MAX)
+									 options:NSStringDrawingUsesLineFragmentOrigin
+								  attributes:attributes
+									 context:nil];
+	rect.size.width = 824;
+	rect.origin.x = 0;
+	rect.origin.y = top;
+	[planNameLabel setFrame:rect];
+	[result addSubview:planNameLabel];
+	top += rect.size.height + 50;
+	
+	GSLabelHead *exportDateLabel = [[GSLabelHead alloc] initWithFrame:CGRectMake(0, top, 824, 50)];
+	[exportDateLabel setTextAlignment:NSTextAlignmentRight];
+	NSString *dateString;
+	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+	formatter.dateStyle = NSDateFormatterLongStyle;
+	dateString = [formatter stringFromDate:[NSDate date]];
+	[exportDateLabel setText:dateString];
+	[exportDateLabel setFont:GS_FONT_AVENIR_EXPORT_BODY];
+	[result addSubview:exportDateLabel];
+	top += 150;
+	
 	for (GSNote *note in self.notes) {
 		GSLabelHead *label = [[GSLabelHead alloc] initWithFrame:CGRectMake(0, top, 100, 100)];
 		[label setText:[LETTERS substringWithRange:NSMakeRange(index, 1)]];
@@ -712,8 +753,6 @@ NSLog(@"Elements in drawing: %lu", (unsigned long)[self allElements].count);
 		[bodyLabel setFont:GS_FONT_AVENIR_EXPORT_BODY];
 		
 		NSDictionary *attributes = @{NSFontAttributeName:GS_FONT_AVENIR_EXPORT_BODY};
-		// NSString class method: boundingRectWithSize:options:attributes:context is
-		// available only on ios7.0 sdk.
 		CGRect rect = [text boundingRectWithSize:CGSizeMake(724, CGFLOAT_MAX)
 										 options:NSStringDrawingUsesLineFragmentOrigin
 									  attributes:attributes
@@ -729,6 +768,23 @@ NSLog(@"Elements in drawing: %lu", (unsigned long)[self allElements].count);
 		top += MAX(100, rect.size.height) + 20; // margin
 	
 		index++;
+	}
+	
+	top += 50;
+	
+	GSLabelHead *copyrightLabel = [[GSLabelHead alloc] initWithFrame:CGRectMake(0, top, 824, 50)];
+	[copyrightLabel setTextAlignment:NSTextAlignmentRight];
+	[copyrightLabel setText:@"Made with Garden Sketch"];
+	[copyrightLabel setFont:GS_FONT_AVENIR_EXPORT_BODY];
+	[result addSubview:copyrightLabel];
+	
+	top += 50;
+	
+	// resize the resulting view, incase there are too many notes.
+	if (top > 2048) {
+		CGRect frame = result.frame;
+		frame.size.height = top + 100;
+		[result setFrame:frame];
 	}
 	
 	return result;

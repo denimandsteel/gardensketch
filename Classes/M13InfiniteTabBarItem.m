@@ -44,10 +44,10 @@
         _icon = _unselectedIcon;
         self.backgroundColor = [UIColor clearColor];
         _unselectedTitleColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1];
-        _selectedTitleColor = [UIColor colorWithRed:0.02 green:0.47 blue:1 alpha:1];
+        _selectedTitleColor = GS_COLOR_ACCENT_BLUE;
         _attentionTitleColor = [UIColor colorWithRed:0.98 green:0.24 blue:0.15 alpha:1];
         _unselectedIconTintColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1];
-        _selectedIconTintColor = [UIColor colorWithRed:0.02 green:0.47 blue:1 alpha:1];
+        _selectedIconTintColor = GS_COLOR_ACCENT_BLUE;
         _attentionIconTintColor = [UIColor colorWithRed:0.98 green:0.24 blue:0.15 alpha:1];
         
         //Create icon's view
@@ -76,8 +76,8 @@
 {
     [super layoutSubviews];
     _containerView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-    _iconView.frame = CGRectMake(7, 7, self.frame.size.width - 14, 29);
-    _titleLabel.frame = CGRectMake(2, 37, self.frame.size.width - 4, 10);
+    _iconView.frame = CGRectMake(7, 4, self.frame.size.width - 14, 29);
+    _titleLabel.frame = CGRectMake(2, 37, self.frame.size.width - 4, 11);
 }
 
 - (void)rotateToAngle:(CGFloat)angle

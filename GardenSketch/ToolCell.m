@@ -107,7 +107,7 @@
 	ShapeSize activeShapeSize = [[StencilManager sharedInstance] sizeForActiveShape];
 	[self setSelectedSizeButton:activeShapeSize];
 	
-	if ([StencilManager sharedInstance].activeShapeType == kLine) {
+	if ([StencilManager sharedInstance].activeShapeType == kFreehandLine) {
 		
 		CGFloat strokeWidth = 1.0;
 		
@@ -127,6 +127,8 @@
 		
 		//		[self.sidebar.canvasController.drawingController setValue:[NSNumber numberWithFloat:strokeWidth]
 		//													  forProperty:WDStrokeWidthProperty];
+	} else if ([StencilManager sharedInstance].activeShapeType == kStraightLine) {
+		// TODO
 	}
 }
 
@@ -220,7 +222,7 @@
 	
 	[[StencilManager sharedInstance] setSizeForActiveShape:shapeSize];
 	
-	if ([StencilManager sharedInstance].activeShapeType == kLine) {
+	if ([StencilManager sharedInstance].activeShapeType == kFreehandLine) {
 		
 		CGFloat strokeWidth = 1.0;
 		
@@ -241,6 +243,8 @@
 		// FIXME:
 //	[self.sidebar.canvasController.drawingController setValue:[NSNumber numberWithFloat:strokeWidth]
 //													  forProperty:WDStrokeWidthProperty];
+	} else if ([StencilManager sharedInstance].activeShapeType == kStraightLine) {
+		// TODO
 	}
 }
 

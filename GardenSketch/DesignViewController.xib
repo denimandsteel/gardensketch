@@ -9,6 +9,7 @@
                 <outlet property="cloneButton" destination="zbP-KG-mCL" id="6rd-AT-o9J"/>
                 <outlet property="deleteButton" destination="6oK-vt-3Eb" id="j6g-K5-deA"/>
                 <outlet property="gridButton" destination="ufh-Yh-Q4g" id="BdO-bp-yqV"/>
+                <outlet property="headerBackgroundView" destination="T7k-Tt-jL5" id="gSc-9d-1Lg"/>
                 <outlet property="planNameLabel" destination="lrp-fC-sle" id="0Dv-8G-UQA"/>
                 <outlet property="redoButton" destination="cqt-tn-aZb" id="0WF-kK-YJr"/>
                 <outlet property="selectButton" destination="Nrh-Lt-ZnP" id="d0v-xG-BPP"/>
@@ -62,7 +63,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.96677564540000005" green="0.96677564540000005" blue="0.96677564540000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YXC-68-eNs">
                     <rect key="frame" x="0.0" y="658" width="340" height="50"/>

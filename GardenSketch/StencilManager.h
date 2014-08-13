@@ -28,7 +28,8 @@ typedef enum {
 	kShed,
 	kWaterFeature,
 	kGazebo,
-	kLine,
+	kFreehandLine,
+	kStraightLine,
 	kArea,
 	kFlowerPot
 } ShapeType;
@@ -93,7 +94,8 @@ typedef enum {
 @property (nonatomic, assign) ShrubColor hedgeColor;
 @property (nonatomic, assign) TreeColor deciduousTreeColor;
 @property (nonatomic, assign) TreeColor coniferousTreeColor;
-@property (nonatomic, assign) OutlineColor outlineColor;
+@property (nonatomic, assign) OutlineColor freehandLineColor;
+@property (nonatomic, assign) OutlineColor straightLineColor;
 @property (nonatomic, assign) AreaColor areaColor;
 
 @property (nonatomic, strong) NSMutableDictionary *shapeSize;

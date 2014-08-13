@@ -12,6 +12,8 @@
 
 @interface DesignViewController : SidebarContentViewController <ColorPickerButtonDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *headerBackgroundView;
+
 @property (weak, nonatomic) IBOutlet UICollectionView *toolsCollectionView;
 
 @property (weak, nonatomic) IBOutlet UILabel *planNameLabel;

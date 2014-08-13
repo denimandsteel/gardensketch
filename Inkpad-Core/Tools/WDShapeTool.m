@@ -75,7 +75,7 @@ NSString *WDShapeToolSpiralDecay = @"WDShapeToolSpiralDecay";
 - (void) activated
 {
 	if (self.shapeMode == WDShapeLine) {
-		[[StencilManager sharedInstance] setActiveShapeType:kLine];
+		[[StencilManager sharedInstance] setActiveShapeType:kStraightLine];
 	}
 	
     [[NSUserDefaults standardUserDefaults] setValue:@(shapeMode_) forKey:WDDefaultShapeTool];
