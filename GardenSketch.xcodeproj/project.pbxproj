@@ -436,20 +436,16 @@
 		4D66746E1987171F00A17C4E /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D66746C1987171F00A17C4E /* TutorialViewController.m */; };
 		4D66746F1987171F00A17C4E /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D66746D1987171F00A17C4E /* TutorialViewController.xib */; };
 		4D6674721987220300A17C4E /* AppStart1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674711987220300A17C4E /* AppStart1.xib */; };
-		4D6674751987225F00A17C4E /* AppStart2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674731987225F00A17C4E /* AppStart2.xib */; };
-		4D6674761987225F00A17C4E /* AppStart3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674741987225F00A17C4E /* AppStart3.xib */; };
 		4D6674791988465900A17C4E /* Property1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674771988465900A17C4E /* Property1.xib */; };
-		4D66747A1988465900A17C4E /* Property2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674781988465900A17C4E /* Property2.xib */; };
 		4D66747E1988486500A17C4E /* House1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D66747B1988486500A17C4E /* House1.xib */; };
 		4D66747F1988486500A17C4E /* House2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D66747C1988486500A17C4E /* House2.xib */; };
 		4D6674801988486500A17C4E /* House3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D66747D1988486500A17C4E /* House3.xib */; };
 		4D6674821988486E00A17C4E /* North1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674811988486E00A17C4E /* North1.xib */; };
-		4D6674851988487A00A17C4E /* Plans1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674831988487A00A17C4E /* Plans1.xib */; };
-		4D6674861988487A00A17C4E /* Plans2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674841988487A00A17C4E /* Plans2.xib */; };
+		4D6674861988487A00A17C4E /* Plans1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674841988487A00A17C4E /* Plans1.xib */; };
 		4D66748B1988488600A17C4E /* Design1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674871988488600A17C4E /* Design1.xib */; };
-		4D66748C1988488600A17C4E /* Design2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674881988488600A17C4E /* Design2.xib */; };
+		4D66748C1988488600A17C4E /* Design4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674881988488600A17C4E /* Design4.xib */; };
 		4D66748D1988488600A17C4E /* Design3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6674891988488600A17C4E /* Design3.xib */; };
-		4D66748E1988488600A17C4E /* Design4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D66748A1988488600A17C4E /* Design4.xib */; };
+		4D66748E1988488600A17C4E /* Design2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D66748A1988488600A17C4E /* Design2.xib */; };
 		4D667490198848BE00A17C4E /* More1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D66748F198848BE00A17C4E /* More1.xib */; };
 		4D66749419884D0100A17C4E /* House2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D66749219884D0100A17C4E /* House2@2x.png */; };
 		4D66749519884D0100A17C4E /* House3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D66749319884D0100A17C4E /* House3@2x.png */; };
@@ -1135,20 +1131,16 @@
 		4D66746C1987171F00A17C4E /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		4D66746D1987171F00A17C4E /* TutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialViewController.xib; sourceTree = "<group>"; };
 		4D6674711987220300A17C4E /* AppStart1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppStart1.xib; sourceTree = "<group>"; };
-		4D6674731987225F00A17C4E /* AppStart2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppStart2.xib; sourceTree = "<group>"; };
-		4D6674741987225F00A17C4E /* AppStart3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppStart3.xib; sourceTree = "<group>"; };
 		4D6674771988465900A17C4E /* Property1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Property1.xib; sourceTree = "<group>"; };
-		4D6674781988465900A17C4E /* Property2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Property2.xib; sourceTree = "<group>"; };
 		4D66747B1988486500A17C4E /* House1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = House1.xib; sourceTree = "<group>"; };
 		4D66747C1988486500A17C4E /* House2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = House2.xib; sourceTree = "<group>"; };
 		4D66747D1988486500A17C4E /* House3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = House3.xib; sourceTree = "<group>"; };
 		4D6674811988486E00A17C4E /* North1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = North1.xib; sourceTree = "<group>"; };
-		4D6674831988487A00A17C4E /* Plans1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Plans1.xib; sourceTree = "<group>"; };
-		4D6674841988487A00A17C4E /* Plans2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Plans2.xib; sourceTree = "<group>"; };
+		4D6674841988487A00A17C4E /* Plans1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Plans1.xib; sourceTree = "<group>"; };
 		4D6674871988488600A17C4E /* Design1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Design1.xib; sourceTree = "<group>"; };
-		4D6674881988488600A17C4E /* Design2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Design2.xib; sourceTree = "<group>"; };
+		4D6674881988488600A17C4E /* Design4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Design4.xib; sourceTree = "<group>"; };
 		4D6674891988488600A17C4E /* Design3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Design3.xib; sourceTree = "<group>"; };
-		4D66748A1988488600A17C4E /* Design4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Design4.xib; sourceTree = "<group>"; };
+		4D66748A1988488600A17C4E /* Design2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Design2.xib; sourceTree = "<group>"; };
 		4D66748F198848BE00A17C4E /* More1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = More1.xib; sourceTree = "<group>"; };
 		4D66749219884D0100A17C4E /* House2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "House2@2x.png"; sourceTree = "<group>"; };
 		4D66749319884D0100A17C4E /* House3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "House3@2x.png"; sourceTree = "<group>"; };
@@ -2216,20 +2208,16 @@
 			children = (
 				4D66746D1987171F00A17C4E /* TutorialViewController.xib */,
 				4D6674711987220300A17C4E /* AppStart1.xib */,
-				4D6674731987225F00A17C4E /* AppStart2.xib */,
-				4D6674741987225F00A17C4E /* AppStart3.xib */,
 				4D6674771988465900A17C4E /* Property1.xib */,
-				4D6674781988465900A17C4E /* Property2.xib */,
 				4D66747B1988486500A17C4E /* House1.xib */,
 				4D66747C1988486500A17C4E /* House2.xib */,
 				4D66747D1988486500A17C4E /* House3.xib */,
 				4D6674811988486E00A17C4E /* North1.xib */,
-				4D6674831988487A00A17C4E /* Plans1.xib */,
-				4D6674841988487A00A17C4E /* Plans2.xib */,
+				4D6674841988487A00A17C4E /* Plans1.xib */,
 				4D6674871988488600A17C4E /* Design1.xib */,
-				4D6674881988488600A17C4E /* Design2.xib */,
+				4D66748A1988488600A17C4E /* Design2.xib */,
 				4D6674891988488600A17C4E /* Design3.xib */,
-				4D66748A1988488600A17C4E /* Design4.xib */,
+				4D6674881988488600A17C4E /* Design4.xib */,
 				4D66748F198848BE00A17C4E /* More1.xib */,
 			);
 			name = Tutorial;
@@ -2506,7 +2494,6 @@
 				4D9115D919773654008B11CC /* NotesViewController.xib in Resources */,
 				4D05DE331950B8CB001F19A7 /* Settings.plist in Resources */,
 				4D576048195E0D3500DCCBEF /* Hedge_Green.svg in Resources */,
-				4D6674851988487A00A17C4E /* Plans1.xib in Resources */,
 				4D6674C81989C7D800A17C4E /* Rectangular_House_Vertical@2x.png in Resources */,
 				4D6674791988465900A17C4E /* Property1.xib in Resources */,
 				4D3CFABA199933F6000CCD31 /* WidthMd_Active@2x.png in Resources */,
@@ -2559,7 +2546,7 @@
 				4D6673C61983116200A17C4E /* Coniferous_Burgundy.svg in Resources */,
 				4D3CFA9A199599F7000CCD31 /* Grid_Show@2x.png in Resources */,
 				4D6674ED1993F3F800A17C4E /* ToolCollectionHeader.xib in Resources */,
-				4D66748E1988488600A17C4E /* Design4.xib in Resources */,
+				4D66748E1988488600A17C4E /* Design2.xib in Resources */,
 				4D6674A019885E7A00A17C4E /* North1@2x.png in Resources */,
 				4D6674A91989B09C00A17C4E /* L_Shaped_House_3.svg in Resources */,
 				4D6674A71989B09C00A17C4E /* L_Shaped_House_1.svg in Resources */,
@@ -2585,7 +2572,6 @@
 				4D05DBB5194F5C81001F19A7 /* plans.png in Resources */,
 				4D05DCBE194F7FF2001F19A7 /* star.png in Resources */,
 				4D05DCBB194F7FF2001F19A7 /* select@2x.png in Resources */,
-				4D6674761987225F00A17C4E /* AppStart3.xib in Resources */,
 				4D3CFA9D19959AE6000CCD31 /* Select_White@2x.png in Resources */,
 				4D05DBAE194F5C81001F19A7 /* delete@2x.png in Resources */,
 				4D081BE81954DB1D00F8871C /* ColorCell.xib in Resources */,
@@ -2630,7 +2616,6 @@
 				4D3CFAD91999955B000CCD31 /* Plant_Grey_Green.png in Resources */,
 				4D9115DE197737BC008B11CC /* NoteCellView.xib in Resources */,
 				4D05DCAC194F7FF2001F19A7 /* line@2x.png in Resources */,
-				4D66747A1988465900A17C4E /* Property2.xib in Resources */,
 				4D6674AF1989B0B600A17C4E /* Rectangular_House_Horizontal.svg in Resources */,
 				4D3CFABC199933F6000CCD31 /* WidthSm_Active@2x.png in Resources */,
 				4D6674D4198AC68F00A17C4E /* Rectangular_House_Vertical.png in Resources */,
@@ -2664,7 +2649,6 @@
 				4D05DCB5194F7FF2001F19A7 /* rotate@2x.png in Resources */,
 				4D6674E0199179A700A17C4E /* Flower_Pot@2x.png in Resources */,
 				4D05DCA2194F7FF2001F19A7 /* eraser.png in Resources */,
-				4D6674751987225F00A17C4E /* AppStart2.xib in Resources */,
 				4D57604F195E0E5300DCCBEF /* Shrub_Brown.svg in Resources */,
 				4D66743D1983212B00A17C4E /* Hedge_Maroon.stencil in Resources */,
 				4D081BD2195351AC00F8871C /* Devilish.inkpad in Resources */,
@@ -2702,7 +2686,7 @@
 				4D3CFAD81999955B000CCD31 /* Hedge_brown_horizontal.png in Resources */,
 				4D66742E1983212B00A17C4E /* Coniferous_Burgundy.stencil in Resources */,
 				4D6674C11989C7CB00A17C4E /* L_Shaped_House_1@2x.png in Resources */,
-				4D66748C1988488600A17C4E /* Design2.xib in Resources */,
+				4D66748C1988488600A17C4E /* Design4.xib in Resources */,
 				4D3CFAF719999A71000CCD31 /* Rotate_Horizontal.png in Resources */,
 				4D66747F1988486500A17C4E /* House2.xib in Resources */,
 				4D05DCB3194F7FF2001F19A7 /* rect.png in Resources */,
@@ -2717,7 +2701,7 @@
 				4D05DE1F1950AC3F001F19A7 /* HueSaturation.xib in Resources */,
 				4D66749F19885E7A00A17C4E /* Design4@2x.png in Resources */,
 				4D05DCA7194F7FF2001F19A7 /* freehand_shape@2x.png in Resources */,
-				4D6674861988487A00A17C4E /* Plans2.xib in Resources */,
+				4D6674861988487A00A17C4E /* Plans1.xib in Resources */,
 				4D05DDF2194F9FB2001F19A7 /* PlansViewController.xib in Resources */,
 				4D6674351983212B00A17C4E /* Deciduous_Tree_Dark_Green.stencil in Resources */,
 				4D6674381983212B00A17C4E /* Deciduous_Tree_Teal.stencil in Resources */,

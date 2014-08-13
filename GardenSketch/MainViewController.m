@@ -232,10 +232,10 @@ extern NSString* GSNotificationCanvasActivityStopped;
 {
 	switch (tabIndex) {
 		case -1:
-			return [NSMutableArray arrayWithArray:@[@"AppStart1", @"AppStart2", @"AppStart3"]];
+			return [NSMutableArray arrayWithArray:@[@"AppStart1"]];
 			break;
 		case 0:
-			return [NSMutableArray arrayWithArray:@[@"Property1", @"Property2"]];
+			return [NSMutableArray arrayWithArray:@[@"Property1"]];
 			break;
 		case 1:
 			return [NSMutableArray arrayWithArray:@[@"House1", @"House2", @"House3"]];
@@ -244,7 +244,7 @@ extern NSString* GSNotificationCanvasActivityStopped;
 			return [NSMutableArray arrayWithArray:@[@"North1"]];
 			break;
 		case 3:
-			return [NSMutableArray arrayWithArray:@[@"Plans1", @"Plans2"]];
+			return [NSMutableArray arrayWithArray:@[@"Plans1"]];
 			break;
 		case 4:
 			return [NSMutableArray arrayWithArray:@[@"Design1", @"Design2", @"Design3", @"Design4"]];

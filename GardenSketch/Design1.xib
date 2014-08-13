@@ -17,14 +17,8 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose a shape on the left, then tap on the canvas to place it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="632" translatesAutoresizingMaskIntoConstraints="NO" id="bqh-04-edV">
-                    <rect key="frame" x="84" y="177" width="632" height="113"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="25"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Design1.png" translatesAutoresizingMaskIntoConstraints="NO" id="zAX-Bg-Wvd">
-                    <rect key="frame" x="236" y="288" width="328" height="192"/>
+                    <rect key="frame" x="236" y="191" width="328" height="192"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
