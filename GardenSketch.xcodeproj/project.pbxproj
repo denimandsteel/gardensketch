@@ -315,6 +315,8 @@
 		4D242C45199D5314008433DC /* Garden Sketch Wordmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C44199D5314008433DC /* Garden Sketch Wordmark@2x.png */; };
 		4D242C47199D5E42008433DC /* north.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C46199D5E42008433DC /* north.svg */; };
 		4D242C49199D6053008433DC /* north.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C48199D6053008433DC /* north.stencil */; };
+		4D242C4C199D7FC5008433DC /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C4A199D7FC5008433DC /* LaunchImage.png */; };
+		4D242C4D199D7FC5008433DC /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C4B199D7FC5008433DC /* LaunchImage@2x.png */; };
 		4D3CFA9519958B01000CCD31 /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA9419958B01000CCD31 /* Add@2x.png */; };
 		4D3CFA99199599F7000CCD31 /* Grid_Hide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */; };
 		4D3CFA9A199599F7000CCD31 /* Grid_Show@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */; };
@@ -1007,6 +1009,8 @@
 		4D242C44199D5314008433DC /* Garden Sketch Wordmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Garden Sketch Wordmark@2x.png"; sourceTree = "<group>"; };
 		4D242C46199D5E42008433DC /* north.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = north.svg; sourceTree = "<group>"; };
 		4D242C48199D6053008433DC /* north.stencil */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = north.stencil; sourceTree = "<group>"; };
+		4D242C4A199D7FC5008433DC /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
+		4D242C4B199D7FC5008433DC /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
 		4D3CFA9419958B01000CCD31 /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
 		4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Hide@2x.png"; sourceTree = "<group>"; };
 		4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Show@2x.png"; sourceTree = "<group>"; };
@@ -2138,6 +2142,8 @@
 		4D53F628196B14840097C8E3 /* AppIcon */ = {
 			isa = PBXGroup;
 			children = (
+				4D242C4A199D7FC5008433DC /* LaunchImage.png */,
+				4D242C4B199D7FC5008433DC /* LaunchImage@2x.png */,
 				4D53F629196B149C0097C8E3 /* AppIcon29x29.png */,
 				4D53F62A196B149C0097C8E3 /* AppIcon29x29@2x.png */,
 				4D53F62B196B149C0097C8E3 /* AppIcon40x40.png */,
@@ -2551,6 +2557,7 @@
 				4D05DCA4194F7FF2001F19A7 /* eyedropper.png in Resources */,
 				4D53F61D1965FC910097C8E3 /* Coniferous_Dark_Green@2x.png in Resources */,
 				4D05DCC2194F7FF2001F19A7 /* zoom.png in Resources */,
+				4D242C4D199D7FC5008433DC /* LaunchImage@2x.png in Resources */,
 				4D6674451983212B00A17C4E /* Plant_Light_Green.stencil in Resources */,
 				4D05DBB3194F5C81001F19A7 /* north.png in Resources */,
 				4D05DCE7194F7FF2001F19A7 /* SVGColors.plist in Resources */,
@@ -2676,6 +2683,7 @@
 				4D05DCAD194F7FF2001F19A7 /* oval.png in Resources */,
 				4D576065196481CE00DCCBEF /* Deciduous_Tree_Violet.svg in Resources */,
 				4D242C45199D5314008433DC /* Garden Sketch Wordmark@2x.png in Resources */,
+				4D242C4C199D7FC5008433DC /* LaunchImage.png in Resources */,
 				4D6674311983212B00A17C4E /* Coniferous_Mustard.stencil in Resources */,
 				4D3CFAE7199996EE000CCD31 /* FreehandLine.png in Resources */,
 				4D6674D3198AC68F00A17C4E /* Rectangular_House_Horizontal.png in Resources */,
