@@ -235,13 +235,13 @@ extern NSString* GSNotificationCanvasActivityStopped;
 			return [NSMutableArray arrayWithArray:@[@"AppStart1"]];
 			break;
 		case 0:
-			return [NSMutableArray arrayWithArray:@[@"Property1"]];
+			return nil;
 			break;
 		case 1:
 			return [NSMutableArray arrayWithArray:@[@"House1", @"House2", @"House3"]];
 			break;
 		case 2:
-			return [NSMutableArray arrayWithArray:@[@"North1"]];
+			return nil;
 			break;
 		case 3:
 			return [NSMutableArray arrayWithArray:@[@"Plans1"]];

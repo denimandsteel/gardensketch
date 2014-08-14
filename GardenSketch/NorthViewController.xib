@@ -17,58 +17,94 @@
             <rect key="frame" x="0.0" y="0.0" width="340" height="708"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ktn-hr-7gY" userLabel="Gesture View">
-                    <rect key="frame" x="0.0" y="63" width="340" height="351"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktn-hr-7gY" userLabel="Gesture View">
+                    <rect key="frame" x="0.0" y="175" width="340" height="340"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CompassLg_Pointer.png" translatesAutoresizingMaskIntoConstraints="NO" id="FXU-5a-5nn">
+                            <rect key="frame" x="26" y="26" width="288" height="288"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="288" id="ALx-ZZ-Mk5"/>
+                                <constraint firstAttribute="width" constant="288" id="Bsc-Z5-vq0"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CompassLg_Base.png" translatesAutoresizingMaskIntoConstraints="NO" id="5K1-7X-AZm">
+                            <rect key="frame" x="26" y="26" width="288" height="288"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="288" id="UKd-33-urO"/>
+                                <constraint firstAttribute="width" constant="288" id="vN4-4g-P3l"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                </view>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CompassLg_Pointer.png" translatesAutoresizingMaskIntoConstraints="NO" id="FXU-5a-5nn">
-                    <rect key="frame" x="26" y="85" width="288" height="288"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="288" id="ALx-ZZ-Mk5"/>
-                        <constraint firstAttribute="width" constant="288" id="Bsc-Z5-vq0"/>
+                        <constraint firstAttribute="centerX" secondItem="FXU-5a-5nn" secondAttribute="centerX" id="1EL-ld-jzw"/>
+                        <constraint firstAttribute="centerY" secondItem="FXU-5a-5nn" secondAttribute="centerY" id="1gQ-9G-yo2"/>
+                        <constraint firstAttribute="centerX" secondItem="5K1-7X-AZm" secondAttribute="centerX" id="FOr-kj-Ejp"/>
+                        <constraint firstAttribute="width" constant="340" id="WGs-XZ-jmg"/>
+                        <constraint firstAttribute="centerY" secondItem="5K1-7X-AZm" secondAttribute="centerY" id="bOa-VC-WeW"/>
+                        <constraint firstAttribute="height" constant="340" id="d4A-4U-xID"/>
                     </constraints>
-                </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set North" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7Y-G3-kxt" customClass="GSLabelHead">
+                </view>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set North" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7Y-G3-kxt" customClass="GSLabelHead">
                     <rect key="frame" x="20" y="20" width="280" height="57"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="57" id="Z6N-6O-4lG"/>
+                        <constraint firstAttribute="width" constant="280" id="wCu-f0-4wS"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CompassLg_Base.png" translatesAutoresizingMaskIntoConstraints="NO" id="5K1-7X-AZm">
-                    <rect key="frame" x="26" y="85" width="288" height="288"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn the compass needle to show north on your property. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="294" translatesAutoresizingMaskIntoConstraints="NO" id="jh7-jZ-QpI" customClass="GSLabel">
+                    <rect key="frame" x="20" y="85" width="294" height="56"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="288" id="UKd-33-urO"/>
-                        <constraint firstAttribute="width" constant="288" id="vN4-4g-P3l"/>
+                        <constraint firstAttribute="width" constant="294" id="Hdg-Cw-KBy"/>
+                        <constraint firstAttribute="height" constant="56" id="P5x-Ra-sIr"/>
                     </constraints>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cfy-Uf-186" customClass="GSButton">
-                    <rect key="frame" x="194" y="648" width="120" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tpl-Gw-Nnq">
+                    <rect key="frame" x="0.0" y="658" width="340" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
-                    <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    <inset key="imageEdgeInsets" minX="13" minY="5" maxX="81" maxY="7"/>
-                    <state key="normal" title="Done" image="Done.png" backgroundImage="select_background_colour.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="selected" backgroundImage="select_background_colour.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="doneTapped:" destination="-1" eventType="touchUpInside" id="asl-Ek-ykr"/>
-                    </connections>
-                </button>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cfy-Uf-186" customClass="GSButton">
+                            <rect key="frame" x="200" y="5" width="120" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
+                            <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="13" minY="5" maxX="81" maxY="7"/>
+                            <state key="normal" title="Done" image="Done.png" backgroundImage="select_background_colour.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" backgroundImage="select_background_colour.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="doneTapped:" destination="-1" eventType="touchUpInside" id="asl-Ek-ykr"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96155315900000005" green="0.96155315900000005" blue="0.96155315900000005" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="FXU-5a-5nn" secondAttribute="centerX" id="HrW-T7-woK"/>
-                <constraint firstAttribute="centerX" secondItem="5K1-7X-AZm" secondAttribute="centerX" id="cE3-pD-BL4"/>
-                <constraint firstAttribute="centerY" secondItem="5K1-7X-AZm" secondAttribute="centerY" constant="125" id="img-fG-evW"/>
-                <constraint firstAttribute="centerY" secondItem="FXU-5a-5nn" secondAttribute="centerY" constant="125" id="si0-J8-yDm"/>
+                <constraint firstItem="ktn-hr-7gY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="26s-lO-BTw"/>
+                <constraint firstItem="T7Y-G3-kxt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ebR-CV-Pw6"/>
+                <constraint firstItem="ktn-hr-7gY" firstAttribute="top" secondItem="jh7-jZ-QpI" secondAttribute="bottom" constant="34" id="hyL-By-WaH"/>
+                <constraint firstItem="jh7-jZ-QpI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="neY-GG-CM9"/>
+                <constraint firstItem="jh7-jZ-QpI" firstAttribute="top" secondItem="T7Y-G3-kxt" secondAttribute="bottom" constant="8" id="pfW-xd-oy2"/>
+                <constraint firstItem="ktn-hr-7gY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="175" id="rT3-L3-hfH"/>
+                <constraint firstItem="T7Y-G3-kxt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="z1Q-Rj-8RA"/>
+                <constraint firstItem="ktn-hr-7gY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="175" id="z64-DR-ErT"/>
             </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
