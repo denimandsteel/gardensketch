@@ -26,7 +26,9 @@
 @property (weak, nonatomic) IBOutlet WDToolButton *selectButton;
 
 @property (weak, nonatomic) IBOutlet GSButton *deleteButton;
+@property (weak, nonatomic) IBOutlet GSButton *doneButton;
 
 - (IBAction)deleteTapped:(id)sender;
+- (IBAction)doneTapped:(id)sender;
 
 @end

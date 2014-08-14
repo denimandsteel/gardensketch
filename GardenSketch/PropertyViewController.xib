@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PropertyViewController">
             <connections>
+                <outlet property="doneButton" destination="DDc-C9-Uzw" id="ilH-DN-gRp"/>
                 <outlet property="firstField" destination="0aN-IH-6ck" id="b7Z-ri-GUN"/>
                 <outlet property="secondField" destination="X4c-UV-4uk" id="O6b-Av-tco"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -89,9 +90,30 @@
                         <action selector="shapeSelected:" destination="-1" eventType="touchUpInside" id="IiI-g6-Dm1"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DDc-C9-Uzw" customClass="GSButton">
+                    <rect key="frame" x="200" y="648" width="120" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
+                    <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="13" minY="5" maxX="81" maxY="7"/>
+                    <state key="normal" title="Done" image="Done.png" backgroundImage="select_background_colour.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" backgroundImage="select_background_colour.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="doneTapped:" destination="-1" eventType="touchUpInside" id="sCU-z1-Zrq"/>
+                    </connections>
+                </button>
             </subviews>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="Done.png" width="32" height="32"/>
+        <image name="select_background_colour.png" width="160" height="37"/>
+    </resources>
 </document>

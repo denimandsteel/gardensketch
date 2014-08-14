@@ -8,9 +8,15 @@
 
 #import "SidebarContentViewController.h"
 #import "OneFingerRotationGestureRecognizer.h"
+#import "GSButton.h"
 
 @interface NorthViewController : SidebarContentViewController <OneFingerRotationGestureRecognizerDelegate>
 
 @property  (nonatomic, strong) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet GSButton *doneButton;
+@property (weak, nonatomic) IBOutlet UIView *gestureView;
+
+- (IBAction)doneTapped:(id)sender;
+
 
 @end

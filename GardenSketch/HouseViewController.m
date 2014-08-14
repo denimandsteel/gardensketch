@@ -139,6 +139,8 @@
 	
 	[self.scaleButton.layer setCornerRadius:3.0];
 	[self.scaleButton.layer setMasksToBounds:YES];
+	
+	[self.doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -166,6 +168,11 @@
 
 - (IBAction)deleteTapped:(id)sender {
 	[self.sidebar.canvasController delete:self];
+}
+
+- (IBAction)doneTapped:(id)sender {
+	NSInteger northTabIndex = 2;
+	[self.sidebar setSelectedIndex:northTabIndex];
 }
 
 @end

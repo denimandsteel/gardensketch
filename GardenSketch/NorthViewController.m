@@ -62,6 +62,11 @@
 	[drawingController deselectAllNodes];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+	[self.doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -115,8 +120,12 @@ CGAffineTransform CGAffineTransformMakeRotationAt(CGFloat angle, CGPoint pt){
 																		 innerRadius: 10
 																		 outerRadius: outRadius * 3 / 2
 																			  target: self];
-    [self.view addGestureRecognizer: gestureRecognizer];
+    [self.gestureView addGestureRecognizer: gestureRecognizer];
 }
 
+- (IBAction)doneTapped:(id)sender {
+	NSInteger plansTabIndex = 3;
+	[self.sidebar setSelectedIndex:plansTabIndex];
+}
 
 @end

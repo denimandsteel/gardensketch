@@ -70,6 +70,8 @@
 	
 	[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(2048 / 32) integerValue]]];
 	[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(2048 / 32) integerValue]]];
+	
+	[self.doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -119,8 +121,6 @@
 - (IBAction)doneTapped:(id)sender {
 	NSInteger structureTabIndex = 1;
 	[self.sidebar setSelectedIndex:structureTabIndex];
-	
-	
 }
 
 - (void)setPlanSize:(CGSize)size
