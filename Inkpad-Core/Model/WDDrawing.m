@@ -631,6 +631,9 @@ NSLog(@"Elements in drawing: %lu", (unsigned long)[self allElements].count);
     } else {
         styleBounds = CGRectIntersection(styleBounds, docBounds);
     }
+	
+	// ak: no cropping of unused space around the plan.
+	styleBounds = docBounds;
     
     // there's no canonical mapping from units to pixels: we'll double the resolution
 	// ak: scale was 2. files ended up being too big!
