@@ -68,8 +68,14 @@
 	[self.firstField.layer setBorderColor:[UIColor clearColor].CGColor];
 	[self.secondField.layer setBorderColor:[UIColor clearColor].CGColor];
 	
-	[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(2048 / 32) integerValue]]];
-	[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(2048 / 32) integerValue]]];
+	CGSize basePlanSize = [WDDrawingManager sharedInstance].basePlanSize;
+	if (basePlanSize.width > 0 && basePlanSize.height > 0) {
+		[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(basePlanSize.width / 32) integerValue]]];
+		[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(basePlanSize.height / 32) integerValue]]];
+	} else {
+		[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(2048 / 32) integerValue]]];
+		[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(2048 / 32) integerValue]]];
+	}
 	
 	[self.doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
