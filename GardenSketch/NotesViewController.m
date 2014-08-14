@@ -350,11 +350,17 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 {
 	WDLayer *notesLayer = drawing.layers.lastObject;
 	
+	WDElement *oldNorthShape = nil;
+	
 	// remove north if already exists:
 	for (WDElement *element in notesLayer.elements) {
 		if ([element isKindOfClass:[WDGroup class]]) {
-			[notesLayer.elements removeObject:element];
+			oldNorthShape = element;
 		}
+	}
+	
+	if (oldNorthShape) {
+		[notesLayer removeObject:oldNorthShape];
 	}
 	
 	// (re-)add the north shape
