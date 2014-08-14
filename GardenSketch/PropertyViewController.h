@@ -10,18 +10,13 @@
 #import "SidebarContentViewController.h"
 #import "PropertyShapeButton.h"
 
-@interface PropertyViewController : SidebarContentViewController
+@interface PropertyViewController : SidebarContentViewController <UITextFieldDelegate>
 
-@property (nonatomic, assign) BOOL isInShapeMode;
-
-@property (weak, nonatomic) IBOutlet UIView *sizeView;
 @property (strong, nonatomic) IBOutletCollection(PropertyShapeButton) NSArray *shapes;
 @property (weak, nonatomic) IBOutlet UITextField *firstField;
 @property (weak, nonatomic) IBOutlet UITextField *secondField;
 
 - (IBAction)shapeSelected:(id)sender;
-- (IBAction)changeShapeTapped:(id)sender;
-
 - (IBAction)doneTapped:(id)sender;
 
 @end
