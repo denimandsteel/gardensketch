@@ -313,6 +313,8 @@
 		4D242C42199D38EF008433DC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D242C40199D38EF008433DC /* AboutViewController.m */; };
 		4D242C43199D38EF008433DC /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C41199D38EF008433DC /* AboutViewController.xib */; };
 		4D242C45199D5314008433DC /* Garden Sketch Wordmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C44199D5314008433DC /* Garden Sketch Wordmark@2x.png */; };
+		4D242C47199D5E42008433DC /* north.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C46199D5E42008433DC /* north.svg */; };
+		4D242C49199D6053008433DC /* north.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C48199D6053008433DC /* north.stencil */; };
 		4D3CFA9519958B01000CCD31 /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA9419958B01000CCD31 /* Add@2x.png */; };
 		4D3CFA99199599F7000CCD31 /* Grid_Hide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */; };
 		4D3CFA9A199599F7000CCD31 /* Grid_Show@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */; };
@@ -1003,6 +1005,8 @@
 		4D242C40199D38EF008433DC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		4D242C41199D38EF008433DC /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		4D242C44199D5314008433DC /* Garden Sketch Wordmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Garden Sketch Wordmark@2x.png"; sourceTree = "<group>"; };
+		4D242C46199D5E42008433DC /* north.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = north.svg; sourceTree = "<group>"; };
+		4D242C48199D6053008433DC /* north.stencil */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = north.stencil; sourceTree = "<group>"; };
 		4D3CFA9419958B01000CCD31 /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
 		4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Hide@2x.png"; sourceTree = "<group>"; };
 		4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Show@2x.png"; sourceTree = "<group>"; };
@@ -2062,6 +2066,7 @@
 		4D081BEF1958E82500F8871C /* svg */ = {
 			isa = PBXGroup;
 			children = (
+				4D242C46199D5E42008433DC /* north.svg */,
 				4D9115E21978389C008B11CC /* Coniferous Trees */,
 				4D576059196481B900DCCBEF /* Deciduous Trees */,
 				4D576042195E0D1000DCCBEF /* Structures */,
@@ -2334,6 +2339,7 @@
 				4D6674181983212B00A17C4E /* Deciduous_Tree_Teal.stencil */,
 				4D6674191983212B00A17C4E /* Deciduous_Tree_Violet.stencil */,
 				4D66741A1983212B00A17C4E /* gazebo.stencil */,
+				4D242C48199D6053008433DC /* north.stencil */,
 				4D66741B1983212B00A17C4E /* Hedge_Brown.stencil */,
 				4D66741C1983212B00A17C4E /* Hedge_Green.stencil */,
 				4D66741D1983212B00A17C4E /* Hedge_Maroon.stencil */,
@@ -2562,6 +2568,7 @@
 				4D081C1E195B8B4A00F8871C /* Plant_Light_Pink.svg in Resources */,
 				4D081BDC1954A31600F8871C /* more@2x.png in Resources */,
 				4D05DE1B1950AC3F001F19A7 /* ColorBalance.xib in Resources */,
+				4D242C49199D6053008433DC /* north.stencil in Resources */,
 				4D3CFAFA19999A71000CCD31 /* Select_Colour.png in Resources */,
 				4D57604A195E0D3500DCCBEF /* Hedge_Viridian.svg in Resources */,
 				4D6674721987220300A17C4E /* AppStart1.xib in Resources */,
@@ -2589,6 +2596,7 @@
 				4D242C3B199D2FD0008433DC /* House3_2@2x.png in Resources */,
 				4D3CFAB4199933F6000CCD31 /* SizeMd_Active@2x.png in Resources */,
 				4D3CFAC519996DDE000CCD31 /* Resize_White@2x.png in Resources */,
+				4D242C47199D5E42008433DC /* north.svg in Resources */,
 				4D576058195E284B00DCCBEF /* Hedge_Brown.svg in Resources */,
 				4D05DE321950B8CB001F19A7 /* PageSizes.plist in Resources */,
 				4D576056195E0FF600DCCBEF /* Shrub_Brown@2x.png in Resources */,

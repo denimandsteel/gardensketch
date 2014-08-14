@@ -56,6 +56,8 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 {
 	WDDrawing *drawing = self.sidebar.canvasController.drawing;
 	
+	[self setupCompassForDrawing:drawing];
+	
 	if (drawing.layers.count > 2) {
 		WDLayer *notesLayer = (WDLayer *)drawing.layers[2];
 		[notesLayer setVisible:YES];
@@ -72,7 +74,6 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	NSString *planName = currentDocument.displayName;
 	[self.planNameLabel setText:planName];
 
-	
 	[self.collectionView reloadData];
 	
 	[self registerForKeyboardNotifications];
@@ -81,8 +82,10 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 - (void)viewWillDisappear:(BOOL)animated
 {
 	WDDrawing *drawing = self.sidebar.canvasController.drawing;
-	WDLayer *notesLayer = (WDLayer *)drawing.layers[2];
-	[notesLayer setVisible:NO];
+	if (drawing.layers.count > 2) {
+		WDLayer *notesLayer = (WDLayer *)drawing.layers[2];
+		[notesLayer setVisible:NO];
+	}
 	
 	[drawing activateLayerAtIndex:1];
 	
@@ -330,13 +333,49 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 {
 	WDLayer *notesLayer = self.sidebar.canvasController.drawing.layers[2];
 	
-	for (WDText *textElement in notesLayer.elements) {
-		if ([textElement.text isEqualToString:[LETTERS substringWithRange:NSMakeRange(note.letterIndex, 1)]]) {
-			return textElement;
+	for (WDElement *element in notesLayer.elements) {
+		if ([element isKindOfClass:[WDText class]]) {
+			WDText *textElement = (WDText *)element;
+			if ([textElement.text isEqualToString:[LETTERS substringWithRange:NSMakeRange(note.letterIndex, 1)]]) {
+				return textElement;
+			}
 		}
+		
 	}
 	
 	return nil;
+}
+
+- (void)setupCompassForDrawing:(WDDrawing *)drawing
+{
+	WDLayer *notesLayer = drawing.layers.lastObject;
+	
+	// remove north if already exists:
+	for (WDElement *element in notesLayer.elements) {
+		if ([element isKindOfClass:[WDGroup class]]) {
+			[notesLayer.elements removeObject:element];
+		}
+	}
+	
+	// (re-)add the north shape
+	WDGroup *northShape = [[StencilManager sharedInstance].shapes[@"north"] copy];
+	
+	CGFloat angle = 0;
+	NSNumber *angleNumber = [[NSUserDefaults standardUserDefaults] valueForKey:GS_NORTH_ANGLE];
+	if (angleNumber) {
+		angle = [angleNumber floatValue];
+	}
+	
+	
+	CGAffineTransform rotate = CGAffineTransformMakeRotation(angle *  M_PI / 180);
+	CGFloat left = drawing.dimensions.width - northShape.bounds.size.width;
+	CGFloat top = drawing.dimensions.height - northShape.bounds.size.height;
+	CGAffineTransform transfer = CGAffineTransformMakeTranslation(left, top);
+	CGAffineTransform transform = CGAffineTransformConcat(rotate, transfer);
+	
+	[northShape transform:transform];
+
+	[notesLayer addObject:northShape];
 }
 
 @end
