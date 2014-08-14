@@ -250,7 +250,7 @@ extern NSString* GSNotificationCanvasActivityStopped;
 			return [NSMutableArray arrayWithArray:@[@"Design1", @"Design2", @"Design3", @"Design4"]];
 			break;
 		case 6:
-			return [NSMutableArray arrayWithArray:@[@"More1"]];
+			return nil;
 			break;
 		default:
 			return [NSMutableArray array];
