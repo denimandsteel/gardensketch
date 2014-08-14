@@ -8,11 +8,15 @@
 
 #import "SidebarContentViewController.h"
 #import "GSLabel.h"
+#import <MessageUI/MessageUI.h>
 
-@interface MoreViewController : SidebarContentViewController
+@interface MoreViewController : SidebarContentViewController <MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet GSLabel *versionLabel;
 
-- (IBAction)resetTutorialTapped:(id)sender;
+- (IBAction)feedbackTapped:(id)sender;
+- (IBAction)aboutTapped:(id)sender;
+- (IBAction)blogTapped:(id)sender;
+- (IBAction)shareTapped:(id)sender;
 
 @end

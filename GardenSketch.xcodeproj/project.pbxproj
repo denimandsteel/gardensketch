@@ -309,6 +309,7 @@
 		4D242C3A199D2FD0008433DC /* House3_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C2D199D2FD0008433DC /* House3_1@2x.png */; };
 		4D242C3B199D2FD0008433DC /* House3_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C2E199D2FD0008433DC /* House3_2@2x.png */; };
 		4D242C3C199D2FD0008433DC /* Plans1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C2F199D2FD0008433DC /* Plans1@2x.png */; };
+		4D242C3E199D367E008433DC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D242C3D199D367E008433DC /* MessageUI.framework */; };
 		4D3CFA9519958B01000CCD31 /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA9419958B01000CCD31 /* Add@2x.png */; };
 		4D3CFA99199599F7000CCD31 /* Grid_Hide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */; };
 		4D3CFA9A199599F7000CCD31 /* Grid_Show@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */; };
@@ -994,6 +995,7 @@
 		4D242C2D199D2FD0008433DC /* House3_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "House3_1@2x.png"; sourceTree = "<group>"; };
 		4D242C2E199D2FD0008433DC /* House3_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "House3_2@2x.png"; sourceTree = "<group>"; };
 		4D242C2F199D2FD0008433DC /* Plans1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plans1@2x.png"; sourceTree = "<group>"; };
+		4D242C3D199D367E008433DC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4D3CFA9419958B01000CCD31 /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
 		4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Hide@2x.png"; sourceTree = "<group>"; };
 		4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Show@2x.png"; sourceTree = "<group>"; };
@@ -1217,6 +1219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D242C3E199D367E008433DC /* MessageUI.framework in Frameworks */,
 				4D6674641986EE4E00A17C4E /* SystemConfiguration.framework in Frameworks */,
 				4D05DDF6194FB3A4001F19A7 /* QuartzCore.framework in Frameworks */,
 				4D05DDF4194FB39A001F19A7 /* Security.framework in Frameworks */,
@@ -1264,6 +1267,7 @@
 		4D05DAEA194A70C7001F19A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4D242C3D199D367E008433DC /* MessageUI.framework */,
 				4D6674631986EE4E00A17C4E /* SystemConfiguration.framework */,
 				4D05DDF5194FB3A4001F19A7 /* QuartzCore.framework */,
 				4D05DDF3194FB39A001F19A7 /* Security.framework */,
