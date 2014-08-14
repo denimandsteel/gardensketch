@@ -310,6 +310,9 @@
 		4D242C3B199D2FD0008433DC /* House3_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C2E199D2FD0008433DC /* House3_2@2x.png */; };
 		4D242C3C199D2FD0008433DC /* Plans1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C2F199D2FD0008433DC /* Plans1@2x.png */; };
 		4D242C3E199D367E008433DC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D242C3D199D367E008433DC /* MessageUI.framework */; };
+		4D242C42199D38EF008433DC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D242C40199D38EF008433DC /* AboutViewController.m */; };
+		4D242C43199D38EF008433DC /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C41199D38EF008433DC /* AboutViewController.xib */; };
+		4D242C45199D5314008433DC /* Garden Sketch Wordmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C44199D5314008433DC /* Garden Sketch Wordmark@2x.png */; };
 		4D3CFA9519958B01000CCD31 /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA9419958B01000CCD31 /* Add@2x.png */; };
 		4D3CFA99199599F7000CCD31 /* Grid_Hide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */; };
 		4D3CFA9A199599F7000CCD31 /* Grid_Show@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */; };
@@ -996,6 +999,10 @@
 		4D242C2E199D2FD0008433DC /* House3_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "House3_2@2x.png"; sourceTree = "<group>"; };
 		4D242C2F199D2FD0008433DC /* Plans1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plans1@2x.png"; sourceTree = "<group>"; };
 		4D242C3D199D367E008433DC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		4D242C3F199D38EF008433DC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		4D242C40199D38EF008433DC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		4D242C41199D38EF008433DC /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		4D242C44199D5314008433DC /* Garden Sketch Wordmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Garden Sketch Wordmark@2x.png"; sourceTree = "<group>"; };
 		4D3CFA9419958B01000CCD31 /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
 		4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Hide@2x.png"; sourceTree = "<group>"; };
 		4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Show@2x.png"; sourceTree = "<group>"; };
@@ -1420,6 +1427,7 @@
 				4D3CFAB1199933F6000CCD31 /* WidthSm_Inactive@2x.png */,
 				4D3CFAC619997FE9000CCD31 /* Area@2x.png */,
 				4D3CFAC719997FE9000CCD31 /* FreehandLine@2x.png */,
+				4D242C44199D5314008433DC /* Garden Sketch Wordmark@2x.png */,
 				4D3CFAC819997FE9000CCD31 /* StraightLine@2x.png */,
 				4D9115EF198088DD008B11CC /* Stencils */,
 				4D53F628196B14840097C8E3 /* AppIcon */,
@@ -1517,6 +1525,8 @@
 				4D9115D619773654008B11CC /* NotesViewController.m */,
 				4D66746B1987171F00A17C4E /* TutorialViewController.h */,
 				4D66746C1987171F00A17C4E /* TutorialViewController.m */,
+				4D242C3F199D38EF008433DC /* AboutViewController.h */,
+				4D242C40199D38EF008433DC /* AboutViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -2010,6 +2020,7 @@
 				4D9115DD197737BC008B11CC /* NoteCellView.xib */,
 				4D6674E419929C9A00A17C4E /* ToolCell.xib */,
 				4D6674EC1993F3F800A17C4E /* ToolCollectionHeader.xib */,
+				4D242C41199D38EF008433DC /* AboutViewController.xib */,
 			);
 			name = xibs;
 			sourceTree = "<group>";
@@ -2656,6 +2667,7 @@
 				4D3CFAE9199996EE000CCD31 /* StraightLine.png in Resources */,
 				4D05DCAD194F7FF2001F19A7 /* oval.png in Resources */,
 				4D576065196481CE00DCCBEF /* Deciduous_Tree_Violet.svg in Resources */,
+				4D242C45199D5314008433DC /* Garden Sketch Wordmark@2x.png in Resources */,
 				4D6674311983212B00A17C4E /* Coniferous_Mustard.stencil in Resources */,
 				4D3CFAE7199996EE000CCD31 /* FreehandLine.png in Resources */,
 				4D6674D3198AC68F00A17C4E /* Rectangular_House_Horizontal.png in Resources */,
@@ -2669,6 +2681,7 @@
 				4D6674E519929C9A00A17C4E /* ToolCell.xib in Resources */,
 				4D6674F5199441E100A17C4E /* CompassLg_Pointer@2x.png in Resources */,
 				4D05DE221950AC3F001F19A7 /* OpenClipArt.xib in Resources */,
+				4D242C43199D38EF008433DC /* AboutViewController.xib in Resources */,
 				4D081BD4195351AC00F8871C /* Toucan in the Shade.inkpad in Resources */,
 				4D081C00195B3E4F00F8871C /* Tile@2x.png in Resources */,
 				4D576062196481CE00DCCBEF /* Deciduous_Tree_Green.svg in Resources */,
@@ -2822,6 +2835,7 @@
 				4D05DCC5194F7FF2001F19A7 /* Path.cpp in Sources */,
 				4D53F6201965FE2D0097C8E3 /* GSLabelHead.m in Sources */,
 				4D05DCF4194F7FF2001F19A7 /* WDEyedropperTool.m in Sources */,
+				4D242C42199D38EF008433DC /* AboutViewController.m in Sources */,
 				4D05DDA7194F8042001F19A7 /* WDDocument.m in Sources */,
 				4D05DCD5194F7FF2001F19A7 /* WDFillTransform.m in Sources */,
 				4D05DCE6194F7FF2001F19A7 /* WDXMLElement.m in Sources */,

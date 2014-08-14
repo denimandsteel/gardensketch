@@ -8,6 +8,7 @@
 
 #import "MoreViewController.h"
 #import "Constants.h"
+#import "AboutViewController.h"
 
 @interface MoreViewController ()
 
@@ -74,6 +75,10 @@
 }
 
 - (IBAction)aboutTapped:(id)sender {
+	AboutViewController *aboutViewController = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
+	[self presentViewController:aboutViewController animated:YES completion:^{
+		
+	}];
 }
 
 - (IBAction)blogTapped:(id)sender {
