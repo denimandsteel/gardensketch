@@ -773,22 +773,20 @@ NSLog(@"Elements in drawing: %lu", (unsigned long)[self allElements].count);
 		index++;
 	}
 	
-	top += 50;
+	// resize the resulting view, incase there are too many notes.
+	CGRect frame = result.frame;
+	if (top > 1948) {
+		frame.size.height = top + 200;
+	} else {
+		frame.size.height = 2148;
+	}
+	[result setFrame:frame];
 	
-	GSLabelHead *copyrightLabel = [[GSLabelHead alloc] initWithFrame:CGRectMake(0, top, 824, 50)];
+	GSLabelHead *copyrightLabel = [[GSLabelHead alloc] initWithFrame:CGRectMake(0, frame.size.height - 150, 824, 50)];
 	[copyrightLabel setTextAlignment:NSTextAlignmentRight];
 	[copyrightLabel setText:@"Made with Garden Sketch"];
 	[copyrightLabel setFont:GS_FONT_AVENIR_EXPORT_BODY];
 	[result addSubview:copyrightLabel];
-	
-	top += 50;
-	
-	// resize the resulting view, incase there are too many notes.
-	if (top > 2048) {
-		CGRect frame = result.frame;
-		frame.size.height = top + 100;
-		[result setFrame:frame];
-	}
 	
 	return result;
 }
