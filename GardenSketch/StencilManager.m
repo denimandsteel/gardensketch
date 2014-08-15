@@ -184,23 +184,14 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 			break;
 		case kTreeConiferous:
 			switch (self.coniferousTreeColor) {
-				case kBurgundy:
-					filename = @"Coniferous_Burgundy";
-					break;
 				case kTreeDarkGreen:
 					filename = @"Coniferous_DarkGreen";
 					break;
 				case kTreeGreen:
 					filename = @"Coniferous_Green";
 					break;
-				case kMustard:
-					filename = @"Coniferous_Mustard";
-					break;
 				case kTeal:
 					filename = @"Coniferous_Teal";
-					break;
-				case kViolet:
-					filename = @"Coniferous_Violet";
 					break;
 				default:
 					filename = @"Coniferous_DarkGreen";
@@ -209,9 +200,6 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 			break;
 		case kTreeDeciduous:
 			switch (self.deciduousTreeColor) {
-				case kBurgundy:
-					filename = @"Deciduous_Tree_Burgundy";
-					break;
 				case kTreeDarkGreen:
 					filename = @"Deciduous_Tree_Dark_Green";
 					break;
@@ -226,6 +214,9 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 					break;
 				case kViolet:
 					filename = @"Deciduous_Tree_Violet";
+					break;
+				case kBurgundy:
+					filename = @"Deciduous_Tree_Burgundy";
 					break;
 				default:
 					break;

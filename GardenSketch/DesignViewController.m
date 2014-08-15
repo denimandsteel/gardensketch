@@ -32,7 +32,8 @@
 	NSArray *areaColors;
 	NSArray *plantColors;
 	NSArray *shrubColors;
-	NSArray *treeColors;
+	NSArray *deciduousTreeColors;
+	NSArray *coniferousTreeColors;
 	
 	NSIndexPath *selectedToolIndexPath;
 }
@@ -83,12 +84,18 @@
 					GS_COLOR_SHRUB_MAROON,
 					GS_COLOR_SHRUB_BROWN];
 	
-	treeColors = @[GS_COLOR_TREE_MUSTARD,
-				   GS_COLOR_TREE_GREEN,
-				   GS_COLOR_TREE_DARK_GREEN,
-				   GS_COLOR_TREE_TEAL,
-				   GS_COLOR_TREE_VIOLET,
-				   GS_COLOR_TREE_BURGUNDY];
+	deciduousTreeColors = @[GS_COLOR_TREE_GREEN,
+						   GS_COLOR_TREE_DARK_GREEN,
+						   GS_COLOR_TREE_TEAL,
+						   GS_COLOR_TREE_VIOLET,
+						   GS_COLOR_TREE_BURGUNDY,
+							GS_COLOR_TREE_MUSTARD];
+	
+	coniferousTreeColors = @[GS_COLOR_TREE_GREEN,
+							GS_COLOR_TREE_DARK_GREEN,
+							GS_COLOR_TREE_TEAL];
+	
+	
 	
 	// Set initial stroke color:
 	UIColor *color = outlineColors[0];
@@ -357,13 +364,13 @@
 				case 3:
 					tool = [WDToolManager sharedInstance].deciduousTree;
 					[cell.colorPicker setTool:tool];
-					[cell.colorPicker setColors:treeColors];
+					[cell.colorPicker setColors:deciduousTreeColors];
 					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] deciduousTreeColor]];
 					break;
 				case 4:
 					tool = [WDToolManager sharedInstance].coniferousTree;
 					[cell.colorPicker setTool:tool];
-					[cell.colorPicker setColors:treeColors];
+					[cell.colorPicker setColors:coniferousTreeColors];
 					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] coniferousTreeColor]];
 					break;
 			}
