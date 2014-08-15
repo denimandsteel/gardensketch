@@ -11,6 +11,8 @@
 #import "WDDrawing.h"
 #import "Constants.h"
 #import "WDDrawingController.h"
+#import "Mixpanel.h"
+#import "WDDocument.h"
 
 @interface PropertyViewController ()
 
@@ -39,6 +41,11 @@
 	
 	[self.firstField setDelegate:self];
 	[self.secondField setDelegate:self];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(drawingChanged:)
+                                                 name:UIDocumentStateChangedNotification
+                                               object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -69,15 +76,21 @@
 	[self.secondField.layer setBorderColor:[UIColor clearColor].CGColor];
 	
 	CGSize basePlanSize = [WDDrawingManager sharedInstance].basePlanSize;
-	if (basePlanSize.width > 0 && basePlanSize.height > 0) {
-		[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(basePlanSize.width / 32) integerValue]]];
-		[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(basePlanSize.height / 32) integerValue]]];
+	
+	[self updateTextfieldsWithSize:basePlanSize];
+	
+	[self.doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+}
+
+- (void)updateTextfieldsWithSize:(CGSize)size
+{
+	if (size.width > 0 && size.height > 0) {
+		[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(size.width / 32) integerValue]]];
+		[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(size.height / 32) integerValue]]];
 	} else {
 		[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(2048 / 32) integerValue]]];
 		[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(2048 / 32) integerValue]]];
 	}
-	
-	[self.doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -143,6 +156,8 @@
 	[[WDDrawingManager sharedInstance] setBasePlanLayer:baseLayer];
 	
 	NSLog(@"Setting plan size to %f, %f", size.width, size.height);
+	
+	[[Mixpanel sharedInstance] track:@"Property_Dimensions" properties:@{@"width": @(size.width/32), @"height": @(size.height/32)}];
 }
 
 - (CGSize)sizeFromTextfields
@@ -167,6 +182,14 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
 	[self setPlanSize:[self sizeFromTextfields]];
+}
+
+- (void) drawingChanged:(NSNotification *)aNotification
+{
+    WDDocument *document = [aNotification object];
+	if ([document.filename isEqualToString:GS_BASE_PLAN_FILE_NAME]) {
+		[self updateTextfieldsWithSize:document.drawing.dimensions];
+	}
 }
 
 @end

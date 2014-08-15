@@ -14,6 +14,7 @@
 #import "Constants.h"
 #import "WDToolManager.h"
 #import "NSURL+Equivalence.h"
+#import "Mixpanel.h"
 
 @interface PlansViewController ()
 
@@ -164,6 +165,8 @@
 	NSInteger item = [self collectionView:self.collectionView numberOfItemsInSection:0] - 1;
 	NSIndexPath *lastIndexPath = [NSIndexPath indexPathForItem:item inSection:0];
 	[self.collectionView scrollToItemAtIndexPath:lastIndexPath atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
+	
+	[[Mixpanel sharedInstance] track:@"Plan_Added"];
 }
 
 - (void) drawingsDeleted:(NSNotification *)aNotification
