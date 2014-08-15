@@ -25,6 +25,7 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 @implementation NotesViewController {
 	NSIndexPath *activeIndexPath;
+	NoteCellView *noteCellToDelete;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -190,34 +191,53 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 - (void)removeNoteForCell:(id)sender
 {
-	NoteCellView *noteCellView = (NoteCellView *)sender;
-	NSIndexPath *indexPath = [self.collectionView indexPathForCell:noteCellView];
-	NSInteger index = indexPath.row;
+	noteCellToDelete = (NoteCellView *)sender;
+	UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Delete note?"
+													  message:@"There is no undo for deleting notes."
+													 delegate:self
+											cancelButtonTitle:@"Delete"
+											otherButtonTitles:@"Keep Note", nil];
 	
-	GSNote *noteToRemove = [self.sidebar.canvasController.drawing.notes objectAtIndex:index];
-	[self removeNoteFromCanvas:noteToRemove];
+	[message show];
 	
-	[self.collectionView performBatchUpdates:^{
-		[self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
-		[self.sidebar.canvasController.drawing.notes removeObjectAtIndex:index];
-	} completion:^(BOOL finished) {
-		NSMutableArray *needUpdate = [NSMutableArray array];
-		NSInteger curIndex = index;
-		
-		for (GSNote *note in self.sidebar.canvasController.drawing.notes) {
-			if (note.letterIndex >= index) {
-				[self decreaseTextElementLetterForNote:note];
-				note.letterIndex--;
-				[needUpdate addObject:[NSIndexPath indexPathForItem:curIndex inSection:0]];
-				curIndex++;
-			}
-		}
-		
-		[self.collectionView reloadItemsAtIndexPaths:needUpdate];
-	}];
-	
-	[self.sidebar.canvasController.document updateChangeCount:UIDocumentChangeDone];
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+		
+		NoteCellView *noteCellView = noteCellToDelete;
+		NSIndexPath *indexPath = [self.collectionView indexPathForCell:noteCellView];
+		NSInteger index = indexPath.row;
+		
+		GSNote *noteToRemove = [self.sidebar.canvasController.drawing.notes objectAtIndex:index];
+		[self removeNoteFromCanvas:noteToRemove];
+		
+		[self.collectionView performBatchUpdates:^{
+			[self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
+			[self.sidebar.canvasController.drawing.notes removeObjectAtIndex:index];
+		} completion:^(BOOL finished) {
+			NSMutableArray *needUpdate = [NSMutableArray array];
+			NSInteger curIndex = index;
+			
+			for (GSNote *note in self.sidebar.canvasController.drawing.notes) {
+				if (note.letterIndex >= index) {
+					[self decreaseTextElementLetterForNote:note];
+					note.letterIndex--;
+					[needUpdate addObject:[NSIndexPath indexPathForItem:curIndex inSection:0]];
+					curIndex++;
+				}
+			}
+			
+			[self.collectionView reloadItemsAtIndexPaths:needUpdate];
+		}];
+		
+		[self.sidebar.canvasController.document updateChangeCount:UIDocumentChangeDone];
+	} else {
+		noteCellToDelete = nil;
+	}
+}
+
 
 - (void)updateNoteForCell:(id)sender
 {
