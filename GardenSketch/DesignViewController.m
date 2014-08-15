@@ -438,6 +438,7 @@
 		if ([selectedToolIndexPath compare:indexPath] == NSOrderedSame) {
 			[collectionView deselectItemAtIndexPath:selectedToolIndexPath animated:YES];
 			selectedToolIndexPath = nil;
+			[[WDToolManager sharedInstance] setActiveTool:[WDToolManager sharedInstance].select];
 			[self.toolsCollectionView performBatchUpdates:nil completion:nil];
 			return;
 		}

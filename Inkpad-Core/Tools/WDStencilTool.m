@@ -219,7 +219,7 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 			self.type == kHouseL3 ||
 			self.type == kHouseL4 ||
 			self.type == kHouseRectHor ||
-			self.type == kHouseRectHor) {
+			self.type == kHouseRectVer) {
 			[canvas.drawingController selectObject:result];
 		}
 	}
@@ -258,7 +258,18 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 
 - (void)setStaysOnFromNumber:(NSNumber *)staysOnNumber
 {
-	self.staysOn = [staysOnNumber boolValue];
+	// no repeat for house shapes
+	if (self.type == kHouse ||
+		self.type == kHouseL1 ||
+		self.type == kHouseL2 ||
+		self.type == kHouseL3 ||
+		self.type == kHouseL4 ||
+		self.type == kHouseRectHor ||
+		self.type == kHouseRectVer) {
+		self.staysOn = NO;
+	} else {
+		self.staysOn = [staysOnNumber boolValue];
+	}
 }
 
 
