@@ -329,6 +329,23 @@
 		4D242C63199E807B008433DC /* SizeMd_Active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C57199E807A008433DC /* SizeMd_Active.png */; };
 		4D242C64199E807B008433DC /* SizeLg_Inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C58199E807A008433DC /* SizeLg_Inactive.png */; };
 		4D242C65199E807B008433DC /* SizeLg_Active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C59199E807A008433DC /* SizeLg_Active.png */; };
+		4D242C84199E8BAD008433DC /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C67199E8BAD008433DC /* Media.xcassets */; };
+		4D242C85199E8BAD008433DC /* Mixpanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D242C69199E8BAD008433DC /* Mixpanel.m */; };
+		4D242C86199E8BAD008433DC /* MPCloseBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C6A199E8BAD008433DC /* MPCloseBtn.png */; };
+		4D242C87199E8BAD008433DC /* MPCloseBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C6B199E8BAD008433DC /* MPCloseBtn@2x.png */; };
+		4D242C88199E8BAD008433DC /* MPNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D242C6D199E8BAD008433DC /* MPNotification.m */; };
+		4D242C89199E8BAD008433DC /* MPNotification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C6E199E8BAD008433DC /* MPNotification.storyboard */; };
+		4D242C8A199E8BAD008433DC /* MPNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D242C70199E8BAD008433DC /* MPNotificationViewController.m */; };
+		4D242C8B199E8BAD008433DC /* MPSurvey.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D242C72199E8BAD008433DC /* MPSurvey.m */; };
+		4D242C8C199E8BAD008433DC /* MPSurvey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C73199E8BAD008433DC /* MPSurvey.storyboard */; };
+		4D242C8D199E8BAD008433DC /* MPSurveyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D242C75199E8BAD008433DC /* MPSurveyNavigationController.m */; };
+		4D242C8E199E8BAD008433DC /* MPSurveyQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D242C77199E8BAD008433DC /* MPSurveyQuestion.m */; };
+		4D242C8F199E8BAD008433DC /* MPSurveyQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D242C79199E8BAD008433DC /* MPSurveyQuestionViewController.m */; };
+		4D242C90199E8BAD008433DC /* NSData+MPBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D242C7B199E8BAD008433DC /* NSData+MPBase64.m */; };
+		4D242C91199E8BAD008433DC /* UIColor+MPColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D242C7D199E8BAD008433DC /* UIColor+MPColor.m */; };
+		4D242C92199E8BAD008433DC /* UIImage+MPAverageColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D242C7F199E8BAD008433DC /* UIImage+MPAverageColor.m */; };
+		4D242C93199E8BAD008433DC /* UIImage+MPImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D242C81199E8BAD008433DC /* UIImage+MPImageEffects.m */; };
+		4D242C94199E8BAD008433DC /* UIView+MPSnapshotImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D242C83199E8BAD008433DC /* UIView+MPSnapshotImage.m */; };
 		4D3CFA9519958B01000CCD31 /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA9419958B01000CCD31 /* Add@2x.png */; };
 		4D3CFA99199599F7000CCD31 /* Grid_Hide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */; };
 		4D3CFA9A199599F7000CCD31 /* Grid_Show@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */; };
@@ -1035,6 +1052,35 @@
 		4D242C57199E807A008433DC /* SizeMd_Active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SizeMd_Active.png; sourceTree = "<group>"; };
 		4D242C58199E807A008433DC /* SizeLg_Inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SizeLg_Inactive.png; sourceTree = "<group>"; };
 		4D242C59199E807A008433DC /* SizeLg_Active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SizeLg_Active.png; sourceTree = "<group>"; };
+		4D242C67199E8BAD008433DC /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		4D242C68199E8BAD008433DC /* Mixpanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mixpanel.h; sourceTree = "<group>"; };
+		4D242C69199E8BAD008433DC /* Mixpanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mixpanel.m; sourceTree = "<group>"; };
+		4D242C6A199E8BAD008433DC /* MPCloseBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MPCloseBtn.png; sourceTree = "<group>"; };
+		4D242C6B199E8BAD008433DC /* MPCloseBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MPCloseBtn@2x.png"; sourceTree = "<group>"; };
+		4D242C6C199E8BAD008433DC /* MPNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPNotification.h; sourceTree = "<group>"; };
+		4D242C6D199E8BAD008433DC /* MPNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPNotification.m; sourceTree = "<group>"; };
+		4D242C6E199E8BAD008433DC /* MPNotification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MPNotification.storyboard; sourceTree = "<group>"; };
+		4D242C6F199E8BAD008433DC /* MPNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPNotificationViewController.h; sourceTree = "<group>"; };
+		4D242C70199E8BAD008433DC /* MPNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPNotificationViewController.m; sourceTree = "<group>"; };
+		4D242C71199E8BAD008433DC /* MPSurvey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSurvey.h; sourceTree = "<group>"; };
+		4D242C72199E8BAD008433DC /* MPSurvey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSurvey.m; sourceTree = "<group>"; };
+		4D242C73199E8BAD008433DC /* MPSurvey.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MPSurvey.storyboard; sourceTree = "<group>"; };
+		4D242C74199E8BAD008433DC /* MPSurveyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSurveyNavigationController.h; sourceTree = "<group>"; };
+		4D242C75199E8BAD008433DC /* MPSurveyNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSurveyNavigationController.m; sourceTree = "<group>"; };
+		4D242C76199E8BAD008433DC /* MPSurveyQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSurveyQuestion.h; sourceTree = "<group>"; };
+		4D242C77199E8BAD008433DC /* MPSurveyQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSurveyQuestion.m; sourceTree = "<group>"; };
+		4D242C78199E8BAD008433DC /* MPSurveyQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSurveyQuestionViewController.h; sourceTree = "<group>"; };
+		4D242C79199E8BAD008433DC /* MPSurveyQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSurveyQuestionViewController.m; sourceTree = "<group>"; };
+		4D242C7A199E8BAD008433DC /* NSData+MPBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MPBase64.h"; sourceTree = "<group>"; };
+		4D242C7B199E8BAD008433DC /* NSData+MPBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MPBase64.m"; sourceTree = "<group>"; };
+		4D242C7C199E8BAD008433DC /* UIColor+MPColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MPColor.h"; sourceTree = "<group>"; };
+		4D242C7D199E8BAD008433DC /* UIColor+MPColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MPColor.m"; sourceTree = "<group>"; };
+		4D242C7E199E8BAD008433DC /* UIImage+MPAverageColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MPAverageColor.h"; sourceTree = "<group>"; };
+		4D242C7F199E8BAD008433DC /* UIImage+MPAverageColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MPAverageColor.m"; sourceTree = "<group>"; };
+		4D242C80199E8BAD008433DC /* UIImage+MPImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MPImageEffects.h"; sourceTree = "<group>"; };
+		4D242C81199E8BAD008433DC /* UIImage+MPImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MPImageEffects.m"; sourceTree = "<group>"; };
+		4D242C82199E8BAD008433DC /* UIView+MPSnapshotImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MPSnapshotImage.h"; sourceTree = "<group>"; };
+		4D242C83199E8BAD008433DC /* UIView+MPSnapshotImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MPSnapshotImage.m"; sourceTree = "<group>"; };
 		4D3CFA9419958B01000CCD31 /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
 		4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Hide@2x.png"; sourceTree = "<group>"; };
 		4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Show@2x.png"; sourceTree = "<group>"; };
@@ -1373,6 +1419,7 @@
 		4D05DB28194A7C7C001F19A7 /* ext */ = {
 			isa = PBXGroup;
 			children = (
+				4D242C66199E8BAD008433DC /* Mixpanel */,
 				4D6674511986EDB800A17C4E /* Airbrake */,
 				4D53F6161965E9C00097C8E3 /* OneFingerRotationGesture */,
 				4D05DDD8194F80BF001F19A7 /* Openclipart */,
@@ -2166,6 +2213,42 @@
 			path = tutorial;
 			sourceTree = "<group>";
 		};
+		4D242C66199E8BAD008433DC /* Mixpanel */ = {
+			isa = PBXGroup;
+			children = (
+				4D242C67199E8BAD008433DC /* Media.xcassets */,
+				4D242C68199E8BAD008433DC /* Mixpanel.h */,
+				4D242C69199E8BAD008433DC /* Mixpanel.m */,
+				4D242C6A199E8BAD008433DC /* MPCloseBtn.png */,
+				4D242C6B199E8BAD008433DC /* MPCloseBtn@2x.png */,
+				4D242C6C199E8BAD008433DC /* MPNotification.h */,
+				4D242C6D199E8BAD008433DC /* MPNotification.m */,
+				4D242C6E199E8BAD008433DC /* MPNotification.storyboard */,
+				4D242C6F199E8BAD008433DC /* MPNotificationViewController.h */,
+				4D242C70199E8BAD008433DC /* MPNotificationViewController.m */,
+				4D242C71199E8BAD008433DC /* MPSurvey.h */,
+				4D242C72199E8BAD008433DC /* MPSurvey.m */,
+				4D242C73199E8BAD008433DC /* MPSurvey.storyboard */,
+				4D242C74199E8BAD008433DC /* MPSurveyNavigationController.h */,
+				4D242C75199E8BAD008433DC /* MPSurveyNavigationController.m */,
+				4D242C76199E8BAD008433DC /* MPSurveyQuestion.h */,
+				4D242C77199E8BAD008433DC /* MPSurveyQuestion.m */,
+				4D242C78199E8BAD008433DC /* MPSurveyQuestionViewController.h */,
+				4D242C79199E8BAD008433DC /* MPSurveyQuestionViewController.m */,
+				4D242C7A199E8BAD008433DC /* NSData+MPBase64.h */,
+				4D242C7B199E8BAD008433DC /* NSData+MPBase64.m */,
+				4D242C7C199E8BAD008433DC /* UIColor+MPColor.h */,
+				4D242C7D199E8BAD008433DC /* UIColor+MPColor.m */,
+				4D242C7E199E8BAD008433DC /* UIImage+MPAverageColor.h */,
+				4D242C7F199E8BAD008433DC /* UIImage+MPAverageColor.m */,
+				4D242C80199E8BAD008433DC /* UIImage+MPImageEffects.h */,
+				4D242C81199E8BAD008433DC /* UIImage+MPImageEffects.m */,
+				4D242C82199E8BAD008433DC /* UIView+MPSnapshotImage.h */,
+				4D242C83199E8BAD008433DC /* UIView+MPSnapshotImage.m */,
+			);
+			path = Mixpanel;
+			sourceTree = "<group>";
+		};
 		4D53F6161965E9C00097C8E3 /* OneFingerRotationGesture */ = {
 			isa = PBXGroup;
 			children = (
@@ -2501,6 +2584,7 @@
 				4D6673CA1983116200A17C4E /* Coniferous_Teal.svg in Resources */,
 				4D242C33199D2FD0008433DC /* Design3_2@2x.png in Resources */,
 				4D05DDED194F9F85001F19A7 /* plans@2x.png in Resources */,
+				4D242C8C199E8BAD008433DC /* MPSurvey.storyboard in Resources */,
 				4D05DBB2194F5C81001F19A7 /* more.png in Resources */,
 				4D53F634196B149C0097C8E3 /* AppIcon29x29@2x.png in Resources */,
 				4D6674BA1989B4DC00A17C4E /* L_Shaped_House_4.stencil in Resources */,
@@ -2562,6 +2646,7 @@
 				4D05DE301950B8CB001F19A7 /* Defaults.plist in Resources */,
 				4D05DAFF194A70C7001F19A7 /* Main.storyboard in Resources */,
 				4D05DB44194B7ED8001F19A7 /* SidebarContentViewController.xib in Resources */,
+				4D242C87199E8BAD008433DC /* MPCloseBtn@2x.png in Resources */,
 				4D576055195E0FF600DCCBEF /* Hedge_brown@2x.png in Resources */,
 				4D9115D919773654008B11CC /* NotesViewController.xib in Resources */,
 				4D05DE331950B8CB001F19A7 /* Settings.plist in Resources */,
@@ -2600,6 +2685,7 @@
 				4D05DCC2194F7FF2001F19A7 /* zoom.png in Resources */,
 				4D242C4D199D7FC5008433DC /* LaunchImage@2x.png in Resources */,
 				4D6674451983212B00A17C4E /* Plant_Light_Green.stencil in Resources */,
+				4D242C84199E8BAD008433DC /* Media.xcassets in Resources */,
 				4D05DBB3194F5C81001F19A7 /* north.png in Resources */,
 				4D05DCE7194F7FF2001F19A7 /* SVGColors.plist in Resources */,
 				4D3CFACB19997FE9000CCD31 /* StraightLine@2x.png in Resources */,
@@ -2618,6 +2704,7 @@
 				4D05DE1B1950AC3F001F19A7 /* ColorBalance.xib in Resources */,
 				4D242C49199D6053008433DC /* north.stencil in Resources */,
 				4D3CFAFA19999A71000CCD31 /* Select_Colour.png in Resources */,
+				4D242C89199E8BAD008433DC /* MPNotification.storyboard in Resources */,
 				4D57604A195E0D3500DCCBEF /* Hedge_Viridian.svg in Resources */,
 				4D6674721987220300A17C4E /* AppStart1.xib in Resources */,
 				4D53F633196B149C0097C8E3 /* AppIcon29x29.png in Resources */,
@@ -2715,6 +2802,7 @@
 				4D081BE31954B54800F8871C /* ColorPickerViewController.xib in Resources */,
 				4D05DCA0194F7FF2001F19A7 /* brush.png in Resources */,
 				4D66743F1983212B00A17C4E /* House_No_Lines.stencil in Resources */,
+				4D242C86199E8BAD008433DC /* MPCloseBtn.png in Resources */,
 				4D53F635196B149C0097C8E3 /* AppIcon40x40.png in Resources */,
 				4D6674A81989B09C00A17C4E /* L_Shaped_House_2.svg in Resources */,
 				4D6674331983212B00A17C4E /* Coniferous_Violet.stencil in Resources */,
@@ -2819,9 +2907,11 @@
 				4D05DD97194F8042001F19A7 /* WDAppDelegate.m in Sources */,
 				4D05DB02194A70C7001F19A7 /* MainViewController.m in Sources */,
 				4D05DCED194F7FF2001F19A7 /* WDSVGParserStateStack.m in Sources */,
+				4D242C93199E8BAD008433DC /* UIImage+MPImageEffects.m in Sources */,
 				4D05DDAD194F8042001F19A7 /* WDExportController.m in Sources */,
 				4D9115E719787DFB008B11CC /* GSTextView.m in Sources */,
 				4D05DDA0194F8042001F19A7 /* WDColorAdjustmentController.m in Sources */,
+				4D242C8D199E8BAD008433DC /* MPSurveyNavigationController.m in Sources */,
 				4D05DCD1194F7FF2001F19A7 /* WDCurveFit.m in Sources */,
 				4D6674EB1992A5D400A17C4E /* ToolCell.m in Sources */,
 				4D05DDCF194F8042001F19A7 /* WDSwatchController.m in Sources */,
@@ -2868,11 +2958,13 @@
 				4D05DDCE194F8042001F19A7 /* WDSwatchCell.m in Sources */,
 				4D05DD99194F8042001F19A7 /* WDArrowheadCell.m in Sources */,
 				4D05DD9F194F8042001F19A7 /* WDCanvasController.m in Sources */,
+				4D242C8B199E8BAD008433DC /* MPSurvey.m in Sources */,
 				4D05DCFD194F7FF2001F19A7 /* WDTextTool.m in Sources */,
 				4D05DDC8194F8042001F19A7 /* WDSettingsController.m in Sources */,
 				4D05DCF8194F7FF2001F19A7 /* WDRotateTool.m in Sources */,
 				4D05DC9B194F7FF2001F19A7 /* WDPropertyManager.m in Sources */,
 				4D05DCD4194F7FF2001F19A7 /* WDElement.m in Sources */,
+				4D242C88199E8BAD008433DC /* MPNotification.m in Sources */,
 				4D05DCCE194F7FF2001F19A7 /* WDBezierSegment.m in Sources */,
 				4D05DDA5194F8042001F19A7 /* WDColorWell.m in Sources */,
 				4D05DDB1194F8042001F19A7 /* WDFontLibraryController.m in Sources */,
@@ -2899,10 +2991,14 @@
 				4D05DCC5194F7FF2001F19A7 /* Path.cpp in Sources */,
 				4D53F6201965FE2D0097C8E3 /* GSLabelHead.m in Sources */,
 				4D05DCF4194F7FF2001F19A7 /* WDEyedropperTool.m in Sources */,
+				4D242C91199E8BAD008433DC /* UIColor+MPColor.m in Sources */,
 				4D242C42199D38EF008433DC /* AboutViewController.m in Sources */,
+				4D242C92199E8BAD008433DC /* UIImage+MPAverageColor.m in Sources */,
 				4D05DDA7194F8042001F19A7 /* WDDocument.m in Sources */,
 				4D05DCD5194F7FF2001F19A7 /* WDFillTransform.m in Sources */,
 				4D05DCE6194F7FF2001F19A7 /* WDXMLElement.m in Sources */,
+				4D242C8A199E8BAD008433DC /* MPNotificationViewController.m in Sources */,
+				4D242C94199E8BAD008433DC /* UIView+MPSnapshotImage.m in Sources */,
 				4D05DD91194F8042001F19A7 /* UIBarButtonItem+Additions.m in Sources */,
 				4D05DD9A194F8042001F19A7 /* WDBlendModeController.m in Sources */,
 				4D05DDA3194F8042001F19A7 /* WDColorIndicator.m in Sources */,
@@ -2936,6 +3032,8 @@
 				4D05DB3E194A7C94001F19A7 /* PulsingRequiresAttentionView.m in Sources */,
 				4D05DDC1194F8042001F19A7 /* WDPageSizeController.m in Sources */,
 				4D05DD9D194F8042001F19A7 /* WDButton.m in Sources */,
+				4D242C8F199E8BAD008433DC /* MPSurveyQuestionViewController.m in Sources */,
+				4D242C90199E8BAD008433DC /* NSData+MPBase64.m in Sources */,
 				4D05DDCA194F8042001F19A7 /* WDShadowWell.m in Sources */,
 				4D05DCC9194F7FF2001F19A7 /* ShapeSweep.cpp in Sources */,
 				4D05DDAE194F8042001F19A7 /* WDEyedropper.m in Sources */,
@@ -2945,6 +3043,7 @@
 				4D05DDE5194F80BF001F19A7 /* OCAThumbnailCache.m in Sources */,
 				4D05DC96194F7FF2001F19A7 /* UIColor+Additions.m in Sources */,
 				4D05DDBA194F8042001F19A7 /* WDImportController.m in Sources */,
+				4D242C8E199E8BAD008433DC /* MPSurveyQuestion.m in Sources */,
 				4D05DDD1194F8042001F19A7 /* WDThumbnailView.m in Sources */,
 				4D081C08195B484100F8871C /* GSLabel.m in Sources */,
 				4D05DDBD194F8042001F19A7 /* WDLineAttributePicker.m in Sources */,
@@ -2977,6 +3076,7 @@
 				4D9115EA1979CD44008B11CC /* NSURL+Equivalence.m in Sources */,
 				4D53F6191965E9E50097C8E3 /* OneFingerRotationGestureRecognizer.m in Sources */,
 				4D66745F1986EDB800A17C4E /* ABNotice.m in Sources */,
+				4D242C85199E8BAD008433DC /* Mixpanel.m in Sources */,
 				4D05DCE2194F7FF2001F19A7 /* WDStrokeStyle.m in Sources */,
 				4D05DDE4194F80BF001F19A7 /* OCAEntry.m in Sources */,
 				4D05DDD2194F8042001F19A7 /* WDToolButton.m in Sources */,
