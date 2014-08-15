@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "GSButton.h"
+#import "GSLabel.h"
 
 @interface AboutViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *inkpadButton;
 @property (weak, nonatomic) IBOutlet UIButton *githubButton;
 @property (weak, nonatomic) IBOutlet GSButton *doneButton;
+@property (weak, nonatomic) IBOutlet GSLabel *versionLabel;
 
 - (IBAction)inkpadTapped:(id)sender;
 - (IBAction)githubTapped:(id)sender;

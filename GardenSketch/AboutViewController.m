@@ -37,6 +37,8 @@
 	[self.githubButton setTitleColor:GS_COLOR_ACCENT_BLUE forState:UIControlStateNormal];
 	
 	[self.doneButton.titleLabel setFont:GS_FONT_AVENIR_ACTION];
+	
+	[self updateVersionLabel];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,6 +57,18 @@
 
 - (IBAction)doneTapped:(id)sender {
 	[[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)updateVersionLabel
+{
+	NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+	NSString *name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
+	NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+	NSString *build = [infoDictionary objectForKey:@"CFBundleVersion"];
+	NSString *label = [NSString stringWithFormat:@"%@ v%@ (build %@)",
+					   name,version,build];
+	
+	[self.versionLabel setText:label];
 }
 
 @end

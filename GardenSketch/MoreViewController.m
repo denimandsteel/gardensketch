@@ -29,20 +29,19 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-	
-	[self updateVersionLabel];
 }
 
-- (void)updateVersionLabel
+- (void)viewWillAppear:(BOOL)animated
 {
-	NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-	NSString *name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
-	NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-	NSString *build = [infoDictionary objectForKey:@"CFBundleVersion"];
-	NSString *label = [NSString stringWithFormat:@"%@ v%@ (build %@)",
-					   name,version,build];
+	[self.feedbackButton.titleLabel setFont:GS_FONT_AVENIR_ACTION];
+	[self.aboutButton.titleLabel setFont:GS_FONT_AVENIR_ACTION];
+	[self.blogButton.titleLabel setFont:GS_FONT_AVENIR_ACTION];
+	[self.shareButton.titleLabel setFont:GS_FONT_AVENIR_ACTION];
 	
-	[self.versionLabel setText:label];
+	[self.feedbackButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateHighlighted];
+	[self.aboutButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateHighlighted];
+	[self.blogButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateHighlighted];
+	[self.shareButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateHighlighted];
 }
 
 - (void)didReceiveMemoryWarning

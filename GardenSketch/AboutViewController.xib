@@ -9,6 +9,7 @@
                 <outlet property="doneButton" destination="NYm-dx-feu" id="q4X-TU-ECc"/>
                 <outlet property="githubButton" destination="20r-Nr-HRl" id="FTi-OJ-egZ"/>
                 <outlet property="inkpadButton" destination="es8-n7-XtW" id="yzX-5J-FTP"/>
+                <outlet property="versionLabel" destination="epv-v7-PSm" id="CT3-4r-FtC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -79,7 +80,7 @@ Public License 2.0. Includes some aspects of
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYm-dx-feu" customClass="GSButton">
-                    <rect key="frame" x="432" y="658" width="160" height="41"/>
+                    <rect key="frame" x="414" y="658" width="197" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
                     <state key="normal" title="Done">
@@ -90,6 +91,12 @@ Public License 2.0. Includes some aspects of
                         <action selector="doneTapped:" destination="-1" eventType="touchUpInside" id="hee-Sw-yRU"/>
                     </connections>
                 </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epv-v7-PSm" customClass="GSLabel">
+                    <rect key="frame" x="360" y="727" width="304" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
