@@ -20,7 +20,9 @@
 
 @end
 
-@implementation PlansViewController
+@implementation PlansViewController {
+	NSIndexPath *selectedIndexPath;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -67,6 +69,8 @@
 	
 	self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(canvasTapped:)];
 	[self.sidebar.canvasController.view addGestureRecognizer:self.tapRecognizer];
+	
+	selectedIndexPath = nil;
 }
 
 - (void)canvasTapped:(UIGestureRecognizer *)gestureRecognizer
@@ -136,10 +140,12 @@
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
 	NSLog(@"Did select called!");
+	
+	selectedIndexPath = indexPath;
 
 	WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:indexPath.row withCompletionHandler:nil];
 	if ([self.sidebar.canvasController.document.fileURL isEquivalent:document.fileURL]) {
-		// TODO switch to design tab
+		// TODO: switch to design tab if already selected
 		NSLog(@"Should switch to design tab");
 	} else {
 		[self.sidebar.canvasController setDocument:document];
@@ -279,6 +285,13 @@
 
 - (IBAction)addButtonTapped:(id)sender {
 	[self createNewDrawing];
+}
+
+- (void)willGetSelected
+{
+	if (selectedIndexPath) {
+		[self collectionView:self.collectionView didSelectItemAtIndexPath:selectedIndexPath];
+	}
 }
 
 @end

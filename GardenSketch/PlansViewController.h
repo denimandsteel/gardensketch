@@ -22,4 +22,6 @@
 
 - (IBAction)addButtonTapped:(id)sender;
 
+- (void)willGetSelected;
+
 @end

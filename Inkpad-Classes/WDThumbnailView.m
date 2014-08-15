@@ -189,7 +189,7 @@
     
     filename_ = filename;
 	
-	[[Mixpanel sharedInstance] track:@"Plan_Renamed" properties:@{@"name": filename_}];
+	[[Mixpanel sharedInstance] track:@"Plan_Renamed" properties:@{@"name": [filename_ stringByDeletingPathExtension]}];
     
     if (!titleLabel_) {
         titleLabel_ = [GSButton buttonWithType:UIButtonTypeCustom];
@@ -374,7 +374,7 @@
 
 - (IBAction)shareTapped:(id)sender {
 	[self.delegate shareTapped:self];
-	[[Mixpanel sharedInstance] track:@"Plan_Exported" properties:@{@"name": filename_}];
+	[[Mixpanel sharedInstance] track:@"Plan_Exported" properties:@{@"name": [filename_ stringByDeletingPathExtension]}];
 }
 
 - (IBAction)renameTapped:(id)sender {
@@ -402,7 +402,7 @@
     if (buttonIndex == 0) {
 		NSMutableSet *toDelete = [NSMutableSet setWithObject:filename_];
 		[[WDDrawingManager sharedInstance] deleteDrawings:toDelete];
-		[[Mixpanel sharedInstance] track:@"Plan_Deleted" properties:@{@"name": filename_}];
+		[[Mixpanel sharedInstance] track:@"Plan_Deleted" properties:@{@"name": [filename_ stringByDeletingPathExtension]}];
 	}
 }
 
