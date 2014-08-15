@@ -133,6 +133,8 @@
 	
 	[self.selectButton.layer setCornerRadius:3.0];
 	[self.selectButton.layer setMasksToBounds:YES];
+	
+	[self.toolsCollectionView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -448,6 +450,7 @@
 	NSLog(@"Did select tool!");
 	ToolCell *toolCell = (ToolCell *)[collectionView cellForItemAtIndexPath:indexPath];
 	
+	toolCell.drawingController = self.sidebar.canvasController.drawingController;
 	[self.toolsCollectionView performBatchUpdates:nil completion:nil];
 	
 	[toolCell activateTool];

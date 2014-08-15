@@ -13,6 +13,7 @@
 #import "WDShapeTool.h"
 #import "WDToolManager.h"
 #import "StencilManager.h"
+#import "WDDrawingController.h"
 
 #define COLOR_PICKER_LEFT 225.0
 
