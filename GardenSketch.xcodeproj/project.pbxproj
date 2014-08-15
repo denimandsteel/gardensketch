@@ -317,6 +317,18 @@
 		4D242C49199D6053008433DC /* north.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C48199D6053008433DC /* north.stencil */; };
 		4D242C4C199D7FC5008433DC /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C4A199D7FC5008433DC /* LaunchImage.png */; };
 		4D242C4D199D7FC5008433DC /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C4B199D7FC5008433DC /* LaunchImage@2x.png */; };
+		4D242C5A199E807A008433DC /* WidthSm_Inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C4E199E807A008433DC /* WidthSm_Inactive.png */; };
+		4D242C5B199E807A008433DC /* WidthSm_Active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C4F199E807A008433DC /* WidthSm_Active.png */; };
+		4D242C5C199E807A008433DC /* WidthMd_Inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C50199E807A008433DC /* WidthMd_Inactive.png */; };
+		4D242C5D199E807A008433DC /* WidthMd_Active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C51199E807A008433DC /* WidthMd_Active.png */; };
+		4D242C5E199E807A008433DC /* WidthLg_Inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C52199E807A008433DC /* WidthLg_Inactive.png */; };
+		4D242C5F199E807A008433DC /* WidthLg_Active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C53199E807A008433DC /* WidthLg_Active.png */; };
+		4D242C60199E807A008433DC /* SizeSm_Inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C54199E807A008433DC /* SizeSm_Inactive.png */; };
+		4D242C61199E807A008433DC /* SizeSm_Active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C55199E807A008433DC /* SizeSm_Active.png */; };
+		4D242C62199E807A008433DC /* SizeMd_Inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C56199E807A008433DC /* SizeMd_Inactive.png */; };
+		4D242C63199E807B008433DC /* SizeMd_Active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C57199E807A008433DC /* SizeMd_Active.png */; };
+		4D242C64199E807B008433DC /* SizeLg_Inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C58199E807A008433DC /* SizeLg_Inactive.png */; };
+		4D242C65199E807B008433DC /* SizeLg_Active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D242C59199E807A008433DC /* SizeLg_Active.png */; };
 		4D3CFA9519958B01000CCD31 /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA9419958B01000CCD31 /* Add@2x.png */; };
 		4D3CFA99199599F7000CCD31 /* Grid_Hide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */; };
 		4D3CFA9A199599F7000CCD31 /* Grid_Show@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */; };
@@ -1011,6 +1023,18 @@
 		4D242C48199D6053008433DC /* north.stencil */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = north.stencil; sourceTree = "<group>"; };
 		4D242C4A199D7FC5008433DC /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		4D242C4B199D7FC5008433DC /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
+		4D242C4E199E807A008433DC /* WidthSm_Inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WidthSm_Inactive.png; sourceTree = "<group>"; };
+		4D242C4F199E807A008433DC /* WidthSm_Active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WidthSm_Active.png; sourceTree = "<group>"; };
+		4D242C50199E807A008433DC /* WidthMd_Inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WidthMd_Inactive.png; sourceTree = "<group>"; };
+		4D242C51199E807A008433DC /* WidthMd_Active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WidthMd_Active.png; sourceTree = "<group>"; };
+		4D242C52199E807A008433DC /* WidthLg_Inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WidthLg_Inactive.png; sourceTree = "<group>"; };
+		4D242C53199E807A008433DC /* WidthLg_Active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WidthLg_Active.png; sourceTree = "<group>"; };
+		4D242C54199E807A008433DC /* SizeSm_Inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SizeSm_Inactive.png; sourceTree = "<group>"; };
+		4D242C55199E807A008433DC /* SizeSm_Active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SizeSm_Active.png; sourceTree = "<group>"; };
+		4D242C56199E807A008433DC /* SizeMd_Inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SizeMd_Inactive.png; sourceTree = "<group>"; };
+		4D242C57199E807A008433DC /* SizeMd_Active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SizeMd_Active.png; sourceTree = "<group>"; };
+		4D242C58199E807A008433DC /* SizeLg_Inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SizeLg_Inactive.png; sourceTree = "<group>"; };
+		4D242C59199E807A008433DC /* SizeLg_Active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SizeLg_Active.png; sourceTree = "<group>"; };
 		4D3CFA9419958B01000CCD31 /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
 		4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Hide@2x.png"; sourceTree = "<group>"; };
 		4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Show@2x.png"; sourceTree = "<group>"; };
@@ -1390,6 +1414,18 @@
 		4D05DB45194B820A001F19A7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4D242C4E199E807A008433DC /* WidthSm_Inactive.png */,
+				4D242C4F199E807A008433DC /* WidthSm_Active.png */,
+				4D242C50199E807A008433DC /* WidthMd_Inactive.png */,
+				4D242C51199E807A008433DC /* WidthMd_Active.png */,
+				4D242C52199E807A008433DC /* WidthLg_Inactive.png */,
+				4D242C53199E807A008433DC /* WidthLg_Active.png */,
+				4D242C54199E807A008433DC /* SizeSm_Inactive.png */,
+				4D242C55199E807A008433DC /* SizeSm_Active.png */,
+				4D242C56199E807A008433DC /* SizeMd_Inactive.png */,
+				4D242C57199E807A008433DC /* SizeMd_Active.png */,
+				4D242C58199E807A008433DC /* SizeLg_Inactive.png */,
+				4D242C59199E807A008433DC /* SizeLg_Active.png */,
 				4D242C22199D2FD0008433DC /* tutorial */,
 				4D3CFAF019999A71000CCD31 /* Rotate_Horizontal.png */,
 				4D3CFAF119999A71000CCD31 /* Rotate_Vertical.png */,
@@ -2454,6 +2490,7 @@
 				4D3CFAD71999955B000CCD31 /* Hedge_brown.png in Resources */,
 				4D3CFAC019995ED9000CCD31 /* Rotate_Horizontal@2x.png in Resources */,
 				4D6674431983212B00A17C4E /* Plant_Grey_Green.stencil in Resources */,
+				4D242C64199E807B008433DC /* SizeLg_Inactive.png in Resources */,
 				4D3CFAA319992C53000CCD31 /* Repeat@2x.png in Resources */,
 				4D081BFC195B3DE300F8871C /* House_No_Lines@2x.png in Resources */,
 				4D6674CE198AC4C200A17C4E /* L_Shaped_House_2.png in Resources */,
@@ -2494,9 +2531,11 @@
 				4D6674DE1991630B00A17C4E /* Flower_Pot.svg in Resources */,
 				4D6674AA1989B09C00A17C4E /* L_Shaped_House_4.svg in Resources */,
 				4D05DE231950AC3F001F19A7 /* Samples.xib in Resources */,
+				4D242C62199E807A008433DC /* SizeMd_Inactive.png in Resources */,
 				4D05DAF6194A70C7001F19A7 /* InfoPlist.strings in Resources */,
 				4D3CFAD51999955B000CCD31 /* Coniferous_Dark_Green.png in Resources */,
 				4D05DCBD194F7FF2001F19A7 /* spiral@2x.png in Resources */,
+				4D242C5D199E807A008433DC /* WidthMd_Active.png in Resources */,
 				4D6674CF198AC4C200A17C4E /* L_Shaped_House_3.png in Resources */,
 				4D3CFAC419996DDE000CCD31 /* Resize_Colour@2x.png in Resources */,
 				4D242C3A199D2FD0008433DC /* House3_1@2x.png in Resources */,
@@ -2549,11 +2588,13 @@
 				4D081C10195B7BA500F8871C /* Tile.svg in Resources */,
 				4D6674371983212B00A17C4E /* Deciduous_Tree_Mustard.stencil in Resources */,
 				4D05DCB7194F7FF2001F19A7 /* scale@2x.png in Resources */,
+				4D242C61199E807A008433DC /* SizeSm_Active.png in Resources */,
 				4D6674C31989C7CB00A17C4E /* L_Shaped_House_3@2x.png in Resources */,
 				4D05DCA9194F7FF2001F19A7 /* groupSelect@2x.png in Resources */,
 				4D081BDB1954A31600F8871C /* design@2x.png in Resources */,
 				4D66744B1983212B00A17C4E /* Shrub_Viridian.stencil in Resources */,
 				4D6674F719957CE600A17C4E /* Done@2x.png in Resources */,
+				4D242C63199E807B008433DC /* SizeMd_Active.png in Resources */,
 				4D05DCA4194F7FF2001F19A7 /* eyedropper.png in Resources */,
 				4D53F61D1965FC910097C8E3 /* Coniferous_Dark_Green@2x.png in Resources */,
 				4D05DCC2194F7FF2001F19A7 /* zoom.png in Resources */,
@@ -2592,6 +2633,7 @@
 				4D6673C81983116200A17C4E /* Coniferous_Green.svg in Resources */,
 				4D66742F1983212B00A17C4E /* Coniferous_DarkGreen.stencil in Resources */,
 				4D6674391983212B00A17C4E /* Deciduous_Tree_Violet.stencil in Resources */,
+				4D242C65199E807B008433DC /* SizeLg_Active.png in Resources */,
 				4D3CFAFB19999A71000CCD31 /* Resize_White.png in Resources */,
 				4D05DE261950AC3F001F19A7 /* Stroke.xib in Resources */,
 				4D081BFA195B3DC100F8871C /* Plant_Grey_Green@2x.png in Resources */,
@@ -2664,6 +2706,7 @@
 				4D6673C91983116200A17C4E /* Coniferous_Mustard.svg in Resources */,
 				4D6674321983212B00A17C4E /* Coniferous_Teal.stencil in Resources */,
 				4D6674491983212B00A17C4E /* Shrub_Green.stencil in Resources */,
+				4D242C5F199E807A008433DC /* WidthLg_Active.png in Resources */,
 				4D05DE211950AC3F001F19A7 /* LayerCell.xib in Resources */,
 				4D6674BB1989B4DC00A17C4E /* Rectangular_House_Horizontal.stencil in Resources */,
 				4D05DCB0194F7FF2001F19A7 /* pen@2x.png in Resources */,
@@ -2680,6 +2723,7 @@
 				4D6673CB1983116200A17C4E /* Coniferous_Violet.svg in Resources */,
 				4D3CFAB7199933F6000CCD31 /* SizeSm_Inactive@2x.png in Resources */,
 				4D3CFAE9199996EE000CCD31 /* StraightLine.png in Resources */,
+				4D242C5B199E807A008433DC /* WidthSm_Active.png in Resources */,
 				4D05DCAD194F7FF2001F19A7 /* oval.png in Resources */,
 				4D576065196481CE00DCCBEF /* Deciduous_Tree_Violet.svg in Resources */,
 				4D242C45199D5314008433DC /* Garden Sketch Wordmark@2x.png in Resources */,
@@ -2688,6 +2732,7 @@
 				4D3CFAE7199996EE000CCD31 /* FreehandLine.png in Resources */,
 				4D6674D3198AC68F00A17C4E /* Rectangular_House_Horizontal.png in Resources */,
 				4D05DCB5194F7FF2001F19A7 /* rotate@2x.png in Resources */,
+				4D242C60199E807A008433DC /* SizeSm_Inactive.png in Resources */,
 				4D6674E0199179A700A17C4E /* Flower_Pot@2x.png in Resources */,
 				4D05DCA2194F7FF2001F19A7 /* eraser.png in Resources */,
 				4D57604F195E0E5300DCCBEF /* Shrub_Brown.svg in Resources */,
@@ -2697,6 +2742,7 @@
 				4D6674E519929C9A00A17C4E /* ToolCell.xib in Resources */,
 				4D6674F5199441E100A17C4E /* CompassLg_Pointer@2x.png in Resources */,
 				4D05DE221950AC3F001F19A7 /* OpenClipArt.xib in Resources */,
+				4D242C5C199E807A008433DC /* WidthMd_Inactive.png in Resources */,
 				4D242C43199D38EF008433DC /* AboutViewController.xib in Resources */,
 				4D081BD4195351AC00F8871C /* Toucan in the Shade.inkpad in Resources */,
 				4D081C00195B3E4F00F8871C /* Tile@2x.png in Resources */,
@@ -2716,6 +2762,7 @@
 				4D53F63A196B149C0097C8E3 /* AppIcon76x76@2x.png in Resources */,
 				4D3CFAF819999A71000CCD31 /* Rotate_Vertical.png in Resources */,
 				4D05DCC0194F7FF2001F19A7 /* text.png in Resources */,
+				4D242C5E199E807A008433DC /* WidthLg_Inactive.png in Resources */,
 				4D081BDE1954A31600F8871C /* notes@2x.png in Resources */,
 				4D05DBB4194F5C81001F19A7 /* notes.png in Resources */,
 				4D576064196481CE00DCCBEF /* Deciduous_Tree_Teal.svg in Resources */,
@@ -2724,6 +2771,7 @@
 				4D05DE06194FC4CA001F19A7 /* WDThumbnailView.xib in Resources */,
 				4D6674301983212B00A17C4E /* Coniferous_Green.stencil in Resources */,
 				4D6674C21989C7CB00A17C4E /* L_Shaped_House_2@2x.png in Resources */,
+				4D242C5A199E807A008433DC /* WidthSm_Inactive.png in Resources */,
 				4D3CFAD81999955B000CCD31 /* Hedge_brown_horizontal.png in Resources */,
 				4D66742E1983212B00A17C4E /* Coniferous_Burgundy.stencil in Resources */,
 				4D6674C11989C7CB00A17C4E /* L_Shaped_House_1@2x.png in Resources */,
