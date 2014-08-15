@@ -42,13 +42,21 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     // Do any additional setup after loading the view from its nib.
 	
 	[self.collectionView registerNib:[UINib nibWithNibName:@"NoteCellView" bundle:nil] forCellWithReuseIdentifier:@"NoteCellIdentifier"];
-	
-	[self registerForKeyboardNotifications];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	WDDocument *currentDocument = self.sidebar.canvasController.document;
+	NSString *planName = currentDocument.displayName;
+	[self.planNameLabel setText:planName];
+	[self.planNameLabel setFont:GS_FONT_AVENIR_BODY_BOLD];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
 	WDDrawing *drawing = self.sidebar.canvasController.drawing;
+	
+	[self setupCompassForDrawing:drawing];
 	
 	if (drawing.layers.count > 2) {
 		WDLayer *notesLayer = (WDLayer *)drawing.layers[2];
@@ -66,17 +74,22 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	NSString *planName = currentDocument.displayName;
 	[self.planNameLabel setText:planName];
 
-	
 	[self.collectionView reloadData];
+	
+	[self registerForKeyboardNotifications];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
 	WDDrawing *drawing = self.sidebar.canvasController.drawing;
-	WDLayer *notesLayer = (WDLayer *)drawing.layers[2];
-	[notesLayer setVisible:NO];
+	if (drawing.layers.count > 2) {
+		WDLayer *notesLayer = (WDLayer *)drawing.layers[2];
+		[notesLayer setVisible:NO];
+	}
 	
 	[drawing activateLayerAtIndex:1];
+	
+	[self unregisterForKeyboardNotifications];
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,12 +112,15 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	GSNote *note = ((GSNote *)self.sidebar.canvasController.drawing.notes[indexPath.row]);
 	
 	NoteCellView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"NoteCellIdentifier" forIndexPath:indexPath];
+	[cell.layer setCornerRadius:5.0];
+	[cell.layer setMasksToBounds:YES];
 	[cell.bodyLabel setText:note.bodyText];
 	[cell.bodyTextView setText:note.bodyText];
 	NSString *letter = [LETTERS substringWithRange:NSMakeRange(note.letterIndex, 1)];
 	[cell.letterLabel setText:letter];
 	cell.delegate = self;
 	[cell.bodyTextView setDelegate:cell];
+	[cell.deleteButton.titleLabel setFont:GS_FONT_AVENIR_SMALL];
 	return cell;
 }
 
@@ -133,7 +149,7 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	
 	// TODO add some margins for the top and the bottom of the note body text.
 	rect.size.height = MAX(rect.size.height, NOTE_CELL_MIN_HEIGHT) + 20;
-	rect.size.width = 280;
+	rect.size.width = 320;
 	return rect.size;
 }
 
@@ -250,6 +266,12 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	
 }
 
+- (void)unregisterForKeyboardNotifications
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
 // Called when the UIKeyboardDidShowNotification is sent.
 - (void)keyboardWasShown:(NSNotification*)aNotification
 {
@@ -311,13 +333,55 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 {
 	WDLayer *notesLayer = self.sidebar.canvasController.drawing.layers[2];
 	
-	for (WDText *textElement in notesLayer.elements) {
-		if ([textElement.text isEqualToString:[LETTERS substringWithRange:NSMakeRange(note.letterIndex, 1)]]) {
-			return textElement;
+	for (WDElement *element in notesLayer.elements) {
+		if ([element isKindOfClass:[WDText class]]) {
+			WDText *textElement = (WDText *)element;
+			if ([textElement.text isEqualToString:[LETTERS substringWithRange:NSMakeRange(note.letterIndex, 1)]]) {
+				return textElement;
+			}
 		}
+		
 	}
 	
 	return nil;
+}
+
+- (void)setupCompassForDrawing:(WDDrawing *)drawing
+{
+	WDLayer *notesLayer = drawing.layers.lastObject;
+	
+	WDElement *oldNorthShape = nil;
+	
+	// remove north if already exists:
+	for (WDElement *element in notesLayer.elements) {
+		if ([element isKindOfClass:[WDGroup class]]) {
+			oldNorthShape = element;
+		}
+	}
+	
+	if (oldNorthShape) {
+		[notesLayer removeObject:oldNorthShape];
+	}
+	
+	// (re-)add the north shape
+	WDGroup *northShape = [[StencilManager sharedInstance].shapes[@"north"] copy];
+	
+	CGFloat angle = 0;
+	NSNumber *angleNumber = [[NSUserDefaults standardUserDefaults] valueForKey:GS_NORTH_ANGLE];
+	if (angleNumber) {
+		angle = [angleNumber floatValue];
+	}
+	
+	
+	CGAffineTransform rotate = CGAffineTransformMakeRotation(angle *  M_PI / 180);
+	CGFloat left = drawing.dimensions.width - northShape.bounds.size.width;
+	CGFloat top = drawing.dimensions.height - northShape.bounds.size.height;
+	CGAffineTransform transfer = CGAffineTransformMakeTranslation(left, top);
+	CGAffineTransform transform = CGAffineTransformConcat(rotate, transfer);
+	
+	[northShape transform:transform];
+
+	[notesLayer addObject:northShape];
 }
 
 @end

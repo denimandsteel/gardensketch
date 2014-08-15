@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GSLabel.h"
+#import "GSLabelHead.h"
 #import "GSTextView.h"
 
 @protocol NoteCellDelegate <NSObject>
@@ -22,7 +23,9 @@
 
 @property (weak, nonatomic) IBOutlet GSLabel *bodyLabel;
 @property (weak, nonatomic) IBOutlet GSTextView *bodyTextView;
-@property (weak, nonatomic) IBOutlet UILabel *letterLabel;
+@property (weak, nonatomic) IBOutlet GSLabelHead *letterLabel;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+
 
 @property (nonatomic, assign) id<NoteCellDelegate> delegate;
 
@@ -30,6 +33,5 @@
 - (void) switchToViewMode;
 
 - (IBAction)deleteTapped:(id)sender;
-- (IBAction)editTapped:(id)sender;
 
 @end

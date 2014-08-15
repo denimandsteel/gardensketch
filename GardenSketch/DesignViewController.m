@@ -19,6 +19,8 @@
 #import "StencilManager.h"
 #import "WDInspectableProperties.h"
 #import "WDLayer.h"
+#import "ToolCell.h"
+#import "ToolCollectionHeaderView.h"
 
 @interface DesignViewController ()
 
@@ -31,6 +33,8 @@
 	NSArray *plantColors;
 	NSArray *shrubColors;
 	NSArray *treeColors;
+	
+	NSIndexPath *selectedToolIndexPath;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -47,10 +51,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	
+	selectedToolIndexPath = nil;
+	
 	[[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(drawingChanged:)
                                                  name:UIDocumentStateChangedNotification
                                                object:nil];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(activeToolChanged:) name:WDActiveToolDidChange object:nil];
 	
 	outlineColors = @[GS_COLOR_STROKE_RED,
 							   GS_COLOR_STROKE_DARK_GREY,
@@ -82,14 +90,51 @@
 				   GS_COLOR_TREE_VIOLET,
 				   GS_COLOR_TREE_BURGUNDY];
 	
-	[self.colorPicker setColors:outlineColors];
-	[self.colorPicker setDelegate:self];
-	
 	// Set initial stroke color:
-	UIColor *color = self.colorPicker.colors[0];
+	UIColor *color = outlineColors[0];
 	[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
 	
 	[self initTools];
+	
+	[self.toolsCollectionView registerNib:[UINib nibWithNibName:@"ToolCell" bundle:nil] forCellWithReuseIdentifier:@"ToolCellIdentifier"];
+	
+	[self.toolsCollectionView registerNib:[UINib nibWithNibName:@"ToolCollectionHeader" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"ToolCollectionHeaderIdentifier"];
+	
+	[self.toolsCollectionView setBackgroundColor:GS_COLOR_LIGHT_GREY_BACKGROUND];
+	
+	UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toolsCollectionViewDoubleTapped:)];
+	[doubleTapGestureRecognizer setNumberOfTapsRequired:2];
+	[doubleTapGestureRecognizer setNumberOfTouchesRequired:1];
+	[self.toolsCollectionView addGestureRecognizer:doubleTapGestureRecognizer];
+	[self.toolsCollectionView setAllowsMultipleSelection:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[self.headerBackgroundView setBackgroundColor:GS_COLOR_DARK_GREY_BACKGROUND];
+	
+	WDDocument *currentDocument = self.sidebar.canvasController.document;
+	NSString *planName = currentDocument.displayName;
+	[self.planNameLabel setText:planName];
+	[self.planNameLabel setFont:GS_FONT_AVENIR_BODY_BOLD];
+	
+	[self.gridButton setSelected:[self.sidebar.canvasController.drawing showGrid]];
+	
+	[self.selectButton setTitleColor:GS_COLOR_DARK_GREY_TEXT forState:UIControlStateNormal];
+	[self.selectButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+	
+	[self.selectButton setImage:[UIImage imageNamed:@"Select_Colour"] forState:UIControlStateNormal];
+	[self.selectButton setImage:[UIImage imageNamed:@"Select_White"] forState:UIControlStateSelected];
+	
+	[self.selectButton setBackgroundImage:[UIImage imageNamed:@"select_background_white"] forState:UIControlStateNormal];
+	[self.selectButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateSelected];
+	
+	[self.selectButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 20)];
+	
+	[self.selectButton.layer setCornerRadius:3.0];
+	[self.selectButton.layer setMasksToBounds:YES];
+	
+	[self.toolsCollectionView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -105,15 +150,8 @@
 	[nc addObserver:self selector:@selector(undoStatusDidChange:) name:NSUndoManagerDidRedoChangeNotification object:undoManager];
     [nc addObserver:self selector:@selector(undoStatusDidChange:) name:NSUndoManagerDidCloseUndoGroupNotification object:undoManager];
 	
-	[nc addObserver:self
-           selector:@selector(activeShapeChanged:)
-               name:WDStencilShapeChanged
-             object:nil];
-	
 	WDDocument *currentDocument = self.sidebar.canvasController.document;
 	NSString *planName = currentDocument.displayName;
-	
-	[self.gridButton setSelected:[self.sidebar.canvasController.drawing showGrid]];
 	
 	[self.planNameLabel setText:planName];
 	
@@ -134,86 +172,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark Plan Navigation
-
-// Needs to save the current plan, and open prev or next one
-- (IBAction)toolsTabChanged:(id)sender {
-	NSUInteger index = [((UISegmentedControl *)sender) selectedSegmentIndex];
-	if (index == 0) {
-		[self.plantsView setHidden:NO];
-		[self.structuresView setHidden:YES];
-	} else {
-		[self.plantsView setHidden:YES];
-		[self.structuresView setHidden:NO];
-	}
-}
-
 - (IBAction)gridTapped:(id)sender {
 	BOOL state = [self.sidebar.canvasController.drawing showGrid];
 	[self.sidebar.canvasController.drawing setShowGrid:!state];
 	[self.gridButton setSelected:!state];
-}
-
-- (IBAction)changePlan:(id)sender {
-	WDDocument *currentDocument = self.sidebar.canvasController.document;
-	
-	NSInteger planIndex = [[WDDrawingManager sharedInstance].drawingNames indexOfObject:currentDocument.filename];
-	
-	UIButton *button = (UIButton *)sender;
-	if (button.tag == 0) {
-		// previous
-		planIndex--;
-	} else {
-		// next
-		planIndex++;
-	}
-	
-	if (planIndex < 0 || planIndex >= [WDDrawingManager sharedInstance].numberOfDrawings) {
-		return;
-	}
-	
-	// TODO: make sure current document is saved
-	// TODO: make sure the selection view is cleared, selected path points show up in the next plan
-	
-	WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:planIndex withCompletionHandler:nil];
-	[self.sidebar.canvasController setDocument:document];
-	
-}
-
-- (IBAction)colorPickerTapped:(id)sender {
-	ColorPickerButton *button = (ColorPickerButton *)sender;
-	[button showColors:self];
-}
-
-- (IBAction)sizeButtonTapped:(id)sender {
-	UIButton *button = (UIButton *)sender;
-	ShapeSize shapeSize = (ShapeSize)(button.tag);
-	// tags: 0, 1 and 2
-	[self setSelectedSizeButton:shapeSize];
-	
-	[[StencilManager sharedInstance] setSizeForActiveShape:shapeSize];
-	
-	if ([StencilManager sharedInstance].activeShapeType == kLine) {
-		
-		CGFloat strokeWidth = 1.0;
-		
-		switch (shapeSize) {
-			case kSmall:
-				strokeWidth = 1.0;
-				break;
-			case kMedium:
-				strokeWidth = 3.0;
-				break;
-			case kBig:
-				strokeWidth = 6.0;
-				break;
-			default:
-				break;
-		}
-		
-		[self.sidebar.canvasController.drawingController setValue:[NSNumber numberWithFloat:strokeWidth]
-													  forProperty:WDStrokeWidthProperty];
-	}
 }
 
 - (IBAction)deleteTapped:(id)sender {
@@ -259,205 +221,14 @@
 
 - (void) initTools
 {
-	// TODO: make this more sane by moving actions to IB
-	// TODO: also having one property per tool on the tool manager, to get rid of the massive loop down here:
-	
-	WDTool *select = nil;
-	WDTool *freehand = nil;
-	WDTool *line = nil;
-	WDTool *enclosed = nil;
-	WDTool *plant = nil;
-	WDTool *shrub = nil;
-	WDTool *verticalHedge = nil;
-	WDTool *horizontalHedge = nil;
-	WDTool *deciduousTree = nil;
-	WDTool *coniferousTree = nil;
-	WDTool *sidewalk = nil;
-	WDTool *gazebo = nil;
-	WDTool *shed = nil;
-	WDTool *waterFeature = nil;
-	WDTool *flowerPot = nil;
-	
-	for (WDTool *tool in [WDToolManager sharedInstance].tools) {
-		if ([tool isKindOfClass:[WDFreehandTool class]]) {
-			if ([(WDFreehandTool *)tool closeShape]) {
-				enclosed = tool;
-			} else {
-				freehand = tool;
-			}
-		} else if ([tool isKindOfClass:[WDStencilTool class]]) {
-			switch ([(WDStencilTool *)tool type]) {
-				case kPlant:
-					plant = tool;
-					break;
-				case kShrub:
-					shrub = tool;
-					break;
-				case kHedge:
-					if ([((WDStencilTool *)tool) initialRotation] > 0.0) {
-						horizontalHedge = tool;
-					} else {
-						verticalHedge = tool;
-					}
-					break;
-				case kTreeDeciduous:
-					deciduousTree = tool;
-					break;
-				case kTreeConiferous:
-					coniferousTree = tool;
-					break;
-				case kSidewalk:
-					sidewalk = tool;
-					break;
-				case kGazebo:
-					gazebo = tool;
-					break;
-				case kShed:
-					shed = tool;
-					break;
-				case kWaterFeature:
-					waterFeature = tool;
-					break;
-				case kFlowerPot:
-					flowerPot = tool;
-					break;
-				default:
-					NSLog(@"hmm.. weird");
-			}
-			
-		} else if ([tool isKindOfClass:[WDSelectionTool class]]) {
-			select = tool;
-		} else if ([tool isKindOfClass:[WDShapeTool class]]) {
-			line = tool;
-		}
-		
-	}
-	
+	WDTool *select = [WDToolManager sharedInstance].select;
 	self.selectButton.tool = select;
 	[self.selectButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-	
-	self.freehandButton.tool = freehand;
-	[self.freehandButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-	
-	self.straightLineButton.tool = line;
-	[self.straightLineButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-	
-	self.enclosedButton.tool = enclosed;
-	[self.enclosedButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-	
-	self.plantButton.tool = plant;
-	[self.plantButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-	
-	self.shrubButton.tool = shrub;
-	[self.shrubButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-	
-	self.verticalHedgeButton.tool = verticalHedge;
-	[self.verticalHedgeButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-	
-	self.horizontalHedgeButton.tool = horizontalHedge;
-	[self.horizontalHedgeButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-	
-	self.deciduousTreeButton.tool = deciduousTree;
-	[self.deciduousTreeButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-	
-	self.coniferousTreeButton.tool = coniferousTree;
-	[self.coniferousTreeButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-	
-	self.tileButton.tool = sidewalk;
-	[self.tileButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-	
-	self.gazeboButton.tool = gazebo;
-	[self.gazeboButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-	
-	self.shedButton.tool = shed;
-	[self.shedButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-	
-	self.waterFeatureButton.tool = waterFeature;
-	[self.waterFeatureButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
-	
-	self.flowerPotButton.tool = flowerPot;
-	[self.flowerPotButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void) selectionChanged:(NSNotification *)aNotification
 {
     self.deleteButton.enabled = self.cloneButton.enabled = (self.sidebar.canvasController.drawingController.selectedObjects.count > 0) ? YES : NO;
-}
-
-- (void) activeShapeChanged:(NSNotification *)aNotification
-{
-	ShapeType type = (ShapeType)[aNotification.userInfo[@"shapeType"] integerValue];
-    // TODO: update the selected size, and the color picker palette and active colors.
-	NSLog(@"active shape changed to: %lu", [aNotification.userInfo[@"shapeType"] integerValue]);
-	
-	switch (type) {
-		case kPlant:
-			[self.colorPicker setEnabled:YES];
-			[self.colorPicker setColors:plantColors];
-			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] plantColor]];
-			break;
-		case kShrub:
-		case kHedge:
-			[self.colorPicker setEnabled:YES];
-			[self.colorPicker setColors:shrubColors];
-			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] shrubColor]];
-			break;
-		case kTreeConiferous:
-		case kTreeDeciduous:
-			[self.colorPicker setEnabled:YES];
-			[self.colorPicker setColors:treeColors];
-			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] treeColor]];
-			break;
-		case kLine:
-			[self.colorPicker setEnabled:YES];
-			[self.colorPicker setColors:outlineColors];
-			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] outlineColor]];
-						
-			break;
-		case kArea:
-			[self.colorPicker setEnabled:YES];
-			[self.colorPicker setColors:areaColors];
-			[self.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] areaColor]];
-		default:
-			break;
-	}
-	
-	// update the selected size button
-	ShapeSize activeShapeSize = [[StencilManager sharedInstance] sizeForActiveShape];
-	[self setSelectedSizeButton:activeShapeSize];
-	
-	if (type == kLine) {
-		
-		CGFloat strokeWidth = 1.0;
-		
-		switch (activeShapeSize) {
-			case kSmall:
-				strokeWidth = 1.0;
-				break;
-			case kMedium:
-				strokeWidth = 3.0;
-				break;
-			case kBig:
-				strokeWidth = 6.0;
-				break;
-			default:
-				break;
-		}
-		
-		[self.sidebar.canvasController.drawingController setValue:[NSNumber numberWithFloat:strokeWidth]
-													  forProperty:WDStrokeWidthProperty];
-	}
-}
-
-- (void)setSelectedSizeButton:(ShapeSize)shapeSize
-{
-	for (UIButton *button in self.sizeButtons) {
-		if (button.tag == shapeSize) {
-			[button setSelected:YES];
-		} else {
-			[button setSelected:NO];
-		}
-	}
 }
 
 - (void) undoStatusDidChange:(NSNotification *)aNotification
@@ -468,40 +239,310 @@
     });
 }
 
-#pragma mark - Color cpiker delegate methods
+#pragma mark - Color picker delegate methods
 - (void)colorPicker:(ColorPickerButton *)colorpicker didSelectIndex:(NSInteger)index
 {
+	WDTool *tool = colorpicker.tool;
 	ShapeType activeType = [StencilManager sharedInstance].activeShapeType;
 	
-	switch (activeType) {
-		case kPlant:
-			[[StencilManager sharedInstance] setPlantColor:(PlantColor)index];
+	if (tool == [WDToolManager sharedInstance].plant) {
+		[[StencilManager sharedInstance] setPlantColor:(PlantColor)index];
+	} else if (tool == [WDToolManager sharedInstance].shrub) {
+		[[StencilManager sharedInstance] setShrubColor:(ShrubColor)index];
+	} else if (tool == [WDToolManager sharedInstance].hedge) {
+		[[StencilManager sharedInstance] setHedgeColor:(ShrubColor)index];
+	} else if (tool == [WDToolManager sharedInstance].coniferousTree) {
+		[[StencilManager sharedInstance] setConiferousTreeColor:(TreeColor)index];
+	} else if (tool == [WDToolManager sharedInstance].deciduousTree) {
+		[[StencilManager sharedInstance] setDeciduousTreeColor:(TreeColor)index];
+	} else if (tool == [WDToolManager sharedInstance].straightLine) {
+		[[StencilManager sharedInstance] setStraightLineColor:(OutlineColor)index];
+		UIColor *color = colorpicker.colors[index];
+		[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
+	} else if (tool == [WDToolManager sharedInstance].freehandLine) {
+		[[StencilManager sharedInstance] setFreehandLineColor:(OutlineColor)index];
+		UIColor *color = colorpicker.colors[index];
+		[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
+	} else if (tool == [WDToolManager sharedInstance].area) {
+		[[StencilManager sharedInstance] setAreaColor:(AreaColor)index];
+		UIColor *color = colorpicker.colors[index];
+		[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDFillProperty];
+	}
+}
+
+#pragma mark Tools CollectionView delegates.
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+	return 3; // 'Drawing', 'Plants' and 'Structures' sections
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
+{
+    switch (section) {
+		case 0:
+			// Drawing section
+			return 3;
 			break;
-		case kShrub:
-		case kHedge:
-			[[StencilManager sharedInstance] setShrubColor:(ShrubColor)index];
+		case 1:
+			// Plants section
+			return 5;
 			break;
-		case kTreeConiferous:
-		case kTreeDeciduous:
-			[[StencilManager sharedInstance] setTreeColor:(TreeColor)index];
+		case 2:
+			// Structures section
+			return 5;
 			break;
-		case kLine:
+		default:
+			return 0;
+			break;
+	}
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
+{
+	ToolCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ToolCellIdentifier" forIndexPath:indexPath];
+	
+	[cell.colorPicker setDelegate:self];
+	cell.drawingController = self.sidebar.canvasController.drawingController;
+	
+	WDTool *tool = nil;
+	
+	switch (indexPath.section) {
+		case 0:
 		{
-			[[StencilManager sharedInstance] setOutlineColor:(OutlineColor)index];
-			UIColor *color = self.colorPicker.colors[index];
-			[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];
+			switch (indexPath.row) {
+				case 0:
+					tool = [WDToolManager sharedInstance].straightLine;
+					[cell.colorPicker setTool:tool];
+					// TODO move these to the setTool setter in color picker.
+					[cell.colorPicker setColors:outlineColors];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] straightLineColor]];
+					break;
+				case 1:
+					tool = [WDToolManager sharedInstance].freehandLine;
+					[cell.colorPicker setTool:tool];
+					[cell.colorPicker setColors:outlineColors];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] freehandLineColor]];
+					break;
+				case 2:
+					tool = [WDToolManager sharedInstance].area;
+					[cell.colorPicker setTool:tool];
+					[cell.colorPicker setColors:areaColors];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] areaColor]];
+					break;
+			}
 			break;
 		}
-		case kArea:
+		case 1:
 		{
-			[[StencilManager sharedInstance] setAreaColor:(AreaColor)index];
-			UIColor *color = self.colorPicker.colors[index];
-			[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDFillProperty];
+			switch (indexPath.row) {
+				case 0:
+					tool = [WDToolManager sharedInstance].plant;
+					[cell.colorPicker setTool:tool];
+					[cell.colorPicker setColors:plantColors];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] plantColor]];
+					break;
+				case 1:
+					tool = [WDToolManager sharedInstance].shrub;
+					[cell.colorPicker setTool:tool];
+					[cell.colorPicker setColors:shrubColors];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] shrubColor]];
+					break;
+				case 2:
+					tool = [WDToolManager sharedInstance].hedge;
+					[cell.colorPicker setTool:tool];
+					[cell.colorPicker setColors:shrubColors];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] shrubColor]];
+					break;
+				case 3:
+					tool = [WDToolManager sharedInstance].deciduousTree;
+					[cell.colorPicker setTool:tool];
+					[cell.colorPicker setColors:treeColors];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] deciduousTreeColor]];
+					break;
+				case 4:
+					tool = [WDToolManager sharedInstance].coniferousTree;
+					[cell.colorPicker setTool:tool];
+					[cell.colorPicker setColors:treeColors];
+					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] coniferousTreeColor]];
+					break;
+			}
 			break;
 		}
+		case 2:
+		{
+			switch (indexPath.row) {
+				case 0:
+					tool = [WDToolManager sharedInstance].tile;
+					break;
+				case 1:
+					tool = [WDToolManager sharedInstance].waterFeature;
+					break;
+				case 2:
+					tool = [WDToolManager sharedInstance].shed;
+					break;
+				case 3:
+					tool = [WDToolManager sharedInstance].gazebo;
+					break;
+				case 4:
+					tool = [WDToolManager sharedInstance].flowerPot;
+					break;
+			}
+			break;
+		}
+			
 		default:
 			break;
 	}
+	
+	[cell.toolButton setTool:tool];
+	
+	[cell initialize];
+	
+	if (selectedToolIndexPath && [selectedToolIndexPath compare:indexPath] == NSOrderedSame) {
+		[cell setSelected:YES];
+	} else {
+		[cell setSelected:NO];
+	}
+	
+	return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    ToolCollectionHeaderView *reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"ToolCollectionHeaderIdentifier" forIndexPath:indexPath];
+    
+    if (kind == UICollectionElementKindSectionHeader) {
+		NSString *headerText = @"";
+        switch (indexPath.section) {
+			case 0:
+				headerText = @"Drawing";
+				break;
+			case 1:
+				headerText = @"Plants";
+				break;
+			case 2:
+				headerText = @"Structures";
+				break;
+			default:
+				break;
+		}
+		[reusableview.label setText:headerText];
+    }
+	
+    return reusableview;
+}
+
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+	if (selectedToolIndexPath) {
+		// Deselect if already selected:
+		if ([selectedToolIndexPath compare:indexPath] == NSOrderedSame) {
+			[collectionView deselectItemAtIndexPath:selectedToolIndexPath animated:YES];
+			selectedToolIndexPath = nil;
+			[[WDToolManager sharedInstance] setActiveTool:[WDToolManager sharedInstance].select];
+			[self.toolsCollectionView performBatchUpdates:nil completion:nil];
+			return;
+		}
+		[collectionView deselectItemAtIndexPath:selectedToolIndexPath animated:YES];
+	}
+	selectedToolIndexPath = indexPath;
+	NSLog(@"Did select tool!");
+	ToolCell *toolCell = (ToolCell *)[collectionView cellForItemAtIndexPath:indexPath];
+	
+	toolCell.drawingController = self.sidebar.canvasController.drawingController;
+	[self.toolsCollectionView performBatchUpdates:nil completion:nil];
+	
+	[toolCell activateTool];
+}
+
+- (void) collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+
+}
+
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+	NSLog(@"Yep!");
+	return YES;
+}
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+	// TODO: call invalidateLayout after a cell has changed size, to receive a call here:
+	CGSize size = CGSizeMake(GS_SIDEBAR_WIDTH - 20, 80);
+	
+	if (selectedToolIndexPath && [selectedToolIndexPath compare:indexPath] == NSOrderedSame) {
+		size = CGSizeMake(GS_SIDEBAR_WIDTH - 20, 190);
+	}
+	
+	return size;
+}
+
+- (void)activeToolChanged:(NSNotification *)aNotification
+{
+    WDTool *tool = [[WDToolManager sharedInstance] activeTool];
+	
+	NSIndexPath *indexPath = [self indexPathForTool:tool];
+	
+	if (indexPath) {
+		[self.toolsCollectionView selectItemAtIndexPath:[self indexPathForTool:tool] animated:YES scrollPosition:UICollectionViewScrollPositionNone];
+		selectedToolIndexPath = indexPath;
+	} else {
+		[self.toolsCollectionView deselectItemAtIndexPath:selectedToolIndexPath animated:YES];
+		selectedToolIndexPath = nil;
+	}
+	[self.toolsCollectionView performBatchUpdates:nil completion:nil];
+}
+
+- (NSIndexPath *)indexPathForTool:(WDTool *)tool
+{
+	if (tool == [WDToolManager sharedInstance].straightLine) {
+		return [NSIndexPath indexPathForItem:0 inSection:0];
+	} else if (tool == [WDToolManager sharedInstance].freehandLine) {
+		return [NSIndexPath indexPathForItem:1 inSection:0];
+	} else if (tool == [WDToolManager sharedInstance].area) {
+		return [NSIndexPath indexPathForItem:2 inSection:0];
+	} else if (tool == [WDToolManager sharedInstance].plant) {
+		return [NSIndexPath indexPathForItem:0 inSection:1];
+	} else if (tool == [WDToolManager sharedInstance].shrub) {
+		return [NSIndexPath indexPathForItem:1 inSection:1];
+	} else if (tool == [WDToolManager sharedInstance].hedge) {
+		return [NSIndexPath indexPathForItem:2 inSection:1];
+	} else if (tool == [WDToolManager sharedInstance].deciduousTree) {
+		return [NSIndexPath indexPathForItem:3 inSection:1];
+	} else if (tool == [WDToolManager sharedInstance].coniferousTree) {
+		return [NSIndexPath indexPathForItem:4 inSection:1];
+	} else if (tool == [WDToolManager sharedInstance].tile) {
+		return [NSIndexPath indexPathForItem:0 inSection:2];
+	} else if (tool == [WDToolManager sharedInstance].waterFeature) {
+		return [NSIndexPath indexPathForItem:1 inSection:2];
+	} else if (tool == [WDToolManager sharedInstance].shed) {
+		return [NSIndexPath indexPathForItem:2 inSection:2];
+	} else if (tool == [WDToolManager sharedInstance].gazebo) {
+		return [NSIndexPath indexPathForItem:3 inSection:2];
+	} else if (tool == [WDToolManager sharedInstance].flowerPot) {
+		return [NSIndexPath indexPathForItem:4 inSection:2];
+	} else {
+		return nil;
+	}
+}
+
+- (void)toolsCollectionViewDoubleTapped:(UIGestureRecognizer *)gestureRecognizer
+{
+	if (gestureRecognizer.state == UIGestureRecognizerStateEnded)
+    {
+        CGPoint point = [gestureRecognizer locationInView:self.toolsCollectionView];
+        NSIndexPath *indexPath = [self.toolsCollectionView indexPathForItemAtPoint:point];
+        if (indexPath)
+        {
+            NSLog(@"Image was double tapped");
+        }
+        else
+        {
+            NSLog(@"Whaaa?!");
+        }
+    }
 }
 
 @end

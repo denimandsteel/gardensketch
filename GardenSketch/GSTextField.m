@@ -8,6 +8,7 @@
 
 #import "GSTextField.h"
 #import "Constants.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation GSTextField
 
@@ -33,6 +34,7 @@
 - (void)initialize
 {
 	[self setFont:GS_FONT_AVENIR_BODY];
+	[self setTextColor:GS_COLOR_DARK_GREY_TEXT];
 }
 
 

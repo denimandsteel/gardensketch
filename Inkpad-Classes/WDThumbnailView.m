@@ -16,6 +16,8 @@
 #import "UIView+Additions.h"
 #import "GSButton.h"
 #import "GSTextField.h"
+#import "Constants.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface WDThumbnailView (Private)
 - (void) reloadFilenameFields_;
@@ -23,9 +25,12 @@
 @end
 
 #define kTitleFieldHeight       30
-#define kMaxThumbnailDimension  140
+#define kMaxThumbnailDimension  150
 
 @implementation WDThumbnailView
+{
+	BOOL actionsVisible;
+}
 
 @synthesize filename = filename_;
 @synthesize titleField = titleField_;
@@ -42,8 +47,7 @@
         return nil;
     }
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(drawingRenamed:) name:WDDrawingRenamed object:nil];
-    [self updateShadow_];
+    [self initialize];
     
     return self;
 }
@@ -56,10 +60,16 @@
         return nil;
     }
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(drawingRenamed:) name:WDDrawingRenamed object:nil];
-    [self updateShadow_];
-
+	[self initialize];
+	
     return self;
+}
+
+- (void)initialize
+{
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(drawingRenamed:) name:WDDrawingRenamed object:nil];
+    [self updateShadow_];
+	actionsVisible = NO;
 }
 
 - (void) dealloc
@@ -101,7 +111,7 @@
                              selectedIndicator_ = nil;
                          }];
     }
- }
+}
 
 - (void) editTitle:(id)sender
 {
@@ -180,7 +190,7 @@
     
     if (!titleLabel_) {
         titleLabel_ = [GSButton buttonWithType:UIButtonTypeCustom];
-        titleLabel_.frame = CGRectMake(0, 0, self.bounds.size.width, kTitleFieldHeight);
+        titleLabel_.frame = CGRectMake(0, 0, self.bounds.size.width - 100, kTitleFieldHeight);
         titleLabel_.opaque = NO;
         titleLabel_.backgroundColor = nil;
         titleLabel_.exclusiveTouch = YES;
@@ -188,6 +198,7 @@
         titleLabel_.titleLabel.textAlignment = NSTextAlignmentCenter;
         titleLabel_.titleLabel.shadowOffset = CGSizeMake(0, 1);
         titleLabel_.titleLabel.lineBreakMode = NSLineBreakByTruncatingMiddle;
+		titleLabel_.titleLabel.font = GS_FONT_AVENIR_BODY_BOLD;
 
         [titleLabel_ setTitleShadowColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [titleLabel_ addTarget:self action:@selector(editTitle:) forControlEvents:UIControlEventTouchUpInside];
@@ -196,7 +207,7 @@
     }
     
     if (!titleField_) {
-        titleField_ = [[GSTextField alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width - self.actionView.bounds.size.width, kTitleFieldHeight)];
+        titleField_ = [[GSTextField alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width - 100, kTitleFieldHeight)];
         titleField_.textAlignment = NSTextAlignmentCenter;
         titleField_.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         titleField_.delegate = self;
@@ -204,6 +215,7 @@
         titleField_.returnKeyType = UIReturnKeyDone;
         titleField_.borderStyle = UITextBorderStyleRoundedRect;
         titleField_.hidden = YES;
+		titleField_.font = GS_FONT_AVENIR_BODY_BOLD;
         [titleField_ addTarget:self action:@selector(textEdited:) forControlEvents:(UIControlEventEditingDidEndOnExit)]; 
         [titleField_ addTarget:self action:@selector(textEditingDidEnd:) forControlEvents:(UIControlEventEditingDidEnd)];
         [self addSubview:titleField_];
@@ -279,10 +291,15 @@
         imageView_.image = thumbImage;
     }
     
-    imageView_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)-CGRectGetWidth(self.actionView.bounds)) / 2, WDCenterOfRect(self.bounds).y - (kTitleFieldHeight/2));
+	if (actionsVisible) {
+		imageView_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)-CGRectGetWidth(self.actionView.bounds)) / 2, WDCenterOfRect(self.bounds).y - (kTitleFieldHeight/2));
+	} else {
+		imageView_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)) / 2, WDCenterOfRect(self.bounds).y - (kTitleFieldHeight/2));
+	}
+    
     [self updateShadow_];
     
-    titleField_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)-CGRectGetWidth(self.actionView.bounds)) / 2, CGRectGetMaxY(imageView_.frame) + kTitleFieldHeight );
+    titleField_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)) / 2, CGRectGetMaxY(self.actionView.frame) + kTitleFieldHeight );
     titleLabel_.sharpCenter = titleField_.sharpCenter;
     
     [self reloadFilenameFields_];
@@ -321,18 +338,28 @@
 
 - (void)showActions
 {
+	actionsVisible = YES;
 	[self.actionView setAlpha:0.0];
 	[self.actionView setHidden:NO];
 	[UIView animateWithDuration:.4 animations:^{
 		[self.actionView setAlpha:1.0];
+		imageView_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)-CGRectGetWidth(self.actionView.bounds)) / 2, WDCenterOfRect(self.bounds).y - (kTitleFieldHeight/2));
+		[self updateShadow_];
+		[self setBackgroundColor:[GS_COLOR_ACCENT_BLUE colorWithAlphaComponent:.3]];
+	} completion:^(BOOL finished) {
+		[self.actionView setHidden:NO];
 	}];
 }
 
 - (void)hideActions
 {
+	actionsVisible = NO;
 	[self.actionView setAlpha:1.0];
 	[UIView animateWithDuration:.4 animations:^{
 		[self.actionView setAlpha:0.0];
+		imageView_.sharpCenter = CGPointMake((CGRectGetWidth(self.bounds)) / 2, WDCenterOfRect(self.bounds).y - (kTitleFieldHeight/2));
+		[self updateShadow_];
+		[self setBackgroundColor:[UIColor clearColor]];
 	} completion:^(BOOL success) {
 		[self.actionView setHidden:YES];
 	}];
@@ -344,6 +371,10 @@
 
 - (IBAction)shareTapped:(id)sender {
 	[self.delegate shareTapped:self];
+}
+
+- (IBAction)renameTapped:(id)sender {
+	[self editTitle:sender];
 }
 
 - (IBAction)deleteTapped:(id)sender {

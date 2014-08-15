@@ -34,6 +34,7 @@ typedef enum {
 
 @property (weak, nonatomic, readonly) id icon;
 @property (weak, nonatomic, readonly) NSString *iconName;
+@property (weak, nonatomic, readonly) NSString *toolName;
 @property (nonatomic, readonly) BOOL needsPivot;
 @property (nonatomic, readonly) BOOL primaryTouchEnded;
 @property (weak, nonatomic, readonly) UITouch *primaryTouch;

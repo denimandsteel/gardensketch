@@ -13,6 +13,7 @@
 #import "WDSelectionTool.h"
 #import "WDDrawingManager.h"
 #import "WDDrawingController.h"
+#import "Constants.h"
 
 @interface HouseViewController ()
 
@@ -34,60 +35,43 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	
-	WDTool *house = nil;
-	WDTool *houseL1 = nil;
-	WDTool *houseL2 = nil;
-	WDTool *houseL3 = nil;
-	WDTool *houseL4 = nil;
-	WDTool *houseRectHor = nil;
-	WDTool *houseRectVer = nil;
-	WDTool *scale = nil;
-	WDTool *select = nil;
-	
-	for (WDTool *tool in [WDToolManager sharedInstance].tools) {
-		if ([tool isKindOfClass:[WDStencilTool class]]) {
-			if ([(WDStencilTool *)tool type] == kHouse) {
-				house = tool;
-			} else if ([(WDStencilTool *)tool type] == kHouseL1) {
-				houseL1 = tool;
-			} else if ([(WDStencilTool *)tool type] == kHouseL2) {
-				houseL2 = tool;
-			} else if ([(WDStencilTool *)tool type] == kHouseL3) {
-				houseL3 = tool;
-			} else if ([(WDStencilTool *)tool type] == kHouseL4) {
-				houseL4 = tool;
-			} else if ([(WDStencilTool *)tool type] == kHouseRectHor) {
-				houseRectHor = tool;
-			} else if ([(WDStencilTool *)tool type] == kHouseRectVer) {
-				houseRectVer = tool;
-			}
-		} else if ([tool isKindOfClass:[WDScaleTool class]]) {
-			scale = tool;
-		} else if ([tool isKindOfClass:[WDSelectionTool class]]) {
-			select = tool;
-		}
-	}
-	
+	WDTool *house = [WDToolManager sharedInstance].house;
+	WDTool *houseL1 = [WDToolManager sharedInstance].houseL1;
+	WDTool *houseL2 = [WDToolManager sharedInstance].houseL2;
+	WDTool *houseL3 = [WDToolManager sharedInstance].houseL3;
+	WDTool *houseL4 = [WDToolManager sharedInstance].houseL4;
+	WDTool *houseRectHor = [WDToolManager sharedInstance].houseRectHor;
+	WDTool *houseRectVer = [WDToolManager sharedInstance].houseRectVer;
+	WDTool *scale = [WDToolManager sharedInstance].scale;
+	WDTool *select = [WDToolManager sharedInstance].select;
+		
 	[self.houseButton setTool:house];
 	[self.houseButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	[self.houseButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateSelected];
 	
 	[self.houseL1Button setTool:houseL1];
 	[self.houseL1Button addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	[self.houseL1Button setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateSelected];
 	
 	[self.houseL2Button setTool:houseL2];
 	[self.houseL2Button addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	[self.houseL2Button setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateSelected];
 	
 	[self.houseL3Button setTool:houseL3];
 	[self.houseL3Button addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	[self.houseL3Button setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateSelected];
 	
 	[self.houseL4Button setTool:houseL4];
 	[self.houseL4Button addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	[self.houseL4Button setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateSelected];
 	
 	[self.houseRectHorButton setTool:houseRectHor];
 	[self.houseRectHorButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	[self.houseRectHorButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateSelected];
 	
 	[self.houseRectVerButton setTool:houseRectVer];
 	[self.houseRectVerButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
+	[self.houseRectVerButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateSelected];
 	
 	[self.scaleButton setTool:scale];
 	[self.scaleButton addTarget:self action:@selector(chooseTool:) forControlEvents:UIControlEventTouchUpInside];
@@ -107,6 +91,39 @@
            selector:@selector(selectionChanged:)
                name:WDSelectionChangedNotification
              object:self.sidebar.canvasController.drawingController];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[self.selectButton setTitleColor:GS_COLOR_DARK_GREY_TEXT forState:UIControlStateNormal];
+	[self.selectButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+	
+	[self.selectButton setImage:[UIImage imageNamed:@"Select_Colour"] forState:UIControlStateNormal];
+	[self.selectButton setImage:[UIImage imageNamed:@"Select_White"] forState:UIControlStateSelected];
+	
+	[self.selectButton setBackgroundImage:[UIImage imageNamed:@"select_background_white"] forState:UIControlStateNormal];
+	[self.selectButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateSelected];
+	
+	[self.selectButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 20)];
+	
+	[self.selectButton.layer setCornerRadius:3.0];
+	[self.selectButton.layer setMasksToBounds:YES];
+	
+	[self.scaleButton setTitleColor:GS_COLOR_DARK_GREY_TEXT forState:UIControlStateNormal];
+	[self.scaleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+	
+	[self.scaleButton setImage:[UIImage imageNamed:@"Resize_Colour"] forState:UIControlStateNormal];
+	[self.scaleButton setImage:[UIImage imageNamed:@"Resize_White"] forState:UIControlStateSelected];
+	
+	[self.scaleButton setBackgroundImage:[UIImage imageNamed:@"select_background_white"] forState:UIControlStateNormal];
+	[self.scaleButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateSelected];
+	
+	[self.scaleButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 20)];
+	
+	[self.scaleButton.layer setCornerRadius:3.0];
+	[self.scaleButton.layer setMasksToBounds:YES];
+	
+	[self.doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -134,6 +151,11 @@
 
 - (IBAction)deleteTapped:(id)sender {
 	[self.sidebar.canvasController delete:self];
+}
+
+- (IBAction)doneTapped:(id)sender {
+	NSInteger northTabIndex = 2;
+	[self.sidebar setSelectedIndex:northTabIndex];
 }
 
 @end

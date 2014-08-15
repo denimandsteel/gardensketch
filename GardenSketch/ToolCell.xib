@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ToolCellIdentifier" id="zfM-hT-wWa" customClass="ToolCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="191"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="191"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" id="gQ9-PJ-ABH" userLabel="Primary View">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oNt-K4-aPY" customClass="WDToolButton">
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3yy-S7-ApE" customClass="GSLabel">
+                                <rect key="frame" x="88" y="12" width="212" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KcG-et-XBm">
+                                <rect key="frame" x="260" y="0.0" width="60" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Repeat.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="Repeat_Active.png"/>
+                                <connections>
+                                    <action selector="repeatTapped:" destination="zfM-hT-wWa" eventType="touchUpInside" id="H8S-YK-397"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="e9G-yA-iRs">
+                                <rect key="frame" x="182" y="0.0" width="70" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="titleEdgeInsets" minX="-36" minY="-41" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="17" minY="23" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Rotate" image="Rotate_Vertical.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="Rotate_Horizontal.png"/>
+                                <connections>
+                                    <action selector="rotateTapped:" destination="zfM-hT-wWa" eventType="touchUpInside" id="w9e-9Y-OJS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96155315900000005" green="0.96155315900000005" blue="0.96155315900000005" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <view contentMode="scaleToFill" id="HEK-dF-hpb" userLabel="Secondary View">
+                        <rect key="frame" x="0.0" y="81" width="320" height="110"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ejb-iy-E7m" customClass="ColorPickerButton">
+                                <rect key="frame" x="225" y="0.0" width="95" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.95587543269999997" blue="0.69363249370000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="colorPickerTapped:" destination="zfM-hT-wWa" eventType="touchUpInside" id="hi9-YM-oRA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="duP-Yl-3fU">
+                                <rect key="frame" x="2" y="0.0" width="64" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="SizeSm_Inactive.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="SizeSm_Active.png"/>
+                                <connections>
+                                    <action selector="sizeButtonTapped:" destination="zfM-hT-wWa" eventType="touchUpInside" id="KhW-NM-MiE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CuF-fC-VUj">
+                                <rect key="frame" x="64" y="0.0" width="73" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="SizeMd_Inactive.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="SizeMd_Active.png"/>
+                                <connections>
+                                    <action selector="sizeButtonTapped:" destination="zfM-hT-wWa" eventType="touchUpInside" id="l2e-om-q7s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XoF-yW-ljk">
+                                <rect key="frame" x="137" y="0.0" width="88" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="SizeLg_Inactive.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="SizeLg_Active.png"/>
+                                <connections>
+                                    <action selector="sizeButtonTapped:" destination="zfM-hT-wWa" eventType="touchUpInside" id="J3p-6g-i6I"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XAp-fM-mRq" customClass="GSLabel">
+                                <rect key="frame" x="13" y="7" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OWj-g0-g9r" customClass="GSLabel">
+                                <rect key="frame" x="225" y="0.0" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.58999999999999997" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <size key="customSize" width="295" height="216"/>
+            <connections>
+                <outlet property="colorLabel" destination="OWj-g0-g9r" id="HQj-zD-ZTg"/>
+                <outlet property="colorPicker" destination="ejb-iy-E7m" id="UZY-cV-nPy"/>
+                <outlet property="largeButton" destination="XoF-yW-ljk" id="rfl-1R-0vg"/>
+                <outlet property="mediumButton" destination="CuF-fC-VUj" id="8JQ-Uq-RNY"/>
+                <outlet property="primaryView" destination="gQ9-PJ-ABH" id="d9l-hq-8eL"/>
+                <outlet property="repeatButton" destination="KcG-et-XBm" id="xRR-6z-YOV"/>
+                <outlet property="rotateButton" destination="e9G-yA-iRs" id="bQr-kT-VxN"/>
+                <outlet property="secondaryView" destination="HEK-dF-hpb" id="aBn-OK-hFk"/>
+                <outlet property="sizeLabel" destination="XAp-fM-mRq" id="dHq-Kf-hDk"/>
+                <outlet property="smallButton" destination="duP-Yl-3fU" id="VLe-Y8-sKg"/>
+                <outlet property="toolButton" destination="oNt-K4-aPY" id="6S8-up-fn2"/>
+                <outlet property="toolNameLabel" destination="3yy-S7-ApE" id="K0n-Qq-A4k"/>
+                <outletCollection property="sizeButtons" destination="XoF-yW-ljk" id="W1d-y1-WzL"/>
+                <outletCollection property="sizeButtons" destination="CuF-fC-VUj" id="JO7-Se-C7D"/>
+                <outletCollection property="sizeButtons" destination="duP-Yl-3fU" id="6dS-Gh-E7R"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Repeat.png" width="60" height="80"/>
+        <image name="Repeat_Active.png" width="60" height="80"/>
+        <image name="Rotate_Horizontal.png" width="38" height="38"/>
+        <image name="Rotate_Vertical.png" width="38" height="38"/>
+        <image name="SizeLg_Active.png" width="72" height="72"/>
+        <image name="SizeLg_Inactive.png" width="72" height="72"/>
+        <image name="SizeMd_Active.png" width="52" height="52"/>
+        <image name="SizeMd_Inactive.png" width="52" height="52"/>
+        <image name="SizeSm_Active.png" width="32" height="32"/>
+        <image name="SizeSm_Inactive.png" width="32" height="32"/>
+    </resources>
+</document>

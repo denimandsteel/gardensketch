@@ -158,6 +158,10 @@ NSString *WDInvalidPropertiesKey = @"WDInvalidPropertiesKey";
 
 - (void) selectionChanged:(NSNotification *)aNotification
 {
+	// ak we don't need this.
+	return;
+	
+	
     if (ignoreSelectionChanges_) {
         return;
     }

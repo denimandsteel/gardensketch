@@ -100,6 +100,67 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
     return nil;
 }
 
+- (NSString *) toolName
+{
+	switch (self.type) {
+		case kPlant:
+			return @"Plant";
+			break;
+		case kShrub:
+			return @"Shrub";
+			break;
+		case kHedge:
+			return @"Hedge";
+			break;
+		case kTreeConiferous:
+			return @"Needly Tree";
+			break;
+		case kTreeDeciduous:
+			return @"Leafy Tree";
+			break;
+		case kSidewalk:
+			return @"Tile";
+			break;
+		case kGazebo:
+			return @"Gazebo";
+			break;
+		case kShed:
+			return @"Shed";
+			break;
+		case kHouse:
+			return @"House";
+			break;
+		case kHouseL1:
+			return @"House";
+			break;
+		case kHouseL2:
+			return @"House";
+			break;
+		case kHouseL3:
+			return @"House";
+			break;
+		case kHouseL4:
+			return @"House";
+			break;
+		case kHouseRectVer:
+			return @"House";
+			break;
+		case kHouseRectHor:
+			return @"House";
+			break;
+		case kWaterFeature:
+			return @"Water Feature";
+			break;
+		case kFlowerPot:
+			return @"Flower Pot";
+			break;
+		default:
+			return @"Stencil";
+			break;
+	}
+    return nil;
+}
+
 - (BOOL) createsObject
 {
     return YES;
@@ -158,7 +219,7 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 			self.type == kHouseL3 ||
 			self.type == kHouseL4 ||
 			self.type == kHouseRectHor ||
-			self.type == kHouseRectHor) {
+			self.type == kHouseRectVer) {
 			[canvas.drawingController selectObject:result];
 		}
 	}
@@ -197,7 +258,18 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 
 - (void)setStaysOnFromNumber:(NSNumber *)staysOnNumber
 {
-	self.staysOn = [staysOnNumber boolValue];
+	// no repeat for house shapes
+	if (self.type == kHouse ||
+		self.type == kHouseL1 ||
+		self.type == kHouseL2 ||
+		self.type == kHouseL3 ||
+		self.type == kHouseL4 ||
+		self.type == kHouseRectHor ||
+		self.type == kHouseRectVer) {
+		self.staysOn = NO;
+	} else {
+		self.staysOn = [staysOnNumber boolValue];
+	}
 }
 
 

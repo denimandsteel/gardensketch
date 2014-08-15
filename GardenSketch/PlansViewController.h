@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SidebarContentViewController.h"
 #import "WDThumbnailView.h"
+#import "GSButton.h"
 
 @interface PlansViewController : SidebarContentViewController <WDThumbnailViewDelegate>
 {
@@ -17,5 +18,8 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
+@property (weak, nonatomic) IBOutlet GSButton *addButton;
+
+- (IBAction)addButtonTapped:(id)sender;
 
 @end

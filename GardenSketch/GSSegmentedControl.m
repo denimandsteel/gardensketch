@@ -33,11 +33,11 @@
 
 - (void)initialize
 {
-	[self setTitleTextAttributes:@{NSForegroundColorAttributeName:GS_COLOR_DARK_GREY,
+	[self setTitleTextAttributes:@{NSForegroundColorAttributeName:GS_COLOR_DARK_GREY_TEXT,
 								   NSFontAttributeName:GS_FONT_AVENIR_BODY}
 						forState:UIControlStateNormal];
 	
-	self.tintColor = GS_COLOR_PEACHY_HIGHLIGHT;
+	self.tintColor = GS_COLOR_ACCENT_BLUE;
 	
 	// The attributes dictionary can specify the font, text color, text shadow color, and text
 	// shadow offset for the title in the text attributes dictionary

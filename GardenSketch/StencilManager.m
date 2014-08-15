@@ -39,8 +39,10 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 	
 	[self loadShapes];
 	
-	self.treeColor = (TreeColor)0;
+	self.deciduousTreeColor = (TreeColor)0;
+	self.coniferousTreeColor = (TreeColor)0;
 	self.shrubColor = (ShrubColor)0;
+	self.hedgeColor = (ShrubColor)0;
 	self.plantColor = (PlantColor)0;
 	
 	return self;
@@ -50,7 +52,7 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 {
 	self.shapes = [NSMutableDictionary dictionary];
 	// TODO: move this into a plist
-	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Grey_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian", @"Deciduous_Tree_Burgundy", @"Deciduous_Tree_Dark_Green", @"Deciduous_Tree_Green", @"Deciduous_Tree_Mustard", @"Deciduous_Tree_Teal", @"Deciduous_Tree_Violet", @"House_No_Lines", @"Coniferous_Burgundy", @"Coniferous_DarkGreen", @"Coniferous_Green", @"Coniferous_Mustard", @"Coniferous_Teal", @"Coniferous_Violet", @"Water_Feature", @"Rectangular_House_Horizontal", @"Rectangular_House_Vertical", @"L_Shaped_House_1", @"L_Shaped_House_2", @"L_Shaped_House_3", @"L_Shaped_House_4", @"Flower_Pot"];
+	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Grey_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian", @"Deciduous_Tree_Burgundy", @"Deciduous_Tree_Dark_Green", @"Deciduous_Tree_Green", @"Deciduous_Tree_Mustard", @"Deciduous_Tree_Teal", @"Deciduous_Tree_Violet", @"House_No_Lines", @"Coniferous_Burgundy", @"Coniferous_DarkGreen", @"Coniferous_Green", @"Coniferous_Mustard", @"Coniferous_Teal", @"Coniferous_Violet", @"Water_Feature", @"Rectangular_House_Horizontal", @"Rectangular_House_Vertical", @"L_Shaped_House_1", @"L_Shaped_House_2", @"L_Shaped_House_3", @"L_Shaped_House_4", @"Flower_Pot", @"north"];
 	for (NSString *shapeName in shapeNames) {
 		[self loadShape:shapeName];
 	}
@@ -163,7 +165,7 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 			}
 			break;
 		case kHedge:
-			switch (self.shrubColor) {
+			switch (self.hedgeColor) {
 				case kBrown:
 					filename = @"Hedge_Brown";
 					break;
@@ -181,7 +183,7 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 			}
 			break;
 		case kTreeConiferous:
-			switch (self.treeColor) {
+			switch (self.coniferousTreeColor) {
 				case kBurgundy:
 					filename = @"Coniferous_Burgundy";
 					break;
@@ -206,7 +208,7 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 			}
 			break;
 		case kTreeDeciduous:
-			switch (self.treeColor) {
+			switch (self.deciduousTreeColor) {
 				case kBurgundy:
 					filename = @"Deciduous_Tree_Burgundy";
 					break;
@@ -410,6 +412,11 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 
 - (ShapeSize)sizeForActiveShape
 {
+	if (!self.shapeSize[@(self.activeShapeType)]) {
+		// default to medium
+		self.shapeSize[@(self.activeShapeType)] = @(kMedium);
+	}
+	
 	return (ShapeSize)[self.shapeSize[@(self.activeShapeType)] integerValue];
 }
 

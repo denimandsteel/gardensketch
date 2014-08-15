@@ -37,7 +37,8 @@
 		shape.secondaryFrame = CGRectMake(40, 90, shape.bounds.size.width / 2, shape.bounds.size.height / 2);
 	}
 	
-	self.isInShapeMode = YES;
+	[self.firstField setDelegate:self];
+	[self.secondField setDelegate:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -46,6 +47,37 @@
 	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
 	WDDocument *basePlanDocument = [drawingManager openBasePlanDocumentWithCompletionHandler:nil];
 	[self.sidebar.canvasController setDocument:basePlanDocument];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	CGRect firstFrame = self.firstField.frame;
+	firstFrame.size.height = 50;
+	[self.firstField setFrame:firstFrame];
+	
+	CGRect secondFrame = self.secondField.frame;
+	secondFrame.size.height = 50;
+	[self.secondField setFrame:secondFrame];
+	
+	[self.firstField setBackgroundColor:GS_COLOR_LIGHT_GREY_BACKGROUND];
+	[self.secondField setBackgroundColor:GS_COLOR_LIGHT_GREY_BACKGROUND];
+	
+	[self.firstField setFont:GS_FONT_AVENIR_HEAD];
+	[self.secondField setFont:GS_FONT_AVENIR_HEAD];
+	
+	[self.firstField.layer setBorderColor:[UIColor clearColor].CGColor];
+	[self.secondField.layer setBorderColor:[UIColor clearColor].CGColor];
+	
+	CGSize basePlanSize = [WDDrawingManager sharedInstance].basePlanSize;
+	if (basePlanSize.width > 0 && basePlanSize.height > 0) {
+		[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(basePlanSize.width / 32) integerValue]]];
+		[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(basePlanSize.height / 32) integerValue]]];
+	} else {
+		[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(2048 / 32) integerValue]]];
+		[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(2048 / 32) integerValue]]];
+	}
+	
+	[self.doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -72,95 +104,29 @@
 */
 
 - (IBAction)shapeSelected:(id)sender {
-	if (self.isInShapeMode) {
-		CGSize size;
-		switch ([(UIButton *)sender tag]) {
-			case 0:
-				size = CGSizeMake(1024, 2048);
-				break;
-			case 1:
-				size = CGSizeMake(2048, 2048);
-				break;
-			case 2:
-				size = CGSizeMake(2048, 1024);
-				break;
-			default:
-				size = CG_DEFAULT_CANVAS_SIZE;
-				break;
-		}
-		[self setPlanSize:size];
-		[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(size.width / 32) integerValue]]];
-		[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(size.height / 32) integerValue]]];
-		
-		[self.sizeView setAlpha:0.0];
-		[self.sizeView setHidden:NO];
-		[UIView animateWithDuration:.3 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-			for (PropertyShapeButton *shape in self.shapes) {
-				if (shape != sender) {
-					[shape setAlpha:0.0];
-				}
-			}
-		} completion:^(BOOL success) {
-			if (success) {
-				for (PropertyShapeButton *shape in self.shapes) {
-					if (shape != sender) {
-						[shape setHidden:YES];
-					}
-				}
-			}
-		}];
-		
-		[self moveShapeUp:sender];
-		
-		self.isInShapeMode = NO;
-	} else {
-		[self changeShapeTapped:nil];
+	CGSize size;
+	switch ([(UIButton *)sender tag]) {
+		case 0:
+			size = CGSizeMake(1024, 2048);
+			break;
+		case 1:
+			size = CGSizeMake(2048, 2048);
+			break;
+		case 2:
+			size = CGSizeMake(2048, 1024);
+			break;
+		default:
+			size = CG_DEFAULT_CANVAS_SIZE;
+			break;
 	}
-}
-
-- (void)moveShapeUp:(PropertyShapeButton *)shape
-{
-	[UIView animateWithDuration:.3 delay:.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
-		[shape setFrame:shape.secondaryFrame];
-		[self.sizeView setAlpha:1.0];
-	} completion:^(BOOL success) {
-		
-	}];
-}
-
-- (IBAction)changeShapeTapped:(id)sender {
-	for (PropertyShapeButton *shape in self.shapes) {
-		[shape setHidden:NO];
-		[shape setAlpha:0.0];
-	}
-	[UIView animateWithDuration:.3 animations:^{
-		for (PropertyShapeButton *shape in self.shapes) {
-			[shape setAlpha:1.0];
-			[shape setFrame:shape.primaryFrame];
-		}
-		[self.sizeView setAlpha:0.0];
-	} completion:^(BOOL success) {
-		[self.sizeView setHidden:YES];
-	}];
-	
-	self.isInShapeMode = YES;
+	[self setPlanSize:size];
+	[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(size.width / 32) integerValue]]];
+	[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(size.height / 32) integerValue]]];
 }
 
 - (IBAction)doneTapped:(id)sender {
 	NSInteger structureTabIndex = 1;
 	[self.sidebar setSelectedIndex:structureTabIndex];
-	
-	CGSize size = CG_DEFAULT_CANVAS_SIZE;
-	
-	if (![self.firstField.text isEqualToString:@""]) {
-		size.width = [self.firstField.text integerValue] * 32;
-	}
-	
-	if (![self.secondField.text isEqualToString:@""]) {
-		size.height = [self.secondField.text integerValue] * 32;
-	}
-	
-	[self setPlanSize:size];
 }
 
 - (void)setPlanSize:(CGSize)size
@@ -177,6 +143,30 @@
 	[[WDDrawingManager sharedInstance] setBasePlanLayer:baseLayer];
 	
 	NSLog(@"Setting plan size to %f, %f", size.width, size.height);
+}
+
+- (CGSize)sizeFromTextfields
+{
+	CGSize size = CG_DEFAULT_CANVAS_SIZE;
+	
+	if (![self.firstField.text isEqualToString:@""]) {
+		size.width = [self.firstField.text integerValue] * 32;
+	}
+	
+	if (![self.secondField.text isEqualToString:@""]) {
+		size.height = [self.secondField.text integerValue] * 32;
+	}
+	
+	return size;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	[textField resignFirstResponder];
+	return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+	[self setPlanSize:[self sizeFromTextfields]];
 }
 
 @end

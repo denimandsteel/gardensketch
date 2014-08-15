@@ -35,9 +35,15 @@ NSString *WDShapeToolSpiralDecay = @"WDShapeToolSpiralDecay";
 
 - (NSString *) iconName
 {
-    NSArray *imageNames = @[@"rect.png", @"oval.png", @"star.png", @"polygon.png", @"line.png", @"spiral.png"];
+    NSArray *imageNames = @[@"rect.png", @"oval.png", @"star.png", @"polygon.png", @"StraightLine", @"spiral.png"];
     
     return imageNames[shapeMode_];
+}
+
+- (NSString *) toolName
+{
+    NSArray *toolNames = @[@"Rectange", @"Ovale", @"Star", @"Polygon", @"Straight Line", @"Spiral"];
+    return toolNames[shapeMode_];
 }
 
 - (id) init
@@ -69,7 +75,7 @@ NSString *WDShapeToolSpiralDecay = @"WDShapeToolSpiralDecay";
 - (void) activated
 {
 	if (self.shapeMode == WDShapeLine) {
-		[[StencilManager sharedInstance] setActiveShapeType:kLine];
+		[[StencilManager sharedInstance] setActiveShapeType:kStraightLine];
 	}
 	
     [[NSUserDefaults standardUserDefaults] setValue:@(shapeMode_) forKey:WDDefaultShapeTool];

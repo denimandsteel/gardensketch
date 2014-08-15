@@ -24,16 +24,15 @@
 @property (nonatomic, strong, readonly) NSArray *tools;
 
 @property (nonatomic, weak) WDSelectionTool *select;
-@property (nonatomic, weak) WDFreehandTool	*freehand;
-@property (nonatomic, weak) WDFreehandTool  *enclosed;
+@property (nonatomic, weak) WDFreehandTool	*freehandLine;
+@property (nonatomic, weak) WDFreehandTool  *area;
 @property (nonatomic, weak) WDStencilTool   *plant;
-@property (nonatomic, weak) WDShapeTool     *line;
+@property (nonatomic, weak) WDShapeTool     *straightLine;
 @property (nonatomic, weak) WDStencilTool   *shrub;
-@property (nonatomic, weak) WDStencilTool   *verticalHedge;
-@property (nonatomic, weak) WDStencilTool   *horizontalHedge;
+@property (nonatomic, weak) WDStencilTool   *hedge;
 @property (nonatomic, weak) WDStencilTool   *deciduousTree;
 @property (nonatomic, weak) WDStencilTool   *coniferousTree;
-@property (nonatomic, weak) WDStencilTool   *sidewalk;
+@property (nonatomic, weak) WDStencilTool   *tile;
 @property (nonatomic, weak) WDStencilTool   *gazebo;
 @property (nonatomic, weak) WDStencilTool   *shed;
 @property (nonatomic, weak) WDStencilTool   *waterFeature;

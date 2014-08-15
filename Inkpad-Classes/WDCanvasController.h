@@ -101,5 +101,8 @@ enum {
 
 - (void) showActionMenu:(id)sender;
 
+- (void) exportAsPNG:(id)sender;
+- (void) exportAsJPEG:(id)sender;
+
 @end
 

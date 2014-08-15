@@ -8,6 +8,7 @@
 
 #import "MoreViewController.h"
 #import "Constants.h"
+#import "AboutViewController.h"
 
 @interface MoreViewController ()
 
@@ -28,20 +29,19 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-	
-	[self updateVersionLabel];
 }
 
-- (void)updateVersionLabel
+- (void)viewWillAppear:(BOOL)animated
 {
-	NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-	NSString *name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
-	NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-	NSString *build = [infoDictionary objectForKey:@"CFBundleVersion"];
-	NSString *label = [NSString stringWithFormat:@"%@ v%@ (build %@)",
-					   name,version,build];
+	[self.feedbackButton.titleLabel setFont:GS_FONT_AVENIR_ACTION];
+	[self.aboutButton.titleLabel setFont:GS_FONT_AVENIR_ACTION];
+	[self.blogButton.titleLabel setFont:GS_FONT_AVENIR_ACTION];
+	[self.shareButton.titleLabel setFont:GS_FONT_AVENIR_ACTION];
 	
-	[self.versionLabel setText:label];
+	[self.feedbackButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateHighlighted];
+	[self.aboutButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateHighlighted];
+	[self.blogButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateHighlighted];
+	[self.shareButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateHighlighted];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,6 +56,49 @@
 		[[NSUserDefaults standardUserDefaults] setBool:NO forKey:tabKey];
     }
 	[[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (IBAction)feedbackTapped:(id)sender {
+	MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+    controller.mailComposeDelegate = self;
+    [controller setToRecipients:@[@"support@gardensketchapp.com"]];
+	
+	NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+	NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+	NSString *build = [infoDictionary objectForKey:@"CFBundleVersion"];
+    [controller setSubject:[NSString stringWithFormat:@"Feedback for Garden Sketch v%@ (build %@)", version, build]];
+    [controller setMessageBody:[NSString stringWithFormat:@""] isHTML:YES];
+    if([MFMailComposeViewController canSendMail]){
+		[self presentViewController:controller animated:YES completion:nil];
+	}
+}
+
+- (IBAction)aboutTapped:(id)sender {
+	AboutViewController *aboutViewController = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
+	[self presentViewController:aboutViewController animated:YES completion:^{
+		
+	}];
+}
+
+- (IBAction)blogTapped:(id)sender {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://gardensketchapp.com/"]];
+}
+
+- (IBAction)shareTapped:(id)sender {
+	MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+    controller.mailComposeDelegate = self;
+    [controller setToRecipients:@[]];
+    [controller setSubject:@"Garden Sketch"];
+    [controller setMessageBody:@"Map your garden with Garden Sketch: http://gardensketchapp.com/app" isHTML:NO];
+    if([MFMailComposeViewController canSendMail]){
+		[self presentViewController:controller animated:YES completion:nil];
+	}
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+	[controller dismissViewControllerAnimated:YES completion:^{
+		
+	}];
 }
 
 @end

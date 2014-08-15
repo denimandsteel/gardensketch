@@ -112,47 +112,36 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section;
 {
-    return [[WDDrawingManager sharedInstance] numberOfDrawings] + 1; // add new
+    return [[WDDrawingManager sharedInstance] numberOfDrawings];
 }
 
 #pragma mark Collection View delegate
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
-	if (indexPath.row < [collectionView numberOfItemsInSection:0] - 1) {
-		WDThumbnailView *thumbnail = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellID" forIndexPath:indexPath];
-		NSArray         *plans = [[WDDrawingManager sharedInstance] drawingNames];
-		
-		thumbnail.filename = plans[indexPath.item];
-		thumbnail.tag = indexPath.item;
-		thumbnail.delegate = self;
-		return thumbnail;
-	} else {
-		UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newCellID" forIndexPath:indexPath];
-		return cell;
-	}
-    
-//    if (self.isEditing) {
-//        thumbnail.shouldShowSelectionIndicator = YES;
-//        thumbnail.selected = [selectedDrawings_ containsObject:thumbnail.filename] ? YES : NO;
-//    }
- 
+	WDThumbnailView *thumbnail = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellID" forIndexPath:indexPath];
+	NSArray         *plans = [[WDDrawingManager sharedInstance] drawingNames];
+	
+	thumbnail.filename = plans[indexPath.item];
+	thumbnail.tag = indexPath.item;
+	thumbnail.delegate = self;
+	
+	[thumbnail.actionView.layer setCornerRadius:5.0];
+	[thumbnail.actionView.layer setMasksToBounds:YES];
+	
+	return thumbnail;
 }
 
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
 	NSLog(@"Did select called!");
-	if (indexPath.row < [collectionView numberOfItemsInSection:0] - 1) {
-		WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:indexPath.row withCompletionHandler:nil];
-		if ([self.sidebar.canvasController.document.fileURL isEquivalent:document.fileURL]) {
-			// TODO switch to design tab
-			NSLog(@"Should switch to design tab");
-		} else {
-			[self.sidebar.canvasController setDocument:document];
-		}
-		
+
+	WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:indexPath.row withCompletionHandler:nil];
+	if ([self.sidebar.canvasController.document.fileURL isEquivalent:document.fileURL]) {
+		// TODO switch to design tab
+		NSLog(@"Should switch to design tab");
 	} else {
-		[self createNewDrawing:nil];
+		[self.sidebar.canvasController setDocument:document];
 	}
 }
 
@@ -171,7 +160,7 @@
     NSArray *indexPaths = @[[NSIndexPath indexPathForItem:count inSection:0]];
     [self.collectionView insertItemsAtIndexPaths:indexPaths];
 	
-	// scroll to the very bottom, so that the add button is visible
+	// scroll to the very bottom, so that the newly added plan is visible
 	NSInteger item = [self collectionView:self.collectionView numberOfItemsInSection:0] - 1;
 	NSIndexPath *lastIndexPath = [NSIndexPath indexPathForItem:item inSection:0];
 	[self.collectionView scrollToItemAtIndexPath:lastIndexPath atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
@@ -194,7 +183,7 @@
 
 #pragma mark -
 
-- (void) createNewDrawing:(id)sender
+- (void)createNewDrawing
 {
 	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
 	
@@ -268,7 +257,7 @@
 
 - (void) shareTapped:(WDThumbnailView *)thumbView
 {
-	[self.sidebar.canvasController showActionMenu:thumbView.sharePlanButton];
+	[self.sidebar.canvasController exportAsPNG:self];
 }
 
 - (WDThumbnailView *) getThumbnail:(NSString *)filename
@@ -283,6 +272,10 @@
 	} else {
 		return nil;
 	}
+}
+
+- (IBAction)addButtonTapped:(id)sender {
+	[self createNewDrawing];
 }
 
 @end

@@ -21,8 +21,8 @@
 #import "Constants.h"
 #import "WDDocument.h"
 
-extern const NSString* GSNotificationCanvasActivityStarted;
-extern const NSString* GSNotificationCanvasActivityStopped;
+extern NSString* GSNotificationCanvasActivityStarted;
+extern NSString* GSNotificationCanvasActivityStopped;
 
 @interface MainViewController ()
 	@property (strong, nonatomic) TutorialViewController *tutorial;
@@ -106,7 +106,7 @@ extern const NSString* GSNotificationCanvasActivityStopped;
 
 - (CGRect)frameForSidebar
 {
-	return CGRectMake(0, 0, 320, 768);
+	return CGRectMake(0, 0, GS_SIDEBAR_WIDTH, 768);
 }
 
 #pragma mark - M13InfiniteTabBarControllerDelegate
@@ -232,25 +232,25 @@ extern const NSString* GSNotificationCanvasActivityStopped;
 {
 	switch (tabIndex) {
 		case -1:
-			return [NSMutableArray arrayWithArray:@[@"AppStart1", @"AppStart2", @"AppStart3"]];
+			return [NSMutableArray arrayWithArray:@[@"AppStart1"]];
 			break;
 		case 0:
-			return [NSMutableArray arrayWithArray:@[@"Property1", @"Property2"]];
+			return nil;
 			break;
 		case 1:
 			return [NSMutableArray arrayWithArray:@[@"House1", @"House2", @"House3"]];
 			break;
 		case 2:
-			return [NSMutableArray arrayWithArray:@[@"North1"]];
+			return nil;
 			break;
 		case 3:
-			return [NSMutableArray arrayWithArray:@[@"Plans1", @"Plans2"]];
+			return [NSMutableArray arrayWithArray:@[@"Plans1"]];
 			break;
 		case 4:
 			return [NSMutableArray arrayWithArray:@[@"Design1", @"Design2", @"Design3", @"Design4"]];
 			break;
 		case 6:
-			return [NSMutableArray arrayWithArray:@[@"More1"]];
+			return nil;
 			break;
 		default:
 			return [NSMutableArray array];

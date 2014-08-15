@@ -33,7 +33,12 @@ NSString *WDDefaultFreehandTool = @"WDDefaultFreehandTool";
 
 - (NSString *) iconName
 {
-    return closeShape_ ? @"enclosed.png" : @"freehand.png";
+    return closeShape_ ? @"Area" : @"FreehandLine";
+}
+
+- (NSString *) toolName
+{
+    return closeShape_ ? @"Area" : @"Freehand Line";
 }
 
 - (BOOL) createsObject
@@ -52,7 +57,7 @@ NSString *WDDefaultFreehandTool = @"WDDefaultFreehandTool";
 	if (closeShape_) {
 		[[StencilManager sharedInstance] setActiveShapeType:kArea];
 	} else {
-		[[StencilManager sharedInstance] setActiveShapeType:kLine];
+		[[StencilManager sharedInstance] setActiveShapeType:kFreehandLine];
 	}
 	
     [[NSUserDefaults standardUserDefaults] setValue:@(closeShape_) forKey:WDDefaultFreehandTool];
