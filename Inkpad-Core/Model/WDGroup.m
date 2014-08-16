@@ -11,6 +11,9 @@
 
 #import "WDGroup.h"
 #import "WDPickResult.h"
+#import "UIColor+Additions.h"
+#import "WDGLUtilities.h"
+#import "Constants.h"
 
 NSString *WDGroupElements = @"WDGroupElements";
 
@@ -163,6 +166,36 @@ NSString *WDGroupElements = @"WDGroupElements";
 
 - (void) drawOpenGLHighlightWithTransform:(CGAffineTransform)transform viewTransform:(CGAffineTransform)viewTransform
 {
+	// do something here
+	CGAffineTransform   tX;
+    CGPoint             ul, ur, lr, ll;
+    
+    tX = transform;
+    tX = CGAffineTransformConcat(tX, viewTransform);
+    
+    ul = CGPointMake(CGRectGetMinX(self.bounds), CGRectGetMinY(self.bounds));
+    ur = CGPointMake(CGRectGetMaxX(self.bounds), CGRectGetMinY(self.bounds));
+    lr = CGPointMake(CGRectGetMaxX(self.bounds), CGRectGetMaxY(self.bounds));
+    ll = CGPointMake(CGRectGetMinX(self.bounds), CGRectGetMaxY(self.bounds));
+    
+    ul = CGPointApplyAffineTransform(ul, tX);
+    ur = CGPointApplyAffineTransform(ur, tX);
+    lr = CGPointApplyAffineTransform(lr, tX);
+    ll = CGPointApplyAffineTransform(ll, tX);
+	
+    // draw outline
+    [[UIColor redColor] openGLSet];
+    
+    WDGLLineFromPointToPoint(ul, ur);
+    WDGLLineFromPointToPoint(ur, lr);
+    WDGLLineFromPointToPoint(lr, ll);
+    WDGLLineFromPointToPoint(ll, ul);
+    
+    // draw 'X'
+    WDGLLineFromPointToPoint(ul, lr);
+    WDGLLineFromPointToPoint(ll, ur);
+	
+	return;
     for (WDElement *element in elements_) {
         [element drawOpenGLHighlightWithTransform:transform viewTransform:viewTransform];
     }
@@ -170,6 +203,7 @@ NSString *WDGroupElements = @"WDGroupElements";
 
 - (void) drawOpenGLHandlesWithTransform:(CGAffineTransform)transform viewTransform:(CGAffineTransform)viewTransform
 {
+	return;
     for (WDElement *element in elements_) {
         [element drawOpenGLAnchorsWithViewTransform:viewTransform];
     }

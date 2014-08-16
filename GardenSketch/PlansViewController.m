@@ -182,8 +182,8 @@
 	
 	NSInteger count = [self.collectionView numberOfItemsInSection:0];
 	
-	if (count > 1) {
-		[self collectionView:self.collectionView didSelectItemAtIndexPath:[NSIndexPath indexPathForItem:count-2 inSection:0]];
+	if (count > 0) {
+		[self collectionView:self.collectionView didSelectItemAtIndexPath:[NSIndexPath indexPathForItem:count-1 inSection:0]];
 	} else {
 		// no plans left.
 		[self.sidebar.canvasController setDocument:nil];

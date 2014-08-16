@@ -16,6 +16,7 @@
 #import "WDToolManager.h"
 #import "WDDrawingController.h"
 #import "WDText.h"
+#import "WDCanvas.h"
 
 NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
@@ -324,8 +325,13 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 - (void)addNoteToCanvas:(GSNote *)note
 {
+	CGRect visibleRect = [self.sidebar.canvasController.canvas visibleRect];
+	// one third of the visible rect is covered by the sidebar.
+	// and the bottom half is covered by the keyboard.
+	CGPoint viewCenter = CGPointMake(visibleRect.origin.x + visibleRect.size.width*2/3, visibleRect.origin.y + visibleRect.size.height*1/4);
+	NSLog(@"view center %f %f", viewCenter.x, viewCenter.y);
 	WDDrawingController *drawingController = self.sidebar.canvasController.drawingController;
-	[drawingController createTextObjectWithText:[LETTERS substringWithRange:NSMakeRange(note.letterIndex, 1)]];
+	[drawingController createTextObjectWithText:[LETTERS substringWithRange:NSMakeRange(note.letterIndex, 1)]atPosition:viewCenter];
 }
 
 - (void)removeNoteFromCanvas:(GSNote *)note

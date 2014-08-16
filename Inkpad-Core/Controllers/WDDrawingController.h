@@ -142,6 +142,7 @@
 // text
 - (WDText *) createTextObjectInRect:(CGRect)rect;
 - (void) createTextObjectWithText:(NSString *)string;
+- (void) createTextObjectWithText:(NSString *)string atPosition:(CGPoint)position;
 - (WDTextPath *) placeTextOnPath:(id)sender shouldStartEditing:(BOOL *)startEditing;
 - (void) createTextOutlines:(id)sender;
 - (void) resetTextTransform:(id)sender;
