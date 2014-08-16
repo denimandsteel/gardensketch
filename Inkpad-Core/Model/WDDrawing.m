@@ -782,11 +782,17 @@ NSLog(@"Elements in drawing: %lu", (unsigned long)[self allElements].count);
 	}
 	[result setFrame:frame];
 	
-	GSLabelHead *copyrightLabel = [[GSLabelHead alloc] initWithFrame:CGRectMake(0, frame.size.height - 150, 824, 50)];
+	GSLabelHead *copyrightLabel = [[GSLabelHead alloc] initWithFrame:CGRectMake(0, frame.size.height - 150, 300, 50)];
 	[copyrightLabel setTextAlignment:NSTextAlignmentRight];
-	[copyrightLabel setText:@"Made with Garden Sketch"];
+	[copyrightLabel setText:@"Made with "];
 	[copyrightLabel setFont:GS_FONT_AVENIR_EXPORT_BODY];
 	[result addSubview:copyrightLabel];
+	
+	UIImageView *wordmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Garden Sketch Wordmark"]];
+	[wordmark setFrame:CGRectMake(324, frame.size.height - 182, 500, 80)];
+	[wordmark setContentMode:UIViewContentModeScaleAspectFit];
+	
+	[result addSubview:wordmark];
 	
 	return result;
 }

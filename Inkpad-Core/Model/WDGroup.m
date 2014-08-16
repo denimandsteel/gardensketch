@@ -203,8 +203,9 @@ NSString *WDGroupElements = @"WDGroupElements";
 
 - (void) drawOpenGLHandlesWithTransform:(CGAffineTransform)transform viewTransform:(CGAffineTransform)viewTransform
 {
+	// ak: do not draw handles for groups which in our case are all the shapes.
 	return;
-    for (WDElement *element in elements_) {
+	for (WDElement *element in elements_) {
         [element drawOpenGLAnchorsWithViewTransform:viewTransform];
     }
 }
