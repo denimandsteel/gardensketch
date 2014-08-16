@@ -14,12 +14,15 @@
 #import "Constants.h"
 #import "WDToolManager.h"
 #import "NSURL+Equivalence.h"
+#import "Mixpanel.h"
 
 @interface PlansViewController ()
 
 @end
 
-@implementation PlansViewController
+@implementation PlansViewController {
+	NSIndexPath *selectedIndexPath;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -66,6 +69,8 @@
 	
 	self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(canvasTapped:)];
 	[self.sidebar.canvasController.view addGestureRecognizer:self.tapRecognizer];
+	
+	selectedIndexPath = nil;
 }
 
 - (void)canvasTapped:(UIGestureRecognizer *)gestureRecognizer
@@ -135,10 +140,12 @@
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
 	NSLog(@"Did select called!");
+	
+	selectedIndexPath = indexPath;
 
 	WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:indexPath.row withCompletionHandler:nil];
 	if ([self.sidebar.canvasController.document.fileURL isEquivalent:document.fileURL]) {
-		// TODO switch to design tab
+		// TODO: switch to design tab if already selected
 		NSLog(@"Should switch to design tab");
 	} else {
 		[self.sidebar.canvasController setDocument:document];
@@ -164,6 +171,8 @@
 	NSInteger item = [self collectionView:self.collectionView numberOfItemsInSection:0] - 1;
 	NSIndexPath *lastIndexPath = [NSIndexPath indexPathForItem:item inSection:0];
 	[self.collectionView scrollToItemAtIndexPath:lastIndexPath atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
+	
+	[[Mixpanel sharedInstance] track:@"Plan_Added"];
 }
 
 - (void) drawingsDeleted:(NSNotification *)aNotification
@@ -173,8 +182,8 @@
 	
 	NSInteger count = [self.collectionView numberOfItemsInSection:0];
 	
-	if (count > 1) {
-		[self collectionView:self.collectionView didSelectItemAtIndexPath:[NSIndexPath indexPathForItem:count-2 inSection:0]];
+	if (count > 0) {
+		[self collectionView:self.collectionView didSelectItemAtIndexPath:[NSIndexPath indexPathForItem:count-1 inSection:0]];
 	} else {
 		// no plans left.
 		[self.sidebar.canvasController setDocument:nil];
@@ -276,6 +285,13 @@
 
 - (IBAction)addButtonTapped:(id)sender {
 	[self createNewDrawing];
+}
+
+- (void)willGetSelected
+{
+	if (selectedIndexPath) {
+		[self collectionView:self.collectionView didSelectItemAtIndexPath:selectedIndexPath];
+	}
 }
 
 @end

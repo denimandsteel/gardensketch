@@ -66,12 +66,12 @@ typedef enum {
 } ShrubColor;
 
 typedef enum {
-    kMustard = 0,
-	kTreeGreen,
+    kTreeGreen = 0,
     kTreeDarkGreen,
 	kTeal,
     kViolet,
-	kBurgundy
+	kBurgundy,
+	kMustard
 } TreeColor;
 
 typedef enum {

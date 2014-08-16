@@ -167,13 +167,12 @@ extern NSString* GSNotificationCanvasActivityStopped;
 			return NO;
 		}
 	}
-	// TODO: limit access to tabs based on the progress:
-	//			e.g. notes and design tabs are not allowed unless at least one plan exists and is selected.
-    if ([viewController.title isEqualToString:@"Search"]) { //Prevent selection of first view controller
-        return NO;
-    } else {
-        return YES;
-    }
+	
+	if ([viewController isKindOfClass:[PlansViewController class]]) {
+		[(PlansViewController *)viewController willGetSelected];
+	}
+	
+	return YES;
 }
 
 - (void)infiniteTabBarController:(M13InfiniteTabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController

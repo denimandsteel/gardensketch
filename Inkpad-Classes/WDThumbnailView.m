@@ -18,6 +18,7 @@
 #import "GSTextField.h"
 #import "Constants.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Mixpanel.h"
 
 @interface WDThumbnailView (Private)
 - (void) reloadFilenameFields_;
@@ -187,6 +188,8 @@
     }
     
     filename_ = filename;
+	
+	[[Mixpanel sharedInstance] track:@"Plan_Renamed" properties:@{@"name": [filename_ stringByDeletingPathExtension]}];
     
     if (!titleLabel_) {
         titleLabel_ = [GSButton buttonWithType:UIButtonTypeCustom];
@@ -262,7 +265,7 @@
     
     if ([userInfo[WDDrawingOldFilenameKey] isEqualToString:filename_]) {
         self.filename = userInfo[WDDrawingNewFilenameKey];
-    }
+	}
 }
 
 - (void) setHighlighted:(BOOL)highlighted
@@ -371,6 +374,7 @@
 
 - (IBAction)shareTapped:(id)sender {
 	[self.delegate shareTapped:self];
+	[[Mixpanel sharedInstance] track:@"Plan_Exported" properties:@{@"name": [filename_ stringByDeletingPathExtension]}];
 }
 
 - (IBAction)renameTapped:(id)sender {
@@ -398,6 +402,7 @@
     if (buttonIndex == 0) {
 		NSMutableSet *toDelete = [NSMutableSet setWithObject:filename_];
 		[[WDDrawingManager sharedInstance] deleteDrawings:toDelete];
+		[[Mixpanel sharedInstance] track:@"Plan_Deleted" properties:@{@"name": [filename_ stringByDeletingPathExtension]}];
 	}
 }
 

@@ -13,6 +13,8 @@
 #import "WDGradient.h"
 #import "StencilManager.h"
 #import "WDDrawingManager.h"
+#import "Mixpanel.h"
+
 
 @implementation AppDelegate
 
@@ -36,6 +38,9 @@
 						environmentName:ABNotifierAutomaticEnvironment
 								 useSSL:YES // only if your account supports it
 							   delegate:self];
+	
+	NSString *mixpanelToken = @"e7f32564b28cc136583e7f27d5d6fba6";
+	[Mixpanel sharedInstanceWithToken:mixpanelToken];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
