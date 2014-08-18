@@ -58,10 +58,10 @@
 #define		GS_COLOR_PLANT_DARK_GREEN		[UIColor colorWithRed:0.565 green:0.620 blue:0.549 alpha:1.000]
 #define		GS_COLOR_PLANT_GOLD				[UIColor colorWithRed:0.843 green:0.757 blue:0.486 alpha:1.000]
 #define		GS_COLOR_PLANT_GREEN			[UIColor colorWithRed:0.710 green:0.859 blue:0.608 alpha:1.000]
-#define		GS_COLOR_PLANT_GREY_GREEN		[UIColor colorWithRed:0.553 green:0.553 blue:0.541 alpha:1.000]
 #define		GS_COLOR_PLANT_INDIGO			[UIColor colorWithRed:0.561 green:0.553 blue:0.718 alpha:1.000]
 #define		GS_COLOR_PLANT_LIGHT_GREEN		[UIColor colorWithRed:0.792 green:0.871 blue:0.569 alpha:1.000]
 #define		GS_COLOR_PLANT_LIGHT_PINK		[UIColor colorWithRed:0.945 green:0.663 blue:0.639 alpha:1.000]
+#define		GS_COLOR_PLANT_RED				[UIColor colorWithRed:0.882 green:0.561 blue:0.580 alpha:1.000]
 
 // shrub colors
 #define		GS_COLOR_SHRUB_BROWN			[UIColor colorWithRed:0.545 green:0.435 blue:0.353 alpha:1.000]

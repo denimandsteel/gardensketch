@@ -291,7 +291,6 @@
 		4D081C18195B8B4A00F8871C /* Plant_Dark_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C11195B8B4A00F8871C /* Plant_Dark_Green.svg */; };
 		4D081C19195B8B4A00F8871C /* Plant_Gold.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C12195B8B4A00F8871C /* Plant_Gold.svg */; };
 		4D081C1A195B8B4A00F8871C /* Plant_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C13195B8B4A00F8871C /* Plant_Green.svg */; };
-		4D081C1B195B8B4A00F8871C /* Plant_Grey_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C14195B8B4A00F8871C /* Plant_Grey_Green.svg */; };
 		4D081C1C195B8B4A00F8871C /* Plant_Indigo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C15195B8B4A00F8871C /* Plant_Indigo.svg */; };
 		4D081C1D195B8B4A00F8871C /* Plant_Light_Green.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C16195B8B4A00F8871C /* Plant_Light_Green.svg */; };
 		4D081C1E195B8B4A00F8871C /* Plant_Light_Pink.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4D081C17195B8B4A00F8871C /* Plant_Light_Pink.svg */; };
@@ -358,6 +357,7 @@
 		4D242CC419A28243008433DC /* ABNotifierFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D242CB219A28243008433DC /* ABNotifierFunctions.m */; };
 		4D242CC519A28243008433DC /* HTNotifier.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D242CB319A28243008433DC /* HTNotifier.strings */; };
 		4D242CC719A28296008433DC /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D242CC619A28296008433DC /* libxml2.dylib */; };
+		4D242CC919A29532008433DC /* Plant_Red.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 4D242CC819A29532008433DC /* Plant_Red.stencil */; };
 		4D3CFA9519958B01000CCD31 /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA9419958B01000CCD31 /* Add@2x.png */; };
 		4D3CFA99199599F7000CCD31 /* Grid_Hide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */; };
 		4D3CFA9A199599F7000CCD31 /* Grid_Show@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */; };
@@ -1020,7 +1020,6 @@
 		4D081C11195B8B4A00F8871C /* Plant_Dark_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Dark_Green.svg; sourceTree = "<group>"; };
 		4D081C12195B8B4A00F8871C /* Plant_Gold.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Gold.svg; sourceTree = "<group>"; };
 		4D081C13195B8B4A00F8871C /* Plant_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Green.svg; sourceTree = "<group>"; };
-		4D081C14195B8B4A00F8871C /* Plant_Grey_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Grey_Green.svg; sourceTree = "<group>"; };
 		4D081C15195B8B4A00F8871C /* Plant_Indigo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Indigo.svg; sourceTree = "<group>"; };
 		4D081C16195B8B4A00F8871C /* Plant_Light_Green.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Light_Green.svg; sourceTree = "<group>"; };
 		4D081C17195B8B4A00F8871C /* Plant_Light_Pink.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_Light_Pink.svg; sourceTree = "<group>"; };
@@ -1119,6 +1118,7 @@
 		4D242CBA19A28243008433DC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/HTNotifier.strings; sourceTree = "<group>"; };
 		4D242CBB19A28243008433DC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/HTNotifier.strings"; sourceTree = "<group>"; };
 		4D242CC619A28296008433DC /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		4D242CC819A29532008433DC /* Plant_Red.stencil */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Plant_Red.stencil; sourceTree = "<group>"; };
 		4D3CFA9419958B01000CCD31 /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
 		4D3CFA96199599F7000CCD31 /* Grid_Hide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Hide@2x.png"; sourceTree = "<group>"; };
 		4D3CFA97199599F7000CCD31 /* Grid_Show@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grid_Show@2x.png"; sourceTree = "<group>"; };
@@ -2390,7 +2390,6 @@
 				4D081C11195B8B4A00F8871C /* Plant_Dark_Green.svg */,
 				4D081C12195B8B4A00F8871C /* Plant_Gold.svg */,
 				4D081C13195B8B4A00F8871C /* Plant_Green.svg */,
-				4D081C14195B8B4A00F8871C /* Plant_Grey_Green.svg */,
 				4D081C15195B8B4A00F8871C /* Plant_Indigo.svg */,
 				4D081C16195B8B4A00F8871C /* Plant_Light_Green.svg */,
 				4D081C17195B8B4A00F8871C /* Plant_Light_Pink.svg */,
@@ -2552,6 +2551,7 @@
 				4D6674241983212B00A17C4E /* Plant_Indigo.stencil */,
 				4D6674251983212B00A17C4E /* Plant_Light_Green.stencil */,
 				4D6674261983212B00A17C4E /* Plant_Light_Pink.stencil */,
+				4D242CC819A29532008433DC /* Plant_Red.stencil */,
 				4D6674271983212B00A17C4E /* Shed.stencil */,
 				4D6674281983212B00A17C4E /* Shrub_Brown.stencil */,
 				4D6674291983212B00A17C4E /* Shrub_Green.stencil */,
@@ -2693,7 +2693,6 @@
 				4D3CFAE8199996EE000CCD31 /* Area.png in Resources */,
 				4D6674CA198AC1D200A17C4E /* L_Shaped_House_1.png in Resources */,
 				4D66744A1983212B00A17C4E /* Shrub_Maroon.stencil in Resources */,
-				4D081C1B195B8B4A00F8871C /* Plant_Grey_Green.svg in Resources */,
 				4D6674DE1991630B00A17C4E /* Flower_Pot.svg in Resources */,
 				4D6674AA1989B09C00A17C4E /* L_Shaped_House_4.svg in Resources */,
 				4D05DE231950AC3F001F19A7 /* Samples.xib in Resources */,
@@ -2752,6 +2751,7 @@
 				4D3CFA9B199599F7000CCD31 /* Select_Colour@2x.png in Resources */,
 				4D6674B81989B4DC00A17C4E /* L_Shaped_House_2.stencil in Resources */,
 				4D05DE1A1950AC3F001F19A7 /* Color.xib in Resources */,
+				4D242CC919A29532008433DC /* Plant_Red.stencil in Resources */,
 				4D081C10195B7BA500F8871C /* Tile.svg in Resources */,
 				4D6674371983212B00A17C4E /* Deciduous_Tree_Mustard.stencil in Resources */,
 				4D05DCB7194F7FF2001F19A7 /* scale@2x.png in Resources */,
