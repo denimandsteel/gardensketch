@@ -95,8 +95,6 @@
 							GS_COLOR_TREE_DARK_GREEN,
 							GS_COLOR_TREE_TEAL];
 	
-	
-	
 	// Set initial stroke color:
 	UIColor *color = outlineColors[0];
 	[self.sidebar.canvasController.drawingController setValue:[WDColor colorWithUIColor:color] forProperty:WDStrokeColorProperty];

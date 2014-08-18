@@ -129,16 +129,6 @@ NSString *ABNotifierCurrentViewController(void);
 NSString *ABNotifierVisibleViewControllerFromViewController(UIViewController *controller);
 #endif
 
-/*
- 
- Get a localized string for the given key from the ABNotifier bundle
- 
- */
-NSString* ABLocalizedString(NSString* key);
-
 // useful defines
-#if(DEBUG)
 #define ABLog(fmt, args...) NSLog(@"[Airbrake] " fmt, ##args)
-#else
-#define ABLog(args...)
-#endif
+#define ABLocalizedString(key) NSLocalizedStringFromTable((key), @"HTNotifier", @"")
