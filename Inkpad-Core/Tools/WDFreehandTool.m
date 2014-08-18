@@ -124,6 +124,8 @@ NSString *WDDefaultFreehandTool = @"WDDefaultFreehandTool";
             smoothPath.shadow = [canvas.drawingController.propertyManager activeShadow];
             
             [canvas.drawing addObject:smoothPath];
+			
+			// ak: we don't want the drawn line to be selected right away:
 //          [canvas.drawingController selectObject:smoothPath];
         }
     }
@@ -132,8 +134,7 @@ NSString *WDDefaultFreehandTool = @"WDDefaultFreehandTool";
     tempPath_ = nil;
 	
 	if (!self.staysOn) {
-		// FIXME: change this to toolManager.selectionTool
-		[[WDToolManager sharedInstance] setActiveTool:[WDToolManager sharedInstance].tools.firstObject];
+		[[WDToolManager sharedInstance] setActiveTool:[WDToolManager sharedInstance].select];
 	}
 }
 
