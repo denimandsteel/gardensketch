@@ -37,11 +37,13 @@
 	[self.aboutButton.titleLabel setFont:GS_FONT_AVENIR_ACTION];
 	[self.blogButton.titleLabel setFont:GS_FONT_AVENIR_ACTION];
 	[self.shareButton.titleLabel setFont:GS_FONT_AVENIR_ACTION];
+	[self.resetButton.titleLabel setFont:GS_FONT_AVENIR_ACTION];
 	
 	[self.feedbackButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateHighlighted];
 	[self.aboutButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateHighlighted];
 	[self.blogButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateHighlighted];
 	[self.shareButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateHighlighted];
+	[self.resetButton setBackgroundImage:[UIImage imageNamed:@"select_background_colour"] forState:UIControlStateHighlighted];
 }
 
 - (void)didReceiveMemoryWarning
