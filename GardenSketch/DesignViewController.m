@@ -473,7 +473,6 @@
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-	// TODO: call invalidateLayout after a cell has changed size, to receive a call here:
 	CGSize size = CGSizeMake(GS_SIDEBAR_WIDTH - 20, 80);
 	
 	if (selectedToolIndexPath && [selectedToolIndexPath compare:indexPath] == NSOrderedSame) {

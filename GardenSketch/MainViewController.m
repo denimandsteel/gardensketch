@@ -177,7 +177,6 @@ extern NSString* GSNotificationCanvasActivityStopped;
 
 - (void)infiniteTabBarController:(M13InfiniteTabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-	// TODO: if first visit show tutorial for this section
 	NSInteger tabIndex = [self.sidebar selectedIndex];
 	
 	if (![self hasVisitedTab:tabIndex]) {

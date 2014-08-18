@@ -87,8 +87,6 @@
 	NSInteger numberOfPlans = [[WDDrawingManager sharedInstance] numberOfDrawings];
 	
 	if (numberOfPlans > 0) {
-		// TODO: do this only if currently loaded document is the base plan or empty.
-		// in other words! if another plan is selected, do not switch to the last plan for no reason.
 		if (!self.sidebar.canvasController.document ||
 			[self.sidebar.canvasController.document.filename isEqualToString:GS_BASE_PLAN_FILE_NAME]) {
 			NSIndexPath *mostRecent = [NSIndexPath indexPathForRow:numberOfPlans-1 inSection:0];
