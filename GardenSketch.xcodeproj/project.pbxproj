@@ -2611,7 +2611,7 @@
 				ORGANIZATIONNAME = "Denim & Steel";
 				TargetAttributes = {
 					4D05DAE7194A70C7001F19A7 = {
-						DevelopmentTeam = 6ZBHR6257P;
+						DevelopmentTeam = UN829BW2M9;
 					};
 					4D05DB08194A70C7001F19A7 = {
 						TestTargetID = 4D05DAE7194A70C7001F19A7;
@@ -3360,8 +3360,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Denim & Steel Interactive, Inc. (6ZBHR6257P)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Denim & Steel Interactive, Inc. (6ZBHR6257P)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Sky Mark Media Inc. (UN829BW2M9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Sky Mark Media Inc. (UN829BW2M9)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3375,7 +3375,7 @@
 				);
 				INFOPLIST_FILE = "GardenSketch/GardenSketch-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a4921a07-12d1-430d-ae2b-cc31ef60f251";
+				PROVISIONING_PROFILE = "2c09946c-ec6f-43ad-b4be-e481dfa6a926";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
