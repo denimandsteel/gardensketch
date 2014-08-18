@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController">
             <connections>
-                <outlet property="doneButton" destination="NYm-dx-feu" id="q4X-TU-ECc"/>
+                <outlet property="doneButton" destination="KGY-Gg-D3g" id="nks-0r-lFh"/>
                 <outlet property="githubButton" destination="20r-Nr-HRl" id="FTi-OJ-egZ"/>
                 <outlet property="inkpadButton" destination="es8-n7-XtW" id="yzX-5J-FTP"/>
                 <outlet property="versionLabel" destination="epv-v7-PSm" id="CT3-4r-FtC"/>
@@ -79,24 +79,29 @@ Public License 2.0. Includes some aspects of
                         <action selector="githubTapped:" destination="-1" eventType="touchUpInside" id="TDn-Nk-YY9"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYm-dx-feu" customClass="GSButton">
-                    <rect key="frame" x="414" y="658" width="197" height="48"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
-                    <state key="normal" title="Done">
-                        <color key="titleColor" red="0.34509804840000002" green="0.78431379800000001" blue="0.79607850309999995" alpha="1" colorSpace="deviceRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="doneTapped:" destination="-1" eventType="touchUpInside" id="hee-Sw-yRU"/>
-                    </connections>
-                </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epv-v7-PSm" customClass="GSLabel">
                     <rect key="frame" x="360" y="727" width="304" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGY-Gg-D3g" customClass="GSButton">
+                    <rect key="frame" x="452" y="658" width="120" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="19"/>
+                    <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="13" minY="5" maxX="81" maxY="7"/>
+                    <state key="normal" title="Done" image="Done.png" backgroundImage="select_background_colour.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" backgroundImage="select_background_colour.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="doneTapped:" destination="-1" eventType="touchUpInside" id="T3p-pd-oB8"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -104,6 +109,8 @@ Public License 2.0. Includes some aspects of
         </view>
     </objects>
     <resources>
+        <image name="Done.png" width="32" height="32"/>
         <image name="Garden Sketch Wordmark.png" width="345" height="54"/>
+        <image name="select_background_colour.png" width="160" height="37"/>
     </resources>
 </document>

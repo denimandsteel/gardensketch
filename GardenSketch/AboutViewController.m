@@ -32,7 +32,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-	[self.doneButton setTitleColor:GS_COLOR_ACCENT_BLUE forState:UIControlStateNormal];
+	[self.doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 	[self.inkpadButton setTitleColor:GS_COLOR_ACCENT_BLUE forState:UIControlStateNormal];
 	[self.githubButton setTitleColor:GS_COLOR_ACCENT_BLUE forState:UIControlStateNormal];
 	

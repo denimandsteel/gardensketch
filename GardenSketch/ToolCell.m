@@ -139,7 +139,7 @@ extern NSString *WDStrokeWidthProperty;
 		[self.toolNameLabel setTextColor:[UIColor whiteColor]];
 		[self.toolNameLabel setFont:GS_FONT_AVENIR_ACTION_BOLD];
 		[self.repeatButton setHidden:NO];
-		BOOL isRepeatOn;
+		BOOL isRepeatOn = NO;
 		if ([self.toolButton.tool isKindOfClass:[WDStencilTool class]]) {
 			isRepeatOn = [(WDStencilTool *)self.toolButton.tool staysOn];
 		} else if ([self.toolButton.tool isKindOfClass:[WDFreehandTool class]]) {

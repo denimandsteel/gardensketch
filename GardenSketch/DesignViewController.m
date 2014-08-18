@@ -248,7 +248,6 @@
 - (void)colorPicker:(ColorPickerButton *)colorpicker didSelectIndex:(NSInteger)index
 {
 	WDTool *tool = colorpicker.tool;
-	ShapeType activeType = [StencilManager sharedInstance].activeShapeType;
 	
 	if (tool == [WDToolManager sharedInstance].plant) {
 		[[StencilManager sharedInstance] setPlantColor:(PlantColor)index];
