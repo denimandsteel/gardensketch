@@ -148,7 +148,6 @@
 	[basePlanDrawing setHeight:size.height];
 	[basePlanDrawing setWidth:size.width];
 	
-	// TODO: send notification for base plan size being changed
 	[[WDDrawingManager sharedInstance] setBasePlanSize:size];
 	
 	WDLayer *baseLayer = self.sidebar.canvasController.drawing.layers.firstObject;

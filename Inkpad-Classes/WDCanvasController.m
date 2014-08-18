@@ -1341,7 +1341,6 @@
 - (void) setDocument:(WDDocument *)document
 {
 	if (!document) {
-		// TODO: handle this case to clear the canvas and remove the spinning wheel.
 		if (document_ && (document_.documentState != UIDocumentStateClosed)) {
             [document_ closeWithCompletionHandler:^(BOOL success) {
 				NSLog(@"Closed!");

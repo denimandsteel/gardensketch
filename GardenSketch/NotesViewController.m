@@ -137,8 +137,6 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-	// TODO: call invalidateLayout after a note has been edited, to receive a call here:
-	
 	NSString *text = ((GSNote *)self.sidebar.canvasController.drawing.notes[indexPath.row]).bodyText;
 	
 	NSDictionary *attributes = @{NSFontAttributeName:GS_FONT_AVENIR_BODY};
@@ -149,7 +147,6 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
                                            attributes:attributes
                                               context:nil];
 	
-	// TODO add some margins for the top and the bottom of the note body text.
 	rect.size.height = MAX(rect.size.height, NOTE_CELL_MIN_HEIGHT) + 20;
 	rect.size.width = 320;
 	return rect.size;

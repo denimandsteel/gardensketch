@@ -322,8 +322,7 @@ NSString *WDDrawingNewFilenameKey = @"WDDrawingNewFilenameKey";
 {
     WDDrawing *drawing = [[WDDrawing alloc] initWithSize:size andUnits:units isBasePlan:YES];
 	
-	// TODO: install base plan differently:
-    return [self installDrawing:drawing withName:[self basePlanFilename] closeAfterSaving:NO isBasePlan:YES];
+	return [self installDrawing:drawing withName:[self basePlanFilename] closeAfterSaving:NO isBasePlan:YES];
 }
 
 - (WDDocument *) createNewDrawingWithSize:(CGSize)size andUnits:(NSString *)units

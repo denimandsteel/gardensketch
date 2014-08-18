@@ -75,9 +75,9 @@
 					GS_COLOR_PLANT_LIGHT_GREEN,
 					GS_COLOR_PLANT_GREEN,
 					GS_COLOR_PLANT_DARK_GREEN,
-					 GS_COLOR_PLANT_GREY_GREEN,
 					 GS_COLOR_PLANT_INDIGO,
-					 GS_COLOR_PLANT_LIGHT_PINK];
+					 GS_COLOR_PLANT_LIGHT_PINK,
+					GS_COLOR_PLANT_RED];
 	
 	shrubColors = @[GS_COLOR_SHRUB_GREEN,
 					GS_COLOR_SHRUB_VIRIDIAN,
@@ -94,8 +94,6 @@
 	coniferousTreeColors = @[GS_COLOR_TREE_GREEN,
 							GS_COLOR_TREE_DARK_GREEN,
 							GS_COLOR_TREE_TEAL];
-	
-	
 	
 	// Set initial stroke color:
 	UIColor *color = outlineColors[0];
@@ -250,7 +248,6 @@
 - (void)colorPicker:(ColorPickerButton *)colorpicker didSelectIndex:(NSInteger)index
 {
 	WDTool *tool = colorpicker.tool;
-	ShapeType activeType = [StencilManager sharedInstance].activeShapeType;
 	
 	if (tool == [WDToolManager sharedInstance].plant) {
 		[[StencilManager sharedInstance] setPlantColor:(PlantColor)index];
@@ -476,7 +473,6 @@
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-	// TODO: call invalidateLayout after a cell has changed size, to receive a call here:
 	CGSize size = CGSizeMake(GS_SIDEBAR_WIDTH - 20, 80);
 	
 	if (selectedToolIndexPath && [selectedToolIndexPath compare:indexPath] == NSOrderedSame) {

@@ -82,13 +82,11 @@
 - (void)viewDidAppear:(BOOL)animated
 {
 	WDToolManager *toolManager = [WDToolManager sharedInstance];
-	[toolManager setActiveTool:toolManager.tools.firstObject];
+	[toolManager setActiveTool:toolManager.select];
 	
 	NSInteger numberOfPlans = [[WDDrawingManager sharedInstance] numberOfDrawings];
 	
 	if (numberOfPlans > 0) {
-		// TODO: do this only if currently loaded document is the base plan or empty.
-		// in other words! if another plan is selected, do not switch to the last plan for no reason.
 		if (!self.sidebar.canvasController.document ||
 			[self.sidebar.canvasController.document.filename isEqualToString:GS_BASE_PLAN_FILE_NAME]) {
 			NSIndexPath *mostRecent = [NSIndexPath indexPathForRow:numberOfPlans-1 inSection:0];
@@ -163,8 +161,8 @@
 
 - (void) drawingAdded:(NSNotification *)aNotification
 {
-    NSUInteger count = [[WDDrawingManager sharedInstance] numberOfDrawings] - 1;
-    NSArray *indexPaths = @[[NSIndexPath indexPathForItem:count inSection:0]];
+    NSUInteger index = [[WDDrawingManager sharedInstance] numberOfDrawings] - 1;
+    NSArray *indexPaths = @[[NSIndexPath indexPathForItem:index inSection:0]];
     [self.collectionView insertItemsAtIndexPaths:indexPaths];
 	
 	// scroll to the very bottom, so that the newly added plan is visible
@@ -173,6 +171,11 @@
 	[self.collectionView scrollToItemAtIndexPath:lastIndexPath atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
 	
 	[[Mixpanel sharedInstance] track:@"Plan_Added"];
+	
+	if (index == 0) {
+		// Switch to deisgn tab, when the first plan is added
+		[self.sidebar setSelectedIndex:4];
+	}
 }
 
 - (void) drawingsDeleted:(NSNotification *)aNotification
@@ -187,6 +190,7 @@
 	} else {
 		// no plans left.
 		[self.sidebar.canvasController setDocument:nil];
+		selectedIndexPath = nil;
 	}
 }
 

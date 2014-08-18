@@ -50,13 +50,12 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-	// TODO: make sure SelectTool is the active tool
 	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
 	WDDocument *basePlanDocument = [drawingManager openBasePlanDocumentWithCompletionHandler:nil];
 	[self.sidebar.canvasController setDocument:basePlanDocument];
 	
 	WDToolManager *toolManager = [WDToolManager sharedInstance];
-	[toolManager setActiveTool:toolManager.tools.firstObject];
+	[toolManager setActiveTool:toolManager.select];
 	
 	WDDrawingController *drawingController = self.sidebar.canvasController.drawingController;
 	[drawingController deselectAllNodes];

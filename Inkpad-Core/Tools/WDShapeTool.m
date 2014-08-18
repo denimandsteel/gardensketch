@@ -284,8 +284,7 @@ NSString *WDShapeToolSpiralDecay = @"WDShapeToolSpiralDecay";
     }
 	
 	if (!self.staysOn) {
-		// FIXME: change this to toolManager.selectionTool
-		[[WDToolManager sharedInstance] setActiveTool:[WDToolManager sharedInstance].tools.firstObject];
+		[[WDToolManager sharedInstance] setActiveTool:[WDToolManager sharedInstance].select];
 	}
 }
 

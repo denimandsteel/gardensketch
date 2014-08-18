@@ -9,6 +9,7 @@
                 <outlet property="aboutButton" destination="Cao-Ee-3jT" id="m9z-s6-Qd7"/>
                 <outlet property="blogButton" destination="L5q-GP-MOV" id="jRJ-Nh-7mG"/>
                 <outlet property="feedbackButton" destination="Sye-zo-CsC" id="qGY-ZX-8SR"/>
+                <outlet property="resetButton" destination="2oj-Pa-arC" id="L0I-on-iR9"/>
                 <outlet property="shareButton" destination="jq6-jP-1Fk" id="KFJ-R3-dCI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -56,6 +57,16 @@
                     </state>
                     <connections>
                         <action selector="shareTapped:" destination="-1" eventType="touchUpInside" id="irC-a6-p1R"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oj-Pa-arC" customClass="GSButton">
+                    <rect key="frame" x="20" y="376" width="300" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Reset Tips">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="resetTutorialTapped:" destination="-1" eventType="touchUpInside" id="5VJ-Ae-goC"/>
                     </connections>
                 </button>
             </subviews>

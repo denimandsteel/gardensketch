@@ -53,9 +53,9 @@ typedef enum {
 	kLightGreen,
     kGreen,
     kDarkGreen,
-	kGreyGreen,
 	kIndigo,
-    kLightPink
+    kLightPink,
+	kRed
 } PlantColor;
 
 typedef enum {

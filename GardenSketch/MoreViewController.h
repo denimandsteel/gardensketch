@@ -17,10 +17,13 @@
 @property (weak, nonatomic) IBOutlet GSButton *aboutButton;
 @property (weak, nonatomic) IBOutlet GSButton *blogButton;
 @property (weak, nonatomic) IBOutlet GSButton *shareButton;
+@property (weak, nonatomic) IBOutlet GSButton *resetButton;
+
 
 - (IBAction)feedbackTapped:(id)sender;
 - (IBAction)aboutTapped:(id)sender;
 - (IBAction)blogTapped:(id)sender;
 - (IBAction)shareTapped:(id)sender;
+- (IBAction)resetTutorialTapped:(id)sender;
 
 @end
