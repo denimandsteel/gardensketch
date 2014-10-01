@@ -1,7 +1,7 @@
 Garden Sketch
 ==============
 
-The Garden Sketch project includes and modifies some aspects of Inkpad to create a foundation for drawing with a controlled set of vector shapes, rather than a full-fledged vector editing application. 
+The Garden Sketch project includes and modifies some aspects of Inkpad to create a foundation for drawing with a controlled set of vector shapes, rather than a full-fledged vector editing application (see 'Modified-InkPad-Files.txt'). 
 
 Garden Sketch requires iOS 7.1 or higher.
 
