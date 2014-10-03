@@ -174,6 +174,10 @@
 	NSIndexPath *lastIndexPath = [NSIndexPath indexPathForItem:item inSection:0];
 	[self.collectionView scrollToItemAtIndexPath:lastIndexPath atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
 	
+	[self.collectionView selectItemAtIndexPath:lastIndexPath animated:YES scrollPosition:UICollectionViewScrollPositionBottom];
+	
+	[(WDThumbnailView *)[self.collectionView cellForItemAtIndexPath:lastIndexPath] showActions];
+	
 	[[Mixpanel sharedInstance] track:@"Plan_Added"];
 	
 	if (index == 0) {
