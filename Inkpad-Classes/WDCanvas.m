@@ -32,7 +32,7 @@
 #define kFitBuffer                  30
 #define kPrintSizeFactor            (72.0f / 132.0f)
 #define kHundredPercentScale        (132.0f / 72.0f)
-#define kMaxZoom                    (64 * kHundredPercentScale)
+#define kMaxZoom                    (4 * kHundredPercentScale)
 #define kMessageFadeDelay           1
 #define kDropperRadius              80
 #define kDropperAnimationDuration   0.2f
