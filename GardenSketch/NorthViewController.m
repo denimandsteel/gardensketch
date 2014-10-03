@@ -50,6 +50,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+	[super viewDidAppear:animated];
+	
 	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
 	WDDocument *basePlanDocument = [drawingManager openBasePlanDocumentWithCompletionHandler:nil];
 	[self.sidebar.canvasController setDocument:basePlanDocument];
@@ -63,6 +65,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+	[super viewWillAppear:animated];
 	[self.doneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 

@@ -85,6 +85,7 @@ extern NSString* GSNotificationCanvasActivityStopped;
 	WDCanvasController *canvas = [[WDCanvasController alloc] init];
 	
 	[self addChildViewController:canvas];
+	[canvas.view setFrame:self.view.bounds];
 	[self.view addSubview:canvas.view];
 	[canvas didMoveToParentViewController:self];
 	

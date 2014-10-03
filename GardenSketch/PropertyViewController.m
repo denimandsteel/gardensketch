@@ -50,6 +50,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+	[super viewDidAppear:animated];
+	
 	// TODO: make sure SelectTool is the active tool
 	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
 	WDDocument *basePlanDocument = [drawingManager openBasePlanDocumentWithCompletionHandler:nil];
@@ -58,6 +60,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+	[super viewWillAppear:animated];
+	
 	CGRect firstFrame = self.firstField.frame;
 	firstFrame.size.height = 50;
 	[self.firstField setFrame:firstFrame];
@@ -95,6 +99,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+	[super viewWillDisappear:animated];
 	// TODO: write methods to access the drawing :
 	[[WDDrawingManager sharedInstance] setBasePlanSize:self.sidebar.canvasController.drawingController.drawing.dimensions];
 	WDLayer *baseLayer = self.sidebar.canvasController.drawingController.drawing.layers.firstObject;

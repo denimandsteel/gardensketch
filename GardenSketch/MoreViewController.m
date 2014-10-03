@@ -33,6 +33,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+	[super viewWillAppear:animated];
+	
 	[self.feedbackButton.titleLabel setFont:GS_FONT_AVENIR_ACTION];
 	[self.aboutButton.titleLabel setFont:GS_FONT_AVENIR_ACTION];
 	[self.blogButton.titleLabel setFont:GS_FONT_AVENIR_ACTION];

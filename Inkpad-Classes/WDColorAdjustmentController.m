@@ -147,6 +147,8 @@
 
 - (void)viewDidLoad
 {
+	[super viewDidLoad];
+	
     UIView *panView = [[WDTouchEatingView alloc] initWithFrame:CGRectInset(navBar_.frame, 75, 0)];
     panView.backgroundColor = nil;
     panView.opaque = NO;

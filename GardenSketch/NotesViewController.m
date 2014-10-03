@@ -48,6 +48,7 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 - (void)viewWillAppear:(BOOL)animated
 {
+	[super viewWillAppear:animated];
 	WDDocument *currentDocument = self.sidebar.canvasController.document;
 	NSString *planName = currentDocument.displayName;
 	[self.planNameLabel setText:planName];
@@ -56,6 +57,8 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 - (void)viewDidAppear:(BOOL)animated
 {
+	[super viewDidAppear:animated];
+	
 	WDDrawing *drawing = self.sidebar.canvasController.drawing;
 	
 	[self setupCompassForDrawing:drawing];

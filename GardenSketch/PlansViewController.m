@@ -81,6 +81,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+	[super viewDidAppear:animated];
+	
 	WDToolManager *toolManager = [WDToolManager sharedInstance];
 	[toolManager setActiveTool:toolManager.select];
 	
@@ -102,6 +104,8 @@
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+	[super viewDidDisappear:animated];
+	
 	[self.tapRecognizer setEnabled:NO];
 }
 

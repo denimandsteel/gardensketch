@@ -82,6 +82,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+	[super viewDidAppear:animated];
+	
 	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
 	WDDocument *basePlanDocument = [drawingManager openBasePlanDocumentWithCompletionHandler:nil];
 	[self.sidebar.canvasController setDocument:basePlanDocument];
@@ -95,6 +97,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+	[super viewWillAppear:animated];
+	
 	[self.selectButton setTitleColor:GS_COLOR_DARK_GREY_TEXT forState:UIControlStateNormal];
 	[self.selectButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
 	
@@ -128,6 +132,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+	[super viewWillDisappear:animated];
+	
 	WDLayer *baseLayer = self.sidebar.canvasController.drawingController.drawing.layers.firstObject;
 	[[WDDrawingManager sharedInstance] setBasePlanLayer:baseLayer];
 }

@@ -1216,6 +1216,8 @@
 
 - (void) viewWillDisappear:(BOOL)animated
 {
+	[super viewWillDisappear:animated];
+	
     [self hidePopovers];
     
     // revert back to selection tool

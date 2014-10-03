@@ -116,6 +116,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+	[super viewWillAppear:animated];
+	
 	[self.headerBackgroundView setBackgroundColor:GS_COLOR_DARK_GREY_BACKGROUND];
 	
 	WDDocument *currentDocument = self.sidebar.canvasController.document;
@@ -144,6 +146,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+	[super viewDidAppear:animated];
+	
 	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 	[nc addObserver:self
            selector:@selector(selectionChanged:)

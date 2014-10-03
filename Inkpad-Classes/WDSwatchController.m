@@ -261,7 +261,8 @@ NSString *WDSwatchPanelModeKey = @"WDSwatchPanelModeKey";
 
 - (void) viewWillDisappear:(BOOL)animated
 {
-    [self setEditing:NO animated:NO];
+	[super viewWillDisappear:animated];
+	[self setEditing:NO animated:NO];
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath;
