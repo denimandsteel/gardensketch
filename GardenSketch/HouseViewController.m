@@ -14,6 +14,7 @@
 #import "WDDrawingManager.h"
 #import "WDDrawingController.h"
 #import "Constants.h"
+#import "WDLayer.h"
 
 @interface HouseViewController ()
 
@@ -148,6 +149,15 @@
 - (void) chooseTool:(id)sender
 {
     [WDToolManager sharedInstance].activeTool = ((WDToolButton *)sender).tool;
+	if ([[WDToolManager sharedInstance].activeTool isKindOfClass:[WDScaleTool class]] &&
+		self.sidebar.canvasController.drawingController.selectedObjects.count == 0) {
+		// select house if any.
+		WDLayer *basePlanLayer = self.sidebar.canvasController.drawingController.drawing.activeLayer;
+		if (basePlanLayer.elements.count > 0) {
+			[self.sidebar.canvasController.drawingController selectNone:nil];
+			[self.sidebar.canvasController.drawingController selectObject:basePlanLayer.elements.firstObject];
+		}
+	}
 }
 
 - (void) selectionChanged:(NSNotification *)aNotification

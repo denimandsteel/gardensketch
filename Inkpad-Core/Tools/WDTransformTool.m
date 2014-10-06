@@ -47,7 +47,7 @@
         [canvas transformSelection:CGAffineTransformIdentity];
         canvas.transforming = NO;
     } else {
-        canvas.pivot = event.snappedLocation;
+//		canvas.pivot = event.snappedLocation;
     }
     
     transform_ = CGAffineTransformIdentity;
