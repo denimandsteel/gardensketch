@@ -20,6 +20,9 @@
 @property (nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
 @property (weak, nonatomic) IBOutlet GSButton *addButton;
 
+
+
+
 - (IBAction)addButtonTapped:(id)sender;
 
 - (void)willGetSelected;

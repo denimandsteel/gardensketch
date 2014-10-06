@@ -18,7 +18,9 @@
 
 @end
 
-@implementation PropertyViewController
+@implementation PropertyViewController {
+	BOOL isMetric;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -62,6 +64,14 @@
 {
 	[super viewWillAppear:animated];
 	
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:GS_USES_METRIC_UNITS]) {
+		isMetric = YES;
+	} else {
+		isMetric = NO;
+	}
+	
+	[self updateUnitLabels];
+
 	CGRect firstFrame = self.firstField.frame;
 	firstFrame.size.height = 50;
 	[self.firstField setFrame:firstFrame];
@@ -89,11 +99,11 @@
 - (void)updateTextfieldsWithSize:(CGSize)size
 {
 	if (size.width > 0 && size.height > 0) {
-		[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(size.width / 32) integerValue]]];
-		[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(size.height / 32) integerValue]]];
+		[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(size.width / [self pixelsPerUnit]) integerValue]]];
+		[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(size.height / [self pixelsPerUnit]) integerValue]]];
 	} else {
-		[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(2048 / 32) integerValue]]];
-		[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(2048 / 32) integerValue]]];
+		[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(2048 / [self pixelsPerUnit]) integerValue]]];
+		[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(2048 / [self pixelsPerUnit]) integerValue]]];
 	}
 }
 
@@ -121,6 +131,28 @@
  
 */
 
+- (IBAction)unitsTapped:(id)sender {
+	isMetric = !isMetric;
+	[self updateUnitLabels];
+	WDDocument *document = self.sidebar.canvasController.document;
+	if ([document.filename isEqualToString:GS_BASE_PLAN_FILE_NAME]) {
+		[self updateTextfieldsWithSize:document.drawing.dimensions];
+	}
+	[[NSUserDefaults standardUserDefaults] setBool:isMetric forKey:GS_USES_METRIC_UNITS];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)updateUnitLabels
+{
+	if (isMetric) {
+		[self.metersLabel setTextColor:[UIColor blackColor]];
+		[self.feetLabel setTextColor:[UIColor lightGrayColor]];
+	} else {
+		[self.metersLabel setTextColor:[UIColor lightGrayColor]];
+		[self.feetLabel setTextColor:[UIColor blackColor]];
+	}
+}
+
 - (IBAction)shapeSelected:(id)sender {
 	CGSize size;
 	switch ([(UIButton *)sender tag]) {
@@ -138,8 +170,17 @@
 			break;
 	}
 	[self setPlanSize:size];
-	[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(size.width / 32) integerValue]]];
-	[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(size.height / 32) integerValue]]];
+	[self.firstField setText:[NSString stringWithFormat:@"%lu", (long)[@(size.width / [self pixelsPerUnit]) integerValue]]];
+	[self.secondField setText:[NSString stringWithFormat:@"%lu", (long)[@(size.height / [self pixelsPerUnit]) integerValue]]];
+}
+
+- (CGFloat)pixelsPerUnit
+{
+	if (isMetric) {
+		return 32.0 * 3.28084;
+	} else {
+		return 32.0;
+	}
 }
 
 - (IBAction)doneTapped:(id)sender {
@@ -161,7 +202,7 @@
 	
 	NSLog(@"Setting plan size to %f, %f", size.width, size.height);
 	
-	[[Mixpanel sharedInstance] track:@"Property_Dimensions" properties:@{@"width": @(size.width/32), @"height": @(size.height/32)}];
+	[[Mixpanel sharedInstance] track:@"Property_Dimensions" properties:@{@"width": @(size.width/[self pixelsPerUnit]), @"height": @(size.height/[self pixelsPerUnit])}];
 }
 
 - (CGSize)sizeFromTextfields
@@ -169,11 +210,11 @@
 	CGSize size = CG_DEFAULT_CANVAS_SIZE;
 	
 	if (![self.firstField.text isEqualToString:@""]) {
-		size.width = [self.firstField.text integerValue] * 32;
+		size.width = [self.firstField.text integerValue] * [self pixelsPerUnit];
 	}
 	
 	if (![self.secondField.text isEqualToString:@""]) {
-		size.height = [self.secondField.text integerValue] * 32;
+		size.height = [self.secondField.text integerValue] * [self pixelsPerUnit];
 	}
 	
 	return size;
