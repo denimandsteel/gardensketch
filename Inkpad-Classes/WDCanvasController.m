@@ -1345,7 +1345,7 @@
 	if (!document) {
 		if (document_ && (document_.documentState != UIDocumentStateClosed)) {
             [document_ closeWithCompletionHandler:^(BOOL success) {
-				NSLog(@"Closed!");
+	
 			}];
         }
 		
@@ -1373,7 +1373,7 @@
         
         if (document_ && (document_.documentState != UIDocumentStateClosed)) {
             [document_ closeWithCompletionHandler:^(BOOL success) {
-				NSLog(@"Closed!");
+				
 			}];
         }
         

@@ -11,6 +11,7 @@
 #import "WDThumbnailView.h"
 #import "WDDocument.h"
 #import "WDCanvasController.h"
+#import "WDDrawingController.h"
 #import "Constants.h"
 #import "WDToolManager.h"
 #import "NSURL+Equivalence.h"
@@ -304,6 +305,8 @@
 	if (selectedIndexPath) {
 		[self collectionView:self.collectionView didSelectItemAtIndexPath:selectedIndexPath];
 	}
+	
+	[self.sidebar.canvasController.drawingController selectNone:nil];
 }
 
 @end
