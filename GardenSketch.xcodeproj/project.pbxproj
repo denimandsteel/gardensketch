@@ -1109,14 +1109,7 @@
 		4D242CB019A28243008433DC /* ABNotifierDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABNotifierDelegate.h; sourceTree = "<group>"; };
 		4D242CB119A28243008433DC /* ABNotifierFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABNotifierFunctions.h; sourceTree = "<group>"; };
 		4D242CB219A28243008433DC /* ABNotifierFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABNotifierFunctions.m; sourceTree = "<group>"; };
-		4D242CB419A28243008433DC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/HTNotifier.strings; sourceTree = "<group>"; };
 		4D242CB519A28243008433DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HTNotifier.strings; sourceTree = "<group>"; };
-		4D242CB619A28243008433DC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/HTNotifier.strings; sourceTree = "<group>"; };
-		4D242CB719A28243008433DC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/HTNotifier.strings; sourceTree = "<group>"; };
-		4D242CB819A28243008433DC /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/HTNotifier.strings; sourceTree = "<group>"; };
-		4D242CB919A28243008433DC /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/HTNotifier.strings; sourceTree = "<group>"; };
-		4D242CBA19A28243008433DC /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/HTNotifier.strings; sourceTree = "<group>"; };
-		4D242CBB19A28243008433DC /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/HTNotifier.strings"; sourceTree = "<group>"; };
 		4D242CC619A28296008433DC /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		4D242CC819A29532008433DC /* Plant_Red.stencil */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Plant_Red.stencil; sourceTree = "<group>"; };
 		4D3CFA9419958B01000CCD31 /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
@@ -2625,13 +2618,6 @@
 			knownRegions = (
 				en,
 				Base,
-				de,
-				es,
-				fr,
-				nl,
-				ro,
-				ru,
-				"zh-Hant",
 			);
 			mainGroup = 4D05DADF194A70C7001F19A7;
 			productRefGroup = 4D05DAE9194A70C7001F19A7 /* Products */;
@@ -3242,14 +3228,7 @@
 		4D242CB319A28243008433DC /* HTNotifier.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4D242CB419A28243008433DC /* de */,
 				4D242CB519A28243008433DC /* en */,
-				4D242CB619A28243008433DC /* es */,
-				4D242CB719A28243008433DC /* fr */,
-				4D242CB819A28243008433DC /* nl */,
-				4D242CB919A28243008433DC /* ro */,
-				4D242CBA19A28243008433DC /* ru */,
-				4D242CBB19A28243008433DC /* zh-Hant */,
 			);
 			name = HTNotifier.strings;
 			sourceTree = "<group>";

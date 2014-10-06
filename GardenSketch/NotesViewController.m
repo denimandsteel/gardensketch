@@ -86,6 +86,8 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+	[super viewWillDisappear:animated];
+	
 	WDDrawing *drawing = self.sidebar.canvasController.drawing;
 	if (drawing.layers.count > 2) {
 		WDLayer *notesLayer = (WDLayer *)drawing.layers[2];
