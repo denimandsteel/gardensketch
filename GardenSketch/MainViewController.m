@@ -116,44 +116,44 @@ extern NSString* GSNotificationCanvasActivityStopped;
 {
     //Load the view controllers from the storyboard and add them to the array.
     
-    PropertyViewController *vc1 = [[PropertyViewController alloc] initWithNibName:@"PropertyViewController" bundle:nil];
-	HouseViewController *vc2 = [[HouseViewController alloc] initWithNibName:@"HouseViewController" bundle:nil];
-	NorthViewController *vc3 = [[NorthViewController alloc] initWithNibName:@"NorthViewController" bundle:nil];
-	PlansViewController *vc4 = [[PlansViewController alloc] initWithNibName:@"PlansViewController" bundle:nil];
-	DesignViewController *vc5 = [[DesignViewController alloc] initWithNibName:@"DesignViewController" bundle:nil];
-	NotesViewController *vc6 = [[NotesViewController alloc] initWithNibName:@"NotesViewController" bundle:nil];
-	MoreViewController *vc7 = [[MoreViewController alloc] initWithNibName:@"MoreViewController" bundle:nil];
+    PropertyViewController *propertyViewController = [[PropertyViewController alloc] initWithNibName:@"PropertyViewController" bundle:nil];
+	HouseViewController *houseViewController = [[HouseViewController alloc] initWithNibName:@"HouseViewController" bundle:nil];
+	NorthViewController *northViewController = [[NorthViewController alloc] initWithNibName:@"NorthViewController" bundle:nil];
+	PlansViewController *plansViewController = [[PlansViewController alloc] initWithNibName:@"PlansViewController" bundle:nil];
+	DesignViewController *designViewController = [[DesignViewController alloc] initWithNibName:@"DesignViewController" bundle:nil];
+	NotesViewController *notesViewController = [[NotesViewController alloc] initWithNibName:@"NotesViewController" bundle:nil];
+	MoreViewController *moreViewController = [[MoreViewController alloc] initWithNibName:@"MoreViewController" bundle:nil];
 	
-	for (SidebarContentViewController *contentView in @[vc1, vc2, vc3, vc4, vc5, vc6, vc7]) {
+	for (SidebarContentViewController *contentView in @[propertyViewController, houseViewController, northViewController, plansViewController, designViewController, notesViewController, moreViewController]) {
 		contentView.sidebar = self.sidebar;
 	}
     
     //------- end test ----------------------
     
     //You probably want to set this on the UIViewController initalization, from within the UIViewController subclass. I'm just doing it here since each tab inherits from the same subclass.
-    [vc1 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Property"
+    [propertyViewController setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Property"
 														   selectedIconMask:[UIImage imageNamed:@"property"]
 														 unselectedIconMask:[UIImage imageNamed:@"property"]]];
-    [vc2 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"House"
+    [houseViewController setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"House"
 														   selectedIconMask:[UIImage imageNamed:@"structure"]
 														 unselectedIconMask:[UIImage imageNamed:@"structure"]]];
-    [vc3 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"North"
+    [northViewController setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"North"
 														   selectedIconMask:[UIImage imageNamed:@"north"]
 														 unselectedIconMask:[UIImage imageNamed:@"north"]]];
-    [vc4 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Plans"
+    [plansViewController setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Plans"
 														   selectedIconMask:[UIImage imageNamed:@"plans"]
 														 unselectedIconMask:[UIImage imageNamed:@"plans"]]];
-    [vc5 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Design"
+    [designViewController setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Design"
 														   selectedIconMask:[UIImage imageNamed:@"design"]
 														 unselectedIconMask:[UIImage imageNamed:@"design"]]];
-    [vc6 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Notes"
+    [notesViewController setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"Notes"
 														   selectedIconMask:[UIImage imageNamed:@"notes"]
 														 unselectedIconMask:[UIImage imageNamed:@"notes"]]];
-    [vc7 setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"More"
+    [moreViewController setInfiniteTabBarItem:[[M13InfiniteTabBarItem alloc] initWithTitle:@"More"
 														   selectedIconMask:[UIImage imageNamed:@"more"]
 														 unselectedIconMask:[UIImage imageNamed:@"more"]]];
     
-    return @[vc1, vc2, vc3, vc4, vc5, vc6, vc7];
+    return @[propertyViewController, houseViewController, northViewController, plansViewController, designViewController, notesViewController, moreViewController];
 }
 
 //Delegate Protocol
