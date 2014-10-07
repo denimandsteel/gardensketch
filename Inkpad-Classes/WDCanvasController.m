@@ -1514,6 +1514,16 @@
 
 - (void) exportAsPNG:(id)sender
 {
+	[self.canvas startActivity];
+	
+	[self performSelector: @selector(delayedPNGExport:)
+			   withObject: sender
+			   afterDelay: 0];
+	return;
+}
+
+- (void)delayedPNGExport:(id)sender
+{
     [self export:sender format:@"PNG"];
 }
 

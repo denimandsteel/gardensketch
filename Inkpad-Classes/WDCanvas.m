@@ -1049,6 +1049,8 @@ NSString * const GSNotificationCanvasActivityStopped      = @"GSNotificationCanv
     
     CALayer *layer = activityView_.layer;
     layer.cornerRadius = CGRectGetWidth(activityView_.frame) / 2;
+	
+	[self setNeedsDisplay];
 }
 
 - (void) stopActivity

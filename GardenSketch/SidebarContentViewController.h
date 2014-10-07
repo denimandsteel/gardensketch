@@ -11,7 +11,6 @@
 
 @interface SidebarContentViewController : UIViewController
 
-// TODO: see if all use cases of sidebar is to get the canvas controller. if yes, replace it
 @property (nonatomic, weak) SidebarViewController *sidebar;
 
 @end
