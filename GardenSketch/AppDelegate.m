@@ -41,6 +41,14 @@
 	
 	NSString *mixpanelToken = @"e7f32564b28cc136583e7f27d5d6fba6";
 	[Mixpanel sharedInstanceWithToken:mixpanelToken];
+	
+	// Preloads keyboard so there's no lag on initial keyboard appearance.
+	// See: http://stackoverflow.com/questions/9357026/super-slow-lag-delay-on-initial-keyboard-animation-of-uitextfield
+	UITextField *lagFreeField = [[UITextField alloc] init];
+	[self.window addSubview:lagFreeField];
+	[lagFreeField becomeFirstResponder];
+	[lagFreeField resignFirstResponder];
+	[lagFreeField removeFromSuperview];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
