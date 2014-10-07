@@ -94,7 +94,7 @@
 			[self.sidebar.canvasController.document.filename isEqualToString:GS_BASE_PLAN_FILE_NAME]) {
 			NSIndexPath *mostRecent = [NSIndexPath indexPathForRow:numberOfPlans-1 inSection:0];
 			[self.collectionView selectItemAtIndexPath:mostRecent animated:YES scrollPosition:UICollectionViewScrollPositionBottom];
-			[self collectionView:self.collectionView didSelectItemAtIndexPath:mostRecent];
+			[self openDocumentAtIndexPath:mostRecent];
 		}
 	} else {
 		[self.sidebar.canvasController setDocument:nil];
@@ -145,12 +145,23 @@
 	NSLog(@"Did select called!");
 	
 	selectedIndexPath = indexPath;
-
+	
 	WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:indexPath.row withCompletionHandler:nil];
 	if ([self.sidebar.canvasController.document.fileURL isEquivalent:document.fileURL]) {
 		// TODO: switch to design tab if already selected
-		NSLog(@"Should switch to design tab");
+		[self.sidebar setSelectedIndex:4];
 	} else {
+		[self.sidebar.canvasController setDocument:document];
+	}
+}
+
+- (void)openDocumentAtIndexPath:(NSIndexPath *)indexPath
+{
+	selectedIndexPath = indexPath;
+	
+	WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:indexPath.row withCompletionHandler:nil];
+	
+	if (![self.sidebar.canvasController.document.fileURL isEquivalent:document.fileURL]) {
 		[self.sidebar.canvasController setDocument:document];
 	}
 }
@@ -195,7 +206,7 @@
 	NSInteger count = [self.collectionView numberOfItemsInSection:0];
 	
 	if (count > 0) {
-		[self collectionView:self.collectionView didSelectItemAtIndexPath:[NSIndexPath indexPathForItem:count-1 inSection:0]];
+		[self openDocumentAtIndexPath:[NSIndexPath indexPathForItem:count-1 inSection:0]];
 	} else {
 		// no plans left.
 		[self.sidebar.canvasController setDocument:nil];
@@ -303,7 +314,7 @@
 - (void)willGetSelected
 {
 	if (selectedIndexPath) {
-		[self collectionView:self.collectionView didSelectItemAtIndexPath:selectedIndexPath];
+		[self openDocumentAtIndexPath:selectedIndexPath];
 	}
 	
 	[self.sidebar.canvasController.drawingController selectNone:nil];

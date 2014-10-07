@@ -324,7 +324,6 @@
 				case 0:
 					tool = [WDToolManager sharedInstance].straightLine;
 					[cell.colorPicker setTool:tool];
-					// TODO move these to the setTool setter in color picker.
 					[cell.colorPicker setColors:outlineColors];
 					[cell.colorPicker setSelectedColorIndex:[[StencilManager sharedInstance] straightLineColor]];
 					break;
