@@ -13,6 +13,7 @@
 #import "WDDrawingController.h"
 #import "Mixpanel.h"
 #import "WDDocument.h"
+#import "WDToolManager.h"
 
 @interface PropertyViewController ()
 
@@ -54,7 +55,7 @@
 {
 	[super viewDidAppear:animated];
 	
-	// TODO: make sure SelectTool is the active tool
+	[[WDToolManager sharedInstance] setActiveTool:[WDToolManager sharedInstance].select];
 	WDDrawingManager *drawingManager = [WDDrawingManager sharedInstance];
 	WDDocument *basePlanDocument = [drawingManager openBasePlanDocumentWithCompletionHandler:nil];
 	[self.sidebar.canvasController setDocument:basePlanDocument];

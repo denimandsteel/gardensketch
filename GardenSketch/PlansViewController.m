@@ -148,7 +148,6 @@
 	
 	WDDocument *document = [[WDDrawingManager sharedInstance] openDocumentAtIndex:indexPath.row withCompletionHandler:nil];
 	if ([self.sidebar.canvasController.document.fileURL isEquivalent:document.fileURL]) {
-		// TODO: switch to design tab if already selected
 		[self.sidebar setSelectedIndex:4];
 	} else {
 		[self.sidebar.canvasController setDocument:document];
