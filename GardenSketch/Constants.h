@@ -62,6 +62,7 @@
 #define		GS_COLOR_PLANT_LIGHT_GREEN		[UIColor colorWithRed:0.792 green:0.871 blue:0.569 alpha:1.000]
 #define		GS_COLOR_PLANT_LIGHT_PINK		[UIColor colorWithRed:0.945 green:0.663 blue:0.639 alpha:1.000]
 #define		GS_COLOR_PLANT_RED				[UIColor colorWithRed:0.882 green:0.561 blue:0.580 alpha:1.000]
+#define		GS_COLOR_PLANT_WHITE			[UIColor colorWithRed:1.000 green:1.000 blue:1.000 alpha:1.000]
 
 // shrub colors
 #define		GS_COLOR_SHRUB_BROWN			[UIColor colorWithRed:0.545 green:0.435 blue:0.353 alpha:1.000]
@@ -76,6 +77,7 @@
 #define		GS_COLOR_TREE_MUSTARD			[UIColor colorWithRed:0.796 green:0.741 blue:0.451 alpha:1.000]
 #define		GS_COLOR_TREE_TEAL				[UIColor colorWithRed:0.522 green:0.698 blue:0.604 alpha:1.000]
 #define		GS_COLOR_TREE_VIOLET			[UIColor colorWithRed:0.424 green:0.427 blue:0.659 alpha:1.000]
+#define		GS_COLOR_TREE_WHITE				[UIColor colorWithRed:1.000 green:1.000 blue:1.000 alpha:1.000]
 
 #define		GS_NORTH_ANGLE					@"GS_NORTH_ANGLE"
 

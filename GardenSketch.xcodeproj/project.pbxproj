@@ -548,6 +548,10 @@
 		4D9115E719787DFB008B11CC /* GSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115E619787DFB008B11CC /* GSTextView.m */; };
 		4D9115EA1979CD44008B11CC /* NSURL+Equivalence.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115E91979CD44008B11CC /* NSURL+Equivalence.m */; };
 		4D9115EE197ED1D4008B11CC /* GSNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9115ED197ED1D4008B11CC /* GSNote.m */; };
+		4DB22FA319E37082002BE028 /* Deciduous_Tree_White.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4DB22FA219E37082002BE028 /* Deciduous_Tree_White.svg */; };
+		4DB22FA719E37091002BE028 /* Plant_White.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4DB22FA619E37091002BE028 /* Plant_White.svg */; };
+		4DB22FAA19E45697002BE028 /* Deciduous_Tree_White.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 4DB22FA819E45697002BE028 /* Deciduous_Tree_White.stencil */; };
+		4DB22FAB19E45697002BE028 /* Plant_White.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 4DB22FA919E45697002BE028 /* Plant_White.stencil */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1318,6 +1322,10 @@
 		4D9115E91979CD44008B11CC /* NSURL+Equivalence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Equivalence.m"; sourceTree = "<group>"; };
 		4D9115EC197ED1D4008B11CC /* GSNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSNote.h; sourceTree = "<group>"; };
 		4D9115ED197ED1D4008B11CC /* GSNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSNote.m; sourceTree = "<group>"; };
+		4DB22FA219E37082002BE028 /* Deciduous_Tree_White.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Deciduous_Tree_White.svg; sourceTree = "<group>"; };
+		4DB22FA619E37091002BE028 /* Plant_White.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Plant_White.svg; sourceTree = "<group>"; };
+		4DB22FA819E45697002BE028 /* Deciduous_Tree_White.stencil */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Deciduous_Tree_White.stencil; sourceTree = "<group>"; };
+		4DB22FA919E45697002BE028 /* Plant_White.stencil */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Plant_White.stencil; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2381,6 +2389,7 @@
 			isa = PBXGroup;
 			children = (
 				4D081C11195B8B4A00F8871C /* Plant_Dark_Green.svg */,
+				4DB22FA619E37091002BE028 /* Plant_White.svg */,
 				4D081C12195B8B4A00F8871C /* Plant_Gold.svg */,
 				4D081C13195B8B4A00F8871C /* Plant_Green.svg */,
 				4D081C15195B8B4A00F8871C /* Plant_Indigo.svg */,
@@ -2430,6 +2439,7 @@
 			isa = PBXGroup;
 			children = (
 				4D57605A196481CE00DCCBEF /* Deciduous_Tree_Burgundy.svg */,
+				4DB22FA219E37082002BE028 /* Deciduous_Tree_White.svg */,
 				4D57605B196481CE00DCCBEF /* Deciduous_Tree_Dark_Green.svg */,
 				4D57605C196481CE00DCCBEF /* Deciduous_Tree_Green.svg */,
 				4D57605D196481CE00DCCBEF /* Deciduous_Tree_Mustard.svg */,
@@ -2511,6 +2521,8 @@
 		4D9115EF198088DD008B11CC /* Stencils */ = {
 			isa = PBXGroup;
 			children = (
+				4DB22FA819E45697002BE028 /* Deciduous_Tree_White.stencil */,
+				4DB22FA919E45697002BE028 /* Plant_White.stencil */,
 				4D6674E11991812A00A17C4E /* Flower_Pot.stencil */,
 				4D6674B11989B4DC00A17C4E /* L_Shaped_House_1.stencil */,
 				4D6674B21989B4DC00A17C4E /* L_Shaped_House_2.stencil */,
@@ -2687,6 +2699,7 @@
 				4D3CFAD51999955B000CCD31 /* Coniferous_Dark_Green.png in Resources */,
 				4D05DCBD194F7FF2001F19A7 /* spiral@2x.png in Resources */,
 				4D242C5D199E807A008433DC /* WidthMd_Active.png in Resources */,
+				4DB22FAA19E45697002BE028 /* Deciduous_Tree_White.stencil in Resources */,
 				4D6674CF198AC4C200A17C4E /* L_Shaped_House_3.png in Resources */,
 				4D3CFAC419996DDE000CCD31 /* Resize_Colour@2x.png in Resources */,
 				4D242C3A199D2FD0008433DC /* House3_1@2x.png in Resources */,
@@ -2778,6 +2791,7 @@
 				4D53F633196B149C0097C8E3 /* AppIcon29x29.png in Resources */,
 				4D05DBAF194F5C81001F19A7 /* design.png in Resources */,
 				4D242C38199D2FD0008433DC /* House2_1@2x.png in Resources */,
+				4DB22FAB19E45697002BE028 /* Plant_White.stencil in Resources */,
 				4D6673C61983116200A17C4E /* Coniferous_Burgundy.svg in Resources */,
 				4D3CFA9A199599F7000CCD31 /* Grid_Show@2x.png in Resources */,
 				4D6674ED1993F3F800A17C4E /* ToolCollectionHeader.xib in Resources */,
@@ -2805,6 +2819,7 @@
 				4D05DE321950B8CB001F19A7 /* PageSizes.plist in Resources */,
 				4D576056195E0FF600DCCBEF /* Shrub_Brown@2x.png in Resources */,
 				4D576050195E0E5300DCCBEF /* Shrub_Green.svg in Resources */,
+				4DB22FA319E37082002BE028 /* Deciduous_Tree_White.svg in Resources */,
 				4D05DBC9194F6664001F19A7 /* structure@2x.png in Resources */,
 				4D05DBB5194F5C81001F19A7 /* plans.png in Resources */,
 				4D05DCBE194F7FF2001F19A7 /* star.png in Resources */,
@@ -2842,6 +2857,7 @@
 				4D081BF21958E83100F8871C /* gazebo.svg in Resources */,
 				4D05DB24194A74FE001F19A7 /* SidebarViewController.xib in Resources */,
 				4D3CFAA11995ABCA000CCD31 /* select_background_white.png in Resources */,
+				4DB22FA719E37091002BE028 /* Plant_White.svg in Resources */,
 				4D05DE311950B8CB001F19A7 /* ImportFormats.plist in Resources */,
 				4D6674461983212B00A17C4E /* Plant_Light_Pink.stencil in Resources */,
 				4D53F60A1964A80B0097C8E3 /* Hedge_brown_horizontal@2x.png in Resources */,

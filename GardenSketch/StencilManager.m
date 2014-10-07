@@ -52,7 +52,7 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 {
 	self.shapes = [NSMutableDictionary dictionary];
 	// TODO: move this into a plist
-	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Plant_Red", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian", @"Deciduous_Tree_Burgundy", @"Deciduous_Tree_Dark_Green", @"Deciduous_Tree_Green", @"Deciduous_Tree_Mustard", @"Deciduous_Tree_Teal", @"Deciduous_Tree_Violet", @"House_No_Lines", @"Coniferous_Burgundy", @"Coniferous_DarkGreen", @"Coniferous_Green", @"Coniferous_Mustard", @"Coniferous_Teal", @"Coniferous_Violet", @"Water_Feature", @"Rectangular_House_Horizontal", @"Rectangular_House_Vertical", @"L_Shaped_House_1", @"L_Shaped_House_2", @"L_Shaped_House_3", @"L_Shaped_House_4", @"Flower_Pot", @"north"];
+	NSArray *shapeNames = @[@"gazebo", @"Tile", @"Shed", @"Plant_Dark_Green", @"Plant_Gold", @"Plant_Green", @"Plant_Indigo", @"Plant_Light_Green", @"Plant_Light_Pink", @"Plant_Red", @"Plant_White", @"Hedge_Brown", @"Hedge_Green", @"Hedge_Maroon", @"Hedge_Viridian", @"Shrub_Brown", @"Shrub_Green", @"Shrub_Maroon", @"Shrub_Viridian", @"Deciduous_Tree_Burgundy", @"Deciduous_Tree_Dark_Green", @"Deciduous_Tree_Green", @"Deciduous_Tree_Mustard", @"Deciduous_Tree_Teal", @"Deciduous_Tree_Violet", @"Deciduous_Tree_White", @"House_No_Lines", @"Coniferous_Burgundy", @"Coniferous_DarkGreen", @"Coniferous_Green", @"Coniferous_Mustard", @"Coniferous_Teal", @"Coniferous_Violet", @"Water_Feature", @"Rectangular_House_Horizontal", @"Rectangular_House_Vertical", @"L_Shaped_House_1", @"L_Shaped_House_2", @"L_Shaped_House_3", @"L_Shaped_House_4", @"Flower_Pot", @"north"];
 	for (NSString *shapeName in shapeNames) {
 		[self loadShape:shapeName];
 	}
@@ -142,6 +142,9 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 				case kRed:
 					filename = @"Plant_Red";
 					break;
+				case kWhite:
+					filename = @"Plant_White";
+					break;
 				default:
 					break;
 			}
@@ -217,6 +220,9 @@ NSString *WDStencilShapeChanged = @"WDStencilShapeChanged";
 					break;
 				case kBurgundy:
 					filename = @"Deciduous_Tree_Burgundy";
+					break;
+				case kTreeWhite:
+					filename = @"Deciduous_Tree_White";
 					break;
 				default:
 					break;
