@@ -56,6 +56,7 @@
 	[self.bodyTextView setHidden:YES];
 	[self.letterLabel setTextColor:GS_COLOR_DARK_GREY_TEXT];
 	[self.deleteButton setTitleColor:GS_COLOR_DARK_GREY_TEXT forState:UIControlStateNormal];
+	[self.deleteButton setTitleColor:GS_COLOR_PLANT_RED forState:UIControlStateHighlighted];
 	[self.deleteButton setImage:[UIImage imageNamed:@"delete"] forState:UIControlStateNormal];
 	[self.deleteButton setTitle:@"Delete" forState:UIControlStateNormal];
 	[self endEditing:YES];

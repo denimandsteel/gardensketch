@@ -39,6 +39,41 @@
 	swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
 	swipeRight.delegate = self;
 	[self.view addGestureRecognizer:swipeRight];
+	
+	NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+	
+	[notificationCenter addObserver:self
+						   selector:@selector(applicationDidEnterBackground:)
+							   name:UIApplicationDidEnterBackgroundNotification
+							 object:nil];
+	[notificationCenter addObserver:self
+						   selector:@selector(applicationWillEnterForeground:)
+							   name:UIApplicationWillEnterForegroundNotification
+							 object:nil];
+	[notificationCenter addObserver:self
+						   selector:@selector(applicationWillEnterForeground:)
+							   name:UIApplicationDidBecomeActiveNotification
+							 object:nil];
+}
+
+- (void)applicationDidEnterBackground:(NSNotificationCenter *)notification
+{
+	[[NSUserDefaults standardUserDefaults] setInteger:self.selectedIndex forKey:GS_LAST_ACTIVE_TAB_INDEX];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)applicationWillEnterForeground:(NSNotificationCenter *)notification
+{
+	NSInteger tabIndex = 0;
+	if ([[NSUserDefaults standardUserDefaults] integerForKey:GS_LAST_ACTIVE_TAB_INDEX]) {
+		tabIndex = [[NSUserDefaults standardUserDefaults] integerForKey:GS_LAST_ACTIVE_TAB_INDEX];
+		if (tabIndex != self.selectedIndex) {
+			if (tabIndex == 4 || tabIndex == 5) {
+				tabIndex = 3;
+			}
+			[self setSelectedIndex:tabIndex];
+		}
+	}
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
