@@ -17,6 +17,7 @@
 #import "WDStencilTool.h"
 #import "WDInspectableProperties.h"
 #import "WDPath.h"
+#import "WDLayer.h"
 #import "WDPropertyManager.h"
 #import "WDUtilities.h"
 #import "WDToolManager.h"
@@ -198,8 +199,9 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 {
     if (pathStarted_) {
 		WDElement *result = nil;
-        CGPoint center = theEvent.location;
-        
+		
+		CGPoint center = theEvent.location;
+		
 		if (self.repeatCount > 1) {
 			NSMutableArray *elements = [NSMutableArray arrayWithCapacity:self.repeatCount];
 			for (NSInteger i = 0; i < self.repeatCount; i++) {
@@ -212,7 +214,49 @@ NSString *WDDefaultStencilTool = @"WDDefaultStencilTool";
 			result = [self singleShapeAtPoint:center];
 		}
 		
-        [canvas.drawing addObject:result];
+		CGFloat maxSnappingDistance = MAX(CGRectGetWidth(result.bounds), CGRectGetHeight(result.bounds)) * 1.5;
+		
+		if (self.type == kHedge) {
+			WDElement *closestHedge = nil;
+			CGFloat minDistance = maxSnappingDistance;
+			
+			for (WDElement *element in canvas.drawing.activeLayer.elements) {
+				if ([element isKindOfClass:[WDGroup class]] && fabsf(element.bounds.size.height - result.bounds.size.height) < 1.0 && fabsf(element.bounds.size.width - result.bounds.size.width) < 1.0) {
+					CGFloat distance = WDDistance(element.bounds.origin, result.bounds.origin);
+					if (distance < minDistance) {
+						closestHedge = element;
+						minDistance = distance;
+					}
+				}
+			}
+			
+			if (minDistance < maxSnappingDistance) {
+				CGPoint snapCenter = WDCenterOfRect(closestHedge.bounds);
+				if (self.initialRotation > 0) {
+					// horizontal
+					if (closestHedge.bounds.origin.x > result.bounds.origin.x) {
+						snapCenter.x -= closestHedge.bounds.size.width;
+					} else {
+						snapCenter.x += closestHedge.bounds.size.width;
+					}
+				} else {
+					// vertical
+					if (closestHedge.bounds.origin.y > result.bounds.origin.y) {
+						snapCenter.y -= closestHedge.bounds.size.height;
+					} else {
+						snapCenter.y += closestHedge.bounds.size.height;
+					}
+				}
+				
+				
+				CGAffineTransform transform = CGAffineTransformMakeTranslation(snapCenter.x - center.x, snapCenter.y - center.y);
+				[result transform:transform];
+			}
+			
+		}
+		
+		[canvas.drawing addObject:result];
+		
 		if (self.type == kHouse ||
 			self.type == kHouseL1 ||
 			self.type == kHouseL2 ||

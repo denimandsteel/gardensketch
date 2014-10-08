@@ -368,7 +368,6 @@ NSString *LETTERS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 				return textElement;
 			}
 		}
-		
 	}
 	
 	return nil;
